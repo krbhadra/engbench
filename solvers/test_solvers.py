@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 import electrical
+import grade
 import mechanical
 
 TASKS_DIR = Path(__file__).parent.parent / "tasks"
@@ -92,6 +93,58 @@ def test_elec_001_bad_divider_fails():
         print("SKIPPED elec_001 bad-divider check:", result["violations"])
         return
     assert not result["passed"]
+
+
+COMB_NETLIST = "V1 psu_out 0 DC 12" + chr(10) + "Rload load_in 0 10"
+
+
+def test_comb_001_golden_passes():
+    task = load("comb_001")
+    output = {
+        "placements": [
+            {"id": "psu", "position": [0, 0, 0]},
+            {"id": "load", "position": [70, 0, 0]},   # 65mm -> 0.13 ohm -> 11.85V
+            {"id": "fan", "position": [0, 100, 0]},
+        ],
+        "netlist": COMB_NETLIST,
+    }
+    result = grade.grade(task, output)
+    if result["passed"] is None:
+        print("SKIPPED comb_001 golden check:", result["violations"])
+        return
+    assert result["passed"], result["violations"]
+
+
+def test_comb_001_long_wire_fails():
+    task = load("comb_001")
+    output = {
+        "placements": [
+            {"id": "psu", "position": [0, 0, 0]},
+            {"id": "load", "position": [250, 100, 0]},  # 325mm -> 0.65 ohm -> 11.27V
+            {"id": "fan", "position": [0, 100, 0]},
+        ],
+        "netlist": COMB_NETLIST,
+    }
+    result = grade.grade(task, output)
+    if result["passed"] is None:
+        print("SKIPPED comb_001 long-wire check:", result["violations"])
+        return
+    assert not result["passed"]
+    assert any("load_in" in v for v in result["violations"])
+
+
+def test_comb_001_shorted_wire_fails():
+    task = load("comb_001")
+    output = {
+        "placements": [
+            {"id": "psu", "position": [0, 0, 0]},
+            {"id": "load", "position": [250, 100, 0]},
+            {"id": "fan", "position": [0, 100, 0]},
+        ],
+        "netlist": COMB_NETLIST + chr(10) + "Rcheat psu_out load_in 0.0001",
+    }
+    result = grade.grade(task, output)
+    assert any("directly" in v for v in result["violations"])
 
 
 if __name__ == "__main__":
