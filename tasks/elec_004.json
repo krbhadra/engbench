@@ -1,0 +1,40 @@
+{
+  "id": "elec_004",
+  "domain": "electrical",
+  "title": "Quiescent current budget",
+  "description": "From a 24V supply, generate a 5.0V +/-2% reference at node 'vout' (unloaded) while drawing no more than 1mA from the supply. The netlist must contain exactly 'V1 vin 0 DC 24' and a 10 ohm sense resistor 'Rsense vin top 10'; supply current is measured as the drop across Rsense, which must not exceed 0.010V. Build the divider from node 'top' to 'vout' to ground. Return a valid SPICE netlist.",
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "vin",
+        "0"
+      ],
+      "value": 24
+    },
+    {
+      "name": "Rsense",
+      "nodes": [
+        "vin",
+        "top"
+      ],
+      "value": 10
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "vout",
+      "min": 4.9,
+      "max": 5.1
+    }
+  ],
+  "drop_checks": [
+    {
+      "between": [
+        "vin",
+        "top"
+      ],
+      "max_drop": 0.01
+    }
+  ]
+}

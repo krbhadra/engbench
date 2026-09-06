@@ -1,0 +1,217 @@
+{
+  "id": "mech_012",
+  "domain": "mechanical",
+  "title": "Full device layout",
+  "description": "A 240x160x60mm device enclosure. Fixed on the left wall: dc_jack (15x15x12mm) at [0,20,0] and usb (20x15x10mm) at [0,120,0]. Keep-outs: 8x8mm standoffs at all four corners (x 0-8 / y 0-8, x 232-240 / y 0-8, x 0-8 / y 152-160, x 232-240 / y 152-160, full height) and a vent block on the right wall at x 220-240, y 40-120, z 20-60. Place psu (60x40x30mm), mcu (50x50x15mm), battery (100x60x20mm), hot_reg (30x30x20mm), fan (40x40x15mm), sensor (15x15x8mm). Cable limits (max surface gap): dc_jack-psu 10mm, usb-mcu 25mm, fan-hot_reg 5mm, mcu-sensor 60mm. Thermal clearances (min surface gap): hot_reg-battery 25mm, hot_reg-sensor 40mm, psu-battery 10mm. No overlaps, no rotation, everything inside. Return the min-corner [x,y,z] of all eight components in millimeters, including the fixed connectors.",
+  "enclosure": {
+    "size": [
+      240,
+      160,
+      60
+    ]
+  },
+  "components": [
+    {
+      "id": "dc_jack",
+      "size": [
+        15,
+        15,
+        12
+      ]
+    },
+    {
+      "id": "usb",
+      "size": [
+        20,
+        15,
+        10
+      ]
+    },
+    {
+      "id": "psu",
+      "size": [
+        60,
+        40,
+        30
+      ]
+    },
+    {
+      "id": "mcu",
+      "size": [
+        50,
+        50,
+        15
+      ]
+    },
+    {
+      "id": "battery",
+      "size": [
+        100,
+        60,
+        20
+      ]
+    },
+    {
+      "id": "hot_reg",
+      "size": [
+        30,
+        30,
+        20
+      ]
+    },
+    {
+      "id": "fan",
+      "size": [
+        40,
+        40,
+        15
+      ]
+    },
+    {
+      "id": "sensor",
+      "size": [
+        15,
+        15,
+        8
+      ]
+    }
+  ],
+  "fixed": [
+    {
+      "id": "dc_jack",
+      "position": [
+        0,
+        20,
+        0
+      ]
+    },
+    {
+      "id": "usb",
+      "position": [
+        0,
+        120,
+        0
+      ]
+    }
+  ],
+  "keep_out": [
+    {
+      "id": "standoff_1",
+      "min": [
+        0,
+        0,
+        0
+      ],
+      "max": [
+        8,
+        8,
+        60
+      ]
+    },
+    {
+      "id": "standoff_2",
+      "min": [
+        232,
+        0,
+        0
+      ],
+      "max": [
+        240,
+        8,
+        60
+      ]
+    },
+    {
+      "id": "standoff_3",
+      "min": [
+        0,
+        152,
+        0
+      ],
+      "max": [
+        8,
+        160,
+        60
+      ]
+    },
+    {
+      "id": "standoff_4",
+      "min": [
+        232,
+        152,
+        0
+      ],
+      "max": [
+        240,
+        160,
+        60
+      ]
+    },
+    {
+      "id": "vent",
+      "min": [
+        220,
+        40,
+        20
+      ],
+      "max": [
+        240,
+        120,
+        60
+      ]
+    }
+  ],
+  "max_distance": [
+    {
+      "pair": [
+        "dc_jack",
+        "psu"
+      ],
+      "distance": 10
+    },
+    {
+      "pair": [
+        "usb",
+        "mcu"
+      ],
+      "distance": 25
+    },
+    {
+      "pair": [
+        "fan",
+        "hot_reg"
+      ],
+      "distance": 5
+    },
+    {
+      "pair": [
+        "mcu",
+        "sensor"
+      ],
+      "distance": 60
+    }
+  ],
+  "min_clearance": [
+    {
+      "pair": [
+        "hot_reg",
+        "battery"
+      ],
+      "distance": 25
+    },
+    {
+      "pair": [
+        "hot_reg",
+        "sensor"
+      ],
+      "distance": 40
+    },
+    {
+      "pair": [
+        "psu",
+        "battery"
+      ],
+      "distance": 10
+    }
+  ]
+}

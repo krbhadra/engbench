@@ -1,0 +1,48 @@
+{
+  "id": "elec_007",
+  "domain": "electrical",
+  "title": "Wheatstone bridge balance",
+  "description": "Balance a Wheatstone bridge fed by 'V1 vin 0 DC 10' (required exactly). Two arms are fixed and must appear exactly as 'R1 vin a 1k' and 'R3 vin b 2.2k'. Choose R2 (from 'a' to ground) and R4 (from 'b' to ground) so that the bridge is balanced to within 5mV (|V(a)-V(b)| <= 0.005V) and V(a) is between 4V and 6V. Return a valid SPICE netlist.",
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "vin",
+        "0"
+      ],
+      "value": 10
+    },
+    {
+      "name": "R1",
+      "nodes": [
+        "vin",
+        "a"
+      ],
+      "value": "1k"
+    },
+    {
+      "name": "R3",
+      "nodes": [
+        "vin",
+        "b"
+      ],
+      "value": "2.2k"
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "a",
+      "min": 4,
+      "max": 6
+    }
+  ],
+  "drop_checks": [
+    {
+      "between": [
+        "a",
+        "b"
+      ],
+      "max_drop": 0.005
+    }
+  ]
+}

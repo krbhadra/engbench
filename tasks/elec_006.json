@@ -1,0 +1,40 @@
+{
+  "id": "elec_006",
+  "domain": "electrical",
+  "title": "Remote load behind a long wire",
+  "description": "A 12V supply feeds a remote board through a wire with 5 ohm resistance. The netlist must contain exactly 'V1 vin 0 DC 12', 'Rwire vin remote 5', and the fixed load 'Rload vout 0 50'. Design a divider on the remote board (from 'remote' to 'vout' to ground) so that 'vout' is 5.00V +/-1%. Return a valid SPICE netlist.",
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "vin",
+        "0"
+      ],
+      "value": 12
+    },
+    {
+      "name": "Rwire",
+      "nodes": [
+        "vin",
+        "remote"
+      ],
+      "value": 5
+    },
+    {
+      "name": "Rload",
+      "nodes": [
+        "vout",
+        "0"
+      ],
+      "value": 50
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "vout",
+      "min": 4.95,
+      "max": 5.05
+    }
+  ],
+  "drop_checks": []
+}

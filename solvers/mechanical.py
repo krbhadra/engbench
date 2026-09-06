@@ -40,6 +40,10 @@ def grade(task: dict, output: dict) -> dict:
         violations.append(f"missing placements for: {sorted(missing)}")
         return {"passed": False, "violations": violations}
 
+    for rule in task.get("fixed", []):
+        if list(placements[rule["id"]]) != list(rule["position"]):
+            violations.append(f"{rule['id']} must be fixed at {rule['position']}")
+
     boxes = {cid: _box(placements[cid], sizes[cid]) for cid in sizes}
     ex, ey, ez = task["enclosure"]["size"]
 
@@ -53,6 +57,20 @@ def grade(task: dict, output: dict) -> dict:
             a, b = ids[i], ids[j]
             if _overlap(boxes[a], boxes[b]):
                 violations.append(f"{a} overlaps {b}")
+
+    for zone in task.get("keep_out", []):
+        zbox = (*zone["min"], *zone["max"])
+        for cid, box in boxes.items():
+            if _overlap(box, zbox):
+                violations.append(f"{cid} intersects keep-out zone {zone['id']}")
+
+    for rule in task.get("max_distance", []):
+        a, b = rule["pair"]
+        actual = _gap(boxes[a], boxes[b])
+        if actual > rule["distance"]:
+            violations.append(
+                f"{a}-{b} distance {actual:.1f} > allowed {rule['distance']}"
+            )
 
     for rule in task.get("min_clearance", []):
         a, b = rule["pair"]

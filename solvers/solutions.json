@@ -1,0 +1,2278 @@
+{
+ "mech_001": {
+  "golden": {
+   "placements": [
+    {
+     "id": "comp_a",
+     "position": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "comp_b",
+     "position": [
+      50,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "comp_c",
+     "position": [
+      0,
+      40,
+      0
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "comp_a",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "comp_b",
+       "position": [
+        10,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "comp_c",
+       "position": [
+        0,
+        40,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "overlaps"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "comp_a",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "comp_b",
+       "position": [
+        160,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "comp_c",
+       "position": [
+        0,
+        40,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "exceeds enclosure"
+   }
+  ]
+ },
+ "mech_002": {
+  "golden": {
+   "placements": [
+    {
+     "id": "comp_x",
+     "position": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "comp_y",
+     "position": [
+      60,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "comp_z",
+     "position": [
+      0,
+      50,
+      0
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "comp_x",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "comp_y",
+       "position": [
+        45,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "comp_z",
+       "position": [
+        0,
+        50,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "clearance"
+   }
+  ]
+ },
+ "mech_003": {
+  "golden": {
+   "placements": [
+    {
+     "id": "a",
+     "position": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "b",
+     "position": [
+      60,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "c",
+     "position": [
+      40,
+      60,
+      0
+     ]
+    },
+    {
+     "id": "d",
+     "position": [
+      0,
+      40,
+      0
+     ]
+    },
+    {
+     "id": "e",
+     "position": [
+      40,
+      40,
+      0
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "a",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "b",
+       "position": [
+        60,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "c",
+       "position": [
+        0,
+        60,
+        0
+       ]
+      },
+      {
+       "id": "d",
+       "position": [
+        0,
+        40,
+        0
+       ]
+      },
+      {
+       "id": "e",
+       "position": [
+        40,
+        40,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "overlaps"
+   }
+  ]
+ },
+ "mech_004": {
+  "golden": {
+   "placements": [
+    {
+     "id": "s1",
+     "position": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "s2",
+     "position": [
+      0,
+      0,
+      20
+     ]
+    },
+    {
+     "id": "s3",
+     "position": [
+      0,
+      0,
+      40
+     ]
+    },
+    {
+     "id": "t1",
+     "position": [
+      60,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "t2",
+     "position": [
+      0,
+      60,
+      0
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "s1",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "s2",
+       "position": [
+        40,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "s3",
+       "position": [
+        0,
+        0,
+        40
+       ]
+      },
+      {
+       "id": "t1",
+       "position": [
+        60,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "t2",
+       "position": [
+        0,
+        60,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "overlaps"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "s1",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "s2",
+       "position": [
+        0,
+        0,
+        20
+       ]
+      },
+      {
+       "id": "s3",
+       "position": [
+        0,
+        0,
+        40
+       ]
+      },
+      {
+       "id": "t1",
+       "position": [
+        70,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "t2",
+       "position": [
+        0,
+        60,
+        20
+       ]
+      }
+     ]
+    },
+    "expect": "exceeds enclosure"
+   }
+  ]
+ },
+ "mech_005": {
+  "golden": {
+   "placements": [
+    {
+     "id": "m1",
+     "position": [
+      0,
+      10,
+      0
+     ]
+    },
+    {
+     "id": "m2",
+     "position": [
+      90,
+      10,
+      0
+     ]
+    },
+    {
+     "id": "m3",
+     "position": [
+      0,
+      60,
+      0
+     ]
+    },
+    {
+     "id": "m4",
+     "position": [
+      100,
+      60,
+      0
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "m1",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "m2",
+       "position": [
+        90,
+        10,
+        0
+       ]
+      },
+      {
+       "id": "m3",
+       "position": [
+        0,
+        60,
+        0
+       ]
+      },
+      {
+       "id": "m4",
+       "position": [
+        100,
+        60,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "keep-out"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "m1",
+       "position": [
+        0,
+        10,
+        0
+       ]
+      },
+      {
+       "id": "m2",
+       "position": [
+        90,
+        10,
+        0
+       ]
+      },
+      {
+       "id": "m3",
+       "position": [
+        60,
+        40,
+        0
+       ]
+      },
+      {
+       "id": "m4",
+       "position": [
+        100,
+        60,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "keep-out"
+   }
+  ]
+ },
+ "mech_006": {
+  "golden": {
+   "placements": [
+    {
+     "id": "usb_conn",
+     "position": [
+      0,
+      50,
+      0
+     ]
+    },
+    {
+     "id": "pwr_conn",
+     "position": [
+      180,
+      10,
+      0
+     ]
+    },
+    {
+     "id": "mcu",
+     "position": [
+      30,
+      40,
+      0
+     ]
+    },
+    {
+     "id": "battery",
+     "position": [
+      95,
+      30,
+      0
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "usb_conn",
+       "position": [
+        0,
+        50,
+        0
+       ]
+      },
+      {
+       "id": "pwr_conn",
+       "position": [
+        180,
+        10,
+        0
+       ]
+      },
+      {
+       "id": "mcu",
+       "position": [
+        100,
+        40,
+        0
+       ]
+      },
+      {
+       "id": "battery",
+       "position": [
+        95,
+        30,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "distance"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "usb_conn",
+       "position": [
+        10,
+        50,
+        0
+       ]
+      },
+      {
+       "id": "pwr_conn",
+       "position": [
+        180,
+        10,
+        0
+       ]
+      },
+      {
+       "id": "mcu",
+       "position": [
+        30,
+        40,
+        0
+       ]
+      },
+      {
+       "id": "battery",
+       "position": [
+        95,
+        30,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "fixed"
+   }
+  ]
+ },
+ "mech_007": {
+  "golden": {
+   "placements": [
+    {
+     "id": "hot1",
+     "position": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "hot2",
+     "position": [
+      60,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "hot3",
+     "position": [
+      120,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "sensor",
+     "position": [
+      180,
+      80,
+      0
+     ]
+    },
+    {
+     "id": "cap",
+     "position": [
+      0,
+      60,
+      0
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "hot1",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "hot2",
+       "position": [
+        60,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "hot3",
+       "position": [
+        120,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "sensor",
+       "position": [
+        160,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "cap",
+       "position": [
+        0,
+        60,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "clearance"
+   }
+  ]
+ },
+ "mech_008": {
+  "golden": {
+   "placements": [
+    {
+     "id": "pcb",
+     "position": [
+      10,
+      10,
+      0
+     ]
+    },
+    {
+     "id": "heatsink",
+     "position": [
+      10,
+      10,
+      10
+     ]
+    },
+    {
+     "id": "fan",
+     "position": [
+      50,
+      10,
+      10
+     ]
+    },
+    {
+     "id": "battery",
+     "position": [
+      70,
+      70,
+      10
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "pcb",
+       "position": [
+        10,
+        10,
+        0
+       ]
+      },
+      {
+       "id": "heatsink",
+       "position": [
+        10,
+        10,
+        10
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        50,
+        10,
+        10
+       ]
+      },
+      {
+       "id": "battery",
+       "position": [
+        50,
+        50,
+        10
+       ]
+      }
+     ]
+    },
+    "expect": "clearance"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "pcb",
+       "position": [
+        10,
+        10,
+        0
+       ]
+      },
+      {
+       "id": "heatsink",
+       "position": [
+        10,
+        10,
+        10
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        50,
+        10,
+        10
+       ]
+      },
+      {
+       "id": "battery",
+       "position": [
+        70,
+        70,
+        20
+       ]
+      }
+     ]
+    },
+    "expect": "distance"
+   }
+  ]
+ },
+ "mech_009": {
+  "golden": {
+   "placements": [
+    {
+     "id": "A",
+     "position": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "B",
+     "position": [
+      50,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "C",
+     "position": [
+      50,
+      30,
+      0
+     ]
+    },
+    {
+     "id": "D",
+     "position": [
+      50,
+      30,
+      30
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "A",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "B",
+       "position": [
+        50,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "C",
+       "position": [
+        50,
+        30,
+        0
+       ]
+      },
+      {
+       "id": "D",
+       "position": [
+        50,
+        0,
+        30
+       ]
+      }
+     ]
+    },
+    "expect": "overlaps"
+   }
+  ]
+ },
+ "mech_010": {
+  "golden": {
+   "placements": [
+    {
+     "id": "display",
+     "position": [
+      30,
+      0,
+      32
+     ]
+    },
+    {
+     "id": "pcb",
+     "position": [
+      30,
+      0,
+      20
+     ]
+    },
+    {
+     "id": "battery",
+     "position": [
+      10,
+      60,
+      0
+     ]
+    },
+    {
+     "id": "speaker",
+     "position": [
+      90,
+      65,
+      0
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "display",
+       "position": [
+        30,
+        0,
+        32
+       ]
+      },
+      {
+       "id": "pcb",
+       "position": [
+        30,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "battery",
+       "position": [
+        10,
+        60,
+        0
+       ]
+      },
+      {
+       "id": "speaker",
+       "position": [
+        90,
+        65,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "distance"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "display",
+       "position": [
+        30,
+        0,
+        32
+       ]
+      },
+      {
+       "id": "pcb",
+       "position": [
+        30,
+        0,
+        20
+       ]
+      },
+      {
+       "id": "battery",
+       "position": [
+        0,
+        60,
+        0
+       ]
+      },
+      {
+       "id": "speaker",
+       "position": [
+        90,
+        65,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "keep-out"
+   }
+  ]
+ },
+ "mech_011": {
+  "golden": {
+   "placements": [
+    {
+     "id": "m1",
+     "position": [
+      5,
+      5,
+      5
+     ]
+    },
+    {
+     "id": "m2",
+     "position": [
+      37,
+      5,
+      5
+     ]
+    },
+    {
+     "id": "m3",
+     "position": [
+      69,
+      5,
+      5
+     ]
+    },
+    {
+     "id": "m4",
+     "position": [
+      101,
+      5,
+      5
+     ]
+    },
+    {
+     "id": "m5",
+     "position": [
+      133,
+      5,
+      5
+     ]
+    },
+    {
+     "id": "m6",
+     "position": [
+      165,
+      5,
+      5
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "m1",
+       "position": [
+        5,
+        5,
+        5
+       ]
+      },
+      {
+       "id": "m2",
+       "position": [
+        36,
+        5,
+        5
+       ]
+      },
+      {
+       "id": "m3",
+       "position": [
+        67,
+        5,
+        5
+       ]
+      },
+      {
+       "id": "m4",
+       "position": [
+        98,
+        5,
+        5
+       ]
+      },
+      {
+       "id": "m5",
+       "position": [
+        129,
+        5,
+        5
+       ]
+      },
+      {
+       "id": "m6",
+       "position": [
+        160,
+        5,
+        5
+       ]
+      }
+     ]
+    },
+    "expect": "clearance"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "m1",
+       "position": [
+        5,
+        5,
+        0
+       ]
+      },
+      {
+       "id": "m2",
+       "position": [
+        37,
+        5,
+        0
+       ]
+      },
+      {
+       "id": "m3",
+       "position": [
+        69,
+        5,
+        0
+       ]
+      },
+      {
+       "id": "m4",
+       "position": [
+        101,
+        5,
+        0
+       ]
+      },
+      {
+       "id": "m5",
+       "position": [
+        133,
+        5,
+        0
+       ]
+      },
+      {
+       "id": "m6",
+       "position": [
+        165,
+        5,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "keep-out"
+   }
+  ]
+ },
+ "mech_012": {
+  "golden": {
+   "placements": [
+    {
+     "id": "dc_jack",
+     "position": [
+      0,
+      20,
+      0
+     ]
+    },
+    {
+     "id": "usb",
+     "position": [
+      0,
+      120,
+      0
+     ]
+    },
+    {
+     "id": "psu",
+     "position": [
+      15,
+      10,
+      0
+     ]
+    },
+    {
+     "id": "mcu",
+     "position": [
+      25,
+      110,
+      0
+     ]
+    },
+    {
+     "id": "battery",
+     "position": [
+      100,
+      10,
+      0
+     ]
+    },
+    {
+     "id": "hot_reg",
+     "position": [
+      190,
+      120,
+      0
+     ]
+    },
+    {
+     "id": "fan",
+     "position": [
+      150,
+      120,
+      0
+     ]
+    },
+    {
+     "id": "sensor",
+     "position": [
+      80,
+      110,
+      0
+     ]
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "dc_jack",
+       "position": [
+        0,
+        20,
+        0
+       ]
+      },
+      {
+       "id": "usb",
+       "position": [
+        0,
+        120,
+        0
+       ]
+      },
+      {
+       "id": "psu",
+       "position": [
+        15,
+        10,
+        0
+       ]
+      },
+      {
+       "id": "mcu",
+       "position": [
+        25,
+        110,
+        0
+       ]
+      },
+      {
+       "id": "battery",
+       "position": [
+        100,
+        10,
+        0
+       ]
+      },
+      {
+       "id": "hot_reg",
+       "position": [
+        100,
+        80,
+        0
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        60,
+        80,
+        0
+       ]
+      },
+      {
+       "id": "sensor",
+       "position": [
+        80,
+        110,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "clearance"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "dc_jack",
+       "position": [
+        0,
+        20,
+        0
+       ]
+      },
+      {
+       "id": "usb",
+       "position": [
+        0,
+        120,
+        0
+       ]
+      },
+      {
+       "id": "psu",
+       "position": [
+        15,
+        10,
+        0
+       ]
+      },
+      {
+       "id": "mcu",
+       "position": [
+        25,
+        110,
+        0
+       ]
+      },
+      {
+       "id": "battery",
+       "position": [
+        100,
+        10,
+        0
+       ]
+      },
+      {
+       "id": "hot_reg",
+       "position": [
+        190,
+        120,
+        0
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        150,
+        120,
+        0
+       ]
+      },
+      {
+       "id": "sensor",
+       "position": [
+        150,
+        60,
+        0
+       ]
+      }
+     ]
+    },
+    "expect": "distance"
+   }
+  ]
+ },
+ "elec_001": {
+  "golden": {
+   "netlist": "V1 vin 0 DC 12\nR1 vin vout 100\nR2 vout 0 100"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 12\nR1 vin vout 900\nR2 vout 0 100"
+    },
+    "expect": "V(vout)"
+   },
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 6\nR1 vin vout 1\nR2 vout 0 100"
+    },
+    "expect": "must contain"
+   }
+  ]
+ },
+ "elec_002": {
+  "golden": {
+   "netlist": "V1 vin 0 DC 12\nR1 vin vout 650\nR2 vout 0 1000\nRload vout 0 330"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 12\nR1 vin vout 2700\nR2 vout 0 1000\nRload vout 0 330"
+    },
+    "expect": "V(vout)"
+   },
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 12\nR1 vin vout 650\nR2 vout 0 1000"
+    },
+    "expect": "must contain"
+   }
+  ]
+ },
+ "elec_003": {
+  "golden": {
+   "netlist": "V1 vin 0 DC 9\nRsense vin sense 1\nR1 sense led_a 390\nVled led_a 0 DC 2"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 9\nRsense vin sense 1\nR1 sense led_a 1000\nVled led_a 0 DC 2"
+    },
+    "expect": "drop"
+   },
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 9\nRsense vin sense 1\nR1 sense led_a 100\nVled led_a 0 DC 2"
+    },
+    "expect": "drop"
+   }
+  ]
+ },
+ "elec_004": {
+  "golden": {
+   "netlist": "V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 23740\nR2 vout 0 6250"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 1900\nR2 vout 0 500"
+    },
+    "expect": "drop"
+   },
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 20000\nR2 vout 0 10000"
+    },
+    "expect": "V(vout)"
+   }
+  ]
+ },
+ "elec_005": {
+  "golden": {
+   "netlist": "V1 vin 0 DC 12\nR1 vin r5 127\nR2 r5 0 1000\nRl5 r5 0 100\nR3 vin r33 240\nR4 r33 0 1000\nRl33 r33 0 100"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 12\nR1 vin r5 1400\nR2 r5 0 1000\nRl5 r5 0 100\nR3 vin r33 2640\nR4 r33 0 1000\nRl33 r33 0 100"
+    },
+    "expect": "V(r5)"
+   }
+  ]
+ },
+ "elec_006": {
+  "golden": {
+   "netlist": "V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 62\nR2 vout 0 1000\nRload vout 0 50"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 67\nR2 vout 0 1000\nRload vout 0 50"
+    },
+    "expect": "V(vout)"
+   }
+  ]
+ },
+ "elec_007": {
+  "golden": {
+   "netlist": "V1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2k"
+    },
+    "expect": "drop"
+   }
+  ]
+ },
+ "elec_008": {
+  "golden": {
+   "netlist": "Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nRt n0 0 20k\nRb0 b0 n0 20k\nR01 n0 n1 10k\nRb1 b1 n1 20k\nR12 n1 vout 10k\nRb2 b2 vout 20k"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nRt n0 0 10k\nRb0 b0 n0 10k\nR01 n0 n1 10k\nRb1 b1 n1 10k\nR12 n1 vout 10k\nRb2 b2 vout 10k"
+    },
+    "expect": "V(vout)"
+   }
+  ]
+ },
+ "elec_009": {
+  "golden": {
+   "netlist": "V1 vin 0 DC 15\nRsense vin top 1\nR1 top vout 150\nIload vout 0 DC 40m"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 15\nRsense vin top 1\nR1 top vout 100\nR2 vout 0 200\nIload vout 0 DC 40m"
+    },
+    "expect": "V(vout)"
+   }
+  ]
+ },
+ "elec_010": {
+  "golden": {
+   "netlist": "V1 vin 0 DC 24\nRfeed vin bus 2\nR1 bus l1 0.01\nR2 bus l2 0.01\nR3 bus l3 3.3\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 24\nRfeed vin bus 2\nR1 bus l1 0.01\nR2 bus l2 0.01\nR3 bus l3 0.01\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50"
+    },
+    "expect": "V(l3)"
+   }
+  ]
+ },
+ "elec_011": {
+  "golden": {
+   "netlist": "V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 14900\nR2 vref 0 10k\nRload vref 0 10k"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 15000\nR2 vref 0 10k\nRload vref 0 10k"
+    },
+    "expect": "V(vref)"
+   },
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 30k\nR2 vref 0 10k\nRload vref 0 10k"
+    },
+    "expect": "V(vref)"
+   }
+  ]
+ },
+ "elec_012": {
+  "golden": {
+   "netlist": "V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nR12 remote v12 174\nR5 remote v5 418\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m"
+  },
+  "broken": [
+   {
+    "output": {
+     "netlist": "V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nR12 remote v12 180\nR5 remote v5 430\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m"
+    },
+    "expect": "V(v12)"
+   }
+  ]
+ },
+ "comb_001": {
+  "golden": {
+   "placements": [
+    {
+     "id": "psu",
+     "position": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "load",
+     "position": [
+      70,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "fan",
+     "position": [
+      0,
+      100,
+      0
+     ]
+    }
+   ],
+   "netlist": "V1 psu_out 0 DC 12\nRload load_in 0 10"
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "psu",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "load",
+       "position": [
+        250,
+        100,
+        0
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        0,
+        100,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 psu_out 0 DC 12\nRload load_in 0 10"
+    },
+    "expect": "V(load_in)"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "psu",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "load",
+       "position": [
+        250,
+        100,
+        0
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        0,
+        100,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 psu_out 0 DC 12\nRload load_in 0 10\nRcheat psu_out load_in 0.0001"
+    },
+    "expect": "directly"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "psu",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "load",
+       "position": [
+        70,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        80,
+        50,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 psu_out 0 DC 12\nRload load_in 0 10"
+    },
+    "expect": "clearance"
+   }
+  ]
+ },
+ "comb_002": {
+  "golden": {
+   "placements": [
+    {
+     "id": "psu",
+     "position": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "load_a",
+     "position": [
+      70,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "load_b",
+     "position": [
+      0,
+      60,
+      0
+     ]
+    },
+    {
+     "id": "fan",
+     "position": [
+      200,
+      0,
+      0
+     ]
+    }
+   ],
+   "netlist": "V1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20"
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "psu",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "load_a",
+       "position": [
+        200,
+        100,
+        0
+       ]
+      },
+      {
+       "id": "load_b",
+       "position": [
+        0,
+        60,
+        0
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        100,
+        150,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20"
+    },
+    "expect": "V(la_in)"
+   }
+  ]
+ },
+ "comb_003": {
+  "golden": {
+   "placements": [
+    {
+     "id": "psu",
+     "position": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "node_a",
+     "position": [
+      60,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "node_b",
+     "position": [
+      100,
+      0,
+      0
+     ]
+    }
+   ],
+   "netlist": "V1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30"
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "psu",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "node_a",
+       "position": [
+        60,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "node_b",
+       "position": [
+        250,
+        60,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30"
+    },
+    "expect": "V(b_in)"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "psu",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "node_a",
+       "position": [
+        60,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "node_b",
+       "position": [
+        140,
+        40,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30"
+    },
+    "expect": "keep-out"
+   }
+  ]
+ },
+ "comb_004": {
+  "golden": {
+   "placements": [
+    {
+     "id": "psu",
+     "position": [
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "load",
+     "position": [
+      110,
+      0,
+      0
+     ]
+    },
+    {
+     "id": "fan",
+     "position": [
+      110,
+      50,
+      0
+     ]
+    }
+   ],
+   "netlist": "V1 psu_out 0 DC 12\nRload load_in 0 6"
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "psu",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "load",
+       "position": [
+        150,
+        40,
+        0
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        150,
+        0,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 psu_out 0 DC 12\nRload load_in 0 6"
+    },
+    "expect": "V(load_in)"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "psu",
+       "position": [
+        0,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "load",
+       "position": [
+        60,
+        0,
+        0
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        60,
+        50,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 psu_out 0 DC 12\nRload load_in 0 6"
+    },
+    "expect": "clearance"
+   }
+  ]
+ },
+ "comb_005": {
+  "golden": {
+   "placements": [
+    {
+     "id": "jack",
+     "position": [
+      0,
+      40,
+      0
+     ]
+    },
+    {
+     "id": "reg",
+     "position": [
+      15,
+      32,
+      0
+     ]
+    },
+    {
+     "id": "mcu",
+     "position": [
+      80,
+      30,
+      0
+     ]
+    }
+   ],
+   "netlist": "V1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m"
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "jack",
+       "position": [
+        0,
+        40,
+        0
+       ]
+      },
+      {
+       "id": "reg",
+       "position": [
+        60,
+        40,
+        0
+       ]
+      },
+      {
+       "id": "mcu",
+       "position": [
+        100,
+        30,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m"
+    },
+    "expect": "V(reg_in)"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "jack",
+       "position": [
+        0,
+        40,
+        0
+       ]
+      },
+      {
+       "id": "reg",
+       "position": [
+        15,
+        32,
+        0
+       ]
+      },
+      {
+       "id": "mcu",
+       "position": [
+        60,
+        30,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m"
+    },
+    "expect": "clearance"
+   }
+  ]
+ },
+ "comb_006": {
+  "golden": {
+   "placements": [
+    {
+     "id": "dc_in",
+     "position": [
+      0,
+      90,
+      0
+     ]
+    },
+    {
+     "id": "psu_board",
+     "position": [
+      20,
+      70,
+      0
+     ]
+    },
+    {
+     "id": "motor",
+     "position": [
+      110,
+      70,
+      0
+     ]
+    },
+    {
+     "id": "ctrl",
+     "position": [
+      200,
+      150,
+      0
+     ]
+    },
+    {
+     "id": "sensor",
+     "position": [
+      240,
+      120,
+      0
+     ]
+    },
+    {
+     "id": "fan",
+     "position": [
+      110,
+      25,
+      0
+     ]
+    }
+   ],
+   "netlist": "V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60"
+  },
+  "broken": [
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "dc_in",
+       "position": [
+        0,
+        90,
+        0
+       ]
+      },
+      {
+       "id": "psu_board",
+       "position": [
+        20,
+        70,
+        0
+       ]
+      },
+      {
+       "id": "motor",
+       "position": [
+        220,
+        20,
+        0
+       ]
+      },
+      {
+       "id": "ctrl",
+       "position": [
+        200,
+        150,
+        0
+       ]
+      },
+      {
+       "id": "sensor",
+       "position": [
+        240,
+        120,
+        0
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        220,
+        75,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60"
+    },
+    "expect": "V(m_in)"
+   },
+   {
+    "output": {
+     "placements": [
+      {
+       "id": "dc_in",
+       "position": [
+        0,
+        90,
+        0
+       ]
+      },
+      {
+       "id": "psu_board",
+       "position": [
+        20,
+        70,
+        0
+       ]
+      },
+      {
+       "id": "motor",
+       "position": [
+        110,
+        70,
+        0
+       ]
+      },
+      {
+       "id": "ctrl",
+       "position": [
+        170,
+        70,
+        0
+       ]
+      },
+      {
+       "id": "sensor",
+       "position": [
+        240,
+        120,
+        0
+       ]
+      },
+      {
+       "id": "fan",
+       "position": [
+        110,
+        25,
+        0
+       ]
+      }
+     ],
+     "netlist": "V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60"
+    },
+    "expect": "clearance"
+   }
+  ]
+ }
+}

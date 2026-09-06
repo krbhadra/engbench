@@ -1,0 +1,56 @@
+{
+  "id": "mech_003",
+  "domain": "mechanical",
+  "title": "Pinwheel tiling",
+  "description": "A 100x100x30mm tray must hold five modules: a (60x40x25mm), b (40x60x25mm), c (60x40x25mm), d (40x60x25mm), e (20x20x10mm). Nothing may overlap and everything must be fully inside the tray. Modules cannot be rotated: the sizes are [x,y,z] as given. Return the min-corner [x,y,z] of each module in millimeters.",
+  "enclosure": {
+    "size": [
+      100,
+      100,
+      30
+    ]
+  },
+  "components": [
+    {
+      "id": "a",
+      "size": [
+        60,
+        40,
+        25
+      ]
+    },
+    {
+      "id": "b",
+      "size": [
+        40,
+        60,
+        25
+      ]
+    },
+    {
+      "id": "c",
+      "size": [
+        60,
+        40,
+        25
+      ]
+    },
+    {
+      "id": "d",
+      "size": [
+        40,
+        60,
+        25
+      ]
+    },
+    {
+      "id": "e",
+      "size": [
+        20,
+        20,
+        10
+      ]
+    }
+  ],
+  "min_clearance": []
+}

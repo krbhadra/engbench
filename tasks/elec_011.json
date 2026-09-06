@@ -1,0 +1,48 @@
+{
+  "id": "elec_011",
+  "domain": "electrical",
+  "title": "Precision reference",
+  "description": "From a 10V supply, produce a 2.500V +/-0.2% reference at node 'vref' driving a fixed 10k load. Required exactly: 'V1 vin 0 DC 10', a 100 ohm sense resistor 'Rsense vin top 100', and 'Rload vref 0 10k'. Total supply current must not exceed 1.5mA (drop across Rsense at most 0.15V). Build the divider from 'top' to 'vref' to ground. Return a valid SPICE netlist.",
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "vin",
+        "0"
+      ],
+      "value": 10
+    },
+    {
+      "name": "Rsense",
+      "nodes": [
+        "vin",
+        "top"
+      ],
+      "value": 100
+    },
+    {
+      "name": "Rload",
+      "nodes": [
+        "vref",
+        "0"
+      ],
+      "value": "10k"
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "vref",
+      "min": 2.495,
+      "max": 2.505
+    }
+  ],
+  "drop_checks": [
+    {
+      "between": [
+        "vin",
+        "top"
+      ],
+      "max_drop": 0.15
+    }
+  ]
+}

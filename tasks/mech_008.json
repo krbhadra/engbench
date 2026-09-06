@@ -1,0 +1,89 @@
+{
+  "id": "mech_008",
+  "domain": "mechanical",
+  "title": "Board stack-up",
+  "description": "A 140x120x80mm enclosure. The main pcb (120x100x10mm) is already mounted at [10,10,0] and must stay there. Mount heatsink (40x40x30mm) and battery (60x40x20mm) directly on the pcb: each must touch it (surface gap 0mm). The fan (40x40x15mm) must sit within 5mm of the heatsink. The battery must keep at least 25mm clearance from the heatsink. No overlaps, no rotation, everything inside. Return the min-corner [x,y,z] of all four components in millimeters, including the pcb at its fixed position.",
+  "enclosure": {
+    "size": [
+      140,
+      120,
+      80
+    ]
+  },
+  "components": [
+    {
+      "id": "pcb",
+      "size": [
+        120,
+        100,
+        10
+      ]
+    },
+    {
+      "id": "heatsink",
+      "size": [
+        40,
+        40,
+        30
+      ]
+    },
+    {
+      "id": "battery",
+      "size": [
+        60,
+        40,
+        20
+      ]
+    },
+    {
+      "id": "fan",
+      "size": [
+        40,
+        40,
+        15
+      ]
+    }
+  ],
+  "fixed": [
+    {
+      "id": "pcb",
+      "position": [
+        10,
+        10,
+        0
+      ]
+    }
+  ],
+  "max_distance": [
+    {
+      "pair": [
+        "heatsink",
+        "pcb"
+      ],
+      "distance": 0
+    },
+    {
+      "pair": [
+        "battery",
+        "pcb"
+      ],
+      "distance": 0
+    },
+    {
+      "pair": [
+        "fan",
+        "heatsink"
+      ],
+      "distance": 5
+    }
+  ],
+  "min_clearance": [
+    {
+      "pair": [
+        "heatsink",
+        "battery"
+      ],
+      "distance": 25
+    }
+  ]
+}

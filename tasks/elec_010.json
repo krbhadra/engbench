@@ -1,0 +1,72 @@
+{
+  "id": "elec_010",
+  "domain": "electrical",
+  "title": "Multi-load distribution with a ceiling",
+  "description": "A 24V supply feeds a bus through a shared feeder; three loads hang off the bus. Required exactly: 'V1 vin 0 DC 24', 'Rfeed vin bus 2', 'Rl1 l1 0 100', 'Rl2 l2 0 50', 'Rl3 l3 0 50'. Connect the bus to each load node through a resistor of your choice (use 0.01 ohm for a direct wire). Constraints: V(l1) >= 20V, V(l2) >= 20V, V(l3) between 20V and 21V (it is a 21V-max part), and total supply current at most 1.2A (drop across Rfeed at most 2.4V). Return a valid SPICE netlist.",
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "vin",
+        "0"
+      ],
+      "value": 24
+    },
+    {
+      "name": "Rfeed",
+      "nodes": [
+        "vin",
+        "bus"
+      ],
+      "value": 2
+    },
+    {
+      "name": "Rl1",
+      "nodes": [
+        "l1",
+        "0"
+      ],
+      "value": 100
+    },
+    {
+      "name": "Rl2",
+      "nodes": [
+        "l2",
+        "0"
+      ],
+      "value": 50
+    },
+    {
+      "name": "Rl3",
+      "nodes": [
+        "l3",
+        "0"
+      ],
+      "value": 50
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "l1",
+      "min": 20
+    },
+    {
+      "node": "l2",
+      "min": 20
+    },
+    {
+      "node": "l3",
+      "min": 20,
+      "max": 21
+    }
+  ],
+  "drop_checks": [
+    {
+      "between": [
+        "vin",
+        "bus"
+      ],
+      "max_drop": 2.4
+    }
+  ]
+}

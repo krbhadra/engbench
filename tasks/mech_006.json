@@ -1,0 +1,90 @@
+{
+  "id": "mech_006",
+  "domain": "mechanical",
+  "title": "Fixed connectors and cable budgets",
+  "description": "A 200x120x50mm enclosure has two connectors already mounted on the walls and they must stay exactly where they are: usb_conn (20x15x10mm) at [0,50,0] and pwr_conn (20x15x10mm) at [180,10,0]. Place mcu (50x50x15mm) and battery (100x60x20mm). The USB ribbon is short: the surface gap between usb_conn and mcu must be at most 30mm. The power lead is shorter: the gap between pwr_conn and battery must be at most 20mm. The battery must keep at least 10mm clearance from the mcu. No overlaps, no rotation, everything inside. Return the min-corner [x,y,z] of all four components in millimeters, including the fixed connectors at their given positions.",
+  "enclosure": {
+    "size": [
+      200,
+      120,
+      50
+    ]
+  },
+  "components": [
+    {
+      "id": "usb_conn",
+      "size": [
+        20,
+        15,
+        10
+      ]
+    },
+    {
+      "id": "pwr_conn",
+      "size": [
+        20,
+        15,
+        10
+      ]
+    },
+    {
+      "id": "mcu",
+      "size": [
+        50,
+        50,
+        15
+      ]
+    },
+    {
+      "id": "battery",
+      "size": [
+        100,
+        60,
+        20
+      ]
+    }
+  ],
+  "fixed": [
+    {
+      "id": "usb_conn",
+      "position": [
+        0,
+        50,
+        0
+      ]
+    },
+    {
+      "id": "pwr_conn",
+      "position": [
+        180,
+        10,
+        0
+      ]
+    }
+  ],
+  "max_distance": [
+    {
+      "pair": [
+        "usb_conn",
+        "mcu"
+      ],
+      "distance": 30
+    },
+    {
+      "pair": [
+        "pwr_conn",
+        "battery"
+      ],
+      "distance": 20
+    }
+  ],
+  "min_clearance": [
+    {
+      "pair": [
+        "battery",
+        "mcu"
+      ],
+      "distance": 10
+    }
+  ]
+}

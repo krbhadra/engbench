@@ -1,0 +1,56 @@
+{
+  "id": "mech_004",
+  "domain": "mechanical",
+  "title": "Forced stacking",
+  "description": "A 100x100x60mm enclosure must hold three identical slabs s1, s2, s3 (each 60x60x20mm) and two towers t1, t2 (each 30x30x50mm). No overlaps, everything fully inside, no rotation. Return the min-corner [x,y,z] of each component in millimeters.",
+  "enclosure": {
+    "size": [
+      100,
+      100,
+      60
+    ]
+  },
+  "components": [
+    {
+      "id": "s1",
+      "size": [
+        60,
+        60,
+        20
+      ]
+    },
+    {
+      "id": "s2",
+      "size": [
+        60,
+        60,
+        20
+      ]
+    },
+    {
+      "id": "s3",
+      "size": [
+        60,
+        60,
+        20
+      ]
+    },
+    {
+      "id": "t1",
+      "size": [
+        30,
+        30,
+        50
+      ]
+    },
+    {
+      "id": "t2",
+      "size": [
+        30,
+        30,
+        50
+      ]
+    }
+  ],
+  "min_clearance": []
+}

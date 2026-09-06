@@ -1,0 +1,45 @@
+{
+  "id": "elec_005",
+  "domain": "electrical",
+  "title": "Two loaded rails",
+  "description": "From a 12V supply ('V1 vin 0 DC 12', required exactly) derive two rails with resistor dividers: node 'r5' at 5.0V +/-5% driving a fixed load 'Rl5 r5 0 100', and node 'r33' at 3.3V +/-5% driving a fixed load 'Rl33 r33 0 100'. Both load lines must appear in the netlist exactly as written. Return a valid SPICE netlist.",
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "vin",
+        "0"
+      ],
+      "value": 12
+    },
+    {
+      "name": "Rl5",
+      "nodes": [
+        "r5",
+        "0"
+      ],
+      "value": 100
+    },
+    {
+      "name": "Rl33",
+      "nodes": [
+        "r33",
+        "0"
+      ],
+      "value": 100
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "r5",
+      "min": 4.75,
+      "max": 5.25
+    },
+    {
+      "node": "r33",
+      "min": 3.135,
+      "max": 3.465
+    }
+  ],
+  "drop_checks": []
+}

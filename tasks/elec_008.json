@@ -1,0 +1,40 @@
+{
+  "id": "elec_008",
+  "domain": "electrical",
+  "title": "3-bit R-2R ladder",
+  "description": "Build a 3-bit R-2R resistor ladder DAC. The bit inputs are fixed voltage sources that must appear exactly: 'Vb2 b2 0 DC 5' (MSB), 'Vb1 b1 0 DC 0', 'Vb0 b0 0 DC 5' (LSB), i.e. the input code is 101. The ladder output node must be named 'vout' and must equal 5V * 5/8 = 3.125V +/-1%. Use only resistors besides the three sources. Return a valid SPICE netlist.",
+  "required_elements": [
+    {
+      "name": "Vb2",
+      "nodes": [
+        "b2",
+        "0"
+      ],
+      "value": 5
+    },
+    {
+      "name": "Vb1",
+      "nodes": [
+        "b1",
+        "0"
+      ],
+      "value": 0
+    },
+    {
+      "name": "Vb0",
+      "nodes": [
+        "b0",
+        "0"
+      ],
+      "value": 5
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "vout",
+      "min": 3.094,
+      "max": 3.156
+    }
+  ],
+  "drop_checks": []
+}

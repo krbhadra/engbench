@@ -1,0 +1,48 @@
+{
+  "id": "elec_009",
+  "domain": "electrical",
+  "title": "Dropper for a constant-current load",
+  "description": "A 15V supply must power a load that draws a constant 40mA, modeled as a current source that must appear exactly as 'Iload vout 0 DC 40m'. The netlist must also contain exactly 'V1 vin 0 DC 15' and a 1 ohm sense resistor 'Rsense vin top 1'. Design the network from 'top' to 'vout' so that 'vout' is 9.0V +/-5% and the total supply current (drop across Rsense) does not exceed 0.060V. Return a valid SPICE netlist.",
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "vin",
+        "0"
+      ],
+      "value": 15
+    },
+    {
+      "name": "Rsense",
+      "nodes": [
+        "vin",
+        "top"
+      ],
+      "value": 1
+    },
+    {
+      "name": "Iload",
+      "nodes": [
+        "vout",
+        "0"
+      ],
+      "value": "40m"
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "vout",
+      "min": 8.55,
+      "max": 9.45
+    }
+  ],
+  "drop_checks": [
+    {
+      "between": [
+        "vin",
+        "top"
+      ],
+      "max_drop": 0.06
+    }
+  ]
+}

@@ -2,11 +2,31 @@
   "id": "elec_001",
   "domain": "electrical",
   "title": "Voltage divider within drop limit",
-  "description": "Design a resistor divider from a 12V DC source (node 'vin') down to an output node 'vout' referenced to ground (node '0'). The output must sit between 5V and 7V, and the drop from vin to vout must not exceed 7V. Return a valid SPICE netlist implementing this using a voltage source and resistors.",
+  "description": "Design a resistor divider from a 12V DC source down to an output node 'vout' referenced to ground. The netlist must contain exactly 'V1 vin 0 DC 12' as the source. 'vout' must sit between 5V and 7V, and the drop from 'vin' to 'vout' must not exceed 7V. Return a valid SPICE netlist using only that source and resistors.",
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "vin",
+        "0"
+      ],
+      "value": 12
+    }
+  ],
   "voltage_checks": [
-    { "node": "vout", "min": 5, "max": 7 }
+    {
+      "node": "vout",
+      "min": 5,
+      "max": 7
+    }
   ],
   "drop_checks": [
-    { "between": ["vin", "vout"], "max_drop": 7 }
+    {
+      "between": [
+        "vin",
+        "vout"
+      ],
+      "max_drop": 7
+    }
   ]
 }

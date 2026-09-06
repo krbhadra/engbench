@@ -1,0 +1,265 @@
+{
+  "id": "comb_006",
+  "domain": "combined",
+  "title": "Full system: layout and power tree",
+  "description": "A 300x200x60mm enclosure. Fixed: dc_in (20x15x12mm) at [0,90,0]. Keep-outs: 10x10mm standoffs at all four corners (x 0-10 / y 0-10, x 290-300 / y 0-10, x 0-10 / y 190-200, x 290-300 / y 190-200, full height) and a vent at x 280-300, y 50-150, full height. Place psu_board (80x60x25mm), motor (50x50x40mm), ctrl (50x50x15mm), sensor (15x15x8mm), fan (40x40x15mm). Mechanical: motor-ctrl at least 40mm apart; sensor within 30mm of ctrl; sensor at least 60mm from motor and at least 30mm from psu_board; fan within 5mm of motor. Electrical, required exactly: 'V1 dc_in 0 DC 24' (input), 'Rpsu psu_in 0 24' (psu board input load), 'Vout psu_out 0 DC 12' (psu board output, ideal), 'Rm m_in 0 6' (motor), 'Rc c_in 0 60' (controller). Wires: dc_in -> psu_board (dc_in -> psu_in), psu_board -> motor (psu_out -> m_in), psu_board -> ctrl (psu_out -> c_in). Constraints: V(psu_in) >= 23.5V, V(m_in) >= 11.4V, V(c_in) >= 11.8V. Return {\"placements\": [...min-corner [x,y,z] per component...], \"netlist\": \"...\"}. Wire resistance is 0.003 ohm per mm of Manhattan (axis-aligned) distance between component centers; the grader computes it from your placements and inserts it between the named nodes itself. Do NOT connect those node pairs directly in your netlist.",
+  "enclosure": {
+    "size": [
+      300,
+      200,
+      60
+    ]
+  },
+  "components": [
+    {
+      "id": "dc_in",
+      "size": [
+        20,
+        15,
+        12
+      ]
+    },
+    {
+      "id": "psu_board",
+      "size": [
+        80,
+        60,
+        25
+      ]
+    },
+    {
+      "id": "motor",
+      "size": [
+        50,
+        50,
+        40
+      ]
+    },
+    {
+      "id": "ctrl",
+      "size": [
+        50,
+        50,
+        15
+      ]
+    },
+    {
+      "id": "sensor",
+      "size": [
+        15,
+        15,
+        8
+      ]
+    },
+    {
+      "id": "fan",
+      "size": [
+        40,
+        40,
+        15
+      ]
+    }
+  ],
+  "fixed": [
+    {
+      "id": "dc_in",
+      "position": [
+        0,
+        90,
+        0
+      ]
+    }
+  ],
+  "keep_out": [
+    {
+      "id": "standoff_1",
+      "min": [
+        0,
+        0,
+        0
+      ],
+      "max": [
+        10,
+        10,
+        60
+      ]
+    },
+    {
+      "id": "standoff_2",
+      "min": [
+        290,
+        0,
+        0
+      ],
+      "max": [
+        300,
+        10,
+        60
+      ]
+    },
+    {
+      "id": "standoff_3",
+      "min": [
+        0,
+        190,
+        0
+      ],
+      "max": [
+        10,
+        200,
+        60
+      ]
+    },
+    {
+      "id": "standoff_4",
+      "min": [
+        290,
+        190,
+        0
+      ],
+      "max": [
+        300,
+        200,
+        60
+      ]
+    },
+    {
+      "id": "vent",
+      "min": [
+        280,
+        50,
+        0
+      ],
+      "max": [
+        300,
+        150,
+        60
+      ]
+    }
+  ],
+  "min_clearance": [
+    {
+      "pair": [
+        "motor",
+        "ctrl"
+      ],
+      "distance": 40
+    },
+    {
+      "pair": [
+        "sensor",
+        "motor"
+      ],
+      "distance": 60
+    },
+    {
+      "pair": [
+        "sensor",
+        "psu_board"
+      ],
+      "distance": 30
+    }
+  ],
+  "max_distance": [
+    {
+      "pair": [
+        "sensor",
+        "ctrl"
+      ],
+      "distance": 30
+    },
+    {
+      "pair": [
+        "fan",
+        "motor"
+      ],
+      "distance": 5
+    }
+  ],
+  "wires": [
+    {
+      "from": "dc_in",
+      "to": "psu_board",
+      "nodes": [
+        "dc_in",
+        "psu_in"
+      ],
+      "ohms_per_mm": 0.003
+    },
+    {
+      "from": "psu_board",
+      "to": "motor",
+      "nodes": [
+        "psu_out",
+        "m_in"
+      ],
+      "ohms_per_mm": 0.003
+    },
+    {
+      "from": "psu_board",
+      "to": "ctrl",
+      "nodes": [
+        "psu_out",
+        "c_in"
+      ],
+      "ohms_per_mm": 0.003
+    }
+  ],
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "dc_in",
+        "0"
+      ],
+      "value": 24
+    },
+    {
+      "name": "Rpsu",
+      "nodes": [
+        "psu_in",
+        "0"
+      ],
+      "value": 24
+    },
+    {
+      "name": "Vout",
+      "nodes": [
+        "psu_out",
+        "0"
+      ],
+      "value": 12
+    },
+    {
+      "name": "Rm",
+      "nodes": [
+        "m_in",
+        "0"
+      ],
+      "value": 6
+    },
+    {
+      "name": "Rc",
+      "nodes": [
+        "c_in",
+        "0"
+      ],
+      "value": 60
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "psu_in",
+      "min": 23.5
+    },
+    {
+      "node": "m_in",
+      "min": 11.4
+    },
+    {
+      "node": "c_in",
+      "min": 11.8
+    }
+  ],
+  "drop_checks": []
+}

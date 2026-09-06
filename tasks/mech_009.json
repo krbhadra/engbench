@@ -1,0 +1,48 @@
+{
+  "id": "mech_009",
+  "domain": "mechanical",
+  "title": "Exact volumetric fill",
+  "description": "A 100x60x60mm cavity must be completely filled by four blocks: A (50x60x60mm), B (50x30x60mm), C (50x30x30mm), D (50x30x30mm). Their volumes sum exactly to the cavity, so any valid answer leaves no gaps. No overlaps, no rotation, everything inside. Return the min-corner [x,y,z] of each block in millimeters.",
+  "enclosure": {
+    "size": [
+      100,
+      60,
+      60
+    ]
+  },
+  "components": [
+    {
+      "id": "A",
+      "size": [
+        50,
+        60,
+        60
+      ]
+    },
+    {
+      "id": "B",
+      "size": [
+        50,
+        30,
+        60
+      ]
+    },
+    {
+      "id": "C",
+      "size": [
+        50,
+        30,
+        30
+      ]
+    },
+    {
+      "id": "D",
+      "size": [
+        50,
+        30,
+        30
+      ]
+    }
+  ],
+  "min_clearance": []
+}

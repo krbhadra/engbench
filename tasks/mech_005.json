@@ -1,0 +1,76 @@
+{
+  "id": "mech_005",
+  "domain": "mechanical",
+  "title": "Keep-out zones",
+  "description": "A 150x100x40mm enclosure has two keep-out regions no component may intersect: a mounting boss occupying x 65-85, y 40-60, full height; and a cable channel along the front edge occupying x 0-150, y 0-10, full height. Place m1 (60x40x30mm), m2 (60x40x30mm), m3 (40x30x20mm), m4 (40x30x20mm) fully inside, no overlaps, no rotation, avoiding both keep-outs. Return the min-corner [x,y,z] of each in millimeters.",
+  "enclosure": {
+    "size": [
+      150,
+      100,
+      40
+    ]
+  },
+  "components": [
+    {
+      "id": "m1",
+      "size": [
+        60,
+        40,
+        30
+      ]
+    },
+    {
+      "id": "m2",
+      "size": [
+        60,
+        40,
+        30
+      ]
+    },
+    {
+      "id": "m3",
+      "size": [
+        40,
+        30,
+        20
+      ]
+    },
+    {
+      "id": "m4",
+      "size": [
+        40,
+        30,
+        20
+      ]
+    }
+  ],
+  "keep_out": [
+    {
+      "id": "boss",
+      "min": [
+        65,
+        40,
+        0
+      ],
+      "max": [
+        85,
+        60,
+        40
+      ]
+    },
+    {
+      "id": "cable_channel",
+      "min": [
+        0,
+        0,
+        0
+      ],
+      "max": [
+        150,
+        10,
+        40
+      ]
+    }
+  ],
+  "min_clearance": []
+}

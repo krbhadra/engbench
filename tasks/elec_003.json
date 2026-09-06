@@ -1,0 +1,43 @@
+{
+  "id": "elec_003",
+  "domain": "electrical",
+  "title": "LED current limiting",
+  "description": "Drive an LED from a 9V supply. The netlist must contain exactly: 'V1 vin 0 DC 9' (supply), 'Rsense vin sense 1' (a 1 ohm current-sense resistor in series with the supply), and 'Vled led_a 0 DC 2' (the LED modeled as a fixed 2V forward drop from node 'led_a' to ground). Add a current-limiting resistor from 'sense' to 'led_a' so the LED current is between 15mA and 20mA, i.e. the drop across Rsense is between 0.015V and 0.020V. Return a valid SPICE netlist.",
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "vin",
+        "0"
+      ],
+      "value": 9
+    },
+    {
+      "name": "Rsense",
+      "nodes": [
+        "vin",
+        "sense"
+      ],
+      "value": 1
+    },
+    {
+      "name": "Vled",
+      "nodes": [
+        "led_a",
+        "0"
+      ],
+      "value": 2
+    }
+  ],
+  "voltage_checks": [],
+  "drop_checks": [
+    {
+      "between": [
+        "vin",
+        "sense"
+      ],
+      "min_drop": 0.015,
+      "max_drop": 0.02
+    }
+  ]
+}

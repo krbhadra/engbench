@@ -1,0 +1,129 @@
+{
+  "id": "mech_010",
+  "domain": "mechanical",
+  "title": "Under-lid display with standoffs",
+  "description": "A 160x100x40mm handheld enclosure. The display (100x60x8mm) is glued under the lid at [30,0,32] and must stay there. Four standoffs (10x10mm, full height) occupy the corners: x 0-10 / y 0-10, x 150-160 / y 0-10, x 0-10 / y 90-100, x 150-160 / y 90-100; nothing may intersect them. Place pcb (100x60x12mm), battery (60x40x15mm) and speaker (30x30x20mm). The display ribbon is short: the surface gap between pcb and display must be at most 5mm. The speaker must be at least 10mm from the battery. No overlaps, no rotation, everything inside. Return the min-corner [x,y,z] of all four components in millimeters, including the display at its fixed position.",
+  "enclosure": {
+    "size": [
+      160,
+      100,
+      40
+    ]
+  },
+  "components": [
+    {
+      "id": "display",
+      "size": [
+        100,
+        60,
+        8
+      ]
+    },
+    {
+      "id": "pcb",
+      "size": [
+        100,
+        60,
+        12
+      ]
+    },
+    {
+      "id": "battery",
+      "size": [
+        60,
+        40,
+        15
+      ]
+    },
+    {
+      "id": "speaker",
+      "size": [
+        30,
+        30,
+        20
+      ]
+    }
+  ],
+  "fixed": [
+    {
+      "id": "display",
+      "position": [
+        30,
+        0,
+        32
+      ]
+    }
+  ],
+  "keep_out": [
+    {
+      "id": "standoff_1",
+      "min": [
+        0,
+        0,
+        0
+      ],
+      "max": [
+        10,
+        10,
+        40
+      ]
+    },
+    {
+      "id": "standoff_2",
+      "min": [
+        150,
+        0,
+        0
+      ],
+      "max": [
+        160,
+        10,
+        40
+      ]
+    },
+    {
+      "id": "standoff_3",
+      "min": [
+        0,
+        90,
+        0
+      ],
+      "max": [
+        10,
+        100,
+        40
+      ]
+    },
+    {
+      "id": "standoff_4",
+      "min": [
+        150,
+        90,
+        0
+      ],
+      "max": [
+        160,
+        100,
+        40
+      ]
+    }
+  ],
+  "max_distance": [
+    {
+      "pair": [
+        "pcb",
+        "display"
+      ],
+      "distance": 5
+    }
+  ],
+  "min_clearance": [
+    {
+      "pair": [
+        "speaker",
+        "battery"
+      ],
+      "distance": 10
+    }
+  ]
+}

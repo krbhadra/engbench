@@ -2,14 +2,47 @@
   "id": "mech_002",
   "domain": "mechanical",
   "title": "Enclosure fit with thermal clearance",
-  "description": "You have a 200x100x60mm enclosure. Place three components (comp_x: 40x40x20mm, comp_y: 40x40x20mm, comp_z: 20x20x10mm) fully inside the enclosure with no overlap. comp_x and comp_y both run hot and must be kept at least 15mm apart. Return positions as the min-corner [x,y,z] of each box in millimeters.",
-  "enclosure": { "size": [200, 100, 60] },
+  "description": "You have a 200x100x60mm enclosure. Place three components (comp_x: 40x40x20mm, comp_y: 40x40x20mm, comp_z: 20x20x10mm) fully inside the enclosure with no overlap. comp_x and comp_y both run hot and must be kept at least 15mm apart (shortest surface-to-surface gap). Return positions as the min-corner [x,y,z] of each box in millimeters.",
+  "enclosure": {
+    "size": [
+      200,
+      100,
+      60
+    ]
+  },
   "components": [
-    { "id": "comp_x", "size": [40, 40, 20] },
-    { "id": "comp_y", "size": [40, 40, 20] },
-    { "id": "comp_z", "size": [20, 20, 10] }
+    {
+      "id": "comp_x",
+      "size": [
+        40,
+        40,
+        20
+      ]
+    },
+    {
+      "id": "comp_y",
+      "size": [
+        40,
+        40,
+        20
+      ]
+    },
+    {
+      "id": "comp_z",
+      "size": [
+        20,
+        20,
+        10
+      ]
+    }
   ],
   "min_clearance": [
-    { "pair": ["comp_x", "comp_y"], "distance": 15 }
+    {
+      "pair": [
+        "comp_x",
+        "comp_y"
+      ],
+      "distance": 15
+    }
   ]
 }

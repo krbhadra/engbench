@@ -1,0 +1,150 @@
+{
+  "id": "mech_011",
+  "domain": "mechanical",
+  "title": "Module rack with wall clearance",
+  "description": "A 200x60x60mm rack holds six identical modules m1..m6 (each 30x50x50mm). Nothing may touch the floor or the two end walls: keep-out slabs occupy z 0-5 (floor), x 0-5 (left wall) and x 195-200 (right wall), each spanning the full rack. Consecutive modules (m1-m2, m2-m3, m3-m4, m4-m5, m5-m6) must be at least 2mm apart for airflow. The backplane cable limits the surface gap between m1 and m6 to at most 140mm. No overlaps, no rotation, everything inside. Return the min-corner [x,y,z] of each module in millimeters.",
+  "enclosure": {
+    "size": [
+      200,
+      60,
+      60
+    ]
+  },
+  "components": [
+    {
+      "id": "m1",
+      "size": [
+        30,
+        50,
+        50
+      ]
+    },
+    {
+      "id": "m2",
+      "size": [
+        30,
+        50,
+        50
+      ]
+    },
+    {
+      "id": "m3",
+      "size": [
+        30,
+        50,
+        50
+      ]
+    },
+    {
+      "id": "m4",
+      "size": [
+        30,
+        50,
+        50
+      ]
+    },
+    {
+      "id": "m5",
+      "size": [
+        30,
+        50,
+        50
+      ]
+    },
+    {
+      "id": "m6",
+      "size": [
+        30,
+        50,
+        50
+      ]
+    }
+  ],
+  "keep_out": [
+    {
+      "id": "floor",
+      "min": [
+        0,
+        0,
+        0
+      ],
+      "max": [
+        200,
+        60,
+        5
+      ]
+    },
+    {
+      "id": "left_wall",
+      "min": [
+        0,
+        0,
+        0
+      ],
+      "max": [
+        5,
+        60,
+        60
+      ]
+    },
+    {
+      "id": "right_wall",
+      "min": [
+        195,
+        0,
+        0
+      ],
+      "max": [
+        200,
+        60,
+        60
+      ]
+    }
+  ],
+  "min_clearance": [
+    {
+      "pair": [
+        "m1",
+        "m2"
+      ],
+      "distance": 2
+    },
+    {
+      "pair": [
+        "m2",
+        "m3"
+      ],
+      "distance": 2
+    },
+    {
+      "pair": [
+        "m3",
+        "m4"
+      ],
+      "distance": 2
+    },
+    {
+      "pair": [
+        "m4",
+        "m5"
+      ],
+      "distance": 2
+    },
+    {
+      "pair": [
+        "m5",
+        "m6"
+      ],
+      "distance": 2
+    }
+  ],
+  "max_distance": [
+    {
+      "pair": [
+        "m1",
+        "m6"
+      ],
+      "distance": 140
+    }
+  ]
+}

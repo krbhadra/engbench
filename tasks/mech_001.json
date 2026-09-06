@@ -3,11 +3,38 @@
   "domain": "mechanical",
   "title": "Basic enclosure fit",
   "description": "You have a 200x150x60mm enclosure. Place three components (comp_a: 40x30x20mm, comp_b: 50x20x15mm, comp_c: 30x30x10mm) fully inside the enclosure with no two components overlapping. Return positions as the min-corner [x,y,z] of each box in millimeters.",
-  "enclosure": { "size": [200, 150, 60] },
+  "enclosure": {
+    "size": [
+      200,
+      150,
+      60
+    ]
+  },
   "components": [
-    { "id": "comp_a", "size": [40, 30, 20] },
-    { "id": "comp_b", "size": [50, 20, 15] },
-    { "id": "comp_c", "size": [30, 30, 10] }
+    {
+      "id": "comp_a",
+      "size": [
+        40,
+        30,
+        20
+      ]
+    },
+    {
+      "id": "comp_b",
+      "size": [
+        50,
+        20,
+        15
+      ]
+    },
+    {
+      "id": "comp_c",
+      "size": [
+        30,
+        30,
+        10
+      ]
+    }
   ],
   "min_clearance": []
 }

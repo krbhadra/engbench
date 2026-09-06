@@ -1,0 +1,157 @@
+{
+  "id": "comb_005",
+  "domain": "combined",
+  "title": "Fixed jack, thin wire, cable budget",
+  "description": "A 150x100x40mm enclosure. The DC jack (15x15x10mm) is fixed at [0,40,0]. Four 8x8mm standoffs (full height) occupy the corners: x 0-8 / y 0-8, x 142-150 / y 0-8, x 0-8 / y 92-100, x 142-150 / y 92-100. Place reg (40x30x15mm) and mcu (50x50x10mm). The jack lead is short: surface gap jack-reg at most 20mm. The reg runs hot: keep it at least 20mm from the mcu. Electrically: 'V1 jack_out 0 DC 24' and 'Ireg reg_in 0 DC 400m' (required exactly), one thin wire jack -> reg (jack_out -> reg_in), and V(reg_in) must be at least 23.6V. Return {\"placements\": [...min-corner [x,y,z] per component...], \"netlist\": \"...\"}. Wire resistance is 0.02 ohm per mm of Manhattan (axis-aligned) distance between component centers; the grader computes it from your placements and inserts it between the named nodes itself. Do NOT connect those node pairs directly in your netlist.",
+  "enclosure": {
+    "size": [
+      150,
+      100,
+      40
+    ]
+  },
+  "components": [
+    {
+      "id": "jack",
+      "size": [
+        15,
+        15,
+        10
+      ]
+    },
+    {
+      "id": "reg",
+      "size": [
+        40,
+        30,
+        15
+      ]
+    },
+    {
+      "id": "mcu",
+      "size": [
+        50,
+        50,
+        10
+      ]
+    }
+  ],
+  "fixed": [
+    {
+      "id": "jack",
+      "position": [
+        0,
+        40,
+        0
+      ]
+    }
+  ],
+  "keep_out": [
+    {
+      "id": "standoff_1",
+      "min": [
+        0,
+        0,
+        0
+      ],
+      "max": [
+        8,
+        8,
+        40
+      ]
+    },
+    {
+      "id": "standoff_2",
+      "min": [
+        142,
+        0,
+        0
+      ],
+      "max": [
+        150,
+        8,
+        40
+      ]
+    },
+    {
+      "id": "standoff_3",
+      "min": [
+        0,
+        92,
+        0
+      ],
+      "max": [
+        8,
+        100,
+        40
+      ]
+    },
+    {
+      "id": "standoff_4",
+      "min": [
+        142,
+        92,
+        0
+      ],
+      "max": [
+        150,
+        100,
+        40
+      ]
+    }
+  ],
+  "max_distance": [
+    {
+      "pair": [
+        "jack",
+        "reg"
+      ],
+      "distance": 20
+    }
+  ],
+  "min_clearance": [
+    {
+      "pair": [
+        "reg",
+        "mcu"
+      ],
+      "distance": 20
+    }
+  ],
+  "wires": [
+    {
+      "from": "jack",
+      "to": "reg",
+      "nodes": [
+        "jack_out",
+        "reg_in"
+      ],
+      "ohms_per_mm": 0.02
+    }
+  ],
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "jack_out",
+        "0"
+      ],
+      "value": 24
+    },
+    {
+      "name": "Ireg",
+      "nodes": [
+        "reg_in",
+        "0"
+      ],
+      "value": "400m"
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "reg_in",
+      "min": 23.6
+    }
+  ],
+  "drop_checks": []
+}

@@ -1,0 +1,77 @@
+{
+  "id": "elec_012",
+  "domain": "electrical",
+  "title": "Remote dual-rail power budget",
+  "description": "A 48V supply feeds a remote board over a 3 ohm cable. On the remote board, derive a 12V rail and a 5V rail with series dropper resistors, and also supply a 50mA auxiliary load. Required exactly: 'V1 vin 0 DC 48', 'Rsense vin top 0.5', 'Rwire top remote 3', 'Rl12 v12 0 60', 'Rl5 v5 0 50', 'Iaux remote 0 DC 50m'. Constraints: V(v12) = 12V +/-2%, V(v5) = 5V +/-2%, and total supply current at most 0.4A (drop across Rsense at most 0.2V). Add your dropper resistors from 'remote' to 'v12' and from 'remote' to 'v5'. Return a valid SPICE netlist.",
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "vin",
+        "0"
+      ],
+      "value": 48
+    },
+    {
+      "name": "Rsense",
+      "nodes": [
+        "vin",
+        "top"
+      ],
+      "value": 0.5
+    },
+    {
+      "name": "Rwire",
+      "nodes": [
+        "top",
+        "remote"
+      ],
+      "value": 3
+    },
+    {
+      "name": "Rl12",
+      "nodes": [
+        "v12",
+        "0"
+      ],
+      "value": 60
+    },
+    {
+      "name": "Rl5",
+      "nodes": [
+        "v5",
+        "0"
+      ],
+      "value": 50
+    },
+    {
+      "name": "Iaux",
+      "nodes": [
+        "remote",
+        "0"
+      ],
+      "value": "50m"
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "v12",
+      "min": 11.76,
+      "max": 12.24
+    },
+    {
+      "node": "v5",
+      "min": 4.9,
+      "max": 5.1
+    }
+  ],
+  "drop_checks": [
+    {
+      "between": [
+        "vin",
+        "top"
+      ],
+      "max_drop": 0.2
+    }
+  ]
+}

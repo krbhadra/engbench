@@ -1,0 +1,113 @@
+{
+  "id": "comb_002",
+  "domain": "combined",
+  "title": "Star wiring to two loads",
+  "description": "A 300x200x60mm enclosure holds psu (60x40x30mm), load_a (40x40x20mm), load_b (40x40x20mm) and fan (40x40x20mm). The fan must be at least 30mm clear of load_a. The psu outputs 12V on 'psu_out' ('V1 psu_out 0 DC 12', required exactly). Two wires leave the psu: psu -> load_a (psu_out -> la_in) and psu -> load_b (psu_out -> lb_in). Loads are fixed and must appear exactly: 'Rla la_in 0 8' and 'Rlb lb_in 0 20'. Constraints: V(la_in) >= 11.5V and V(lb_in) >= 11.6V. Return {\"placements\": [...min-corner [x,y,z] per component...], \"netlist\": \"...\"}. Wire resistance is 0.003 ohm per mm of Manhattan (axis-aligned) distance between component centers; the grader computes it from your placements and inserts it between the named nodes itself. Do NOT connect those node pairs directly in your netlist.",
+  "enclosure": {
+    "size": [
+      300,
+      200,
+      60
+    ]
+  },
+  "components": [
+    {
+      "id": "psu",
+      "size": [
+        60,
+        40,
+        30
+      ]
+    },
+    {
+      "id": "load_a",
+      "size": [
+        40,
+        40,
+        20
+      ]
+    },
+    {
+      "id": "load_b",
+      "size": [
+        40,
+        40,
+        20
+      ]
+    },
+    {
+      "id": "fan",
+      "size": [
+        40,
+        40,
+        20
+      ]
+    }
+  ],
+  "min_clearance": [
+    {
+      "pair": [
+        "fan",
+        "load_a"
+      ],
+      "distance": 30
+    }
+  ],
+  "wires": [
+    {
+      "from": "psu",
+      "to": "load_a",
+      "nodes": [
+        "psu_out",
+        "la_in"
+      ],
+      "ohms_per_mm": 0.003
+    },
+    {
+      "from": "psu",
+      "to": "load_b",
+      "nodes": [
+        "psu_out",
+        "lb_in"
+      ],
+      "ohms_per_mm": 0.003
+    }
+  ],
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "psu_out",
+        "0"
+      ],
+      "value": 12
+    },
+    {
+      "name": "Rla",
+      "nodes": [
+        "la_in",
+        "0"
+      ],
+      "value": 8
+    },
+    {
+      "name": "Rlb",
+      "nodes": [
+        "lb_in",
+        "0"
+      ],
+      "value": 20
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "la_in",
+      "min": 11.5
+    },
+    {
+      "node": "lb_in",
+      "min": 11.6
+    }
+  ],
+  "drop_checks": []
+}

@@ -1,0 +1,93 @@
+{
+  "id": "comb_004",
+  "domain": "combined",
+  "title": "Thermal clearance versus voltage drop",
+  "description": "A 200x100x50mm enclosure holds psu (50x40x30mm), a heater load (40x40x20mm) and a fan (40x40x15mm). The psu runs hot, so psu and load must be at least 60mm apart (surface gap). The fan must be within 10mm of the load. Electrically: 'V1 psu_out 0 DC 12' and 'Rload load_in 0 6' (required exactly), one wire psu -> load (psu_out -> load_in), and the load must see at least 11.5V. Far enough for heat, close enough for the drop. Return {\"placements\": [...min-corner [x,y,z] per component...], \"netlist\": \"...\"}. Wire resistance is 0.002 ohm per mm of Manhattan (axis-aligned) distance between component centers; the grader computes it from your placements and inserts it between the named nodes itself. Do NOT connect those node pairs directly in your netlist.",
+  "enclosure": {
+    "size": [
+      200,
+      100,
+      50
+    ]
+  },
+  "components": [
+    {
+      "id": "psu",
+      "size": [
+        50,
+        40,
+        30
+      ]
+    },
+    {
+      "id": "load",
+      "size": [
+        40,
+        40,
+        20
+      ]
+    },
+    {
+      "id": "fan",
+      "size": [
+        40,
+        40,
+        15
+      ]
+    }
+  ],
+  "min_clearance": [
+    {
+      "pair": [
+        "psu",
+        "load"
+      ],
+      "distance": 60
+    }
+  ],
+  "max_distance": [
+    {
+      "pair": [
+        "fan",
+        "load"
+      ],
+      "distance": 10
+    }
+  ],
+  "wires": [
+    {
+      "from": "psu",
+      "to": "load",
+      "nodes": [
+        "psu_out",
+        "load_in"
+      ],
+      "ohms_per_mm": 0.002
+    }
+  ],
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "psu_out",
+        "0"
+      ],
+      "value": 12
+    },
+    {
+      "name": "Rload",
+      "nodes": [
+        "load_in",
+        "0"
+      ],
+      "value": 6
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "load_in",
+      "min": 11.5
+    }
+  ],
+  "drop_checks": []
+}

@@ -1,0 +1,112 @@
+{
+  "id": "comb_003",
+  "domain": "combined",
+  "title": "Daisy-chained nodes around a column",
+  "description": "A 300x100x50mm enclosure has a structural column keep-out at x 140-160, y 30-70, full height. Place psu (50x40x30mm), node_a (30x30x20mm) and node_b (30x30x20mm). Power is daisy-chained: wire 1 runs psu -> node_a (psu_out -> a_in), wire 2 runs node_a -> node_b (a_in -> b_in). Required exactly: 'V1 psu_out 0 DC 12', 'Ra a_in 0 30', 'Rb b_in 0 30'. Both V(a_in) and V(b_in) must be at least 11.6V. Return {\"placements\": [...min-corner [x,y,z] per component...], \"netlist\": \"...\"}. Wire resistance is 0.004 ohm per mm of Manhattan (axis-aligned) distance between component centers; the grader computes it from your placements and inserts it between the named nodes itself. Do NOT connect those node pairs directly in your netlist.",
+  "enclosure": {
+    "size": [
+      300,
+      100,
+      50
+    ]
+  },
+  "components": [
+    {
+      "id": "psu",
+      "size": [
+        50,
+        40,
+        30
+      ]
+    },
+    {
+      "id": "node_a",
+      "size": [
+        30,
+        30,
+        20
+      ]
+    },
+    {
+      "id": "node_b",
+      "size": [
+        30,
+        30,
+        20
+      ]
+    }
+  ],
+  "keep_out": [
+    {
+      "id": "column",
+      "min": [
+        140,
+        30,
+        0
+      ],
+      "max": [
+        160,
+        70,
+        50
+      ]
+    }
+  ],
+  "min_clearance": [],
+  "wires": [
+    {
+      "from": "psu",
+      "to": "node_a",
+      "nodes": [
+        "psu_out",
+        "a_in"
+      ],
+      "ohms_per_mm": 0.004
+    },
+    {
+      "from": "node_a",
+      "to": "node_b",
+      "nodes": [
+        "a_in",
+        "b_in"
+      ],
+      "ohms_per_mm": 0.004
+    }
+  ],
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "psu_out",
+        "0"
+      ],
+      "value": 12
+    },
+    {
+      "name": "Ra",
+      "nodes": [
+        "a_in",
+        "0"
+      ],
+      "value": 30
+    },
+    {
+      "name": "Rb",
+      "nodes": [
+        "b_in",
+        "0"
+      ],
+      "value": 30
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "a_in",
+      "min": 11.6
+    },
+    {
+      "node": "b_in",
+      "min": 11.6
+    }
+  ],
+  "drop_checks": []
+}

@@ -31,9 +31,9 @@ TASK_TIMEOUT = 300    # seconds, safety net only
 
 OUTPUT_SHAPE = {
     "mechanical": '{"placements": [{"id": "<component id>", "position": [x, y, z]}, ...]}',
-    "electrical": '{"netlist": "<SPICE netlist, lines joined with \\n>"}',
+    "electrical": '{"netlist": "<SPICE element lines joined with \\n; no title line; comments start with *>"}',
     "combined": '{"placements": [{"id": "<component id>", "position": [x, y, z]}, ...], '
-                '"netlist": "<SPICE netlist, lines joined with \\n>"}',
+                '"netlist": "<SPICE element lines joined with \\n; no title line; comments start with *>"}',
 }
 
 SYSTEM_SINGLE = (

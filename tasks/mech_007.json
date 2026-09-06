@@ -1,0 +1,106 @@
+{
+  "id": "mech_007",
+  "domain": "mechanical",
+  "title": "Thermal zoning",
+  "description": "A 200x100x40mm enclosure holds three heaters hot1, hot2, hot3 (each 40x40x30mm), a temperature sensor (20x20x10mm) and a capacitor cap (30x30x20mm). Every pair of heaters must be at least 20mm apart. The sensor must be at least 40mm from every heater. The cap must be at least 15mm from hot1. All gaps are shortest surface-to-surface distance. No overlaps, no rotation, everything inside. Return the min-corner [x,y,z] of each component in millimeters.",
+  "enclosure": {
+    "size": [
+      200,
+      100,
+      40
+    ]
+  },
+  "components": [
+    {
+      "id": "hot1",
+      "size": [
+        40,
+        40,
+        30
+      ]
+    },
+    {
+      "id": "hot2",
+      "size": [
+        40,
+        40,
+        30
+      ]
+    },
+    {
+      "id": "hot3",
+      "size": [
+        40,
+        40,
+        30
+      ]
+    },
+    {
+      "id": "sensor",
+      "size": [
+        20,
+        20,
+        10
+      ]
+    },
+    {
+      "id": "cap",
+      "size": [
+        30,
+        30,
+        20
+      ]
+    }
+  ],
+  "min_clearance": [
+    {
+      "pair": [
+        "hot1",
+        "hot2"
+      ],
+      "distance": 20
+    },
+    {
+      "pair": [
+        "hot2",
+        "hot3"
+      ],
+      "distance": 20
+    },
+    {
+      "pair": [
+        "hot1",
+        "hot3"
+      ],
+      "distance": 20
+    },
+    {
+      "pair": [
+        "sensor",
+        "hot1"
+      ],
+      "distance": 40
+    },
+    {
+      "pair": [
+        "sensor",
+        "hot2"
+      ],
+      "distance": 40
+    },
+    {
+      "pair": [
+        "sensor",
+        "hot3"
+      ],
+      "distance": 40
+    },
+    {
+      "pair": [
+        "cap",
+        "hot1"
+      ],
+      "distance": 15
+    }
+  ]
+}

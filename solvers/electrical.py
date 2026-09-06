@@ -2,6 +2,10 @@
 and checks node voltages / voltage drop against the task's constraints.
 
 Requires the `ngspice` CLI on PATH (choco/apt/brew install ngspice).
+
+Optional task keys beyond voltage_checks/drop_checks:
+  required_elements: [{"name", "nodes", "value"}]  netlist must contain this exact
+                     element (the fixed load / source the task told the model to keep)
 """
 from __future__ import annotations
 
@@ -12,14 +16,44 @@ import tempfile
 from pathlib import Path
 
 
+_SUFFIX = {"t": 1e12, "g": 1e9, "k": 1e3, "m": 1e-3, "u": 1e-6, "n": 1e-9, "p": 1e-12, "f": 1e-15}
+
+
+def _num(s: str) -> float | None:
+    """SPICE number: 4.7k, 1meg, 10m, 12 ..."""
+    m = re.match(r"^([-+]?[\d.]+(?:e[-+]?\d+)?)([a-z]*)", s.lower())
+    if not m:
+        return None
+    v, suf = float(m.group(1)), m.group(2)
+    if suf.startswith("meg"):
+        return v * 1e6
+    return v * _SUFFIX.get(suf[:1], 1.0) if suf else v
+
+
+def _has_element(netlist: str, name: str, nodes, value) -> bool:
+    want_nodes = [n.lower() for n in nodes]
+    want_val = _num(str(value))
+    for line in netlist.splitlines():
+        t = line.split()
+        if len(t) >= 4 and t[0].lower() == name.lower() and [t[1].lower(), t[2].lower()] == want_nodes:
+            got = _num(t[-1])  # last token: handles both "R1 a b 10" and "V1 a b DC 12"
+            return got is not None and abs(got - want_val) <= 1e-9 * max(1.0, abs(want_val))
+    return False
+
+
 def _ngspice_available() -> bool:
     return shutil.which("ngspice") is not None
 
 
 def _run_ngspice(netlist: str) -> dict:
     """Runs an .op analysis and returns {node_name: voltage}."""
+    lines = netlist.strip().splitlines()
+    # ponytail: SPICE eats line 1 as the title. Drop a model-supplied title (a short
+    # non-element, non-directive first line) and always prepend our own.
+    if lines and not lines[0].startswith((".", "*")) and len(lines[0].split()) < 3:
+        lines = lines[1:]
     control = "\n.control\nop\nprint all\n.endc\n"
-    deck = netlist.rstrip() + control + "\n.end\n"
+    deck = "EngBench\n" + "\n".join(lines) + control + "\n.end\n"
 
     with tempfile.TemporaryDirectory() as tmp:
         deck_path = Path(tmp) / "circuit.cir"
@@ -33,7 +67,7 @@ def _run_ngspice(netlist: str) -> dict:
     for line in result.stdout.splitlines():
         m = re.match(r"^\s*v\(([\w.]+)\)\s*=\s*([-\d.eE+]+)", line, re.IGNORECASE)
         if m:
-            voltages[m.group(1)] = float(m.group(2))
+            voltages[m.group(1).lower()] = float(m.group(2))
     return voltages
 
 
@@ -42,6 +76,12 @@ def grade(task: dict, output: dict) -> dict:
     netlist = output.get("netlist")
     if not netlist:
         return {"passed": False, "violations": ["no netlist in output"]}
+
+    for el in task.get("required_elements", []):
+        if not _has_element(netlist, el["name"], el["nodes"], el["value"]):
+            violations.append(
+                f"netlist must contain '{el['name']} {el['nodes'][0]} {el['nodes'][1]} {el['value']}' as specified"
+            )
 
     if not _ngspice_available():
         return {
@@ -59,7 +99,7 @@ def grade(task: dict, output: dict) -> dict:
         return {"passed": False, "violations": violations}
 
     for rule in task.get("voltage_checks", []):
-        node = rule["node"]
+        node = rule["node"].lower()
         if node not in voltages:
             violations.append(f"node '{node}' not found in simulation output")
             continue
@@ -70,14 +110,18 @@ def grade(task: dict, output: dict) -> dict:
             violations.append(f"V({node})={v:.3f} above maximum {rule['max']}")
 
     for rule in task.get("drop_checks", []):
-        a, b = rule["between"]
+        a, b = (n.lower() for n in rule["between"])
         if a not in voltages or b not in voltages:
             violations.append(f"cannot compute drop {a}-{b}: missing node")
             continue
         drop = abs(voltages[a] - voltages[b])
-        if drop > rule["max_drop"]:
+        if "max_drop" in rule and drop > rule["max_drop"]:
             violations.append(
                 f"voltage drop {a}-{b} = {drop:.3f} exceeds max {rule['max_drop']}"
+            )
+        if "min_drop" in rule and drop < rule["min_drop"]:
+            violations.append(
+                f"voltage drop {a}-{b} = {drop:.3f} below min {rule['min_drop']}"
             )
 
     return {"passed": len(violations) == 0, "violations": violations}

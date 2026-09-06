@@ -34,6 +34,14 @@ what's in/out of scope.
   "min_clearance": [{ "pair": ["comp_a", "comp_b"], "distance": 15 }]
 }
 ```
+Optional mechanical keys, used by the harder tasks:
+```json
+{
+  "fixed":        [{ "id": "usb_conn", "position": [0, 50, 0] }],
+  "keep_out":     [{ "id": "boss", "min": [65, 40, 0], "max": [85, 60, 40] }],
+  "max_distance": [{ "pair": ["usb_conn", "mcu"], "distance": 30 }]
+}
+```
 Expected model output:
 ```json
 { "placements": [{ "id": "comp_a", "position": [x, y, z] }] }
@@ -45,17 +53,22 @@ Expected model output:
   "id": "elec_001",
   "domain": "electrical",
   "description": "plain-language problem statement",
+  "required_elements": [{ "name": "V1", "nodes": ["vin", "0"], "value": 12 }],
   "voltage_checks": [{ "node": "vout", "min": 5, "max": 7 }],
-  "drop_checks": [{ "between": ["vin", "vout"], "max_drop": 7 }]
+  "drop_checks": [{ "between": ["vin", "vout"], "min_drop": 0, "max_drop": 7 }]
 }
 ```
+`required_elements` pins the source and any fixed loads so the model cannot
+redefine the problem. Current limits are expressed as the drop across a
+required sense resistor.
+
 Expected model output:
 ```json
 { "netlist": "V1 vin 0 DC 12\nR1 vin vout 100\nR2 vout 0 100" }
 ```
 
-**Combined** (`domain: "combined"`) carries both sections plus a `wires`
-list that couples them:
+**Combined** (`domain: "combined"`) carries both sections (including
+`required_elements`) plus a `wires` list that couples them:
 ```json
 {
   "wires": [
@@ -97,15 +110,24 @@ python harness/test_harness.py
 ```
 
 Every task has a golden solution that must pass and at least one broken
-solution that must fail.
+solution that must fail, all in `solvers/solutions.json`. Electrical checks
+are skipped when ngspice is missing.
 
 ## Running the eval
 
+One model, one track:
 ```bash
 python harness/run_eval.py --track single-shot --model anthropic/claude-...
-python harness/run_eval.py --track agentic --model anthropic/claude-...
+python harness/run_eval.py --track agentic --model anthropic/claude-... --provider Fireworks
 python harness/leaderboard.py
 ```
+Everything (edit the `MODELS` list in `harness/run_all.py` first, and verify
+the ids on openrouter.ai/models):
+```bash
+python harness/run_all.py --trials 1   # smoke run
+python harness/run_all.py              # full 3-trial run
+```
+Runs are resumable: records already in the results file are skipped.
 
 Results land in `results/` as one JSON file per model per track, with the
 full attempt trajectory for every trial. The leaderboard script prints
@@ -121,10 +143,10 @@ reasoning behind the budget.
 
 - [x] Task schema
 - [x] Mechanical grader (validated against golden + broken solutions)
-- [ ] Electrical grader (implemented, pending ngspice validation)
-- [x] Combined grader (wire-resistance coupling, pending ngspice validation)
-- [ ] Full 30-task set (4 example tasks so far)
-- [x] Harness: single-shot runner, agentic runner, leaderboard (stub-tested, pending first live run)
+- [ ] Electrical grader (implemented, goldens verified with an offline DC solver, pending ngspice validation)
+- [ ] Combined grader (wire-resistance coupling, same status)
+- [x] Full 30-task set: 12 mechanical, 12 electrical, 6 combined, each with golden + broken solutions
+- [x] Harness: single-shot runner, agentic runner, run-all, leaderboard (stub-tested, pending first live run)
 - [ ] Results + writeup
 
 ## License

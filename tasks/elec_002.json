@@ -1,0 +1,32 @@
+{
+  "id": "elec_002",
+  "domain": "electrical",
+  "title": "Divider under load",
+  "description": "A 12V source ('V1 vin 0 DC 12', required exactly) must produce 3.3V +/-5% at node 'vout' while driving a fixed 330 ohm load that must appear in the netlist exactly as 'Rload vout 0 330'. Add resistors to build the divider. Return a valid SPICE netlist.",
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "vin",
+        "0"
+      ],
+      "value": 12
+    },
+    {
+      "name": "Rload",
+      "nodes": [
+        "vout",
+        "0"
+      ],
+      "value": 330
+    }
+  ],
+  "voltage_checks": [
+    {
+      "node": "vout",
+      "min": 3.135,
+      "max": 3.465
+    }
+  ],
+  "drop_checks": []
+}

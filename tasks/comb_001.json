@@ -2,21 +2,83 @@
   "id": "comb_001",
   "domain": "combined",
   "title": "Power delivery across an enclosure",
-  "description": "You have a 300x150x60mm enclosure with three components: psu (60x40x30mm), load (40x40x20mm), and fan (40x40x20mm). Place all three fully inside with no overlap. The fan must stay at least 30mm clear of the load. The psu outputs 12V DC on node 'psu_out'; the load is a 10 ohm resistor from node 'load_in' to ground (node '0'). The wire from psu to load has 0.002 ohm per mm of Manhattan (axis-aligned) distance between the component centers, and the load must see at least 11.5V. Return {\"placements\": [...min-corner [x,y,z] per component...], \"netlist\": \"...\"}. In the netlist, model the psu as 'V1 psu_out 0 DC 12' and the load as 'Rload load_in 0 10'. Do NOT connect psu_out to load_in yourself — the grader inserts the wire resistance from your placement.",
-  "enclosure": { "size": [300, 150, 60] },
+  "description": "You have a 300x150x60mm enclosure with three components: psu (60x40x30mm), load (40x40x20mm), and fan (40x40x20mm). Place all three fully inside with no overlap. The fan must stay at least 30mm clear of the load. The psu outputs 12V DC on node 'psu_out'; the load is a 10 ohm resistor from node 'load_in' to ground. The netlist must contain exactly 'V1 psu_out 0 DC 12' and 'Rload load_in 0 10'. The wire runs psu -> load (psu_out -> load_in), and the load must see at least 11.5V. Return {\"placements\": [...min-corner [x,y,z] per component...], \"netlist\": \"...\"}. Wire resistance is 0.002 ohm per mm of Manhattan (axis-aligned) distance between component centers; the grader computes it from your placements and inserts it between the named nodes itself. Do NOT connect those node pairs directly in your netlist.",
+  "enclosure": {
+    "size": [
+      300,
+      150,
+      60
+    ]
+  },
   "components": [
-    { "id": "psu", "size": [60, 40, 30] },
-    { "id": "load", "size": [40, 40, 20] },
-    { "id": "fan", "size": [40, 40, 20] }
+    {
+      "id": "psu",
+      "size": [
+        60,
+        40,
+        30
+      ]
+    },
+    {
+      "id": "load",
+      "size": [
+        40,
+        40,
+        20
+      ]
+    },
+    {
+      "id": "fan",
+      "size": [
+        40,
+        40,
+        20
+      ]
+    }
   ],
   "min_clearance": [
-    { "pair": ["fan", "load"], "distance": 30 }
+    {
+      "pair": [
+        "fan",
+        "load"
+      ],
+      "distance": 30
+    }
   ],
   "wires": [
-    { "from": "psu", "to": "load", "nodes": ["psu_out", "load_in"], "ohms_per_mm": 0.002 }
+    {
+      "from": "psu",
+      "to": "load",
+      "nodes": [
+        "psu_out",
+        "load_in"
+      ],
+      "ohms_per_mm": 0.002
+    }
+  ],
+  "required_elements": [
+    {
+      "name": "V1",
+      "nodes": [
+        "psu_out",
+        "0"
+      ],
+      "value": 12
+    },
+    {
+      "name": "Rload",
+      "nodes": [
+        "load_in",
+        "0"
+      ],
+      "value": 10
+    }
   ],
   "voltage_checks": [
-    { "node": "load_in", "min": 11.5 }
+    {
+      "node": "load_in",
+      "min": 11.5
+    }
   ],
   "drop_checks": []
 }
