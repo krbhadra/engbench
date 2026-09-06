@@ -92,8 +92,8 @@ don't leak into anyone's training data.
 ## Running the self-checks
 
 ```bash
-cd solvers
-python test_solvers.py
+python solvers/test_solvers.py
+python harness/test_harness.py
 ```
 
 Every task has a golden solution that must pass and at least one broken
@@ -122,9 +122,9 @@ reasoning behind the budget.
 - [x] Task schema
 - [x] Mechanical grader (validated against golden + broken solutions)
 - [ ] Electrical grader (implemented, pending ngspice validation)
-- [ ] Combined grader (wire-resistance coupling)
-- [ ] Full 30-task set (3 example tasks so far)
-- [ ] Harness: single-shot runner, agentic runner, leaderboard
+- [x] Combined grader (wire-resistance coupling, pending ngspice validation)
+- [ ] Full 30-task set (4 example tasks so far)
+- [x] Harness: single-shot runner, agentic runner, leaderboard (stub-tested, pending first live run)
 - [ ] Results + writeup
 
 ## License
