@@ -16,6 +16,8 @@ import tempfile
 from pathlib import Path
 
 
+TOL = 1e-6  # volts; absorbs float noise at a boundary, far below any task tolerance
+
 _SUFFIX = {"t": 1e12, "g": 1e9, "k": 1e3, "m": 1e-3, "u": 1e-6, "n": 1e-9, "p": 1e-12, "f": 1e-15}
 
 
@@ -60,7 +62,8 @@ def _run_ngspice(netlist: str) -> dict:
     # A model-supplied .end or analysis block would pre-empt ours; the grader owns the analysis.
     ours = {".end", ".control", ".endc", ".op", ".print", ".tran", ".dc", ".ac"}
     lines = [l for l in lines if (l.split() or [""])[0].lower() not in ours]
-    control = "\n.control\nop\nprint all\n.endc\n"
+    # numdgt=12: the default 7 significant digits turned a 9.9958mV drop into "0.010" (boundary fail)
+    control = "\n.control\nset numdgt=12\nop\nprint all\n.endc\n"
     deck = "EngBench\n" + "\n".join(lines) + control + "\n.end\n"
 
     with tempfile.TemporaryDirectory() as tmp:
@@ -114,10 +117,10 @@ def grade(task: dict, output: dict) -> dict:
             violations.append(f"node '{node}' not found in simulation output")
             continue
         v = voltages[node]
-        if "min" in rule and v < rule["min"]:
-            violations.append(f"V({node})={v:.3f} below minimum {rule['min']}")
-        if "max" in rule and v > rule["max"]:
-            violations.append(f"V({node})={v:.3f} above maximum {rule['max']}")
+        if "min" in rule and v < rule["min"] - TOL:
+            violations.append(f"V({node})={v:.4f} below minimum {rule['min']}")
+        if "max" in rule and v > rule["max"] + TOL:
+            violations.append(f"V({node})={v:.4f} above maximum {rule['max']}")
 
     for rule in task.get("drop_checks", []):
         a, b = (n.lower() for n in rule["between"])
@@ -125,13 +128,13 @@ def grade(task: dict, output: dict) -> dict:
             violations.append(f"cannot compute drop {a}-{b}: missing node")
             continue
         drop = abs(voltages[a] - voltages[b])
-        if "max_drop" in rule and drop > rule["max_drop"]:
+        if "max_drop" in rule and drop > rule["max_drop"] + TOL:
             violations.append(
-                f"voltage drop {a}-{b} = {drop:.3f} exceeds max {rule['max_drop']}"
+                f"voltage drop {a}-{b} = {drop:.4f} exceeds max {rule['max_drop']}"
             )
-        if "min_drop" in rule and drop < rule["min_drop"]:
+        if "min_drop" in rule and drop < rule["min_drop"] - TOL:
             violations.append(
-                f"voltage drop {a}-{b} = {drop:.3f} below min {rule['min_drop']}"
+                f"voltage drop {a}-{b} = {drop:.4f} below min {rule['min_drop']}"
             )
 
     return {"passed": len(violations) == 0, "violations": violations}

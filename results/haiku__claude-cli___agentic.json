@@ -200,6 +200,1455 @@
    "trial": 1,
    "seconds": 77.0,
    "timestamp": "2026-09-06T14:47:28+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "psu",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "load",
+        "position": [
+         60,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         200,
+         0,
+         0
+        ]
+       }
+      ],
+      "netlist": "V1 psu_out 0 DC 12\nRload load_in 0 10"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 775,
+    "completion_tokens": 6579,
+    "cost": 0.03367
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "comb_001",
+   "trial": 1,
+   "seconds": 61.9,
+   "timestamp": "2026-09-06T15:15:34+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "V1",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "Rla",
+        "position": [
+         80,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "Rlb",
+        "position": [
+         220,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         150,
+         0,
+         0
+        ]
+       }
+      ],
+      "netlist": "V1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20"
+     },
+     "passed": false,
+     "violations": [
+      "missing placements for: ['load_a', 'load_b', 'psu']"
+     ]
+    },
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "psu",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "load_a",
+        "position": [
+         80,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "load_b",
+        "position": [
+         220,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         150,
+         0,
+         0
+        ]
+       }
+      ],
+      "netlist": "V1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 12039,
+    "completion_tokens": 10768,
+    "cost": 0.077098
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "comb_002",
+   "trial": 1,
+   "seconds": 98.4,
+   "timestamp": "2026-09-06T15:17:13+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "psu",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "node_a",
+        "position": [
+         60,
+         30,
+         0
+        ]
+       },
+       {
+        "id": "node_b",
+        "position": [
+         100,
+         30,
+         0
+        ]
+       }
+      ],
+      "netlist": "V1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 789,
+    "completion_tokens": 12291,
+    "cost": 0.062243999999999994
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "comb_003",
+   "trial": 1,
+   "seconds": 105.4,
+   "timestamp": "2026-09-06T15:18:58+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "jack",
+        "position": [
+         0,
+         40,
+         0
+        ]
+       },
+       {
+        "id": "reg",
+        "position": [
+         20,
+         40,
+         0
+        ]
+       },
+       {
+        "id": "mcu",
+        "position": [
+         85,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "standoff_1",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "standoff_2",
+        "position": [
+         142,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "standoff_3",
+        "position": [
+         0,
+         92,
+         0
+        ]
+       },
+       {
+        "id": "standoff_4",
+        "position": [
+         142,
+         92,
+         0
+        ]
+       }
+      ],
+      "netlist": "V1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 831,
+    "completion_tokens": 13407,
+    "cost": 0.067866
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "comb_005",
+   "trial": 1,
+   "seconds": 122.3,
+   "timestamp": "2026-09-06T15:21:00+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "dc_in",
+        "position": [
+         0,
+         90,
+         0
+        ]
+       },
+       {
+        "id": "psu_board",
+        "position": [
+         50,
+         100,
+         0
+        ]
+       },
+       {
+        "id": "motor",
+        "position": [
+         140,
+         100,
+         0
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         145,
+         105,
+         40
+        ]
+       },
+       {
+        "id": "ctrl",
+        "position": [
+         160,
+         160,
+         0
+        ]
+       },
+       {
+        "id": "sensor",
+        "position": [
+         185,
+         170,
+         15
+        ]
+       }
+      ],
+      "netlist": "V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60"
+     },
+     "passed": false,
+     "violations": [
+      "ctrl exceeds enclosure bounds",
+      "motor-ctrl clearance 10.0 < required 40",
+      "sensor-motor clearance 20.0 < required 60"
+     ]
+    },
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "dc_in",
+        "position": [
+         0,
+         90,
+         0
+        ]
+       },
+       {
+        "id": "psu_board",
+        "position": [
+         50,
+         100,
+         0
+        ]
+       },
+       {
+        "id": "motor",
+        "position": [
+         140,
+         100,
+         0
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         145,
+         105,
+         40
+        ]
+       },
+       {
+        "id": "ctrl",
+        "position": [
+         160,
+         150,
+         0
+        ]
+       },
+       {
+        "id": "sensor",
+        "position": [
+         200,
+         170,
+         15
+        ]
+       }
+      ],
+      "netlist": "V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60"
+     },
+     "passed": false,
+     "violations": [
+      "motor-ctrl clearance 0.0 < required 40",
+      "sensor-motor clearance 22.4 < required 60"
+     ]
+    },
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "dc_in",
+        "position": [
+         0,
+         90,
+         0
+        ]
+       },
+       {
+        "id": "psu_board",
+        "position": [
+         40,
+         100,
+         0
+        ]
+       },
+       {
+        "id": "motor",
+        "position": [
+         80,
+         50,
+         0
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         80,
+         50,
+         40
+        ]
+       },
+       {
+        "id": "ctrl",
+        "position": [
+         220,
+         150,
+         0
+        ]
+       },
+       {
+        "id": "sensor",
+        "position": [
+         245,
+         160,
+         15
+        ]
+       }
+      ],
+      "netlist": "V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 55323,
+    "completion_tokens": 39583,
+    "cost": 0.25797559999999997
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "comb_006",
+   "trial": 1,
+   "seconds": 349.5,
+   "timestamp": "2026-09-06T15:26:50+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 12\nR1 vin vout 430\nR2 vout 0 330\nRload vout 0 330"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 579,
+    "completion_tokens": 7651,
+    "cost": 0.038834
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_002",
+   "trial": 1,
+   "seconds": 70.5,
+   "timestamp": "2026-09-06T15:28:00+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 390\nVled led_a 0 DC 2"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 660,
+    "completion_tokens": 3225,
+    "cost": 0.016785
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_003",
+   "trial": 1,
+   "seconds": 32.1,
+   "timestamp": "2026-09-06T15:28:32+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 19k\nR2 vout 0 5k"
+     },
+     "passed": true,
+     "violations": []
+    },
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 20k\nR2 vout 0 5.3k"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 8997,
+    "completion_tokens": 16143,
+    "cost": 0.098072
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_004",
+   "trial": 1,
+   "seconds": 109.6,
+   "timestamp": "2026-09-06T15:30:22+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 12\nR1 vin r5 150\nRl5 r5 0 100\nR2 vin r33 270\nRl33 r33 0 100"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 611,
+    "completion_tokens": 14638,
+    "cost": 0.073801
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_005",
+   "trial": 1,
+   "seconds": 132.8,
+   "timestamp": "2026-09-06T15:32:35+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 30\nR2 vout 0 50\nRload vout 0 50"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 608,
+    "completion_tokens": 11404,
+    "cost": 0.05762799999999999
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_006",
+   "trial": 1,
+   "seconds": 72.0,
+   "timestamp": "2026-09-06T15:33:47+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k\n.end"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 635,
+    "completion_tokens": 5601,
+    "cost": 0.028640000000000002
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_007",
+   "trial": 1,
+   "seconds": 50.0,
+   "timestamp": "2026-09-06T15:34:37+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nR1 b2 n1 2k\nR2 n1 0 2k\nR3 n1 n2 1k\nR4 n2 b1 2k\nR5 n2 vout 1k\nR6 vout b0 2k"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 642,
+    "completion_tokens": 17403,
+    "cost": 0.087657
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_008",
+   "trial": 1,
+   "seconds": 152.9,
+   "timestamp": "2026-09-06T15:37:10+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 15\nRsense vin top 1\nR1 top vout 99\nR2 vout 0 450\nIload vout 0 DC 40m"
+     },
+     "passed": true,
+     "violations": []
+    },
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 15\nRsense vin top 1\nR1 top vout 108\nR2 vout 0 600\nIload vout 0 DC 40m"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 16865,
+    "completion_tokens": 18964,
+    "cost": 0.127867
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_009",
+   "trial": 1,
+   "seconds": 173.1,
+   "timestamp": "2026-09-06T15:40:03+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 24\nRfeed vin bus 2\nRconnect1 bus l1 0.01\nRconnect2 bus l2 0.01\nRconnect3 bus l3 2\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50"
+     },
+     "passed": false,
+     "violations": [
+      "V(l3)=21.0086 above maximum 21"
+     ]
+    },
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 24\nRfeed vin bus 2\nRconnect1 bus l1 0.01\nRconnect2 bus l2 0.01\nRconnect3 bus l3 2.1\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 14773,
+    "completion_tokens": 18922,
+    "cost": 0.123422
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_010",
+   "trial": 1,
+   "seconds": 168.6,
+   "timestamp": "2026-09-06T15:42:52+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 5k\nR2 vref 0 2.048k\nRload vref 0 10k"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 660,
+    "completion_tokens": 22465,
+    "cost": 0.11298499999999999
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_011",
+   "trial": 1,
+   "seconds": 202.9,
+   "timestamp": "2026-09-06T15:46:14+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nR12 remote v12 173.875\nR5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 750,
+    "completion_tokens": 10135,
+    "cost": 0.051425
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_012",
+   "trial": 1,
+   "seconds": 89.2,
+   "timestamp": "2026-09-06T15:47:44+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "comp_x",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "comp_y",
+        "position": [
+         55,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "comp_z",
+        "position": [
+         100,
+         0,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 639,
+    "completion_tokens": 1419,
+    "cost": 0.0077339999999999996
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "mech_002",
+   "trial": 1,
+   "seconds": 16.3,
+   "timestamp": "2026-09-06T15:48:00+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "a",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "b",
+        "position": [
+         60,
+         20,
+         0
+        ]
+       },
+       {
+        "id": "c",
+        "position": [
+         0,
+         40,
+         0
+        ]
+       },
+       {
+        "id": "d",
+        "position": [
+         0,
+         80,
+         0
+        ]
+       },
+       {
+        "id": "e",
+        "position": [
+         60,
+         0,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": false,
+     "violations": [
+      "d exceeds enclosure bounds"
+     ]
+    },
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "a",
+        "position": [
+         0,
+         60,
+         0
+        ]
+       },
+       {
+        "id": "b",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "c",
+        "position": [
+         40,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "d",
+        "position": [
+         60,
+         40,
+         0
+        ]
+       },
+       {
+        "id": "e",
+        "position": [
+         40,
+         40,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 8238,
+    "completion_tokens": 64321,
+    "cost": 0.33675600000000006
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "mech_003",
+   "trial": 1,
+   "seconds": 567.6,
+   "timestamp": "2026-09-06T15:57:27+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "s1",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "s2",
+        "position": [
+         0,
+         0,
+         20
+        ]
+       },
+       {
+        "id": "s3",
+        "position": [
+         0,
+         0,
+         40
+        ]
+       },
+       {
+        "id": "t1",
+        "position": [
+         60,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "t2",
+        "position": [
+         60,
+         30,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 607,
+    "completion_tokens": 1920,
+    "cost": 0.010207
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "mech_004",
+   "trial": 1,
+   "seconds": 19.7,
+   "timestamp": "2026-09-06T15:57:47+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "m1",
+        "position": [
+         0,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "m2",
+        "position": [
+         0,
+         50,
+         0
+        ]
+       },
+       {
+        "id": "m3",
+        "position": [
+         90,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "m4",
+        "position": [
+         90,
+         40,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 670,
+    "completion_tokens": 10857,
+    "cost": 0.054955
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "mech_005",
+   "trial": 1,
+   "seconds": 66.3,
+   "timestamp": "2026-09-06T15:58:53+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "usb_conn",
+        "position": [
+         0,
+         50,
+         0
+        ]
+       },
+       {
+        "id": "pwr_conn",
+        "position": [
+         180,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "mcu",
+        "position": [
+         0,
+         70,
+         30
+        ]
+       },
+       {
+        "id": "battery",
+        "position": [
+         60,
+         0,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 720,
+    "completion_tokens": 20052,
+    "cost": 0.10098
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "mech_006",
+   "trial": 1,
+   "seconds": 186.1,
+   "timestamp": "2026-09-06T16:02:00+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "hot1",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "hot2",
+        "position": [
+         60,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "hot3",
+        "position": [
+         0,
+         60,
+         0
+        ]
+       },
+       {
+        "id": "sensor",
+        "position": [
+         80,
+         80,
+         0
+        ]
+       },
+       {
+        "id": "cap",
+        "position": [
+         55,
+         40,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 661,
+    "completion_tokens": 6701,
+    "cost": 0.034166
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "mech_007",
+   "trial": 1,
+   "seconds": 37.7,
+   "timestamp": "2026-09-06T16:02:37+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "main_pcb",
+        "position": [
+         10,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "heatsink",
+        "position": [
+         10,
+         10,
+         10
+        ]
+       },
+       {
+        "id": "battery",
+        "position": [
+         75,
+         10,
+         10
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         10,
+         50,
+         10
+        ]
+       }
+      ]
+     },
+     "passed": false,
+     "violations": [
+      "missing placements for: ['pcb']"
+     ]
+    },
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "pcb",
+        "position": [
+         10,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "heatsink",
+        "position": [
+         10,
+         10,
+         10
+        ]
+       },
+       {
+        "id": "battery",
+        "position": [
+         75,
+         10,
+         10
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         10,
+         50,
+         10
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 11774,
+    "completion_tokens": 10652,
+    "cost": 0.07611899999999999
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "mech_008",
+   "trial": 1,
+   "seconds": 104.9,
+   "timestamp": "2026-09-06T16:04:22+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "A",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "B",
+        "position": [
+         50,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "C",
+        "position": [
+         50,
+         30,
+         0
+        ]
+       },
+       {
+        "id": "D",
+        "position": [
+         50,
+         30,
+         30
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 623,
+    "completion_tokens": 1430,
+    "cost": 0.007773
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "mech_009",
+   "trial": 1,
+   "seconds": 15.6,
+   "timestamp": "2026-09-06T16:04:38+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "display",
+        "position": [
+         30,
+         0,
+         32
+        ]
+       },
+       {
+        "id": "pcb",
+        "position": [
+         30,
+         0,
+         20
+        ]
+       },
+       {
+        "id": "battery",
+        "position": [
+         10,
+         60,
+         0
+        ]
+       },
+       {
+        "id": "speaker",
+        "position": [
+         130,
+         60,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 746,
+    "completion_tokens": 14207,
+    "cost": 0.071781
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "mech_010",
+   "trial": 1,
+   "seconds": 127.9,
+   "timestamp": "2026-09-06T16:06:46+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "dc_jack",
+        "position": [
+         0,
+         20,
+         0
+        ]
+       },
+       {
+        "id": "usb",
+        "position": [
+         0,
+         120,
+         0
+        ]
+       },
+       {
+        "id": "psu",
+        "position": [
+         15,
+         20,
+         0
+        ]
+       },
+       {
+        "id": "battery",
+        "position": [
+         70,
+         80,
+         0
+        ]
+       },
+       {
+        "id": "mcu",
+        "position": [
+         20,
+         110,
+         25
+        ]
+       },
+       {
+        "id": "hot_reg",
+        "position": [
+         185,
+         10,
+         40
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         145,
+         40,
+         40
+        ]
+       },
+       {
+        "id": "sensor",
+        "position": [
+         8,
+         50,
+         45
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 851,
+    "completion_tokens": 21422,
+    "cost": 0.107961
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "mech_012",
+   "trial": 1,
+   "seconds": 181.9,
+   "timestamp": "2026-09-06T16:09:47+00:00"
   }
  ]
 }

@@ -92,28 +92,7 @@ Following the conventions of SWE-bench, Terminal-Bench, tau-bench and Aider:
   current models fail at multi-constraint reasoning, and how much of that
   failure tool feedback can recover
 
-## Scope for v1
 
-**In:**
-- 2 domains — mechanical + electrical (physics dropped: already the most
-  saturated benchmark space, adds a third solver for no differentiation)
-- ~30 hand-authored tasks: 12 mechanical, 12 electrical, 6 combined, each
-  with a golden solution and at least one broken solution in the self-check
-- Two tracks, single-shot and agentic, on every task
-- 4-5 models evaluated (Claude, GPT, Gemini, one open-weight model)
-- Public GitHub repo: task specs, grader code, harness, raw results,
-  leaderboard, writeup
-
-**Out (future work, not v1):**
-- Thermal simulation, structural load analysis, full CAD geometry (STEP
-  files) — real solvers exist but are heavy to integrate for a first pass
-- Component rotation in the mechanical grader — tasks are authored with
-  fixed orientations
-- Richer agentic tools (code sandbox, direct ngspice access) — the grader
-  tool is enough to measure feedback use without a sandboxing problem
-- More than 5 models — diminishing value for the extra cost
-- Any LLM-as-judge grading, anywhere, ever — the whole point is
-  deterministic, reproducible pass/fail
 
 ## License / openness
 

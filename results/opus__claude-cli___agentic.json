@@ -1,0 +1,1343 @@
+{
+ "model": "opus [claude-cli]",
+ "transport": "claude-cli",
+ "track": "agentic",
+ "settings": {
+  "provider": null,
+  "reasoning": null,
+  "temperature": null
+ },
+ "max_attempts": 5,
+ "records": [
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "psu",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "load",
+        "position": [
+         70,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         150,
+         0,
+         0
+        ]
+       }
+      ],
+      "netlist": "* Power delivery: 12V source to 10 ohm load\n* Wire psu_out -> load_in inserted by grader from placements\nV1 psu_out 0 DC 12\nRload load_in 0 10"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 972,
+    "completion_tokens": 571,
+    "cost": 0.023985
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "comb_001",
+   "trial": 1,
+   "seconds": 11.3,
+   "timestamp": "2026-09-06T15:01:16+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "psu",
+        "position": [
+         10,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "load_a",
+        "position": [
+         90,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "load_b",
+        "position": [
+         90,
+         60,
+         0
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         200,
+         10,
+         0
+        ]
+       }
+      ],
+      "netlist": "* star wiring from psu to two loads\nV1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 1010,
+    "completion_tokens": 831,
+    "cost": 0.030865000000000004
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "comb_002",
+   "trial": 1,
+   "seconds": 15.0,
+   "timestamp": "2026-09-06T15:01:31+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "psu",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "node_a",
+        "position": [
+         10,
+         5,
+         30
+        ]
+       },
+       {
+        "id": "node_b",
+        "position": [
+         40,
+         5,
+         30
+        ]
+       }
+      ],
+      "netlist": "* daisy-chained 12V rail: psu -> node_a -> node_b\n* wire resistances inserted by grader from placements\nV1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 979,
+    "completion_tokens": 1386,
+    "cost": 0.044430000000000004
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "comb_003",
+   "trial": 1,
+   "seconds": 21.8,
+   "timestamp": "2026-09-06T15:01:53+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "psu",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "load",
+        "position": [
+         112,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         157,
+         0,
+         0
+        ]
+       }
+      ],
+      "netlist": "* comb_004 thermal clearance vs voltage drop\n* psu center (25,20,15), load center (132,20,10): Manhattan = 107+0+5 = 112 mm -> 0.224 ohm\n* Vload = 12 * 6 / 6.224 = 11.568 V >= 11.5 V\nV1 psu_out 0 DC 12\nRload load_in 0 6"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 954,
+    "completion_tokens": 865,
+    "cost": 0.031155
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "comb_004",
+   "trial": 1,
+   "seconds": 14.8,
+   "timestamp": "2026-09-06T15:02:07+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "jack",
+        "position": [
+         0,
+         40,
+         0
+        ]
+       },
+       {
+        "id": "reg",
+        "position": [
+         16,
+         32.5,
+         0
+        ]
+       },
+       {
+        "id": "mcu",
+        "position": [
+         77,
+         25,
+         0
+        ]
+       }
+      ],
+      "netlist": "* Fixed sources per spec; wire resistance jack_out->reg_in inserted by grader\nV1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 1049,
+    "completion_tokens": 1121,
+    "cost": 0.038505
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "comb_005",
+   "trial": 1,
+   "seconds": 17.6,
+   "timestamp": "2026-09-06T15:02:25+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "dc_in",
+        "position": [
+         0,
+         90,
+         0
+        ]
+       },
+       {
+        "id": "psu_board",
+        "position": [
+         25,
+         40,
+         0
+        ]
+       },
+       {
+        "id": "motor",
+        "position": [
+         110,
+         40,
+         0
+        ]
+       },
+       {
+        "id": "ctrl",
+        "position": [
+         110,
+         132,
+         0
+        ]
+       },
+       {
+        "id": "sensor",
+        "position": [
+         175,
+         155,
+         0
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         163,
+         45,
+         0
+        ]
+       }
+      ],
+      "netlist": "* Full system power tree: 24V in -> PSU -> 12V rail -> motor + controller\n* Wire resistances (0.003 ohm/mm Manhattan, center-to-center) inserted by grader:\n*   dc_in -> psu_in   : |65-10|+|70-97.5|+|12.5-6| = 89.0 mm  -> 0.267 ohm  -> V(psu_in)=23.74V\n*   psu_out -> m_in   : |135-65|+|65-70|+|20-12.5| = 82.5 mm  -> 0.2475 ohm -> V(m_in)=11.52V\n*   psu_out -> c_in   : |135-65|+|157-70|+|7.5-12.5| = 162.0 mm -> 0.486 ohm -> V(c_in)=11.90V\nV1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 1266,
+    "completion_tokens": 6257,
+    "cost": 0.16907500000000003
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "comb_006",
+   "trial": 1,
+   "seconds": 78.9,
+   "timestamp": "2026-09-06T15:03:44+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "* Resistive voltage divider: 12V -> 6V\nV1 vin 0 DC 12\nR1 vin vout 1k\nR2 vout 0 1k"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 744,
+    "completion_tokens": 140,
+    "cost": 0.01093
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_001",
+   "trial": 1,
+   "seconds": 6.8,
+   "timestamp": "2026-09-06T15:03:51+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "* 12V to 3.3V divider driving 330 ohm load\nV1 vin 0 DC 12\nR1 vin vout 435\nR2 vout 0 330\nRload vout 0 330\n.op\n.end"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 722,
+    "completion_tokens": 274,
+    "cost": 0.01406
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_002",
+   "trial": 1,
+   "seconds": 8.5,
+   "timestamp": "2026-09-06T15:03:59+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "* LED current limiting from 9V supply\nV1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 400\nVled led_a 0 DC 2\n.op\n.end"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 821,
+    "completion_tokens": 183,
+    "cost": 0.012774999999999998
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_003",
+   "trial": 1,
+   "seconds": 7.4,
+   "timestamp": "2026-09-06T15:04:07+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "* 24V to 5V reference divider, <1mA quiescent\nV1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 189990\nR2 vout 0 50000"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 781,
+    "completion_tokens": 349,
+    "cost": 0.016524999999999998
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_004",
+   "trial": 1,
+   "seconds": 10.4,
+   "timestamp": "2026-09-06T15:04:17+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "* Two loaded rails from 12V supply\nV1 vin 0 DC 12\n* 5.0V rail: R1 top, R2 bottom (R2||Rl5 = 20 ohm -> 12*20/(28+20) = 5.0V)\nR1 vin r5 28\nR2 r5 0 25\nRl5 r5 0 100\n* 3.3V rail: R3 top, R4 bottom (R4||Rl33 = 33 ohm -> 12*33/(87+33) = 3.3V)\nR3 vin r33 87\nR4 r33 0 49.2537\nRl33 r33 0 100\n.op\n.end"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 765,
+    "completion_tokens": 725,
+    "cost": 0.025764999999999996
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_005",
+   "trial": 1,
+   "seconds": 13.7,
+   "timestamp": "2026-09-06T15:04:31+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "* elec_006: remote load behind long wire\nV1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 41.667\nR2 vout 0 100\nRload vout 0 50\n* R2||Rload = 33.3333; vout = 12*33.3333/(5+41.667+33.3333) = 5.00V"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 762,
+    "completion_tokens": 434,
+    "cost": 0.01846
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_006",
+   "trial": 1,
+   "seconds": 10.5,
+   "timestamp": "2026-09-06T15:04:41+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 10\nR1 vin a 1k\nR3 vin b 2.2k\n* Balanced bridge: R1/R2 = R3/R4 = 1 -> V(a)=V(b)=5V\nR2 a 0 1k\nR4 b 0 2.2k"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 794,
+    "completion_tokens": 159,
+    "cost": 0.011904999999999999
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_007",
+   "trial": 1,
+   "seconds": 7.0,
+   "timestamp": "2026-09-06T15:04:48+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "* 3-bit R-2R ladder DAC, code 101 (b2=1,b1=0,b0=1)\n* Vout = Vref*(b2/2 + b1/4 + b0/8) = 5 * 5/8 = 3.125V\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\n* termination resistor 2R at LSB end\nRterm n0 0 2k\n* 2R branch resistors from each bit input\nRb0 b0 n0 2k\nRb1 b1 n1 2k\nRb2 b2 vout 2k\n* series R rungs of the ladder\nRs0 n0 n1 1k\nRs1 n1 vout 1k"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 802,
+    "completion_tokens": 927,
+    "cost": 0.031185
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_008",
+   "trial": 1,
+   "seconds": 15.7,
+   "timestamp": "2026-09-06T15:05:04+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "* elec_009: 15V supply to 9V constant-current load (40mA)\nV1 vin 0 DC 15\nRsense vin top 1\n* Series dropper: 5.96V across 40mA -> 149 ohm\nRdrop top vout 149\nIload vout 0 DC 40m\n.op"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 796,
+    "completion_tokens": 376,
+    "cost": 0.017349999999999997
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_009",
+   "trial": 1,
+   "seconds": 10.8,
+   "timestamp": "2026-09-06T15:05:15+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "* elec_010: 24V bus distribution with per-branch series resistors\nV1 vin 0 DC 24\nRfeed vin bus 2\nRb1 bus l1 0.01\nRb2 bus l2 0.01\nRb3 bus l3 3\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\n* V(bus)=21.864V, V(l1)=21.862V, V(l2)=21.860V, V(l3)=20.626V, Isupply=1.068A\n.op\n.end"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 859,
+    "completion_tokens": 1040,
+    "cost": 0.03458
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_010",
+   "trial": 1,
+   "seconds": 17.3,
+   "timestamp": "2026-09-06T15:05:32+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "* elec_011 Precision 2.500V reference from 10V supply\n* Total loop current = 0.5 mA (Rsense drop = 50 mV, well under 150 mV limit)\nV1 vin 0 DC 10\nRsense vin top 100\n* Divider: top -> vref -> ground\nR1 top vref 14.9k\nR2 vref 0 10k\nRload vref 0 10k\n* R2 || Rload = 5k ; vref = 10 * 5k/(100+14.9k+5k) = 2.500 V exactly"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 781,
+    "completion_tokens": 1249,
+    "cost": 0.039025
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_011",
+   "trial": 1,
+   "seconds": 20.8,
+   "timestamp": "2026-09-06T15:05:53+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "* Remote dual-rail power budget\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRd12 remote v12 173.875\nRd5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end"
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 893,
+    "completion_tokens": 977,
+    "cost": 0.033345
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "elec_012",
+   "trial": 1,
+   "seconds": 16.4,
+   "timestamp": "2026-09-06T15:06:09+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "comp_a",
+        "position": [
+         10,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "comp_b",
+        "position": [
+         60,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "comp_c",
+        "position": [
+         120,
+         10,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 723,
+    "completion_tokens": 81,
+    "cost": 0.009245
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_001",
+   "trial": 1,
+   "seconds": 5.5,
+   "timestamp": "2026-09-06T15:06:15+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "comp_x",
+        "position": [
+         10,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "comp_y",
+        "position": [
+         66,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "comp_z",
+        "position": [
+         140,
+         10,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 765,
+    "completion_tokens": 232,
+    "cost": 0.013439999999999999
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_002",
+   "trial": 1,
+   "seconds": 7.0,
+   "timestamp": "2026-09-06T15:06:22+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "a",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "b",
+        "position": [
+         60,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "c",
+        "position": [
+         40,
+         60,
+         0
+        ]
+       },
+       {
+        "id": "d",
+        "position": [
+         0,
+         40,
+         0
+        ]
+       },
+       {
+        "id": "e",
+        "position": [
+         40,
+         40,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 754,
+    "completion_tokens": 304,
+    "cost": 0.015130000000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_003",
+   "trial": 1,
+   "seconds": 7.9,
+   "timestamp": "2026-09-06T15:06:29+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "s1",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "s2",
+        "position": [
+         0,
+         0,
+         20
+        ]
+       },
+       {
+        "id": "s3",
+        "position": [
+         0,
+         0,
+         40
+        ]
+       },
+       {
+        "id": "t1",
+        "position": [
+         60,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "t2",
+        "position": [
+         60,
+         30,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 717,
+    "completion_tokens": 403,
+    "cost": 0.017235
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_004",
+   "trial": 1,
+   "seconds": 9.7,
+   "timestamp": "2026-09-06T15:06:39+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "m1",
+        "position": [
+         0,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "m2",
+        "position": [
+         0,
+         50,
+         0
+        ]
+       },
+       {
+        "id": "m3",
+        "position": [
+         85,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "m4",
+        "position": [
+         85,
+         40,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 794,
+    "completion_tokens": 431,
+    "cost": 0.011181
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_005",
+   "trial": 1,
+   "seconds": 266.6,
+   "timestamp": "2026-09-06T15:11:06+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "usb_conn",
+        "position": [
+         0,
+         50,
+         0
+        ]
+       },
+       {
+        "id": "pwr_conn",
+        "position": [
+         180,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "mcu",
+        "position": [
+         25,
+         70,
+         0
+        ]
+       },
+       {
+        "id": "battery",
+        "position": [
+         78,
+         0,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 871,
+    "completion_tokens": 1287,
+    "cost": 0.040874999999999995
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_006",
+   "trial": 1,
+   "seconds": 19.5,
+   "timestamp": "2026-09-06T15:11:25+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "hot1",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "hot2",
+        "position": [
+         60,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "hot3",
+        "position": [
+         120,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "sensor",
+        "position": [
+         0,
+         80,
+         0
+        ]
+       },
+       {
+        "id": "cap",
+        "position": [
+         170,
+         60,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 798,
+    "completion_tokens": 738,
+    "cost": 0.02642
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_007",
+   "trial": 1,
+   "seconds": 14.4,
+   "timestamp": "2026-09-06T15:11:40+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "pcb",
+        "position": [
+         10,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "heatsink",
+        "position": [
+         10,
+         10,
+         10
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         10,
+         10,
+         40
+        ]
+       },
+       {
+        "id": "battery",
+        "position": [
+         75,
+         10,
+         10
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 812,
+    "completion_tokens": 1893,
+    "cost": 0.055435
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_008",
+   "trial": 1,
+   "seconds": 27.7,
+   "timestamp": "2026-09-06T15:12:07+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "A",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "B",
+        "position": [
+         50,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "C",
+        "position": [
+         50,
+         30,
+         0
+        ]
+       },
+       {
+        "id": "D",
+        "position": [
+         50,
+         30,
+         30
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 749,
+    "completion_tokens": 207,
+    "cost": 0.012655
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_009",
+   "trial": 1,
+   "seconds": 6.8,
+   "timestamp": "2026-09-06T15:12:14+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "display",
+        "position": [
+         30,
+         0,
+         32
+        ]
+       },
+       {
+        "id": "pcb",
+        "position": [
+         30,
+         0,
+         15
+        ]
+       },
+       {
+        "id": "battery",
+        "position": [
+         30,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "speaker",
+        "position": [
+         60,
+         70,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 885,
+    "completion_tokens": 749,
+    "cost": 0.027565
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_010",
+   "trial": 1,
+   "seconds": 14.5,
+   "timestamp": "2026-09-06T15:12:29+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "m1",
+        "position": [
+         5,
+         5,
+         5
+        ]
+       },
+       {
+        "id": "m2",
+        "position": [
+         37,
+         5,
+         5
+        ]
+       },
+       {
+        "id": "m3",
+        "position": [
+         69,
+         5,
+         5
+        ]
+       },
+       {
+        "id": "m4",
+        "position": [
+         101,
+         5,
+         5
+        ]
+       },
+       {
+        "id": "m5",
+        "position": [
+         133,
+         5,
+         5
+        ]
+       },
+       {
+        "id": "m6",
+        "position": [
+         165,
+         5,
+         5
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 842,
+    "completion_tokens": 405,
+    "cost": 0.018535
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_011",
+   "trial": 1,
+   "seconds": 8.7,
+   "timestamp": "2026-09-06T15:12:37+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "dc_jack",
+        "position": [
+         0,
+         20,
+         0
+        ]
+       },
+       {
+        "id": "usb",
+        "position": [
+         0,
+         120,
+         0
+        ]
+       },
+       {
+        "id": "psu",
+        "position": [
+         15,
+         10,
+         0
+        ]
+       },
+       {
+        "id": "mcu",
+        "position": [
+         20,
+         105,
+         0
+        ]
+       },
+       {
+        "id": "battery",
+        "position": [
+         118,
+         50,
+         0
+        ]
+       },
+       {
+        "id": "hot_reg",
+        "position": [
+         60,
+         60,
+         0
+        ]
+       },
+       {
+        "id": "fan",
+        "position": [
+         55,
+         55,
+         20
+        ]
+       },
+       {
+        "id": "sensor",
+        "position": [
+         80,
+         132,
+         0
+        ]
+       }
+      ]
+     },
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 1022,
+    "completion_tokens": 3393,
+    "cost": 0.09503500000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5",
+   "task": "mech_012",
+   "trial": 1,
+   "seconds": 42.6,
+   "timestamp": "2026-09-06T15:13:20+00:00"
+  }
+ ]
+}

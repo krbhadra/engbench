@@ -167,8 +167,10 @@ def make_cli_chat():
                 d = json.loads(proc.stdout)
             except json.JSONDecodeError:
                 d = {"is_error": True, "result": (proc.stdout + proc.stderr)[-500:]}
-            if not d.get("is_error"):
+            if not d.get("is_error") and (d.get("result") or "").strip():
                 break
+            if not d.get("is_error"):  # empty reply with no error flag: transport hiccup, retry
+                d = {"is_error": True, "result": "empty reply from cli"}
             if attempt == len(backoff):
                 raise RuntimeError(f"claude cli: {d.get('result')}")
             print(f"  cli error ({str(d.get('result'))[:80]}), retry in {backoff[attempt]}s", flush=True)
