@@ -1,19 +1,25 @@
 # EngBench
 
 A benchmark for LLM engineering reasoning that grades **design artifacts**
-with real solvers — not an LLM judge.
+with real solvers — not an LLM judge — and scores every model two ways:
+**single-shot** (raw reasoning) and **agentic** (iterating against solver
+feedback).
 
-See [VISION.md](VISION.md) for why this exists and what's in/out of scope.
+See [VISION.md](VISION.md) for why this exists, the two-track design, and
+what's in/out of scope.
 
 ## How it works
 
 1. A task (`tasks/*.json`) describes an engineering problem in plain language
    plus machine-checkable constraints.
 2. A model reads the task and produces a design artifact — component
-   placements (mechanical) or a SPICE netlist (electrical).
+   placements (mechanical), a SPICE netlist (electrical), or both (combined).
 3. A grader (`solvers/mechanical.py` or `solvers/electrical.py`) checks the
    artifact against the task's constraints and returns pass/fail + a list of
    violations. No LLM is involved in grading.
+4. On the **single-shot** track the model gets one response. On the
+   **agentic** track the model gets a `grade` tool that returns the violation
+   list, and up to 5 calls to converge.
 
 ## Task schema
 
@@ -48,8 +54,20 @@ Expected model output:
 { "netlist": "V1 vin 0 DC 12\nR1 vin vout 100\nR2 vout 0 100" }
 ```
 
-**Combined** tasks (`domain: "combined"`) carry both a mechanical and an
-electrical section and must pass both graders.
+**Combined** (`domain: "combined"`) carries both sections plus a `wires`
+list that couples them:
+```json
+{
+  "wires": [
+    { "from": "psu", "to": "load", "nodes": ["psu_out", "load_in"], "ohms_per_mm": 0.002 }
+  ]
+}
+```
+The model outputs both `placements` and `netlist`. The grader measures the
+distance between the placed components, computes the wire resistance,
+inserts it between the named nodes, and only then simulates. A layout that
+puts the load far from the supply fails the drop check — the model cannot
+claim a shorter wire than its own placement implies.
 
 ## Setup
 
@@ -58,8 +76,18 @@ pip install -r requirements.txt
 ```
 
 The electrical grader shells out to the `ngspice` CLI — install it from
-[ngspice.sourceforge.io](https://ngspice.sourceforge.io) and make sure
-`ngspice` is on your PATH. The mechanical grader has no external dependency.
+[ngspice.sourceforge.io](https://ngspice.sourceforge.io) (or
+`choco install ngspice` / `apt install ngspice` / `brew install ngspice`)
+and make sure `ngspice` is on your PATH. The mechanical grader has no
+external dependency.
+
+Model calls go through [OpenRouter](https://openrouter.ai). Put your key in
+a `.env` file at the repo root:
+```
+OPENROUTER_API_KEY=sk-or-...
+```
+Turn on OpenRouter's no-logging provider filter before running so the tasks
+don't leak into anyone's training data.
 
 ## Running the self-checks
 
@@ -68,23 +96,36 @@ cd solvers
 python test_solvers.py
 ```
 
-## Running the full eval
+Every task has a golden solution that must pass and at least one broken
+solution that must fail.
+
+## Running the eval
 
 ```bash
-python harness/run_eval.py
+python harness/run_eval.py --track single-shot --model anthropic/claude-...
+python harness/run_eval.py --track agentic --model anthropic/claude-...
+python harness/leaderboard.py
 ```
 
-Results land in `results/` as one JSON file per model with per-task
-pass/fail and violation detail, plus a leaderboard summary printed to stdout.
+Results land in `results/` as one JSON file per model per track, with the
+full attempt trajectory for every trial. The leaderboard script prints
+single-shot and agentic pass rates side by side, plus the gap.
+
+## Metrics
+
+Per model, per track: mean pass rate over 3 trials, pass^3, mean attempts to
+first pass (agentic), mean tokens and cost per task. See VISION.md for the
+reasoning behind the budget.
 
 ## Status
 
 - [x] Task schema
 - [x] Mechanical grader (validated against golden + broken solutions)
 - [ ] Electrical grader (implemented, pending ngspice validation)
+- [ ] Combined grader (wire-resistance coupling)
 - [ ] Full 30-task set (3 example tasks so far)
-- [ ] Model harness (API wiring)
-- [ ] Results + leaderboard
+- [ ] Harness: single-shot runner, agentic runner, leaderboard
+- [ ] Results + writeup
 
 ## License
 
