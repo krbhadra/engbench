@@ -1,0 +1,86 @@
+{
+ "model": "haiku [claude-cli]",
+ "transport": "claude-cli",
+ "track": "single-shot",
+ "settings": {
+  "provider": null,
+  "reasoning": null,
+  "temperature": null
+ },
+ "max_attempts": 5,
+ "records": [
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "netlist": "V1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k"
+     },
+     "raw": "```json\n{\"netlist\": \"V1 vin 0 DC 12\\nR1 vin vout 10k\\nR2 vout 0 10k\"}\n```",
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 534,
+    "completion_tokens": 964,
+    "cost": 0.005353999999999999
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "elec_001",
+   "trial": 1,
+   "seconds": 16.0,
+   "timestamp": "2026-09-06T14:43:09+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "placements": [
+       {
+        "id": "comp_a",
+        "position": [
+         0,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "comp_b",
+        "position": [
+         40,
+         0,
+         0
+        ]
+       },
+       {
+        "id": "comp_c",
+        "position": [
+         90,
+         0,
+         0
+        ]
+       }
+      ]
+     },
+     "raw": "```json\n{\"placements\": [{\"id\": \"comp_a\", \"position\": [0, 0, 0]}, {\"id\": \"comp_b\", \"position\": [40, 0, 0]}, {\"id\": \"comp_c\", \"position\": [90, 0, 0]}]}\n```",
+     "passed": true,
+     "violations": []
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 514,
+    "completion_tokens": 903,
+    "cost": 0.005029
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "mech_001",
+   "trial": 1,
+   "seconds": 11.9,
+   "timestamp": "2026-09-06T14:43:21+00:00"
+  }
+ ]
+}

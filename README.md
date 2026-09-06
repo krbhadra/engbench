@@ -94,13 +94,18 @@ The electrical grader shells out to the `ngspice` CLI — install it from
 and make sure `ngspice` is on your PATH. The mechanical grader has no
 external dependency.
 
-Model calls go through [OpenRouter](https://openrouter.ai). Put your key in
-a `.env` file at the repo root:
-```
-OPENROUTER_API_KEY=sk-or-...
-```
-Turn on OpenRouter's no-logging provider filter before running so the tasks
-don't leak into anyone's training data.
+Model calls go through one of two transports:
+
+- **OpenRouter** (default): any model, native tool calls. Put your key in a
+  `.env` file at the repo root as `OPENROUTER_API_KEY=sk-or-...` and turn on
+  OpenRouter's no-logging provider filter so the tasks don't leak into
+  anyone's training data.
+- **claude-cli**: Claude models on a Claude subscription via the `claude` CLI
+  in headless mode. Built-in tools, MCP servers, skills and settings are all
+  disabled so the model sees only the task. The agentic loop is a text
+  protocol (submit artifact, receive grader result) instead of native tool
+  calls, and extended thinking is on by default. Results are labeled
+  `[claude-cli]` so they are never mixed with API runs.
 
 ## Running the self-checks
 
@@ -119,13 +124,15 @@ One model, one track:
 ```bash
 python harness/run_eval.py --track single-shot --model anthropic/claude-...
 python harness/run_eval.py --track agentic --model anthropic/claude-... --provider Fireworks
+python harness/run_eval.py --transport claude-cli --track agentic --model sonnet
 python harness/leaderboard.py
 ```
 Everything (edit the `MODELS` list in `harness/run_all.py` first, and verify
 the ids on openrouter.ai/models):
 ```bash
-python harness/run_all.py --trials 1   # smoke run
-python harness/run_all.py              # full 3-trial run
+python harness/run_all.py --trials 1                 # smoke run
+python harness/run_all.py                            # full 3-trial run
+python harness/run_all.py --transport claude-cli     # Claude models on a subscription
 ```
 Runs are resumable: records already in the results file are skipped.
 
@@ -146,7 +153,7 @@ reasoning behind the budget.
 - [x] Electrical grader (validated against ngspice 47: 12 goldens pass, 17 broken fail)
 - [x] Combined grader (wire-resistance coupling, validated the same way)
 - [x] Full 30-task set: 12 mechanical, 12 electrical, 6 combined, each with golden + broken solutions
-- [x] Harness: single-shot runner, agentic runner, run-all, leaderboard (stub-tested, pending first live run)
+- [x] Harness: single-shot runner, agentic runner, run-all, leaderboard (live-tested on the claude-cli transport; OpenRouter transport pending a key)
 - [ ] Results + writeup
 
 ## License

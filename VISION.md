@@ -67,9 +67,11 @@ Following the conventions of SWE-bench, Terminal-Bench, tau-bench and Aider:
 
 ## Reproducibility rules
 
-- All model calls go through **OpenRouter** via its OpenAI-compatible
-  endpoint. Open-weight models are pinned to a named host and quantization
-  with fallbacks disabled.
+- Model calls go through **OpenRouter** via its OpenAI-compatible endpoint.
+  Open-weight models are pinned to a named host and quantization with
+  fallbacks disabled. A second transport runs Claude models through the
+  `claude` CLI on a subscription; those results are labeled separately
+  because the tool protocol and thinking defaults differ.
 - Every result record stores: model string, resolved snapshot, serving
   provider, sampling and reasoning settings, tokens, cost, timestamp, and
   the full attempt trajectory (every artifact submitted and every violation

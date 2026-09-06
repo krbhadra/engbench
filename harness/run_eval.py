@@ -2,8 +2,14 @@
 
     python harness/run_eval.py --model anthropic/claude-sonnet-4 --track agentic
     python harness/run_eval.py --model meta-llama/llama-3.3-70b-instruct --provider fireworks --track single-shot
+    python harness/run_eval.py --transport claude-cli --model sonnet --track agentic
 
-Stdlib only. Calls OpenRouter's OpenAI-compatible endpoint directly.
+Stdlib only. Two transports:
+  openrouter  - OpenRouter's OpenAI-compatible endpoint, native tool calls (default)
+  claude-cli  - the `claude` CLI in headless mode on a Claude subscription. Built-in
+                tools, MCP servers, skills and settings are all disabled so the model
+                sees only our prompt. The agentic loop is a text protocol (submit
+                artifact -> receive grader result) rather than native tool calls.
 Resumable: (task, trial) pairs already in the results file are skipped.
 """
 from __future__ import annotations
@@ -13,6 +19,8 @@ import datetime as dt
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
 import time
 import urllib.error
@@ -46,6 +54,14 @@ SYSTEM_AGENTIC = (
     f"violations. You may call it at most {MAX_ATTEMPTS} times. Call it with your "
     "candidate; if it reports violations, fix them and call again. Stop as soon as "
     "it passes. The artifact must be a JSON object in this exact shape:\n{shape}"
+)
+
+SYSTEM_AGENTIC_TEXT = (
+    "You are an engineer producing a design artifact. Reply with ONLY a JSON artifact "
+    "(no prose, no code fences) to submit it for grading; you will receive the grader's "
+    f"result as the next message. You may submit at most {MAX_ATTEMPTS} times. If it "
+    "reports violations, fix them and submit again. When it reports passed: true, reply "
+    "with the single word DONE. The artifact must be a JSON object in this exact shape:\n{shape}"
 )
 
 GRADE_TOOL = {
@@ -108,6 +124,76 @@ def chat(model: str, messages: list, tools=None, *, opts: dict) -> dict:
                 time.sleep(2 ** attempt * 5)
                 continue
             raise RuntimeError(f"HTTP {e.code}: {e.read().decode()[:500]}") from e
+
+
+# ---------- claude-cli transport ----------
+
+CLI_FLAGS = ["--tools", "", "--strict-mcp-config", "--disable-slash-commands",
+             "--setting-sources", "", "--output-format", "json"]
+
+
+def _claude_exe() -> str:
+    found = shutil.which("claude") or "claude"
+    if found.lower().endswith(".cmd"):
+        # npm's batch wrapper mangles empty-string args like `--tools ""`; call the real binary
+        native = Path(found).parent / "node_modules/@anthropic-ai/claude-code/bin/claude.exe"
+        if native.exists():
+            return str(native)
+    return found
+
+
+def make_cli_chat():
+    """One closure per task: holds the CLI session id so turns share context via --resume."""
+    session = {"id": None}
+
+    def chat_cli(model: str, messages: list, tools=None, *, opts: dict) -> dict:
+        system = messages[0]["content"]
+        if tools:  # text protocol replaces the tool protocol; keep the shape line
+            system = SYSTEM_AGENTIC_TEXT.format(shape=system.rsplit("\n", 1)[1])
+        prompt = messages[1]["content"] if session["id"] is None else \
+            "Grader result: " + messages[-1]["content"]
+
+        cmd = [_claude_exe(), "-p", "--model", model, "--system-prompt", system, *CLI_FLAGS]
+        cmd += ["--resume", session["id"]] if session["id"] else []
+        cmd += ["--effort", opts["reasoning"]] if opts.get("reasoning") else []
+        env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}  # allow nesting
+
+        backoff = [15, 60, 300, 900, 1800]  # subscription rate limits reset on a long window
+        for attempt in range(len(backoff) + 1):
+            proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, encoding="utf-8",
+                                  env=env, timeout=TASK_TIMEOUT)  # prompt on stdin: no cmdline length limit
+            try:
+                d = json.loads(proc.stdout)
+            except json.JSONDecodeError:
+                d = {"is_error": True, "result": (proc.stdout + proc.stderr)[-500:]}
+            if not d.get("is_error"):
+                break
+            if attempt == len(backoff):
+                raise RuntimeError(f"claude cli: {d.get('result')}")
+            print(f"  cli error ({str(d.get('result'))[:80]}), retry in {backoff[attempt]}s", flush=True)
+            time.sleep(backoff[attempt])
+
+        session["id"] = d.get("session_id")
+        text = d.get("result") or ""
+        usage = d.get("modelUsage") or {}
+        canonical = next(iter(usage.values()), {}).get("canonicalModel", model)
+        msg = {"role": "assistant", "content": text}
+        if tools and (art := parse_artifact(text)) is not None and text.strip().upper() != "DONE":
+            # a JSON reply is a submission: present it as a grade tool call
+            msg = {"role": "assistant", "content": None, "tool_calls": [{
+                "id": f"cli{len(messages)}", "type": "function",
+                "function": {"name": "grade", "arguments": json.dumps({"artifact": art})}}]}
+        return {
+            "choices": [{"message": msg}],
+            "usage": {"prompt_tokens": sum(u.get("inputTokens", 0) + u.get("cacheReadInputTokens", 0)
+                                           + u.get("cacheCreationInputTokens", 0) for u in usage.values()),
+                      "completion_tokens": sum(u.get("outputTokens", 0) for u in usage.values()),
+                      "cost": d.get("total_cost_usd") or 0.0},  # list price; subscription absorbs it
+            "provider": "claude-cli (subscription)",
+            "model": canonical,
+        }
+
+    return chat_cli
 
 
 # ---------- helpers ----------
@@ -220,8 +306,9 @@ def slug(s):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", required=True, help="OpenRouter model id, e.g. anthropic/claude-sonnet-4")
+    ap.add_argument("--model", required=True, help="OpenRouter model id, or a claude-cli model (haiku, sonnet, opus, ...)")
     ap.add_argument("--track", choices=RUNNERS, required=True)
+    ap.add_argument("--transport", choices=["openrouter", "claude-cli"], default="openrouter")
     ap.add_argument("--trials", type=int, default=3)
     ap.add_argument("--tasks", nargs="*", help="task ids to run (default: all)")
     ap.add_argument("--provider", help="pin an OpenRouter host, fallbacks disabled (open-weight models)")
@@ -229,19 +316,22 @@ def main():
     ap.add_argument("--temperature", type=float)
     args = ap.parse_args()
 
-    load_env()
-    if "OPENROUTER_API_KEY" not in os.environ:
-        sys.exit("OPENROUTER_API_KEY not set (put it in .env at the repo root)")
+    cli = args.transport == "claude-cli"
+    if not cli:
+        load_env()
+        if "OPENROUTER_API_KEY" not in os.environ:
+            sys.exit("OPENROUTER_API_KEY not set (put it in .env at the repo root)")
 
     opts = {"provider": args.provider, "reasoning": args.reasoning, "temperature": args.temperature}
     tasks = [json.loads(p.read_text()) for p in sorted(TASKS_DIR.glob("*.json"))]
     if args.tasks:
         tasks = [t for t in tasks if t["id"] in args.tasks]
 
+    label = f"{args.model} [claude-cli]" if cli else args.model
     RESULTS_DIR.mkdir(exist_ok=True)
-    out_path = RESULTS_DIR / f"{slug(args.model)}__{args.track}.json"
+    out_path = RESULTS_DIR / f"{slug(label)}__{args.track}.json"
     results = json.loads(out_path.read_text()) if out_path.exists() else {
-        "model": args.model, "track": args.track, "settings": opts,
+        "model": label, "transport": args.transport, "track": args.track, "settings": opts,
         "max_attempts": MAX_ATTEMPTS, "records": [],
     }
     done = {(r["task"], r["trial"]) for r in results["records"]}
@@ -252,7 +342,11 @@ def main():
             if (task["id"], trial) in done:
                 continue
             t0 = time.time()
-            rec = runner(args.model, task, opts)
+            try:
+                rec = runner(args.model, task, opts, chat=make_cli_chat() if cli else chat)
+            except Exception as e:  # leave the record undone so a re-run resumes it
+                print(f"ERROR {task['id']} trial {trial}: {type(e).__name__}: {str(e)[:200]}", flush=True)
+                continue
             rec.update({"task": task["id"], "trial": trial, "seconds": round(time.time() - t0, 1),
                         "timestamp": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")})
             results["records"].append(rec)
