@@ -143,8 +143,8 @@ reasoning behind the budget.
 
 - [x] Task schema
 - [x] Mechanical grader (validated against golden + broken solutions)
-- [ ] Electrical grader (implemented, goldens verified with an offline DC solver, pending ngspice validation)
-- [ ] Combined grader (wire-resistance coupling, same status)
+- [x] Electrical grader (validated against ngspice 47: 12 goldens pass, 17 broken fail)
+- [x] Combined grader (wire-resistance coupling, validated the same way)
 - [x] Full 30-task set: 12 mechanical, 12 electrical, 6 combined, each with golden + broken solutions
 - [x] Harness: single-shot runner, agentic runner, run-all, leaderboard (stub-tested, pending first live run)
 - [ ] Results + writeup

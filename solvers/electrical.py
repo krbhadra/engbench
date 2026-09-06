@@ -41,8 +41,13 @@ def _has_element(netlist: str, name: str, nodes, value) -> bool:
     return False
 
 
+def _ngspice_bin() -> str | None:
+    # Windows ships ngspice_con.exe (console) and ngspice.exe (GUI, prints nothing in batch mode)
+    return shutil.which("ngspice_con") or shutil.which("ngspice")
+
+
 def _ngspice_available() -> bool:
-    return shutil.which("ngspice") is not None
+    return _ngspice_bin() is not None
 
 
 def _run_ngspice(netlist: str) -> dict:
@@ -52,6 +57,9 @@ def _run_ngspice(netlist: str) -> dict:
     # non-element, non-directive first line) and always prepend our own.
     if lines and not lines[0].startswith((".", "*")) and len(lines[0].split()) < 3:
         lines = lines[1:]
+    # A model-supplied .end or analysis block would pre-empt ours; the grader owns the analysis.
+    ours = {".end", ".control", ".endc", ".op", ".print", ".tran", ".dc", ".ac"}
+    lines = [l for l in lines if (l.split() or [""])[0].lower() not in ours]
     control = "\n.control\nop\nprint all\n.endc\n"
     deck = "EngBench\n" + "\n".join(lines) + control + "\n.end\n"
 
@@ -59,14 +67,16 @@ def _run_ngspice(netlist: str) -> dict:
         deck_path = Path(tmp) / "circuit.cir"
         deck_path.write_text(deck)
         result = subprocess.run(
-            ["ngspice", "-b", str(deck_path)],
+            [_ngspice_bin(), "-b", str(deck_path)],
             capture_output=True, text=True, timeout=30,
         )
 
+    # `print all` after .op emits one line per vector: "vout = 6.000000e+00" (node voltage)
+    # or "v1#branch = -6.0e-02" (source current). Older builds wrap names as v(vout).
     voltages = {}
     for line in result.stdout.splitlines():
-        m = re.match(r"^\s*v\(([\w.]+)\)\s*=\s*([-\d.eE+]+)", line, re.IGNORECASE)
-        if m:
+        m = re.match(r"^\s*(?:v\()?([\w.]+)\)?\s*=\s*([-\d.eE+]+)\s*$", line, re.IGNORECASE)
+        if m and "#" not in m.group(1):
             voltages[m.group(1).lower()] = float(m.group(2))
     return voltages
 
