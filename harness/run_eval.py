@@ -35,7 +35,8 @@ TASKS_DIR = ROOT / "tasks"
 RESULTS_DIR = ROOT / "results"
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 MAX_ATTEMPTS = 5      # grader calls per task, agentic track
-TASK_TIMEOUT = 300    # seconds, safety net only
+TASK_TIMEOUT = 900    # seconds per task, safety net only (thinking-heavy models need >5 min for 5 turns)
+CALL_TIMEOUT = 900    # seconds per model call
 
 OUTPUT_SHAPE = {
     "mechanical": '{"placements": [{"id": "<component id>", "position": [x, y, z]}, ...]}',
@@ -117,7 +118,7 @@ def chat(model: str, messages: list, tools=None, *, opts: dict) -> dict:
     )
     for attempt in range(4):  # ponytail: simple backoff on 429/5xx
         try:
-            with urllib.request.urlopen(req, timeout=180) as r:
+            with urllib.request.urlopen(req, timeout=CALL_TIMEOUT) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
             if e.code in (429, 500, 502, 503) and attempt < 3:
@@ -161,7 +162,7 @@ def make_cli_chat():
         backoff = [15, 60, 300, 900, 1800]  # subscription rate limits reset on a long window
         for attempt in range(len(backoff) + 1):
             proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, encoding="utf-8",
-                                  env=env, timeout=TASK_TIMEOUT)  # prompt on stdin: no cmdline length limit
+                                  env=env, timeout=CALL_TIMEOUT)  # prompt on stdin: no cmdline length limit
             try:
                 d = json.loads(proc.stdout)
             except json.JSONDecodeError:

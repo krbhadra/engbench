@@ -55,8 +55,9 @@ both tracks.
 Following the conventions of SWE-bench, Terminal-Bench, tau-bench and Aider:
 
 - **Attempt cap:** 5 grader calls per task on the agentic track.
-- **Wall-clock timeout:** 5 minutes per task, as a safety net only — never a
-  scoring mechanism.
+- **Wall-clock timeout:** 15 minutes per task, as a safety net only, never a
+  scoring mechanism. Raised from 5 after Haiku 4.5 with extended thinking
+  spent over 5 minutes on single tasks.
 - **Trials:** every task is run 3 times per model per track.
 - **Reported per model, per track:** mean pass rate, pass^3 (fraction of
   tasks passed in all three trials), mean attempts to first pass (agentic),
