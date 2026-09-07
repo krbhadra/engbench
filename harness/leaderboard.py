@@ -37,14 +37,28 @@ def pct(x):
 
 
 def main():
-    table = defaultdict(dict)
+    table, raw = defaultdict(dict), defaultdict(dict)
     for p in sorted(RESULTS_DIR.glob("*.json")):
         d = json.loads(p.read_text())
         table[d["model"]][d["track"]] = summarize(d["records"])
+        raw[d["model"]][d["track"]] = d["records"]
 
     if not table:
         print("no results yet")
         return
+
+    # ponytail: family = task id up to the last underscore (mech, elec, comb, pe_cooling, coolant_loop)
+    fams = sorted({r["task"].rsplit("_", 1)[0] for tr in raw.values() for recs in tr.values() for r in recs})
+    print(f"{'single-shot pass rate by family':40} " + " ".join(f"{f:>13}" for f in fams))
+    print("-" * (41 + 14 * len(fams)))
+    for model, tracks in sorted(raw.items()):
+        recs = tracks.get("single-shot", [])
+        cells = []
+        for f in fams:
+            fr = [r for r in recs if r["task"].rsplit("_", 1)[0] == f and r["passed"] is not None]
+            cells.append(f"{pct(sum(r['passed'] for r in fr) / len(fr))} ({len(fr):2d})" if fr else f"{'-':>13}")
+        print(f"{model:40} " + " ".join(f"{c:>13}" for c in cells))
+    print()
 
     hdr = (f"{'model':40} {'single':>7} {'agentic':>8} {'gap':>6} "
            f"{'ss pass^k':>10} {'ag pass^k':>10} {'attempts':>9} {'$/task':>8}")
