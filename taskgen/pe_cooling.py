@@ -45,6 +45,7 @@ FSW_GRID = list(range(50_000, 500_001, 10_000))
 MIN_FEASIBLE_FRACTION = 0.002
 MAX_FEASIBLE_FRACTION = 0.03
 COST_TOLERANCE = 0.05  # pass if price <= (1 + this) * brute-force optimum
+# stored values are rounded to exactly what describe() prints, so the model and the grader compute from the same numbers
 MAX_NEAR_OPT_FRACTION = 0.25  # reject seeds where more than this share of feasible designs is near-optimal
 
 
@@ -60,10 +61,10 @@ def make_task(seed: int) -> dict | None:
     p = {
         "vin": vin, "vout": vout, "iout": iout,
         "rds25": _r(rng, 0.0030, 0.0080, 5), "alpha": _r(rng, 0.0035, 0.0055, 4),
-        "tr_tf_s": _r(rng, 25e-9, 60e-9, 11), "qg_c": _r(rng, 40e-9, 90e-9, 11), "vgs": 10.0,
+        "tr_tf_s": _r(rng, 25e-9, 60e-9, 9), "qg_c": _r(rng, 40e-9, 90e-9, 9), "vgs": 10.0,
         "rth_jc": _r(rng, 0.4, 0.9, 2), "rth_cs": _r(rng, 0.2, 0.5, 2),
         "ta_ext": float(rng.choice([25, 30, 35, 40])), "r_encl": _r(rng, 1.2, 3.0, 2),
-        "c_f": _r(rng, 100e-6, 330e-6, 7),
+        "c_f": _r(rng, 100e-6, 330e-6, 6),
         "fsw_min_hz": 50_000.0, "fsw_max_hz": 500_000.0,
         "duct_area_m2": _r(rng, 0.004, 0.008, 4), "k_system": _r(rng, 0.008, 0.02, 4),
     }
@@ -79,7 +80,7 @@ def make_task(seed: int) -> dict | None:
                                                         [round(0.8 * qs, 1), round(0.3 * ps, 1)], [round(qs, 1), 0]],
                      "power_w": w, "dba": dba, "price": round(pr * _r(rng, 0.85, 1.15, 2), 2)})
     isf = _r(rng, 0.85, 1.1, 3)
-    inductors = [{"id": i, "l_h": round(l * 1e-6 * _r(rng, 0.9, 1.1, 3), 9), "dcr_ohm": round(dcr * 1e-3 * _r(rng, 0.9, 1.2, 3), 6),
+    inductors = [{"id": i, "l_h": round(l * 1e-6 * _r(rng, 0.9, 1.1, 3), 8), "dcr_ohm": round(dcr * 1e-3 * _r(rng, 0.9, 1.2, 3), 5),
                   "isat_a": round(isat * isf, 1), "price": round(pr * _r(rng, 0.85, 1.15, 2), 2)} for i, l, dcr, isat, pr in INDUCTORS]
     task = {"id": f"pe_cooling_{seed:03d}", "domain": "pe_cooling", "params": p, "limits": {},
             "heatsinks": sinks, "fans": fans, "inductors": inductors}
