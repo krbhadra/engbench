@@ -14,9 +14,11 @@ what's in/out of scope.
    plus machine-checkable constraints.
 2. A model reads the task and produces a design artifact — component
    placements (mechanical), a SPICE netlist (electrical), or both (combined).
-3. A grader (`solvers/mechanical.py` or `solvers/electrical.py`) checks the
-   artifact against the task's constraints and returns pass/fail + a list of
-   violations. No LLM is involved in grading.
+3. A grader in `solvers/` (one module per domain) checks the artifact
+   against the task's constraints and returns pass/fail + a list of
+   violations. No LLM is involved in grading. Generated families
+   (`pe_cooling`, `coolant_loop`) also carry an objective: the design must be
+   within a stated tolerance of the brute-force optimum, not merely feasible.
 4. On the **single-shot** track the model gets one response. On the
    **agentic** track the model gets a `grade` tool that returns the violation
    list, and up to 5 calls to converge.
@@ -82,6 +84,22 @@ inserts it between the named nodes, and only then simulates. A layout that
 puts the load far from the supply fails the drop check — the model cannot
 claim a shorter wire than its own placement implies.
 
+**Generated families** (`domain: "pe_cooling"`, `"coolant_loop"`) are produced
+by `taskgen/<family>.py --seeds ...`. Each seed perturbs every parameter,
+brute-forces the whole design space with the grader, calibrates the limits so
+0.2-3% of designs are feasible, stores the optimum under `objective`, and
+rejects seeds where the objective is trivial. The task text states the full
+physics model, the catalogs, the constraints, and the objective; the model
+returns a small JSON design (see `output_shape` in the task). Rules are in
+[docs/TASK_STANDARD.md](docs/TASK_STANDARD.md).
+
+- `pe_cooling` (electronics + thermal + fluids): switching frequency,
+  inductor, heat sink, fan for a buck converter in an enclosure; minimize
+  component cost.
+- `coolant_loop` (thermal + fluids): coolant, pump, pump speed, channel
+  diameter, parallel channels for a battery module cold plate; minimize pump
+  power. Property tables come from CoolProp at generation time.
+
 ## Setup
 
 ```bash
@@ -91,8 +109,9 @@ pip install -r requirements.txt
 The electrical grader shells out to the `ngspice` CLI — install it from
 [ngspice.sourceforge.io](https://ngspice.sourceforge.io) (or
 `choco install ngspice` / `apt install ngspice` / `brew install ngspice`)
-and make sure `ngspice` is on your PATH. The mechanical grader has no
-external dependency.
+and make sure `ngspice` is on your PATH. Every other grader is stdlib.
+Generating new `coolant_loop` seeds needs `pip install CoolProp` (grading
+does not).
 
 Model calls go through one of two transports:
 
@@ -154,6 +173,9 @@ reasoning behind the budget.
 - [x] Combined grader (wire-resistance coupling, validated the same way)
 - [x] Full 30-task set: 12 mechanical, 12 electrical, 6 combined, each with golden + broken solutions
 - [x] Harness: single-shot runner, agentic runner, run-all, leaderboard (live-tested on the claude-cli transport; OpenRouter transport pending a key)
+- [x] `pe_cooling` family: 26 tasks; feasibility alone was saturated by every model, the cost objective is not
+- [x] `coolant_loop` family: 32 tasks, self-checked; model runs pending
+- [ ] Thermal, controls, fluids single-discipline families from the source survey
 - [ ] Results + writeup
 
 ## License

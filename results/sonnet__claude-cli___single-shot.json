@@ -1564,6 +1564,54 @@
    "trial": 1,
    "seconds": 145.3,
    "timestamp": "2026-09-07T10:21:00+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "fsw_hz": 50000,
+      "inductor": "IND-4",
+      "heatsink": "HS-1",
+      "fan": "FAN-B"
+     },
+     "raw": "{\"fsw_hz\": 50000, \"inductor\": \"IND-4\", \"heatsink\": \"HS-1\", \"fan\": \"FAN-B\"}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "fsw_hz": 50000.0,
+      "q_m3h": 30.4976,
+      "v_ms": 1.1766,
+      "rsa": 5.7286,
+      "ta_int": 36.767,
+      "p_fet": 8.9258,
+      "p_sw": 1.0836,
+      "p_l": 6.7275,
+      "p_fan": 2.4,
+      "p_total": 18.0533,
+      "tj": 99.5025,
+      "eta": 0.8926,
+      "d_i": 5.9902,
+      "d_v": 0.092,
+      "i_peak": 32.9951,
+      "isat": 34.7,
+      "cost": 10.55,
+      "noise_dba": 32,
+      "height_mm": 15
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3110,
+    "completion_tokens": 30891,
+    "cost": 0.32134599999999997
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5",
+   "task": "pe_cooling_006",
+   "trial": 1,
+   "seconds": 264.1,
+   "timestamp": "2026-09-07T10:25:24+00:00"
   }
  ]
 }

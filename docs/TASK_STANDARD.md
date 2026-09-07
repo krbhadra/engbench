@@ -42,18 +42,33 @@ self-check (`python solvers/test_solvers.py`) enforces the mechanical ones.
 - Tolerances absorb float noise only (see `TOL` in the electrical grader), never
   engineering margin. Margin belongs in the task's limits.
 
-## 5. Golden and broken
+## 5. Objective, not just feasibility
+
+- A task whose only question is "does a feasible design exist" is saturated
+  by frontier models as soon as the physics is stated (pe_cooling v2: 36/36
+  passes, yet picks cost 1.2-3x the optimum). Generated families therefore
+  carry `objective`: `{"minimize": <metric>, "optimum": <brute force>,
+  "tolerance": 0.05}`. A design passes only if it is feasible and its metric
+  is within the tolerance of the optimum.
+- The description states the objective and the tolerance in words. The
+  optimum itself is in the task JSON (as is the golden), never in the prompt
+  and never in grader feedback.
+- Seeds where more than 25% of feasible designs are already near-optimal are
+  rejected as trivial.
+
+## 6. Golden and broken
 
 - Every task has a golden solution in `solvers/solutions.json` that passes.
   For generated families the golden is found by brute force or optimization,
   which doubles as the feasibility proof.
 - Every task has at least two broken solutions, each expected to fail with a
-  named violation substring. The grader must fail them. A grader that cannot
+  named violation substring. One of them is feasible but far from the
+  optimum, so the objective check is exercised too. The grader must fail them. A grader that cannot
   fail a wrong answer is not a grader.
 - Generated families reject seeds that are infeasible or trivial (a feasible
   fraction of the design space above a stated ceiling).
 
-## 6. Labeled
+## 7. Labeled
 
 - `domain`: the grader module name in `solvers/`.
 - `disciplines`: the engineering disciplines the task touches, one or more of
