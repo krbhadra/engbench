@@ -312,6 +312,22 @@ def slug(s):
     return re.sub(r"[^\w.-]", "_", s)
 
 
+def _save(out_path, results):
+    """Merge into whatever is on disk before writing, so parallel runs of the same model on different task subsets
+    do not clobber each other's records. Keyed by (task, trial); this process's record wins on conflict."""
+    merged = {}
+    if out_path.exists():
+        try:
+            for r in json.loads(out_path.read_text())["records"]:
+                merged[(r["task"], r["trial"])] = r
+        except (ValueError, KeyError):
+            pass  # a half-written file loses to the in-memory copy
+    for r in results["records"]:
+        merged[(r["task"], r["trial"])] = r
+    results["records"] = [merged[k] for k in sorted(merged)]
+    out_path.write_text(json.dumps(results, indent=1))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True, help="OpenRouter model id, or a claude-cli model (haiku, sonnet, opus, ...)")
@@ -358,7 +374,7 @@ def main():
             rec.update({"task": task["id"], "trial": trial, "seconds": round(time.time() - t0, 1),
                         "timestamp": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")})
             results["records"].append(rec)
-            out_path.write_text(json.dumps(results, indent=1))  # save after every record
+            _save(out_path, results)
             status = {True: "PASS", False: "FAIL", None: "SKIP"}[rec["passed"]]
             print(f"{status} {task['id']} trial {trial} attempts={len(rec['attempts'])} "
                   f"cost=${rec['usage'].get('cost', 0):.4f} provider={rec['provider']}")

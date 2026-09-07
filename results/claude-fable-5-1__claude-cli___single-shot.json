@@ -1370,7 +1370,7 @@
    "timestamp": "2026-09-06T14:59:26+00:00"
   },
   {
-   "passed": true,
+   "passed": false,
    "attempts": [
     {
      "artifact": {
@@ -1381,8 +1381,10 @@
       "n_parallel": 4
      },
      "raw": "{\"coolant\": \"WATER\", \"pump\": \"PMP-2\", \"speed\": 0.495, \"channel_d_mm\": 4, \"n_parallel\": 4}",
-     "passed": true,
-     "violations": [],
+     "passed": false,
+     "violations": [
+      "pump_power_w 1.98 is not within 5% of the best design that meets every constraint"
+     ],
      "metrics": {
       "q_lpm": 2.3354,
       "dp_pa": 3184.8272,
@@ -1456,7 +1458,7 @@
    "timestamp": "2026-09-07T10:31:15+00:00"
   },
   {
-   "passed": true,
+   "passed": false,
    "attempts": [
     {
      "artifact": {
@@ -1467,8 +1469,10 @@
       "n_parallel": 4
      },
      "raw": "{\"coolant\": \"MEG-50\", \"pump\": \"PMP-1\", \"speed\": 0.566, \"channel_d_mm\": 12, \"n_parallel\": 4}",
-     "passed": true,
-     "violations": [],
+     "passed": false,
+     "violations": [
+      "pump_power_w 1.47 is not within 5% of the best design that meets every constraint"
+     ],
      "metrics": {
       "q_lpm": 1.2426,
       "dp_pa": 2806.4945,
@@ -1542,7 +1546,7 @@
    "timestamp": "2026-09-07T10:34:18+00:00"
   },
   {
-   "passed": true,
+   "passed": false,
    "attempts": [
     {
      "artifact": {
@@ -1553,8 +1557,10 @@
       "n_parallel": 4
      },
      "raw": "{\"coolant\": \"WATER\", \"pump\": \"PMP-1\", \"speed\": 0.735, \"channel_d_mm\": 6, \"n_parallel\": 4}",
-     "passed": true,
-     "violations": [],
+     "passed": false,
+     "violations": [
+      "pump_power_w 2.94 is not within 5% of the best design that meets every constraint"
+     ],
      "metrics": {
       "q_lpm": 1.5475,
       "dp_pa": 5895.7309,
