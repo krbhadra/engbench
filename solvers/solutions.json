@@ -2274,5 +2274,325 @@
     "expect": "clearance"
    }
   ]
+ },
+ "pe_cooling_002": {
+  "golden": {
+   "fsw_hz": 100000,
+   "heatsink": "HS-3",
+   "fan": null
+  },
+  "broken": [
+   {
+    "output": {
+     "fsw_hz": 100000,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "efficiency"
+   },
+   {
+    "output": {
+     "fsw_hz": 500000.0,
+     "heatsink": "HS-3",
+     "fan": null
+    },
+    "expect": "efficiency"
+   },
+   {
+    "output": {
+     "fsw_hz": 50000.0,
+     "heatsink": "HS-3",
+     "fan": null
+    },
+    "expect": "inductor"
+   },
+   {
+    "output": {
+     "fsw_hz": 100000,
+     "heatsink": "HS-6",
+     "fan": "FAN-E"
+    },
+    "expect": "fan"
+   }
+  ]
+ },
+ "pe_cooling_004": {
+  "golden": {
+   "fsw_hz": 100000,
+   "heatsink": "HS-1",
+   "fan": null
+  },
+  "broken": [
+   {
+    "output": {
+     "fsw_hz": 500000.0,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 50000.0,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "inductor"
+   },
+   {
+    "output": {
+     "fsw_hz": 100000,
+     "heatsink": "HS-6",
+     "fan": "FAN-E"
+    },
+    "expect": "fan"
+   }
+  ]
+ },
+ "pe_cooling_005": {
+  "golden": {
+   "fsw_hz": 80000,
+   "heatsink": "HS-2",
+   "fan": "FAN-B"
+  },
+  "broken": [
+   {
+    "output": {
+     "fsw_hz": 80000,
+     "heatsink": "HS-2",
+     "fan": null
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 80000,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 500000.0,
+     "heatsink": "HS-2",
+     "fan": "FAN-B"
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 50000.0,
+     "heatsink": "HS-2",
+     "fan": "FAN-B"
+    },
+    "expect": "inductor"
+   },
+   {
+    "output": {
+     "fsw_hz": 80000,
+     "heatsink": "HS-6",
+     "fan": "FAN-E"
+    },
+    "expect": "fan"
+   }
+  ]
+ },
+ "pe_cooling_009": {
+  "golden": {
+   "fsw_hz": 130000,
+   "heatsink": "HS-1",
+   "fan": null
+  },
+  "broken": [
+   {
+    "output": {
+     "fsw_hz": 500000.0,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 50000.0,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "inductor"
+   },
+   {
+    "output": {
+     "fsw_hz": 130000,
+     "heatsink": "HS-6",
+     "fan": "FAN-E"
+    },
+    "expect": "fan"
+   }
+  ]
+ },
+ "pe_cooling_011": {
+  "golden": {
+   "fsw_hz": 110000,
+   "heatsink": "HS-2",
+   "fan": "FAN-A"
+  },
+  "broken": [
+   {
+    "output": {
+     "fsw_hz": 110000,
+     "heatsink": "HS-2",
+     "fan": null
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 110000,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 500000.0,
+     "heatsink": "HS-2",
+     "fan": "FAN-A"
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 50000.0,
+     "heatsink": "HS-2",
+     "fan": "FAN-A"
+    },
+    "expect": "inductor"
+   },
+   {
+    "output": {
+     "fsw_hz": 110000,
+     "heatsink": "HS-6",
+     "fan": "FAN-E"
+    },
+    "expect": "fan"
+   }
+  ]
+ },
+ "pe_cooling_015": {
+  "golden": {
+   "fsw_hz": 80000,
+   "heatsink": "HS-1",
+   "fan": null
+  },
+  "broken": [
+   {
+    "output": {
+     "fsw_hz": 500000.0,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 50000.0,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "inductor"
+   },
+   {
+    "output": {
+     "fsw_hz": 80000,
+     "heatsink": "HS-6",
+     "fan": "FAN-E"
+    },
+    "expect": "fan"
+   }
+  ]
+ },
+ "pe_cooling_016": {
+  "golden": {
+   "fsw_hz": 220000,
+   "heatsink": "HS-2",
+   "fan": "FAN-A"
+  },
+  "broken": [
+   {
+    "output": {
+     "fsw_hz": 220000,
+     "heatsink": "HS-2",
+     "fan": null
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 220000,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 500000.0,
+     "heatsink": "HS-2",
+     "fan": "FAN-A"
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 50000.0,
+     "heatsink": "HS-2",
+     "fan": "FAN-A"
+    },
+    "expect": "inductor"
+   },
+   {
+    "output": {
+     "fsw_hz": 220000,
+     "heatsink": "HS-6",
+     "fan": "FAN-E"
+    },
+    "expect": "fan"
+   }
+  ]
+ },
+ "pe_cooling_018": {
+  "golden": {
+   "fsw_hz": 100000,
+   "heatsink": "HS-1",
+   "fan": null
+  },
+  "broken": [
+   {
+    "output": {
+     "fsw_hz": 500000.0,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "junction"
+   },
+   {
+    "output": {
+     "fsw_hz": 50000.0,
+     "heatsink": "HS-1",
+     "fan": null
+    },
+    "expect": "inductor"
+   },
+   {
+    "output": {
+     "fsw_hz": 100000,
+     "heatsink": "HS-6",
+     "fan": "FAN-E"
+    },
+    "expect": "fan"
+   }
+  ]
  }
 }

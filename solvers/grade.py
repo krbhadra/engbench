@@ -6,6 +6,8 @@ and inserted into the netlist before simulation.
 """
 from __future__ import annotations
 
+import importlib
+
 import electrical
 import mechanical
 
@@ -44,6 +46,9 @@ def grade(task: dict, output: dict) -> dict:
         return mechanical.grade(task, output)
     if domain == "electrical":
         return electrical.grade(task, output)
+    if domain != "combined":
+        # any other domain is a grader module of the same name in solvers/
+        return importlib.import_module(domain).grade(task, output)
 
     mech = mechanical.grade(task, output)
     violations = list(mech["violations"])

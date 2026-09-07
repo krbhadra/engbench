@@ -231,6 +231,11 @@ def _accumulate(usage_total, resp):
     usage_total["cost"] = usage_total.get("cost", 0.0) + (u.get("cost") or 0.0)
 
 
+def _shape(task):
+    """Generated tasks carry their own output shape; the v1 domains use the table."""
+    return task.get("output_shape") or OUTPUT_SHAPE[task["domain"]]
+
+
 def _task_prompt(task):
     return f"Task {task['id']}: {task.get('title', '')}\n\n{task['description']}"
 
@@ -239,7 +244,7 @@ def _task_prompt(task):
 
 def run_single_shot(model, task, opts, chat=chat):
     messages = [
-        {"role": "system", "content": SYSTEM_SINGLE.format(shape=OUTPUT_SHAPE[task["domain"]])},
+        {"role": "system", "content": SYSTEM_SINGLE.format(shape=_shape(task))},
         {"role": "user", "content": _task_prompt(task)},
     ]
     usage = {}
@@ -259,7 +264,7 @@ def run_single_shot(model, task, opts, chat=chat):
 
 def run_agentic(model, task, opts, chat=chat):
     messages = [
-        {"role": "system", "content": SYSTEM_AGENTIC.format(shape=OUTPUT_SHAPE[task["domain"]])},
+        {"role": "system", "content": SYSTEM_AGENTIC.format(shape=_shape(task))},
         {"role": "user", "content": _task_prompt(task)},
     ]
     usage, attempts, provider, resolved = {}, [], None, None
