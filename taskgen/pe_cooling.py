@@ -44,6 +44,8 @@ INDUCTORS = [  # id, L uH, DCR mOhm, Isat A, price
 FSW_GRID = list(range(50_000, 500_001, 10_000))
 MIN_FEASIBLE_FRACTION = 0.002
 MAX_FEASIBLE_FRACTION = 0.03
+COST_TOLERANCE = 0.05  # pass if price <= (1 + this) * brute-force optimum
+MAX_NEAR_OPT_FRACTION = 0.25  # reject seeds where more than this share of feasible designs is near-optimal
 
 
 def _r(rng, lo, hi, nd=3):
@@ -121,6 +123,10 @@ def make_task(seed: int) -> dict | None:
     task["limits"] = lim
     feasible.sort(key=lambda t: (t[0], t[1]))
     golden = feasible[0][2]
+    task["objective"] = {"minimize": "cost", "optimum": round(feasible[0][0], 2), "tolerance": COST_TOLERANCE}
+    near_opt = sum(1 for c, _, _ in feasible if c <= feasible[0][0] * (1 + COST_TOLERANCE))
+    if near_opt > MAX_NEAR_OPT_FRACTION * len(feasible):
+        return None  # objective is trivial: most feasible designs already pass it
 
     cheapest_sink = min(sinks, key=lambda s: s["price"])["id"]
     cheapest_ind = min(inductors, key=lambda x: x["price"])["id"]
@@ -132,6 +138,7 @@ def make_task(seed: int) -> dict | None:
         ({**golden, "fsw_hz": p["fsw_max_hz"]}, "max switching frequency"),
         ({**golden, "fsw_hz": p["fsw_min_hz"]}, "min switching frequency"),
         ({**golden, "heatsink": "HS-6", "fan": "FAN-E", "inductor": "IND-6"}, "biggest everything"),
+        (feasible[-1][2], "feasible but most expensive"),
     ]:
         if cand == golden:
             continue
@@ -140,7 +147,8 @@ def make_task(seed: int) -> dict | None:
             broken.append({"output": cand, "expect": r["violations"][0].split(" ")[0], "note": note})
     if len(broken) < 2:
         return None
-    task["_golden"], task["_broken"], task["_stats"] = golden, broken, {"feasible": len(feasible), "total": total}
+    task["_golden"], task["_broken"] = golden, broken
+    task["_stats"] = {"feasible": len(feasible), "near_opt": near_opt, "total": total}
     return task
 
 
@@ -175,7 +183,8 @@ def describe(t: dict) -> str:
         f"fan noise <= {lim['noise_max_dba']:g} dBA (no fan = 0 dBA); heat sink height <= {lim['height_max_mm']:g} mm; "
         f"heat sink + fan + inductor price <= {lim['cost_max']:g}.\n\n"
         f"Heat sink catalog:\n{sinks}\n\nFan catalog (or no fan):\n{fans}\n\nInductor catalog:\n{inds}\n\n"
-        f"Any design satisfying every constraint passes. Return {{\"fsw_hz\": <number>, \"inductor\": \"<id>\", \"heatsink\": \"<id>\", \"fan\": \"<id>\" or null}}."
+        f"Objective: minimize heat sink + fan + inductor price. A design passes only if it meets every constraint AND its price is "
+        f"within {t['objective']['tolerance']*100:.0f}% of the cheapest design that meets every constraint. Return {{\"fsw_hz\": <number>, \"inductor\": \"<id>\", \"heatsink\": \"<id>\", \"fan\": \"<id>\" or null}}."
     )
 
 
@@ -208,7 +217,7 @@ def main():
         solutions[t["id"]] = {"golden": golden, "broken": [{"output": b["output"], "expect": b["expect"]} for b in broken]}
         made += 1
         print(f"{t['id']}: feasible {stats['feasible']}/{stats['total']} ({100*stats['feasible']/stats['total']:.2f}%), "
-              f"golden {golden}, {len(broken)} broken")
+              f"near-optimal {stats['near_opt']}, golden {golden}, {len(broken)} broken")
     sol_path.write_text(json.dumps(solutions, indent=1) + "\n")
     print(f"{made} tasks written")
 

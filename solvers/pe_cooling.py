@@ -31,6 +31,10 @@ Physics model (stated verbatim in the task so every solver uses the same one):
   Tj       = Ta_int + P_fet * (RthJC + RthCS + Rsa(v))
   eta      = Pout / (Pout + P_total)
 
+Objective: minimize heat sink + fan + inductor price. A design passes only if it
+meets every constraint AND its price is within task["objective"]["tolerance"] of
+the brute-force optimum stored in task["objective"]["optimum"].
+
 Sources: Kunzi, "Thermal Design of Power Electronic Circuits", CERN-2015-003 (CC BY 4.0);
 TI SPRA953D package thermal metrics; Boyd board-level heat sink selection method;
 fan-curve / system-curve operating point (ebm-papst application note).
@@ -148,4 +152,8 @@ def grade(task: dict, output: dict) -> dict:
         v.append(f"heatsink height {m['height_mm']:.0f} mm exceeds {lim['height_max_mm']:.0f} mm")
     if m["cost"] > lim["cost_max"] + 1e-9:
         v.append(f"cost {m['cost']:.2f} exceeds budget {lim['cost_max']:.2f}")
+    obj = task.get("objective")  # {"minimize": "cost", "optimum": <brute-force best>, "tolerance": 0.05}
+    if obj and not v and m["cost"] > obj["optimum"] * (1 + obj["tolerance"]) + 1e-9:
+        # ponytail: the optimum is not echoed back, so agentic feedback says "search harder", not "the answer is X"
+        v.append(f"cost {m['cost']:.2f} is not within {obj['tolerance']*100:.0f}% of the cheapest design that meets every constraint")
     return {"passed": not v, "violations": v, "metrics": {k: round(x, 4) for k, x in m.items()}}
