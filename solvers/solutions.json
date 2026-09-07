@@ -2279,18 +2279,18 @@
   "golden": {
    "coolant": "WATER",
    "pump": "PMP-2",
-   "speed": 0.5,
    "channel_d_mm": 6,
-   "n_parallel": 3
+   "n_parallel": 3,
+   "speed": 0.482
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 1.0,
      "channel_d_mm": 6,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 1.0
     },
     "expect": "pump"
    },
@@ -2298,9 +2298,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -2308,9 +2308,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 0.5,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.482
     },
     "expect": "hottest"
    },
@@ -2318,11 +2318,11 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.5,
      "channel_d_mm": 6,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 0.482
     },
-    "expect": "pump"
+    "expect": "cost"
    },
    {
     "output": {
@@ -2339,49 +2339,49 @@
  "coolant_loop_002": {
   "golden": {
    "coolant": "MEG-30",
-   "pump": "PMP-2",
-   "speed": 0.45,
-   "channel_d_mm": 6,
-   "n_parallel": 1
+   "pump": "PMP-3",
+   "channel_d_mm": 8,
+   "n_parallel": 1,
+   "speed": 0.301
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
-     "pump": "PMP-2",
-     "speed": 0.45,
-     "channel_d_mm": 6,
-     "n_parallel": 1
+     "pump": "PMP-3",
+     "channel_d_mm": 8,
+     "n_parallel": 1,
+     "speed": 0.301
     },
     "expect": "coolant"
    },
    {
     "output": {
      "coolant": "MEG-30",
-     "pump": "PMP-2",
-     "speed": 1.0,
-     "channel_d_mm": 6,
-     "n_parallel": 1
+     "pump": "PMP-3",
+     "channel_d_mm": 8,
+     "n_parallel": 1,
+     "speed": 1.0
     },
     "expect": "channel"
    },
    {
     "output": {
      "coolant": "MEG-30",
-     "pump": "PMP-2",
-     "speed": 0.3,
-     "channel_d_mm": 6,
-     "n_parallel": 1
+     "pump": "PMP-3",
+     "channel_d_mm": 8,
+     "n_parallel": 1,
+     "speed": 0.3
     },
     "expect": "channel"
    },
    {
     "output": {
      "coolant": "MEG-30",
-     "pump": "PMP-2",
-     "speed": 0.45,
+     "pump": "PMP-3",
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.301
     },
     "expect": "channel"
    },
@@ -2389,11 +2389,11 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.45,
-     "channel_d_mm": 6,
-     "n_parallel": 1
+     "channel_d_mm": 8,
+     "n_parallel": 1,
+     "speed": 0.301
     },
-    "expect": "channel"
+    "expect": "cost"
    },
    {
     "output": {
@@ -2411,18 +2411,18 @@
   "golden": {
    "coolant": "MEG-50",
    "pump": "PMP-2",
-   "speed": 0.45,
    "channel_d_mm": 6,
-   "n_parallel": 4
+   "n_parallel": 4,
+   "speed": 0.408
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 0.45,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.408
     },
     "expect": "coolant"
    },
@@ -2430,9 +2430,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-2",
-     "speed": 1.0,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -2440,9 +2440,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-2",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -2450,9 +2450,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-2",
-     "speed": 0.45,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.408
     },
     "expect": "hottest"
    },
@@ -2460,9 +2460,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-5",
-     "speed": 0.45,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.408
     },
     "expect": "cost"
    },
@@ -2482,18 +2482,18 @@
   "golden": {
    "coolant": "WATER",
    "pump": "PMP-2",
-   "speed": 0.6,
    "channel_d_mm": 4,
-   "n_parallel": 3
+   "n_parallel": 3,
+   "speed": 0.579
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 1.0,
      "channel_d_mm": 4,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 1.0
     },
     "expect": "channel"
    },
@@ -2501,9 +2501,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 0.3,
      "channel_d_mm": 4,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -2511,9 +2511,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 0.6,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.579
     },
     "expect": "hottest"
    },
@@ -2521,9 +2521,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.6,
      "channel_d_mm": 4,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 0.579
     },
     "expect": "channel"
    },
@@ -2543,18 +2543,18 @@
   "golden": {
    "coolant": "WATER",
    "pump": "PMP-1",
-   "speed": 0.75,
-   "channel_d_mm": 10,
-   "n_parallel": 1
+   "channel_d_mm": 12,
+   "n_parallel": 1,
+   "speed": 0.717
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 1.0,
-     "channel_d_mm": 10,
-     "n_parallel": 1
+     "channel_d_mm": 12,
+     "n_parallel": 1,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -2562,9 +2562,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.3,
-     "channel_d_mm": 10,
-     "n_parallel": 1
+     "channel_d_mm": 12,
+     "n_parallel": 1,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -2572,9 +2572,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.75,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.717
     },
     "expect": "coolant"
    },
@@ -2582,9 +2582,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.75,
-     "channel_d_mm": 10,
-     "n_parallel": 1
+     "channel_d_mm": 12,
+     "n_parallel": 1,
+     "speed": 0.717
     },
     "expect": "pump"
    },
@@ -2604,18 +2604,18 @@
   "golden": {
    "coolant": "MEG-30",
    "pump": "PMP-1",
-   "speed": 0.75,
-   "channel_d_mm": 6,
-   "n_parallel": 4
+   "channel_d_mm": 8,
+   "n_parallel": 4,
+   "speed": 0.702
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.75,
-     "channel_d_mm": 6,
-     "n_parallel": 4
+     "channel_d_mm": 8,
+     "n_parallel": 4,
+     "speed": 0.702
     },
     "expect": "coolant"
    },
@@ -2623,9 +2623,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 1.0,
-     "channel_d_mm": 6,
-     "n_parallel": 4
+     "channel_d_mm": 8,
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -2633,9 +2633,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.3,
-     "channel_d_mm": 6,
-     "n_parallel": 4
+     "channel_d_mm": 8,
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -2643,9 +2643,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.75,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.702
     },
     "expect": "hottest"
    },
@@ -2653,9 +2653,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.75,
-     "channel_d_mm": 6,
-     "n_parallel": 4
+     "channel_d_mm": 8,
+     "n_parallel": 4,
+     "speed": 0.702
     },
     "expect": "channel"
    },
@@ -2675,18 +2675,18 @@
   "golden": {
    "coolant": "WATER",
    "pump": "PMP-3",
-   "speed": 0.7,
    "channel_d_mm": 6,
-   "n_parallel": 4
+   "n_parallel": 4,
+   "speed": 0.668
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-3",
-     "speed": 1.0,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "channel"
    },
@@ -2694,9 +2694,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-3",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -2704,9 +2704,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-3",
-     "speed": 0.7,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.668
     },
     "expect": "hottest"
    },
@@ -2714,9 +2714,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.7,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.668
     },
     "expect": "channel"
    },
@@ -2735,39 +2735,39 @@
  "coolant_loop_008": {
   "golden": {
    "coolant": "WATER",
-   "pump": "PMP-2",
-   "speed": 0.65,
+   "pump": "PMP-3",
    "channel_d_mm": 4,
-   "n_parallel": 4
+   "n_parallel": 4,
+   "speed": 0.488
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
-     "pump": "PMP-2",
-     "speed": 1.0,
+     "pump": "PMP-3",
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "channel"
    },
    {
     "output": {
      "coolant": "WATER",
-     "pump": "PMP-2",
-     "speed": 0.3,
+     "pump": "PMP-3",
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
-    "expect": "hottest"
+    "expect": "channel"
    },
    {
     "output": {
      "coolant": "WATER",
-     "pump": "PMP-2",
-     "speed": 0.65,
+     "pump": "PMP-3",
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.488
     },
     "expect": "hottest"
    },
@@ -2775,9 +2775,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.65,
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.488
     },
     "expect": "channel"
    },
@@ -2797,18 +2797,18 @@
   "golden": {
    "coolant": "MEG-30",
    "pump": "PMP-1",
-   "speed": 0.65,
-   "channel_d_mm": 6,
-   "n_parallel": 3
+   "channel_d_mm": 12,
+   "n_parallel": 4,
+   "speed": 0.611
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.65,
-     "channel_d_mm": 6,
-     "n_parallel": 3
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.611
     },
     "expect": "coolant"
    },
@@ -2816,9 +2816,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 1.0,
-     "channel_d_mm": 6,
-     "n_parallel": 3
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -2826,9 +2826,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.3,
-     "channel_d_mm": 6,
-     "n_parallel": 3
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -2836,9 +2836,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.65,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.611
     },
     "expect": "hottest"
    },
@@ -2846,9 +2846,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.65,
-     "channel_d_mm": 6,
-     "n_parallel": 3
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.611
     },
     "expect": "pump"
    },
@@ -2867,49 +2867,49 @@
  "coolant_loop_010": {
   "golden": {
    "coolant": "MEG-50",
-   "pump": "PMP-2",
-   "speed": 0.4,
-   "channel_d_mm": 10,
-   "n_parallel": 4
+   "pump": "PMP-3",
+   "channel_d_mm": 12,
+   "n_parallel": 4,
+   "speed": 0.301
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
-     "pump": "PMP-2",
-     "speed": 0.4,
-     "channel_d_mm": 10,
-     "n_parallel": 4
+     "pump": "PMP-3",
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.301
     },
     "expect": "coolant"
    },
    {
     "output": {
      "coolant": "MEG-50",
-     "pump": "PMP-2",
-     "speed": 1.0,
-     "channel_d_mm": 10,
-     "n_parallel": 4
+     "pump": "PMP-3",
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump"
    },
    {
     "output": {
      "coolant": "MEG-50",
-     "pump": "PMP-2",
-     "speed": 0.3,
-     "channel_d_mm": 10,
-     "n_parallel": 4
+     "pump": "PMP-3",
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
    {
     "output": {
      "coolant": "MEG-50",
-     "pump": "PMP-2",
-     "speed": 0.4,
+     "pump": "PMP-3",
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.301
     },
     "expect": "hottest"
    },
@@ -2917,9 +2917,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-5",
-     "speed": 0.4,
-     "channel_d_mm": 10,
-     "n_parallel": 4
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.301
     },
     "expect": "cost"
    },
@@ -2939,18 +2939,18 @@
   "golden": {
    "coolant": "MEG-50",
    "pump": "PMP-3",
-   "speed": 0.55,
    "channel_d_mm": 8,
-   "n_parallel": 1
+   "n_parallel": 1,
+   "speed": 0.512
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-3",
-     "speed": 0.55,
      "channel_d_mm": 8,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.512
     },
     "expect": "coolant"
    },
@@ -2958,9 +2958,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-3",
-     "speed": 1.0,
      "channel_d_mm": 8,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 1.0
     },
     "expect": "channel"
    },
@@ -2968,9 +2968,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-3",
-     "speed": 0.3,
      "channel_d_mm": 8,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -2978,21 +2978,21 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-3",
-     "speed": 0.55,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.512
     },
-    "expect": "channel"
+    "expect": "hottest"
    },
    {
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-5",
-     "speed": 0.55,
      "channel_d_mm": 8,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.512
     },
-    "expect": "channel"
+    "expect": "pump"
    },
    {
     "output": {
@@ -3010,18 +3010,18 @@
   "golden": {
    "coolant": "MEG-50",
    "pump": "PMP-1",
-   "speed": 0.35,
-   "channel_d_mm": 6,
-   "n_parallel": 4
+   "channel_d_mm": 12,
+   "n_parallel": 4,
+   "speed": 0.302
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.35,
-     "channel_d_mm": 6,
-     "n_parallel": 4
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.302
     },
     "expect": "coolant"
    },
@@ -3029,9 +3029,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-1",
-     "speed": 1.0,
-     "channel_d_mm": 6,
-     "n_parallel": 4
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -3039,9 +3039,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-1",
-     "speed": 0.3,
-     "channel_d_mm": 6,
-     "n_parallel": 4
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "coolant"
    },
@@ -3049,9 +3049,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-1",
-     "speed": 0.35,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.302
     },
     "expect": "hottest"
    },
@@ -3059,9 +3059,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-5",
-     "speed": 0.35,
-     "channel_d_mm": 6,
-     "n_parallel": 4
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.302
     },
     "expect": "cost"
    },
@@ -3081,18 +3081,18 @@
   "golden": {
    "coolant": "MEG-30",
    "pump": "PMP-2",
-   "speed": 0.6,
    "channel_d_mm": 8,
-   "n_parallel": 1
+   "n_parallel": 1,
+   "speed": 0.569
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 0.6,
      "channel_d_mm": 8,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.569
     },
     "expect": "coolant"
    },
@@ -3100,9 +3100,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-2",
-     "speed": 1.0,
      "channel_d_mm": 8,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 1.0
     },
     "expect": "channel"
    },
@@ -3110,9 +3110,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-2",
-     "speed": 0.3,
      "channel_d_mm": 8,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -3120,9 +3120,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-2",
-     "speed": 0.6,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.569
     },
     "expect": "channel"
    },
@@ -3130,9 +3130,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.6,
      "channel_d_mm": 8,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.569
     },
     "expect": "channel"
    },
@@ -3152,18 +3152,18 @@
   "golden": {
    "coolant": "MEG-30",
    "pump": "PMP-3",
-   "speed": 0.65,
    "channel_d_mm": 6,
-   "n_parallel": 1
+   "n_parallel": 1,
+   "speed": 0.636
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-3",
-     "speed": 0.65,
      "channel_d_mm": 6,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.636
     },
     "expect": "coolant"
    },
@@ -3171,9 +3171,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-3",
-     "speed": 1.0,
      "channel_d_mm": 6,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 1.0
     },
     "expect": "channel"
    },
@@ -3181,9 +3181,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-3",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -3191,9 +3191,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-3",
-     "speed": 0.65,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.636
     },
     "expect": "hottest"
    },
@@ -3201,9 +3201,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.65,
      "channel_d_mm": 6,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.636
     },
     "expect": "channel"
    },
@@ -3223,18 +3223,18 @@
   "golden": {
    "coolant": "WATER",
    "pump": "PMP-1",
-   "speed": 0.3,
    "channel_d_mm": 4,
-   "n_parallel": 4
+   "n_parallel": 4,
+   "speed": 0.3
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 1.0,
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "channel"
    },
@@ -3242,9 +3242,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -3252,9 +3252,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.3,
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "cost"
    },
@@ -3274,18 +3274,18 @@
   "golden": {
    "coolant": "WATER",
    "pump": "PMP-2",
-   "speed": 0.4,
    "channel_d_mm": 6,
-   "n_parallel": 2
+   "n_parallel": 2,
+   "speed": 0.389
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 1.0,
      "channel_d_mm": 6,
-     "n_parallel": 2
+     "n_parallel": 2,
+     "speed": 1.0
     },
     "expect": "pump"
    },
@@ -3293,9 +3293,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 2
+     "n_parallel": 2,
+     "speed": 0.3
     },
     "expect": "channel"
    },
@@ -3303,9 +3303,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 0.4,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.389
     },
     "expect": "hottest"
    },
@@ -3313,9 +3313,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.4,
      "channel_d_mm": 6,
-     "n_parallel": 2
+     "n_parallel": 2,
+     "speed": 0.389
     },
     "expect": "cost"
    },
@@ -3335,18 +3335,18 @@
   "golden": {
    "coolant": "MEG-30",
    "pump": "PMP-1",
-   "speed": 0.7,
    "channel_d_mm": 6,
-   "n_parallel": 4
+   "n_parallel": 4,
+   "speed": 0.699
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.7,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.699
     },
     "expect": "coolant"
    },
@@ -3354,9 +3354,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 1.0,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -3364,9 +3364,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -3374,9 +3374,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.7,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.699
     },
     "expect": "channel"
    },
@@ -3384,9 +3384,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.7,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.699
     },
     "expect": "pump"
    },
@@ -3406,18 +3406,18 @@
   "golden": {
    "coolant": "MEG-50",
    "pump": "PMP-1",
-   "speed": 0.35,
-   "channel_d_mm": 10,
-   "n_parallel": 4
+   "channel_d_mm": 12,
+   "n_parallel": 4,
+   "speed": 0.343
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.35,
-     "channel_d_mm": 10,
-     "n_parallel": 4
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.343
     },
     "expect": "coolant"
    },
@@ -3425,9 +3425,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-1",
-     "speed": 1.0,
-     "channel_d_mm": 10,
-     "n_parallel": 4
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -3435,9 +3435,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-1",
-     "speed": 0.3,
-     "channel_d_mm": 10,
-     "n_parallel": 4
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -3445,9 +3445,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-1",
-     "speed": 0.35,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.343
     },
     "expect": "hottest"
    },
@@ -3455,9 +3455,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-5",
-     "speed": 0.35,
-     "channel_d_mm": 10,
-     "n_parallel": 4
+     "channel_d_mm": 12,
+     "n_parallel": 4,
+     "speed": 0.343
     },
     "expect": "cost"
    },
@@ -3477,18 +3477,18 @@
   "golden": {
    "coolant": "MEG-30",
    "pump": "PMP-2",
-   "speed": 0.4,
-   "channel_d_mm": 8,
-   "n_parallel": 4
+   "channel_d_mm": 10,
+   "n_parallel": 4,
+   "speed": 0.369
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 0.4,
-     "channel_d_mm": 8,
-     "n_parallel": 4
+     "channel_d_mm": 10,
+     "n_parallel": 4,
+     "speed": 0.369
     },
     "expect": "coolant"
    },
@@ -3496,9 +3496,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-2",
-     "speed": 1.0,
-     "channel_d_mm": 8,
-     "n_parallel": 4
+     "channel_d_mm": 10,
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -3506,9 +3506,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-2",
-     "speed": 0.3,
-     "channel_d_mm": 8,
-     "n_parallel": 4
+     "channel_d_mm": 10,
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -3516,9 +3516,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-2",
-     "speed": 0.4,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.369
     },
     "expect": "hottest"
    },
@@ -3526,9 +3526,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.4,
-     "channel_d_mm": 8,
-     "n_parallel": 4
+     "channel_d_mm": 10,
+     "n_parallel": 4,
+     "speed": 0.369
     },
     "expect": "cost"
    },
@@ -3548,18 +3548,18 @@
   "golden": {
    "coolant": "MEG-30",
    "pump": "PMP-1",
-   "speed": 0.6,
    "channel_d_mm": 6,
-   "n_parallel": 4
+   "n_parallel": 4,
+   "speed": 0.564
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.6,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.564
     },
     "expect": "coolant"
    },
@@ -3567,9 +3567,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 1.0,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -3577,9 +3577,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -3587,9 +3587,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.6,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.564
     },
     "expect": "hottest"
    },
@@ -3597,9 +3597,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.6,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.564
     },
     "expect": "channel"
    },
@@ -3619,18 +3619,18 @@
   "golden": {
    "coolant": "MEG-30",
    "pump": "PMP-2",
-   "speed": 0.6,
    "channel_d_mm": 10,
-   "n_parallel": 1
+   "n_parallel": 1,
+   "speed": 0.571
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-2",
-     "speed": 0.6,
      "channel_d_mm": 10,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.571
     },
     "expect": "coolant"
    },
@@ -3638,9 +3638,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-2",
-     "speed": 1.0,
      "channel_d_mm": 10,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 1.0
     },
     "expect": "channel"
    },
@@ -3648,9 +3648,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-2",
-     "speed": 0.3,
      "channel_d_mm": 10,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.3
     },
     "expect": "channel"
    },
@@ -3658,9 +3658,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-2",
-     "speed": 0.6,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.571
     },
     "expect": "channel"
    },
@@ -3668,9 +3668,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.6,
      "channel_d_mm": 10,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.571
     },
     "expect": "channel"
    },
@@ -3689,39 +3689,39 @@
  "coolant_loop_022": {
   "golden": {
    "coolant": "WATER",
-   "pump": "PMP-1",
-   "speed": 0.45,
+   "pump": "PMP-2",
    "channel_d_mm": 6,
-   "n_parallel": 1
+   "n_parallel": 1,
+   "speed": 0.334
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
-     "pump": "PMP-1",
-     "speed": 1.0,
+     "pump": "PMP-2",
      "channel_d_mm": 6,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 1.0
     },
     "expect": "channel"
    },
    {
     "output": {
      "coolant": "WATER",
-     "pump": "PMP-1",
-     "speed": 0.3,
+     "pump": "PMP-2",
      "channel_d_mm": 6,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.3
     },
-    "expect": "hottest"
+    "expect": "channel"
    },
    {
     "output": {
      "coolant": "WATER",
-     "pump": "PMP-1",
-     "speed": 0.45,
+     "pump": "PMP-2",
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.334
     },
     "expect": "channel"
    },
@@ -3729,9 +3729,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.45,
      "channel_d_mm": 6,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.334
     },
     "expect": "channel"
    },
@@ -3751,18 +3751,18 @@
   "golden": {
    "coolant": "MEG-50",
    "pump": "PMP-1",
-   "speed": 0.45,
    "channel_d_mm": 8,
-   "n_parallel": 4
+   "n_parallel": 4,
+   "speed": 0.443
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.45,
      "channel_d_mm": 8,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.443
     },
     "expect": "coolant"
    },
@@ -3770,9 +3770,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-1",
-     "speed": 1.0,
      "channel_d_mm": 8,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -3780,9 +3780,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 8,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -3790,9 +3790,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-1",
-     "speed": 0.45,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.443
     },
     "expect": "hottest"
    },
@@ -3800,9 +3800,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-5",
-     "speed": 0.45,
      "channel_d_mm": 8,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.443
     },
     "expect": "cost"
    },
@@ -3821,39 +3821,49 @@
  "coolant_loop_024": {
   "golden": {
    "coolant": "MEG-30",
-   "pump": "PMP-4",
-   "speed": 0.3,
+   "pump": "PMP-3",
    "channel_d_mm": 8,
-   "n_parallel": 1
+   "n_parallel": 1,
+   "speed": 0.371
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
-     "pump": "PMP-4",
-     "speed": 0.3,
+     "pump": "PMP-3",
      "channel_d_mm": 8,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.371
     },
     "expect": "coolant"
    },
    {
     "output": {
      "coolant": "MEG-30",
-     "pump": "PMP-4",
-     "speed": 1.0,
+     "pump": "PMP-3",
      "channel_d_mm": 8,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 1.0
     },
     "expect": "channel"
    },
    {
     "output": {
      "coolant": "MEG-30",
-     "pump": "PMP-4",
-     "speed": 0.3,
+     "pump": "PMP-3",
+     "channel_d_mm": 8,
+     "n_parallel": 1,
+     "speed": 0.3
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-3",
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.371
     },
     "expect": "channel"
    },
@@ -3861,9 +3871,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.3,
      "channel_d_mm": 8,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.371
     },
     "expect": "cost"
    },
@@ -3883,18 +3893,18 @@
   "golden": {
    "coolant": "WATER",
    "pump": "PMP-1",
-   "speed": 0.5,
    "channel_d_mm": 6,
-   "n_parallel": 1
+   "n_parallel": 1,
+   "speed": 0.467
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 1.0,
      "channel_d_mm": 6,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -3902,9 +3912,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -3912,9 +3922,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.5,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.467
     },
     "expect": "channel"
    },
@@ -3922,9 +3932,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.5,
      "channel_d_mm": 6,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.467
     },
     "expect": "cost"
    },
@@ -3944,18 +3954,18 @@
   "golden": {
    "coolant": "WATER",
    "pump": "PMP-1",
-   "speed": 0.85,
    "channel_d_mm": 6,
-   "n_parallel": 3
+   "n_parallel": 3,
+   "speed": 0.807
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 1.0,
      "channel_d_mm": 6,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -3963,9 +3973,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -3973,9 +3983,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.85,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.807
     },
     "expect": "hottest"
    },
@@ -3983,9 +3993,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.85,
      "channel_d_mm": 6,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 0.807
     },
     "expect": "channel"
    },
@@ -4005,18 +4015,18 @@
   "golden": {
    "coolant": "WATER",
    "pump": "PMP-3",
-   "speed": 0.5,
    "channel_d_mm": 10,
-   "n_parallel": 2
+   "n_parallel": 2,
+   "speed": 0.498
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-3",
-     "speed": 1.0,
      "channel_d_mm": 10,
-     "n_parallel": 2
+     "n_parallel": 2,
+     "speed": 1.0
     },
     "expect": "pump"
    },
@@ -4024,9 +4034,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-3",
-     "speed": 0.3,
      "channel_d_mm": 10,
-     "n_parallel": 2
+     "n_parallel": 2,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -4034,9 +4044,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-3",
-     "speed": 0.5,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.498
     },
     "expect": "hottest"
    },
@@ -4044,9 +4054,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.5,
      "channel_d_mm": 10,
-     "n_parallel": 2
+     "n_parallel": 2,
+     "speed": 0.498
     },
     "expect": "cost"
    },
@@ -4066,18 +4076,18 @@
   "golden": {
    "coolant": "MEG-30",
    "pump": "PMP-1",
-   "speed": 0.35,
    "channel_d_mm": 12,
-   "n_parallel": 4
+   "n_parallel": 4,
+   "speed": 0.35
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.35,
      "channel_d_mm": 12,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.35
     },
     "expect": "coolant"
    },
@@ -4085,9 +4095,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 1.0,
      "channel_d_mm": 12,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -4095,9 +4105,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 12,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -4105,9 +4115,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.35,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.35
     },
     "expect": "hottest"
    },
@@ -4115,9 +4125,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.35,
      "channel_d_mm": 12,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.35
     },
     "expect": "cost"
    },
@@ -4137,18 +4147,18 @@
   "golden": {
    "coolant": "WATER",
    "pump": "PMP-3",
-   "speed": 0.5,
    "channel_d_mm": 6,
-   "n_parallel": 3
+   "n_parallel": 3,
+   "speed": 0.463
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-3",
-     "speed": 1.0,
      "channel_d_mm": 6,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 1.0
     },
     "expect": "pump"
    },
@@ -4156,9 +4166,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-3",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 0.3
     },
     "expect": "channel"
    },
@@ -4166,9 +4176,9 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-3",
-     "speed": 0.5,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.463
     },
     "expect": "hottest"
    },
@@ -4176,11 +4186,11 @@
     "output": {
      "coolant": "WATER",
      "pump": "PMP-5",
-     "speed": 0.5,
      "channel_d_mm": 6,
-     "n_parallel": 3
+     "n_parallel": 3,
+     "speed": 0.463
     },
-    "expect": "pump"
+    "expect": "cost"
    },
    {
     "output": {
@@ -4198,18 +4208,18 @@
   "golden": {
    "coolant": "MEG-30",
    "pump": "PMP-1",
-   "speed": 0.45,
    "channel_d_mm": 4,
-   "n_parallel": 4
+   "n_parallel": 4,
+   "speed": 0.416
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.45,
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.416
     },
     "expect": "coolant"
    },
@@ -4217,9 +4227,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 1.0,
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -4227,9 +4237,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -4237,9 +4247,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.45,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.416
     },
     "expect": "hottest"
    },
@@ -4247,11 +4257,11 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.45,
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.416
     },
-    "expect": "pump"
+    "expect": "cost"
    },
    {
     "output": {
@@ -4269,18 +4279,18 @@
   "golden": {
    "coolant": "MEG-30",
    "pump": "PMP-1",
-   "speed": 0.3,
    "channel_d_mm": 6,
-   "n_parallel": 4
+   "n_parallel": 4,
+   "speed": 0.3
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "coolant"
    },
@@ -4288,9 +4298,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 1.0,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "pump_power_w"
    },
@@ -4298,9 +4308,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -4308,9 +4318,9 @@
     "output": {
      "coolant": "MEG-30",
      "pump": "PMP-5",
-     "speed": 0.3,
      "channel_d_mm": 6,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "cost"
    },
@@ -4330,18 +4340,18 @@
   "golden": {
    "coolant": "MEG-50",
    "pump": "PMP-1",
-   "speed": 0.3,
    "channel_d_mm": 4,
-   "n_parallel": 4
+   "n_parallel": 4,
+   "speed": 0.3
   },
   "broken": [
    {
     "output": {
      "coolant": "WATER",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "coolant"
    },
@@ -4349,9 +4359,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-1",
-     "speed": 1.0,
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 1.0
     },
     "expect": "channel"
    },
@@ -4359,9 +4369,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-1",
-     "speed": 0.3,
      "channel_d_mm": 4,
-     "n_parallel": 1
+     "n_parallel": 1,
+     "speed": 0.3
     },
     "expect": "hottest"
    },
@@ -4369,9 +4379,9 @@
     "output": {
      "coolant": "MEG-50",
      "pump": "PMP-5",
-     "speed": 0.3,
      "channel_d_mm": 4,
-     "n_parallel": 4
+     "n_parallel": 4,
+     "speed": 0.3
     },
     "expect": "channel"
    },
@@ -4389,7 +4399,7 @@
  },
  "pe_cooling_001": {
   "golden": {
-   "fsw_hz": 50000,
+   "fsw_hz": 50000.0,
    "inductor": "IND-5",
    "heatsink": "HS-1",
    "fan": "FAN-C"
@@ -4397,7 +4407,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-5",
      "heatsink": "HS-1",
      "fan": null
@@ -4406,7 +4416,7 @@
    },
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": "FAN-C"
@@ -4424,7 +4434,7 @@
    },
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -4444,7 +4454,7 @@
  },
  "pe_cooling_002": {
   "golden": {
-   "fsw_hz": 210000,
+   "fsw_hz": 201000.0,
    "inductor": "IND-1",
    "heatsink": "HS-1",
    "fan": null
@@ -4470,7 +4480,7 @@
    },
    {
     "output": {
-     "fsw_hz": 210000,
+     "fsw_hz": 201000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -4490,7 +4500,7 @@
  },
  "pe_cooling_004": {
   "golden": {
-   "fsw_hz": 170000,
+   "fsw_hz": 163000.0,
    "inductor": "IND-1",
    "heatsink": "HS-1",
    "fan": null
@@ -4516,7 +4526,7 @@
    },
    {
     "output": {
-     "fsw_hz": 170000,
+     "fsw_hz": 163000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -4536,7 +4546,7 @@
  },
  "pe_cooling_005": {
   "golden": {
-   "fsw_hz": 50000,
+   "fsw_hz": 50000.0,
    "inductor": "IND-6",
    "heatsink": "HS-3",
    "fan": "FAN-A"
@@ -4544,7 +4554,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-6",
      "heatsink": "HS-3",
      "fan": null
@@ -4553,7 +4563,7 @@
    },
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-6",
      "heatsink": "HS-1",
      "fan": "FAN-A"
@@ -4562,7 +4572,7 @@
    },
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-1",
      "heatsink": "HS-3",
      "fan": "FAN-A"
@@ -4580,7 +4590,7 @@
    },
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -4600,7 +4610,7 @@
  },
  "pe_cooling_006": {
   "golden": {
-   "fsw_hz": 50000,
+   "fsw_hz": 50000.0,
    "inductor": "IND-4",
    "heatsink": "HS-1",
    "fan": "FAN-B"
@@ -4608,7 +4618,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-4",
      "heatsink": "HS-1",
      "fan": null
@@ -4617,7 +4627,7 @@
    },
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": "FAN-B"
@@ -4635,7 +4645,7 @@
    },
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -4655,7 +4665,7 @@
  },
  "pe_cooling_007": {
   "golden": {
-   "fsw_hz": 100000,
+   "fsw_hz": 99000.0,
    "inductor": "IND-3",
    "heatsink": "HS-1",
    "fan": "FAN-A"
@@ -4663,7 +4673,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 100000,
+     "fsw_hz": 99000.0,
      "inductor": "IND-3",
      "heatsink": "HS-1",
      "fan": null
@@ -4672,7 +4682,7 @@
    },
    {
     "output": {
-     "fsw_hz": 100000,
+     "fsw_hz": 99000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": "FAN-A"
@@ -4699,7 +4709,7 @@
    },
    {
     "output": {
-     "fsw_hz": 100000,
+     "fsw_hz": 99000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -4719,7 +4729,7 @@
  },
  "pe_cooling_008": {
   "golden": {
-   "fsw_hz": 140000,
+   "fsw_hz": 131000.0,
    "inductor": "IND-1",
    "heatsink": "HS-2",
    "fan": null
@@ -4727,7 +4737,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 140000,
+     "fsw_hz": 131000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": null
@@ -4754,7 +4764,7 @@
    },
    {
     "output": {
-     "fsw_hz": 140000,
+     "fsw_hz": 131000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -4774,7 +4784,7 @@
  },
  "pe_cooling_010": {
   "golden": {
-   "fsw_hz": 80000,
+   "fsw_hz": 78000.0,
    "inductor": "IND-3",
    "heatsink": "HS-1",
    "fan": "FAN-A"
@@ -4782,7 +4792,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 80000,
+     "fsw_hz": 78000.0,
      "inductor": "IND-3",
      "heatsink": "HS-1",
      "fan": null
@@ -4791,7 +4801,7 @@
    },
    {
     "output": {
-     "fsw_hz": 80000,
+     "fsw_hz": 78000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": "FAN-A"
@@ -4818,7 +4828,7 @@
    },
    {
     "output": {
-     "fsw_hz": 80000,
+     "fsw_hz": 78000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -4838,7 +4848,7 @@
  },
  "pe_cooling_011": {
   "golden": {
-   "fsw_hz": 90000,
+   "fsw_hz": 84000.0,
    "inductor": "IND-4",
    "heatsink": "HS-1",
    "fan": "FAN-A"
@@ -4846,7 +4856,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 90000,
+     "fsw_hz": 84000.0,
      "inductor": "IND-4",
      "heatsink": "HS-1",
      "fan": null
@@ -4855,7 +4865,7 @@
    },
    {
     "output": {
-     "fsw_hz": 90000,
+     "fsw_hz": 84000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": "FAN-A"
@@ -4882,7 +4892,7 @@
    },
    {
     "output": {
-     "fsw_hz": 90000,
+     "fsw_hz": 84000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -4902,36 +4912,36 @@
  },
  "pe_cooling_013": {
   "golden": {
-   "fsw_hz": 60000,
+   "fsw_hz": 55000.0,
    "inductor": "IND-6",
-   "heatsink": "HS-3",
-   "fan": "FAN-B"
+   "heatsink": "HS-4",
+   "fan": "FAN-A"
   },
   "broken": [
    {
     "output": {
-     "fsw_hz": 60000,
+     "fsw_hz": 55000.0,
      "inductor": "IND-6",
-     "heatsink": "HS-3",
+     "heatsink": "HS-4",
      "fan": null
     },
     "expect": "junction"
    },
    {
     "output": {
-     "fsw_hz": 60000,
+     "fsw_hz": 55000.0,
      "inductor": "IND-6",
      "heatsink": "HS-1",
-     "fan": "FAN-B"
+     "fan": "FAN-A"
     },
     "expect": "junction"
    },
    {
     "output": {
-     "fsw_hz": 60000,
+     "fsw_hz": 55000.0,
      "inductor": "IND-1",
-     "heatsink": "HS-3",
-     "fan": "FAN-B"
+     "heatsink": "HS-4",
+     "fan": "FAN-A"
     },
     "expect": "inductor"
    },
@@ -4939,8 +4949,8 @@
     "output": {
      "fsw_hz": 500000.0,
      "inductor": "IND-6",
-     "heatsink": "HS-3",
-     "fan": "FAN-B"
+     "heatsink": "HS-4",
+     "fan": "FAN-A"
     },
     "expect": "junction"
    },
@@ -4948,14 +4958,14 @@
     "output": {
      "fsw_hz": 50000.0,
      "inductor": "IND-6",
-     "heatsink": "HS-3",
-     "fan": "FAN-B"
+     "heatsink": "HS-4",
+     "fan": "FAN-A"
     },
     "expect": "output"
    },
    {
     "output": {
-     "fsw_hz": 60000,
+     "fsw_hz": 55000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -4975,7 +4985,7 @@
  },
  "pe_cooling_014": {
   "golden": {
-   "fsw_hz": 50000,
+   "fsw_hz": 50000.0,
    "inductor": "IND-5",
    "heatsink": "HS-2",
    "fan": "FAN-B"
@@ -4983,7 +4993,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-5",
      "heatsink": "HS-2",
      "fan": null
@@ -4992,7 +5002,7 @@
    },
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-5",
      "heatsink": "HS-1",
      "fan": "FAN-B"
@@ -5001,7 +5011,7 @@
    },
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-1",
      "heatsink": "HS-2",
      "fan": "FAN-B"
@@ -5019,7 +5029,7 @@
    },
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5039,7 +5049,7 @@
  },
  "pe_cooling_015": {
   "golden": {
-   "fsw_hz": 180000,
+   "fsw_hz": 177000.0,
    "inductor": "IND-1",
    "heatsink": "HS-1",
    "fan": null
@@ -5065,7 +5075,7 @@
    },
    {
     "output": {
-     "fsw_hz": 180000,
+     "fsw_hz": 177000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5085,7 +5095,7 @@
  },
  "pe_cooling_016": {
   "golden": {
-   "fsw_hz": 90000,
+   "fsw_hz": 87000.0,
    "inductor": "IND-4",
    "heatsink": "HS-1",
    "fan": "FAN-A"
@@ -5093,7 +5103,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 90000,
+     "fsw_hz": 87000.0,
      "inductor": "IND-4",
      "heatsink": "HS-1",
      "fan": null
@@ -5102,7 +5112,7 @@
    },
    {
     "output": {
-     "fsw_hz": 90000,
+     "fsw_hz": 87000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": "FAN-A"
@@ -5129,7 +5139,7 @@
    },
    {
     "output": {
-     "fsw_hz": 90000,
+     "fsw_hz": 87000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5149,7 +5159,7 @@
  },
  "pe_cooling_017": {
   "golden": {
-   "fsw_hz": 110000,
+   "fsw_hz": 110000.0,
    "inductor": "IND-3",
    "heatsink": "HS-1",
    "fan": "FAN-A"
@@ -5157,7 +5167,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 110000,
+     "fsw_hz": 110000.0,
      "inductor": "IND-3",
      "heatsink": "HS-1",
      "fan": null
@@ -5166,7 +5176,7 @@
    },
    {
     "output": {
-     "fsw_hz": 110000,
+     "fsw_hz": 110000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": "FAN-A"
@@ -5193,7 +5203,7 @@
    },
    {
     "output": {
-     "fsw_hz": 110000,
+     "fsw_hz": 110000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5213,7 +5223,7 @@
  },
  "pe_cooling_018": {
   "golden": {
-   "fsw_hz": 230000,
+   "fsw_hz": 229000.0,
    "inductor": "IND-1",
    "heatsink": "HS-1",
    "fan": null
@@ -5239,7 +5249,7 @@
    },
    {
     "output": {
-     "fsw_hz": 230000,
+     "fsw_hz": 229000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5259,7 +5269,7 @@
  },
  "pe_cooling_019": {
   "golden": {
-   "fsw_hz": 110000,
+   "fsw_hz": 104000.0,
    "inductor": "IND-3",
    "heatsink": "HS-1",
    "fan": "FAN-A"
@@ -5267,7 +5277,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 110000,
+     "fsw_hz": 104000.0,
      "inductor": "IND-3",
      "heatsink": "HS-1",
      "fan": null
@@ -5276,7 +5286,7 @@
    },
    {
     "output": {
-     "fsw_hz": 110000,
+     "fsw_hz": 104000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": "FAN-A"
@@ -5303,7 +5313,7 @@
    },
    {
     "output": {
-     "fsw_hz": 110000,
+     "fsw_hz": 104000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5323,7 +5333,7 @@
  },
  "pe_cooling_020": {
   "golden": {
-   "fsw_hz": 100000,
+   "fsw_hz": 96000.0,
    "inductor": "IND-2",
    "heatsink": "HS-1",
    "fan": "FAN-A"
@@ -5331,7 +5341,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 100000,
+     "fsw_hz": 96000.0,
      "inductor": "IND-2",
      "heatsink": "HS-1",
      "fan": null
@@ -5340,7 +5350,7 @@
    },
    {
     "output": {
-     "fsw_hz": 100000,
+     "fsw_hz": 96000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": "FAN-A"
@@ -5367,7 +5377,7 @@
    },
    {
     "output": {
-     "fsw_hz": 100000,
+     "fsw_hz": 96000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5387,7 +5397,7 @@
  },
  "pe_cooling_021": {
   "golden": {
-   "fsw_hz": 140000,
+   "fsw_hz": 133000.0,
    "inductor": "IND-2",
    "heatsink": "HS-1",
    "fan": "FAN-A"
@@ -5395,7 +5405,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 140000,
+     "fsw_hz": 133000.0,
      "inductor": "IND-2",
      "heatsink": "HS-1",
      "fan": null
@@ -5404,7 +5414,7 @@
    },
    {
     "output": {
-     "fsw_hz": 140000,
+     "fsw_hz": 133000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": "FAN-A"
@@ -5431,7 +5441,7 @@
    },
    {
     "output": {
-     "fsw_hz": 140000,
+     "fsw_hz": 133000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5451,7 +5461,7 @@
  },
  "pe_cooling_022": {
   "golden": {
-   "fsw_hz": 130000,
+   "fsw_hz": 125000.0,
    "inductor": "IND-1",
    "heatsink": "HS-1",
    "fan": null
@@ -5477,7 +5487,7 @@
    },
    {
     "output": {
-     "fsw_hz": 130000,
+     "fsw_hz": 125000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5497,7 +5507,7 @@
  },
  "pe_cooling_023": {
   "golden": {
-   "fsw_hz": 190000,
+   "fsw_hz": 183000.0,
    "inductor": "IND-1",
    "heatsink": "HS-1",
    "fan": null
@@ -5523,7 +5533,7 @@
    },
    {
     "output": {
-     "fsw_hz": 190000,
+     "fsw_hz": 183000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5543,7 +5553,7 @@
  },
  "pe_cooling_025": {
   "golden": {
-   "fsw_hz": 180000,
+   "fsw_hz": 178000.0,
    "inductor": "IND-1",
    "heatsink": "HS-2",
    "fan": null
@@ -5551,7 +5561,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 180000,
+     "fsw_hz": 178000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": null
@@ -5578,7 +5588,7 @@
    },
    {
     "output": {
-     "fsw_hz": 180000,
+     "fsw_hz": 178000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5598,7 +5608,7 @@
  },
  "pe_cooling_026": {
   "golden": {
-   "fsw_hz": 80000,
+   "fsw_hz": 72000.0,
    "inductor": "IND-5",
    "heatsink": "HS-3",
    "fan": "FAN-A"
@@ -5606,7 +5616,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 80000,
+     "fsw_hz": 72000.0,
      "inductor": "IND-5",
      "heatsink": "HS-3",
      "fan": null
@@ -5615,7 +5625,7 @@
    },
    {
     "output": {
-     "fsw_hz": 80000,
+     "fsw_hz": 72000.0,
      "inductor": "IND-5",
      "heatsink": "HS-1",
      "fan": "FAN-A"
@@ -5624,7 +5634,7 @@
    },
    {
     "output": {
-     "fsw_hz": 80000,
+     "fsw_hz": 72000.0,
      "inductor": "IND-1",
      "heatsink": "HS-3",
      "fan": "FAN-A"
@@ -5651,7 +5661,7 @@
    },
    {
     "output": {
-     "fsw_hz": 80000,
+     "fsw_hz": 72000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5671,7 +5681,7 @@
  },
  "pe_cooling_029": {
   "golden": {
-   "fsw_hz": 180000,
+   "fsw_hz": 175000.0,
    "inductor": "IND-1",
    "heatsink": "HS-2",
    "fan": null
@@ -5679,7 +5689,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 180000,
+     "fsw_hz": 175000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": null
@@ -5706,7 +5716,7 @@
    },
    {
     "output": {
-     "fsw_hz": 180000,
+     "fsw_hz": 175000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5726,35 +5736,26 @@
  },
  "pe_cooling_030": {
   "golden": {
-   "fsw_hz": 70000,
+   "fsw_hz": 65000.0,
    "inductor": "IND-5",
-   "heatsink": "HS-2",
+   "heatsink": "HS-1",
    "fan": "FAN-A"
   },
   "broken": [
    {
     "output": {
-     "fsw_hz": 70000,
+     "fsw_hz": 65000.0,
      "inductor": "IND-5",
-     "heatsink": "HS-2",
+     "heatsink": "HS-1",
      "fan": null
     },
     "expect": "junction"
    },
    {
     "output": {
-     "fsw_hz": 70000,
-     "inductor": "IND-5",
-     "heatsink": "HS-1",
-     "fan": "FAN-A"
-    },
-    "expect": "junction"
-   },
-   {
-    "output": {
-     "fsw_hz": 70000,
+     "fsw_hz": 65000.0,
      "inductor": "IND-2",
-     "heatsink": "HS-2",
+     "heatsink": "HS-1",
      "fan": "FAN-A"
     },
     "expect": "inductor"
@@ -5763,7 +5764,7 @@
     "output": {
      "fsw_hz": 500000.0,
      "inductor": "IND-5",
-     "heatsink": "HS-2",
+     "heatsink": "HS-1",
      "fan": "FAN-A"
     },
     "expect": "junction"
@@ -5772,14 +5773,14 @@
     "output": {
      "fsw_hz": 50000.0,
      "inductor": "IND-5",
-     "heatsink": "HS-2",
+     "heatsink": "HS-1",
      "fan": "FAN-A"
     },
     "expect": "inductor"
    },
    {
     "output": {
-     "fsw_hz": 70000,
+     "fsw_hz": 65000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5799,7 +5800,7 @@
  },
  "pe_cooling_031": {
   "golden": {
-   "fsw_hz": 50000,
+   "fsw_hz": 50000.0,
    "inductor": "IND-3",
    "heatsink": "HS-1",
    "fan": null
@@ -5807,7 +5808,7 @@
   "broken": [
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-1",
      "heatsink": "HS-1",
      "fan": null
@@ -5825,7 +5826,7 @@
    },
    {
     "output": {
-     "fsw_hz": 50000,
+     "fsw_hz": 50000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"
@@ -5845,7 +5846,7 @@
  },
  "pe_cooling_032": {
   "golden": {
-   "fsw_hz": 160000,
+   "fsw_hz": 151000.0,
    "inductor": "IND-1",
    "heatsink": "HS-1",
    "fan": null
@@ -5871,7 +5872,7 @@
    },
    {
     "output": {
-     "fsw_hz": 160000,
+     "fsw_hz": 151000.0,
      "inductor": "IND-6",
      "heatsink": "HS-6",
      "fan": "FAN-E"

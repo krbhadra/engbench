@@ -342,7 +342,7 @@
   ],
   "objective": {
     "minimize": "cost",
-    "optimum": 11.45,
+    "optimum": 9.59,
     "tolerance": 0.05
   },
   "title": "Buck converter cooling chain",

@@ -113,8 +113,9 @@ def make_task(seed: int) -> dict | None:
         return None
     task["limits"] = lim
     feasible.sort(key=lambda t: (t[0], t[1]))
-    golden = feasible[0][2]
-    task["objective"] = {"minimize": "pump_power_w", "optimum": round(feasible[0][0], 4), "tolerance": TOLERANCE}
+    golden = _refine_optimum(task, pumps)  # speed is continuous in the task; the coarse grid is only for calibration
+    task["objective"] = {"minimize": "pump_power_w", "optimum": round(coolant_loop.evaluate(task, golden)["pump_power_w"], 4),
+                         "tolerance": TOLERANCE}
     near_opt = sum(1 for w, _, _ in feasible if w <= feasible[0][0] * (1 + TOLERANCE))
     if near_opt > MAX_NEAR_OPT_FRACTION * len(feasible):
         return None
@@ -138,6 +139,42 @@ def make_task(seed: int) -> dict | None:
     task["_golden"], task["_broken"] = golden, broken
     task["_stats"] = {"feasible": len(feasible), "near_opt": near_opt, "total": total}
     return task
+
+
+def _refine_optimum(task, pumps):
+    """Lowest pump power over all combos with speed continuous: coarse scan for the first feasible speed, then bisect
+    down to the boundary (pump power is monotonic in speed). ponytail: a feasible window narrower than 0.05 is missed."""
+    bare = {k: v for k, v in task.items() if k != "objective"}
+    p = task["params"]
+
+    def ok(design):
+        return coolant_loop.grade(bare, design)["passed"]
+
+    best = None
+    for c, pm, d, n in itertools.product(_TABLES, pumps, TUBE_PRICE, range(1, N_PAR_MAX + 1)):
+        if c["freeze_c"] > p["t_site_min_c"]:
+            continue
+        base = {"coolant": c["id"], "pump": pm["id"], "channel_d_mm": d, "n_parallel": n}
+        if best and pm["power_w"] * SPEEDS[0] ** 3 >= best[0]:
+            continue  # cannot beat the incumbent even at minimum speed
+        first = next((s for s in SPEEDS if ok({**base, "speed": s})), None)
+        if first is None:
+            continue
+        lo, hi = (SPEEDS[0] if first == SPEEDS[0] else round(first - 0.05, 2)), first
+        if lo < hi:
+            for _ in range(20):
+                mid = (lo + hi) / 2
+                if ok({**base, "speed": mid}):
+                    hi = mid
+                else:
+                    lo = mid
+        s_min = round(hi + 0.0005, 3)  # round up so the stored golden is feasible at 3 decimals
+        if not ok({**base, "speed": s_min}):
+            s_min = first
+        power = pm["power_w"] * s_min ** 3
+        if best is None or power < best[0]:
+            best = (power, {**base, "speed": s_min})
+    return best[1]
 
 
 def describe(t: dict) -> str:

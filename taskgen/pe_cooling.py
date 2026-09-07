@@ -123,8 +123,8 @@ def make_task(seed: int) -> dict | None:
         return None
     task["limits"] = lim
     feasible.sort(key=lambda t: (t[0], t[1]))
-    golden = feasible[0][2]
-    task["objective"] = {"minimize": "cost", "optimum": round(feasible[0][0], 2), "tolerance": COST_TOLERANCE}
+    golden = _refine_optimum(task, sinks, inductors, fans)  # fsw is continuous in the task; the coarse grid is only for calibration
+    task["objective"] = {"minimize": "cost", "optimum": round(pe_cooling.evaluate(task, golden)["cost"], 2), "tolerance": COST_TOLERANCE}
     near_opt = sum(1 for c, _, _ in feasible if c <= feasible[0][0] * (1 + COST_TOLERANCE))
     if near_opt > MAX_NEAR_OPT_FRACTION * len(feasible):
         return None  # objective is trivial: most feasible designs already pass it
@@ -151,6 +151,22 @@ def make_task(seed: int) -> dict | None:
     task["_golden"], task["_broken"] = golden, broken
     task["_stats"] = {"feasible": len(feasible), "near_opt": near_opt, "total": total}
     return task
+
+
+def _refine_optimum(task, sinks, inductors, fans):
+    """Cheapest (sink, inductor, fan) combo that is feasible at any fsw on a 1 kHz grid; ties broken by lowest P_total."""
+    combos = sorted(((s, i, f) for s in sinks for i in inductors for f in [None] + fans),
+                    key=lambda c: c[0]["price"] + c[1]["price"] + (c[2]["price"] if c[2] else 0.0))
+    for s, i, f in combos:
+        best = None
+        for fsw in range(int(task["params"]["fsw_min_hz"]), int(task["params"]["fsw_max_hz"]) + 1, 1000):
+            d = {"fsw_hz": float(fsw), "inductor": i["id"], "heatsink": s["id"], "fan": f["id"] if f else None}
+            r = pe_cooling.grade({k: v for k, v in task.items() if k != "objective"}, d)
+            if r["passed"] and (best is None or r["metrics"]["p_total"] < best[0]):
+                best = (r["metrics"]["p_total"], d)
+        if best:
+            return best[1]
+    raise RuntimeError("no feasible design on the fine grid, but the coarse grid found one")
 
 
 def describe(t: dict) -> str:

@@ -235,7 +235,7 @@
   },
   "objective": {
     "minimize": "pump_power_w",
-    "optimum": 0.8019,
+    "optimum": 0.6335,
     "tolerance": 0.05
   },
   "title": "Battery module coolant loop",
