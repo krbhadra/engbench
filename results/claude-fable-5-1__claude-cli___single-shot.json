@@ -1368,6 +1368,522 @@
    "trial": 1,
    "seconds": 17.5,
    "timestamp": "2026-09-06T14:59:26+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-2",
+      "speed": 0.495,
+      "channel_d_mm": 4,
+      "n_parallel": 4
+     },
+     "raw": "{\"coolant\": \"WATER\", \"pump\": \"PMP-2\", \"speed\": 0.495, \"channel_d_mm\": 4, \"n_parallel\": 4}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.3354,
+      "dp_pa": 3184.8272,
+      "re": 3027.6391,
+      "v_ms": 0.7743,
+      "h": 4612.8725,
+      "nu": 30.7034,
+      "t_out": 22.394,
+      "t_mean": 21.197,
+      "t_cell": 33.4181,
+      "q_heat_w": 388.8,
+      "pump_power_w": 1.977,
+      "cost": 30.5575,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2715,
+    "completion_tokens": 6352,
+    "cost": 0.37188
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_001",
+   "trial": 1,
+   "seconds": 76.2,
+   "timestamp": "2026-09-07T10:29:38+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-3",
+      "speed": 0.303,
+      "channel_d_mm": 8,
+      "n_parallel": 1
+     },
+     "raw": "{\"coolant\": \"MEG-30\", \"pump\": \"PMP-3\", \"speed\": 0.303, \"channel_d_mm\": 8, \"n_parallel\": 1}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.5374,
+      "dp_pa": 2785.7346,
+      "re": 3027.8304,
+      "v_ms": 0.8413,
+      "h": 2613.8026,
+      "nu": 44.9824,
+      "t_out": 20.1244,
+      "t_mean": 20.0622,
+      "t_cell": 21.4112,
+      "q_heat_w": 20.304,
+      "pump_power_w": 0.9736,
+      "cost": 45.5387,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2717,
+    "completion_tokens": 8475,
+    "cost": 0.47807000000000005
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_002",
+   "trial": 1,
+   "seconds": 97.5,
+   "timestamp": "2026-09-07T10:31:15+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-1",
+      "speed": 0.566,
+      "channel_d_mm": 12,
+      "n_parallel": 4
+     },
+     "raw": "{\"coolant\": \"MEG-50\", \"pump\": \"PMP-1\", \"speed\": 0.566, \"channel_d_mm\": 12, \"n_parallel\": 4}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.2426,
+      "dp_pa": 2806.4945,
+      "re": 187.9352,
+      "v_ms": 0.0458,
+      "h": 142.9676,
+      "nu": 4.36,
+      "t_out": 29.1103,
+      "t_mean": 27.0551,
+      "t_cell": 56.457,
+      "q_heat_w": 302.4,
+      "pump_power_w": 1.4687,
+      "cost": 23.532,
+      "freeze_c": -36.0
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2715,
+    "completion_tokens": 5875,
+    "cost": 0.34803000000000006
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_003",
+   "trial": 1,
+   "seconds": 71.4,
+   "timestamp": "2026-09-07T10:32:27+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-2",
+      "speed": 0.585,
+      "channel_d_mm": 4,
+      "n_parallel": 3
+     },
+     "raw": "{\"coolant\": \"WATER\", \"pump\": \"PMP-2\", \"speed\": 0.585, \"channel_d_mm\": 4, \"n_parallel\": 3}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.1564,
+      "dp_pa": 5123.7442,
+      "re": 3478.3942,
+      "v_ms": 0.9533,
+      "h": 5274.3132,
+      "nu": 35.404,
+      "t_out": 18.5117,
+      "t_mean": 18.2558,
+      "t_cell": 20.4851,
+      "q_heat_w": 76.8,
+      "pump_power_w": 3.003,
+      "cost": 24.2819,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2717,
+    "completion_tokens": 9461,
+    "cost": 0.52737
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_004",
+   "trial": 1,
+   "seconds": 111.5,
+   "timestamp": "2026-09-07T10:34:18+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-1",
+      "speed": 0.735,
+      "channel_d_mm": 6,
+      "n_parallel": 4
+     },
+     "raw": "{\"coolant\": \"WATER\", \"pump\": \"PMP-1\", \"speed\": 0.735, \"channel_d_mm\": 6, \"n_parallel\": 4}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.5475,
+      "dp_pa": 5895.7309,
+      "re": 1535.0971,
+      "v_ms": 0.228,
+      "h": 443.2928,
+      "nu": 4.36,
+      "t_out": 27.9488,
+      "t_mean": 26.4744,
+      "t_cell": 38.3988,
+      "q_heat_w": 316.8,
+      "pump_power_w": 2.9383,
+      "cost": 23.7072,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2715,
+    "completion_tokens": 4166,
+    "cost": 0.26258000000000004
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_005",
+   "trial": 1,
+   "seconds": 51.3,
+   "timestamp": "2026-09-07T10:35:09+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.71,
+      "channel_d_mm": 8,
+      "n_parallel": 4
+     },
+     "raw": "{\"coolant\": \"MEG-30\", \"pump\": \"PMP-1\", \"speed\": 0.71, \"channel_d_mm\": 8, \"n_parallel\": 4}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.6354,
+      "dp_pa": 2080.7446,
+      "re": 691.1521,
+      "v_ms": 0.2185,
+      "h": 250.9181,
+      "nu": 4.36,
+      "t_out": 15.538,
+      "t_mean": 15.269,
+      "t_cell": 18.9927,
+      "q_heat_w": 91.008,
+      "pump_power_w": 2.7201,
+      "cost": 29.2318,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2715,
+    "completion_tokens": 4600,
+    "cost": 0.28428
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_006",
+   "trial": 1,
+   "seconds": 57.2,
+   "timestamp": "2026-09-07T10:36:07+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-3",
+      "speed": 0.675,
+      "channel_d_mm": 6,
+      "n_parallel": 4
+     },
+     "raw": "{\"coolant\": \"WATER\", \"pump\": \"PMP-3\", \"speed\": 0.675, \"channel_d_mm\": 6, \"n_parallel\": 4}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 7.6472,
+      "dp_pa": 9960.2427,
+      "re": 7301.9813,
+      "v_ms": 1.1269,
+      "h": 6013.2019,
+      "nu": 59.3751,
+      "t_out": 25.1735,
+      "t_mean": 25.0868,
+      "t_cell": 25.9951,
+      "q_heat_w": 92.16,
+      "pump_power_w": 11.0409,
+      "cost": 44.185,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2717,
+    "completion_tokens": 10901,
+    "cost": 0.59937
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_007",
+   "trial": 1,
+   "seconds": 125.3,
+   "timestamp": "2026-09-07T10:38:12+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-3",
+      "speed": 0.492,
+      "channel_d_mm": 4,
+      "n_parallel": 4
+     },
+     "raw": "{\"coolant\": \"WATER\", \"pump\": \"PMP-3\", \"speed\": 0.492, \"channel_d_mm\": 4, \"n_parallel\": 4}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 3.2077,
+      "dp_pa": 5675.8532,
+      "re": 3645.9048,
+      "v_ms": 1.0636,
+      "h": 5589.3151,
+      "nu": 37.8282,
+      "t_out": 15.8377,
+      "t_mean": 15.4188,
+      "t_cell": 18.9798,
+      "q_heat_w": 187.2,
+      "pump_power_w": 3.9421,
+      "cost": 36.4378,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2717,
+    "completion_tokens": 12144,
+    "cost": 0.66152
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_008",
+   "trial": 1,
+   "seconds": 139.1,
+   "timestamp": "2026-09-07T10:40:31+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.615,
+      "channel_d_mm": 12,
+      "n_parallel": 4
+     },
+     "raw": "{\"coolant\": \"MEG-30\", \"pump\": \"PMP-1\", \"speed\": 0.615, \"channel_d_mm\": 12, \"n_parallel\": 4}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.1889,
+      "dp_pa": 4255.213,
+      "re": 220.0939,
+      "v_ms": 0.0438,
+      "h": 168.024,
+      "nu": 4.36,
+      "t_out": 19.9491,
+      "t_mean": 17.4745,
+      "t_cell": 39.8722,
+      "q_heat_w": 378.0,
+      "pump_power_w": 1.9306,
+      "cost": 31.0143,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2715,
+    "completion_tokens": 5674,
+    "cost": 0.33798000000000006
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_009",
+   "trial": 1,
+   "seconds": 68.4,
+   "timestamp": "2026-09-07T10:41:39+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-3",
+      "speed": 0.304,
+      "channel_d_mm": 12,
+      "n_parallel": 4
+     },
+     "raw": "{\"coolant\": \"MEG-50\", \"pump\": \"PMP-3\", \"speed\": 0.304, \"channel_d_mm\": 12, \"n_parallel\": 4}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.9747,
+      "dp_pa": 2556.433,
+      "re": 221.5303,
+      "v_ms": 0.0728,
+      "h": 141.0265,
+      "nu": 4.36,
+      "t_out": 18.7361,
+      "t_mean": 18.368,
+      "t_cell": 22.4876,
+      "q_heat_w": 85.248,
+      "pump_power_w": 0.9131,
+      "cost": 54.6342,
+      "freeze_c": -36.0
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2717,
+    "completion_tokens": 6727,
+    "cost": 0.3906700000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_010",
+   "trial": 1,
+   "seconds": 83.4,
+   "timestamp": "2026-09-07T10:43:03+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-3",
+      "speed": 0.515,
+      "channel_d_mm": 8,
+      "n_parallel": 1
+     },
+     "raw": "{\"coolant\": \"MEG-50\", \"pump\": \"PMP-3\", \"speed\": 0.515, \"channel_d_mm\": 8, \"n_parallel\": 1}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 3.8349,
+      "dp_pa": 7594.6667,
+      "re": 3023.9615,
+      "v_ms": 1.2716,
+      "h": 2683.9147,
+      "nu": 54.8885,
+      "t_out": 24.6029,
+      "t_mean": 23.3014,
+      "t_cell": 41.3357,
+      "q_heat_w": 588.6,
+      "pump_power_w": 4.8763,
+      "cost": 40.6685,
+      "freeze_c": -36.0
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2715,
+    "completion_tokens": 7530,
+    "cost": 0.43078000000000005
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_011",
+   "trial": 1,
+   "seconds": 90.0,
+   "timestamp": "2026-09-07T10:44:33+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-1",
+      "speed": 0.304,
+      "channel_d_mm": 12,
+      "n_parallel": 4
+     },
+     "raw": "{\"coolant\": \"MEG-50\", \"pump\": \"PMP-1\", \"speed\": 0.304, \"channel_d_mm\": 12, \"n_parallel\": 4}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.6399,
+      "dp_pa": 835.9979,
+      "re": 77.7684,
+      "v_ms": 0.0236,
+      "h": 141.6069,
+      "nu": 4.36,
+      "t_out": 23.9307,
+      "t_mean": 20.9654,
+      "t_cell": 43.9976,
+      "q_heat_w": 223.2,
+      "pump_power_w": 0.2416,
+      "cost": 23.6748,
+      "freeze_c": -36.0
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 2717,
+    "completion_tokens": 6642,
+    "cost": 0.38642000000000004
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-fable-5-1",
+   "task": "coolant_loop_012",
+   "trial": 1,
+   "seconds": 79.5,
+   "timestamp": "2026-09-07T10:45:52+00:00"
   }
  ]
 }

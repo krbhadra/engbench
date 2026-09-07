@@ -1370,6 +1370,344 @@
    "trial": 1,
    "seconds": 89.7,
    "timestamp": "2026-09-06T15:05:31+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "fsw_hz": 50000,
+      "inductor": "IND-5",
+      "heatsink": "HS-1",
+      "fan": "FAN-C"
+     },
+     "raw": "{\"fsw_hz\": 50000, \"inductor\": \"IND-5\", \"heatsink\": \"HS-1\", \"fan\": \"FAN-C\"}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "fsw_hz": 50000.0,
+      "q_m3h": 39.7015,
+      "v_ms": 1.5107,
+      "rsa": 5.0209,
+      "ta_int": 32.2676,
+      "p_fet": 13.6185,
+      "p_sw": 0.714,
+      "p_l": 13.9405,
+      "p_fan": 2.6,
+      "p_total": 30.159,
+      "tj": 114.5359,
+      "eta": 0.853,
+      "d_i": 3.8412,
+      "d_v": 0.0897,
+      "i_peak": 36.9206,
+      "isat": 38.6,
+      "cost": 14.82,
+      "noise_dba": 30,
+      "height_mm": 15
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3109,
+    "completion_tokens": 19351,
+    "cost": 0.20594200000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5",
+   "task": "pe_cooling_001",
+   "trial": 1,
+   "seconds": 169.5,
+   "timestamp": "2026-09-07T10:31:06+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "fsw_hz": 200400,
+      "inductor": "IND-1",
+      "heatsink": "HS-1",
+      "fan": null
+     },
+     "raw": "{\"fsw_hz\": 200400, \"inductor\": \"IND-1\", \"heatsink\": \"HS-1\", \"fan\": null}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "fsw_hz": 200400.0,
+      "q_m3h": 0.0,
+      "v_ms": 0.0,
+      "rsa": 13.04,
+      "ta_int": 33.0606,
+      "p_fet": 3.1077,
+      "p_sw": 1.8397,
+      "p_l": 0.4747,
+      "p_fan": 0.0,
+      "p_total": 3.5825,
+      "tj": 76.4756,
+      "eta": 0.9544,
+      "d_i": 4.4994,
+      "d_v": 0.0206,
+      "i_peak": 17.2497,
+      "isat": 26.8,
+      "cost": 3.44,
+      "noise_dba": 0.0,
+      "height_mm": 15
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3110,
+    "completion_tokens": 6244,
+    "cost": 0.074876
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5",
+   "task": "pe_cooling_002",
+   "trial": 1,
+   "seconds": 57.9,
+   "timestamp": "2026-09-07T10:32:04+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "fsw_hz": 165000,
+      "inductor": "IND-1",
+      "heatsink": "HS-1",
+      "fan": null
+     },
+     "raw": "{\"fsw_hz\": 165000, \"inductor\": \"IND-1\", \"heatsink\": \"HS-1\", \"fan\": null}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "fsw_hz": 165000.0,
+      "q_m3h": 0.0,
+      "v_ms": 0.0,
+      "rsa": 11.32,
+      "ta_int": 34.1944,
+      "p_fet": 4.434,
+      "p_sw": 1.485,
+      "p_l": 1.3125,
+      "p_fan": 0.0,
+      "p_total": 5.7465,
+      "tj": 89.1761,
+      "eta": 0.956,
+      "d_i": 4.9362,
+      "d_v": 0.0168,
+      "i_peak": 27.4681,
+      "isat": 30.0,
+      "cost": 3.61,
+      "noise_dba": 0.0,
+      "height_mm": 15
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3110,
+    "completion_tokens": 4824,
+    "cost": 0.0488656
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5",
+   "task": "pe_cooling_004",
+   "trial": 1,
+   "seconds": 50.0,
+   "timestamp": "2026-09-07T10:32:54+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "fsw_hz": 50000,
+      "inductor": "IND-6",
+      "heatsink": "HS-3",
+      "fan": "FAN-A"
+     },
+     "raw": "{\"fsw_hz\": 50000, \"inductor\": \"IND-6\", \"heatsink\": \"HS-3\", \"fan\": \"FAN-A\"}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "fsw_hz": 50000.0,
+      "q_m3h": 14.1964,
+      "v_ms": 0.8763,
+      "rsa": 2.9824,
+      "ta_int": 37.3677,
+      "p_fet": 12.7591,
+      "p_sw": 2.592,
+      "p_l": 21.28,
+      "p_fan": 1.0,
+      "p_total": 35.0391,
+      "tj": 89.7104,
+      "eta": 0.932,
+      "d_i": 5.611,
+      "d_v": 0.0457,
+      "i_peak": 42.8055,
+      "isat": 46.8,
+      "cost": 14.93,
+      "noise_dba": 28,
+      "height_mm": 35
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3110,
+    "completion_tokens": 16833,
+    "cost": 0.180766
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5",
+   "task": "pe_cooling_005",
+   "trial": 1,
+   "seconds": 146.3,
+   "timestamp": "2026-09-07T10:35:20+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "fsw_hz": 110000,
+      "inductor": "IND-3",
+      "heatsink": "HS-2",
+      "fan": "FAN-B"
+     },
+     "raw": "{\"fsw_hz\": 110000, \"inductor\": \"IND-3\", \"heatsink\": \"HS-2\", \"fan\": \"FAN-B\"}",
+     "passed": false,
+     "violations": [
+      "cost 12.65 is not within 5% of the best design that meets every constraint"
+     ],
+     "metrics": {
+      "fsw_hz": 110000.0,
+      "q_m3h": 30.4976,
+      "v_ms": 1.1766,
+      "rsa": 3.8163,
+      "ta_int": 36.6227,
+      "p_fet": 10.0475,
+      "p_sw": 2.376,
+      "p_l": 4.131,
+      "p_fan": 2.4,
+      "p_total": 16.5785,
+      "tj": 88.0287,
+      "eta": 0.9005,
+      "d_i": 3.7669,
+      "d_v": 0.0263,
+      "i_peak": 31.8834,
+      "isat": 32.0,
+      "cost": 12.65,
+      "noise_dba": 32,
+      "height_mm": 25
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3110,
+    "completion_tokens": 22186,
+    "cost": 0.234296
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5",
+   "task": "pe_cooling_006",
+   "trial": 1,
+   "seconds": 204.9,
+   "timestamp": "2026-09-07T10:38:45+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "fsw_hz": 98248,
+      "inductor": "IND-3",
+      "heatsink": "HS-1",
+      "fan": "FAN-A"
+     },
+     "raw": "{\"fsw_hz\": 98248, \"inductor\": \"IND-3\", \"heatsink\": \"HS-1\", \"fan\": \"FAN-A\"}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "fsw_hz": 98248.0,
+      "q_m3h": 13.0599,
+      "v_ms": 0.7256,
+      "rsa": 7.0732,
+      "ta_int": 28.1954,
+      "p_fet": 9.6769,
+      "p_sw": 2.3344,
+      "p_l": 3.303,
+      "p_fan": 1.0,
+      "p_total": 13.9799,
+      "tj": 104.1902,
+      "eta": 0.9147,
+      "d_i": 4.7999,
+      "d_v": 0.0312,
+      "i_peak": 32.4,
+      "isat": 32.4,
+      "cost": 6.6,
+      "noise_dba": 28,
+      "height_mm": 15
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3109,
+    "completion_tokens": 16364,
+    "cost": 0.1642654
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5",
+   "task": "pe_cooling_007",
+   "trial": 1,
+   "seconds": 146.3,
+   "timestamp": "2026-09-07T10:41:11+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "fsw_hz": 135000,
+      "inductor": "IND-1",
+      "heatsink": "HS-2",
+      "fan": null
+     },
+     "raw": "{\"fsw_hz\": 135000, \"inductor\": \"IND-1\", \"heatsink\": \"HS-2\", \"fan\": null}",
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "fsw_hz": 135000.0,
+      "q_m3h": 0.0,
+      "v_ms": 0.0,
+      "rsa": 7.34,
+      "ta_int": 49.3916,
+      "p_fet": 8.8498,
+      "p_sw": 2.025,
+      "p_l": 1.25,
+      "p_fan": 0.0,
+      "p_total": 10.0998,
+      "tj": 123.376,
+      "eta": 0.9252,
+      "d_i": 6.0456,
+      "d_v": 0.0523,
+      "i_peak": 28.0228,
+      "isat": 28.3,
+      "cost": 5.03,
+      "noise_dba": 0.0,
+      "height_mm": 25
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3110,
+    "completion_tokens": 11930,
+    "cost": 0.131736
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5",
+   "task": "pe_cooling_008",
+   "trial": 1,
+   "seconds": 109.9,
+   "timestamp": "2026-09-07T10:43:01+00:00"
   }
  ]
 }
