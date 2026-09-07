@@ -12,8 +12,8 @@
     "vgs": 10.0,
     "rth_jc": 0.43,
     "rth_cs": 0.44,
-    "ta": 40.0,
-    "l_h": 1.372e-05,
+    "ta_ext": 30.0,
+    "r_encl": 2.74,
     "c_f": 0.00033,
     "fsw_min_hz": 50000.0,
     "fsw_max_hz": 500000.0,
@@ -21,13 +21,13 @@
     "k_system": 0.0121
   },
   "limits": {
-    "tj_max_c": 115.0,
-    "eta_min": 0.965,
-    "ripple_i_max_a": 3.75,
+    "tj_max_c": 105.0,
+    "eta_min": 0.942,
+    "ripple_i_max_a": 4.5,
     "ripple_v_max_v": 0.1,
-    "noise_max_dba": 40.0,
-    "height_max_mm": 35.0,
-    "cost_max": 15.0
+    "noise_max_dba": 32.0,
+    "height_max_mm": 45.0,
+    "cost_max": 16.0
   },
   "heatsinks": [
     {
@@ -35,138 +35,138 @@
       "rsa_vs_v": [
         [
           0,
-          12.9
+          11.74
         ],
         [
           1,
-          6.45
+          5.87
         ],
         [
           2,
-          4.51
+          4.11
         ],
         [
           4,
-          3.22
+          2.93
         ]
       ],
       "height_mm": 15,
-      "price": 2.18
+      "price": 1.9
     },
     {
       "id": "HS-2",
       "rsa_vs_v": [
         [
           0,
-          8.6
+          7.82
         ],
         [
           1,
-          4.3
+          3.91
         ],
         [
           2,
-          3.01
+          2.74
         ],
         [
           4,
-          2.15
+          1.96
         ]
       ],
       "height_mm": 25,
-      "price": 3.68
+      "price": 4.52
     },
     {
       "id": "HS-3",
       "rsa_vs_v": [
         [
           0,
-          5.91
+          5.38
         ],
         [
           1,
-          2.79
+          2.54
         ],
         [
           2,
-          1.94
+          1.76
         ],
         [
           4,
-          1.4
+          1.27
         ]
       ],
       "height_mm": 35,
-      "price": 7.91
+      "price": 6.37
     },
     {
       "id": "HS-4",
       "rsa_vs_v": [
         [
           0,
-          4.08
+          3.72
         ],
         [
           1,
-          1.94
+          1.76
         ],
         [
           2,
-          1.34
+          1.22
         ],
         [
           4,
-          0.97
+          0.88
         ]
       ],
       "height_mm": 45,
-      "price": 11.0
+      "price": 10.56
     },
     {
       "id": "HS-5",
       "rsa_vs_v": [
         [
           0,
-          2.79
+          2.54
         ],
         [
           1,
-          1.29
+          1.17
         ],
         [
           2,
-          0.91
+          0.83
         ],
         [
           4,
-          0.64
+          0.59
         ]
       ],
       "height_mm": 60,
-      "price": 16.56
+      "price": 16.92
     },
     {
       "id": "HS-6",
       "rsa_vs_v": [
         [
           0,
-          1.94
+          1.76
         ],
         [
           1,
-          0.91
+          0.83
         ],
         [
           2,
-          0.64
+          0.59
         ],
         [
           4,
-          0.48
+          0.44
         ]
       ],
       "height_mm": 80,
-      "price": 28.71
+      "price": 27.26
     }
   ],
   "fans": [
@@ -176,24 +176,24 @@
       "curve": [
         [
           0,
-          32.2
+          29.3
         ],
         [
-          8.1,
-          19.3
+          7.3,
+          17.6
         ],
         [
-          12.9,
-          9.7
+          11.7,
+          8.8
         ],
         [
-          16.1,
+          14.7,
           0
         ]
       ],
       "power_w": 1.0,
       "dba": 28,
-      "price": 2.94
+      "price": 3.21
     },
     {
       "id": "FAN-B",
@@ -201,24 +201,24 @@
       "curve": [
         [
           0,
-          48.4
+          44.0
         ],
         [
-          21.5,
-          29.0
+          19.6,
+          26.4
         ],
         [
-          34.4,
-          14.5
+          31.3,
+          13.2
         ],
         [
-          43.0,
+          39.1,
           0
         ]
       ],
       "power_w": 2.4,
       "dba": 32,
-      "price": 5.22
+      "price": 5.88
     },
     {
       "id": "FAN-C",
@@ -226,18 +226,18 @@
       "curve": [
         [
           0,
-          43.0
+          39.1
         ],
         [
-          37.6,
-          25.8
+          34.2,
+          23.5
         ],
         [
-          60.2,
-          12.9
+          54.8,
+          11.7
         ],
         [
-          75.2,
+          68.5,
           0
         ]
       ],
@@ -251,24 +251,24 @@
       "curve": [
         [
           0,
-          96.8
+          88.0
         ],
         [
-          59.1,
-          58.0
+          53.8,
+          52.8
         ],
         [
-          94.6,
-          29.0
+          86.1,
+          26.4
         ],
         [
-          118.2,
+          107.6,
           0
         ]
       ],
       "power_w": 6.0,
       "dba": 42,
-      "price": 13.44
+      "price": 15.4
     },
     {
       "id": "FAN-E",
@@ -276,29 +276,73 @@
       "curve": [
         [
           0,
-          118.2
+          107.6
         ],
         [
-          86.0,
-          71.0
+          78.2,
+          64.5
         ],
         [
-          137.6,
-          35.5
+          125.2,
+          32.3
         ],
         [
-          172.0,
+          156.5,
           0
         ]
       ],
       "power_w": 9.0,
       "dba": 46,
-      "price": 19.38
+      "price": 19.0
+    }
+  ],
+  "inductors": [
+    {
+      "id": "IND-1",
+      "l_h": 4.982e-06,
+      "dcr_ohm": 0.002064,
+      "isat_a": 28.9,
+      "price": 1.41
+    },
+    {
+      "id": "IND-2",
+      "l_h": 7.065e-06,
+      "dcr_ohm": 0.002898,
+      "isat_a": 30.9,
+      "price": 2.05
+    },
+    {
+      "id": "IND-3",
+      "l_h": 1.062e-05,
+      "dcr_ohm": 0.00368,
+      "isat_a": 33.8,
+      "price": 2.74
+    },
+    {
+      "id": "IND-4",
+      "l_h": 1.602e-05,
+      "dcr_ohm": 0.006234,
+      "isat_a": 36.7,
+      "price": 3.23
+    },
+    {
+      "id": "IND-5",
+      "l_h": 2.2506e-05,
+      "dcr_ohm": 0.010783,
+      "isat_a": 43.4,
+      "price": 4.95
+    },
+    {
+      "id": "IND-6",
+      "l_h": 2.9799e-05,
+      "dcr_ohm": 0.014826,
+      "isat_a": 53.1,
+      "price": 5.85
     }
   ],
   "title": "Buck converter cooling chain",
-  "description": "Design the cooling for a synchronous buck converter: Vin = 24 V, Vout = 5 V, Iout = 15 A. Both MOSFETs are identical: Rds(on) = 5.61 mOhm at 25 C with temperature coefficient alpha = 0.0036 per C, i.e. Rds(Tj) = Rds25 * (1 + alpha * (Tj - 25)); switching transition tr + tf = 57 ns; gate charge Qg = 52 nC at Vgs = 10 V. Use this loss model: P_cond = Iout^2 * Rds(Tj) (the two FETs together conduct the full output current), P_sw = 0.5 * Vin * Iout * (tr + tf) * fsw, P_gate = 2 * Qg * Vgs * fsw, P = P_cond + P_sw + P_gate. Efficiency eta = Pout / (Pout + P) with Pout = Vout * Iout.\n\nBoth FETs share one heat sink: Tj = Ta + P * (RthJC + RthCS + Rsa), with RthJC = 0.43 C/W, RthCS = 0.44 C/W, Ta = 40 C inside the enclosure. Note Rds depends on Tj, so solve the thermal loop self-consistently. Rsa depends on the air velocity v through the sink; interpolate linearly between the catalog points and clamp outside them. Air velocity v = Q / 3600 / A_duct with A_duct = 0.005 m2, where Q (m3/h) is the fan operating point: the flow at which the fan's static pressure (interpolate linearly between its curve points) equals the enclosure system curve dP = k * Q^2 with k = 0.0121 Pa/(m3/h)^2. With no fan, v = 0.\n\nRipple: inductor L = 13.7 uH, output capacitor C = 330 uF, D = Vout / Vin. dI = Vout * (1 - D) / (L * fsw) must not exceed 3.75 A and dV = dI / (8 * C * fsw) must not exceed 100 mV.\n\nConstraints: fsw between 50 and 500 kHz; Tj <= 115 C; eta >= 96.5%; fan noise <= 40 dBA (no fan = 0 dBA); heat sink height <= 35 mm; heat sink price + fan price <= 15.\n\nHeat sink catalog:\n  HS-1: Rsa = 12.9 / 6.45 / 4.51 / 3.22 C/W at 0 / 1 / 2 / 4 m/s, height 15 mm, price 2.18\n  HS-2: Rsa = 8.6 / 4.3 / 3.01 / 2.15 C/W at 0 / 1 / 2 / 4 m/s, height 25 mm, price 3.68\n  HS-3: Rsa = 5.91 / 2.79 / 1.94 / 1.4 C/W at 0 / 1 / 2 / 4 m/s, height 35 mm, price 7.91\n  HS-4: Rsa = 4.08 / 1.94 / 1.34 / 0.97 C/W at 0 / 1 / 2 / 4 m/s, height 45 mm, price 11.00\n  HS-5: Rsa = 2.79 / 1.29 / 0.91 / 0.64 C/W at 0 / 1 / 2 / 4 m/s, height 60 mm, price 16.56\n  HS-6: Rsa = 1.94 / 0.91 / 0.64 / 0.48 C/W at 0 / 1 / 2 / 4 m/s, height 80 mm, price 28.71\n\nFan catalog (or use no fan):\n  FAN-A (40x40x10 mm): static pressure vs flow points [[0, 32.2], [8.1, 19.3], [12.9, 9.7], [16.1, 0]] (m3/h, Pa), 28 dBA, price 2.94\n  FAN-B (60x60x25 mm): static pressure vs flow points [[0, 48.4], [21.5, 29.0], [34.4, 14.5], [43.0, 0]] (m3/h, Pa), 32 dBA, price 5.22\n  FAN-C (80x80x25 mm): static pressure vs flow points [[0, 43.0], [37.6, 25.8], [60.2, 12.9], [75.2, 0]] (m3/h, Pa), 30 dBA, price 8.16\n  FAN-D (80x80x38 mm): static pressure vs flow points [[0, 96.8], [59.1, 58.0], [94.6, 29.0], [118.2, 0]] (m3/h, Pa), 42 dBA, price 13.44\n  FAN-E (92x92x38 mm): static pressure vs flow points [[0, 118.2], [86.0, 71.0], [137.6, 35.5], [172.0, 0]] (m3/h, Pa), 46 dBA, price 19.38\n\nAny design satisfying every constraint passes. Return {\"fsw_hz\": <number>, \"heatsink\": \"<id>\", \"fan\": \"<id>\" or null}.",
-  "output_shape": "{\"fsw_hz\": <switching frequency in Hz>, \"heatsink\": \"<catalog id>\", \"fan\": \"<catalog id> or null\"}",
+  "description": "Design the power stage cooling for a synchronous buck converter inside a sealed-except-for-the-fan enclosure: Vin = 24 V, Vout = 5 V, Iout = 15 A, D = Vout / Vin. Choose the switching frequency fsw, an inductor, a heat sink, and a fan (or no fan) from the catalogs below.\n\nMOSFETs (both identical): Rds(on) = 5.61 mOhm at 25 C with Rds(Tj) = Rds25 * (1 + alpha * (Tj - 25)), alpha = 0.0036 per C; tr + tf = 57 ns; Qg = 52 nC at Vgs = 10 V. Loss model: P_cond = Iout^2 * Rds(Tj) (the two FETs together carry Iout), P_sw = 0.5 * Vin * Iout * (tr + tf) * fsw, P_gate = 2 * Qg * Vgs * fsw, P_fet = P_cond + P_sw + P_gate.\n\nInductor: dI = Vout * (1 - D) / (L * fsw); peak current Iout + dI / 2 must not exceed the inductor's Isat; inductor loss P_L = Iout^2 * DCR (ignore the ripple term). Output capacitor C = 330 uF: dV = dI / (8 * C * fsw). Limits: dI <= 4.5 A, dV <= 100 mV.\n\nEnclosure air: everything dissipates inside, P_total = P_fet + P_L + P_fan where P_fan is the fan's electrical power (0 without a fan). Outside ambient Ta_ext = 30 C. With a fan, Ta_int = Ta_ext + P_total / (1206 * Q / 3600) where Q (m3/h) is the fan operating point and 1206 J/(m3 K) is the volumetric heat capacity of air. Without a fan, Ta_int = Ta_ext + P_total * R_encl with R_encl = 2.74 C/W.\n\nFan operating point: the flow Q at which the fan's static pressure (interpolate linearly between its curve points) equals the enclosure system curve dP = k * Q^2, k = 0.0121 Pa/(m3/h)^2. Air velocity through the heat sink v = Q / 3600 / A_duct, A_duct = 0.005 m2 (v = 0 without a fan).\n\nHeat sink: both FETs share it. Tj = Ta_int + P_fet * (RthJC + RthCS + Rsa(v)) with RthJC = 0.43 C/W, RthCS = 0.44 C/W; Rsa(v) is interpolated linearly between the catalog points and clamped outside them. Rds depends on Tj and Ta_int depends on P_total, so solve self-consistently.\n\nEfficiency: eta = Pout / (Pout + P_total), Pout = Vout * Iout.\n\nConstraints: fsw between 50 and 500 kHz; Tj <= 105 C; eta >= 94.2%; fan noise <= 32 dBA (no fan = 0 dBA); heat sink height <= 45 mm; heat sink + fan + inductor price <= 16.\n\nHeat sink catalog:\n  HS-1: Rsa = 11.74 / 5.87 / 4.11 / 2.93 C/W at v = 0 / 1 / 2 / 4 m/s, height 15 mm, price 1.90\n  HS-2: Rsa = 7.82 / 3.91 / 2.74 / 1.96 C/W at v = 0 / 1 / 2 / 4 m/s, height 25 mm, price 4.52\n  HS-3: Rsa = 5.38 / 2.54 / 1.76 / 1.27 C/W at v = 0 / 1 / 2 / 4 m/s, height 35 mm, price 6.37\n  HS-4: Rsa = 3.72 / 1.76 / 1.22 / 0.88 C/W at v = 0 / 1 / 2 / 4 m/s, height 45 mm, price 10.56\n  HS-5: Rsa = 2.54 / 1.17 / 0.83 / 0.59 C/W at v = 0 / 1 / 2 / 4 m/s, height 60 mm, price 16.92\n  HS-6: Rsa = 1.76 / 0.83 / 0.59 / 0.44 C/W at v = 0 / 1 / 2 / 4 m/s, height 80 mm, price 27.26\n\nFan catalog (or no fan):\n  FAN-A (40x40x10 mm): static pressure vs flow points [[0, 29.3], [7.3, 17.6], [11.7, 8.8], [14.7, 0]] (m3/h, Pa), electrical power 1.0 W, 28 dBA, price 3.21\n  FAN-B (60x60x25 mm): static pressure vs flow points [[0, 44.0], [19.6, 26.4], [31.3, 13.2], [39.1, 0]] (m3/h, Pa), electrical power 2.4 W, 32 dBA, price 5.88\n  FAN-C (80x80x25 mm): static pressure vs flow points [[0, 39.1], [34.2, 23.5], [54.8, 11.7], [68.5, 0]] (m3/h, Pa), electrical power 2.6 W, 30 dBA, price 8.16\n  FAN-D (80x80x38 mm): static pressure vs flow points [[0, 88.0], [53.8, 52.8], [86.1, 26.4], [107.6, 0]] (m3/h, Pa), electrical power 6.0 W, 42 dBA, price 15.40\n  FAN-E (92x92x38 mm): static pressure vs flow points [[0, 107.6], [78.2, 64.5], [125.2, 32.3], [156.5, 0]] (m3/h, Pa), electrical power 9.0 W, 46 dBA, price 19.00\n\nInductor catalog:\n  IND-1: L = 4.98 uH, DCR = 2.06 mOhm, Isat = 28.9 A, price 1.41\n  IND-2: L = 7.07 uH, DCR = 2.90 mOhm, Isat = 30.9 A, price 2.05\n  IND-3: L = 10.62 uH, DCR = 3.68 mOhm, Isat = 33.8 A, price 2.74\n  IND-4: L = 16.02 uH, DCR = 6.23 mOhm, Isat = 36.7 A, price 3.23\n  IND-5: L = 22.51 uH, DCR = 10.78 mOhm, Isat = 43.4 A, price 4.95\n  IND-6: L = 29.80 uH, DCR = 14.83 mOhm, Isat = 53.1 A, price 5.85\n\nAny design satisfying every constraint passes. Return {\"fsw_hz\": <number>, \"inductor\": \"<id>\", \"heatsink\": \"<id>\", \"fan\": \"<id>\" or null}.",
+  "output_shape": "{\"fsw_hz\": <switching frequency in Hz>, \"inductor\": \"<catalog id>\", \"heatsink\": \"<catalog id>\", \"fan\": \"<catalog id> or null\"}",
   "sources": [
     "Kunzi, Thermal Design of Power Electronic Circuits, CERN-2015-003 / arXiv:1607.01578 (CC BY 4.0): loss model and Rth chain",
     "TI SPRA953D Semiconductor and IC Package Thermal Metrics: RthJC / RthCS chain",
