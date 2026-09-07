@@ -41,6 +41,8 @@ fan-curve / system-curve operating point (ebm-papst application note).
 """
 from __future__ import annotations
 
+from objective import check_objective
+
 RHO_CP_AIR = 1206.0  # J/(m^3 K) at ~40 C
 
 
@@ -152,8 +154,5 @@ def grade(task: dict, output: dict) -> dict:
         v.append(f"heatsink height {m['height_mm']:.0f} mm exceeds {lim['height_max_mm']:.0f} mm")
     if m["cost"] > lim["cost_max"] + 1e-9:
         v.append(f"cost {m['cost']:.2f} exceeds budget {lim['cost_max']:.2f}")
-    obj = task.get("objective")  # {"minimize": "cost", "optimum": <brute-force best>, "tolerance": 0.05}
-    if obj and not v and m["cost"] > obj["optimum"] * (1 + obj["tolerance"]) + 1e-9:
-        # ponytail: the optimum is not echoed back, so agentic feedback says "search harder", not "the answer is X"
-        v.append(f"cost {m['cost']:.2f} is not within {obj['tolerance']*100:.0f}% of the cheapest design that meets every constraint")
+    check_objective(task, m, v)
     return {"passed": not v, "violations": v, "metrics": {k: round(x, 4) for k, x in m.items()}}

@@ -1,0 +1,255 @@
+{
+  "id": "coolant_loop_032",
+  "domain": "coolant_loop",
+  "params": {
+    "n_cells": 12,
+    "i_cell_a": 80.0,
+    "r_cell_ohm": 0.00052,
+    "r_cp_kw": 0.31,
+    "t_in_c": 18.0,
+    "t_site_min_c": -20.0,
+    "l_ch_m": 0.306,
+    "l_pipe_m": 2.23,
+    "d_pipe_m": 0.01,
+    "k_fittings": 9.6,
+    "speed_min": 0.3,
+    "n_parallel_max": 4,
+    "re_transition_band": [
+      2000.0,
+      3000.0
+    ]
+  },
+  "limits": {
+    "t_cell_max_c": 27.0,
+    "dt_coolant_max_c": 3.0,
+    "v_max_ms": 1.0,
+    "pump_power_max_w": 20.0,
+    "cost_max": 22.0
+  },
+  "coolants": [
+    {
+      "id": "WATER",
+      "freeze_c": 0.0,
+      "props": [
+        [
+          10.0,
+          1002.0,
+          4179.0,
+          0.001304,
+          0.5817
+        ],
+        [
+          30.0,
+          997.3,
+          4172.0,
+          0.000801,
+          0.6161
+        ],
+        [
+          50.0,
+          990.0,
+          4171.0,
+          0.000548,
+          0.643
+        ]
+      ]
+    },
+    {
+      "id": "MEG-30",
+      "freeze_c": -14.6,
+      "props": [
+        [
+          10.0,
+          1041.8,
+          3689.0,
+          0.002983,
+          0.4555
+        ],
+        [
+          30.0,
+          1033.7,
+          3747.0,
+          0.001639,
+          0.4741
+        ],
+        [
+          50.0,
+          1023.4,
+          3803.0,
+          0.001041,
+          0.4917
+        ]
+      ]
+    },
+    {
+      "id": "MEG-50",
+      "freeze_c": -36.0,
+      "props": [
+        [
+          10.0,
+          1070.0,
+          3258.0,
+          0.005257,
+          0.383
+        ],
+        [
+          30.0,
+          1059.4,
+          3364.0,
+          0.002729,
+          0.3953
+        ],
+        [
+          50.0,
+          1047.1,
+          3459.0,
+          0.001678,
+          0.4077
+        ]
+      ]
+    }
+  ],
+  "pumps": [
+    {
+      "id": "PMP-1",
+      "curve": [
+        [
+          0,
+          13236
+        ],
+        [
+          2.21,
+          10589
+        ],
+        [
+          3.53,
+          5956
+        ],
+        [
+          4.41,
+          0
+        ]
+      ],
+      "power_w": 8.0,
+      "price": 20.34
+    },
+    {
+      "id": "PMP-2",
+      "curve": [
+        [
+          0,
+          22300
+        ],
+        [
+          4.46,
+          17840
+        ],
+        [
+          7.14,
+          10035
+        ],
+        [
+          8.92,
+          0
+        ]
+      ],
+      "power_w": 15.6,
+      "price": 22.1
+    },
+    {
+      "id": "PMP-3",
+      "curve": [
+        [
+          0,
+          37695
+        ],
+        [
+          7.54,
+          30156
+        ],
+        [
+          12.06,
+          16963
+        ],
+        [
+          15.08,
+          0
+        ]
+      ],
+      "power_w": 32.4,
+      "price": 34.0
+    },
+    {
+      "id": "PMP-4",
+      "curve": [
+        [
+          0,
+          58795
+        ],
+        [
+          11.76,
+          47036
+        ],
+        [
+          18.81,
+          26458
+        ],
+        [
+          23.52,
+          0
+        ]
+      ],
+      "power_w": 74.8,
+      "price": 68.2
+    },
+    {
+      "id": "PMP-5",
+      "curve": [
+        [
+          0,
+          90880
+        ],
+        [
+          18.18,
+          72704
+        ],
+        [
+          29.08,
+          40896
+        ],
+        [
+          36.35,
+          0
+        ]
+      ],
+      "power_w": 122.2,
+      "price": 82.65
+    }
+  ],
+  "tube_price_per_m": {
+    "4": 0.89,
+    "6": 1.48,
+    "8": 1.58,
+    "10": 2.16,
+    "12": 2.75
+  },
+  "objective": {
+    "minimize": "pump_power_w",
+    "optimum": 0.216,
+    "tolerance": 0.05
+  },
+  "title": "Battery module coolant loop",
+  "description": "Design the liquid cooling loop for a battery module of 12 cells on one cold plate. Each cell carries I = 80 A through R_cell = 0.52 mOhm, so q_cell = I^2 * R_cell and the plate absorbs Q_heat = N_cells * q_cell. Choose a coolant, a pump, the pump speed fraction s (0.3 to 1.0), the cold-plate channel inner diameter d, and the number of parallel channels n_par (1 to 4).\n\nCold plate: n_par identical channels of diameter d and length L_ch = 0.306 m in parallel; the flow and the heat split equally between them. Loop piping: one run of inner diameter 10 mm, length 2.23 m, total fittings loss coefficient K = 9.6, carrying the whole flow. Coolant enters the plate at T_in = 18 C (chiller).\n\nHydraulics: v = (Qv / n_par) / (pi d^2 / 4), Re = rho v d / mu. Friction factor f = 64 / Re for Re < 2300, else Blasius f = 0.316 Re^-0.25. dP_channel = f (L_ch / d) rho v^2 / 2. dP_pipe = (f_pipe L_pipe / d_pipe + K) rho v_pipe^2 / 2 with the pipe's own Re and f. dP_system = dP_channel + dP_pipe. Pump at speed fraction s follows the affinity laws: dP_pump(Qv) = s^2 * curve(Qv / s), electrical power P_pump = P_rated * s^3, where curve() is the full-speed pressure vs flow table interpolated linearly. The operating point is where dP_pump = dP_system.\n\nThermal: T_out = T_in + Q_heat / (rho Qv cp). Pr = mu cp / k. Nu = 4.36 for Re < 2300, else Dittus-Boelter Nu = 0.023 Re^0.8 Pr^0.4. h = Nu k / d. Heat flux per channel q'' = (Q_heat / n_par) / (pi d L_ch). Hottest cell (at the outlet): T_cell = T_out + q'' / h + q_cell * R_cp with cell-to-plate resistance R_cp = 0.31 K/W.\n\nProperties: evaluate rho, cp, mu, k at T_mean = (T_in + T_out) / 2 by linear interpolation in the table below, clamped outside it. T_out depends on the properties, so solve self-consistently.\n\nConstraints: coolant freeze point <= site minimum temperature -20 C; channel Re must be <= 2000 or >= 3000 (no transitional flow); T_cell <= 27 C; T_out - T_in <= 3 C; channel velocity v <= 1 m/s; P_pump <= 20 W; cost = pump price + n_par * L_ch * tube price per metre <= 22.\n\nCoolants:\n  WATER: freeze point 0 C; at T = 10, 30, 50 C: rho = 1002 / 997.3 / 990 kg/m3, cp = 4179 / 4172 / 4171 J/(kg K), mu = 1.304 / 0.801 / 0.548 mPa s, k = 0.5817 / 0.6161 / 0.643 W/(m K)\n  MEG-30: freeze point -14.6 C; at T = 10, 30, 50 C: rho = 1041.8 / 1033.7 / 1023.4 kg/m3, cp = 3689 / 3747 / 3803 J/(kg K), mu = 2.983 / 1.639 / 1.041 mPa s, k = 0.4555 / 0.4741 / 0.4917 W/(m K)\n  MEG-50: freeze point -36 C; at T = 10, 30, 50 C: rho = 1070 / 1059.4 / 1047.1 kg/m3, cp = 3258 / 3364 / 3459 J/(kg K), mu = 5.257 / 2.729 / 1.678 mPa s, k = 0.383 / 0.3953 / 0.4077 W/(m K)\n\nPumps:\n  PMP-1: pressure vs flow at full speed [[0, 13236], [2.21, 10589], [3.53, 5956], [4.41, 0]] (L/min, Pa), rated electrical power 8.0 W, price 20.34\n  PMP-2: pressure vs flow at full speed [[0, 22300], [4.46, 17840], [7.14, 10035], [8.92, 0]] (L/min, Pa), rated electrical power 15.6 W, price 22.10\n  PMP-3: pressure vs flow at full speed [[0, 37695], [7.54, 30156], [12.06, 16963], [15.08, 0]] (L/min, Pa), rated electrical power 32.4 W, price 34.00\n  PMP-4: pressure vs flow at full speed [[0, 58795], [11.76, 47036], [18.81, 26458], [23.52, 0]] (L/min, Pa), rated electrical power 74.8 W, price 68.20\n  PMP-5: pressure vs flow at full speed [[0, 90880], [18.18, 72704], [29.08, 40896], [36.35, 0]] (L/min, Pa), rated electrical power 122.2 W, price 82.65\n\nChannel tube (inner diameter, price per metre): 4 mm at 0.89/m, 6 mm at 1.48/m, 8 mm at 1.58/m, 10 mm at 2.16/m, 12 mm at 2.75/m.\n\nObjective: minimize pump electrical power P_pump. A design passes only if it meets every constraint AND its P_pump is within 5% of the lowest P_pump among designs that meet every constraint. Return {\"coolant\": \"<id>\", \"pump\": \"<id>\", \"speed\": <0.3-1.0>, \"channel_d_mm\": <4|6|8|10|12>, \"n_parallel\": <1-4>}.",
+  "output_shape": "{\"coolant\": \"<catalog id>\", \"pump\": \"<catalog id>\", \"speed\": <fraction 0.3-1.0>, \"channel_d_mm\": <4|6|8|10|12>, \"n_parallel\": <integer>}",
+  "sources": [
+    "NREL/CP-540-40446 Kim & Pesaran 2006, Battery Thermal Management System Design Modeling (US Gov): channel-cooling archetype, property-table pattern",
+    "DOE/AMO Improving Pumping System Performance sourcebook (US Gov): pump affinity laws",
+    "CoolProp incompressible library (MIT): INCOMP::Water, INCOMP::MEG-30%, INCOMP::MEG-50% property tables and freeze points",
+    "Dittus & Boelter 1930 (Univ. California Publ. Eng.) and Blasius 1913: turbulent tube correlations; laminar Nu = 4.36 (constant heat flux)"
+  ],
+  "seed": 32,
+  "disciplines": [
+    "thermal",
+    "fluids"
+  ]
+}

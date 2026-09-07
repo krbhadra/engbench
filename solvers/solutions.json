@@ -3776,5 +3776,2117 @@
     "expect": "cost"
    }
   ]
+ },
+ "coolant_loop_001": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-2",
+   "speed": 0.5,
+   "channel_d_mm": 6,
+   "n_parallel": 3
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "pump"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.5,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.5,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "pump"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.95,
+     "channel_d_mm": 10,
+     "n_parallel": 2
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_002": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-2",
+   "speed": 0.45,
+   "channel_d_mm": 6,
+   "n_parallel": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.45,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 0.45,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.45,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-3",
+     "speed": 0.8,
+     "channel_d_mm": 10,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_003": {
+  "golden": {
+   "coolant": "MEG-50",
+   "pump": "PMP-2",
+   "speed": 0.45,
+   "channel_d_mm": 6,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.45,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-2",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-2",
+     "speed": 0.45,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-5",
+     "speed": 0.45,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_004": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-2",
+   "speed": 0.6,
+   "channel_d_mm": 4,
+   "n_parallel": 3
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 4,
+     "n_parallel": 3
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.3,
+     "channel_d_mm": 4,
+     "n_parallel": 3
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.6,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.6,
+     "channel_d_mm": 4,
+     "n_parallel": 3
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 10,
+     "n_parallel": 2
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_005": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-1",
+   "speed": 0.75,
+   "channel_d_mm": 10,
+   "n_parallel": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 10,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 10,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.75,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.75,
+     "channel_d_mm": 10,
+     "n_parallel": 1
+    },
+    "expect": "pump"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 8,
+     "n_parallel": 2
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_006": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-1",
+   "speed": 0.75,
+   "channel_d_mm": 6,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.75,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.75,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.75,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 12,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_007": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-3",
+   "speed": 0.7,
+   "channel_d_mm": 6,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.7,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.7,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.9,
+     "channel_d_mm": 10,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_008": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-2",
+   "speed": 0.65,
+   "channel_d_mm": 4,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.3,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.65,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.65,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-4",
+     "speed": 0.85,
+     "channel_d_mm": 12,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_009": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-1",
+   "speed": 0.65,
+   "channel_d_mm": 6,
+   "n_parallel": 3
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.65,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.65,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.65,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "pump"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 4,
+     "n_parallel": 3
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_010": {
+  "golden": {
+   "coolant": "MEG-50",
+   "pump": "PMP-2",
+   "speed": 0.4,
+   "channel_d_mm": 10,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.4,
+     "channel_d_mm": 10,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 10,
+     "n_parallel": 4
+    },
+    "expect": "pump"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-2",
+     "speed": 0.3,
+     "channel_d_mm": 10,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-2",
+     "speed": 0.4,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-5",
+     "speed": 0.4,
+     "channel_d_mm": 10,
+     "n_parallel": 4
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-2",
+     "speed": 0.95,
+     "channel_d_mm": 12,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_011": {
+  "golden": {
+   "coolant": "MEG-50",
+   "pump": "PMP-3",
+   "speed": 0.55,
+   "channel_d_mm": 8,
+   "n_parallel": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.55,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-3",
+     "speed": 1.0,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-3",
+     "speed": 0.3,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-3",
+     "speed": 0.55,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-5",
+     "speed": 0.55,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-2",
+     "speed": 0.95,
+     "channel_d_mm": 10,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_012": {
+  "golden": {
+   "coolant": "MEG-50",
+   "pump": "PMP-1",
+   "speed": 0.35,
+   "channel_d_mm": 6,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.35,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 0.35,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-5",
+     "speed": 0.35,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-3",
+     "speed": 0.65,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_013": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-2",
+   "speed": 0.6,
+   "channel_d_mm": 8,
+   "n_parallel": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.6,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 0.3,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 0.6,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.6,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 8,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_014": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-3",
+   "speed": 0.65,
+   "channel_d_mm": 6,
+   "n_parallel": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.65,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-3",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-3",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-3",
+     "speed": 0.65,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.65,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-3",
+     "speed": 1.0,
+     "channel_d_mm": 4,
+     "n_parallel": 3
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_015": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-1",
+   "speed": 0.3,
+   "channel_d_mm": 4,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.3,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 10,
+     "n_parallel": 3
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_016": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-2",
+   "speed": 0.4,
+   "channel_d_mm": 6,
+   "n_parallel": 2
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 2
+    },
+    "expect": "pump"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 2
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.4,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.4,
+     "channel_d_mm": 6,
+     "n_parallel": 2
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.65,
+     "channel_d_mm": 10,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_017": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-1",
+   "speed": 0.7,
+   "channel_d_mm": 6,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.7,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.7,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.7,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "pump"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_018": {
+  "golden": {
+   "coolant": "MEG-50",
+   "pump": "PMP-1",
+   "speed": 0.35,
+   "channel_d_mm": 10,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.35,
+     "channel_d_mm": 10,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 10,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 10,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 0.35,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-5",
+     "speed": 0.35,
+     "channel_d_mm": 10,
+     "n_parallel": 4
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-2",
+     "speed": 0.95,
+     "channel_d_mm": 12,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_019": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-2",
+   "speed": 0.4,
+   "channel_d_mm": 8,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.4,
+     "channel_d_mm": 8,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 8,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 0.3,
+     "channel_d_mm": 8,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 0.4,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.4,
+     "channel_d_mm": 8,
+     "n_parallel": 4
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 10,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_020": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-1",
+   "speed": 0.6,
+   "channel_d_mm": 6,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.6,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.6,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.6,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_021": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-2",
+   "speed": 0.6,
+   "channel_d_mm": 10,
+   "n_parallel": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-2",
+     "speed": 0.6,
+     "channel_d_mm": 10,
+     "n_parallel": 1
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 10,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 0.3,
+     "channel_d_mm": 10,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 0.6,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.6,
+     "channel_d_mm": 10,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 0.85,
+     "channel_d_mm": 8,
+     "n_parallel": 2
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_022": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-1",
+   "speed": 0.45,
+   "channel_d_mm": 6,
+   "n_parallel": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.45,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.45,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-3",
+     "speed": 0.85,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_023": {
+  "golden": {
+   "coolant": "MEG-50",
+   "pump": "PMP-1",
+   "speed": 0.45,
+   "channel_d_mm": 8,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.45,
+     "channel_d_mm": 8,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 8,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 8,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 0.45,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-5",
+     "speed": 0.45,
+     "channel_d_mm": 8,
+     "n_parallel": 4
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 8,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_024": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-4",
+   "speed": 0.3,
+   "channel_d_mm": 8,
+   "n_parallel": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-4",
+     "speed": 0.3,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-4",
+     "speed": 1.0,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-4",
+     "speed": 0.3,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.3,
+     "channel_d_mm": 8,
+     "n_parallel": 1
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 0.85,
+     "channel_d_mm": 12,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_025": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-1",
+   "speed": 0.5,
+   "channel_d_mm": 6,
+   "n_parallel": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.5,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.5,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 12,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_026": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-1",
+   "speed": 0.85,
+   "channel_d_mm": 6,
+   "n_parallel": 3
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.85,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.85,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_027": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-3",
+   "speed": 0.5,
+   "channel_d_mm": 10,
+   "n_parallel": 2
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 1.0,
+     "channel_d_mm": 10,
+     "n_parallel": 2
+    },
+    "expect": "pump"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.3,
+     "channel_d_mm": 10,
+     "n_parallel": 2
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.5,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.5,
+     "channel_d_mm": 10,
+     "n_parallel": 2
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.8,
+     "channel_d_mm": 12,
+     "n_parallel": 2
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_028": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-1",
+   "speed": 0.35,
+   "channel_d_mm": 12,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.35,
+     "channel_d_mm": 12,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 12,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 12,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.35,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.35,
+     "channel_d_mm": 12,
+     "n_parallel": 4
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_029": {
+  "golden": {
+   "coolant": "WATER",
+   "pump": "PMP-3",
+   "speed": 0.5,
+   "channel_d_mm": 6,
+   "n_parallel": 3
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "pump"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.5,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-5",
+     "speed": 0.5,
+     "channel_d_mm": 6,
+     "n_parallel": 3
+    },
+    "expect": "pump"
+   },
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-3",
+     "speed": 0.75,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_030": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-1",
+   "speed": 0.45,
+   "channel_d_mm": 4,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.45,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.45,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.45,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "pump"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-2",
+     "speed": 0.85,
+     "channel_d_mm": 6,
+     "n_parallel": 1
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_031": {
+  "golden": {
+   "coolant": "MEG-30",
+   "pump": "PMP-1",
+   "speed": 0.3,
+   "channel_d_mm": 6,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-30",
+     "pump": "PMP-5",
+     "speed": 0.3,
+     "channel_d_mm": 6,
+     "n_parallel": 4
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 12,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
+ },
+ "coolant_loop_032": {
+  "golden": {
+   "coolant": "MEG-50",
+   "pump": "PMP-1",
+   "speed": 0.3,
+   "channel_d_mm": 4,
+   "n_parallel": 4
+  },
+  "broken": [
+   {
+    "output": {
+     "coolant": "WATER",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "coolant"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 1.0,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 0.3,
+     "channel_d_mm": 4,
+     "n_parallel": 1
+    },
+    "expect": "hottest"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-5",
+     "speed": 0.3,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "channel"
+   },
+   {
+    "output": {
+     "coolant": "MEG-50",
+     "pump": "PMP-1",
+     "speed": 0.95,
+     "channel_d_mm": 4,
+     "n_parallel": 4
+    },
+    "expect": "pump_power_w"
+   }
+  ]
  }
 }
