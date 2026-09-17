@@ -1,100 +1,94 @@
 # EngBench — Vision
 
-## The problem
+## The question
 
-Every existing LLM benchmark for engineering is single-discipline and graded
-by an LLM judge or multiple-choice matching:
+Can a language model do real engineering work that an engineer would trust?
+Not recite formulas, not pass a physics quiz: take requirements, bring the
+knowledge a practising engineer carries, and produce a design that closes
+across every discipline it touches.
 
-- **Physics:** UGPhysics, ABench-Physics, PhysReason, GPQA-Diamond
-- **Mechanical/CAD:** OmniCAD, Text2CAD-Bench, MechVQA, P3D-Bench
-- **Electrical:** CircuitLM, CircuitSense, AnalogAgent, the CIRCUIT dataset
+Software got its answer from SWE-bench and its descendants: real repos, real
+tests, pass or fail. Engineering has nothing comparable. Existing benchmarks
+are single-discipline, school-level, and graded by another model deciding
+whether the answer "looks right".
 
-None of them test whether a model can hold constraints from **two
-disciplines at once** — the way a real engineer has to. Most grade answers
-by having another LLM (or a human) decide if the response "looks right,"
-instead of running the design through a real checker. And none of them
-separate *knowing the answer* from *being able to iterate toward it with
-tool feedback*, which is the skill that actually matters when a model is
-used as an engineering assistant.
+## What we measure
 
-## What we're building
+Models produce **design artifacts**: a chosen set of parts, a sizing, a
+set of operating points. Those artifacts are graded by **deterministic
+solvers**, never by an LLM judge. A design either meets every requirement
+or it names the one it misses.
 
-A benchmark where models don't answer questions — they **produce design
-artifacts** (component placements, wiring/netlists), and those artifacts are
-graded by deterministic solvers, not an LLM judge:
+Three properties make a task worth having:
 
-- **Mechanical grader:** bounding-box fit, collision, and clearance checks
-- **Electrical grader:** ngspice-based voltage-drop / power-delivery checks
-- **Combined tasks:** one problem, both graders. The grader derives wire
-  length from the model's own placements and injects that wire resistance
-  into the netlist before simulating — so a bad layout shows up as a
-  voltage-drop failure. The model cannot lie about wire length.
+1. **Knowledge is required, not supplied.** The task gives the requirements
+   and the data (catalogs, datasheet values, site conditions) and *names* the
+   method or standard to design to. It does not restate the method. An
+   engineer knows IPC-2221, knows what a manufacturer's derating curve means,
+   knows a contactor must be rated above the protection setting. A model that
+   does not carry this fails single-shot. Whether it can recover from grader
+   feedback is the second thing we measure.
+2. **Systems, not components.** Requirements flow down through a
+   multi-discipline chain and every level must close: energy, power, voltage
+   window, current, thermal, mass, cost, protection coordination, with a
+   stated margin policy. The grader also checks **interface consistency**
+   between the parts of the design, because a pack whose current limit
+   exceeds its contactor rating is a mistake that ships.
+3. **The optimum, not just a feasible point.** Every generated task carries an
+   objective and a brute-force optimum. A feasible design far from the optimum
+   fails. Feasibility alone was saturated by every frontier model the moment
+   the physics was stated.
 
-A design either satisfies the constraints or it doesn't. No ambiguity, no
-judge model to argue with, fully reproducible.
+Difficulty comes from the engineering, never from arithmetic. Reference
+methods are cited by name, parameters are perturbed per seed, and the grader
+recomputes everything from the task's own numbers.
 
 ## Two tracks
 
-Every model is scored on the same tasks twice:
-
 | Track | What the model gets | What it measures |
 |---|---|---|
-| **Single-shot** | The task description. One response. | Raw engineering reasoning — can it get the design right cold. |
-| **Agentic** | The task description plus one tool: `grade(artifact)`, which returns the solver's violation list. Up to 5 grader calls. | Whether it can use deterministic feedback to converge — the actual assistant workflow. |
+| **Single-shot** | The task. One response. | Whether the model carries the engineering knowledge and can apply it cold. |
+| **Agentic** | The task plus one tool, `grade(artifact)`, returning the violation list. Up to 5 calls. | Whether it can converge on a trustworthy design with deterministic feedback: the assistant workflow. |
 
-The two tracks are run independently (the agentic track is not "single-shot
-plus retries"). The gap between them is a first-class result: a model that
-scores low single-shot but closes the gap with feedback is a different tool
-from one that plateaus.
+The gap between the tracks is a first-class result. The agentic tool is the
+grader itself, so the no-judge rule holds on both tracks.
 
-The agentic tool is the grader itself, so the no-LLM-judge rule holds on
-both tracks.
+## Scope and order
+
+Disciplines first, industries later. Mechanical, electrical, electronics,
+thermal, fluids, controls, structural, materials, and the systems-engineering
+layer that ties them together. Industry is a tag once there is enough
+coverage to slice by.
+
+The first knowledge-required systems chain is a battery energy storage
+system: cells to module to pack to power conversion to grid connection, with
+thermal, protection, and mechanical closure. Chosen because the author can
+validate the engineering practice directly, not because the benchmark is
+about storage.
+
+Earlier families stay in the set as a floor: box-packing and DC-circuit tasks
+(saturated), and two cross-discipline physics chains (converter cooling,
+battery coolant loop) where the method is stated and only the optimum is hard.
+
+## Sources and honesty
+
+- Every task cites the published method, standard, dataset, or datasheet it
+  rests on. Depth never comes from either the author's or the model's memory.
+- Copyrighted standards are cited, never reproduced. Public-domain carriers
+  (NASA, DOE, NREL, Sandia, PNNL, IEEE open papers, manufacturer datasheets)
+  are preferred.
+- Every task has a golden solution that passes and broken solutions that fail
+  with a named violation. A grader that cannot fail a wrong answer is not a
+  grader.
+- Tasks, graders, harness, raw model outputs, and the results page all ship
+  in the repo under MIT. Anyone can rerun it.
 
 ## Budget and metrics
 
-Following the conventions of SWE-bench, Terminal-Bench, tau-bench and Aider:
-
-- **Attempt cap:** 5 grader calls per task on the agentic track.
-- **Wall-clock timeout:** 15 minutes per task, as a safety net only, never a
-  scoring mechanism. Raised from 5 after Haiku 4.5 with extended thinking
-  spent over 5 minutes on single tasks.
-- **Trials:** every task is run 3 times per model per track.
-- **Reported per model, per track:** mean pass rate, pass^3 (fraction of
-  tasks passed in all three trials), mean attempts to first pass (agentic),
-  mean tokens and cost per task.
-- **Token budgets are not used as a cutoff.** They punish verbose models
-  unfairly and are hard to explain. Tokens and cost are recorded and
-  reported alongside the score.
-
-## Reproducibility rules
-
-- Model calls go through **OpenRouter** via its OpenAI-compatible endpoint.
-  Open-weight models are pinned to a named host and quantization with
-  fallbacks disabled. A second transport runs Claude models through the
-  `claude` CLI on a subscription; those results are labeled separately
-  because the tool protocol and thinking defaults differ.
-- Every result record stores: model string, resolved snapshot, serving
-  provider, sampling and reasoning settings, tokens, cost, timestamp, and
-  the full attempt trajectory (every artifact submitted and every violation
-  list returned).
-- Providers that log or train on prompts are excluded, so the task set does
-  not leak into future training data.
-- Tasks, graders, harness, raw model outputs and the leaderboard all ship in
-  the repo. Anyone can rerun the whole thing with one key.
-
-## Why this is worth building
-
-- It's a gap, not a rehash — nobody has published a solver-graded,
-  cross-domain, two-track engineering benchmark
-- It's small enough to actually finish: ~30 tasks, two lightweight solvers,
-  no CAD engine or GPU required
-- It produces a real artifact: a public leaderboard + writeup showing where
-  current models fail at multi-constraint reasoning, and how much of that
-  failure tool feedback can recover
-
-
-
-## License / openness
-
-MIT licensed, public from the start. Tasks, graders, harness, and raw model
-outputs all ship in the repo so anyone can reproduce or extend the results.
+- 5 grader calls per task on the agentic track; 15-minute wall clock as a
+  safety net only; 3 trials per task per model per track.
+- Reported per model, per track, per family: mean pass rate, pass^3, mean
+  attempts to first pass, tokens and cost. Token budgets are never a cutoff.
+- Model calls go through OpenRouter with the serving provider pinned and
+  logged, or through the `claude` CLI on a subscription, labeled separately.
+  Providers that train on prompts are excluded.

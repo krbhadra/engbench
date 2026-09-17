@@ -21,14 +21,18 @@ self-check (`python solvers/test_solvers.py`) enforces the mechanical ones.
 - The answer key is recomputed from the task's own parameters by the grader.
   Nothing is looked up from the source at grading time.
 
-## 3. Fully specified
+## 3. Fully specified, method named
 
-- The description states every parameter, every constraint, and the physics
-  model to use, so a correct solver has no free choices except the design
-  itself. If two textbooks would give different formulas, the task says which.
-- The description states the exact output shape and the task JSON carries it
-  as `output_shape`.
-- Units are explicit everywhere.
+- The description states every parameter, every requirement, and the exact
+  output shape. Units are explicit everywhere.
+- **Knowledge-required families** (the default from here on) *name* the
+  method, standard, or curve the design must satisfy and cite it in
+  `sources`, but do not restate it. The grader implements exactly that named
+  method. If two published methods would disagree, the task names one.
+- **Physics families** (pe_cooling, coolant_loop) state the model in full so
+  only the optimum is hard. They remain as a floor and are labeled
+  `"mode": "stated"`; knowledge-required tasks are `"mode": "named"`.
+- The task JSON carries the output shape as `output_shape`.
 
 ## 4. Deterministically graded
 
