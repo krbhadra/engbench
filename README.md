@@ -159,6 +159,17 @@ Results land in `results/` as one JSON file per model per track, with the
 full attempt trajectory for every trial. The leaderboard script prints
 single-shot and agentic pass rates side by side, plus the gap.
 
+## Results page
+
+```bash
+python harness/report.py
+```
+
+Renders every file in `results/` into `docs/index.html`: leaderboard, pass
+rate by family and track, and a per-task matrix where each mark opens the
+model's design and the grader's violations. Static, no dependencies. `docs/`
+is what GitHub Pages serves, so the same file is the public site.
+
 ## Metrics
 
 Per model, per track: mean pass rate over 3 trials, pass^3, mean attempts to

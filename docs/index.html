@@ -1,0 +1,6059 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EngBench Results</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#1d1c19;--muted:#6b6860;--line:#dedbd3;--head:#f1efe8;--good:#dcefd8;--mid:#fbecc4;--bad:#f6d5cf;--accent:#1f5f8b}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#161614;--fg:#e8e6df;--muted:#9a978e;--line:#33322e;--head:#1f1f1c;--good:#274a2a;--mid:#5a4a1b;--bad:#5e2a24;--accent:#7fb3d9}}
+:root[data-theme=dark]{--bg:#161614;--fg:#e8e6df;--muted:#9a978e;--line:#33322e;--head:#1f1f1c;--good:#274a2a;--mid:#5a4a1b;--bad:#5e2a24;--accent:#7fb3d9}
+body{margin:0;padding:24px 16px 64px;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1100px;margin:0 auto} h1{font-size:28px;margin:0 0 4px} h2{font-size:20px;margin:40px 0 8px} h3{font-size:15px;margin:16px 0 6px;color:var(--muted)}
+p.lede{color:var(--muted);margin:0 0 8px;max-width:65ch}
+.wrap{overflow-x:auto} table{border-collapse:collapse;font-variant-numeric:tabular-nums;white-space:nowrap}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top} thead th{background:var(--head)} tbody th{font-weight:500}
+th small,td small{display:block;color:var(--muted);font-size:11px;font-weight:400}
+td.good{background:var(--good)} td.mid{background:var(--mid)} td.bad{background:var(--bad)} td.na{color:var(--muted);text-align:center}
+.matrix td{padding:2px 4px} details{display:inline-block;margin:2px} summary{cursor:pointer;list-style:none;padding:1px 7px;border-radius:3px;font-size:12px;font-weight:600}
+details.pass summary{background:var(--good)} details.fail summary{background:var(--bad)} details.skip summary{background:var(--head)}
+details[open]{display:block;max-width:520px;white-space:normal} details pre{font-size:11px;margin:6px 0;overflow-x:auto} details p{font-size:12px;margin:0 0 6px}
+a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
+</style></head><body><main>
+<h1>EngBench</h1>
+<p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. Single-shot is one answer with no feedback. Agentic is up to five attempts against grader feedback. Cell footnotes are the number of task runs behind each rate.</p>
+<p class="lede">88 tasks · 312 task runs · 4 models · updated 2026-09-17 20:28 UTC</p>
+<h2>Leaderboard</h2><div class="wrap"><table><thead><tr><th>model</th><th>single-shot</th><th>agentic</th><th>gap</th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="good"><b>93%</b><small>42</small></td><td class="good"><b>100%</b><small>30</small></td><td>+7</td><td>42</td><td>1,716</td><td>0.109</td></tr><tr><th>haiku [claude-cli]</th><td class="mid"><b>69%</b><small>45</small></td><td class="good"><b>100%</b><small>30</small></td><td>+31</td><td>45</td><td>15,102</td><td>0.080</td></tr><tr><th>opus [claude-cli]</th><td class="good"><b>94%</b><small>54</small></td><td class="good"><b>100%</b><small>30</small></td><td>+6</td><td>54</td><td>4,518</td><td>0.124</td></tr><tr><th>sonnet [claude-cli]</th><td class="mid"><b>80%</b><small>51</small></td><td class="good"><b>100%</b><small>30</small></td><td>+20</td><td>51</td><td>8,598</td><td>0.090</td></tr></tbody></table></div>
+<h2>Pass rate by family</h2>
+<p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
+<div class="wrap"><h3>single-shot</h3><table><thead><tr><th>model</th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="good"><b>100%</b><small>6</small></td><td class="mid"><b>75%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>0%</b><small>3</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>92%</b><small>12</small></td><td class="bad"><b>25%</b><small>12</small></td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>83%</b><small>6</small></td><td class="mid"><b>83%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td></tr><tr><th>sonnet [claude-cli]</th><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>22%</b><small>9</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="mid"><b>83%</b><small>12</small></td></tr></tbody></table><h3>agentic</h3><table><thead><tr><th>model</th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>opus [claude-cli]</th><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>sonnet [claude-cli]</th><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr></tbody></table></div>
+<h2>Every task, every model</h2>
+<p class="lede">S = single-shot, A = agentic, the digit is the number of attempts. Click a mark to see the model's design and the grader's first violations.</p>
+<div class="wrap"><table class="matrix"><thead><tr><th>task</th><th>claude-fable-5-1 [claude-cli]</th><th>haiku [claude-cli]</th><th>opus [claude-cli]</th><th>sonnet [claude-cli]</th></tr></thead><tbody><tr><th>comb_001<small>Power delivery across an enclosure</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    70,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    250,
+    100,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* psu 12V source and 10 ohm load; grader inserts wire psu_out -&gt; load_in\nV1 psu_out 0 DC 12\nRload load_in 0 10&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    70,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    200,
+    100,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* psu 12V source\nV1 psu_out 0 DC 12\n* load resistor\nRload load_in 0 10&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    80,
+    70,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 10&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    200,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 10&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    70,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    150,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* Power delivery: 12V source to 10 ohm load; wire R inserted by grader\nV1 psu_out 0 DC 12\nRload load_in 0 10&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    70,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    150,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* Power delivery: 12V source to 10 ohm load\n* Wire psu_out -&gt; load_in inserted by grader from placements\nV1 psu_out 0 DC 12\nRload load_in 0 10&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    70,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    200,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 10&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    70,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    150,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 10&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>comb_002<small>Star wiring to two loads</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_a&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_b&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    200,
+    100,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* Star wiring: psu_out -&gt; la_in (55mm, 0.165 ohm) and psu_out -&gt; lb_in (65mm, 0.195 ohm) inserted by grader\nV1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_a&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_b&quot;,
+   &quot;position&quot;: [
+    100,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    200,
+    100,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* psu 12V source\nV1 psu_out 0 DC 12\n* loads (wires psu_out-&gt;la_in and psu_out-&gt;lb_in inserted by grader)\nRla la_in 0 8\nRlb lb_in 0 20&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_a&quot;,
+   &quot;position&quot;: [
+    65,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_b&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    200,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_a&quot;,
+   &quot;position&quot;: [
+    80,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_b&quot;,
+   &quot;position&quot;: [
+    220,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    150,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_a&quot;,
+   &quot;position&quot;: [
+    70,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_b&quot;,
+   &quot;position&quot;: [
+    70,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    200,
+    150,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* star wiring from psu_out to two loads\nV1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_a&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_b&quot;,
+   &quot;position&quot;: [
+    90,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    200,
+    10,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* star wiring from psu to two loads\nV1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_a&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_b&quot;,
+   &quot;position&quot;: [
+    60,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    200,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_a&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load_b&quot;,
+   &quot;position&quot;: [
+    200,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    150,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>comb_003<small>Daisy-chained nodes around a column</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_a&quot;,
+   &quot;position&quot;: [
+    110,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_b&quot;,
+   &quot;position&quot;: [
+    170,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* comb_003 daisy-chained power; wire resistances psu_out-&gt;a_in and a_in-&gt;b_in inserted by grader\nV1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_a&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_b&quot;,
+   &quot;position&quot;: [
+    80,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* comb_003 daisy chain: psu -&gt; node_a -&gt; node_b, all left of column keep-out (x 140-160)\nV1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    25,
+    20,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_a&quot;,
+   &quot;position&quot;: [
+    75,
+    25,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_b&quot;,
+   &quot;position&quot;: [
+    105,
+    25,
+    10
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_a&quot;,
+   &quot;position&quot;: [
+    60,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_b&quot;,
+   &quot;position&quot;: [
+    100,
+    30,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_a&quot;,
+   &quot;position&quot;: [
+    60,
+    15,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_b&quot;,
+   &quot;position&quot;: [
+    60,
+    55,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* Daisy-chained 12V rail: psu_out -&gt; a_in -&gt; b_in\n* Wire resistances inserted by grader from placement distances\nV1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_a&quot;,
+   &quot;position&quot;: [
+    10,
+    5,
+    30
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_b&quot;,
+   &quot;position&quot;: [
+    40,
+    5,
+    30
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* daisy-chained 12V rail: psu -&gt; node_a -&gt; node_b\n* wire resistances inserted by grader from placements\nV1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_a&quot;,
+   &quot;position&quot;: [
+    55,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_b&quot;,
+   &quot;position&quot;: [
+    90,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_a&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;node_b&quot;,
+   &quot;position&quot;: [
+    80,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>comb_004<small>Thermal clearance versus voltage drop</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    110,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    155,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* psu at [0,0,0] center (25,20,15); load at [110,0,0] center (130,20,10); surface gap 60mm in x\n* Manhattan center distance = 105+0+5 = 110mm -&gt; Rwire = 0.22 ohm -&gt; Vload = 12*6/6.22 = 11.58 V &gt;= 11.5 V\n* fan at [155,0,0], 5mm gap from load\nV1 psu_out 0 DC 12\nRload load_in 0 6&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    110,
+    0,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    155,
+    0,
+    5
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* psu -&gt; load wire inserted by grader (psu_out -&gt; load_in), ~105mm Manhattan = 0.21 ohm\nV1 psu_out 0 DC 12\nRload load_in 0 6&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    110,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    110,
+    40,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 6&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    120,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    120,
+    60,
+    10
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 6&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    110,
+    30,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    155,
+    30,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* psu source and heater load; wire psu_out-&gt;load_in inserted by grader\nV1 psu_out 0 DC 12\nRload load_in 0 6&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    112,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    157,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* comb_004 thermal clearance vs voltage drop\n* psu center (25,20,15), load center (132,20,10): Manhattan = 107+0+5 = 112 mm -&gt; 0.224 ohm\n* Vload = 12 * 6 / 6.224 = 11.568 V &gt;= 11.5 V\nV1 psu_out 0 DC 12\nRload load_in 0 6&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    110,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    110,
+    40,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 6&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;load&quot;,
+   &quot;position&quot;: [
+    110,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    155,
+    0,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 6&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>comb_005<small>Fixed jack, thin wire, cable budget</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;jack&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;reg&quot;,
+   &quot;position&quot;: [
+    20,
+    35,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    85,
+    25,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* comb_005: jack -&gt; reg thin wire inserted by grader (jack_out -&gt; reg_in), Manhattan 37.5mm =&gt; 0.75 ohm, V(reg_in)=23.7V\nV1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;jack&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;reg&quot;,
+   &quot;position&quot;: [
+    17,
+    32.5,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    90,
+    25,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* jack -&gt; reg wire inserted by grader (jack_out -&gt; reg_in)\nV1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;jack&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;reg&quot;,
+   &quot;position&quot;: [
+    15,
+    40,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    85,
+    50,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;jack&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;reg&quot;,
+   &quot;position&quot;: [
+    20,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    85,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;standoff_1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;standoff_2&quot;,
+   &quot;position&quot;: [
+    142,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;standoff_3&quot;,
+   &quot;position&quot;: [
+    0,
+    92,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;standoff_4&quot;,
+   &quot;position&quot;: [
+    142,
+    92,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;jack&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;reg&quot;,
+   &quot;position&quot;: [
+    16,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    76,
+    25,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* 24V input source at DC jack output\nV1 jack_out 0 DC 24\n* Regulator input load: 400mA draw\nIreg reg_in 0 DC 400m\n* Thin wire jack_out -&gt; reg_in inserted by grader (Manhattan 38.5mm -&gt; 0.77 ohm -&gt; 0.308V drop -&gt; 23.692V)&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;jack&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;reg&quot;,
+   &quot;position&quot;: [
+    16,
+    32.5,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    77,
+    25,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* Fixed sources per spec; wire resistance jack_out-&gt;reg_in inserted by grader\nV1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;jack&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;reg&quot;,
+   &quot;position&quot;: [
+    20,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;jack&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;reg&quot;,
+   &quot;position&quot;: [
+    15,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    80,
+    20,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>comb_006<small>Full system: layout and power tree</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_in&quot;,
+   &quot;position&quot;: [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu_board&quot;,
+   &quot;position&quot;: [
+    30,
+    75,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;motor&quot;,
+   &quot;position&quot;: [
+    120,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    172,
+    85,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;ctrl&quot;,
+   &quot;position&quot;: [
+    30,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    47,
+    27,
+    15
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* comb_006 power tree; wire resistances inserted by grader from placements\nV1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_in&quot;,
+   &quot;position&quot;: [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu_board&quot;,
+   &quot;position&quot;: [
+    25,
+    70,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;motor&quot;,
+   &quot;position&quot;: [
+    110,
+    75,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    162,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;ctrl&quot;,
+   &quot;position&quot;: [
+    200,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    222,
+    32,
+    15
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* comb_006 power tree\nV1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60&quot;
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_in&quot;,
+   &quot;position&quot;: [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu_board&quot;,
+   &quot;position&quot;: [
+    108,
+    48,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;motor&quot;,
+   &quot;position&quot;: [
+    150,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;ctrl&quot;,
+   &quot;position&quot;: [
+    30,
+    130,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    40,
+    140,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    200,
+    30,
+    20
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60&quot;
+}</pre><p>psu_board overlaps motor<br>ctrl overlaps sensor</p></details><details class="pass"><summary>A3</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_in&quot;,
+   &quot;position&quot;: [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu_board&quot;,
+   &quot;position&quot;: [
+    40,
+    100,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;motor&quot;,
+   &quot;position&quot;: [
+    80,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    80,
+    50,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;ctrl&quot;,
+   &quot;position&quot;: [
+    220,
+    150,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    245,
+    160,
+    15
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60&quot;
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_in&quot;,
+   &quot;position&quot;: [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu_board&quot;,
+   &quot;position&quot;: [
+    25,
+    70,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;motor&quot;,
+   &quot;position&quot;: [
+    110,
+    70,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    161,
+    80,
+    12.5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;ctrl&quot;,
+   &quot;position&quot;: [
+    110,
+    145,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    127,
+    162,
+    16
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* 24V input source\nV1 dc_in 0 DC 24\n* PSU board input load (24 ohm ~ 1A draw)\nRpsu psu_in 0 24\n* PSU regulated output (ideal 12V rail)\nVout psu_out 0 DC 12\n* Motor load\nRm m_in 0 6\n* Controller load\nRc c_in 0 60&quot;
+}</pre><p>motor-ctrl clearance 25.0 &lt; required 40<br>sensor-motor clearance 42.0 &lt; required 60</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_in&quot;,
+   &quot;position&quot;: [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu_board&quot;,
+   &quot;position&quot;: [
+    25,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;motor&quot;,
+   &quot;position&quot;: [
+    110,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;ctrl&quot;,
+   &quot;position&quot;: [
+    110,
+    132,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    175,
+    155,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    163,
+    45,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;* Full system power tree: 24V in -&gt; PSU -&gt; 12V rail -&gt; motor + controller\n* Wire resistances (0.003 ohm/mm Manhattan, center-to-center) inserted by grader:\n*   dc_in -&gt; psu_in   : |65-10|+|70-97.5|+|12.5-6| = 89.0 mm  -&gt; 0.267 ohm  -&gt; V(psu_in)=23.74V\n*   psu_out -&gt; m_in   : |135-65|+|65-70|+|20-12.5| = 82.5 mm  -&gt; 0.2475 ohm -&gt; V(m_in)=11.52V\n*   psu_out -&gt; c_in   : |135-65|+|157-70|+|7.5-12.5| = 162.0 mm -&gt; 0.486 ohm -&gt; V(c_in)=11.90V\nV1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60&quot;
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_in&quot;,
+   &quot;position&quot;: [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu_board&quot;,
+   &quot;position&quot;: [
+    20,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;motor&quot;,
+   &quot;position&quot;: [
+    105,
+    25,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;ctrl&quot;,
+   &quot;position&quot;: [
+    125,
+    125,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    142.5,
+    162.5,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    155,
+    25,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60&quot;
+}</pre><p>ctrl overlaps sensor</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_in&quot;,
+   &quot;position&quot;: [
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu_board&quot;,
+   &quot;position&quot;: [
+    20,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;motor&quot;,
+   &quot;position&quot;: [
+    100,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    150,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;ctrl&quot;,
+   &quot;position&quot;: [
+    200,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    250,
+    90,
+    0
+   ]
+  }
+ ],
+ &quot;netlist&quot;: &quot;V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_001<small>Battery module coolant loop</small></th><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.495,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
+}</pre><p>pump_power_w 1.98 is not within 5% of the best design that meets every constraint</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.48,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 3
+}</pre><p>hottest cell 34.02 C exceeds 34.0 C (T_out=22.07 C, h=3136 W/m2K, Re=3098, Q=2.70 L/min)</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.487,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 3
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.81,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
+}</pre><p>pump_power_w 4.25 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_002<small>Battery module coolant loop</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.303,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.3035,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.64,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>pump_power_w 2.15 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_003<small>Battery module coolant loop</small></th><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.566,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>pump_power_w 1.47 is not within 5% of the best design that meets every constraint</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.73,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>hottest cell 126.01 C exceeds 56.5 C (T_out=28.49 C, h=286 W/m2K, Re=1750, Q=1.46 L/min)</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.567,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>pump_power_w 1.48 is not within 5% of the best design that meets every constraint</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.41,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_004<small>Battery module coolant loop</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.585,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 3
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.4,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>hottest cell 22.74 C exceeds 20.5 C (T_out=19.00 C, h=3597 W/m2K, Re=3587, Q=1.11 L/min)</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.585,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 3
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.84,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
+}</pre><p>channel Re 2956 is in the transition band 2000-3000 (laminar or turbulent only)</p></details></td></tr><tr><th>coolant_loop_005<small>Battery module coolant loop</small></th><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.735,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>pump_power_w 2.94 is not within 5% of the best design that meets every constraint</p></details></td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.725,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.73,
+ &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 1
+}</pre><p>pump_power_w 2.88 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_006<small>Battery module coolant loop</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.71,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.71,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.7,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 4
+}</pre><p>hottest cell 19.00 C exceeds 19.0 C (T_out=15.55 C, h=251 W/m2K, Re=681, Q=2.59 L/min)</p></details></td></tr><tr><th>coolant_loop_007<small>Battery module coolant loop</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.675,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.675,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.67,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_008<small>Battery module coolant loop</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.492,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.493,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.5,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
+}</pre><p>pump_power_w 4.14 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_009<small>Battery module coolant loop</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.615,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.825,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>pump_power_w 4.66 is not within 5% of the best design that meets every constraint</p></details></td><td class="na">–</td></tr><tr><th>coolant_loop_010<small>Battery module coolant loop</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.304,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.304,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td><td class="na">–</td></tr><tr><th>coolant_loop_011<small>Battery module coolant loop</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.515,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.517,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details></td><td class="na">–</td></tr><tr><th>coolant_loop_012<small>Battery module coolant loop</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.304,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.304,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.3,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>coolant temperature rise 6.04 C exceeds 6.0 C</p></details></td></tr><tr><th>elec_001<small>Voltage divider within drop limit</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Resistor divider: 12V -&gt; 6V at vout\nV1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 1k\nR2 vout 0 1k&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 1k\nR2 vout 0 1k&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 12V source with resistive divider to 6V output\nV1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Resistive voltage divider: 12V -&gt; 6V\nV1 vin 0 DC 12\nR1 vin vout 1k\nR2 vout 0 1k&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 1k\nR2 vout 0 1k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 1k\nR2 vout 0 1k&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>elec_002<small>Divider under load</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 435\nR2 vout 0 330\nRload vout 0 330\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Divider under 330 ohm load, vout = 3.3V\nV1 vin 0 DC 12\nR1 vin vout 435\nR2 vout 0 330\nRload vout 0 330&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 620\nR2 vout 0 820\nRload vout 0 330&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 430\nR2 vout 0 330\nRload vout 0 330&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 12V to 3.3V loaded divider\nV1 vin 0 DC 12\nR1 vin vout 654\nR2 vout 0 1000\nRload vout 0 330\n* R2 || Rload = 248.12 ohm; Vout = 12*248.12/(654+248.12) = 3.300 V&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 12V to 3.3V divider driving 330 ohm load\nV1 vin 0 DC 12\nR1 vin vout 435\nR2 vout 0 330\nRload vout 0 330\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 470\nR2 vout 0 390\nRload vout 0 330&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRtop vin vout 870\nRload vout 0 330&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>elec_003<small>LED current limiting</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* LED current limiting from 9V supply\nV1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 390\nVled led_a 0 DC 2\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 400\nVled led_a 0 DC 2&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 390\nVled led_a 0 DC 2&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 390\nVled led_a 0 DC 2&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* LED current limiting from 9V supply\nV1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 399\nVled led_a 0 DC 2\n* I = (9-2)/(1+399) = 17.5mA -&gt; Vsense = 17.5mV&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* LED current limiting from 9V supply\nV1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 400\nVled led_a 0 DC 2\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlim sense led_a 399\nVled led_a 0 DC 2&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlim sense led_a 399\nVled led_a 0 DC 2&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>elec_004<small>Quiescent current budget</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 24V to 5.0V reference, quiescent current ~0.1mA\nV1 vin 0 DC 24\nRsense vin top 10\n* Divider: 190k / 50k -&gt; vout = 24 * 50k / 240k = 5.00V, I = 24/240k = 0.1mA (Rsense drop = 1mV)\nR1 top vout 190k\nR2 vout 0 50k\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_004 quiescent current budget: 5.0V reference from 24V, I &lt; 1mA\nV1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 38k\nR2 vout 0 10k\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 19k\nR2 vout 0 5k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 20k\nR2 vout 0 5.3k&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 24V supply with 10-ohm current sense resistor\nV1 vin 0 DC 24\nRsense vin top 10\n* Divider: 190k + 50k = 240k total -&gt; I = 100uA (&lt; 1mA), drop on Rsense = 1mV\nR1 top vout 190k\nR2 vout 0 50k\n.op&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 24V to 5V reference divider, &lt;1mA quiescent\nV1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 189990\nR2 vout 0 50000&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 21101.11\nR2 vout 0 5555.56\n* Design: I = 24/(10+21101.11+5555.56) = 0.9mA\n* Rsense drop = 0.9mA*10ohm = 0.009V &lt;= 0.010V limit\n* vout = 0.9mA*5555.56 = 5.000V (within +/-2% of 5.0V)&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 21102\nR2 vout 0 5555&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>elec_005<small>Two loaded rails</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_005: two loaded rails from 12V via resistor dividers\nV1 vin 0 DC 12\n* 5.0V rail: Rb = R2 || Rl5 = 100||100 = 50 ohm; Vr5 = 12*50/(70+50) = 5.00V\nR1 vin r5 70\nR2 r5 0 100\nRl5 r5 0 100\n* 3.3V rail: Rb = R4 || Rl33 = 50 ohm; Vr33 = 12*50/(131.8+50) = 3.30V\nR3 vin r33 131.8\nR4 r33 0 100\nRl33 r33 0 100\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin r5 70\nR2 r5 0 100\nRl5 r5 0 100\nR3 vin r33 132\nR4 r33 0 100\nRl33 r33 0 100\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin r5 120\nR2 r5 0 620\nRl5 r5 0 100\nR3 vin r33 200\nR4 r33 0 330\nRl33 r33 0 100&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin r5 150\nRl5 r5 0 100\nR2 vin r33 270\nRl33 r33 0 100&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Two loaded rails from 12V supply\nV1 vin 0 DC 12\n* 5.0V rail: R1 top, R2 bottom, load 100 ohm\n* R2||Rl5 = 50 ; 12*50/(70+50) = 5.000V\nR1 vin r5 70\nR2 r5 0 100\nRl5 r5 0 100\n* 3.3V rail: R3 top, R4 bottom, load 100 ohm\n* R4||Rl33 = 50 ; 12*50/(131.818+50) = 3.300V\nR3 vin r33 131.818\nR4 r33 0 100\nRl33 r33 0 100\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Two loaded rails from 12V supply\nV1 vin 0 DC 12\n* 5.0V rail: R1 top, R2 bottom (R2||Rl5 = 20 ohm -&gt; 12*20/(28+20) = 5.0V)\nR1 vin r5 28\nR2 r5 0 25\nRl5 r5 0 100\n* 3.3V rail: R3 top, R4 bottom (R4||Rl33 = 33 ohm -&gt; 12*33/(87+33) = 3.3V)\nR3 vin r33 87\nR4 r33 0 49.2537\nRl33 r33 0 100\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Two loaded rails from 12V supply\n* Rail 1: r5 target 5.0V +/-5% (with 100ohm load)\n* Rail 2: r33 target 3.3V +/-5% (with 100ohm load)\nV1 vin 0 DC 12\nR5top vin r5 93.333\nR5bot r5 0 200\nRl5 r5 0 100\nR33top vin r33 197.727\nR33bot r33 0 300\nRl33 r33 0 100&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin r5 84\nR2 r5 0 150\nRl5 r5 0 100\nR3 vin r33 130\nR4 r33 0 100\nRl33 r33 0 100&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>elec_006<small>Remote load behind a long wire</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Remote load behind long wire: V1 -&gt; Rwire -&gt; R1 -&gt; vout, R2||Rload to ground\n* Rp = R2||Rload = 50||50 = 25 ohm; Vout = 12*25/(5+30+25) = 5.00 V\nV1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 30\nR2 vout 0 50\nRload vout 0 50\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Remote load behind a long wire: divider R1/R2 on remote board\nV1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 61.7\nR2 vout 0 1000\nRload vout 0 50\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 30\nR2 vout 0 50\nRload vout 0 50&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 30\nR2 vout 0 50\nRload vout 0 50&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_006: remote load behind long wire, divider sets vout = 5.00V\nV1 vin 0 DC 12\nRwire vin remote 5\n* On-board divider: series Rdiv1 then shunt Rdiv2 across the load\nRdiv1 remote vout 10\nRdiv2 vout 0 13.6364\nRload vout 0 50\n* Rdiv2 || Rload = 10.7143 ; vout = 12*10.7143/(5+10+10.7143) = 5.000V\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_006: remote load behind long wire\nV1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 41.667\nR2 vout 0 100\nRload vout 0 50\n* R2||Rload = 33.3333; vout = 12*33.3333/(5+41.667+33.3333) = 5.00V&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nRdiv remote vout 65\nRload vout 0 50&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 30\nR2 vout 0 50\nRload vout 0 50&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>elec_007<small>Wheatstone bridge balance</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Wheatstone bridge, balanced: R2/R1 = R4/R3, V(a)=V(b)=5V\nV1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Wheatstone bridge balanced\nV1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR3 vin b 2.2k\n* Balance: R2/R1 = R4/R3 -&gt; equal ratios give V(a)=V(b)=5V\nR2 a 0 1k\nR4 b 0 2.2k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR3 vin b 2.2k\n* Balanced bridge: R1/R2 = R3/R4 = 1 -&gt; V(a)=V(b)=5V\nR2 a 0 1k\nR4 b 0 2.2k&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR3 vin b 2.2k\nR2 a 0 1k\nR4 b 0 2.2k\n.end&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>elec_008<small>3-bit R-2R ladder</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 3-bit R-2R ladder DAC, code 101 -&gt; vout = 5V*5/8 = 3.125V\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\n* termination 2R\nRterm n0 0 20k\n* LSB leg\nRb0 b0 n0 20k\nR01 n0 n1 10k\n* bit1 leg\nRb1 b1 n1 20k\nR12 n1 vout 10k\n* MSB leg\nRb2 b2 vout 20k\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 3-bit R-2R ladder DAC, code 101\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nRterm n0 0 20k\nR2b0 b0 n0 20k\nR01 n0 n1 10k\nR2b1 b1 n1 20k\nR12 n1 vout 10k\nR2b2 b2 vout 20k&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nRg n0 0 2k\nRh1 n0 n1 1k\nRh2 n1 n2 1k\nRh3 n2 vout 1k\nRv1 b0 n0 2k\nRv2 b1 n1 2k\nRv3 b2 n2 2k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nR1 b2 n1 2k\nR2 n1 0 2k\nR3 n1 n2 1k\nR4 n2 b1 2k\nR5 n2 vout 1k\nR6 vout b0 2k&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 3-bit R-2R ladder DAC, input code b2b1b0 = 101\n* R = 10k, 2R = 20k\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\n* termination leg to ground at LSB node\nRterm n0 0 20k\n* LSB branch\nR2R0 b0 n0 20k\nRser0 n0 n1 10k\n* bit1 branch\nR2R1 b1 n1 20k\nRser1 n1 vout 10k\n* MSB branch feeds output node directly\nR2R2 b2 vout 20k\n* vout = 5*(1/2 + 0/4 + 1/8) = 3.125V (open-circuit output)&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 3-bit R-2R ladder DAC, code 101 (b2=1,b1=0,b0=1)\n* Vout = Vref*(b2/2 + b1/4 + b0/8) = 5 * 5/8 = 3.125V\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\n* termination resistor 2R at LSB end\nRterm n0 0 2k\n* 2R branch resistors from each bit input\nRb0 b0 n0 2k\nRb1 b1 n1 2k\nRb2 b2 vout 2k\n* series R rungs of the ladder\nRs0 n0 n1 1k\nRs1 n1 vout 1k&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 3-bit R-2R ladder DAC, code b2 b1 b0 = 1 0 1\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\n* R = 10k, 2R = 20k\nRterm n0 0 20k\nRb0 b0 n0 20k\nR01 n0 n1 10k\nRb1 b1 n1 20k\nR12 n1 vout 10k\nRb2 b2 vout 20k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nR1 n0 0 20k\nR2 n0 b0 20k\nR3 n0 n1 10k\nR4 n1 b1 20k\nR5 n1 vout 10k\nR6 vout b2 20k&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>elec_009<small>Dropper for a constant-current load</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_009: series dropper for constant-current load\n* Iload = 40mA -&gt; drop across Rsense = 0.04V, top = 14.96V\n* Rdrop = (14.96 - 9.0)/0.040 = 149 ohm -&gt; vout = 9.00V, supply current = 40mA\nV1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 149\nIload vout 0 DC 40m\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Dropper for constant-current load: 15V -&gt; 9V at 40mA\nV1 vin 0 DC 15\nRsense vin top 1\n* Series dropper: (15 - 0.04*1 - 9)/0.04 ~= 149 ohm, use 150 ohm -&gt; vout ~ 8.96V\nRdrop top vout 150\nIload vout 0 DC 40m\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 150\nIload vout 0 DC 40m&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 15\nRsense vin top 1\nR1 top vout 108\nR2 vout 0 600\nIload vout 0 DC 40m&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_009: 15V supply, series dropper to 9V for 40mA constant-current load\n* Total supply current = 40mA -&gt; Rsense drop = 0.040V (&lt;= 0.060V limit)\n* Required drop top-&gt;vout = 15 - 0.040 - 9.0 = 5.96V at 40mA -&gt; R = 149 ohm\nV1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 149\nIload vout 0 DC 40m\n.op&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_009: 15V supply to 9V constant-current load (40mA)\nV1 vin 0 DC 15\nRsense vin top 1\n* Series dropper: 5.96V across 40mA -&gt; 149 ohm\nRdrop top vout 149\nIload vout 0 DC 40m\n.op&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Dropper network for constant-current load\nV1 vin 0 DC 15\nRsense vin top 1\nR1 top vout 149\nIload vout 0 DC 40m&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;Iload vout 0 DC 40m\nV1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 149&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>elec_010<small>Multi-load distribution with a ceiling</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_010: 24V supply, shared feeder, three loads on bus\nV1 vin 0 DC 24\nRfeed vin bus 2\n* direct wires to l1 and l2\nR1 bus l1 0.01\nR2 bus l2 0.01\n* series dropper for 21V-max load: Vbus ~21.86V -&gt; V(l3) ~20.63V\nR3 bus l3 3\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\n* Itotal ~1.07A, Vbus ~21.86V, V(l1)~V(l2)~21.86V, V(l3)~20.63V\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_010: 24V bus feeding three loads through a shared 2-ohm feeder\nV1 vin 0 DC 24\nRfeed vin bus 2\n* direct wires to l1 and l2 (Vbus ~21.87V &gt;= 20V)\nR1 bus l1 0.01\nR2 bus l2 0.01\n* series dropper for the 21V-max load: V(l3) = Vbus*50/53.3 ~ 20.5V\nR3 bus l3 3.3\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\n* total supply current ~1.07A (feeder drop ~2.13V &lt; 2.4V)&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nR1 bus l1 0.01\nR2 bus l2 0.01\nR3 bus l3 2.5\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nRconnect1 bus l1 0.01\nRconnect2 bus l2 0.01\nRconnect3 bus l3 2.1\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* 24V feeder to bus, three loads\nV1 vin 0 DC 24\nRfeed vin bus 2\n* bus-to-load branch resistors\nRb1 bus l1 0.01\nRb2 bus l2 0.01\nRb3 bus l3 3.66\n* loads\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\n* Vbus ~= 21.87V, V(l1)=21.87, V(l2)=21.87, V(l3)=20.38, Isupply ~= 1.06A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_010: 24V bus distribution with per-branch series resistors\nV1 vin 0 DC 24\nRfeed vin bus 2\nRb1 bus l1 0.01\nRb2 bus l2 0.01\nRb3 bus l3 3\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\n* V(bus)=21.864V, V(l1)=21.862V, V(l2)=21.860V, V(l3)=20.626V, Isupply=1.068A\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\nRw1 bus l1 0.01\nRw2 bus l2 0.01\nRw3 bus l3 3.2&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\nRc1 bus l1 0.01\nRc2 bus l2 0.01\nRc3 bus l3 3&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>elec_011<small>Precision reference</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_011: 2.500V precision reference from 10V supply\n* Rsense(100) + R1(9.9k) in series = 10k; R2(5k)||Rload(10k) = 3.333k\n* Vref = 10V * 3.333k / (10k + 3.333k) = 2.500V exactly; Isupply = 0.75mA (&lt;=1.5mA)\nV1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 9.9k\nR2 vref 0 5k\nRload vref 0 10k\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_011 precision reference: 2.500V from 10V, resistive divider\nV1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 14.9k\nR2 vref 0 10k\nRload vref 0 10k\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 14.9k\nR2 vref 0 10k\nRload vref 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 5k\nR2 vref 0 2.048k\nRload vref 0 10k&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_011 Precision 2.500V reference divider\nV1 vin 0 DC 10\nRsense vin top 100\n* Divider: top -&gt; vref -&gt; gnd, sized with 10k load included\nR1 top vref 7400\nR2 vref 0 3333.3333\nRload vref 0 10k\n* Node vref: (Vt-Vref)/7400 = Vref*(1/3333.3333 + 1/10000) = 4e-4*Vref -&gt; Vt = 3.96*Vref\n* Node top: (10-Vt)/100 = 4e-4*Vref -&gt; 10 = 4.0*Vref -&gt; Vref = 2.500V exactly\n* Supply current = 4e-4*2.5 = 1.0 mA (&lt;= 1.5 mA); Rsense drop = 0.100 V (&lt;= 0.15 V)\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_011 Precision 2.500V reference from 10V supply\n* Total loop current = 0.5 mA (Rsense drop = 50 mV, well under 150 mV limit)\nV1 vin 0 DC 10\nRsense vin top 100\n* Divider: top -&gt; vref -&gt; ground\nR1 top vref 14.9k\nR2 vref 0 10k\nRload vref 0 10k\n* R2 || Rload = 5k ; vref = 10 * 5k/(100+14.9k+5k) = 2.500 V exactly&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 7400\nR2 vref 0 3333.33\nRload vref 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Precision 2.5V reference from 10V supply\nV1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 5000\nR2 vref 0 2048.19\nRload vref 0 10k&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>elec_012<small>Remote dual-rail power budget</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_012: remote dual-rail power budget\n* Loads: 12V/60R = 0.2A, 5V/50R = 0.1A, aux 0.05A -&gt; Itotal = 0.35A (&lt;= 0.4A)\n* Drop across Rsense+Rwire = 0.35A * 3.5R = 1.225V -&gt; V(remote) = 46.775V\n* Rd12 = (46.775-12)/0.2 = 173.875 ohm ; Rd5 = (46.775-5)/0.1 = 417.75 ohm\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRd12 remote v12 173.875\nRd5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* elec_012 remote dual-rail power budget\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRdrop12 remote v12 173.875\nRdrop5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRd12 remote v12 174\nRd5 remote v5 418\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nR12 remote v12 173.875\nR5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Remote dual-rail power budget\n* Required elements\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n*\n* Budget: I12 = 12/60 = 0.2A, I5 = 5/50 = 0.1A, Iaux = 0.05A\n* Itot = 0.35A  -&gt;  Vsense = 0.35*0.5 = 0.175V (&lt;= 0.2V), Itot &lt;= 0.4A OK\n* V(top) = 48 - 0.175 = 47.825V ; V(remote) = 47.825 - 0.35*3 = 46.775V\n* Rd12 = (46.775 - 12)/0.2 = 173.875 ohm\n* Rd5  = (46.775 - 5)/0.1 = 417.75 ohm\nRd12 remote v12 173.875\nRd5 remote v5 417.75\n*\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Remote dual-rail power budget\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRd12 remote v12 173.875\nRd5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;* Remote dual-rail power budget design\n* 48V source feeds remote board via sense + wire resistance\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\n* Dropper resistors sized so V12=12V, V5=5V exactly under given loads\n* I12 = V12/Rl12 = 12/60 = 0.2A, I5 = V5/Rl5 = 5/50 = 0.1A\n* Total supply current = I12+I5+Iaux = 0.2+0.1+0.05 = 0.35A (&lt;=0.4A)\n* Vremote = 48 - 0.35*(0.5+3) = 46.775V\n* Rd12 = (Vremote-12)/0.2 = 173.875 ohm\n* Rd5  = (Vremote-5)/0.1  = 417.75 ohm\nRd12 remote v12 173.875\nRd5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRd12 remote v12 173.875\nRd5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>mech_001<small>Basic enclosure fit</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_a&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_b&quot;,
+   &quot;position&quot;: [
+    70,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_c&quot;,
+   &quot;position&quot;: [
+    140,
+    10,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_b&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_c&quot;,
+   &quot;position&quot;: [
+    110,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_b&quot;,
+   &quot;position&quot;: [
+    40,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_c&quot;,
+   &quot;position&quot;: [
+    90,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_b&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_c&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_a&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_b&quot;,
+   &quot;position&quot;: [
+    60,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_c&quot;,
+   &quot;position&quot;: [
+    120,
+    10,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_a&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_b&quot;,
+   &quot;position&quot;: [
+    60,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_c&quot;,
+   &quot;position&quot;: [
+    120,
+    10,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_b&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_c&quot;,
+   &quot;position&quot;: [
+    110,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_b&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_c&quot;,
+   &quot;position&quot;: [
+    110,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>mech_002<small>Enclosure fit with thermal clearance</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_x&quot;,
+   &quot;position&quot;: [
+    10,
+    30,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_y&quot;,
+   &quot;position&quot;: [
+    120,
+    30,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_z&quot;,
+   &quot;position&quot;: [
+    70,
+    40,
+    25
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_x&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_y&quot;,
+   &quot;position&quot;: [
+    100,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_z&quot;,
+   &quot;position&quot;: [
+    160,
+    60,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_x&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_y&quot;,
+   &quot;position&quot;: [
+    55,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_z&quot;,
+   &quot;position&quot;: [
+    100,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_x&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_y&quot;,
+   &quot;position&quot;: [
+    55,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_z&quot;,
+   &quot;position&quot;: [
+    100,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_x&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_y&quot;,
+   &quot;position&quot;: [
+    65,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_z&quot;,
+   &quot;position&quot;: [
+    130,
+    10,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_x&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_y&quot;,
+   &quot;position&quot;: [
+    66,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_z&quot;,
+   &quot;position&quot;: [
+    140,
+    10,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_x&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_y&quot;,
+   &quot;position&quot;: [
+    55,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_z&quot;,
+   &quot;position&quot;: [
+    0,
+    55,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_x&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_y&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_z&quot;,
+   &quot;position&quot;: [
+    0,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>mech_003<small>Pinwheel tiling</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;b&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;c&quot;,
+   &quot;position&quot;: [
+    40,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;d&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;e&quot;,
+   &quot;position&quot;: [
+    40,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;b&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;c&quot;,
+   &quot;position&quot;: [
+    40,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;d&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;e&quot;,
+   &quot;position&quot;: [
+    40,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;b&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;c&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;d&quot;,
+   &quot;position&quot;: [
+    60,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;e&quot;,
+   &quot;position&quot;: [
+    40,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>c exceeds enclosure bounds</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;a&quot;,
+   &quot;position&quot;: [
+    0,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;b&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;c&quot;,
+   &quot;position&quot;: [
+    40,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;d&quot;,
+   &quot;position&quot;: [
+    60,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;e&quot;,
+   &quot;position&quot;: [
+    40,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;b&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;c&quot;,
+   &quot;position&quot;: [
+    40,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;d&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;e&quot;,
+   &quot;position&quot;: [
+    40,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;b&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;c&quot;,
+   &quot;position&quot;: [
+    40,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;d&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;e&quot;,
+   &quot;position&quot;: [
+    40,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;b&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;c&quot;,
+   &quot;position&quot;: [
+    40,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;d&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;e&quot;,
+   &quot;position&quot;: [
+    40,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;b&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;c&quot;,
+   &quot;position&quot;: [
+    40,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;d&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;e&quot;,
+   &quot;position&quot;: [
+    40,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>mech_004<small>Forced stacking</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;s1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s2&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s3&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t1&quot;,
+   &quot;position&quot;: [
+    65,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t2&quot;,
+   &quot;position&quot;: [
+    65,
+    35,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;s1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s2&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s3&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t1&quot;,
+   &quot;position&quot;: [
+    65,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t2&quot;,
+   &quot;position&quot;: [
+    65,
+    35,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;s1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s2&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s3&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t1&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t2&quot;,
+   &quot;position&quot;: [
+    60,
+    30,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;s1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s2&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s3&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t1&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t2&quot;,
+   &quot;position&quot;: [
+    60,
+    30,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;s1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s2&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s3&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t1&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t2&quot;,
+   &quot;position&quot;: [
+    60,
+    30,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;s1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s2&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s3&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t1&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t2&quot;,
+   &quot;position&quot;: [
+    60,
+    30,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;s1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s2&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s3&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t1&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t2&quot;,
+   &quot;position&quot;: [
+    60,
+    30,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;s1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s2&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s3&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t1&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t2&quot;,
+   &quot;position&quot;: [
+    60,
+    30,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>mech_005<small>Keep-out zones</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    0,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    100,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    0,
+    65,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    100,
+    65,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    0,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    60,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    100,
+    10,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    90,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    85,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    85,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    85,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    85,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    90,
+    50,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    0,
+    65,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    100,
+    65,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>mech_006<small>Fixed connectors and cable budgets</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;usb_conn&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pwr_conn&quot;,
+   &quot;position&quot;: [
+    180,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    25,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    85,
+    30,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;usb_conn&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pwr_conn&quot;,
+   &quot;position&quot;: [
+    180,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    10,
+    70,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    80,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;usb_conn&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pwr_conn&quot;,
+   &quot;position&quot;: [
+    180,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    20,
+    70,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    100,
+    10,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;usb_conn&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pwr_conn&quot;,
+   &quot;position&quot;: [
+    180,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    0,
+    70,
+    30
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;usb_conn&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pwr_conn&quot;,
+   &quot;position&quot;: [
+    180,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    25,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    100,
+    30,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;usb_conn&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pwr_conn&quot;,
+   &quot;position&quot;: [
+    180,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    25,
+    70,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    78,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;usb_conn&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pwr_conn&quot;,
+   &quot;position&quot;: [
+    180,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    20,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    80,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;usb_conn&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pwr_conn&quot;,
+   &quot;position&quot;: [
+    180,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    20,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    100,
+    0,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>mech_007<small>Thermal zoning</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;hot1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot2&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot3&quot;,
+   &quot;position&quot;: [
+    120,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    0,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;cap&quot;,
+   &quot;position&quot;: [
+    170,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;hot1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot2&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot3&quot;,
+   &quot;position&quot;: [
+    120,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    0,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;cap&quot;,
+   &quot;position&quot;: [
+    170,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;hot1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot2&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot3&quot;,
+   &quot;position&quot;: [
+    120,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    180,
+    80,
+    30
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;cap&quot;,
+   &quot;position&quot;: [
+    0,
+    70,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;hot1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot2&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot3&quot;,
+   &quot;position&quot;: [
+    0,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    80,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;cap&quot;,
+   &quot;position&quot;: [
+    55,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;hot1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot2&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot3&quot;,
+   &quot;position&quot;: [
+    120,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    0,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;cap&quot;,
+   &quot;position&quot;: [
+    170,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;hot1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot2&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot3&quot;,
+   &quot;position&quot;: [
+    120,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    0,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;cap&quot;,
+   &quot;position&quot;: [
+    170,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;hot1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot2&quot;,
+   &quot;position&quot;: [
+    65,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot3&quot;,
+   &quot;position&quot;: [
+    130,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    0,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;cap&quot;,
+   &quot;position&quot;: [
+    170,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;hot1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot2&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot3&quot;,
+   &quot;position&quot;: [
+    120,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    0,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;cap&quot;,
+   &quot;position&quot;: [
+    50,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>mech_008<small>Board stack-up</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;heatsink&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    80,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    10,
+    50,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;heatsink&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    75,
+    70,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;heatsink&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    70,
+    70,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    40
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;heatsink&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    75,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    10,
+    50,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;heatsink&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    10,
+    70,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;heatsink&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    75,
+    10,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;heatsink&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    80,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    10,
+    50,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;heatsink&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    70,
+    70,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    50,
+    10,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>mech_009<small>Exact volumetric fill</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;D&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;D&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;D&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;D&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;D&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;D&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;D&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;D&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>mech_010<small>Under-lid display with standoffs</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;display&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    32
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    10,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;speaker&quot;,
+   &quot;position&quot;: [
+    110,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;display&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    32
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    30,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;speaker&quot;,
+   &quot;position&quot;: [
+    105,
+    65,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;display&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    32
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    25,
+    20,
+    15
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    20,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;speaker&quot;,
+   &quot;position&quot;: [
+    125,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;display&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    32
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    10,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;speaker&quot;,
+   &quot;position&quot;: [
+    130,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;display&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    32
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    15
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;speaker&quot;,
+   &quot;position&quot;: [
+    30,
+    65,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;display&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    32
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    15
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;speaker&quot;,
+   &quot;position&quot;: [
+    60,
+    70,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;display&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    32
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    50,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;speaker&quot;,
+   &quot;position&quot;: [
+    10,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;display&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    32
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    15,
+    15,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;speaker&quot;,
+   &quot;position&quot;: [
+    100,
+    15,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>mech_011<small>Module rack with wall clearance</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    37,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    69,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    101,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m5&quot;,
+   &quot;position&quot;: [
+    133,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m6&quot;,
+   &quot;position&quot;: [
+    165,
+    5,
+    5
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    37,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    69,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    101,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m5&quot;,
+   &quot;position&quot;: [
+    133,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m6&quot;,
+   &quot;position&quot;: [
+    165,
+    5,
+    5
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    37,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    69,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    101,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m5&quot;,
+   &quot;position&quot;: [
+    133,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m6&quot;,
+   &quot;position&quot;: [
+    165,
+    5,
+    5
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    5,
+    0,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    37,
+    0,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    69,
+    0,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    101,
+    0,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m5&quot;,
+   &quot;position&quot;: [
+    133,
+    0,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m6&quot;,
+   &quot;position&quot;: [
+    165,
+    0,
+    5
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    37,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    69,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    101,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m5&quot;,
+   &quot;position&quot;: [
+    133,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m6&quot;,
+   &quot;position&quot;: [
+    165,
+    5,
+    5
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    37,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    69,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    101,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m5&quot;,
+   &quot;position&quot;: [
+    133,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m6&quot;,
+   &quot;position&quot;: [
+    165,
+    5,
+    5
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    37,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    69,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    101,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m5&quot;,
+   &quot;position&quot;: [
+    133,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m6&quot;,
+   &quot;position&quot;: [
+    165,
+    5,
+    5
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    37,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    69,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    101,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m5&quot;,
+   &quot;position&quot;: [
+    133,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m6&quot;,
+   &quot;position&quot;: [
+    165,
+    5,
+    5
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>mech_012<small>Full device layout</small></th><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_jack&quot;,
+   &quot;position&quot;: [
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;usb&quot;,
+   &quot;position&quot;: [
+    0,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    15,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    20,
+    100,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    100,
+    90,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot_reg&quot;,
+   &quot;position&quot;: [
+    140,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    175,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    80,
+    140,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_jack&quot;,
+   &quot;position&quot;: [
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;usb&quot;,
+   &quot;position&quot;: [
+    0,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    15,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    20,
+    105,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    100,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot_reg&quot;,
+   &quot;position&quot;: [
+    180,
+    125,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    140,
+    115,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    75,
+    140,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_jack&quot;,
+   &quot;position&quot;: [
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;usb&quot;,
+   &quot;position&quot;: [
+    0,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    25,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    25,
+    110,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    100,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot_reg&quot;,
+   &quot;position&quot;: [
+    100,
+    85,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    80,
+    85,
+    25
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    25,
+    110,
+    15
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_jack&quot;,
+   &quot;position&quot;: [
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;usb&quot;,
+   &quot;position&quot;: [
+    0,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    15,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    70,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    20,
+    110,
+    25
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot_reg&quot;,
+   &quot;position&quot;: [
+    185,
+    10,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    145,
+    40,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    8,
+    50,
+    45
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_jack&quot;,
+   &quot;position&quot;: [
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;usb&quot;,
+   &quot;position&quot;: [
+    0,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    15,
+    15,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    20,
+    105,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    100,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot_reg&quot;,
+   &quot;position&quot;: [
+    200,
+    130,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    155,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    20,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_jack&quot;,
+   &quot;position&quot;: [
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;usb&quot;,
+   &quot;position&quot;: [
+    0,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    15,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    20,
+    105,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    118,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot_reg&quot;,
+   &quot;position&quot;: [
+    60,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    55,
+    55,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    80,
+    132,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_jack&quot;,
+   &quot;position&quot;: [
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;usb&quot;,
+   &quot;position&quot;: [
+    0,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    15,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    20,
+    85,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot_reg&quot;,
+   &quot;position&quot;: [
+    75,
+    15,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    75,
+    45,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    130,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    20,
+    135,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_jack&quot;,
+   &quot;position&quot;: [
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;usb&quot;,
+   &quot;position&quot;: [
+    0,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    20,
+    110,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    100,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot_reg&quot;,
+   &quot;position&quot;: [
+    100,
+    100,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    130,
+    100,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    30,
+    115,
+    15
+   ]
+  }
+ ]
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_001<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 100000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>cost 15.94 is not within 5% of the best design that meets every constraint</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-C&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-C&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_002<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 250000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 201000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 200400,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_004<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 165000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 165000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_005<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-6&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>junction temperature 115.2 C exceeds 95.0 C (P_fet=13.72 W, Ta_int=37.6 C, Rsa=4.54 C/W, v=0.88 m/s)</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-6&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-6&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_006<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 100000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>cost 12.87 is not within 5% of the best design that meets every constraint</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 110000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>cost 12.65 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>pe_cooling_007<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 100000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>cost 8.92 is not within 5% of the best design that meets every constraint</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 99000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 98248,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_008<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 70000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
+}</pre><p>cost 5.53 is not within 5% of the best design that meets every constraint</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 132000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 135000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_010<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 100000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>cost 9.18 is not within 5% of the best design that meets every constraint</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 80000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 80000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_011<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
+}</pre><p>junction temperature 179.2 C exceeds 125.0 C (P_fet=12.21 W, Ta_int=58.1 C, Rsa=8.77 C/W, v=0.00 m/s)</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 85000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 83229,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>inductor ripple 6.00 A exceeds 6.00 A</p></details></td></tr><tr><th>pe_cooling_013<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>junction temperature 115.7 C exceeds 105.0 C (P_fet=26.02 W, Ta_int=33.9 C, Rsa=1.95 C/W, v=1.96 m/s)</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 55000,
+ &quot;inductor&quot;: &quot;IND-6&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 55000,
+ &quot;inductor&quot;: &quot;IND-6&quot;,
+ &quot;heatsink&quot;: &quot;HS-4&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_014<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 250000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-C&quot;
+}</pre><p>cost 18.71 is not within 5% of the best design that meets every constraint</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_015<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 180000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 180000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details></td></tr></tbody></table></div>
+<footer>Generated by <code>harness/report.py</code> from the committed <code>results/</code> folder. Source, tasks and graders: <a href="https://github.com/krbhadra/engbench">github.com/krbhadra/engbench</a>.</footer>
+</main></body></html>
