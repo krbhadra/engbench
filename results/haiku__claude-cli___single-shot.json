@@ -192,6 +192,500 @@
    "timestamp": "2026-09-18T07:55:27+00:00"
   },
   {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 432,
+      "strings_parallel": 34,
+      "pcs": "PCS-3",
+      "pcs_count": 3,
+      "transformer": "TX-7",
+      "string_fuse": "FU-4",
+      "string_contactor": "CT-2",
+      "dc_cable": "C-185",
+      "dc_cables_parallel": 1,
+      "cooling_unit": "CU-4",
+      "cooling_count": 1
+     },
+     "raw": "```json\n{\n  \"cells_series\": 432,\n  \"strings_parallel\": 34,\n  \"pcs\": \"PCS-3\",\n  \"pcs_count\": 3,\n  \"transformer\": \"TX-7\",\n  \"string_fuse\": \"FU-4\",\n  \"string_contactor\": \"CT-2\",\n  \"dc_cable\": \"C-185\",\n  \"dc_cables_parallel\": 1,\n  \"cooling_unit\": \"CU-4\",\n  \"cooling_count\": 1\n}\n```",
+     "passed": false,
+     "violations": [
+      "string voltage at full charge 1576.8 V exceeds the PCS maximum 1500 V",
+      "cooling capacity at site 35 C 150.0 kW is below heat 172.2 kW x (1 + margin) at end-of-life resistance",
+      "fuse DC voltage rating 1500 V is below the string maximum 1576.8 V",
+      "fuse breaking capacity 100 kA is below the prospective bus fault current 174.4 kA (33 other strings + PCS contribution)",
+      "contactor DC voltage rating 1500 V is below the string maximum 1576.8 V",
+      "fuse conventional fusing current 1.6 x 315 A = 504 A exceeds 1.45 x I_z = 500 A (IEC 60364-4-43 overload coordination)"
+     ],
+     "metrics": {
+      "e_poi_mwh": 8.9989,
+      "e_req_mwh": 8.8,
+      "p_ac_mw": 4.6,
+      "i_string_a": 105.9001,
+      "v_string_min_load": 1295.7033,
+      "v_string_max": 1576.8,
+      "s_pcs_site_kva": 6917.0,
+      "s_pcs_needed_kva": 4943.1689,
+      "i_dc_total_a": 3600.6039,
+      "q_heat_kw": 172.169,
+      "cooling_kw": 150.0,
+      "i_k_string_ka": 5.0079,
+      "i_fault_bus_ka": 174.4404,
+      "i_fuse_req_a": 141.8305,
+      "i_z_a": 344.52,
+      "circuits": 6,
+      "v_drop_frac": 0.0008,
+      "s_nap_kva": 4842.1053,
+      "q_tx_kvar": 297.7268,
+      "s_tx_site_kva": 6678.0,
+      "cost": 2054210.78
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3900,
+    "completion_tokens": 27327,
+    "cost": 0.140535
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "bess_005",
+   "trial": 1,
+   "seconds": 274.1,
+   "timestamp": "2026-09-18T08:00:01+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 384,
+      "strings_parallel": 16,
+      "pcs": "PCS-2",
+      "pcs_count": 2,
+      "transformer": "TX-4",
+      "string_fuse": "FU-5",
+      "string_contactor": "CT-3",
+      "dc_cable": "C-95",
+      "dc_cables_parallel": 1,
+      "cooling_unit": "CU-4",
+      "cooling_count": 2
+     },
+     "raw": "```json\n{\n  \"cells_series\": 384,\n  \"strings_parallel\": 16,\n  \"pcs\": \"PCS-2\",\n  \"pcs_count\": 2,\n  \"transformer\": \"TX-4\",\n  \"string_fuse\": \"FU-5\",\n  \"string_contactor\": \"CT-3\",\n  \"dc_cable\": \"C-95\",\n  \"dc_cables_parallel\": 1,\n  \"cooling_unit\": \"CU-4\",\n  \"cooling_count\": 2\n}\n```",
+     "passed": false,
+     "violations": [
+      "string current 156.8 A exceeds the cell continuous limit 153.0 A",
+      "fuse rating 400 A exceeds the corrected cable ampacity I_z 245.6 A (1 x 362 A x k_T x k_G for 8 circuits)"
+     ],
+     "metrics": {
+      "e_poi_mwh": 4.0379,
+      "e_req_mwh": 2.75,
+      "p_ac_mw": 2.75,
+      "i_string_a": 156.8189,
+      "v_string_min_load": 1112.7001,
+      "v_string_max": 1401.6,
+      "s_pcs_site_kva": 3264.0,
+      "s_pcs_needed_kva": 2958.1754,
+      "i_dc_total_a": 2509.102,
+      "q_heat_kw": 194.9569,
+      "cooling_kw": 275.0,
+      "i_k_string_ka": 4.6964,
+      "i_fault_bus_ka": 74.9658,
+      "i_fuse_req_a": 217.804,
+      "i_z_a": 245.5808,
+      "circuits": 8,
+      "v_drop_frac": 0.0026,
+      "s_nap_kva": 2894.7368,
+      "q_tx_kvar": 186.2111,
+      "s_tx_site_kva": 3150.0,
+      "cost": 896889.24
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3902,
+    "completion_tokens": 31433,
+    "cost": 0.161067
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "bess_006",
+   "trial": 1,
+   "seconds": 312.4,
+   "timestamp": "2026-09-18T08:05:13+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 400,
+      "strings_parallel": 14,
+      "pcs": "PCS-4",
+      "pcs_count": 1,
+      "transformer": "TX-3",
+      "string_fuse": "FU-4",
+      "string_contactor": "CT-2",
+      "dc_cable": "C-50",
+      "dc_cables_parallel": 1,
+      "cooling_unit": "CU-2",
+      "cooling_count": 1
+     },
+     "raw": "```json\n{\n  \"cells_series\": 400,\n  \"strings_parallel\": 14,\n  \"pcs\": \"PCS-4\",\n  \"pcs_count\": 1,\n  \"transformer\": \"TX-3\",\n  \"string_fuse\": \"FU-4\",\n  \"string_contactor\": \"CT-2\",\n  \"dc_cable\": \"C-50\",\n  \"dc_cables_parallel\": 1,\n  \"cooling_unit\": \"CU-2\",\n  \"cooling_count\": 1\n}\n```",
+     "passed": false,
+     "violations": [
+      "string voltage at end of life, minimum SOC, full current 1191.0 V is below the PCS minimum 1200 V",
+      "cooling capacity at site 35 C 40.0 kW is below heat 63.1 kW x (1 + margin) at end-of-life resistance",
+      "fuse rating 315 A exceeds the corrected cable ampacity I_z 173.0 A (1 x 234 A x k_T x k_G for 4 circuits)"
+     ],
+     "metrics": {
+      "e_poi_mwh": 3.4755,
+      "e_req_mwh": 3.3,
+      "p_ac_mw": 1.65,
+      "i_string_a": 100.2569,
+      "v_string_min_load": 1191.0348,
+      "v_string_max": 1460.0,
+      "s_pcs_site_kva": 3529.6667,
+      "s_pcs_needed_kva": 1760.7925,
+      "i_dc_total_a": 1403.5967,
+      "q_heat_kw": 63.113,
+      "cooling_kw": 40.0,
+      "i_k_string_ka": 5.48,
+      "i_fault_bus_ka": 74.6406,
+      "i_fuse_req_a": 134.2726,
+      "i_z_a": 172.9728,
+      "circuits": 4,
+      "v_drop_frac": 0.0019,
+      "s_nap_kva": 1736.8421,
+      "q_tx_kvar": 72.3989,
+      "s_tx_site_kva": 2500.0,
+      "cost": 698627.26
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 7849,
+    "completion_tokens": 60651,
+    "cost": 0.311104
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "bess_007",
+   "trial": 1,
+   "seconds": 446.5,
+   "timestamp": "2026-09-18T08:12:40+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 416,
+      "strings_parallel": 20,
+      "pcs": "PCS-3",
+      "pcs_count": 2,
+      "transformer": "TX-6",
+      "string_fuse": "FU-5",
+      "string_contactor": "CT-5",
+      "dc_cable": "C-95",
+      "dc_cables_parallel": 1,
+      "cooling_unit": "CU-4",
+      "cooling_count": 1
+     },
+     "raw": "```json\n{\n  \"cells_series\": 416,\n  \"strings_parallel\": 20,\n  \"pcs\": \"PCS-3\",\n  \"pcs_count\": 2,\n  \"transformer\": \"TX-6\",\n  \"string_fuse\": \"FU-5\",\n  \"string_contactor\": \"CT-5\",\n  \"dc_cable\": \"C-95\",\n  \"dc_cables_parallel\": 1,\n  \"cooling_unit\": \"CU-4\",\n  \"cooling_count\": 1\n}\n```",
+     "passed": false,
+     "violations": [
+      "string voltage at full charge 1518.4 V exceeds the PCS maximum 1500 V",
+      "fuse DC voltage rating 1500 V is below the string maximum 1518.4 V",
+      "contactor DC voltage rating 1500 V is below the string maximum 1518.4 V",
+      "fuse rating 400 A exceeds the corrected cable ampacity I_z 213.7 A (1 x 362 A x k_T x k_G for 6 circuits)"
+     ],
+     "metrics": {
+      "e_poi_mwh": 4.5218,
+      "e_req_mwh": 4.4,
+      "p_ac_mw": 2.2,
+      "i_string_a": 88.9272,
+      "v_string_min_load": 1254.5299,
+      "v_string_max": 1518.4,
+      "s_pcs_site_kva": 4220.0,
+      "s_pcs_needed_kva": 2344.0003,
+      "i_dc_total_a": 1778.5445,
+      "q_heat_kw": 62.3736,
+      "cooling_kw": 137.5,
+      "i_k_string_ka": 6.909,
+      "i_fault_bus_ka": 136.5502,
+      "i_fuse_req_a": 123.51,
+      "i_z_a": 213.7248,
+      "circuits": 6,
+      "v_drop_frac": 0.0008,
+      "s_nap_kva": 2315.7895,
+      "q_tx_kvar": 85.8061,
+      "s_tx_site_kva": 5000.0,
+      "cost": 1231354.2
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 7845,
+    "completion_tokens": 52788,
+    "cost": 0.271785
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "bess_008",
+   "trial": 1,
+   "seconds": 526.3,
+   "timestamp": "2026-09-18T08:21:26+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 400,
+      "strings_parallel": 11,
+      "pcs": "PCS-4",
+      "pcs_count": 1,
+      "transformer": "TX-4",
+      "string_fuse": "FU-4",
+      "string_contactor": "CT-3",
+      "dc_cable": "C-185",
+      "dc_cables_parallel": 1,
+      "cooling_unit": "CU-3",
+      "cooling_count": 1
+     },
+     "raw": "```json\n{\n  \"cells_series\": 400,\n  \"strings_parallel\": 11,\n  \"pcs\": \"PCS-4\",\n  \"pcs_count\": 1,\n  \"transformer\": \"TX-4\",\n  \"string_fuse\": \"FU-4\",\n  \"string_contactor\": \"CT-3\",\n  \"dc_cable\": \"C-185\",\n  \"dc_cables_parallel\": 1,\n  \"cooling_unit\": \"CU-3\",\n  \"cooling_count\": 1\n}\n```",
+     "passed": false,
+     "violations": [
+      "usable energy at the connection point at end of life 2.705 MWh is below 2.750 MWh required (E_req x (1 + margin))",
+      "string voltage at end of life, minimum SOC, full current 1136.0 V is below the PCS minimum 1200 V",
+      "cooling capacity at site 45 C 66.0 kW is below heat 206.0 kW x (1 + margin) at end-of-life resistance",
+      "fuse rating 315 A is below 327.9 A required (I_string 223.0 A / ambient factor / continuous-load factor 0.8)",
+      "fuse conventional fusing current 1.6 x 315 A = 504 A exceeds 1.45 x I_z = 462 A (IEC 60364-4-43 overload coordination)"
+     ],
+     "metrics": {
+      "e_poi_mwh": 2.7054,
+      "e_req_mwh": 2.75,
+      "p_ac_mw": 2.75,
+      "i_string_a": 222.9661,
+      "v_string_min_load": 1136.0149,
+      "v_string_max": 1460.0,
+      "s_pcs_site_kva": 3099.5,
+      "s_pcs_needed_kva": 2958.1754,
+      "i_dc_total_a": 2452.627,
+      "q_heat_kw": 205.9841,
+      "cooling_kw": 66.0,
+      "i_k_string_ka": 5.5909,
+      "i_fault_bus_ka": 59.2894,
+      "i_fuse_req_a": 327.8913,
+      "i_z_a": 318.7067,
+      "circuits": 8,
+      "v_drop_frac": 0.0019,
+      "s_nap_kva": 2894.7368,
+      "q_tx_kvar": 186.2111,
+      "s_tx_site_kva": 3301.2,
+      "cost": 777877.72
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 7841,
+    "completion_tokens": 60604,
+    "cost": 0.310861
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "bess_010",
+   "trial": 1,
+   "seconds": 598.5,
+   "timestamp": "2026-09-18T08:31:25+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 400,
+      "strings_parallel": 36,
+      "pcs": "PCS-3",
+      "pcs_count": 3,
+      "transformer": "TX-4",
+      "string_fuse": "FU-4",
+      "string_contactor": "CT-2",
+      "dc_cable": "C-70",
+      "dc_cables_parallel": 1,
+      "cooling_unit": "CU-3",
+      "cooling_count": 1
+     },
+     "raw": "```json\n{\"cells_series\": 400, \"strings_parallel\": 36, \"pcs\": \"PCS-3\", \"pcs_count\": 3, \"transformer\": \"TX-4\", \"string_fuse\": \"FU-4\", \"string_contactor\": \"CT-2\", \"dc_cable\": \"C-70\", \"dc_cables_parallel\": 1, \"cooling_unit\": \"CU-3\", \"cooling_count\": 1}\n```",
+     "passed": false,
+     "violations": [
+      "fuse breaking capacity 100 kA is below the prospective bus fault current 230.7 kA (35 other strings + PCS contribution)",
+      "fuse rating 315 A exceeds the corrected cable ampacity I_z 199.0 A (1 x 297 A x k_T x k_G for 4 circuits)"
+     ],
+     "metrics": {
+      "e_poi_mwh": 8.9095,
+      "e_req_mwh": 8.8,
+      "p_ac_mw": 2.3,
+      "i_string_a": 52.7407,
+      "v_string_min_load": 1228.5784,
+      "v_string_max": 1460.0,
+      "s_pcs_site_kva": 7551.0,
+      "s_pcs_needed_kva": 2464.833,
+      "i_dc_total_a": 1898.6638,
+      "q_heat_kw": 36.8752,
+      "cooling_kw": 73.0,
+      "i_k_string_ka": 6.3484,
+      "i_fault_bus_ka": 230.6843,
+      "i_fuse_req_a": 73.2509,
+      "i_z_a": 198.9603,
+      "circuits": 4,
+      "v_drop_frac": 0.0011,
+      "s_nap_kva": 2421.0526,
+      "q_tx_kvar": 130.2555,
+      "s_tx_site_kva": 3301.2,
+      "cost": 1813778.76
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3896,
+    "completion_tokens": 29600,
+    "cost": 0.15189600000000003
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "bess_012",
+   "trial": 1,
+   "seconds": 292.8,
+   "timestamp": "2026-09-18T08:36:18+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 400,
+      "strings_parallel": 16,
+      "pcs": "PCS-4",
+      "pcs_count": 1,
+      "transformer": "TX-5",
+      "string_fuse": "FU-4",
+      "string_contactor": "CT-4",
+      "dc_cable": "C-50",
+      "dc_cables_parallel": 1,
+      "cooling_unit": "CU-4",
+      "cooling_count": 1
+     },
+     "raw": "```json\n{\n  \"cells_series\": 400,\n  \"strings_parallel\": 16,\n  \"pcs\": \"PCS-4\",\n  \"pcs_count\": 1,\n  \"transformer\": \"TX-5\",\n  \"string_fuse\": \"FU-4\",\n  \"string_contactor\": \"CT-4\",\n  \"dc_cable\": \"C-50\",\n  \"dc_cables_parallel\": 1,\n  \"cooling_unit\": \"CU-4\",\n  \"cooling_count\": 1\n}\n```",
+     "passed": false,
+     "violations": [
+      "string current 188.3 A exceeds the cell continuous limit 153.0 A",
+      "string voltage at end of life, minimum SOC, full current 1159.9 V is below the PCS minimum 1200 V",
+      "PCS apparent power at site 40 C 3414 kVA is below 3710 kVA needed for cos phi 0.95 at the connection point including transformer reactive consumption 231 kvar",
+      "cooling capacity at site 40 C 137.5 kW is below heat 205.1 kW x (1 + margin) at end-of-life resistance",
+      "fuse rating 315 A exceeds the corrected cable ampacity I_z 156.8 A (1 x 234 A x k_T x k_G for 4 circuits)"
+     ],
+     "metrics": {
+      "e_poi_mwh": 3.7619,
+      "e_req_mwh": 3.45,
+      "p_ac_mw": 3.45,
+      "i_string_a": 188.3421,
+      "v_string_min_load": 1159.9377,
+      "v_string_max": 1460.0,
+      "s_pcs_site_kva": 3414.0,
+      "s_pcs_needed_kva": 3710.1294,
+      "i_dc_total_a": 3013.4728,
+      "q_heat_kw": 205.1039,
+      "cooling_kw": 137.5,
+      "i_k_string_ka": 5.9436,
+      "i_fault_bus_ka": 92.6441,
+      "i_fuse_req_a": 261.5862,
+      "i_z_a": 156.7566,
+      "circuits": 4,
+      "v_drop_frac": 0.006,
+      "s_nap_kva": 3631.5789,
+      "q_tx_kvar": 230.7964,
+      "s_tx_site_kva": 4192.0,
+      "cost": 952939.28
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 7835,
+    "completion_tokens": 57070,
+    "cost": 0.29318500000000003
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "bess_014",
+   "trial": 1,
+   "seconds": 564.3,
+   "timestamp": "2026-09-18T09:02:14+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 400,
+      "strings_parallel": 24,
+      "pcs": "PCS-2",
+      "pcs_count": 3,
+      "transformer": "TX-4",
+      "string_fuse": "FU-4",
+      "string_contactor": "CT-4",
+      "dc_cable": "C-50",
+      "dc_cables_parallel": 1,
+      "cooling_unit": "CU-4",
+      "cooling_count": 1
+     },
+     "raw": "```json\n{\n  \"cells_series\": 400,\n  \"strings_parallel\": 24,\n  \"pcs\": \"PCS-2\",\n  \"pcs_count\": 3,\n  \"transformer\": \"TX-4\",\n  \"string_fuse\": \"FU-4\",\n  \"string_contactor\": \"CT-4\",\n  \"dc_cable\": \"C-50\",\n  \"dc_cables_parallel\": 1,\n  \"cooling_unit\": \"CU-4\",\n  \"cooling_count\": 1\n}\n```",
+     "passed": false,
+     "violations": [
+      "cooling capacity at site 45 C 125.0 kW is below heat 124.1 kW x (1 + margin) at end-of-life resistance",
+      "fuse breaking capacity 100 kA is below the prospective bus fault current 118.7 kA (23 other strings + PCS contribution)",
+      "fuse rating 315 A exceeds the corrected cable ampacity I_z 156.8 A (1 x 234 A x k_T x k_G for 4 circuits)"
+     ],
+     "metrics": {
+      "e_poi_mwh": 5.9711,
+      "e_req_mwh": 5.75,
+      "p_ac_mw": 2.875,
+      "i_string_a": 102.9097,
+      "v_string_min_load": 1181.7735,
+      "v_string_max": 1460.0,
+      "s_pcs_site_kva": 4431.0,
+      "s_pcs_needed_kva": 3095.9096,
+      "i_dc_total_a": 2469.8318,
+      "q_heat_kw": 124.051,
+      "cooling_kw": 125.0,
+      "i_k_string_ka": 4.8581,
+      "i_fault_bus_ka": 118.7273,
+      "i_fuse_req_a": 151.3377,
+      "i_z_a": 156.7566,
+      "circuits": 4,
+      "v_drop_frac": 0.002,
+      "s_nap_kva": 3026.3158,
+      "q_tx_kvar": 203.5242,
+      "s_tx_site_kva": 3339.0,
+      "cost": 1365452.2
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 3900,
+    "completion_tokens": 25822,
+    "cost": 0.13301
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-haiku-4-5",
+   "task": "bess_016",
+   "trial": 1,
+   "seconds": 261.1,
+   "timestamp": "2026-09-18T09:06:36+00:00"
+  },
+  {
    "passed": true,
    "attempts": [
     {
