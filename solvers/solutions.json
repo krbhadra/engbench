@@ -5889,5 +5889,2534 @@
     "expect": "cost"
    }
   ]
+ },
+ "bess_001": {
+  "golden": {
+   "cells_series": 368,
+   "strings_parallel": 32,
+   "pcs": "PCS-3",
+   "pcs_count": 3,
+   "transformer": "TX-5",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-70",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-3",
+   "cooling_count": 2
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 24,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 352,
+     "strings_parallel": 32,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 448,
+     "strings_parallel": 32,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 32,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "32"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 32,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 32,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 32,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 40,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-5",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_003": {
+  "golden": {
+   "cells_series": 384,
+   "strings_parallel": 28,
+   "pcs": "PCS-3",
+   "pcs_count": 3,
+   "transformer": "TX-5",
+   "string_fuse": "FU-14",
+   "string_contactor": "CT-3",
+   "dc_cable": "C-70",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-3",
+   "cooling_count": 2
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 22,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 352,
+     "strings_parallel": 28,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 448,
+     "strings_parallel": 28,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 28,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "28"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 28,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 28,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 28,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-95",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 28,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "cooling"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 31,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-5",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_004": {
+  "golden": {
+   "cells_series": 384,
+   "strings_parallel": 20,
+   "pcs": "PCS-1",
+   "pcs_count": 4,
+   "transformer": "TX-3",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-120",
+   "dc_cables_parallel": 1,
+   "cooling_unit": "CU-4",
+   "cooling_count": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 15,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-4",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 288,
+     "strings_parallel": 20,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-4",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 20,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-4",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 20,
+     "pcs": "PCS-1",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-4",
+     "cooling_count": 1
+    },
+    "expect": "20"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 20,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-4",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 20,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-4",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 20,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-4",
+     "cooling_count": 1
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 40,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_005": {
+  "golden": {
+   "cells_series": 400,
+   "strings_parallel": 36,
+   "pcs": "PCS-3",
+   "pcs_count": 3,
+   "transformer": "TX-7",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-50",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-3",
+   "cooling_count": 3
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 28,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-7",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 352,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-7",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 448,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-7",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-7",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "36"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-7",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-7",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-7",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-7",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "cooling"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 40,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-7",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 10
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_006": {
+  "golden": {
+   "cells_series": 400,
+   "strings_parallel": 16,
+   "pcs": "PCS-2",
+   "pcs_count": 2,
+   "transformer": "TX-4",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-50",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-3",
+   "cooling_count": 3
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 8,
+     "pcs": "PCS-2",
+     "pcs_count": 2,
+     "transformer": "TX-4",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 320,
+     "strings_parallel": 16,
+     "pcs": "PCS-2",
+     "pcs_count": 2,
+     "transformer": "TX-4",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 16,
+     "pcs": "PCS-2",
+     "pcs_count": 2,
+     "transformer": "TX-4",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 16,
+     "pcs": "PCS-2",
+     "pcs_count": 2,
+     "transformer": "TX-4",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 16,
+     "pcs": "PCS-2",
+     "pcs_count": 2,
+     "transformer": "TX-4",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 16,
+     "pcs": "PCS-2",
+     "pcs_count": 2,
+     "transformer": "TX-4",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2
+    },
+    "expect": "cooling"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 40,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 5
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_008": {
+  "golden": {
+   "cells_series": 400,
+   "strings_parallel": 21,
+   "pcs": "PCS-2",
+   "pcs_count": 3,
+   "transformer": "TX-3",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-150",
+   "dc_cables_parallel": 1,
+   "cooling_unit": "CU-3",
+   "cooling_count": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 16,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 320,
+     "strings_parallel": 21,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-2",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "21"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_012": {
+  "golden": {
+   "cells_series": 400,
+   "strings_parallel": 36,
+   "pcs": "PCS-3",
+   "pcs_count": 3,
+   "transformer": "TX-3",
+   "string_fuse": "FU-14",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-70",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-3",
+   "cooling_count": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 27,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 352,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 448,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 1,
+     "transformer": "TX-3",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "36"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-95",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 37,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_013": {
+  "golden": {
+   "cells_series": 368,
+   "strings_parallel": 22,
+   "pcs": "PCS-3",
+   "pcs_count": 2,
+   "transformer": "TX-3",
+   "string_fuse": "FU-10",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-120",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-2",
+   "cooling_count": 2
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 17,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 2
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 352,
+     "strings_parallel": 22,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 2
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 448,
+     "strings_parallel": 22,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 2
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 22,
+     "pcs": "PCS-3",
+     "pcs_count": 1,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 2
+    },
+    "expect": "22"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 22,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 2
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 22,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 2
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 22,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 2
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 22,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 1
+    },
+    "expect": "cooling"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 25,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_014": {
+  "golden": {
+   "cells_series": 400,
+   "strings_parallel": 20,
+   "pcs": "PCS-3",
+   "pcs_count": 2,
+   "transformer": "TX-6",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-3",
+   "dc_cable": "C-50",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-2",
+   "cooling_count": 6
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 12,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-6",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 352,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-6",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 448,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-6",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-6",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-6",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-6",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-6",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "cooling"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 38,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-6",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-3",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_016": {
+  "golden": {
+   "cells_series": 400,
+   "strings_parallel": 24,
+   "pcs": "PCS-1",
+   "pcs_count": 4,
+   "transformer": "TX-4",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-50",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-2",
+   "cooling_count": 5
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 18,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 288,
+     "strings_parallel": 24,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 24,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 24,
+     "pcs": "PCS-1",
+     "pcs_count": 3,
+     "transformer": "TX-4",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "24"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 24,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 24,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 24,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 24,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "cooling"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 40,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_017": {
+  "golden": {
+   "cells_series": 384,
+   "strings_parallel": 35,
+   "pcs": "PCS-3",
+   "pcs_count": 3,
+   "transformer": "TX-3",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-70",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-1",
+   "cooling_count": 3
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 27,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 352,
+     "strings_parallel": 35,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 448,
+     "strings_parallel": 35,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 35,
+     "pcs": "PCS-3",
+     "pcs_count": 1,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "35"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 35,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 35,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 35,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 35,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 2
+    },
+    "expect": "cooling"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 40,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_019": {
+  "golden": {
+   "cells_series": 400,
+   "strings_parallel": 20,
+   "pcs": "PCS-3",
+   "pcs_count": 2,
+   "transformer": "TX-5",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-50",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-2",
+   "cooling_count": 6
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 11,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 352,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 448,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 6
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 20,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "cooling"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 40,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-5",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_020": {
+  "golden": {
+   "cells_series": 400,
+   "strings_parallel": 21,
+   "pcs": "PCS-3",
+   "pcs_count": 2,
+   "transformer": "TX-3",
+   "string_fuse": "FU-10",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-120",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-3",
+   "cooling_count": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 16,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 352,
+     "strings_parallel": 21,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 448,
+     "strings_parallel": 21,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-3",
+     "pcs_count": 1,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "21"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-3",
+     "cooling_count": 1
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 24,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_021": {
+  "golden": {
+   "cells_series": 400,
+   "strings_parallel": 21,
+   "pcs": "PCS-2",
+   "pcs_count": 3,
+   "transformer": "TX-4",
+   "string_fuse": "FU-10",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-70",
+   "dc_cables_parallel": 3,
+   "cooling_unit": "CU-2",
+   "cooling_count": 3
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 16,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-4",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 320,
+     "strings_parallel": 21,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-4",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-2",
+     "pcs_count": 2,
+     "transformer": "TX-4",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "21"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-4",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-4",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-4",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-4",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-2",
+     "cooling_count": 2
+    },
+    "expect": "cooling"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 27,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-2",
+     "cooling_count": 2
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_025": {
+  "golden": {
+   "cells_series": 400,
+   "strings_parallel": 21,
+   "pcs": "PCS-1",
+   "pcs_count": 4,
+   "transformer": "TX-2",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-70",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-2",
+   "cooling_count": 1
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 16,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-2",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 288,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-2",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-2",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 1
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 2,
+     "transformer": "TX-2",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 1
+    },
+    "expect": "21"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-2",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-2",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 1
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-2",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 1
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 40,
+     "pcs": "PCS-4",
+     "pcs_count": 4,
+     "transformer": "TX-2",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-1",
+     "cooling_count": 1
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_028": {
+  "golden": {
+   "cells_series": 368,
+   "strings_parallel": 27,
+   "pcs": "PCS-2",
+   "pcs_count": 4,
+   "transformer": "TX-6",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-120",
+   "dc_cables_parallel": 1,
+   "cooling_unit": "CU-2",
+   "cooling_count": 5
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 15,
+     "pcs": "PCS-2",
+     "pcs_count": 4,
+     "transformer": "TX-6",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 320,
+     "strings_parallel": 27,
+     "pcs": "PCS-2",
+     "pcs_count": 4,
+     "transformer": "TX-6",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 27,
+     "pcs": "PCS-2",
+     "pcs_count": 3,
+     "transformer": "TX-6",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "27"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 27,
+     "pcs": "PCS-2",
+     "pcs_count": 4,
+     "transformer": "TX-6",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 27,
+     "pcs": "PCS-2",
+     "pcs_count": 4,
+     "transformer": "TX-6",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 27,
+     "pcs": "PCS-2",
+     "pcs_count": 4,
+     "transformer": "TX-6",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 27,
+     "pcs": "PCS-2",
+     "pcs_count": 4,
+     "transformer": "TX-6",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-120",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "cooling"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 4,
+     "transformer": "TX-6",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-4",
+     "cooling_count": 1
+    },
+    "expect": "cost"
+   }
+  ]
+ },
+ "bess_030": {
+  "golden": {
+   "cells_series": 400,
+   "strings_parallel": 30,
+   "pcs": "PCS-3",
+   "pcs_count": 3,
+   "transformer": "TX-5",
+   "string_fuse": "FU-13",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-50",
+   "dc_cables_parallel": 2,
+   "cooling_unit": "CU-2",
+   "cooling_count": 5
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 22,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 352,
+     "strings_parallel": 30,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 448,
+     "strings_parallel": 30,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 30,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "30"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 30,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 30,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 30,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 30,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3
+    },
+    "expect": "cooling"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 40,
+     "pcs": "PCS-3",
+     "pcs_count": 4,
+     "transformer": "TX-5",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-4",
+     "cooling_count": 1
+    },
+    "expect": "cost"
+   }
+  ]
  }
 }

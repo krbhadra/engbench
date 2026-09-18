@@ -99,6 +99,12 @@ returns a small JSON design (see `output_shape` in the task). Rules are in
 - `coolant_loop` (thermal + fluids): coolant, pump, pump speed, channel
   diameter, parallel channels for a battery module cold plate; minimize pump
   power. Property tables come from CoolProp at generation time.
+- `bess` (electrical + electronics + thermal + systems, **knowledge-required**):
+  a grid-connected LFP storage system from cells to the MV connection. The
+  task names the rules (IEC 60269-7, IEC 61660-1, DIN VDE 0298-4 with
+  IEC 60364-4-43, VDE-AR-N 4110, IEC 60076-11, PNNL and NASA definitions)
+  and gives the data; the grader implements them. Eleven decisions, nine
+  closure checks, minimize total price. Spec: `docs/families/bess.md`.
 
 ## Setup
 
@@ -186,6 +192,7 @@ reasoning behind the budget.
 - [x] Harness: single-shot runner, agentic runner, run-all, leaderboard (live-tested on the claude-cli transport; OpenRouter transport pending a key)
 - [x] `pe_cooling` family: 26 tasks; feasibility alone was saturated by every model, the cost objective is not
 - [x] `coolant_loop` family: 32 tasks, self-checked; model runs pending
+- [x] `bess` family: 17 tasks, self-checked; first knowledge-required systems chain
 - [ ] Thermal, controls, fluids single-discipline families from the source survey
 - [ ] Results + writeup
 
