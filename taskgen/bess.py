@@ -23,12 +23,12 @@ import bess  # noqa: E402
 MODULE = 16  # cells in series per module; N_s is a multiple of this
 NS_RANGE = range(MODULE * 12, MODULE * 30 + 1, MODULE)  # 192 .. 480 cells
 NP_MAX = 40
-PCS_COUNT_MAX = 4
+PCS_COUNT_MAX = 8
 COOL_COUNT_MAX = 12
 CABLE_PAR_MAX = 3
 TOLERANCE = 0.05
-MAX_NEAR_OPT_FRACTION = 0.25
-MAX_FEASIBLE_FRACTION = 0.03  # of the (N_s, N_p, PCS, count) grid
+MAX_FEASIBLE_FRACTION = 0.10  # of the (N_s, N_p, PCS, count) grid; feasibility is not the hard part here
+MAX_NEAR_OPT_GRID_FRACTION = 0.005  # near-optimal designs as a share of the grid: the real difficulty measure
 
 # Archetypes; every number is perturbed per seed. Values are plausible catalog figures, not any vendor's.
 PCS = [  # id, kVA at 25/40/50 C, Vdc min/max, Idc max, DC inputs, eta, short-circuit contribution kA, price
@@ -127,7 +127,7 @@ def make_task(seed: int) -> dict | None:
         return None
     task["objective"] = {"minimize": "cost", "optimum": round(best[0], 2), "tolerance": TOLERANCE}
     near_opt = sum(1 for c, _ in feasible if c <= best[0] * (1 + TOLERANCE))
-    if near_opt > MAX_NEAR_OPT_FRACTION * n_feasible + 2:  # +2: tiny feasible sets are not trivial
+    if near_opt / grid > MAX_NEAR_OPT_GRID_FRACTION:
         return None
     golden = best[1]
     r = bess.grade(task, golden)
@@ -314,7 +314,8 @@ def describe(t: dict) -> str:
         f"{p['margin_e']*100:.0f}% on energy and {p['margin_p']*100:.0f}% on power. End of life is {p['soh_eol']*100:.0f}% state of health. "
         f"Usable energy follows the PNNL ESGC 2022 definitions (SOC window, state of health, and the DC, PCS and transformer "
         f"efficiencies between cells and the point of connection; DC-side one-way efficiency {p['eta_dc']}).\n\n"
-        f"Architecture: one string per rack, strings in parallel on a common DC bus into the PCS units; cells in series in modules of "
+        f"Architecture: one string per rack; every string connects to its own DC input on a PCS unit (no combiner boxes; a PCS "
+        f"unit's inputs share one DC bus, and the PCS units are paralleled on the AC side); cells in series in modules of "
         f"{p['module_cells']} (the series count is a multiple of {p['module_cells']}). Each string has one fuse and one contactor and "
         f"runs to the PCS over one DC cable pair (optionally several pairs in parallel) of {s['dc_route_m']} m route length, "
         f"with {s['strings_per_tray']} strings sharing each cable tray. DC circuit time constant L/R {s['circuit_tau_ms']} ms. "
