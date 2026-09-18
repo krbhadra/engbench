@@ -19,14 +19,230 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
 </style></head><body><main>
 <h1>EngBench</h1>
 <p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. Single-shot is one answer with no feedback. Agentic is up to five attempts against grader feedback. Cell footnotes are the number of task runs behind each rate.</p>
-<p class="lede">88 tasks · 312 task runs · 4 models · updated 2026-09-17 20:28 UTC</p>
-<h2>Leaderboard</h2><div class="wrap"><table><thead><tr><th>model</th><th>single-shot</th><th>agentic</th><th>gap</th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="good"><b>93%</b><small>42</small></td><td class="good"><b>100%</b><small>30</small></td><td>+7</td><td>42</td><td>1,716</td><td>0.109</td></tr><tr><th>haiku [claude-cli]</th><td class="mid"><b>69%</b><small>45</small></td><td class="good"><b>100%</b><small>30</small></td><td>+31</td><td>45</td><td>15,102</td><td>0.080</td></tr><tr><th>opus [claude-cli]</th><td class="good"><b>94%</b><small>54</small></td><td class="good"><b>100%</b><small>30</small></td><td>+6</td><td>54</td><td>4,518</td><td>0.124</td></tr><tr><th>sonnet [claude-cli]</th><td class="mid"><b>80%</b><small>51</small></td><td class="good"><b>100%</b><small>30</small></td><td>+20</td><td>51</td><td>8,598</td><td>0.090</td></tr></tbody></table></div>
+<p class="lede">109 tasks · 330 task runs · 4 models · updated 2026-09-18 07:58 UTC</p>
+<h2>Leaderboard</h2><div class="wrap"><table><thead><tr><th>model</th><th>single-shot</th><th>agentic</th><th>gap</th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="good"><b>93%</b><small>42</small></td><td class="good"><b>100%</b><small>30</small></td><td>+7</td><td>42</td><td>1,716</td><td>0.109</td></tr><tr><th>haiku [claude-cli]</th><td class="mid"><b>65%</b><small>48</small></td><td class="good"><b>100%</b><small>30</small></td><td>+35</td><td>48</td><td>16,328</td><td>0.086</td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>86%</b><small>66</small></td><td class="good"><b>100%</b><small>30</small></td><td>+14</td><td>66</td><td>5,276</td><td>0.148</td></tr><tr><th>sonnet [claude-cli]</th><td class="mid"><b>76%</b><small>54</small></td><td class="good"><b>100%</b><small>30</small></td><td>+24</td><td>54</td><td>9,730</td><td>0.102</td></tr></tbody></table></div>
 <h2>Pass rate by family</h2>
 <p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
-<div class="wrap"><h3>single-shot</h3><table><thead><tr><th>model</th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="good"><b>100%</b><small>6</small></td><td class="mid"><b>75%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>0%</b><small>3</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>92%</b><small>12</small></td><td class="bad"><b>25%</b><small>12</small></td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>83%</b><small>6</small></td><td class="mid"><b>83%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td></tr><tr><th>sonnet [claude-cli]</th><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>22%</b><small>9</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="mid"><b>83%</b><small>12</small></td></tr></tbody></table><h3>agentic</h3><table><thead><tr><th>model</th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>opus [claude-cli]</th><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>sonnet [claude-cli]</th><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr></tbody></table></div>
+<div class="wrap"><h3>single-shot</h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="mid"><b>75%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="bad"><b>0%</b><small>3</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>0%</b><small>3</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>92%</b><small>12</small></td><td class="bad"><b>25%</b><small>12</small></td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>50%</b><small>12</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="mid"><b>83%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td></tr><tr><th>sonnet [claude-cli]</th><td class="bad"><b>0%</b><small>3</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>22%</b><small>9</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="mid"><b>83%</b><small>12</small></td></tr></tbody></table><h3>agentic</h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>opus [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>sonnet [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr></tbody></table></div>
 <h2>Every task, every model</h2>
 <p class="lede">S = single-shot, A = agentic, the digit is the number of attempts. Click a mark to see the model's design and the grader's first violations.</p>
-<div class="wrap"><table class="matrix"><thead><tr><th>task</th><th>claude-fable-5-1 [claude-cli]</th><th>haiku [claude-cli]</th><th>opus [claude-cli]</th><th>sonnet [claude-cli]</th></tr></thead><tbody><tr><th>comb_001<small>Power delivery across an enclosure</small></th><td><details class="pass"><summary>S1</summary><pre>{
+<div class="wrap"><table class="matrix"><thead><tr><th>task</th><th>claude-fable-5-1 [claude-cli]</th><th>haiku [claude-cli]</th><th>opus [claude-cli]</th><th>sonnet [claude-cli]</th></tr></thead><tbody><tr><th>bess_001<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 368,
+ &quot;strings_parallel&quot;: 32,
+ &quot;pcs&quot;: &quot;PCS-3&quot;,
+ &quot;pcs_count&quot;: 3,
+ &quot;transformer&quot;: &quot;TX-7&quot;,
+ &quot;string_fuse&quot;: &quot;FU-4&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-70&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-4&quot;,
+ &quot;cooling_count&quot;: 2
+}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 162.0 kA (31 other strings + PCS contribution)<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 172.1 A (1 x 297 A x k_T x k_G for 8 circuits)</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 30,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 5,
+ &quot;transformer&quot;: &quot;TX-5&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-70&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-4&quot;,
+ &quot;cooling_count&quot;: 2
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 464,
+ &quot;strings_parallel&quot;: 26,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 5,
+ &quot;transformer&quot;: &quot;TX-5&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-150&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 5
+}</pre><p>string voltage at full charge 1693.6 V exceeds the PCS maximum 1500 V<br>fuse DC voltage rating 1500 V is below the string maximum 1693.6 V<br>contactor DC voltage rating 1500 V is below the string maximum 1693.6 V</p></details></td></tr><tr><th>bess_003<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 368,
+ &quot;strings_parallel&quot;: 30,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 5,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-5&quot;,
+ &quot;string_contactor&quot;: &quot;CT-3&quot;,
+ &quot;dc_cable&quot;: &quot;C-95&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 2
+}</pre><p>fuse breaking capacity 150 kA is below the prospective bus fault current 230.0 kA (29 other strings + PCS contribution)<br>fuse rating 400 A exceeds the corrected cable ampacity I_z 232.8 A (1 x 362 A x k_T x k_G for 8 circuits)<br>transformer 3150 kVA x ambient factor = 3244 kVA is below 3632 kVA at the connection point (P / cos phi 0.95)</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 28,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 5,
+ &quot;transformer&quot;: &quot;TX-5&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 4
+}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 215.8 kA (27 other strings + PCS contribution)</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 28,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 5,
+ &quot;transformer&quot;: &quot;TX-5&quot;,
+ &quot;string_fuse&quot;: &quot;FU-4&quot;,
+ &quot;string_contactor&quot;: &quot;CT-3&quot;,
+ &quot;dc_cable&quot;: &quot;C-70&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-2&quot;,
+ &quot;cooling_count&quot;: 7
+}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 222.8 kA (27 other strings + PCS contribution)</p></details></td></tr><tr><th>bess_004<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 368,
+ &quot;strings_parallel&quot;: 21,
+ &quot;pcs&quot;: &quot;PCS-2&quot;,
+ &quot;pcs_count&quot;: 3,
+ &quot;transformer&quot;: &quot;TX-7&quot;,
+ &quot;string_fuse&quot;: &quot;FU-4&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-2&quot;,
+ &quot;cooling_count&quot;: 1
+}</pre><p>cooling capacity at site 35 C 40.0 kW is below heat 81.7 kW x (1 + margin) at end-of-life resistance<br>fuse breaking capacity 100 kA is below the prospective bus fault current 110.0 kA (20 other strings + PCS contribution)<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 161.7 A (1 x 234 A x k_T x k_G for 6 circuits)</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 20,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 4,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-120&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 2
+}</pre><p>passed</p></details></td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 320,
+ &quot;strings_parallel&quot;: 24,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 4,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-95&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-2&quot;,
+ &quot;cooling_count&quot;: 5
+}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 363 A (IEC 60364-4-43 overload coordination)</p></details></td></tr><tr><th>bess_005<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 352,
+ &quot;strings_parallel&quot;: 41,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 7,
+ &quot;transformer&quot;: &quot;TX-7&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-150&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-4&quot;,
+ &quot;cooling_count&quot;: 2
+}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 209.0 kA (40 other strings + PCS contribution)</p></details></td><td class="na">–</td></tr><tr><th>bess_006<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 16,
+ &quot;pcs&quot;: &quot;PCS-2&quot;,
+ &quot;pcs_count&quot;: 2,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 3
+}</pre><p>string current 156.8 A exceeds the cell continuous limit 153.0 A</p></details></td><td class="na">–</td></tr><tr><th>bess_007<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 14,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 3,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-120&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 2
+}</pre><p>passed</p></details></td><td class="na">–</td></tr><tr><th>bess_008<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 21,
+ &quot;pcs&quot;: &quot;PCS-2&quot;,
+ &quot;pcs_count&quot;: 3,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-150&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-4&quot;,
+ &quot;cooling_count&quot;: 1
+}</pre><p>passed</p></details></td><td class="na">–</td></tr><tr><th>bess_010<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 12,
+ &quot;pcs&quot;: &quot;PCS-2&quot;,
+ &quot;pcs_count&quot;: 2,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-6&quot;,
+ &quot;string_contactor&quot;: &quot;CT-4&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 4,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 3
+}</pre><p>cooling capacity at site 45 C 198.0 kW is below heat 196.1 kW x (1 + margin) at end-of-life resistance<br>fuse rating 500 A exceeds the corrected cable ampacity I_z 491.2 A (4 x 234 A x k_T x k_G for 32 circuits)</p></details></td><td class="na">–</td></tr><tr><th>bess_012<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 36,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 6,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-120&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-4&quot;,
+ &quot;cooling_count&quot;: 1
+}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 242.7 kA (35 other strings + PCS contribution)</p></details></td><td class="na">–</td></tr><tr><th>bess_013<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 21,
+ &quot;pcs&quot;: &quot;PCS-3&quot;,
+ &quot;pcs_count&quot;: 2,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-10&quot;,
+ &quot;string_contactor&quot;: &quot;CT-3&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 4,
+ &quot;cooling_unit&quot;: &quot;CU-2&quot;,
+ &quot;cooling_count&quot;: 2
+}</pre><p>passed</p></details></td><td class="na">–</td></tr><tr><th>bess_014<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 19,
+ &quot;pcs&quot;: &quot;PCS-3&quot;,
+ &quot;pcs_count&quot;: 2,
+ &quot;transformer&quot;: &quot;TX-6&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-3&quot;,
+ &quot;dc_cable&quot;: &quot;C-120&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-2&quot;,
+ &quot;cooling_count&quot;: 5
+}</pre><p>string current 157.2 A exceeds the cell continuous limit 153.0 A<br>cooling capacity at site 40 C 182.5 kW is below heat 169.8 kW x (1 + margin) at end-of-life resistance</p></details></td><td class="na">–</td></tr><tr><th>bess_016<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 24,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 4,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-120&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 3
+}</pre><p>passed</p></details></td><td class="na">–</td></tr><tr><th>comb_001<small>Power delivery across an enclosure</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
