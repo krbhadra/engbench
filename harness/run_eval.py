@@ -38,7 +38,7 @@ API_URL = "https://openrouter.ai/api/v1/chat/completions"
 MAX_ATTEMPTS = 5      # grader calls per task, agentic track
 MAX_PYTHON = 15       # run_python calls per task, agentic track
 PYTHON_TIMEOUT = 60   # seconds per run_python call
-TASK_TIMEOUT = 900    # seconds per task, safety net only (thinking-heavy models need >5 min for 5 turns)
+TASK_TIMEOUT = 1800   # seconds per task, safety net only; agentic runs with Python take ~20 turns
 CALL_TIMEOUT = 900    # seconds per model call
 
 OUTPUT_SHAPE = {
