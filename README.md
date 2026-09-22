@@ -2,8 +2,8 @@
 
 A benchmark for LLM engineering reasoning that grades **design artifacts**
 with real solvers — not an LLM judge — and scores every model two ways:
-**single-shot** (raw reasoning) and **agentic** (iterating against solver
-feedback).
+**single-shot** (one answer, no tools) and **agentic** (a Python tool to
+compute and self-check, plus a grader that says which check failed).
 
 See [VISION.md](VISION.md) for why this exists, the two-track design, and
 what's in/out of scope.
@@ -20,8 +20,9 @@ what's in/out of scope.
    (`pe_cooling`, `coolant_loop`) also carry an objective: the design must be
    within a stated tolerance of the brute-force optimum, not merely feasible.
 4. On the **single-shot** track the model gets one response. On the
-   **agentic** track the model gets a `grade` tool that returns the violation
-   list, and up to 5 calls to converge.
+   **agentic** track the model gets `run_python` (standard library, no network,
+   up to 15 runs) and `grade` (up to 5 calls), and the grader reports which
+   checks failed without the numbers (`--feedback full` restores them).
 
 ## Task schema
 
@@ -128,8 +129,8 @@ Model calls go through one of two transports:
 - **claude-cli**: Claude models on a Claude subscription via the `claude` CLI
   in headless mode. Built-in tools, MCP servers, skills and settings are all
   disabled so the model sees only the task. The agentic loop is a text
-  protocol (submit artifact, receive grader result) instead of native tool
-  calls, and extended thinking is on by default. Results are labeled
+  protocol (a fenced Python block runs; a JSON object is graded; DONE stops)
+  instead of native tool calls, and extended thinking is on by default. Results are labeled
   `[claude-cli]` so they are never mixed with API runs.
 
 ## Running the self-checks

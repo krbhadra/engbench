@@ -1,7 +1,7 @@
 {
  "model": "opus [claude-cli]",
  "transport": "claude-cli",
- "track": "agentic",
+ "track": "feedback",
  "settings": {
   "provider": null,
   "reasoning": null,
@@ -2350,5 +2350,6 @@
    "seconds": 42.6,
    "timestamp": "2026-09-06T15:13:20+00:00"
   }
- ]
+ ],
+ "note": "verifier-only loop: grade tool with full numeric feedback, no compute tool; superseded 2026-09-22"
 }

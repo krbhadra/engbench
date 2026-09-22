@@ -16,6 +16,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs" / "index.html"
 
+TRACKS = ("single-shot", "feedback", "agentic")
+MARK = {"single-shot": "S", "feedback": "F", "agentic": "A"}
+TRACK_NOTE = {"single-shot": "one answer, no tools", "feedback": "superseded: grade tool with full numbers, no compute",
+              "agentic": "run_python + grade (which check failed, no numbers), 5 grade calls"}
 DISCIPLINES = {"mech": "mechanical", "elec": "electrical", "comb": "mechanical + electrical",
                "pe_cooling": "electronics + thermal + fluids", "coolant_loop": "thermal + fluids"}
 
@@ -58,23 +62,25 @@ def build(runs, tasks):
     fams = sorted({family(r["task"]) for d in runs for r in d["records"]})
 
     # ---- leaderboard
-    lb = ['<table><thead><tr><th>model</th><th>single-shot</th><th>agentic</th><th>gap</th>'
+    lb = ['<table><thead><tr><th>model</th><th>single-shot</th><th>feedback<small>superseded</small></th><th>agentic</th><th>gap</th>'
           '<th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody>']
     for m in models:
-        ss, ag = by.get((m, "single-shot"), []), by.get((m, "agentic"), [])
-        rs, ra = rate(ss), rate(ag)
+        ss, fb, ag = by.get((m, "single-shot"), []), by.get((m, "feedback"), []), by.get((m, "agentic"), [])
+        rs, rf, ra = rate(ss), rate(fb), rate(ag)
         gap = f"{(ra[0]-rs[0])*100:+.0f}" if rs[0] is not None and ra[0] is not None else "–"
-        allr = [r for r in ss + ag if r["passed"] is not None]
+        allr = [r for r in ss + fb + ag if r["passed"] is not None]
         tok = sum(r["usage"].get("completion_tokens", 0) for r in allr) / max(1, len(allr))
         cost = sum(r["usage"].get("cost", 0) for r in allr) / max(1, len(allr))
-        lb.append(f"<tr><th>{esc(m)}</th>{cell(rs)}{cell(ra)}<td>{gap}</td><td>{len({r['task'] for r in allr})}</td>"
+        lb.append(f"<tr><th>{esc(m)}</th>{cell(rs)}{cell(rf)}{cell(ra)}<td>{gap}</td><td>{len({r['task'] for r in allr})}</td>"
                   f"<td>{tok:,.0f}</td><td>{cost:.3f}</td></tr>")
     lb.append("</tbody></table>")
 
     # ---- per family, per track
     fam_tables = []
-    for track in ("single-shot", "agentic"):
-        t = [f"<h3>{track}</h3><table><thead><tr><th>model</th>"]
+    for track in TRACKS:
+        if not any(d["track"] == track for d in runs):
+            continue
+        t = [f"<h3>{track}<small>{TRACK_NOTE[track]}</small></h3><table><thead><tr><th>model</th>"]
         t += [f"<th>{esc(f)}<small>{esc(DISCIPLINES.get(f, ''))}</small></th>" for f in fams]
         t.append("</tr></thead><tbody>")
         for m in models:
@@ -89,13 +95,13 @@ def build(runs, tasks):
     for tid in task_ids:
         row = [f'<tr><th>{esc(tid)}<small>{esc(tasks.get(tid, {}).get("title", ""))}</small></th>']
         for m in models:
-            recs = [r for tr in ("single-shot", "agentic") for r in by.get((m, tr), []) if r["task"] == tid]
+            recs = [r for tr in TRACKS for r in by.get((m, tr), []) if r["task"] == tid]
             if not recs:
                 row.append('<td class="na">–</td>')
                 continue
             marks = []
             for r in recs:
-                track = "S" if any(d["model"] == m and d["track"] == "single-shot" and r in d["records"] for d in runs) else "A"
+                track = next(MARK[d["track"]] for d in runs if d["model"] == m and r in d["records"])
                 last = r["attempts"][-1]
                 status = "pass" if r["passed"] else "fail" if r["passed"] is False else "skip"
                 viol = "<br>".join(esc(v) for v in last.get("violations", [])) or "passed"
@@ -128,14 +134,14 @@ details[open]{{display:block;max-width:520px;white-space:normal}} details pre{{f
 a{{color:var(--accent)}} footer{{margin-top:48px;color:var(--muted);font-size:13px}}
 </style></head><body><main>
 <h1>EngBench</h1>
-<p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. Single-shot is one answer with no feedback. Agentic is up to five attempts against grader feedback. Cell footnotes are the number of task runs behind each rate.</p>
+<p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, plus a grader that says which check failed without the numbers, five grader calls: the engineer at a desk with a calculator and a checker. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
 <p class="lede">{n_tasks} tasks · {n_runs} task runs · {len(models)} models · updated {stamp}</p>
 <h2>Leaderboard</h2><div class="wrap">{"".join(lb)}</div>
 <h2>Pass rate by family</h2>
 <p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
 <div class="wrap">{"".join(fam_tables)}</div>
 <h2>Every task, every model</h2>
-<p class="lede">S = single-shot, A = agentic, the digit is the number of attempts. Click a mark to see the model's design and the grader's first violations.</p>
+<p class="lede">S = single-shot, F = feedback (superseded), A = agentic; the digit is the number of grader attempts. Click a mark to see the model's design and the grader's violations.</p>
 <div class="wrap">{"".join(mt)}</div>
 <footer>Generated by <code>harness/report.py</code> from the committed <code>results/</code> folder. Source, tasks and graders: <a href="https://github.com/krbhadra/engbench">github.com/krbhadra/engbench</a>.</footer>
 </main></body></html>

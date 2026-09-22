@@ -21,6 +21,7 @@ import os
 import re
 import shutil
 import subprocess
+import tempfile
 import sys
 import time
 import urllib.error
@@ -35,6 +36,8 @@ TASKS_DIR = ROOT / "tasks"
 RESULTS_DIR = ROOT / "results"
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 MAX_ATTEMPTS = 5      # grader calls per task, agentic track
+MAX_PYTHON = 15       # run_python calls per task, agentic track
+PYTHON_TIMEOUT = 60   # seconds per run_python call
 TASK_TIMEOUT = 900    # seconds per task, safety net only (thinking-heavy models need >5 min for 5 turns)
 CALL_TIMEOUT = 900    # seconds per model call
 
@@ -50,26 +53,30 @@ SYSTEM_SINGLE = (
     "in this exact shape, no prose, no code fences:\n{shape}"
 )
 SYSTEM_AGENTIC = (
-    "You are an engineer producing a design artifact. You have a `grade` tool that "
-    "checks a candidate design against the task's constraints and returns the "
-    f"violations. You may call it at most {MAX_ATTEMPTS} times. Call it with your "
-    "candidate; if it reports violations, fix them and call again. Stop as soon as "
-    "it passes. The artifact must be a JSON object in this exact shape:\n{shape}"
+    "You are an engineer producing a design artifact, working at a desk with a calculator and a checker. "
+    "You have two tools. `run_python` runs a Python snippet (standard library only, no network, no files) "
+    f"and returns its output; use it to compute and to check your own design; at most {MAX_PYTHON} calls. "
+    "`grade` checks a candidate design against the task's requirements and reports which checks failed, "
+    f"without the numbers; at most {MAX_ATTEMPTS} calls. Stop as soon as grade passes. "
+    "The artifact must be a JSON object in this exact shape:\n{shape}"
 )
 
 SYSTEM_AGENTIC_TEXT = (
-    "You are an engineer producing a design artifact. Reply with ONLY a JSON artifact "
-    "(no prose, no code fences) to submit it for grading; you will receive the grader's "
-    f"result as the next message. You may submit at most {MAX_ATTEMPTS} times. If it "
-    "reports violations, fix them and submit again. When it reports passed: true, reply "
-    "with the single word DONE. The artifact must be a JSON object in this exact shape:\n{shape}"
+    "You are an engineer producing a design artifact, working at a desk with a calculator and a checker. "
+    "Two kinds of reply are understood, and nothing else. (1) A reply consisting ONLY of a ```python fenced "
+    "block runs that snippet (standard library only, no network, no files) and you receive its output as the "
+    f"next message; use it to compute and to check your own design; at most {MAX_PYTHON} runs. (2) A reply "
+    "consisting ONLY of a JSON object (no prose, no code fences) submits it for grading; you receive which "
+    f"checks failed, without the numbers, as the next message; at most {MAX_ATTEMPTS} submissions. When the "
+    "grader reports passed: true, reply with the single word DONE. The artifact must be a JSON object in this "
+    "exact shape:\n{shape}"
 )
 
 GRADE_TOOL = {
     "type": "function",
     "function": {
         "name": "grade",
-        "description": "Check a candidate design artifact against the task constraints.",
+        "description": "Check a candidate design artifact against the task requirements; reports which checks failed.",
         "parameters": {
             "type": "object",
             "properties": {"artifact": {"type": "object", "description": "The design artifact JSON."}},
@@ -77,6 +84,40 @@ GRADE_TOOL = {
         },
     },
 }
+PYTHON_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "run_python",
+        "description": f"Run a Python snippet (standard library only) and return stdout and stderr. {PYTHON_TIMEOUT} s limit.",
+        "parameters": {
+            "type": "object",
+            "properties": {"code": {"type": "string", "description": "Python source to execute."}},
+            "required": ["code"],
+        },
+    },
+}
+AGENTIC_TOOLS = [PYTHON_TOOL, GRADE_TOOL]
+
+
+def run_python(code: str) -> str:
+    """Execute a snippet in a fresh isolated interpreter inside an empty temp dir.
+    ponytail: no sandbox beyond -I, an empty cwd and a timeout; the model has no path to the repo."""
+    with tempfile.TemporaryDirectory() as d:
+        try:
+            proc = subprocess.run([sys.executable, "-I", "-c", code], capture_output=True, text=True,
+                                  encoding="utf-8", errors="replace", cwd=d, timeout=PYTHON_TIMEOUT)
+            out = proc.stdout + (("\n[stderr]\n" + proc.stderr) if proc.stderr else "")
+        except subprocess.TimeoutExpired:
+            out = f"[timed out after {PYTHON_TIMEOUT} s]"
+    if not out.strip():
+        return "[no output]"
+    return out[:4000] + ("\n[truncated]" if len(out) > 4000 else "")
+
+
+def lean(result: dict) -> dict:
+    """Feedback without numbers: which check failed, not what value to hit."""
+    return {"passed": result["passed"],
+            "violations": [re.sub(r"-?\d[\d,.]*\s*%?", "...", v) for v in result["violations"]]}
 
 
 # ---------- OpenRouter client ----------
@@ -151,8 +192,11 @@ def make_cli_chat():
         system = messages[0]["content"]
         if tools:  # text protocol replaces the tool protocol; keep the shape line
             system = SYSTEM_AGENTIC_TEXT.format(shape=system.rsplit("\n", 1)[1])
-        prompt = messages[1]["content"] if session["id"] is None else \
-            "Grader result: " + messages[-1]["content"]
+        if session["id"] is None:
+            prompt = messages[1]["content"]
+        else:
+            last = messages[-1]
+            prompt = ("Grader result: " if last.get("name") == "grade" else "Output: ") + last["content"]
 
         cmd = [_claude_exe(), "-p", "--model", model, "--system-prompt", system, *CLI_FLAGS]
         cmd += ["--resume", session["id"]] if session["id"] else []
@@ -181,11 +225,16 @@ def make_cli_chat():
         usage = d.get("modelUsage") or {}
         canonical = next(iter(usage.values()), {}).get("canonicalModel", model)
         msg = {"role": "assistant", "content": text}
-        if tools and (art := parse_artifact(text)) is not None and text.strip().upper() != "DONE":
-            # a JSON reply is a submission: present it as a grade tool call
-            msg = {"role": "assistant", "content": None, "tool_calls": [{
-                "id": f"cli{len(messages)}", "type": "function",
-                "function": {"name": "grade", "arguments": json.dumps({"artifact": art})}}]}
+        if tools and text.strip().upper() != "DONE":
+            fence = re.fullmatch(r"\s*```(?:python|py)?[ \t]*\n(.*?)\n?```\s*", text, flags=re.DOTALL)
+            if fence:  # a fenced python block is a run_python call
+                msg = {"role": "assistant", "content": None, "tool_calls": [{
+                    "id": f"cli{len(messages)}", "type": "function",
+                    "function": {"name": "run_python", "arguments": json.dumps({"code": fence.group(1)})}}]}
+            elif (art := parse_artifact(text)) is not None:  # a JSON reply is a submission
+                msg = {"role": "assistant", "content": None, "tool_calls": [{
+                    "id": f"cli{len(messages)}", "type": "function",
+                    "function": {"name": "grade", "arguments": json.dumps({"artifact": art})}}]}
         return {
             "choices": [{"message": msg}],
             "usage": {"prompt_tokens": sum(u.get("inputTokens", 0) + u.get("cacheReadInputTokens", 0)
@@ -268,10 +317,11 @@ def run_agentic(model, task, opts, chat=chat):
         {"role": "user", "content": _task_prompt(task)},
     ]
     usage, attempts, provider, resolved = {}, [], None, None
-    t0 = time.time()
+    python_calls, t0 = 0, time.time()
+    feedback = (lambda r: r) if opts.get("feedback") == "full" else lean
 
     while len(attempts) < MAX_ATTEMPTS and time.time() - t0 < TASK_TIMEOUT:
-        resp = chat(model, messages, tools=[GRADE_TOOL], opts=opts)
+        resp = chat(model, messages, tools=AGENTIC_TOOLS, opts=opts)
         _accumulate(usage, resp)
         provider, resolved = resp.get("provider"), resp.get("model")
         msg = resp["choices"][0]["message"]
@@ -286,20 +336,27 @@ def run_agentic(model, task, opts, chat=chat):
             break
 
         for call in calls:
+            name = call["function"].get("name")
+            args = parse_artifact(call["function"].get("arguments")) or {}
+            if name == "run_python":
+                python_calls += 1
+                out = run_python(str(args.get("code", ""))) if python_calls <= MAX_PYTHON else "[run_python budget exhausted]"
+                messages.append({"role": "tool", "tool_call_id": call["id"], "name": name, "content": out})
+                continue
             if len(attempts) >= MAX_ATTEMPTS:
-                messages.append({"role": "tool", "tool_call_id": call["id"],
+                messages.append({"role": "tool", "tool_call_id": call["id"], "name": "grade",
                                  "content": json.dumps({"error": "attempt budget exhausted"})})
                 continue
-            args = parse_artifact(call["function"].get("arguments"))
             artifact = args.get("artifact") if isinstance(args, dict) else None
             result = safe_grade(task, artifact)
             attempts.append({"artifact": artifact, **result})
-            messages.append({"role": "tool", "tool_call_id": call["id"], "content": json.dumps(result)})
+            messages.append({"role": "tool", "tool_call_id": call["id"], "name": "grade",
+                             "content": json.dumps(feedback(result))})
         if any(a["passed"] for a in attempts):
             break
 
     passed = None if attempts and attempts[-1]["passed"] is None else any(a["passed"] for a in attempts)
-    return {"passed": passed, "attempts": attempts, "usage": usage,
+    return {"passed": passed, "attempts": attempts, "python_calls": python_calls, "usage": usage,
             "provider": provider, "resolved_model": resolved}
 
 
@@ -338,6 +395,7 @@ def main():
     ap.add_argument("--provider", help="pin an OpenRouter host, fallbacks disabled (open-weight models)")
     ap.add_argument("--reasoning", choices=["low", "medium", "high"])
     ap.add_argument("--temperature", type=float)
+    ap.add_argument("--feedback", choices=["lean", "full"], default="lean", help="agentic grader feedback level")
     args = ap.parse_args()
 
     cli = args.transport == "claude-cli"
@@ -346,7 +404,8 @@ def main():
         if "OPENROUTER_API_KEY" not in os.environ:
             sys.exit("OPENROUTER_API_KEY not set (put it in .env at the repo root)")
 
-    opts = {"provider": args.provider, "reasoning": args.reasoning, "temperature": args.temperature}
+    opts = {"provider": args.provider, "reasoning": args.reasoning, "temperature": args.temperature,
+            "feedback": args.feedback}
     tasks = [json.loads(p.read_text()) for p in sorted(TASKS_DIR.glob("*.json"))]
     if args.tasks:
         tasks = [t for t in tasks if t["id"] in args.tasks]
@@ -356,7 +415,7 @@ def main():
     out_path = RESULTS_DIR / f"{slug(label)}__{args.track}.json"
     results = json.loads(out_path.read_text()) if out_path.exists() else {
         "model": label, "transport": args.transport, "track": args.track, "settings": opts,
-        "max_attempts": MAX_ATTEMPTS, "records": [],
+        "max_attempts": MAX_ATTEMPTS, "max_python": MAX_PYTHON, "records": [],
     }
     done = {(r["task"], r["trial"]) for r in results["records"]}
     runner = RUNNERS[args.track]
@@ -376,7 +435,7 @@ def main():
             results["records"].append(rec)
             _save(out_path, results)
             status = {True: "PASS", False: "FAIL", None: "SKIP"}[rec["passed"]]
-            print(f"{status} {task['id']} trial {trial} attempts={len(rec['attempts'])} "
+            print(f"{status} {task['id']} trial {trial} attempts={len(rec['attempts'])} python={rec.get('python_calls', 0)} "
                   f"cost=${rec['usage'].get('cost', 0):.4f} provider={rec['provider']}")
 
     print(f"\nwrote {out_path.relative_to(ROOT)}")

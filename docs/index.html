@@ -18,14 +18,14 @@ details[open]{display:block;max-width:520px;white-space:normal} details pre{font
 a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
 </style></head><body><main>
 <h1>EngBench</h1>
-<p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. Single-shot is one answer with no feedback. Agentic is up to five attempts against grader feedback. Cell footnotes are the number of task runs behind each rate.</p>
-<p class="lede">109 tasks · 381 task runs · 4 models · updated 2026-09-18 14:07 UTC</p>
-<h2>Leaderboard</h2><div class="wrap"><table><thead><tr><th>model</th><th>single-shot</th><th>agentic</th><th>gap</th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="good"><b>93%</b><small>42</small></td><td class="good"><b>100%</b><small>30</small></td><td>+7</td><td>42</td><td>1,716</td><td>0.109</td></tr><tr><th>haiku [claude-cli]</th><td class="mid"><b>55%</b><small>56</small></td><td class="mid"><b>85%</b><small>41</small></td><td>+30</td><td>57</td><td>24,139</td><td>0.137</td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>86%</b><small>66</small></td><td class="good"><b>100%</b><small>42</small></td><td>+14</td><td>66</td><td>5,638</td><td>0.166</td></tr><tr><th>sonnet [claude-cli]</th><td class="mid"><b>66%</b><small>62</small></td><td class="good"><b>98%</b><small>42</small></td><td>+31</td><td>63</td><td>16,554</td><td>0.194</td></tr></tbody></table></div>
+<p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, plus a grader that says which check failed without the numbers, five grader calls: the engineer at a desk with a calculator and a checker. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
+<p class="lede">109 tasks · 381 task runs · 4 models · updated 2026-09-22 18:39 UTC</p>
+<h2>Leaderboard</h2><div class="wrap"><table><thead><tr><th>model</th><th>single-shot</th><th>feedback<small>superseded</small></th><th>agentic</th><th>gap</th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="good"><b>93%</b><small>42</small></td><td class="good"><b>100%</b><small>30</small></td><td class="na">–</td><td>–</td><td>42</td><td>1,716</td><td>0.109</td></tr><tr><th>haiku [claude-cli]</th><td class="mid"><b>55%</b><small>56</small></td><td class="mid"><b>85%</b><small>41</small></td><td class="na">–</td><td>–</td><td>57</td><td>24,139</td><td>0.137</td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>86%</b><small>66</small></td><td class="good"><b>100%</b><small>42</small></td><td class="na">–</td><td>–</td><td>66</td><td>5,638</td><td>0.166</td></tr><tr><th>sonnet [claude-cli]</th><td class="mid"><b>66%</b><small>62</small></td><td class="good"><b>98%</b><small>42</small></td><td class="na">–</td><td>–</td><td>63</td><td>16,554</td><td>0.194</td></tr></tbody></table></div>
 <h2>Pass rate by family</h2>
 <p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
-<div class="wrap"><h3>single-shot</h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="mid"><b>75%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>0%</b><small>3</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>92%</b><small>12</small></td><td class="bad"><b>25%</b><small>12</small></td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>50%</b><small>12</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="mid"><b>83%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td></tr><tr><th>sonnet [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>22%</b><small>9</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="mid"><b>83%</b><small>12</small></td></tr></tbody></table><h3>agentic</h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="bad"><b>45%</b><small>11</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>opus [claude-cli]</th><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>sonnet [claude-cli]</th><td class="good"><b>92%</b><small>12</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr></tbody></table></div>
+<div class="wrap"><h3>single-shot<small>one answer, no tools</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="mid"><b>75%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>0%</b><small>3</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>92%</b><small>12</small></td><td class="bad"><b>25%</b><small>12</small></td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>50%</b><small>12</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="mid"><b>83%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td></tr><tr><th>sonnet [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>22%</b><small>9</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="mid"><b>83%</b><small>12</small></td></tr></tbody></table><h3>feedback<small>superseded: grade tool with full numbers, no compute</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="bad"><b>45%</b><small>11</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>opus [claude-cli]</th><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>sonnet [claude-cli]</th><td class="good"><b>92%</b><small>12</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr></tbody></table></div>
 <h2>Every task, every model</h2>
-<p class="lede">S = single-shot, A = agentic, the digit is the number of attempts. Click a mark to see the model's design and the grader's first violations.</p>
+<p class="lede">S = single-shot, F = feedback (superseded), A = agentic; the digit is the number of grader attempts. Click a mark to see the model's design and the grader's violations.</p>
 <div class="wrap"><table class="matrix"><thead><tr><th>task</th><th>claude-fable-5-1 [claude-cli]</th><th>haiku [claude-cli]</th><th>opus [claude-cli]</th><th>sonnet [claude-cli]</th></tr></thead><tbody><tr><th>bess_001<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;cells_series&quot;: 368,
  &quot;strings_parallel&quot;: 32,
@@ -38,7 +38,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-4&quot;,
  &quot;cooling_count&quot;: 2
-}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 162.0 kA (31 other strings + PCS contribution)<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 172.1 A (1 x 297 A x k_T x k_G for 8 circuits)</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 162.0 kA (31 other strings + PCS contribution)<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 172.1 A (1 x 297 A x k_T x k_G for 8 circuits)</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 30,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -62,7 +62,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 2,
  &quot;cooling_unit&quot;: &quot;CU-4&quot;,
  &quot;cooling_count&quot;: 2
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 30,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -86,7 +86,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 5
-}</pre><p>string voltage at full charge 1693.6 V exceeds the PCS maximum 1500 V<br>fuse DC voltage rating 1500 V is below the string maximum 1693.6 V<br>contactor DC voltage rating 1500 V is below the string maximum 1693.6 V</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>string voltage at full charge 1693.6 V exceeds the PCS maximum 1500 V<br>fuse DC voltage rating 1500 V is below the string maximum 1693.6 V<br>contactor DC voltage rating 1500 V is below the string maximum 1693.6 V</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 30,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -110,7 +110,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 2
-}</pre><p>fuse breaking capacity 150 kA is below the prospective bus fault current 230.0 kA (29 other strings + PCS contribution)<br>fuse rating 400 A exceeds the corrected cable ampacity I_z 232.8 A (1 x 362 A x k_T x k_G for 8 circuits)<br>transformer 3150 kVA x ambient factor = 3244 kVA is below 3632 kVA at the connection point (P / cos phi 0.95)</p></details><details class="fail"><summary>A5</summary><pre>{
+}</pre><p>fuse breaking capacity 150 kA is below the prospective bus fault current 230.0 kA (29 other strings + PCS contribution)<br>fuse rating 400 A exceeds the corrected cable ampacity I_z 232.8 A (1 x 362 A x k_T x k_G for 8 circuits)<br>transformer 3150 kVA x ambient factor = 3244 kVA is below 3632 kVA at the connection point (P / cos phi 0.95)</p></details><details class="fail"><summary>F5</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 27,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -134,7 +134,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 2,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 4
-}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 215.8 kA (27 other strings + PCS contribution)</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 215.8 kA (27 other strings + PCS contribution)</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 27,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -158,7 +158,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 2,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 7
-}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 222.8 kA (27 other strings + PCS contribution)</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 222.8 kA (27 other strings + PCS contribution)</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 384,
  &quot;strings_parallel&quot;: 28,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -182,7 +182,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>cooling capacity at site 35 C 40.0 kW is below heat 81.7 kW x (1 + margin) at end-of-life resistance<br>fuse breaking capacity 100 kA is below the prospective bus fault current 110.0 kA (20 other strings + PCS contribution)<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 161.7 A (1 x 234 A x k_T x k_G for 6 circuits)</p></details><details class="pass"><summary>A3</summary><pre>{
+}</pre><p>cooling capacity at site 35 C 40.0 kW is below heat 81.7 kW x (1 + margin) at end-of-life resistance<br>fuse breaking capacity 100 kA is below the prospective bus fault current 110.0 kA (20 other strings + PCS contribution)<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 161.7 A (1 x 234 A x k_T x k_G for 6 circuits)</p></details><details class="pass"><summary>F3</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 20,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -206,7 +206,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 2
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;cells_series&quot;: 384,
  &quot;strings_parallel&quot;: 20,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -230,7 +230,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 5
-}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 363 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 363 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 384,
  &quot;strings_parallel&quot;: 20,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -254,7 +254,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-4&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>string voltage at full charge 1576.8 V exceeds the PCS maximum 1500 V<br>cooling capacity at site 35 C 150.0 kW is below heat 172.2 kW x (1 + margin) at end-of-life resistance<br>fuse DC voltage rating 1500 V is below the string maximum 1576.8 V<br>fuse breaking capacity 100 kA is below the prospective bus fault current 174.4 kA (33 other strings + PCS contribution)<br>contactor DC voltage rating 1500 V is below the string maximum 1576.8 V<br>fuse conventional fusing current 1.6 x 315 A = 504 A exceeds 1.45 x I_z = 500 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>string voltage at full charge 1576.8 V exceeds the PCS maximum 1500 V<br>cooling capacity at site 35 C 150.0 kW is below heat 172.2 kW x (1 + margin) at end-of-life resistance<br>fuse DC voltage rating 1500 V is below the string maximum 1576.8 V<br>fuse breaking capacity 100 kA is below the prospective bus fault current 174.4 kA (33 other strings + PCS contribution)<br>contactor DC voltage rating 1500 V is below the string maximum 1576.8 V<br>fuse conventional fusing current 1.6 x 315 A = 504 A exceeds 1.45 x I_z = 500 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 36,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -278,7 +278,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-4&quot;,
  &quot;cooling_count&quot;: 2
-}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 209.0 kA (40 other strings + PCS contribution)</p></details><details class="pass"><summary>A3</summary><pre>{
+}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 209.0 kA (40 other strings + PCS contribution)</p></details><details class="pass"><summary>F3</summary><pre>{
  &quot;cells_series&quot;: 384,
  &quot;strings_parallel&quot;: 38,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -302,7 +302,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 2,
  &quot;cooling_unit&quot;: &quot;CU-4&quot;,
  &quot;cooling_count&quot;: 2
-}</pre><p>fuse breaking capacity 150 kA is below the prospective bus fault current 211.2 kA (40 other strings + PCS contribution)<br>fuse conventional fusing current 1.6 x 400 A = 640 A exceeds 1.45 x I_z = 621 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>fuse breaking capacity 150 kA is below the prospective bus fault current 211.2 kA (40 other strings + PCS contribution)<br>fuse conventional fusing current 1.6 x 400 A = 640 A exceeds 1.45 x I_z = 621 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 37,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -338,7 +338,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 2,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 3
-}</pre><p>string current 156.8 A exceeds the cell continuous limit 153.0 A</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>string current 156.8 A exceeds the cell continuous limit 153.0 A</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 16,
  &quot;pcs&quot;: &quot;PCS-2&quot;,
@@ -362,7 +362,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 3
-}</pre><p>string current 156.8 A exceeds the cell continuous limit 153.0 A<br>fuse conventional fusing current 1.6 x 400 A = 640 A exceeds 1.45 x I_z = 638 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>string current 156.8 A exceeds the cell continuous limit 153.0 A<br>fuse conventional fusing current 1.6 x 400 A = 640 A exceeds 1.45 x I_z = 638 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 16,
  &quot;pcs&quot;: &quot;PCS-2&quot;,
@@ -386,7 +386,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>string voltage at end of life, minimum SOC, full current 1191.0 V is below the PCS minimum 1200 V<br>cooling capacity at site 35 C 40.0 kW is below heat 63.1 kW x (1 + margin) at end-of-life resistance<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 173.0 A (1 x 234 A x k_T x k_G for 4 circuits)</p></details><details class="fail"><summary>A5</summary><pre>{
+}</pre><p>string voltage at end of life, minimum SOC, full current 1191.0 V is below the PCS minimum 1200 V<br>cooling capacity at site 35 C 40.0 kW is below heat 63.1 kW x (1 + margin) at end-of-life resistance<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 173.0 A (1 x 234 A x k_T x k_G for 4 circuits)</p></details><details class="fail"><summary>F5</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 17,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -410,7 +410,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 2
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;cells_series&quot;: 384,
  &quot;strings_parallel&quot;: 14,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -434,7 +434,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-1&quot;,
  &quot;cooling_count&quot;: 3
-}</pre><p>cooling capacity at site 35 C 60.0 kW is below heat 64.8 kW x (1 + margin) at end-of-life resistance</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>cooling capacity at site 35 C 60.0 kW is below heat 64.8 kW x (1 + margin) at end-of-life resistance</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 384,
  &quot;strings_parallel&quot;: 14,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -458,7 +458,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-4&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>string voltage at full charge 1518.4 V exceeds the PCS maximum 1500 V<br>fuse DC voltage rating 1500 V is below the string maximum 1518.4 V<br>contactor DC voltage rating 1500 V is below the string maximum 1518.4 V<br>fuse rating 400 A exceeds the corrected cable ampacity I_z 213.7 A (1 x 362 A x k_T x k_G for 6 circuits)</p></details><details class="fail"><summary>A2</summary><pre>{
+}</pre><p>string voltage at full charge 1518.4 V exceeds the PCS maximum 1500 V<br>fuse DC voltage rating 1500 V is below the string maximum 1518.4 V<br>contactor DC voltage rating 1500 V is below the string maximum 1518.4 V<br>fuse rating 400 A exceeds the corrected cable ampacity I_z 213.7 A (1 x 362 A x k_T x k_G for 6 circuits)</p></details><details class="fail"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 416,
  &quot;strings_parallel&quot;: 20,
  &quot;pcs&quot;: &quot;PCS-4&quot;,
@@ -482,7 +482,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-4&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 21,
  &quot;pcs&quot;: &quot;PCS-2&quot;,
@@ -506,7 +506,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 2,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 5
-}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 378 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 378 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 21,
  &quot;pcs&quot;: &quot;PCS-2&quot;,
@@ -530,7 +530,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>usable energy at the connection point at end of life 2.705 MWh is below 2.750 MWh required (E_req x (1 + margin))<br>string voltage at end of life, minimum SOC, full current 1136.0 V is below the PCS minimum 1200 V<br>cooling capacity at site 45 C 66.0 kW is below heat 206.0 kW x (1 + margin) at end-of-life resistance<br>fuse rating 315 A is below 327.9 A required (I_string 223.0 A / ambient factor / continuous-load factor 0.8)<br>fuse conventional fusing current 1.6 x 315 A = 504 A exceeds 1.45 x I_z = 462 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>A4</summary><pre>{
+}</pre><p>usable energy at the connection point at end of life 2.705 MWh is below 2.750 MWh required (E_req x (1 + margin))<br>string voltage at end of life, minimum SOC, full current 1136.0 V is below the PCS minimum 1200 V<br>cooling capacity at site 45 C 66.0 kW is below heat 206.0 kW x (1 + margin) at end-of-life resistance<br>fuse rating 315 A is below 327.9 A required (I_string 223.0 A / ambient factor / continuous-load factor 0.8)<br>fuse conventional fusing current 1.6 x 315 A = 504 A exceeds 1.45 x I_z = 462 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>F4</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 12,
  &quot;pcs&quot;: &quot;PCS-2&quot;,
@@ -554,7 +554,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 4,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 3
-}</pre><p>cooling capacity at site 45 C 198.0 kW is below heat 196.1 kW x (1 + margin) at end-of-life resistance<br>fuse rating 500 A exceeds the corrected cable ampacity I_z 491.2 A (4 x 234 A x k_T x k_G for 32 circuits)</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>cooling capacity at site 45 C 198.0 kW is below heat 196.1 kW x (1 + margin) at end-of-life resistance<br>fuse rating 500 A exceeds the corrected cable ampacity I_z 491.2 A (4 x 234 A x k_T x k_G for 32 circuits)</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 384,
  &quot;strings_parallel&quot;: 12,
  &quot;pcs&quot;: &quot;PCS-2&quot;,
@@ -578,7 +578,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 3,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 6
-}</pre><p>cooling capacity at site 45 C 198.0 kW is below heat 196.1 kW x (1 + margin) at end-of-life resistance<br>fuse rating 400 A exceeds the corrected cable ampacity I_z 368.4 A (3 x 234 A x k_T x k_G for 24 circuits)</p></details><details class="fail"><summary>A5</summary><pre>{
+}</pre><p>cooling capacity at site 45 C 198.0 kW is below heat 196.1 kW x (1 + margin) at end-of-life resistance<br>fuse rating 400 A exceeds the corrected cable ampacity I_z 368.4 A (3 x 234 A x k_T x k_G for 24 circuits)</p></details><details class="fail"><summary>F5</summary><pre>{
  &quot;cells_series&quot;: 336,
  &quot;strings_parallel&quot;: 14,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -602,7 +602,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 230.7 kA (35 other strings + PCS contribution)<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 199.0 A (1 x 297 A x k_T x k_G for 4 circuits)</p></details><details class="fail"><summary>A5</summary><pre>{
+}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 230.7 kA (35 other strings + PCS contribution)<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 199.0 A (1 x 297 A x k_T x k_G for 4 circuits)</p></details><details class="fail"><summary>F5</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 37,
  &quot;pcs&quot;: &quot;PCS-2&quot;,
@@ -626,7 +626,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-4&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 242.7 kA (35 other strings + PCS contribution)</p></details><details class="pass"><summary>A3</summary><pre>{
+}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 242.7 kA (35 other strings + PCS contribution)</p></details><details class="pass"><summary>F3</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 36,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -650,7 +650,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 2,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>fuse breaking capacity 150 kA is below the prospective bus fault current 251.0 kA (35 other strings + PCS contribution)<br>fuse conventional fusing current 1.6 x 500 A = 800 A exceeds 1.45 x I_z = 747 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>fuse breaking capacity 150 kA is below the prospective bus fault current 251.0 kA (35 other strings + PCS contribution)<br>fuse conventional fusing current 1.6 x 500 A = 800 A exceeds 1.45 x I_z = 747 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 36,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -662,7 +662,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 3,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>passed</p></details></td></tr><tr><th>bess_013<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>A5</summary><pre>{
+}</pre><p>passed</p></details></td></tr><tr><th>bess_013<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>F5</summary><pre>{
  &quot;cells_series&quot;: 384,
  &quot;strings_parallel&quot;: 22,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -686,7 +686,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 4,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 2
-}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 368,
  &quot;strings_parallel&quot;: 22,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -710,7 +710,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 2,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 2
-}</pre><p>string voltage at full charge 1576.8 V exceeds the PCS maximum 1500 V<br>fuse DC voltage rating 1500 V is below the string maximum 1576.8 V<br>contactor DC voltage rating 1500 V is below the string maximum 1576.8 V</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>string voltage at full charge 1576.8 V exceeds the PCS maximum 1500 V<br>fuse DC voltage rating 1500 V is below the string maximum 1576.8 V<br>contactor DC voltage rating 1500 V is below the string maximum 1576.8 V</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 21,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -734,7 +734,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-4&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>string current 188.3 A exceeds the cell continuous limit 153.0 A<br>string voltage at end of life, minimum SOC, full current 1159.9 V is below the PCS minimum 1200 V<br>PCS apparent power at site 40 C 3414 kVA is below 3710 kVA needed for cos phi 0.95 at the connection point including transformer reactive consumption 231 kvar<br>cooling capacity at site 40 C 137.5 kW is below heat 205.1 kW x (1 + margin) at end-of-life resistance<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 156.8 A (1 x 234 A x k_T x k_G for 4 circuits)</p></details><details class="pass"><summary>A5</summary><pre>{
+}</pre><p>string current 188.3 A exceeds the cell continuous limit 153.0 A<br>string voltage at end of life, minimum SOC, full current 1159.9 V is below the PCS minimum 1200 V<br>PCS apparent power at site 40 C 3414 kVA is below 3710 kVA needed for cos phi 0.95 at the connection point including transformer reactive consumption 231 kvar<br>cooling capacity at site 40 C 137.5 kW is below heat 205.1 kW x (1 + margin) at end-of-life resistance<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 156.8 A (1 x 234 A x k_T x k_G for 4 circuits)</p></details><details class="pass"><summary>F5</summary><pre>{
  &quot;cells_series&quot;: 384,
  &quot;strings_parallel&quot;: 21,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -758,7 +758,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 5
-}</pre><p>string current 157.2 A exceeds the cell continuous limit 153.0 A<br>cooling capacity at site 40 C 182.5 kW is below heat 169.8 kW x (1 + margin) at end-of-life resistance</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>string current 157.2 A exceeds the cell continuous limit 153.0 A<br>cooling capacity at site 40 C 182.5 kW is below heat 169.8 kW x (1 + margin) at end-of-life resistance</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 384,
  &quot;strings_parallel&quot;: 21,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -770,7 +770,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 6
-}</pre><p>passed</p></details></td><td><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>passed</p></details></td><td><details class="pass"><summary>F2</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 20,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -794,7 +794,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-4&quot;,
  &quot;cooling_count&quot;: 1
-}</pre><p>cooling capacity at site 45 C 125.0 kW is below heat 124.1 kW x (1 + margin) at end-of-life resistance<br>fuse breaking capacity 100 kA is below the prospective bus fault current 118.7 kA (23 other strings + PCS contribution)<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 156.8 A (1 x 234 A x k_T x k_G for 4 circuits)</p></details><details class="fail"><summary>A5</summary><pre>{
+}</pre><p>cooling capacity at site 45 C 125.0 kW is below heat 124.1 kW x (1 + margin) at end-of-life resistance<br>fuse breaking capacity 100 kA is below the prospective bus fault current 118.7 kA (23 other strings + PCS contribution)<br>fuse rating 315 A exceeds the corrected cable ampacity I_z 156.8 A (1 x 234 A x k_T x k_G for 4 circuits)</p></details><details class="fail"><summary>F5</summary><pre>{
  &quot;cells_series&quot;: 304,
  &quot;strings_parallel&quot;: 30,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -818,7 +818,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 3
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 24,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -842,7 +842,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 9
-}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 124.6 kA (23 other strings + PCS contribution)<br>fuse conventional fusing current 1.6 x 315 A = 504 A exceeds 1.45 x I_z = 466 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>A3</summary><pre>{
+}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 124.6 kA (23 other strings + PCS contribution)<br>fuse conventional fusing current 1.6 x 315 A = 504 A exceeds 1.45 x I_z = 466 A (IEC 60364-4-43 overload coordination)</p></details><details class="pass"><summary>F3</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 24,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -882,7 +882,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* psu 12V source and 10 ohm load; grader inserts wire psu_out -&gt; load_in\nV1 psu_out 0 DC 12\nRload load_in 0 10&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -938,7 +938,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 10&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -994,7 +994,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* Power delivery: 12V source to 10 ohm load; wire R inserted by grader\nV1 psu_out 0 DC 12\nRload load_in 0 10&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1050,7 +1050,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 10&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1114,7 +1114,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* Star wiring: psu_out -&gt; la_in (55mm, 0.165 ohm) and psu_out -&gt; lb_in (65mm, 0.195 ohm) inserted by grader\nV1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1186,7 +1186,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1258,7 +1258,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* star wiring from psu_out to two loads\nV1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1330,7 +1330,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRla la_in 0 8\nRlb lb_in 0 20&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1394,7 +1394,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* comb_003 daisy-chained power; wire resistances psu_out-&gt;a_in and a_in-&gt;b_in inserted by grader\nV1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1450,7 +1450,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1506,7 +1506,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* Daisy-chained 12V rail: psu_out -&gt; a_in -&gt; b_in\n* Wire resistances inserted by grader from placement distances\nV1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1562,7 +1562,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRa a_in 0 30\nRb b_in 0 30&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1618,7 +1618,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* psu at [0,0,0] center (25,20,15); load at [110,0,0] center (130,20,10); surface gap 60mm in x\n* Manhattan center distance = 105+0+5 = 110mm -&gt; Rwire = 0.22 ohm -&gt; Vload = 12*6/6.22 = 11.58 V &gt;= 11.5 V\n* fan at [155,0,0], 5mm gap from load\nV1 psu_out 0 DC 12\nRload load_in 0 6&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1674,7 +1674,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 6&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1730,7 +1730,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* psu source and heater load; wire psu_out-&gt;load_in inserted by grader\nV1 psu_out 0 DC 12\nRload load_in 0 6&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1786,7 +1786,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 psu_out 0 DC 12\nRload load_in 0 6&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;psu&quot;,
@@ -1842,7 +1842,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* comb_005: jack -&gt; reg thin wire inserted by grader (jack_out -&gt; reg_in), Manhattan 37.5mm =&gt; 0.75 ohm, V(reg_in)=23.7V\nV1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;jack&quot;,
@@ -1898,7 +1898,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;jack&quot;,
@@ -1986,7 +1986,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* 24V input source at DC jack output\nV1 jack_out 0 DC 24\n* Regulator input load: 400mA draw\nIreg reg_in 0 DC 400m\n* Thin wire jack_out -&gt; reg_in inserted by grader (Manhattan 38.5mm -&gt; 0.77 ohm -&gt; 0.308V drop -&gt; 23.692V)&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;jack&quot;,
@@ -2042,7 +2042,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 jack_out 0 DC 24\nIreg reg_in 0 DC 400m&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;jack&quot;,
@@ -2122,7 +2122,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* comb_006 power tree; wire resistances inserted by grader from placements\nV1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;dc_in&quot;,
@@ -2226,7 +2226,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60&quot;
-}</pre><p>psu_board overlaps motor<br>ctrl overlaps sensor</p></details><details class="pass"><summary>A3</summary><pre>{
+}</pre><p>psu_board overlaps motor<br>ctrl overlaps sensor</p></details><details class="pass"><summary>F3</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;dc_in&quot;,
@@ -2330,7 +2330,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;* 24V input source\nV1 dc_in 0 DC 24\n* PSU board input load (24 ohm ~ 1A draw)\nRpsu psu_in 0 24\n* PSU regulated output (ideal 12V rail)\nVout psu_out 0 DC 12\n* Motor load\nRm m_in 0 6\n* Controller load\nRc c_in 0 60&quot;
-}</pre><p>motor-ctrl clearance 25.0 &lt; required 40<br>sensor-motor clearance 42.0 &lt; required 60</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>motor-ctrl clearance 25.0 &lt; required 40<br>sensor-motor clearance 42.0 &lt; required 60</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;dc_in&quot;,
@@ -2434,7 +2434,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ],
  &quot;netlist&quot;: &quot;V1 dc_in 0 DC 24\nRpsu psu_in 0 24\nVout psu_out 0 DC 12\nRm m_in 0 6\nRc c_in 0 60&quot;
-}</pre><p>ctrl overlaps sensor</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>ctrl overlaps sensor</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;dc_in&quot;,
@@ -2704,195 +2704,195 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;n_parallel&quot;: 4
 }</pre><p>coolant temperature rise 6.04 C exceeds 6.0 C</p></details></td></tr><tr><th>elec_001<small>Voltage divider within drop limit</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* Resistor divider: 12V -&gt; 6V at vout\nV1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 1k\nR2 vout 0 1k&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 1k\nR2 vout 0 1k&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* 12V source with resistive divider to 6V output\nV1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* Resistive voltage divider: 12V -&gt; 6V\nV1 vin 0 DC 12\nR1 vin vout 1k\nR2 vout 0 1k&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 1k\nR2 vout 0 1k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 1k\nR2 vout 0 1k&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_002<small>Divider under load</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 435\nR2 vout 0 330\nRload vout 0 330\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* Divider under 330 ohm load, vout = 3.3V\nV1 vin 0 DC 12\nR1 vin vout 435\nR2 vout 0 330\nRload vout 0 330&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 620\nR2 vout 0 820\nRload vout 0 330&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 430\nR2 vout 0 330\nRload vout 0 330&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* 12V to 3.3V loaded divider\nV1 vin 0 DC 12\nR1 vin vout 654\nR2 vout 0 1000\nRload vout 0 330\n* R2 || Rload = 248.12 ohm; Vout = 12*248.12/(654+248.12) = 3.300 V&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* 12V to 3.3V divider driving 330 ohm load\nV1 vin 0 DC 12\nR1 vin vout 435\nR2 vout 0 330\nRload vout 0 330\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 470\nR2 vout 0 390\nRload vout 0 330&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRtop vin vout 870\nRload vout 0 330&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_003<small>LED current limiting</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* LED current limiting from 9V supply\nV1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 390\nVled led_a 0 DC 2\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 400\nVled led_a 0 DC 2&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 390\nVled led_a 0 DC 2&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 390\nVled led_a 0 DC 2&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* LED current limiting from 9V supply\nV1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 399\nVled led_a 0 DC 2\n* I = (9-2)/(1+399) = 17.5mA -&gt; Vsense = 17.5mV&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* LED current limiting from 9V supply\nV1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 400\nVled led_a 0 DC 2\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlim sense led_a 399\nVled led_a 0 DC 2&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlim sense led_a 399\nVled led_a 0 DC 2&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_004<small>Quiescent current budget</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* 24V to 5.0V reference, quiescent current ~0.1mA\nV1 vin 0 DC 24\nRsense vin top 10\n* Divider: 190k / 50k -&gt; vout = 24 * 50k / 240k = 5.00V, I = 24/240k = 0.1mA (Rsense drop = 1mV)\nR1 top vout 190k\nR2 vout 0 50k\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_004 quiescent current budget: 5.0V reference from 24V, I &lt; 1mA\nV1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 38k\nR2 vout 0 10k\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 19k\nR2 vout 0 5k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 20k\nR2 vout 0 5.3k&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* 24V supply with 10-ohm current sense resistor\nV1 vin 0 DC 24\nRsense vin top 10\n* Divider: 190k + 50k = 240k total -&gt; I = 100uA (&lt; 1mA), drop on Rsense = 1mV\nR1 top vout 190k\nR2 vout 0 50k\n.op&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* 24V to 5V reference divider, &lt;1mA quiescent\nV1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 189990\nR2 vout 0 50000&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 21101.11\nR2 vout 0 5555.56\n* Design: I = 24/(10+21101.11+5555.56) = 0.9mA\n* Rsense drop = 0.9mA*10ohm = 0.009V &lt;= 0.010V limit\n* vout = 0.9mA*5555.56 = 5.000V (within +/-2% of 5.0V)&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 21102\nR2 vout 0 5555&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_005<small>Two loaded rails</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_005: two loaded rails from 12V via resistor dividers\nV1 vin 0 DC 12\n* 5.0V rail: Rb = R2 || Rl5 = 100||100 = 50 ohm; Vr5 = 12*50/(70+50) = 5.00V\nR1 vin r5 70\nR2 r5 0 100\nRl5 r5 0 100\n* 3.3V rail: Rb = R4 || Rl33 = 50 ohm; Vr33 = 12*50/(131.8+50) = 3.30V\nR3 vin r33 131.8\nR4 r33 0 100\nRl33 r33 0 100\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin r5 70\nR2 r5 0 100\nRl5 r5 0 100\nR3 vin r33 132\nR4 r33 0 100\nRl33 r33 0 100\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin r5 120\nR2 r5 0 620\nRl5 r5 0 100\nR3 vin r33 200\nR4 r33 0 330\nRl33 r33 0 100&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin r5 150\nRl5 r5 0 100\nR2 vin r33 270\nRl33 r33 0 100&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* Two loaded rails from 12V supply\nV1 vin 0 DC 12\n* 5.0V rail: R1 top, R2 bottom, load 100 ohm\n* R2||Rl5 = 50 ; 12*50/(70+50) = 5.000V\nR1 vin r5 70\nR2 r5 0 100\nRl5 r5 0 100\n* 3.3V rail: R3 top, R4 bottom, load 100 ohm\n* R4||Rl33 = 50 ; 12*50/(131.818+50) = 3.300V\nR3 vin r33 131.818\nR4 r33 0 100\nRl33 r33 0 100\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* Two loaded rails from 12V supply\nV1 vin 0 DC 12\n* 5.0V rail: R1 top, R2 bottom (R2||Rl5 = 20 ohm -&gt; 12*20/(28+20) = 5.0V)\nR1 vin r5 28\nR2 r5 0 25\nRl5 r5 0 100\n* 3.3V rail: R3 top, R4 bottom (R4||Rl33 = 33 ohm -&gt; 12*33/(87+33) = 3.3V)\nR3 vin r33 87\nR4 r33 0 49.2537\nRl33 r33 0 100\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* Two loaded rails from 12V supply\n* Rail 1: r5 target 5.0V +/-5% (with 100ohm load)\n* Rail 2: r33 target 3.3V +/-5% (with 100ohm load)\nV1 vin 0 DC 12\nR5top vin r5 93.333\nR5bot r5 0 200\nRl5 r5 0 100\nR33top vin r33 197.727\nR33bot r33 0 300\nRl33 r33 0 100&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin r5 84\nR2 r5 0 150\nRl5 r5 0 100\nR3 vin r33 130\nR4 r33 0 100\nRl33 r33 0 100&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_006<small>Remote load behind a long wire</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* Remote load behind long wire: V1 -&gt; Rwire -&gt; R1 -&gt; vout, R2||Rload to ground\n* Rp = R2||Rload = 50||50 = 25 ohm; Vout = 12*25/(5+30+25) = 5.00 V\nV1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 30\nR2 vout 0 50\nRload vout 0 50\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* Remote load behind a long wire: divider R1/R2 on remote board\nV1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 61.7\nR2 vout 0 1000\nRload vout 0 50\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 30\nR2 vout 0 50\nRload vout 0 50&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 30\nR2 vout 0 50\nRload vout 0 50&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_006: remote load behind long wire, divider sets vout = 5.00V\nV1 vin 0 DC 12\nRwire vin remote 5\n* On-board divider: series Rdiv1 then shunt Rdiv2 across the load\nRdiv1 remote vout 10\nRdiv2 vout 0 13.6364\nRload vout 0 50\n* Rdiv2 || Rload = 10.7143 ; vout = 12*10.7143/(5+10+10.7143) = 5.000V\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_006: remote load behind long wire\nV1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 41.667\nR2 vout 0 100\nRload vout 0 50\n* R2||Rload = 33.3333; vout = 12*33.3333/(5+41.667+33.3333) = 5.00V&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nRdiv remote vout 65\nRload vout 0 50&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 30\nR2 vout 0 50\nRload vout 0 50&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_007<small>Wheatstone bridge balance</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* Wheatstone bridge, balanced: R2/R1 = R4/R3, V(a)=V(b)=5V\nV1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* Wheatstone bridge balanced\nV1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR3 vin b 2.2k\n* Balance: R2/R1 = R4/R3 -&gt; equal ratios give V(a)=V(b)=5V\nR2 a 0 1k\nR4 b 0 2.2k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR3 vin b 2.2k\n* Balanced bridge: R1/R2 = R3/R4 = 1 -&gt; V(a)=V(b)=5V\nR2 a 0 1k\nR4 b 0 2.2k&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR3 vin b 2.2k\nR2 a 0 1k\nR4 b 0 2.2k\n.end&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_008<small>3-bit R-2R ladder</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* 3-bit R-2R ladder DAC, code 101 -&gt; vout = 5V*5/8 = 3.125V\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\n* termination 2R\nRterm n0 0 20k\n* LSB leg\nRb0 b0 n0 20k\nR01 n0 n1 10k\n* bit1 leg\nRb1 b1 n1 20k\nR12 n1 vout 10k\n* MSB leg\nRb2 b2 vout 20k\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* 3-bit R-2R ladder DAC, code 101\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nRterm n0 0 20k\nR2b0 b0 n0 20k\nR01 n0 n1 10k\nR2b1 b1 n1 20k\nR12 n1 vout 10k\nR2b2 b2 vout 20k&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nRg n0 0 2k\nRh1 n0 n1 1k\nRh2 n1 n2 1k\nRh3 n2 vout 1k\nRv1 b0 n0 2k\nRv2 b1 n1 2k\nRv3 b2 n2 2k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nR1 b2 n1 2k\nR2 n1 0 2k\nR3 n1 n2 1k\nR4 n2 b1 2k\nR5 n2 vout 1k\nR6 vout b0 2k&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* 3-bit R-2R ladder DAC, input code b2b1b0 = 101\n* R = 10k, 2R = 20k\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\n* termination leg to ground at LSB node\nRterm n0 0 20k\n* LSB branch\nR2R0 b0 n0 20k\nRser0 n0 n1 10k\n* bit1 branch\nR2R1 b1 n1 20k\nRser1 n1 vout 10k\n* MSB branch feeds output node directly\nR2R2 b2 vout 20k\n* vout = 5*(1/2 + 0/4 + 1/8) = 3.125V (open-circuit output)&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* 3-bit R-2R ladder DAC, code 101 (b2=1,b1=0,b0=1)\n* Vout = Vref*(b2/2 + b1/4 + b0/8) = 5 * 5/8 = 3.125V\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\n* termination resistor 2R at LSB end\nRterm n0 0 2k\n* 2R branch resistors from each bit input\nRb0 b0 n0 2k\nRb1 b1 n1 2k\nRb2 b2 vout 2k\n* series R rungs of the ladder\nRs0 n0 n1 1k\nRs1 n1 vout 1k&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* 3-bit R-2R ladder DAC, code b2 b1 b0 = 1 0 1\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\n* R = 10k, 2R = 20k\nRterm n0 0 20k\nRb0 b0 n0 20k\nR01 n0 n1 10k\nRb1 b1 n1 20k\nR12 n1 vout 10k\nRb2 b2 vout 20k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nR1 n0 0 20k\nR2 n0 b0 20k\nR3 n0 n1 10k\nR4 n1 b1 20k\nR5 n1 vout 10k\nR6 vout b2 20k&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_009<small>Dropper for a constant-current load</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_009: series dropper for constant-current load\n* Iload = 40mA -&gt; drop across Rsense = 0.04V, top = 14.96V\n* Rdrop = (14.96 - 9.0)/0.040 = 149 ohm -&gt; vout = 9.00V, supply current = 40mA\nV1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 149\nIload vout 0 DC 40m\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* Dropper for constant-current load: 15V -&gt; 9V at 40mA\nV1 vin 0 DC 15\nRsense vin top 1\n* Series dropper: (15 - 0.04*1 - 9)/0.04 ~= 149 ohm, use 150 ohm -&gt; vout ~ 8.96V\nRdrop top vout 150\nIload vout 0 DC 40m\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 150\nIload vout 0 DC 40m&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 15\nRsense vin top 1\nR1 top vout 108\nR2 vout 0 600\nIload vout 0 DC 40m&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_009: 15V supply, series dropper to 9V for 40mA constant-current load\n* Total supply current = 40mA -&gt; Rsense drop = 0.040V (&lt;= 0.060V limit)\n* Required drop top-&gt;vout = 15 - 0.040 - 9.0 = 5.96V at 40mA -&gt; R = 149 ohm\nV1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 149\nIload vout 0 DC 40m\n.op&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_009: 15V supply to 9V constant-current load (40mA)\nV1 vin 0 DC 15\nRsense vin top 1\n* Series dropper: 5.96V across 40mA -&gt; 149 ohm\nRdrop top vout 149\nIload vout 0 DC 40m\n.op&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* Dropper network for constant-current load\nV1 vin 0 DC 15\nRsense vin top 1\nR1 top vout 149\nIload vout 0 DC 40m&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;Iload vout 0 DC 40m\nV1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 149&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_010<small>Multi-load distribution with a ceiling</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_010: 24V supply, shared feeder, three loads on bus\nV1 vin 0 DC 24\nRfeed vin bus 2\n* direct wires to l1 and l2\nR1 bus l1 0.01\nR2 bus l2 0.01\n* series dropper for 21V-max load: Vbus ~21.86V -&gt; V(l3) ~20.63V\nR3 bus l3 3\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\n* Itotal ~1.07A, Vbus ~21.86V, V(l1)~V(l2)~21.86V, V(l3)~20.63V\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_010: 24V bus feeding three loads through a shared 2-ohm feeder\nV1 vin 0 DC 24\nRfeed vin bus 2\n* direct wires to l1 and l2 (Vbus ~21.87V &gt;= 20V)\nR1 bus l1 0.01\nR2 bus l2 0.01\n* series dropper for the 21V-max load: V(l3) = Vbus*50/53.3 ~ 20.5V\nR3 bus l3 3.3\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\n* total supply current ~1.07A (feeder drop ~2.13V &lt; 2.4V)&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nR1 bus l1 0.01\nR2 bus l2 0.01\nR3 bus l3 2.5\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nRconnect1 bus l1 0.01\nRconnect2 bus l2 0.01\nRconnect3 bus l3 2.1\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* 24V feeder to bus, three loads\nV1 vin 0 DC 24\nRfeed vin bus 2\n* bus-to-load branch resistors\nRb1 bus l1 0.01\nRb2 bus l2 0.01\nRb3 bus l3 3.66\n* loads\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\n* Vbus ~= 21.87V, V(l1)=21.87, V(l2)=21.87, V(l3)=20.38, Isupply ~= 1.06A&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_010: 24V bus distribution with per-branch series resistors\nV1 vin 0 DC 24\nRfeed vin bus 2\nRb1 bus l1 0.01\nRb2 bus l2 0.01\nRb3 bus l3 3\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\n* V(bus)=21.864V, V(l1)=21.862V, V(l2)=21.860V, V(l3)=20.626V, Isupply=1.068A\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\nRw1 bus l1 0.01\nRw2 bus l2 0.01\nRw3 bus l3 3.2&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\nRc1 bus l1 0.01\nRc2 bus l2 0.01\nRc3 bus l3 3&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_011<small>Precision reference</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_011: 2.500V precision reference from 10V supply\n* Rsense(100) + R1(9.9k) in series = 10k; R2(5k)||Rload(10k) = 3.333k\n* Vref = 10V * 3.333k / (10k + 3.333k) = 2.500V exactly; Isupply = 0.75mA (&lt;=1.5mA)\nV1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 9.9k\nR2 vref 0 5k\nRload vref 0 10k\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_011 precision reference: 2.500V from 10V, resistive divider\nV1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 14.9k\nR2 vref 0 10k\nRload vref 0 10k\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 14.9k\nR2 vref 0 10k\nRload vref 0 10k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 5k\nR2 vref 0 2.048k\nRload vref 0 10k&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_011 Precision 2.500V reference divider\nV1 vin 0 DC 10\nRsense vin top 100\n* Divider: top -&gt; vref -&gt; gnd, sized with 10k load included\nR1 top vref 7400\nR2 vref 0 3333.3333\nRload vref 0 10k\n* Node vref: (Vt-Vref)/7400 = Vref*(1/3333.3333 + 1/10000) = 4e-4*Vref -&gt; Vt = 3.96*Vref\n* Node top: (10-Vt)/100 = 4e-4*Vref -&gt; 10 = 4.0*Vref -&gt; Vref = 2.500V exactly\n* Supply current = 4e-4*2.5 = 1.0 mA (&lt;= 1.5 mA); Rsense drop = 0.100 V (&lt;= 0.15 V)\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_011 Precision 2.500V reference from 10V supply\n* Total loop current = 0.5 mA (Rsense drop = 50 mV, well under 150 mV limit)\nV1 vin 0 DC 10\nRsense vin top 100\n* Divider: top -&gt; vref -&gt; ground\nR1 top vref 14.9k\nR2 vref 0 10k\nRload vref 0 10k\n* R2 || Rload = 5k ; vref = 10 * 5k/(100+14.9k+5k) = 2.500 V exactly&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 7400\nR2 vref 0 3333.33\nRload vref 0 10k&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* Precision 2.5V reference from 10V supply\nV1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 5000\nR2 vref 0 2048.19\nRload vref 0 10k&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_012<small>Remote dual-rail power budget</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_012: remote dual-rail power budget\n* Loads: 12V/60R = 0.2A, 5V/50R = 0.1A, aux 0.05A -&gt; Itotal = 0.35A (&lt;= 0.4A)\n* Drop across Rsense+Rwire = 0.35A * 3.5R = 1.225V -&gt; V(remote) = 46.775V\n* Rd12 = (46.775-12)/0.2 = 173.875 ohm ; Rd5 = (46.775-5)/0.1 = 417.75 ohm\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRd12 remote v12 173.875\nRd5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_012 remote dual-rail power budget\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRdrop12 remote v12 173.875\nRdrop5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRd12 remote v12 174\nRd5 remote v5 418\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nR12 remote v12 173.875\nR5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* Remote dual-rail power budget\n* Required elements\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n*\n* Budget: I12 = 12/60 = 0.2A, I5 = 5/50 = 0.1A, Iaux = 0.05A\n* Itot = 0.35A  -&gt;  Vsense = 0.35*0.5 = 0.175V (&lt;= 0.2V), Itot &lt;= 0.4A OK\n* V(top) = 48 - 0.175 = 47.825V ; V(remote) = 47.825 - 0.35*3 = 46.775V\n* Rd12 = (46.775 - 12)/0.2 = 173.875 ohm\n* Rd5  = (46.775 - 5)/0.1 = 417.75 ohm\nRd12 remote v12 173.875\nRd5 remote v5 417.75\n*\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;* Remote dual-rail power budget\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRd12 remote v12 173.875\nRd5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* Remote dual-rail power budget design\n* 48V source feeds remote board via sense + wire resistance\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\n* Dropper resistors sized so V12=12V, V5=5V exactly under given loads\n* I12 = V12/Rl12 = 12/60 = 0.2A, I5 = V5/Rl5 = 5/50 = 0.1A\n* Total supply current = I12+I5+Iaux = 0.2+0.1+0.05 = 0.35A (&lt;=0.4A)\n* Vremote = 48 - 0.35*(0.5+3) = 46.775V\n* Rd12 = (Vremote-12)/0.2 = 173.875 ohm\n* Rd5  = (Vremote-5)/0.1  = 417.75 ohm\nRd12 remote v12 173.875\nRd5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end&quot;
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRd12 remote v12 173.875\nRd5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>mech_001<small>Basic enclosure fit</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;placements&quot;: [
@@ -2921,7 +2921,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;comp_a&quot;,
@@ -2975,7 +2975,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;comp_a&quot;,
@@ -3029,7 +3029,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;comp_a&quot;,
@@ -3083,7 +3083,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;comp_a&quot;,
@@ -3137,7 +3137,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;comp_x&quot;,
@@ -3191,7 +3191,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;comp_x&quot;,
@@ -3245,7 +3245,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;comp_x&quot;,
@@ -3299,7 +3299,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;comp_x&quot;,
@@ -3369,7 +3369,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;a&quot;,
@@ -3455,7 +3455,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>c exceeds enclosure bounds</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>c exceeds enclosure bounds</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;a&quot;,
@@ -3541,7 +3541,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;a&quot;,
@@ -3627,7 +3627,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;a&quot;,
@@ -3713,7 +3713,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;s1&quot;,
@@ -3799,7 +3799,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;s1&quot;,
@@ -3885,7 +3885,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;s1&quot;,
@@ -3971,7 +3971,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;s1&quot;,
@@ -4049,7 +4049,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;m1&quot;,
@@ -4119,7 +4119,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;m1&quot;,
@@ -4189,7 +4189,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;m1&quot;,
@@ -4259,7 +4259,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;m1&quot;,
@@ -4329,7 +4329,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;usb_conn&quot;,
@@ -4399,7 +4399,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;usb_conn&quot;,
@@ -4469,7 +4469,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;usb_conn&quot;,
@@ -4539,7 +4539,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;usb_conn&quot;,
@@ -4617,7 +4617,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;hot1&quot;,
@@ -4703,7 +4703,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;hot1&quot;,
@@ -4789,7 +4789,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;hot1&quot;,
@@ -4875,7 +4875,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;hot1&quot;,
@@ -4953,7 +4953,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;pcb&quot;,
@@ -5023,7 +5023,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F2</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;pcb&quot;,
@@ -5093,7 +5093,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;pcb&quot;,
@@ -5163,7 +5163,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;pcb&quot;,
@@ -5233,7 +5233,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;A&quot;,
@@ -5303,7 +5303,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;A&quot;,
@@ -5373,7 +5373,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;A&quot;,
@@ -5443,7 +5443,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;A&quot;,
@@ -5513,7 +5513,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;display&quot;,
@@ -5583,7 +5583,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;display&quot;,
@@ -5653,7 +5653,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;display&quot;,
@@ -5723,7 +5723,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;display&quot;,
@@ -5809,7 +5809,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;m1&quot;,
@@ -5911,7 +5911,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;m1&quot;,
@@ -6013,7 +6013,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;m1&quot;,
@@ -6115,7 +6115,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;m1&quot;,
@@ -6233,7 +6233,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;dc_jack&quot;,
@@ -6367,7 +6367,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;dc_jack&quot;,
@@ -6501,7 +6501,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;dc_jack&quot;,
@@ -6635,7 +6635,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
-}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details><details class="pass"><summary>F1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;dc_jack&quot;,

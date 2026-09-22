@@ -48,10 +48,16 @@ recomputes everything from the task's own numbers.
 | Track | What the model gets | What it measures |
 |---|---|---|
 | **Single-shot** | The task. One response. | Whether the model carries the engineering knowledge and can apply it cold. |
-| **Agentic** | The task plus one tool, `grade(artifact)`, returning the violation list. Up to 5 calls. | Whether it can converge on a trustworthy design with deterministic feedback: the assistant workflow. |
+| **Agentic** | The task plus two tools: `run_python` (standard library, no network, no files, up to 15 calls) to compute and self-check, and `grade(artifact)` (up to 5 calls) which reports *which* checks failed, without the numbers. | Whether it can engineer at a desk: build its own checks, use a verifier, converge on a trustworthy design. |
 
-The gap between the tracks is a first-class result. The agentic tool is the
-grader itself, so the no-judge rule holds on both tracks.
+Single-shot is the engineer answering cold. Agentic is the engineer at a desk
+with a calculator and a checker who says "no, look at the fuse again" but not
+what number to hit. The gap between the tracks is a first-class result. The
+grader is a deterministic solver on both tracks, so the no-judge rule holds.
+
+An earlier loop (grader only, full numeric feedback, no compute tool) is kept
+in the results as the `feedback` track, marked superseded. It measured
+recovery from being told the answer, which is not the assistant workflow.
 
 ## Scope and order
 
@@ -85,8 +91,8 @@ battery coolant loop) where the method is stated and only the optimum is hard.
 
 ## Budget and metrics
 
-- 5 grader calls per task on the agentic track; 15-minute wall clock as a
-  safety net only; 3 trials per task per model per track.
+- 5 grader calls and 15 Python runs per task on the agentic track; 15-minute
+  wall clock as a safety net only; 3 trials per task per model per track.
 - Reported per model, per track, per family: mean pass rate, pass^3, mean
   attempts to first pass, tokens and cost. Token budgets are never a cutoff.
 - Model calls go through OpenRouter with the serving provider pinned and

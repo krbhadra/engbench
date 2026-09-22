@@ -1,7 +1,7 @@
 {
  "model": "haiku [claude-cli]",
  "transport": "claude-cli",
- "track": "agentic",
+ "track": "feedback",
  "settings": {
   "provider": null,
   "reasoning": null,
@@ -3624,5 +3624,6 @@
    "seconds": 181.9,
    "timestamp": "2026-09-06T16:09:47+00:00"
   }
- ]
+ ],
+ "note": "verifier-only loop: grade tool with full numeric feedback, no compute tool; superseded 2026-09-22"
 }

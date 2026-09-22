@@ -56,6 +56,26 @@ def test_agentic_budget_cap():
     assert len(rec["attempts"]) == run_eval.MAX_ATTEMPTS
 
 
+def test_agentic_python_then_grade():
+    def with_python(model, messages, tools=None, *, opts):
+        seen = [m for m in messages if m.get("role") == "tool"]
+        if not seen:
+            return {"choices": [{"message": {"role": "assistant", "content": None, "tool_calls": [{
+                "id": "p1", "type": "function", "function": {"name": "run_python", "arguments": json.dumps({"code": "print(6*7)"})}}]}}],
+                "usage": {}, "provider": "Stub", "model": "stub/model"}
+        if len(seen) == 1:
+            assert seen[0]["content"].strip() == "42", seen[0]
+            return _resp(tool_artifact=GOOD)
+        return _resp(content="done")
+    rec = run_eval.run_agentic("stub", TASK, {}, chat=with_python)
+    assert rec["passed"] is True and rec["python_calls"] == 1, rec
+
+
+def test_lean_feedback_strips_numbers():
+    out = run_eval.lean({"passed": False, "violations": ["fuse rating 400 A exceeds I_z 172.1 A", "cost 12.5% over"]})
+    assert not any(ch.isdigit() for v in out["violations"] for ch in v), out
+
+
 def test_parse_artifact_garbage():
     assert run_eval.parse_artifact("no json here") is None
     assert run_eval.parse_artifact(None) is None
