@@ -91,8 +91,8 @@ battery coolant loop) where the method is stated and only the optimum is hard.
 
 ## Budget and metrics
 
-- 5 grader calls and 15 Python runs per task on the agentic track; 
-  wall clock (30 minutes) as a safety net only; 3 trials per task per model per track.
+- 5 grader calls and 15 Python runs per task on the agentic track; a
+  30-minute wall clock as a safety net only; 3 trials per task per model per track.
 - Reported per model, per track, per family: mean pass rate, pass^3, mean
   attempts to first pass, tokens and cost. Token budgets are never a cutoff.
 - Model calls go through OpenRouter with the serving provider pinned and
