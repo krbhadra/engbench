@@ -63,7 +63,7 @@ SYSTEM_AGENTIC = (
 
 SYSTEM_AGENTIC_TEXT = (
     "You are an engineer producing a design artifact, working at a desk with a calculator and a checker. "
-    "Two kinds of reply are understood, and nothing else. (1) A reply consisting ONLY of a ```python fenced "
+    "Two kinds of reply are understood, and nothing else. (1) A reply containing a ```python fenced "
     "block runs that snippet (standard library only, no network, no files) and you receive its output as the "
     f"next message; use it to compute and to check your own design; at most {MAX_PYTHON} runs. (2) A reply "
     "consisting ONLY of a JSON object (no prose, no code fences) submits it for grading; you receive which "
@@ -226,7 +226,8 @@ def make_cli_chat():
         canonical = next(iter(usage.values()), {}).get("canonicalModel", model)
         msg = {"role": "assistant", "content": text}
         if tools and text.strip().upper() != "DONE":
-            fence = re.fullmatch(r"\s*```(?:python|py)?[ \t]*\n(.*?)\n?```\s*", text, flags=re.DOTALL)
+            # ponytail: any ```python block wins, prose around it is ignored; JSON is a submission only without one
+            fence = re.search(r"```(?:python|py)[ \t]*\n(.*?)```", text, flags=re.DOTALL)
             if fence:  # a fenced python block is a run_python call
                 msg = {"role": "assistant", "content": None, "tool_calls": [{
                     "id": f"cli{len(messages)}", "type": "function",
