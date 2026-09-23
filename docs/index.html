@@ -19,11 +19,11 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
 </style></head><body><main>
 <h1>EngBench</h1>
 <p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, plus a grader that says which check failed without the numbers, five grader calls: the engineer at a desk with a calculator and a checker. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
-<p class="lede">109 tasks · 397 task runs · 4 models · updated 2026-09-22 19:56 UTC</p>
-<h2>Leaderboard</h2><div class="wrap"><table><thead><tr><th>model</th><th>single-shot</th><th>feedback<small>superseded</small></th><th>agentic</th><th>gap</th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="good"><b>93%</b><small>42</small></td><td class="good"><b>100%</b><small>30</small></td><td class="na">–</td><td>–</td><td>42</td><td>1,716</td><td>0.109</td></tr><tr><th>haiku [claude-cli]</th><td class="mid"><b>55%</b><small>56</small></td><td class="mid"><b>85%</b><small>41</small></td><td class="na">–</td><td>–</td><td>57</td><td>24,139</td><td>0.137</td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>86%</b><small>66</small></td><td class="good"><b>100%</b><small>42</small></td><td class="good"><b>100%</b><small>12</small></td><td>+14</td><td>66</td><td>7,459</td><td>0.239</td></tr><tr><th>sonnet [claude-cli]</th><td class="mid"><b>66%</b><small>62</small></td><td class="good"><b>98%</b><small>42</small></td><td class="mid"><b>75%</b><small>4</small></td><td>+9</td><td>63</td><td>18,662</td><td>0.230</td></tr></tbody></table></div>
+<p class="lede">109 tasks · 403 task runs · 4 models · updated 2026-09-23 07:42 UTC</p>
+<h2>Leaderboard</h2><div class="wrap"><table><thead><tr><th>model</th><th>single-shot</th><th>feedback<small>superseded</small></th><th>agentic</th><th>gap</th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="good"><b>93%</b><small>42</small></td><td class="good"><b>100%</b><small>30</small></td><td class="na">–</td><td>–</td><td>42</td><td>1,716</td><td>0.109</td></tr><tr><th>haiku [claude-cli]</th><td class="mid"><b>55%</b><small>56</small></td><td class="mid"><b>85%</b><small>41</small></td><td class="na">–</td><td>–</td><td>57</td><td>24,139</td><td>0.137</td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>86%</b><small>66</small></td><td class="good"><b>100%</b><small>42</small></td><td class="good"><b>100%</b><small>12</small></td><td>+14</td><td>66</td><td>7,459</td><td>0.239</td></tr><tr><th>sonnet [claude-cli]</th><td class="mid"><b>66%</b><small>62</small></td><td class="good"><b>98%</b><small>42</small></td><td class="mid"><b>70%</b><small>10</small></td><td>+4</td><td>63</td><td>20,865</td><td>0.269</td></tr></tbody></table></div>
 <h2>Pass rate by family</h2>
 <p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
-<div class="wrap"><h3>single-shot<small>one answer, no tools</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="mid"><b>75%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>0%</b><small>3</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>92%</b><small>12</small></td><td class="bad"><b>25%</b><small>12</small></td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>50%</b><small>12</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="mid"><b>83%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td></tr><tr><th>sonnet [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>22%</b><small>9</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="mid"><b>83%</b><small>12</small></td></tr></tbody></table><h3>feedback<small>superseded: grade tool with full numbers, no compute</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="bad"><b>45%</b><small>11</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>opus [claude-cli]</th><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>sonnet [claude-cli]</th><td class="good"><b>92%</b><small>12</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr></tbody></table><h3>agentic<small>run_python + grade (which check failed, no numbers), 5 grade calls</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>opus [claude-cli]</th><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>sonnet [claude-cli]</th><td class="mid"><b>75%</b><small>4</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr></tbody></table></div>
+<div class="wrap"><h3>single-shot<small>one answer, no tools</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="mid"><b>75%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>0%</b><small>3</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>92%</b><small>12</small></td><td class="bad"><b>25%</b><small>12</small></td></tr><tr><th>opus [claude-cli]</th><td class="mid"><b>50%</b><small>12</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="mid"><b>83%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td></tr><tr><th>sonnet [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>22%</b><small>9</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="mid"><b>83%</b><small>12</small></td></tr></tbody></table><h3>feedback<small>superseded: grade tool with full numbers, no compute</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="bad"><b>45%</b><small>11</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>opus [claude-cli]</th><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>sonnet [claude-cli]</th><td class="good"><b>92%</b><small>12</small></td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr></tbody></table><h3>agentic<small>run_python + grade (which check failed, no numbers), 5 grade calls</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>haiku [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>opus [claude-cli]</th><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>sonnet [claude-cli]</th><td class="mid"><b>70%</b><small>10</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr></tbody></table></div>
 <h2>Every task, every model</h2>
 <p class="lede">S = single-shot, F = feedback (superseded), A = agentic; the digit is the number of grader attempts. Click a mark to see the model's design and the grader's violations.</p>
 <div class="wrap"><table class="matrix"><thead><tr><th>task</th><th>claude-fable-5-1 [claude-cli]</th><th>haiku [claude-cli]</th><th>opus [claude-cli]</th><th>sonnet [claude-cli]</th></tr></thead><tbody><tr><th>bess_001<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
@@ -482,7 +482,19 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 3
-}</pre><p>passed</p></details></td></tr><tr><th>bess_007<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+}</pre><p>passed</p></details><details class="fail"><summary>A5</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 17,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 4,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-4&quot;,
+ &quot;cooling_count&quot;: 2
+}</pre><p>cost 1054614.58 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>bess_007<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 14,
  &quot;pcs&quot;: &quot;PCS-4&quot;,
@@ -566,6 +578,18 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-3&quot;,
  &quot;cooling_count&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 14,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 3,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 2
 }</pre><p>passed</p></details></td></tr><tr><th>bess_008<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;cells_series&quot;: 416,
  &quot;strings_parallel&quot;: 20,
@@ -650,6 +674,18 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 2,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 5
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 21,
+ &quot;pcs&quot;: &quot;PCS-2&quot;,
+ &quot;pcs_count&quot;: 3,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-5&quot;,
+ &quot;dc_cable&quot;: &quot;C-95&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 1
 }</pre><p>passed</p></details></td></tr><tr><th>bess_010<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 11,
@@ -734,7 +770,19 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 2,
  &quot;cooling_unit&quot;: &quot;CU-4&quot;,
  &quot;cooling_count&quot;: 2
-}</pre><p>cost 974765.20 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>bess_012<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+}</pre><p>cost 974765.20 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>A4</summary><pre>{
+ &quot;cells_series&quot;: 352,
+ &quot;strings_parallel&quot;: 13,
+ &quot;pcs&quot;: &quot;PCS-2&quot;,
+ &quot;pcs_count&quot;: 2,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-6&quot;,
+ &quot;string_contactor&quot;: &quot;CT-4&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 5,
+ &quot;cooling_unit&quot;: &quot;CU-4&quot;,
+ &quot;cooling_count&quot;: 2
+}</pre><p>passed</p></details></td></tr><tr><th>bess_012<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 36,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -962,7 +1010,7 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 6
-}</pre><p>passed</p></details></td></tr><tr><th>bess_016<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+}</pre><p>passed</p></details><details class="fail"><summary>A1</summary><pre>null</pre><p>output was not a JSON object</p></details></td></tr><tr><th>bess_016<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 24,
  &quot;pcs&quot;: &quot;PCS-2&quot;,
@@ -1046,6 +1094,18 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;dc_cables_parallel&quot;: 1,
  &quot;cooling_unit&quot;: &quot;CU-2&quot;,
  &quot;cooling_count&quot;: 5
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 24,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 4,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-14&quot;,
+ &quot;string_contactor&quot;: &quot;CT-3&quot;,
+ &quot;dc_cable&quot;: &quot;C-185&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-2&quot;,
+ &quot;cooling_count&quot;: 9
 }</pre><p>passed</p></details></td></tr><tr><th>comb_001<small>Power delivery across an enclosure</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;placements&quot;: [
   {
