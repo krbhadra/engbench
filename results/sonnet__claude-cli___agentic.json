@@ -1325,6 +1325,346 @@
     {
      "artifact": {
       "cells_series": 400,
+      "strings_parallel": 36,
+      "pcs": "PCS-1",
+      "pcs_count": 6,
+      "transformer": "TX-3",
+      "string_fuse": "FU-13",
+      "string_contactor": "CT-2",
+      "dc_cable": "C-50",
+      "dc_cables_parallel": 2,
+      "cooling_unit": "CU-3",
+      "cooling_count": 1
+     },
+     "passed": false,
+     "violations": [
+      "fuse breaking capacity 200 kA is below the prospective bus fault current 238.6 kA (35 other strings + PCS contribution)"
+     ],
+     "metrics": {
+      "e_poi_mwh": 8.8734,
+      "e_req_mwh": 8.8,
+      "p_ac_mw": 2.3,
+      "i_string_a": 52.959,
+      "v_string_min_load": 1228.498,
+      "v_string_max": 1460.0,
+      "s_pcs_site_kva": 5742.0,
+      "s_pcs_needed_kva": 2468.5988,
+      "i_dc_total_a": 1906.5224,
+      "q_heat_kw": 37.1811,
+      "cooling_kw": 73.0,
+      "i_k_string_ka": 6.5647,
+      "i_fault_bus_ka": 238.5862,
+      "i_fuse_req_a": 73.5541,
+      "i_z_a": 287.7264,
+      "circuits": 8,
+      "v_drop_frac": 0.0008,
+      "s_nap_kva": 2421.0526,
+      "q_tx_kvar": 140.6759,
+      "s_tx_site_kva": 2620.0,
+      "cost": 1764496.12
+     }
+    },
+    {
+     "artifact": {
+      "cells_series": 400,
+      "strings_parallel": 36,
+      "pcs": "PCS-1",
+      "pcs_count": 6,
+      "transformer": "TX-3",
+      "string_fuse": "FU-14",
+      "string_contactor": "CT-2",
+      "dc_cable": "C-70",
+      "dc_cables_parallel": 2,
+      "cooling_unit": "CU-3",
+      "cooling_count": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "e_poi_mwh": 8.8734,
+      "e_req_mwh": 8.8,
+      "p_ac_mw": 2.3,
+      "i_string_a": 52.959,
+      "v_string_min_load": 1228.498,
+      "v_string_max": 1460.0,
+      "s_pcs_site_kva": 5742.0,
+      "s_pcs_needed_kva": 2468.5988,
+      "i_dc_total_a": 1906.5224,
+      "q_heat_kw": 37.1811,
+      "cooling_kw": 73.0,
+      "i_k_string_ka": 6.7448,
+      "i_fault_bus_ka": 244.8879,
+      "i_fuse_req_a": 73.5541,
+      "i_z_a": 365.1912,
+      "circuits": 8,
+      "v_drop_frac": 0.0006,
+      "s_nap_kva": 2421.0526,
+      "q_tx_kvar": 140.6759,
+      "s_tx_site_kva": 2620.0,
+      "cost": 1782609.16
+     }
+    }
+   ],
+   "python_calls": 16,
+   "usage": {
+    "prompt_tokens": 656271,
+    "completion_tokens": 76910,
+    "cost": 1.1529212000000002
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5",
+   "task": "bess_012",
+   "trial": 1,
+   "seconds": 851.6,
+   "timestamp": "2026-09-23T07:57:10+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 384,
+      "strings_parallel": 21,
+      "pcs": "PCS-3",
+      "pcs_count": 2,
+      "transformer": "TX-5",
+      "string_fuse": "FU-10",
+      "string_contactor": "CT-3",
+      "dc_cable": "C-50",
+      "dc_cables_parallel": 3,
+      "cooling_unit": "CU-2",
+      "cooling_count": 2
+     },
+     "passed": false,
+     "violations": [
+      "fuse conventional fusing current 1.6 x 400 A = 640 A exceeds 1.45 x I_z = 602 A (IEC 60364-4-43 overload coordination)"
+     ],
+     "metrics": {
+      "e_poi_mwh": 4.4008,
+      "e_req_mwh": 4.4,
+      "p_ac_mw": 2.2,
+      "i_string_a": 91.6566,
+      "v_string_min_load": 1159.2115,
+      "v_string_max": 1401.6,
+      "s_pcs_site_kva": 4449.0,
+      "s_pcs_needed_kva": 2346.7885,
+      "i_dc_total_a": 1924.7887,
+      "q_heat_kw": 52.64,
+      "cooling_kw": 66.0,
+      "i_k_string_ka": 7.5536,
+      "i_fault_bus_ka": 156.6122,
+      "i_fuse_req_a": 134.7891,
+      "i_z_a": 415.233,
+      "circuits": 18,
+      "v_drop_frac": 0.0006,
+      "s_nap_kva": 2315.7895,
+      "q_tx_kvar": 93.8504,
+      "s_tx_site_kva": 4288.0,
+      "cost": 1222380.18
+     }
+    },
+    {
+     "artifact": {
+      "cells_series": 384,
+      "strings_parallel": 21,
+      "pcs": "PCS-3",
+      "pcs_count": 2,
+      "transformer": "TX-5",
+      "string_fuse": "FU-10",
+      "string_contactor": "CT-3",
+      "dc_cable": "C-120",
+      "dc_cables_parallel": 2,
+      "cooling_unit": "CU-2",
+      "cooling_count": 2
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "e_poi_mwh": 4.4008,
+      "e_req_mwh": 4.4,
+      "p_ac_mw": 2.2,
+      "i_string_a": 91.6566,
+      "v_string_min_load": 1159.2115,
+      "v_string_max": 1401.6,
+      "s_pcs_site_kva": 4449.0,
+      "s_pcs_needed_kva": 2346.7885,
+      "i_dc_total_a": 1924.7887,
+      "q_heat_kw": 52.64,
+      "cooling_kw": 66.0,
+      "i_k_string_ka": 7.6888,
+      "i_fault_bus_ka": 159.3165,
+      "i_fuse_req_a": 134.7891,
+      "i_z_a": 518.5544,
+      "circuits": 12,
+      "v_drop_frac": 0.0004,
+      "s_nap_kva": 2315.7895,
+      "q_tx_kvar": 93.8504,
+      "s_tx_site_kva": 4288.0,
+      "cost": 1234675.68
+     }
+    }
+   ],
+   "python_calls": 16,
+   "usage": {
+    "prompt_tokens": 563465,
+    "completion_tokens": 56657,
+    "cost": 0.9187354
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5",
+   "task": "bess_013",
+   "trial": 1,
+   "seconds": 672.1,
+   "timestamp": "2026-09-23T08:08:23+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 400,
+      "strings_parallel": 18,
+      "pcs": "PCS-3",
+      "pcs_count": 2,
+      "transformer": "TX-6",
+      "string_fuse": "FU-13",
+      "string_contactor": "CT-3",
+      "dc_cable": "C-50",
+      "dc_cables_parallel": 2,
+      "cooling_unit": "CU-2",
+      "cooling_count": 5
+     },
+     "passed": false,
+     "violations": [
+      "string current 166.4 A exceeds the cell continuous limit 153.0 A",
+      "cooling capacity at site 40 C 182.5 kW is below heat 180.2 kW x (1 + margin) at end-of-life resistance"
+     ],
+     "metrics": {
+      "e_poi_mwh": 4.2279,
+      "e_req_mwh": 3.45,
+      "p_ac_mw": 3.45,
+      "i_string_a": 166.4497,
+      "v_string_min_load": 1167.8491,
+      "v_string_max": 1460.0,
+      "s_pcs_site_kva": 4672.0,
+      "s_pcs_needed_kva": 3702.8982,
+      "i_dc_total_a": 2996.0941,
+      "q_heat_kw": 180.2178,
+      "cooling_kw": 182.5,
+      "i_k_string_ka": 6.4548,
+      "i_fault_bus_ka": 115.731,
+      "i_fuse_req_a": 231.1801,
+      "i_z_a": 287.7264,
+      "circuits": 8,
+      "v_drop_frac": 0.0026,
+      "s_nap_kva": 3631.5789,
+      "q_tx_kvar": 211.0139,
+      "s_tx_site_kva": 5240.0,
+      "cost": 1223595.38
+     }
+    },
+    {
+     "artifact": {
+      "cells_series": 400,
+      "strings_parallel": 19,
+      "pcs": "PCS-3",
+      "pcs_count": 2,
+      "transformer": "TX-6",
+      "string_fuse": "FU-13",
+      "string_contactor": "CT-3",
+      "dc_cable": "C-50",
+      "dc_cables_parallel": 2,
+      "cooling_unit": "CU-2",
+      "cooling_count": 6
+     },
+     "passed": false,
+     "violations": [
+      "string current 157.2 A exceeds the cell continuous limit 153.0 A"
+     ],
+     "metrics": {
+      "e_poi_mwh": 4.4628,
+      "e_req_mwh": 3.45,
+      "p_ac_mw": 3.45,
+      "i_string_a": 157.2411,
+      "v_string_min_load": 1171.1768,
+      "v_string_max": 1460.0,
+      "s_pcs_site_kva": 4672.0,
+      "s_pcs_needed_kva": 3702.8982,
+      "i_dc_total_a": 2987.5811,
+      "q_heat_kw": 169.7638,
+      "cooling_kw": 219.0,
+      "i_k_string_ka": 6.4548,
+      "i_fault_bus_ka": 122.1858,
+      "i_fuse_req_a": 218.3904,
+      "i_z_a": 287.7264,
+      "circuits": 8,
+      "v_drop_frac": 0.0025,
+      "s_nap_kva": 3631.5789,
+      "q_tx_kvar": 211.0139,
+      "s_tx_site_kva": 5240.0,
+      "cost": 1272328.29
+     }
+    },
+    {
+     "artifact": {
+      "cells_series": 400,
+      "strings_parallel": 20,
+      "pcs": "PCS-3",
+      "pcs_count": 2,
+      "transformer": "TX-6",
+      "string_fuse": "FU-13",
+      "string_contactor": "CT-3",
+      "dc_cable": "C-50",
+      "dc_cables_parallel": 2,
+      "cooling_unit": "CU-2",
+      "cooling_count": 7
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "e_poi_mwh": 4.6976,
+      "e_req_mwh": 3.45,
+      "p_ac_mw": 3.45,
+      "i_string_a": 149.0002,
+      "v_string_min_load": 1174.1549,
+      "v_string_max": 1460.0,
+      "s_pcs_site_kva": 4672.0,
+      "s_pcs_needed_kva": 3702.8982,
+      "i_dc_total_a": 2980.0035,
+      "q_heat_kw": 160.4586,
+      "cooling_kw": 255.5,
+      "i_k_string_ka": 6.4548,
+      "i_fault_bus_ka": 128.6405,
+      "i_fuse_req_a": 206.9447,
+      "i_z_a": 287.7264,
+      "circuits": 8,
+      "v_drop_frac": 0.0023,
+      "s_nap_kva": 3631.5789,
+      "q_tx_kvar": 211.0139,
+      "s_tx_site_kva": 5240.0,
+      "cost": 1321061.2
+     }
+    }
+   ],
+   "python_calls": 16,
+   "usage": {
+    "prompt_tokens": 866127,
+    "completion_tokens": 55958,
+    "cost": 0.9673832000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5",
+   "task": "bess_014",
+   "trial": 1,
+   "seconds": 1288.3,
+   "timestamp": "2026-09-23T08:29:51+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 400,
       "strings_parallel": 24,
       "pcs": "PCS-1",
       "pcs_count": 4,
