@@ -228,12 +228,11 @@ def make_cli_chat():
         canonical = next(iter(usage.values()), {}).get("canonicalModel", model)
         msg = {"role": "assistant", "content": text}
         if tools and text.strip().upper() != "DONE":
-            # ponytail: any ```python block wins, prose around it is ignored; JSON is a submission only without one
-            fence = re.search(r"```(?:python|py)[ \t]*\n(.*?)```", text, flags=re.DOTALL)
-            if fence:  # a fenced python block is a run_python call
+            # ponytail: any python block wins, prose around it is ignored; JSON is a submission only without one
+            if (code := python_block(text)) is not None:  # a python block is a run_python call
                 msg = {"role": "assistant", "content": None, "tool_calls": [{
                     "id": f"cli{len(messages)}", "type": "function",
-                    "function": {"name": "run_python", "arguments": json.dumps({"code": fence.group(1)})}}]}
+                    "function": {"name": "run_python", "arguments": json.dumps({"code": code})}}]}
             elif (art := parse_artifact(text)) is not None:  # a JSON reply is a submission
                 msg = {"role": "assistant", "content": None, "tool_calls": [{
                     "id": f"cli{len(messages)}", "type": "function",
@@ -252,6 +251,13 @@ def make_cli_chat():
 
 
 # ---------- helpers ----------
+
+def python_block(text: str):
+    """Code from a ```python fence, or from native tool-call markup some models write as text instead."""
+    m = (re.search(r"```(?:python|py)[ \t]*\n(.*?)```", text, flags=re.DOTALL)
+         or re.search(r'<parameter name="code">(.*?)</parameter>', text, flags=re.DOTALL))
+    return m.group(1) if m else None
+
 
 def parse_artifact(text: str | None):
     """Pull the first JSON object out of a model reply; None if unparseable."""

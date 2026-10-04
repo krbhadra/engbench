@@ -76,6 +76,12 @@ def test_lean_feedback_strips_numbers():
     assert not any(ch.isdigit() for v in out["violations"] for ch in v), out
 
 
+def test_python_block_formats():
+    assert run_eval.python_block("Let me check.\n```python\nprint(1)\n```") == "print(1)\n"
+    assert run_eval.python_block('<invoke name="python">\n<parameter name="code">print(2)</parameter>\n</invoke>\n_x') == "print(2)"
+    assert run_eval.python_block('{"cells_series": 400}') is None
+
+
 def test_parse_artifact_garbage():
     assert run_eval.parse_artifact("no json here") is None
     assert run_eval.parse_artifact(None) is None
