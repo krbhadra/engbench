@@ -175,6 +175,8 @@ CLI_FLAGS = ["--tools", "", "--strict-mcp-config", "--disable-slash-commands",
 
 
 def _claude_exe() -> str:
+    if os.environ.get("CLAUDE_EXE"):  # e.g. a newer bundled CLI that knows newer model ids
+        return os.environ["CLAUDE_EXE"]
     found = shutil.which("claude") or "claude"
     if found.lower().endswith(".cmd"):
         # npm's batch wrapper mangles empty-string args like `--tools ""`; call the real binary
@@ -419,6 +421,7 @@ def main():
         "max_attempts": MAX_ATTEMPTS, "max_python": MAX_PYTHON, "records": [],
     }
     done = {(r["task"], r["trial"]) for r in results["records"]}
+    pinned = {r.get("resolved_model") for r in results["records"]} - {None}
     runner = RUNNERS[args.track]
 
     for task in tasks:
@@ -433,6 +436,10 @@ def main():
                 continue
             rec.update({"task": task["id"], "trial": trial, "seconds": round(time.time() - t0, 1),
                         "timestamp": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")})
+            if pinned and rec.get("resolved_model") not in pinned:  # an alias moved to a new model mid-file
+                sys.exit(f"model changed: {rec.get('resolved_model')} vs {sorted(pinned)} in {out_path.name}; "
+                         "pass an exact model id")
+            pinned.add(rec.get("resolved_model"))
             results["records"].append(rec)
             _save(out_path, results)
             status = {True: "PASS", False: "FAIL", None: "SKIP"}[rec["passed"]]
