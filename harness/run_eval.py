@@ -172,6 +172,14 @@ def chat(model: str, messages: list, tools=None, *, opts: dict) -> dict:
 
 CLI_FLAGS = ["--tools", "", "--strict-mcp-config", "--disable-slash-commands",
              "--setting-sources", "", "--output-format", "json"]
+# When a model emits native tool-call markup with no tools enabled, the CLI injects this retry turn,
+# and a later --resume rebuilds the session from it: the task statement is gone.
+CLI_RETRY_MARK = "failed to produce a valid tool call"
+
+
+def cli_session_lost_task(session_id: str) -> bool:
+    log = Path.home() / ".claude" / "projects" / re.sub(r"[^A-Za-z0-9]", "-", os.getcwd()) / f"{session_id}.jsonl"
+    return log.exists() and CLI_RETRY_MARK in log.read_text(encoding="utf-8", errors="replace")
 
 
 def _claude_exe() -> str:
@@ -223,6 +231,8 @@ def make_cli_chat():
             time.sleep(backoff[attempt])
 
         session["id"] = d.get("session_id")
+        if session["id"] and cli_session_lost_task(session["id"]):  # transport failure: redo, pass or fail
+            raise RuntimeError("cli injected a tool-call retry turn; the session lost the task statement")
         text = d.get("result") or ""
         usage = d.get("modelUsage") or {}
         canonical = next(iter(usage.values()), {}).get("canonicalModel", model)
