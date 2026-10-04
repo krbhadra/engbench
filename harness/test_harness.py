@@ -79,6 +79,7 @@ def test_lean_feedback_strips_numbers():
 def test_python_block_formats():
     assert run_eval.python_block("Let me check.\n```python\nprint(1)\n```") == "print(1)\n"
     assert run_eval.python_block('<invoke name="python">\n<parameter name="code">print(2)</parameter>\n</invoke>\n_x') == "print(2)"
+    assert run_eval.python_block('<ns:parameter name="code">print(3)</ns:parameter>') == "print(3)"
     assert run_eval.python_block('{"cells_series": 400}') is None
 
 

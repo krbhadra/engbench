@@ -255,7 +255,7 @@ def make_cli_chat():
 def python_block(text: str):
     """Code from a ```python fence, or from native tool-call markup some models write as text instead."""
     m = (re.search(r"```(?:python|py)[ \t]*\n(.*?)```", text, flags=re.DOTALL)
-         or re.search(r'<parameter name="code">(.*?)</parameter>', text, flags=re.DOTALL))
+         or re.search(r'<(?:\w+:)?parameter name="code">(.*?)</(?:\w+:)?parameter>', text, flags=re.DOTALL))
     return m.group(1) if m else None
 
 
