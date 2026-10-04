@@ -164,7 +164,7 @@ Runs are resumable: records already in the results file are skipped.
 
 Results land in `results/` as one JSON file per model per track, with the
 full attempt trajectory for every trial. The leaderboard script prints
-single-shot and agentic pass rates side by side, plus the gap.
+single-shot pass rate beside the agentic first-design rate, plus the gap.
 
 ## Results page
 
@@ -179,8 +179,10 @@ is what GitHub Pages serves, so the same file is the public site.
 
 ## Metrics
 
-Per model, per track: mean pass rate over 3 trials, pass^3, mean attempts to
-first pass (agentic), mean tokens and cost per task. See VISION.md for the
+Agentic headline: first-design pass rate (the first graded design passes);
+passing within 5 grader calls saturates for strong models, so it sits beside
+it. Also per model, per track: pass rate over 3 trials, pass^3, grader calls
+to pass, mean tokens and cost per task. See VISION.md for the
 reasoning behind the budget.
 
 ## Status

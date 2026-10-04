@@ -13,7 +13,7 @@ TRACKS = ("single-shot", "feedback", "agentic")
 
 
 def summarize(records):
-    """pass rate, pass^k, mean attempts to first pass, mean cost. Skipped (None) records excluded."""
+    """pass rate, first-design pass rate, pass^k, mean attempts to first pass, mean cost. Skipped (None) excluded."""
     recs = [r for r in records if r["passed"] is not None]
     if not recs:
         return None
@@ -26,6 +26,7 @@ def summarize(records):
     return {
         "tasks": len(by_task),
         "pass_rate": sum(r["passed"] for r in recs) / len(recs),
+        "first": sum(bool(r["attempts"]) and r["attempts"][0]["passed"] is True for r in recs) / len(recs),
         "pass_k": sum(len(v) == k and all(r["passed"] for r in v) for v in by_task.values()) / len(by_task),
         "k": k,
         "attempts": sum(first_pass) / len(first_pass) if first_pass else float("nan"),
@@ -64,19 +65,22 @@ def main():
             print(f"{model:40} " + " ".join(f"{c:>13}" for c in cells))
         print()
 
-    hdr = (f"{'model':40} {'single':>7} {'feedback':>9} {'agentic':>8} {'gap':>6} "
-           f"{'ss pass^k':>10} {'ag pass^k':>10} {'attempts':>9} {'$/task':>8}")
+    hdr = (f"{'model':40} {'single':>7} {'ag first':>9} {'gap':>6} {'ag pass':>8} {'ag pass^k':>10} "
+           f"{'attempts':>9} {'feedback':>9} {'$/task':>8}")
     print(hdr)
     print("-" * len(hdr))
-    print("feedback = verifier-only loop (superseded); agentic = run_python + grade with lean feedback; gap = agentic - single")
+    print("ag first = agentic, first graded design passes (headline); gap = ag first - single on shared tasks; "
+          "ag pass = passes within 5 grader calls; feedback = superseded loop")
     for model, tracks in sorted(table.items()):
         ss, fb, ag = tracks.get("single-shot"), tracks.get("feedback"), tracks.get("agentic")
-        gap = f"{(ag['pass_rate'] - ss['pass_rate']) * 100:+5.1f}" if ss and ag else "     -"
+        shared = {r["task"] for r in raw[model].get("agentic", [])}  # gap only over tasks both tracks ran
+        ss_same = summarize([r for r in raw[model].get("single-shot", []) if r["task"] in shared])
+        ag_same = summarize([r for r in raw[model].get("agentic", []) if r["task"] in {x["task"] for x in raw[model].get("single-shot", [])}])
+        gap = f"{(ag_same['first'] - ss_same['pass_rate']) * 100:+5.1f}" if ss_same and ag_same else "     -"
         attempts = ag["attempts"] if ag else float("nan")
         cost = (ag or ss)["cost"] if (ag or ss) else 0.0
-        print(f"{model:40} {pct(ss and ss['pass_rate']):>7} {pct(fb and fb['pass_rate']):>9} {pct(ag and ag['pass_rate']):>8} {gap:>6} "
-              f"{pct(ss and ss['pass_k']):>10} {pct(ag and ag['pass_k']):>10} "
-              f"{attempts:>9.2f} {cost:>8.4f}")
+        print(f"{model:40} {pct(ss and ss['pass_rate']):>7} {pct(ag and ag['first']):>9} {gap:>6} {pct(ag and ag['pass_rate']):>8} "
+              f"{pct(ag and ag['pass_k']):>10} {attempts:>9.2f} {pct(fb and fb['pass_rate']):>9} {cost:>8.4f}")
 
 
 if __name__ == "__main__":

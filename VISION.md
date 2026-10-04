@@ -93,8 +93,13 @@ battery coolant loop) where the method is stated and only the optimum is hard.
 
 - 5 grader calls and 15 Python runs per task on the agentic track; a
   30-minute wall clock as a safety net only; 3 trials per task per model per track.
-- Reported per model, per track, per family: mean pass rate, pass^3, mean
-  attempts to first pass, tokens and cost. Token budgets are never a cutoff.
+- Agentic headline: the **first-design pass rate**, the share of runs whose
+  first graded design passes. Passing within 5 grader calls saturates for
+  strong models (three of four Claude models reached 100% on `bess`, October
+  2026), so it is reported beside the headline, not as it.
+- Reported per model, per track, per family: first-design rate (agentic),
+  pass rate, pass^3, grader calls to pass, tokens and cost. Token budgets are
+  never a cutoff.
 - Model calls go through OpenRouter with the serving provider pinned and
   logged, or through the `claude` CLI on a subscription, labeled separately.
   Providers that train on prompts are excluded.

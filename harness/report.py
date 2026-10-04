@@ -19,7 +19,7 @@ OUT = ROOT / "docs" / "index.html"
 TRACKS = ("single-shot", "feedback", "agentic")
 MARK = {"single-shot": "S", "feedback": "F", "agentic": "A"}
 TRACK_NOTE = {"single-shot": "one answer, no tools", "feedback": "superseded: grade tool with full numbers, no compute",
-              "agentic": "run_python + grade (which check failed, no numbers), 5 grade calls"}
+              "agentic": "first graded design passes; run_python + grade (which check failed, no numbers)"}
 DISCIPLINES = {"mech": "mechanical", "elec": "electrical", "comb": "mechanical + electrical",
                "pe_cooling": "electronics + thermal + fluids", "coolant_loop": "thermal + fluids"}
 
@@ -42,6 +42,12 @@ def rate(recs):
     return (sum(r["passed"] for r in recs) / len(recs), len(recs)) if recs else (None, 0)
 
 
+def first_rate(recs):
+    """Agentic headline: the first graded design passes."""
+    recs = [r for r in recs if r["passed"] is not None]
+    return (sum(bool(r["attempts"]) and r["attempts"][0]["passed"] is True for r in recs) / len(recs), len(recs)) if recs else (None, 0)
+
+
 def cell(r):
     if r is None:
         return '<td class="na">–</td>'
@@ -62,16 +68,21 @@ def build(runs, tasks):
     fams = sorted({family(r["task"]) for d in runs for r in d["records"]})
 
     # ---- leaderboard
-    lb = ['<table><thead><tr><th>model</th><th>single-shot</th><th>feedback<small>superseded</small></th><th>agentic</th><th>gap</th>'
-          '<th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody>']
+    lb = ['<table><thead><tr><th>model</th><th>single-shot</th><th>agentic<small>first design</small></th><th>gap<small>first design − single-shot, same tasks</small></th>'
+          '<th>agentic<small>pass in 5 grader calls</small></th><th>grader calls<small>to pass</small></th>'
+          '<th>feedback<small>superseded</small></th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody>']
     for m in models:
         ss, fb, ag = by.get((m, "single-shot"), []), by.get((m, "feedback"), []), by.get((m, "agentic"), [])
-        rs, rf, ra = rate(ss), rate(fb), rate(ag)
-        gap = f"{(ra[0]-rs[0])*100:+.0f}" if rs[0] is not None and ra[0] is not None else "–"
+        rs, rf, ra, r1 = rate(ss), rate(fb), rate(ag), first_rate(ag)
+        both = {r["task"] for r in ss} & {r["task"] for r in ag}  # gap only over tasks both tracks ran
+        g_ss, g_ag = rate([r for r in ss if r["task"] in both]), first_rate([r for r in ag if r["task"] in both])
+        gap = f"{(g_ag[0]-g_ss[0])*100:+.0f}" if g_ss[0] is not None and g_ag[0] is not None else "–"
+        passed = [len(r["attempts"]) for r in ag if r["passed"]]
+        calls = f"{sum(passed) / len(passed):.2f}" if passed else "–"
         allr = [r for r in ss + fb + ag if r["passed"] is not None]
         tok = sum(r["usage"].get("completion_tokens", 0) for r in allr) / max(1, len(allr))
         cost = sum(r["usage"].get("cost", 0) for r in allr) / max(1, len(allr))
-        lb.append(f"<tr><th>{esc(m)}</th>{cell(rs)}{cell(rf)}{cell(ra)}<td>{gap}</td><td>{len({r['task'] for r in allr})}</td>"
+        lb.append(f"<tr><th>{esc(m)}</th>{cell(rs)}{cell(r1)}<td>{gap}</td>{cell(ra)}<td>{calls}</td>{cell(rf)}<td>{len({r['task'] for r in allr})}</td>"
                   f"<td>{tok:,.0f}</td><td>{cost:.3f}</td></tr>")
     lb.append("</tbody></table>")
 
@@ -85,7 +96,8 @@ def build(runs, tasks):
         t.append("</tr></thead><tbody>")
         for m in models:
             recs = by.get((m, track), [])
-            t.append(f"<tr><th>{esc(m)}</th>" + "".join(cell(rate([r for r in recs if family(r["task"]) == f])) for f in fams) + "</tr>")
+            score = first_rate if track == "agentic" else rate
+            t.append(f"<tr><th>{esc(m)}</th>" + "".join(cell(score([r for r in recs if family(r["task"]) == f])) for f in fams) + "</tr>")
         t.append("</tbody></table>")
         fam_tables.append("".join(t))
 
@@ -134,10 +146,10 @@ details[open]{{display:block;max-width:520px;white-space:normal}} details pre{{f
 a{{color:var(--accent)}} footer{{margin-top:48px;color:var(--muted);font-size:13px}}
 </style></head><body><main>
 <h1>EngBench</h1>
-<p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, plus a grader that says which check failed without the numbers, five grader calls: the engineer at a desk with a calculator and a checker. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
+<p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, plus a grader that says which check failed without the numbers, five grader calls: the engineer at a desk with a calculator and a checker. The agentic headline is the <b>first-design</b> rate, whether the first design it submits passes; passing within five grader calls is shown beside it but saturates for strong models. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
 <p class="lede">{n_tasks} tasks · {n_runs} task runs · {len(models)} models · updated {stamp}</p>
 <h2>Leaderboard</h2><div class="wrap">{"".join(lb)}</div>
-<h2>Pass rate by family</h2>
+<h2>By family</h2>
 <p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
 <div class="wrap">{"".join(fam_tables)}</div>
 <h2>Every task, every model</h2>
