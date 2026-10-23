@@ -2,46 +2,77 @@
 
 ## The question
 
-Can a language model do real engineering work that an engineer would trust?
-Not recite formulas, not pass a physics quiz: take requirements, bring the
-knowledge a practising engineer carries, and produce a design that closes
-across every discipline it touches.
+Can an AI do the engineering that brings a real product into the world, and
+can an engineer trust the answer?
 
-Software got its answer from SWE-bench and its descendants: real repos, real
+The bar is not one engineer. It is the collective intelligence of a whole
+engineering organisation: the systems engineering, programme management and
+every department of a company like SpaceX, Tesla or BYD, taking a product from
+stakeholder needs to a design that closes across every discipline. A good AI
+should act like that organisation does, unprompted: find the requirements
+nobody wrote down, choose the architecture with a reason, and make every
+department's numbers agree.
+
+Software got its answer from SWE-bench and its descendants: real repos, hidden
 tests, pass or fail. Engineering has nothing comparable. Existing benchmarks
-are single-discipline, school-level, and graded by another model deciding
+are single-component, school-level, or graded by another model deciding
 whether the answer "looks right".
 
-## What we measure
+## The score
 
-Models produce **design artifacts**: a chosen set of parts, a sizing, a
-set of operating points. Those artifacts are graded by **deterministic
-solvers**, never by an LLM judge. A design either meets every requirement
-or it names the one it misses.
+One number out of 100, built so that the lower ranges are easy and the top is
+nearly out of reach. Tasks sit on a ladder of six levels. Each level roughly
+doubles the expert effort of the one below. Each level is worth a fixed,
+published number of points; a model earns that level's points times its pass
+rate on that level's tasks, and the score is the sum. Anyone can recompute it
+from the raw results with a calculator.
 
-Three properties make a task worth having:
+| Score | Level | Points | Expert effort | What a model in this range can be trusted with |
+|---|---|---|---|---|
+| 0–15 | 1 | 15 | ~15 min | Component calculations when the physics is given |
+| 15–35 | 2 | 20 | ~1 h | A full system chain when the standards are named |
+| 35–50 | 3 | 15 | ~4 h | A system designed right first time, finding its own requirements |
+| 50–70 | 4 | 20 | ~1 day | A product subsystem across disciplines, e.g. battery management + inverter controls + grid code |
+| 70–85 | 5 | 15 | ~1 week | A product programme across several departments |
+| 85–100 | 6 | 15 | ~1 month+ | A whole engineering organisation's programme |
 
-1. **Knowledge is required, not supplied.** The task gives the requirements
-   and the data (catalogs, datasheet values, site conditions) and *names* the
-   method or standard to design to. It does not restate the method. An
-   engineer knows IPC-2221, knows what a manufacturer's derating curve means,
-   knows a contactor must be rated above the protection setting. A model that
-   does not carry this fails single-shot. Whether it can recover from grader
-   feedback is the second thing we measure.
-2. **Systems, not components.** Requirements flow down through a
-   multi-discipline chain and every level must close: energy, power, voltage
-   window, current, thermal, mass, cost, protection coordination, with a
-   stated margin policy. The grader also checks **interface consistency**
-   between the parts of the design, because a pack whose current limit
-   exceeds its contactor rating is a mistake that ships.
-3. **The optimum, not just a feasible point.** Every generated task carries an
-   objective and a brute-force optimum. A feasible design far from the optimum
-   fails. Feasibility alone was saturated by every frontier model the moment
-   the physics was stated.
+The "trusted with" column is a target until it is validated: experienced
+engineers take sample tasks at each level under the same rules, and a level's
+claim stands only if they score where we say. Expert effort is likewise
+measured, not guessed, once human baselines exist.
 
-Difficulty comes from the engineering, never from arithmetic. Reference
-methods are cited by name, parameters are perturbed per seed, and the grader
-recomputes everything from the task's own numbers.
+The same score must mean the same thing over time. Each level keeps enough
+tasks, and a private held-out set of seeds for the official score, so that a
+60 next year means what a 60 means today.
+
+## What makes a level harder
+
+Difficulty comes from scope and coupling, never from arithmetic or tricks.
+Moving up the ladder means:
+
+- **More of the organisation.** Level 1 is one component. Level 6 couples
+  stakeholder needs, requirements flow-down, architecture trade studies,
+  cells and DC side, power electronics and controls, embedded hardware and
+  firmware, grid connection and certification, thermal, fire safety,
+  mechanical, cost, verification and risk. An error in one department must
+  break the others, the way it does in a real programme.
+- **More knowledge required, less supplied.** At level 2 the task names the
+  standards to design to. From level 3 it names nothing: knowing that VDE-AR-N
+  4110, IEC 62619 or IEC 60364-4-43 applies is part of the test.
+- **Hidden requirements.** The grader checks requirements the prompt never
+  states, the way hidden tests do in software benchmarks: a grid fault at
+  0.3 pu, a cold start at full power, a rack in thermal runaway. A senior team
+  anticipates them.
+- **The optimum, not just a feasible point.** Generated tasks carry an
+  objective and a brute-force optimum. A feasible design far from it fails.
+- **Messier inputs.** Datasheets with conflicting values, missing data the
+  model must flag or bound, site data in the units the source used.
+- **Less help from the grader.** At level 3 and above the first submitted
+  design is the one that counts.
+
+Deliverables stay machine-checkable at every level: structured requirement
+records, architecture graphs with rated interfaces, sizing, bills of material.
+Prose that a solver cannot check is not scored.
 
 ## Two tracks
 
@@ -50,31 +81,29 @@ recomputes everything from the task's own numbers.
 | **Single-shot** | The task. One response. | Whether the model carries the engineering knowledge and can apply it cold. |
 | **Agentic** | The task plus two tools: `run_python` (standard library, no network, no files, up to 15 calls) to compute and self-check, and `grade(artifact)` (up to 5 calls) which reports *which* checks failed, without the numbers. | Whether it can engineer at a desk: build its own checks, use a verifier, converge on a trustworthy design. |
 
-Single-shot is the engineer answering cold. Agentic is the engineer at a desk
-with a calculator and a checker who says "no, look at the fuse again" but not
-what number to hit. The gap between the tracks is a first-class result. The
-grader is a deterministic solver on both tracks, so the no-judge rule holds.
+On the agentic track the **first graded design** is what scores; passing
+within five grader calls is reported beside it, because with the checker's
+pointer strong models pass almost everything (three of four Claude models
+reached 100% on the level-2 storage tasks, October 2026). The grader is a
+deterministic solver on both tracks, so the no-judge rule holds.
 
 An earlier loop (grader only, full numeric feedback, no compute tool) is kept
-in the results as the `feedback` track, marked superseded. It measured
-recovery from being told the answer, which is not the assistant workflow.
+in the results as the `feedback` track, marked superseded.
 
 ## Scope and order
 
-Disciplines first, industries later. Mechanical, electrical, electronics,
-thermal, fluids, controls, structural, materials, and the systems-engineering
-layer that ties them together. Industry is a tag once there is enough
-coverage to slice by.
+Disciplines first, industries later. Industry is a tag once there is enough
+coverage to slice by. The first product on the ladder is a grid-connected
+battery energy storage system, because the author can validate the
+engineering practice directly, not because the benchmark is about storage.
 
-The first knowledge-required systems chain is a battery energy storage
-system: cells to module to pack to power conversion to grid connection, with
-thermal, protection, and mechanical closure. Chosen because the author can
-validate the engineering practice directly, not because the benchmark is
-about storage.
-
-Earlier families stay in the set as a floor: box-packing and DC-circuit tasks
-(saturated), and two cross-discipline physics chains (converter cooling,
-battery coolant loop) where the method is stated and only the optimum is hard.
+- Level 1: the component families (packing, DC circuits, converter cooling,
+  coolant loop), where the physics is stated.
+- Level 2: the storage chain from cells to the 20 kV connection, standards
+  named (`bess`).
+- Level 3: the same chain with nothing named, hidden requirements and one
+  submission.
+- Level 4 and up: the storage product's subsystems, then its programme.
 
 ## Sources and honesty
 
@@ -86,20 +115,22 @@ battery coolant loop) where the method is stated and only the optimum is hard.
 - Every task has a golden solution that passes and broken solutions that fail
   with a named violation. A grader that cannot fail a wrong answer is not a
   grader.
-- Tasks, graders, harness, raw model outputs, and the results page all ship
-  in the repo under MIT. Anyone can rerun it.
+- Answer keys for levels 3 and up are written or reviewed by practising
+  engineers in that discipline; a department is scored only once its key has
+  a reviewer.
+- Tasks, graders, harness, raw model outputs, and the results page ship in the
+  repo under MIT, except the held-out seeds. Anyone can rerun the public set.
 
 ## Budget and metrics
 
 - 5 grader calls and 15 Python runs per task on the agentic track; a
-  30-minute wall clock as a safety net only; 3 trials per task per model per track.
-- Agentic headline: the **first-design pass rate**, the share of runs whose
-  first graded design passes. Passing within 5 grader calls saturates for
-  strong models (three of four Claude models reached 100% on `bess`, October
-  2026), so it is reported beside the headline, not as it.
-- Reported per model, per track, per family: first-design rate (agentic),
-  pass rate, pass^3, grader calls to pass, tokens and cost. Token budgets are
-  never a cutoff.
-- Model calls go through OpenRouter with the serving provider pinned and
-  logged, or through the `claude` CLI on a subscription, labeled separately.
-  Providers that train on prompts are excluded.
+  30-minute wall clock as a safety net only; 3 trials per task per model per
+  track.
+- Headline: the score out of 100, per track. Also reported per model, per
+  level, per family: pass rate, first-design rate, pass^3, grader calls to
+  pass, tokens and cost. Token budgets are never a cutoff.
+- Model calls go through an API with the serving provider pinned and logged,
+  or through the `claude` CLI on a subscription, labeled separately. Providers
+  that train on prompts are excluded.
+- Adaptive serving (harder tasks after correct answers, as in adaptive exams)
+  is a later cost optimisation, once every level has a calibrated task bank.
