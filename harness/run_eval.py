@@ -57,7 +57,7 @@ SYSTEM_AGENTIC = (
     "You have two tools. `run_python` runs a Python snippet (standard library only, no network, no files) "
     f"and returns its output; use it to compute and to check your own design; at most {MAX_PYTHON} calls. "
     "`grade` checks a candidate design against the task's requirements and reports which checks failed, "
-    f"without the numbers; at most {MAX_ATTEMPTS} calls. Stop as soon as grade passes. "
+    "without the numbers; at most {max_grades} calls. Stop as soon as grade passes. "
     "The artifact must be a JSON object in this exact shape:\n{shape}"
 )
 
@@ -67,7 +67,7 @@ SYSTEM_AGENTIC_TEXT = (
     "block runs that snippet (standard library only, no network, no files) and you receive its output as the "
     f"next message; use it to compute and to check your own design; at most {MAX_PYTHON} runs. (2) A reply "
     "consisting ONLY of a JSON object (no prose, no code fences) submits it for grading; you receive which "
-    f"checks failed, without the numbers, as the next message; at most {MAX_ATTEMPTS} submissions. When the "
+    "checks failed, without the numbers, as the next message; at most {max_grades} submissions. When the "
     "grader reports passed: true, reply with the single word DONE. The artifact must be a JSON object in this "
     "exact shape:\n{shape}"
 )
@@ -201,7 +201,8 @@ def make_cli_chat():
     def chat_cli(model: str, messages: list, tools=None, *, opts: dict) -> dict:
         system = messages[0]["content"]
         if tools:  # text protocol replaces the tool protocol; keep the shape line
-            system = SYSTEM_AGENTIC_TEXT.format(shape=system.rsplit("\n", 1)[1])
+            system = SYSTEM_AGENTIC_TEXT.format(shape=system.rsplit("\n", 1)[1],
+                                                max_grades=opts.get("max_grades", MAX_ATTEMPTS))
         if session["id"] is None:
             prompt = messages[1]["content"]
         else:
@@ -331,15 +332,17 @@ def run_single_shot(model, task, opts, chat=chat):
 
 
 def run_agentic(model, task, opts, chat=chat):
+    max_grades = task.get("max_grades", MAX_ATTEMPTS)  # level 3+: the first graded design is final
+    opts = {**opts, "max_grades": max_grades}
     messages = [
-        {"role": "system", "content": SYSTEM_AGENTIC.format(shape=_shape(task))},
+        {"role": "system", "content": SYSTEM_AGENTIC.format(shape=_shape(task), max_grades=max_grades)},
         {"role": "user", "content": _task_prompt(task)},
     ]
     usage, attempts, provider, resolved = {}, [], None, None
     python_calls, t0 = 0, time.time()
     feedback = (lambda r: r) if opts.get("feedback") == "full" else lean
 
-    while len(attempts) < MAX_ATTEMPTS and time.time() - t0 < TASK_TIMEOUT:
+    while len(attempts) < max_grades and time.time() - t0 < TASK_TIMEOUT:
         resp = chat(model, messages, tools=AGENTIC_TOOLS, opts=opts)
         _accumulate(usage, resp)
         provider, resolved = resp.get("provider"), resp.get("model")
@@ -362,7 +365,7 @@ def run_agentic(model, task, opts, chat=chat):
                 out = run_python(str(args.get("code", ""))) if python_calls <= MAX_PYTHON else "[run_python budget exhausted]"
                 messages.append({"role": "tool", "tool_call_id": call["id"], "name": name, "content": out})
                 continue
-            if len(attempts) >= MAX_ATTEMPTS:
+            if len(attempts) >= max_grades:
                 messages.append({"role": "tool", "tool_call_id": call["id"], "name": "grade",
                                  "content": json.dumps({"error": "attempt budget exhausted"})})
                 continue

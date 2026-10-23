@@ -10,6 +10,29 @@ from pathlib import Path
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
 TRACKS = ("single-shot", "feedback", "agentic")
+# The ladder (VISION.md): each level's published points; score = sum of points x pass rate at that level.
+LEVEL_POINTS = {1: 15, 2: 20, 3: 15, 4: 20, 5: 15, 6: 15}
+LEVEL_OF_FAMILY = {"mech": 1, "elec": 1, "comb": 1, "pe_cooling": 1, "coolant_loop": 1, "bess": 2, "bess3": 3}
+
+
+def family(task_id):
+    return task_id.rsplit("_", 1)[0]
+
+
+def passed_for_score(r, track):
+    """Agentic scores the first graded design; single-shot its only answer."""
+    return bool(r["attempts"]) and r["attempts"][0]["passed"] is True if track == "agentic" else r["passed"] is True
+
+
+def score(records, track):
+    """(score out of 100, {level: pass rate}). Levels with no runs earn 0 points."""
+    recs = [r for r in records if r["passed"] is not None]
+    rates = {}
+    for lvl in LEVEL_POINTS:
+        at = [r for r in recs if LEVEL_OF_FAMILY.get(family(r["task"])) == lvl]
+        if at:
+            rates[lvl] = sum(passed_for_score(r, track) for r in at) / len(at)
+    return sum(LEVEL_POINTS[l] * v for l, v in rates.items()), rates
 
 
 def summarize(records):
@@ -64,6 +87,18 @@ def main():
                 cells.append(f"{pct(sum(r['passed'] for r in fr) / len(fr))} ({len(fr):2d})" if fr else f"{'-':>13}")
             print(f"{model:40} " + " ".join(f"{c:>13}" for c in cells))
         print()
+
+    print(f"{'score out of 100 (levels run)':40} {'single-shot':>22} {'agentic':>22}")
+    for model, tracks in sorted(raw.items()):
+        cells = []
+        for tr in ("single-shot", "agentic"):
+            if tr in tracks:
+                sc, rates = score(tracks[tr], tr)
+                cells.append(f"{sc:5.1f} (L{','.join(map(str, sorted(rates)))})")
+            else:
+                cells.append("-")
+        print(f"{model:40} {cells[0]:>22} {cells[1]:>22}")
+    print()
 
     hdr = (f"{'model':40} {'single':>7} {'ag first':>9} {'gap':>6} {'ag pass':>8} {'ag pass^k':>10} "
            f"{'attempts':>9} {'feedback':>9} {'$/task':>8}")

@@ -13,6 +13,8 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
+from leaderboard import score
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs" / "index.html"
 
@@ -68,7 +70,7 @@ def build(runs, tasks):
     fams = sorted({family(r["task"]) for d in runs for r in d["records"]})
 
     # ---- leaderboard
-    lb = ['<table><thead><tr><th>model</th><th>single-shot</th><th>agentic<small>first design</small></th><th>gap<small>first design − single-shot, same tasks</small></th>'
+    lb = ['<table><thead><tr><th>model</th><th>score<small>single-shot</small></th><th>score<small>agentic</small></th><th>single-shot</th><th>agentic<small>first design</small></th><th>gap<small>first design − single-shot, same tasks</small></th>'
           '<th>agentic<small>pass in 5 grader calls</small></th><th>grader calls<small>to pass</small></th>'
           '<th>feedback<small>superseded</small></th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody>']
     for m in models:
@@ -82,7 +84,12 @@ def build(runs, tasks):
         allr = [r for r in ss + fb + ag if r["passed"] is not None]
         tok = sum(r["usage"].get("completion_tokens", 0) for r in allr) / max(1, len(allr))
         cost = sum(r["usage"].get("cost", 0) for r in allr) / max(1, len(allr))
-        lb.append(f"<tr><th>{esc(m)}</th>{cell(rs)}{cell(r1)}<td>{gap}</td>{cell(ra)}<td>{calls}</td>{cell(rf)}<td>{len({r['task'] for r in allr})}</td>"
+        def sc(recs, tr):
+            if not recs:
+                return '<td class="na">–</td>'
+            v, rates = score(recs, tr)
+            return f'<td><b>{v:.1f}</b><small>levels run: {", ".join(map(str, sorted(rates)))}</small></td>'
+        lb.append(f"<tr><th>{esc(m)}</th>{sc(ss, 'single-shot')}{sc(ag, 'agentic')}{cell(rs)}{cell(r1)}<td>{gap}</td>{cell(ra)}<td>{calls}</td>{cell(rf)}<td>{len({r['task'] for r in allr})}</td>"
                   f"<td>{tok:,.0f}</td><td>{cost:.3f}</td></tr>")
     lb.append("</tbody></table>")
 
@@ -96,8 +103,8 @@ def build(runs, tasks):
         t.append("</tr></thead><tbody>")
         for m in models:
             recs = by.get((m, track), [])
-            score = first_rate if track == "agentic" else rate
-            t.append(f"<tr><th>{esc(m)}</th>" + "".join(cell(score([r for r in recs if family(r["task"]) == f])) for f in fams) + "</tr>")
+            metric = first_rate if track == "agentic" else rate
+            t.append(f"<tr><th>{esc(m)}</th>" + "".join(cell(metric([r for r in recs if family(r["task"]) == f])) for f in fams) + "</tr>")
         t.append("</tbody></table>")
         fam_tables.append("".join(t))
 
@@ -148,7 +155,7 @@ a{{color:var(--accent)}} footer{{margin-top:48px;color:var(--muted);font-size:13
 <h1>EngBench</h1>
 <p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, plus a grader that says which check failed without the numbers, five grader calls: the engineer at a desk with a calculator and a checker. The agentic headline is the <b>first-design</b> rate, whether the first design it submits passes; passing within five grader calls is shown beside it but saturates for strong models. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
 <p class="lede">{n_tasks} tasks · {n_runs} task runs · {len(models)} models · updated {stamp}</p>
-<h2>Leaderboard</h2><div class="wrap">{"".join(lb)}</div>
+<h2>Leaderboard</h2><p class="lede">Score out of 100: six levels, each worth published points (15, 20, 15, 20, 15, 15), earned at that level's pass rate; agentic counts the first graded design. Levels a model has not run earn nothing, so compare scores only across the same levels run.</p><div class="wrap">{"".join(lb)}</div>
 <h2>By family</h2>
 <p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
 <div class="wrap">{"".join(fam_tables)}</div>

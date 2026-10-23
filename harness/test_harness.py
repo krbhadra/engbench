@@ -56,6 +56,11 @@ def test_agentic_budget_cap():
     assert len(rec["attempts"]) == run_eval.MAX_ATTEMPTS
 
 
+def test_first_design_final_when_max_grades_is_one():
+    rec = run_eval.run_agentic("stub", {**TASK, "max_grades": 1}, {}, chat=stub_chat)  # stub would fix it on try 2
+    assert rec["passed"] is False and len(rec["attempts"]) == 1, rec
+
+
 def test_agentic_python_then_grade():
     def with_python(model, messages, tools=None, *, opts):
         seen = [m for m in messages if m.get("role") == "tool"]
