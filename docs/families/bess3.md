@@ -36,7 +36,7 @@ identical metrics and verdicts on all 188 level-2 designs).
 | H3 | Reactive power at the bottom of the voltage band. | PCS rated at nominal AC voltage, output current-limited. | VDE-AR-N 4110 asks for Q = ±0.33 P_b,inst (cos φ 0.95) across 0.9–1.1 U_c without voltage-based reduction, so S_pcs(site T) × 0.9 ≥ S needed. |
 | H4 | MV switchgear rated for the network fault level. | Connection letter S_k″ and R/X; PCS AC fault contribution; switchgear catalog. | U_r ≥ highest system voltage (12 / 24 / 36 kV); I_k = S_k″ / (√3 U_n) + PCS contribution ≤ short-time current; κ √2 I_k ≤ making current, κ = 1.02 + 0.98 e^(−3 R/X); rated current ≥ connection current. |
 | H5 | Cells warm enough to charge in winter. | Charge rate by cell temperature, site minimum, enclosure heat loss per rack, unit heating capacity. | Cell temperature needed for the string current as a charge rate, from the table; heating × count ≥ UA × N_p × (T_needed − T_site_min). |
-| H6 | FCR prequalification, when the brief names FCR. | — | **Not built yet**: see open items. |
+| H6 | FCR prequalification (half the plants; the brief names the FCR power only). | FCR power, symmetric. | German TSO PQ-Bedingungen v1.06 (2026-10-07) sec. 3.1.6, chosen by the author: power at the connection point ≥ 1.25 × P_FCR; usable energy ≥ (½ + ¼ + ⅙) h × P_FCR (endangered state, max of prior call and storage-management lag, reserve-mode bridging); both with the project margin. |
 
 Sources for H3 (the standard is paywalled; these are public carriers, found
 2026-10-24):
@@ -50,12 +50,10 @@ Sources for H3 (the standard is paywalled; these are public carriers, found
 
 ## Open items
 
-1. **H6, FCR.** The TSO prequalification conditions say P_max ≥ 1.25 × FCR
-   power and full activation for at least 15 minutes (BNetzA BK6-17-234
-   rejected 30 minutes). The energy sizing and SOC window changed between
-   PQ-Bedingungen v1.05 (2024-07-05: 0.25 h reserve at each SOC limit) and
-   v1.06 (2026-10-07: 1/3 h), and no effective date for v1.06 was found. The
-   author picks the version before H6 is built.
+1. **H6, FCR window.** v1.06 also sets SOC operating limits of 1/3 h × P_FCR
+   from each end of the usable energy. The energy check above covers the
+   reserved energy; the operating-window limits themselves (a control setting)
+   are not graded.
    v1.06: <https://www.regelleistung.net/cdn/files/64507326-b71c-41b0-cdb6-08df1e03d14c/pq-bedingungen-2026_10_07.pdf>
 2. **H3 corners.** The exact voltages where full Q ends at the edges of the
    0.9–1.1 U_c band (VDE-AR-N 4110, Bild 5) are unverified; the check uses

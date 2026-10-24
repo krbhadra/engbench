@@ -161,7 +161,7 @@ def _optimize(task):
     k_t = bess._interp(bess._table(task["k_temp"]), s["t_cable_c"])
     k_amb_tx = bess._interp(bess._table(task["k_tx_ambient"]), s["t_annual_mean_c"])
     u_min = task.get("grid", {}).get("u_min_pu", 1.0)
-    e_req = p["e_req_mwh"] * 1e6 * (1 + p["margin_e"])
+    e_req = bess.energy_required(task)
     txs = sorted(task["transformers"], key=lambda t: t["price"])
     cool_at_site = {cu["id"]: bess._interp([(35.0, cu["kw_35"]), (45.0, cu["kw_45"])], s["t_max_c"]) * 1e3 for cu in task["cooling_units"]}
     fuse_k = {f["id"]: bess._interp(bess._table(f["k_amb"]), s["t_max_c"]) for f in task["fuses"]}
@@ -413,6 +413,7 @@ HIDDEN = {  # feature -> the mistake a team makes when it does not anticipate th
     "grid_band": "reactive power checked at nominal grid voltage only",
     "winter": "no heating for charging in winter",
     "mv_switchgear": "switchgear by rated voltage and current only",
+    "fcr": "FCR prequalified power and energy not reserved",
 }
 
 
@@ -436,6 +437,8 @@ def _add_level3(task, rng, seed):
     kv = s["grid_kv"]
     task["grid"] = {"u_min_pu": U_MIN_PU, "u_max_kv": U_MAX_KV[kv], "s_k_mva": float(rng.choice(S_K_MVA[kv])),
                     "r_x": rng.choice([0.1, 0.15, 0.2, 0.3])}
+    if rng.random() < 0.5:  # half the plants are also prequalified for FCR
+        task["fcr"] = {"p_mw": round(p["p_req_mw"] * rng.choice([0.8, 0.9, 1.0, 1.1]), 2)}
     task["mv_switchgear"] = [{"id": i, "u_r_kv": u, "i_k_ka": ik, "i_ma_ka": ima, "i_r_a": ir,
                               "price": _pert(rng, pr, 0.85, 1.15)} for i, u, ik, ima, ir, pr in RMU]
 
@@ -458,6 +461,8 @@ def _hidden_broken(task):
     out = []
     s_nap = bess.grid_side(task, 0.0, task["transformers"][0])[0]
     for feature, note in HIDDEN.items():
+        if feature not in task and feature != "grid_band":
+            continue
         best = _optimize(_naive(task, feature))[0]
         if best is None:
             continue
@@ -481,7 +486,9 @@ def describe3(t: dict) -> str:
         f"Requirements at the connection point: usable energy {p['e_req_mwh']:g} MWh and rated power {p['p_req_mw']:g} MW, "
         f"charging and discharging, {p['duration_h']} h duration, guaranteed for the full {p['service_years']}-year service "
         f"life. Expected duty: {t['duty']['cycles_per_day']:g} equivalent full cycles per day. Project margin policy at this "
-        f"design stage: {p['margin_e']*100:.0f}% on energy and {p['margin_p']*100:.0f}% on power, on top of the requirements.\n\n"
+        f"design stage: {p['margin_e']*100:.0f}% on energy and {p['margin_p']*100:.0f}% on power, on top of the requirements."
+        + (f" The plant will also be prequalified for frequency containment reserve (FCR) in Germany with "
+           f"{t['fcr']['p_mw']:g} MW, symmetric." if "fcr" in t else "") + "\n\n"
         f"Grid connection, from the network operator's connection letter: {s['grid_kv']} kV; network short-circuit power at "
         f"the connection point {g['s_k_mva']:g} MVA, R/X {g['r_x']:g}. The operator's technical connection rules for medium "
         f"voltage apply in full.\n\n"
@@ -541,6 +548,7 @@ def describe3(t: dict) -> str:
 OUTPUT_SHAPE3 = OUTPUT_SHAPE[:-1] + ', "mv_switchgear": "<id>"}'
 SOURCES3 = [x for x in SOURCES if not x.startswith(("NASA", "PNNL"))] + [
     "VDE-AR-N 4110 reactive capability Q = 0.33 P_b,inst over 0.9-1.1 Uc as stated in M.O.E. (Windenergietage 2018) and Kommenergie TAR-MS notes (2026)",
+    "German TSOs, PQ-Bedingungen v1.06 (2026-10-07), sec. 3.1.6: FCR power 1.25 x P and limited-energy reserve, regelleistung.net",
     "IEC 60909 peak factor kappa = 1.02 + 0.98 exp(-3 R/X) and IEC 62271-1/-200 switchgear ratings, as reproduced in manufacturer planning guides",
     "Cell ageing tables and low-temperature charge limits patterned on public LFP prismatic datasheets; every value perturbed per seed",
 ]

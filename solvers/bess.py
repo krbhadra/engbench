@@ -65,6 +65,8 @@ Level 3 (bess3), switched on by the task's own data; level-2 tasks carry none of
     S_pcs_site x u_min_pu >= S_pcs_needed.
   Winter (task["winter"]): the cell temperature needed to charge at the string current is read
     from the cell's charge-rate table; heating x count >= UA_rack N_p (T_needed - T_site_min).
+  FCR (task["fcr"], PQ-Bedingungen v1.06 sec. 3.1.6, symmetric): power at the connection point
+    >= 1.25 P_FCR and usable energy >= (1/2 + 1/4 + 1/6) h x P_FCR, each with the project margin.
   MV switchgear (task["mv_switchgear"]): U_r >= highest system voltage; I_k = S_k / (sqrt3 U_n)
     + PCS AC fault contribution <= rated short-time current; kappa sqrt2 I_k <= making current,
     kappa = 1.02 + 0.98 exp(-3 R/X); rated current >= connection-point current.
@@ -121,6 +123,23 @@ def _find(items, id_):
     return next(x for x in items if x["id"] == id_)
 
 
+FCR_ENERGY_H = 0.5 + 0.25 + 1 / 6  # PQ-Bedingungen v1.06 sec. 3.1.6, symmetric: endangered state + max(prior call, lag) + reserve-mode bridging
+
+
+def power_required(task):
+    """Active power at the connection point incl. margin; FCR prequalification needs 1.25 x the FCR power."""
+    p = task["params"]
+    base = max(p["p_req_mw"], 1.25 * task["fcr"]["p_mw"]) if "fcr" in task else p["p_req_mw"]
+    return base * 1e6 * (1 + p["margin_p"])
+
+
+def energy_required(task):
+    """Usable energy at the connection point incl. margin; FCR reserves FCR_ENERGY_H x the FCR power."""
+    p = task["params"]
+    base = max(p["e_req_mwh"], FCR_ENERGY_H * task["fcr"]["p_mw"]) if "fcr" in task else p["e_req_mwh"]
+    return base * 1e6 * (1 + p["margin_e"])
+
+
 def life(task):
     """(SOH, resistance factor) at end of life: given at level 2, from the ageing tables at level 3."""
     p, c = task["params"], task["cell"]
@@ -153,7 +172,7 @@ def operating_point(task, ns, np_, pcs):
     """(gross AC power, aux power, v_load, i_string, q_heat): aux and string current solved together."""
     p, c = task["params"], task["cell"]
     _, k_r = life(task)
-    p_net = p["p_req_mw"] * 1e6 * (1 + p["margin_p"])
+    p_net = power_required(task)
     r_string = ns * c["r_bol_ohm"] * k_r
     p_aux = 0.0
     for _ in range(30):
@@ -170,7 +189,7 @@ def operating_point(task, ns, np_, pcs):
 def grid_side(task, p_ac, tx):
     """(S at the connection point, Q there, transformer flow, Q_tx, PCS apparent power needed)."""
     p = task["params"]
-    p_net = p["p_req_mw"] * 1e6 * (1 + p["margin_p"])
+    p_net = power_required(task)
     q_nap = p_net * math.tan(math.acos(p["cos_phi_min"]))
     s_nap = math.hypot(p_net, q_nap)
     s_tx_flow = math.hypot(p_ac, q_nap)  # aux on the MV bus behind the connection point
@@ -208,7 +227,7 @@ def evaluate(task: dict, d: dict) -> dict:
     # energy at the point of connection, end of life, net of auxiliaries
     e_poi = (ns * np_ * c["v_nom"] * c["q_ah"] * (c["soc_max"] - c["soc_min"]) * soh
              * p["eta_dc"] * pcs["eta"] * tx["eta"]) - p_aux * p["duration_h"]
-    e_req = p["e_req_mwh"] * 1e6 * (1 + p["margin_e"])
+    e_req = energy_required(task)
     v_max = ns * c["v_max"]
 
     u_min = task.get("grid", {}).get("u_min_pu", 1.0)
