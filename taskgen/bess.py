@@ -200,7 +200,7 @@ def _optimize(task):
                     if tx is None:
                         continue
                     # cooling (and heating, when the site has a winter): cheapest unit x count
-                    _, heat_need = bess.heating_needed(task, np_, i_s)
+                    _, heat_need = bess.heating_needed(task, ns, np_, pcs)
                     cool = None
                     for cu in task["cooling_units"]:
                         n_c = math.ceil(q_heat * (1 + p["margin_p"]) / cool_at_site[cu["id"]] - 1e-9)

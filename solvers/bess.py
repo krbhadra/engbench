@@ -63,7 +63,8 @@ Level 3 (bess3), switched on by the task's own data; level-2 tasks carry none of
     carries the gross active power plus the connection-point reactive power.
   Voltage band (task["grid"]["u_min_pu"]): a current-limited PCS delivers S_rated x U/U_n, so
     S_pcs_site x u_min_pu >= S_pcs_needed.
-  Winter (task["winter"]): the cell temperature needed to charge at the string current is read
+  Winter (task["winter"]): the cell temperature needed to charge at rated power (net, after losses, nominal
+    cell voltage: the least strict defensible reading) is read
     from the cell's charge-rate table; heating x count >= UA_rack N_p (T_needed - T_site_min).
   FCR (task["fcr"], PQ-Bedingungen v1.06 sec. 3.1.6, symmetric): power at the connection point
     >= 1.25 P_FCR and usable energy >= (1/2 + 1/4 + 1/6) h x P_FCR, each with the project margin.
@@ -197,12 +198,19 @@ def grid_side(task, p_ac, tx):
     return s_nap, q_nap, s_tx_flow, q_tx, math.hypot(p_ac, q_nap + q_tx)
 
 
-def heating_needed(task, np_, i_s):
-    """(cell temperature needed to charge at the string current, heating power needed)."""
+def charge_current(task, ns, np_, pcs):
+    """String current charging at rated power: the least strict defensible reading (net power after the PCS and
+    DC losses, nominal cell voltage). Hidden checks fail only designs that are wrong under every reasonable method."""
+    c, p = task["cell"], task["params"]
+    return power_required(task) * pcs["eta"] * p["eta_dc"] / (np_ * ns * c["v_nom"])
+
+
+def heating_needed(task, ns, np_, pcs):
+    """(cell temperature needed to charge at rated power, heating power needed)."""
     w = task.get("winter")
     if not w:
         return None, 0.0
-    t_need = _inverse(_table(task["cell"]["charge_c_by_temp"]), i_s / task["cell"]["q_ah"])
+    t_need = _inverse(_table(task["cell"]["charge_c_by_temp"]), charge_current(task, ns, np_, pcs) / task["cell"]["q_ah"])
     return t_need, w["ua_rack_w_per_k"] * np_ * max(0.0, t_need - task["site"]["t_min_c"])
 
 
@@ -234,7 +242,7 @@ def evaluate(task: dict, d: dict) -> dict:
     s_pcs_site = _interp([(25.0, pcs["s_kva_25"]), (40.0, pcs["s_kva_40"]), (50.0, pcs["s_kva_50"])],
                          s["t_max_c"]) * 1e3 * n_pcs * u_min
     cooling = _interp([(35.0, cu["kw_35"]), (45.0, cu["kw_45"])], s["t_max_c"]) * 1e3 * n_cool
-    t_need, heat_need = heating_needed(task, np_, i_string)
+    t_need, heat_need = heating_needed(task, ns, np_, pcs)
 
     # fault current, IEC 61660-1 battery branch
     r_b = ns * c["r_bol_ohm"]
@@ -326,7 +334,7 @@ def grade(task: dict, output: dict) -> dict:
                  f"{m['q_heat_kw']:.1f} kW x (1 + margin) at end-of-life resistance")
     if m["heating_kw"] < m["heat_need_kw"] * (1 - T):
         v.append(f"heating {m['heating_kw']:.1f} kW is below {m['heat_need_kw']:.1f} kW needed to hold the cells at "
-                 f"{m['t_cell_needed_c']:.1f} C (charge rate at the string current) at site minimum {s['t_min_c']:g} C")
+                 f"{m['t_cell_needed_c']:.1f} C (charge rate at rated charging power) at site minimum {s['t_min_c']:g} C")
     # fuse
     if fu["class"] != "gBat":
         v.append(f"string fuse class {fu['class']} is not gBat (IEC 60269-7 full-range battery fuse)")

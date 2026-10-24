@@ -115,6 +115,8 @@ engineering practice directly, not because the benchmark is about storage.
 - Every task has a golden solution that passes and broken solutions that fail
   with a named violation. A grader that cannot fail a wrong answer is not a
   grader.
+- A hidden requirement is checked with its least strict defensible reading,
+  so a design fails only when it is wrong under every reasonable method.
 - Answer keys for levels 3 and up are written or reviewed by practising
   engineers in that discipline; a department is scored only once its key has
   a reviewer.

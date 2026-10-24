@@ -27,6 +27,16 @@ One grader serves both levels: `solvers/bess.py` switches each level-3 check
 on from the task's own data, and level-2 tasks carry none of it (verified:
 identical metrics and verdicts on all 188 level-2 designs).
 
+## Fairness rule
+
+A hidden check uses the **least strict defensible reading** of its requirement,
+so it fails only designs that are wrong under every reasonable method. A team
+that missed the requirement is off by far more than the spread between
+defensible methods. (Found in the first pilot: Opus 5.5 computed the winter
+charge current at nominal cell voltage, the grader at the end-of-life discharge
+point; both defensible, 4 % apart, and the grader failed it. The heating check
+now uses rated charging power after losses at nominal voltage.)
+
 ## Hidden requirements (author review: accepted 2026-10-24)
 
 | # | Hidden requirement | Data in the task | Check |
@@ -35,7 +45,7 @@ identical metrics and verdicts on all 188 level-2 designs).
 | H2 | Connection-point requirements are net of auxiliaries. | EER of the cooling units, rack electronics W per rack, site systems kW; auxiliaries fed from the MV busbar behind the connection point. | Plant delivers P_net + P_aux with P_aux = rack × N_p + site + heat / EER, solved with the string current; E_net = E − P_aux × duration. The transformer carries the gross active power. |
 | H3 | Reactive power at the bottom of the voltage band. | PCS rated at nominal AC voltage, output current-limited. | VDE-AR-N 4110 asks for Q = ±0.33 P_b,inst (cos φ 0.95) across 0.9–1.1 U_c without voltage-based reduction, so S_pcs(site T) × 0.9 ≥ S needed. |
 | H4 | MV switchgear rated for the network fault level. | Connection letter S_k″ and R/X; PCS AC fault contribution; switchgear catalog. | U_r ≥ highest system voltage (12 / 24 / 36 kV); I_k = S_k″ / (√3 U_n) + PCS contribution ≤ short-time current; κ √2 I_k ≤ making current, κ = 1.02 + 0.98 e^(−3 R/X); rated current ≥ connection current. |
-| H5 | Cells warm enough to charge in winter. | Charge rate by cell temperature, site minimum, enclosure heat loss per rack, unit heating capacity. | Cell temperature needed for the string current as a charge rate, from the table; heating × count ≥ UA × N_p × (T_needed − T_site_min). |
+| H5 | Cells warm enough to charge in winter. | Charge rate by cell temperature, site minimum, enclosure heat loss per rack, unit heating capacity. | Charge current at rated power after PCS and DC losses at nominal cell voltage; the cell temperature that allows that rate, from the table; heating × count ≥ UA × N_p × (T_needed − T_site_min). |
 | H6 | FCR prequalification (half the plants; the brief names the FCR power only). | FCR power, symmetric. | German TSO PQ-Bedingungen v1.06 (2026-10-07) sec. 3.1.6, chosen by the author: power at the connection point ≥ 1.25 × P_FCR; usable energy ≥ (½ + ¼ + ⅙) h × P_FCR (endangered state, max of prior call and storage-management lag, reserve-mode bridging); both with the project margin. |
 
 Sources for H3 (the standard is paywalled; these are public carriers, found
