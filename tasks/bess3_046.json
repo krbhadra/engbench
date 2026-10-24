@@ -1,0 +1,671 @@
+{
+  "id": "bess3_046",
+  "domain": "bess",
+  "mode": "hidden",
+  "params": {
+    "e_req_mwh": 6.0,
+    "p_req_mw": 3.0,
+    "duration_h": 2,
+    "service_years": 15,
+    "margin_e": 0.15,
+    "margin_p": 0.15,
+    "eta_dc": 0.959,
+    "cos_phi_min": 0.95,
+    "k_load_fuse": 0.8,
+    "v_drop_max": 0.02,
+    "module_cells": 16
+  },
+  "cell": {
+    "chemistry": "LFP prismatic",
+    "v_nom": 3.2,
+    "v_min": 2.5,
+    "v_max": 3.65,
+    "q_ah": 280.0,
+    "r_bol_ohm": 0.000656,
+    "c_cont": 0.5,
+    "soc_min": 0.05,
+    "soc_max": 0.9,
+    "v_ocv_soc_min": 3.07,
+    "t_max_c": 55.0,
+    "price": 83.25,
+    "retention": {
+      "0": 1.0,
+      "2000": 0.944,
+      "4000": 0.899,
+      "6000": 0.855,
+      "8000": 0.81,
+      "10000": 0.765,
+      "12000": 0.721
+    },
+    "r_growth": {
+      "0": 1.0,
+      "4000": 1.246,
+      "8000": 1.541,
+      "12000": 1.885
+    },
+    "charge_c_by_temp": {
+      "-10": 0.0,
+      "0": 0.05,
+      "5": 0.1,
+      "10": 0.175,
+      "15": 0.3,
+      "25": 0.5
+    }
+  },
+  "site": {
+    "t_max_c": 35.0,
+    "t_annual_mean_c": 12.0,
+    "altitude_m": 500,
+    "t_cable_c": 35.0,
+    "dc_route_m": 40,
+    "strings_per_tray": 6,
+    "circuit_tau_ms": 5,
+    "grid_kv": 20,
+    "t_min_c": -10.0
+  },
+  "pcs_catalog": [
+    {
+      "id": "PCS-1",
+      "s_kva_25": 1023,
+      "s_kva_40": 818,
+      "s_kva_50": 763,
+      "v_dc_min": 900,
+      "v_dc_max": 1500,
+      "i_dc_max": 1262,
+      "dc_inputs": 6,
+      "eta": 0.982,
+      "i_sc_ka": 1.54,
+      "price": 86937,
+      "i_sc_ac_pu": 1.33
+    },
+    {
+      "id": "PCS-2",
+      "s_kva_25": 1781,
+      "s_kva_40": 1686,
+      "s_kva_50": 1332,
+      "v_dc_min": 1000,
+      "v_dc_max": 1500,
+      "i_dc_max": 2139,
+      "dc_inputs": 8,
+      "eta": 0.985,
+      "i_sc_ka": 1.99,
+      "price": 151737,
+      "i_sc_ac_pu": 1.33
+    },
+    {
+      "id": "PCS-3",
+      "s_kva_25": 2371,
+      "s_kva_40": 2071,
+      "s_kva_50": 2061,
+      "v_dc_min": 1100,
+      "v_dc_max": 1500,
+      "i_dc_max": 2792,
+      "dc_inputs": 12,
+      "eta": 0.986,
+      "i_sc_ka": 2.75,
+      "price": 202457,
+      "i_sc_ac_pu": 1.46
+    },
+    {
+      "id": "PCS-4",
+      "s_kva_25": 3767,
+      "s_kva_40": 3522,
+      "s_kva_50": 2664,
+      "v_dc_min": 1200,
+      "v_dc_max": 1500,
+      "i_dc_max": 3712,
+      "dc_inputs": 16,
+      "eta": 0.987,
+      "i_sc_ka": 3.42,
+      "price": 277205,
+      "i_sc_ac_pu": 1.21
+    },
+    {
+      "id": "PCS-5",
+      "s_kva_25": 4634,
+      "s_kva_40": 4113,
+      "s_kva_50": 3308,
+      "v_dc_min": 1300,
+      "v_dc_max": 1500,
+      "i_dc_max": 3872,
+      "dc_inputs": 16,
+      "eta": 0.988,
+      "i_sc_ka": 4.38,
+      "price": 290264,
+      "i_sc_ac_pu": 1.12
+    }
+  ],
+  "transformers": [
+    {
+      "id": "TX-1",
+      "s_kva": 1000,
+      "u_k": 0.06,
+      "eta": 0.99,
+      "price": 31780
+    },
+    {
+      "id": "TX-2",
+      "s_kva": 1600,
+      "u_k": 0.06,
+      "eta": 0.991,
+      "price": 36591
+    },
+    {
+      "id": "TX-3",
+      "s_kva": 2500,
+      "u_k": 0.06,
+      "eta": 0.992,
+      "price": 56242
+    },
+    {
+      "id": "TX-4",
+      "s_kva": 3150,
+      "u_k": 0.07,
+      "eta": 0.992,
+      "price": 58117
+    },
+    {
+      "id": "TX-5",
+      "s_kva": 4000,
+      "u_k": 0.07,
+      "eta": 0.993,
+      "price": 83438
+    },
+    {
+      "id": "TX-6",
+      "s_kva": 5000,
+      "u_k": 0.08,
+      "eta": 0.993,
+      "price": 91067
+    },
+    {
+      "id": "TX-7",
+      "s_kva": 6300,
+      "u_k": 0.08,
+      "eta": 0.994,
+      "price": 114556
+    }
+  ],
+  "fuses": [
+    {
+      "id": "FU-1",
+      "class": "gG",
+      "i_n": 250,
+      "u_dc": 440,
+      "tau_ms": 0,
+      "breaking_ka": 50,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 20.09
+    },
+    {
+      "id": "FU-2",
+      "class": "gG",
+      "i_n": 400,
+      "u_dc": 440,
+      "tau_ms": 0,
+      "breaking_ka": 50,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 26.9
+    },
+    {
+      "id": "FU-3",
+      "class": "gBat",
+      "i_n": 250,
+      "u_dc": 1000,
+      "tau_ms": 3,
+      "breaking_ka": 100,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 64.28
+    },
+    {
+      "id": "FU-4",
+      "class": "gBat",
+      "i_n": 315,
+      "u_dc": 1500,
+      "tau_ms": 3,
+      "breaking_ka": 100,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 92.38
+    },
+    {
+      "id": "FU-5",
+      "class": "gBat",
+      "i_n": 400,
+      "u_dc": 1500,
+      "tau_ms": 3,
+      "breaking_ka": 150,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 84.82
+    },
+    {
+      "id": "FU-6",
+      "class": "gBat",
+      "i_n": 500,
+      "u_dc": 1500,
+      "tau_ms": 3,
+      "breaking_ka": 150,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 117.58
+    },
+    {
+      "id": "FU-7",
+      "class": "gBat",
+      "i_n": 630,
+      "u_dc": 1500,
+      "tau_ms": 3,
+      "breaking_ka": 200,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 145.56
+    },
+    {
+      "id": "FU-8",
+      "class": "gBat",
+      "i_n": 800,
+      "u_dc": 1500,
+      "tau_ms": 3,
+      "breaking_ka": 200,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 183.87
+    },
+    {
+      "id": "FU-9",
+      "class": "aBat",
+      "i_n": 400,
+      "u_dc": 1500,
+      "tau_ms": 10,
+      "breaking_ka": 200,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 70.87
+    },
+    {
+      "id": "FU-10",
+      "class": "gBat",
+      "i_n": 400,
+      "u_dc": 1500,
+      "tau_ms": 10,
+      "breaking_ka": 200,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 138.02
+    },
+    {
+      "id": "FU-11",
+      "class": "gBat",
+      "i_n": 500,
+      "u_dc": 1500,
+      "tau_ms": 3,
+      "breaking_ka": 260,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 169.69
+    },
+    {
+      "id": "FU-12",
+      "class": "gBat",
+      "i_n": 630,
+      "u_dc": 1500,
+      "tau_ms": 3,
+      "breaking_ka": 260,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 177.93
+    },
+    {
+      "id": "FU-13",
+      "class": "gBat",
+      "i_n": 250,
+      "u_dc": 1500,
+      "tau_ms": 3,
+      "breaking_ka": 200,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 109.08
+    },
+    {
+      "id": "FU-14",
+      "class": "gBat",
+      "i_n": 315,
+      "u_dc": 1500,
+      "tau_ms": 3,
+      "breaking_ka": 260,
+      "k_amb": {
+        "25": 1.0,
+        "40": 0.9,
+        "50": 0.8
+      },
+      "price": 164.48
+    }
+  ],
+  "contactors": [
+    {
+      "id": "CT-1",
+      "i_rated": 250,
+      "u_dc": 1000,
+      "i_break_max": 1500,
+      "price": 131.6
+    },
+    {
+      "id": "CT-2",
+      "i_rated": 300,
+      "u_dc": 1500,
+      "i_break_max": 2000,
+      "price": 200.83
+    },
+    {
+      "id": "CT-3",
+      "i_rated": 400,
+      "u_dc": 1500,
+      "i_break_max": 2500,
+      "price": 286.85
+    },
+    {
+      "id": "CT-4",
+      "i_rated": 500,
+      "u_dc": 1500,
+      "i_break_max": 3000,
+      "price": 318.74
+    },
+    {
+      "id": "CT-5",
+      "i_rated": 600,
+      "u_dc": 1500,
+      "i_break_max": 4000,
+      "price": 474.7
+    },
+    {
+      "id": "CT-6",
+      "i_rated": 800,
+      "u_dc": 1500,
+      "i_break_max": 6000,
+      "price": 488.21
+    }
+  ],
+  "cables": [
+    {
+      "id": "C-50",
+      "mm2": 50,
+      "i_z_base": 234,
+      "r_ohm_per_km": 0.462,
+      "u_dc": 1800,
+      "price_per_m": 9.29
+    },
+    {
+      "id": "C-70",
+      "mm2": 70,
+      "i_z_base": 297,
+      "r_ohm_per_km": 0.321,
+      "u_dc": 1800,
+      "price_per_m": 14.33
+    },
+    {
+      "id": "C-95",
+      "mm2": 95,
+      "i_z_base": 362,
+      "r_ohm_per_km": 0.232,
+      "u_dc": 1800,
+      "price_per_m": 17.97
+    },
+    {
+      "id": "C-120",
+      "mm2": 120,
+      "i_z_base": 419,
+      "r_ohm_per_km": 0.184,
+      "u_dc": 1800,
+      "price_per_m": 23.36
+    },
+    {
+      "id": "C-150",
+      "mm2": 150,
+      "i_z_base": 480,
+      "r_ohm_per_km": 0.15,
+      "u_dc": 1800,
+      "price_per_m": 27.64
+    },
+    {
+      "id": "C-185",
+      "mm2": 185,
+      "i_z_base": 550,
+      "r_ohm_per_km": 0.121,
+      "u_dc": 1800,
+      "price_per_m": 36.27
+    },
+    {
+      "id": "C-240",
+      "mm2": 240,
+      "i_z_base": 649,
+      "r_ohm_per_km": 0.0925,
+      "u_dc": 1800,
+      "price_per_m": 37.56
+    },
+    {
+      "id": "C-300",
+      "mm2": 300,
+      "i_z_base": 741,
+      "r_ohm_per_km": 0.0745,
+      "u_dc": 1800,
+      "price_per_m": 61.95
+    }
+  ],
+  "cooling_units": [
+    {
+      "id": "CU-1",
+      "kw_35": 20,
+      "kw_45": 16,
+      "price": 7653,
+      "heating_kw": 2.6
+    },
+    {
+      "id": "CU-2",
+      "kw_35": 40,
+      "kw_45": 33,
+      "price": 15051,
+      "heating_kw": 4.1
+    },
+    {
+      "id": "CU-3",
+      "kw_35": 80,
+      "kw_45": 66,
+      "price": 25333,
+      "heating_kw": 8.1
+    },
+    {
+      "id": "CU-4",
+      "kw_35": 150,
+      "kw_45": 125,
+      "price": 59229,
+      "heating_kw": 12.7
+    }
+  ],
+  "k_temp": {
+    "30": 1.0,
+    "35": 0.96,
+    "40": 0.91,
+    "45": 0.87,
+    "50": 0.82,
+    "55": 0.76
+  },
+  "k_group": {
+    "1": 1.0,
+    "2": 0.88,
+    "3": 0.82,
+    "4": 0.77,
+    "6": 0.72,
+    "9": 0.7,
+    "12": 0.68,
+    "16": 0.66,
+    "20": 0.64
+  },
+  "k_tx_ambient": {
+    "-20": 1.24,
+    "-10": 1.18,
+    "0": 1.12,
+    "10": 1.06,
+    "20": 1.0,
+    "30": 0.93
+  },
+  "level": 3,
+  "max_grades": 1,
+  "duty": {
+    "cycles_per_day": 2.0
+  },
+  "aux": {
+    "rack_w": 150,
+    "site_kw": 8.0,
+    "eer": 3.5
+  },
+  "winter": {
+    "ua_rack_w_per_k": 19.3
+  },
+  "grid": {
+    "u_min_pu": 0.9,
+    "u_max_kv": 24,
+    "s_k_mva": 250.0,
+    "r_x": 0.15
+  },
+  "fcr": {
+    "p_mw": 2.7
+  },
+  "mv_switchgear": [
+    {
+      "id": "RMU-1",
+      "u_r_kv": 12,
+      "i_k_ka": 16,
+      "i_ma_ka": 40,
+      "i_r_a": 630,
+      "price": 18532
+    },
+    {
+      "id": "RMU-2",
+      "u_r_kv": 12,
+      "i_k_ka": 20,
+      "i_ma_ka": 50,
+      "i_r_a": 630,
+      "price": 21686
+    },
+    {
+      "id": "RMU-3",
+      "u_r_kv": 24,
+      "i_k_ka": 16,
+      "i_ma_ka": 40,
+      "i_r_a": 630,
+      "price": 28810
+    },
+    {
+      "id": "RMU-4",
+      "u_r_kv": 24,
+      "i_k_ka": 20,
+      "i_ma_ka": 40,
+      "i_r_a": 630,
+      "price": 26543
+    },
+    {
+      "id": "RMU-5",
+      "u_r_kv": 24,
+      "i_k_ka": 20,
+      "i_ma_ka": 50,
+      "i_r_a": 630,
+      "price": 31665
+    },
+    {
+      "id": "RMU-6",
+      "u_r_kv": 24,
+      "i_k_ka": 25,
+      "i_ma_ka": 63,
+      "i_r_a": 630,
+      "price": 35575
+    },
+    {
+      "id": "RMU-7",
+      "u_r_kv": 36,
+      "i_k_ka": 20,
+      "i_ma_ka": 50,
+      "i_r_a": 630,
+      "price": 39237
+    },
+    {
+      "id": "RMU-8",
+      "u_r_kv": 36,
+      "i_k_ka": 25,
+      "i_ma_ka": 63,
+      "i_r_a": 630,
+      "price": 52599
+    }
+  ],
+  "objective": {
+    "minimize": "cost",
+    "optimum": 1938229.75,
+    "tolerance": 0.05
+  },
+  "title": "Grid-connected LFP battery storage system",
+  "description": "Project brief: grid-connected lithium iron phosphate battery energy storage plant at a site in Germany.\n\nRequirements at the connection point: usable energy 6 MWh and rated power 3 MW, charging and discharging, 2 h duration, guaranteed for the full 15-year service life. Expected duty: 2 equivalent full cycles per day. Project margin policy at this design stage: 15% on energy and 15% on power, on top of the requirements. The plant will also be prequalified for frequency containment reserve (FCR) in Germany with 2.7 MW, symmetric.\n\nGrid connection, from the network operator's connection letter: 20 kV; network short-circuit power at the connection point 250 MVA, R/X 0.15. The operator's technical connection rules for medium voltage apply in full.\n\nPlant architecture: one string per rack; every string connects to its own DC input on a PCS unit (no combiner boxes; a PCS unit's inputs share one DC bus, and the PCS units are paralleled on the AC side into one step-up transformer, then the medium-voltage switchgear at the connection point). Cells in series in modules of 16 (the series count is a multiple of 16). Each string has one fuse and one contactor and runs to the PCS over one DC cable pair (optionally several pairs in parallel) of 40 m route length, with 6 strings sharing each cable tray. DC circuit time constant L/R 5 ms. DC cable voltage drop limit 2% (project specification). Auxiliaries (cooling and heating units, rack electronics, site systems) are supplied from the plant's medium-voltage busbar behind the connection point through an auxiliary transformer.\n\nSite: maximum ambient 35 C, minimum ambient -10 C, annual mean 12 C, altitude 500 m; cable ambient inside the enclosure 35 C; enclosure heat loss 19.3 W/K per rack.\n\nCell datasheet (LFP prismatic): 3.2 V nominal, 280 Ah, 2.5-3.65 V, DC resistance 0.66 mOhm at beginning of life, continuous 0.5 C charge and discharge at 25 C, recommended SOC window 5-90%, open-circuit voltage 3.07 V at 5% SOC, maximum cell temperature 55 C, price 83.25 per cell.\n  Maximum continuous charge rate (C) by cell temperature: -10 C: 0.0, 0 C: 0.05, 5 C: 0.1, 10 C: 0.175, 15 C: 0.3, 25 C: 0.5.\n  Capacity retention by equivalent full cycles, 25 C, including calendar ageing at this duty: 0: 1.0, 2000: 0.944, 4000: 0.899, 6000: 0.855, 8000: 0.81, 10000: 0.765, 12000: 0.721.\n  DC resistance growth factor by equivalent full cycles: 0: 1.0, 4000: 1.246, 8000: 1.541, 12000: 1.885.\n  DC-side one-way efficiency between cells and PCS terminals 0.959.\n\nPCS catalog (id: kVA at 25 / 40 / 50 C ambient at nominal AC voltage, output current limited to rated current; DC window V, max DC current A, DC inputs, efficiency, DC short-circuit contribution kA, AC fault-current contribution per unit of rated current, price):\n  PCS-1: 1023 / 818 / 763 kVA, 900-1500 V, 1262 A, 6 inputs, 0.982, 1.54 kA, 1.33 pu, 86937\n  PCS-2: 1781 / 1686 / 1332 kVA, 1000-1500 V, 2139 A, 8 inputs, 0.985, 1.99 kA, 1.33 pu, 151737\n  PCS-3: 2371 / 2071 / 2061 kVA, 1100-1500 V, 2792 A, 12 inputs, 0.986, 2.75 kA, 1.46 pu, 202457\n  PCS-4: 3767 / 3522 / 2664 kVA, 1200-1500 V, 3712 A, 16 inputs, 0.987, 3.42 kA, 1.21 pu, 277205\n  PCS-5: 4634 / 4113 / 3308 kVA, 1300-1500 V, 3872 A, 16 inputs, 0.988, 4.38 kA, 1.12 pu, 290264\n\nTransformers, dry type (id: kVA, u_k, efficiency, price); loading factor by annual-mean ambient: -20 C: 1.24, -10 C: 1.18, 0 C: 1.12, 10 C: 1.06, 20 C: 1.0, 30 C: 0.93\n  TX-1: 1000 kVA, u_k 0.06, 0.99, 31780\n  TX-2: 1600 kVA, u_k 0.06, 0.991, 36591\n  TX-3: 2500 kVA, u_k 0.06, 0.992, 56242\n  TX-4: 3150 kVA, u_k 0.07, 0.992, 58117\n  TX-5: 4000 kVA, u_k 0.07, 0.993, 83438\n  TX-6: 5000 kVA, u_k 0.08, 0.993, 91067\n  TX-7: 6300 kVA, u_k 0.08, 0.994, 114556\n\nFuses (id: class, I_n A, rated DC voltage V, rated time constant ms, breaking capacity kA, price). Manufacturer notes: ambient derating 25 C: 1.0, 40 C: 0.9, 50 C: 0.8; continuous load should not exceed 0.8 x I_n.\n  FU-1: gG, 250 A, 440 V DC, 0 ms, 50 kA, 20.09\n  FU-2: gG, 400 A, 440 V DC, 0 ms, 50 kA, 26.90\n  FU-3: gBat, 250 A, 1000 V DC, 3 ms, 100 kA, 64.28\n  FU-4: gBat, 315 A, 1500 V DC, 3 ms, 100 kA, 92.38\n  FU-5: gBat, 400 A, 1500 V DC, 3 ms, 150 kA, 84.82\n  FU-6: gBat, 500 A, 1500 V DC, 3 ms, 150 kA, 117.58\n  FU-7: gBat, 630 A, 1500 V DC, 3 ms, 200 kA, 145.56\n  FU-8: gBat, 800 A, 1500 V DC, 3 ms, 200 kA, 183.87\n  FU-9: aBat, 400 A, 1500 V DC, 10 ms, 200 kA, 70.87\n  FU-10: gBat, 400 A, 1500 V DC, 10 ms, 200 kA, 138.02\n  FU-11: gBat, 500 A, 1500 V DC, 3 ms, 260 kA, 169.69\n  FU-12: gBat, 630 A, 1500 V DC, 3 ms, 260 kA, 177.93\n  FU-13: gBat, 250 A, 1500 V DC, 3 ms, 200 kA, 109.08\n  FU-14: gBat, 315 A, 1500 V DC, 3 ms, 260 kA, 164.48\n\nContactors (id: rated current A, rated DC voltage V, maximum breaking current A, price):\n  CT-1: 250 A, 1000 V DC, 1500 A, 131.60\n  CT-2: 300 A, 1500 V DC, 2000 A, 200.83\n  CT-3: 400 A, 1500 V DC, 2500 A, 286.85\n  CT-4: 500 A, 1500 V DC, 3000 A, 318.74\n  CT-5: 600 A, 1500 V DC, 4000 A, 474.70\n  CT-6: 800 A, 1500 V DC, 6000 A, 488.21\n\nDC cables, copper, XLPE 90 C (id: mm2, current-carrying capacity A for two loaded conductors in free air at 30 C, resistance ohm/km at 70 C, rated DC voltage V, price per metre per conductor). Ambient correction factors: 30 C: 1.0, 35 C: 0.96, 40 C: 0.91, 45 C: 0.87, 50 C: 0.82, 55 C: 0.76; grouping factors by number of circuits in a tray: 1: 1.0, 2: 0.88, 3: 0.82, 4: 0.77, 6: 0.72, 9: 0.7, 12: 0.68, 16: 0.66, 20: 0.64.\n  C-50: 50 mm2, 234 A, 0.462 ohm/km, 1800 V DC, 9.29\n  C-70: 70 mm2, 297 A, 0.321 ohm/km, 1800 V DC, 14.33\n  C-95: 95 mm2, 362 A, 0.232 ohm/km, 1800 V DC, 17.97\n  C-120: 120 mm2, 419 A, 0.184 ohm/km, 1800 V DC, 23.36\n  C-150: 150 mm2, 480 A, 0.15 ohm/km, 1800 V DC, 27.64\n  C-185: 185 mm2, 550 A, 0.121 ohm/km, 1800 V DC, 36.27\n  C-240: 240 mm2, 649 A, 0.0925 ohm/km, 1800 V DC, 37.56\n  C-300: 300 mm2, 741 A, 0.0745 ohm/km, 1800 V DC, 61.95\n\nCooling and heating units (id: cooling kW at 35 / 45 C ambient, heating kW, price); energy efficiency ratio of all units at maximum ambient 3.5:\n  CU-1: 20 / 16 kW, 2.6 kW, 7653\n  CU-2: 40 / 33 kW, 4.1 kW, 15051\n  CU-3: 80 / 66 kW, 8.1 kW, 25333\n  CU-4: 150 / 125 kW, 12.7 kW, 59229\n\nOther auxiliaries: rack electronics (battery management, fans) 150 W per rack; site systems (control, fire detection and suppression, lighting, communications) 8 kW.\n\nMedium-voltage switchgear (id: rated voltage kV, rated short-time withstand current kA for 1 s, rated short-circuit making current kA peak, rated current A, price):\n  RMU-1: 12 kV, 16 kA, 40 kA, 630 A, 18532\n  RMU-2: 12 kV, 20 kA, 50 kA, 630 A, 21686\n  RMU-3: 24 kV, 16 kA, 40 kA, 630 A, 28810\n  RMU-4: 24 kV, 20 kA, 40 kA, 630 A, 26543\n  RMU-5: 24 kV, 20 kA, 50 kA, 630 A, 31665\n  RMU-6: 24 kV, 25 kA, 63 kA, 630 A, 35575\n  RMU-7: 36 kV, 20 kA, 50 kA, 630 A, 39237\n  RMU-8: 36 kV, 25 kA, 63 kA, 630 A, 52599\n\nObjective: minimize total price (cells + PCS + transformer + fuses + contactors + cables + cooling and heating units + switchgear). The design must satisfy every requirement that applies to this plant, including those of the standards and grid connection rules that govern it, whether or not they are listed here, and its price must be within 5% of the cheapest design that does. Return {\"cells_series\": <int>, \"strings_parallel\": <int>, \"pcs\": \"<id>\", \"pcs_count\": <int>, \"transformer\": \"<id>\", \"string_fuse\": \"<id>\", \"string_contactor\": \"<id>\", \"dc_cable\": \"<id>\", \"dc_cables_parallel\": <int>, \"cooling_unit\": \"<id>\", \"cooling_count\": <int>, \"mv_switchgear\": \"<id>\"}",
+  "output_shape": "{\"cells_series\": <int>, \"strings_parallel\": <int>, \"pcs\": \"<id>\", \"pcs_count\": <int>, \"transformer\": \"<id>\", \"string_fuse\": \"<id>\", \"string_contactor\": \"<id>\", \"dc_cable\": \"<id>\", \"dc_cables_parallel\": <int>, \"cooling_unit\": \"<id>\", \"cooling_count\": <int>, \"mv_switchgear\": \"<id>\"}",
+  "sources": [
+    "IEC 60269-7 battery fuses as described in SIBA, Mersen and ETI battery-fuse catalogs: gBat/aBat, DC rating at time constant, ambient factors, breaking capacity",
+    "IEC 61660-1 DC short-circuit method as described in ABB 1SDC007104G0201 Annex B: battery branch peak and quasi-steady current",
+    "DIN VDE 0298-4 / IEC 60364-5-52 current-carrying capacity and IEC 60364-4-43 overload coordination as reproduced in ABB 2CDC401002D0106 and Mersen EduPack TM-104",
+    "Eaton 'Five factors' OCPD note: fuse and contactor interruption coordination (no gap)",
+    "VDE-AR-N 4110 reactive power requirement at the connection point as stated in TEN / Nordhausen Netz TAR-MS guidelines and VDE FNN Hinweis Speicher",
+    "IEC 60076-11 dry-type transformer rated conditions and annual-mean ambient factors as stated in Siemens GEAFOL planning notes",
+    "NREL/PR-5400-66960 Pesaran, Battery Pack Thermal Design: lumped heat balance",
+    "Cell values patterned on public 280-314 Ah LFP prismatic datasheets (EVE LF280K and peers); every value perturbed per seed",
+    "VDE-AR-N 4110 reactive capability Q = 0.33 P_b,inst over 0.9-1.1 Uc as stated in M.O.E. (Windenergietage 2018) and Kommenergie TAR-MS notes (2026)",
+    "German TSOs, PQ-Bedingungen v1.06 (2026-10-07), sec. 3.1.6: FCR power 1.25 x P and limited-energy reserve, regelleistung.net",
+    "IEC 60909 peak factor kappa = 1.02 + 0.98 exp(-3 R/X) and IEC 62271-1/-200 switchgear ratings, as reproduced in manufacturer planning guides",
+    "Cell ageing tables and low-temperature charge limits patterned on public LFP prismatic datasheets; every value perturbed per seed"
+  ],
+  "seed": 46,
+  "disciplines": [
+    "electrical",
+    "electronics",
+    "thermal",
+    "systems"
+  ]
+}
