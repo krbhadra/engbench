@@ -19,11 +19,11 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
 </style></head><body><main>
 <h1>EngBench</h1>
 <p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, plus a grader that says which check failed without the numbers, five grader calls: the engineer at a desk with a calculator and a checker. The agentic headline is the <b>first-design</b> rate, whether the first design it submits passes; passing within five grader calls is shown beside it but saturates for strong models. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
-<p class="lede">126 tasks · 494 task runs · 6 models · updated 2026-10-24 16:14 UTC</p>
-<h2>Leaderboard</h2><p class="lede">Score out of 100: six levels, each worth published points (15, 20, 15, 20, 15, 15), earned at that level's pass rate; agentic counts the first graded design. Levels a model has not run earn nothing, so compare scores only across the same levels run.</p><div class="wrap"><table><thead><tr><th>model</th><th>score<small>single-shot</small></th><th>score<small>agentic</small></th><th>single-shot</th><th>agentic<small>first design</small></th><th>gap<small>first design − single-shot, same tasks</small></th><th>agentic<small>pass in 5 grader calls</small></th><th>grader calls<small>to pass</small></th><th>feedback<small>superseded</small></th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td><b>13.9</b><small>levels run: 1</small></td><td class="na">–</td><td class="good"><b>93%</b><small>42</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td class="good"><b>100%</b><small>30</small></td><td>42</td><td>1,716</td><td>0.109</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td><b>10.3</b><small>levels run: 1, 2</small></td><td class="na">–</td><td class="mid"><b>55%</b><small>56</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td class="mid"><b>85%</b><small>41</small></td><td>57</td><td>24,139</td><td>0.137</td></tr><tr><th>claude-opus-5 [claude-cli]</th><td><b>24.2</b><small>levels run: 1, 2</small></td><td><b>8.3</b><small>levels run: 2</small></td><td class="mid"><b>86%</b><small>66</small></td><td class="bad"><b>42%</b><small>12</small></td><td>-8</td><td class="good"><b>100%</b><small>12</small></td><td>1.58</td><td class="good"><b>100%</b><small>42</small></td><td>66</td><td>7,459</td><td>0.239</td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="na">–</td><td><b>16.2</b><small>levels run: 2, 3</small></td><td class="na">–</td><td class="bad"><b>47%</b><small>53</small></td><td>–</td><td class="mid"><b>81%</b><small>53</small></td><td>1.58</td><td class="na">–</td><td>29</td><td>21,922</td><td>0.697</td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td><b>12.1</b><small>levels run: 1, 2</small></td><td><b>0.0</b><small>levels run: 2</small></td><td class="mid"><b>66%</b><small>62</small></td><td class="bad"><b>0%</b><small>12</small></td><td>+0</td><td class="mid"><b>83%</b><small>12</small></td><td>2.70</td><td class="good"><b>98%</b><small>42</small></td><td>63</td><td>22,016</td><td>0.289</td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="na">–</td><td><b>3.9</b><small>levels run: 2</small></td><td class="na">–</td><td class="bad"><b>19%</b><small>36</small></td><td>–</td><td class="good"><b>100%</b><small>36</small></td><td>2.06</td><td class="na">–</td><td>12</td><td>103,166</td><td>1.500</td></tr></tbody></table></div>
+<p class="lede">126 tasks · 511 task runs · 6 models · updated 2026-10-24 17:17 UTC</p>
+<h2>Leaderboard</h2><p class="lede">Score out of 100: six levels, each worth published points (15, 20, 15, 20, 15, 15), earned at that level's pass rate; agentic counts the first graded design. Levels a model has not run earn nothing, so compare scores only across the same levels run.</p><div class="wrap"><table><thead><tr><th>model</th><th>score<small>single-shot</small></th><th>score<small>agentic</small></th><th>single-shot</th><th>agentic<small>first design</small></th><th>gap<small>first design − single-shot, same tasks</small></th><th>agentic<small>pass in 5 grader calls</small></th><th>grader calls<small>to pass</small></th><th>feedback<small>superseded</small></th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td><b>13.9</b><small>levels run: 1</small></td><td class="na">–</td><td class="good"><b>93%</b><small>42</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td class="good"><b>100%</b><small>30</small></td><td>42</td><td>1,716</td><td>0.109</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td><b>10.3</b><small>levels run: 1, 2</small></td><td class="na">–</td><td class="mid"><b>55%</b><small>56</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td class="mid"><b>85%</b><small>41</small></td><td>57</td><td>24,139</td><td>0.137</td></tr><tr><th>claude-opus-5 [claude-cli]</th><td><b>24.2</b><small>levels run: 1, 2</small></td><td><b>8.3</b><small>levels run: 2</small></td><td class="mid"><b>86%</b><small>66</small></td><td class="bad"><b>42%</b><small>12</small></td><td>-8</td><td class="good"><b>100%</b><small>12</small></td><td>1.58</td><td class="good"><b>100%</b><small>42</small></td><td>66</td><td>7,459</td><td>0.239</td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="na">–</td><td><b>16.2</b><small>levels run: 2, 3</small></td><td class="na">–</td><td class="bad"><b>47%</b><small>53</small></td><td>–</td><td class="mid"><b>81%</b><small>53</small></td><td>1.58</td><td class="na">–</td><td>29</td><td>21,922</td><td>0.697</td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td><b>12.1</b><small>levels run: 1, 2</small></td><td><b>0.0</b><small>levels run: 2</small></td><td class="mid"><b>66%</b><small>62</small></td><td class="bad"><b>0%</b><small>12</small></td><td>+0</td><td class="mid"><b>83%</b><small>12</small></td><td>2.70</td><td class="good"><b>98%</b><small>42</small></td><td>63</td><td>22,016</td><td>0.289</td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="na">–</td><td><b>7.4</b><small>levels run: 2, 3</small></td><td class="na">–</td><td class="bad"><b>21%</b><small>53</small></td><td>–</td><td class="mid"><b>75%</b><small>53</small></td><td>1.95</td><td class="na">–</td><td>29</td><td>100,363</td><td>1.439</td></tr></tbody></table></div>
 <h2>By family</h2>
 <p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
-<div class="wrap"><h3>single-shot<small>one answer, no tools</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>bess3<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="mid"><b>75%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>0%</b><small>3</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>92%</b><small>12</small></td><td class="bad"><b>25%</b><small>12</small></td></tr><tr><th>claude-opus-5 [claude-cli]</th><td class="mid"><b>50%</b><small>12</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="mid"><b>83%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>22%</b><small>9</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="mid"><b>83%</b><small>12</small></td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr></tbody></table><h3>feedback<small>superseded: grade tool with full numbers, no compute</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>bess3<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td class="bad"><b>45%</b><small>11</small></td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-opus-5 [claude-cli]</th><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td class="good"><b>92%</b><small>12</small></td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr></tbody></table><h3>agentic<small>first graded design passes; run_python + grade (which check failed, no numbers)</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>bess3<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-opus-5 [claude-cli]</th><td class="bad"><b>42%</b><small>12</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="mid"><b>50%</b><small>36</small></td><td class="bad"><b>41%</b><small>17</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td class="bad"><b>0%</b><small>12</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="bad"><b>19%</b><small>36</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr></tbody></table></div>
+<div class="wrap"><h3>single-shot<small>one answer, no tools</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>bess3<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="mid"><b>75%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>0%</b><small>3</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>92%</b><small>12</small></td><td class="bad"><b>25%</b><small>12</small></td></tr><tr><th>claude-opus-5 [claude-cli]</th><td class="mid"><b>50%</b><small>12</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="mid"><b>83%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>22%</b><small>9</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="mid"><b>83%</b><small>12</small></td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr></tbody></table><h3>feedback<small>superseded: grade tool with full numbers, no compute</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>bess3<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td class="bad"><b>45%</b><small>11</small></td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-opus-5 [claude-cli]</th><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td class="good"><b>92%</b><small>12</small></td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="na">–</td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr></tbody></table><h3>agentic<small>first graded design passes; run_python + grade (which check failed, no numbers)</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>bess3<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-opus-5 [claude-cli]</th><td class="bad"><b>42%</b><small>12</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="mid"><b>50%</b><small>36</small></td><td class="bad"><b>41%</b><small>17</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td class="bad"><b>0%</b><small>12</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="bad"><b>19%</b><small>36</small></td><td class="bad"><b>24%</b><small>17</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr></tbody></table></div>
 <h2>Every task, every model</h2>
 <p class="lede">S = single-shot, F = feedback (superseded), A = agentic; the digit is the number of grader attempts. Click a mark to see the model's design and the grader's violations.</p>
 <div class="wrap"><table class="matrix"><thead><tr><th>task</th><th>claude-fable-5-1 [claude-cli]</th><th>claude-haiku-4-5 [claude-cli]</th><th>claude-opus-5 [claude-cli]</th><th>claude-opus-5-5 [claude-cli]</th><th>claude-sonnet-5 [claude-cli]</th><th>claude-sonnet-5-5 [claude-cli]</th></tr></thead><tbody><tr><th>bess3_001<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
@@ -40,7 +40,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 2,
  &quot;mv_switchgear&quot;: &quot;RMU-6&quot;,
  &quot;deviations&quot;: []
-}</pre><p>heating 15.4 kW is below 16.3 kW needed to hold the cells at 20.0 C (charge rate at rated charging power) at site minimum -15 C</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_002<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>heating 15.4 kW is below 16.3 kW needed to hold the cells at 20.0 C (charge rate at rated charging power) at site minimum -15 C</p></details></td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 14,
+ &quot;pcs&quot;: &quot;PCS-4&quot;,
+ &quot;pcs_count&quot;: 1,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 2,
+ &quot;mv_switchgear&quot;: &quot;RMU-6&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>passed</p></details></td></tr><tr><th>bess3_002<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 18,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -54,7 +68,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 1,
  &quot;mv_switchgear&quot;: &quot;RMU-7&quot;,
  &quot;deviations&quot;: []
-}</pre><p>passed</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_003<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 18,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 3,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-4&quot;,
+ &quot;dc_cable&quot;: &quot;C-120&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-4&quot;,
+ &quot;cooling_count&quot;: 1,
+ &quot;mv_switchgear&quot;: &quot;RMU-7&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>PCS apparent power at site 40 C at 0.9 pu grid voltage 2484 kVA is below 2496 kVA needed for cos phi 0.95 at the connection point including transformer reactive consumption 134 kvar<br>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 381 A (IEC 60364-4-43 overload coordination)</p></details></td></tr><tr><th>bess3_003<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 37,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -68,7 +96,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 4,
  &quot;mv_switchgear&quot;: &quot;RMU-6&quot;,
  &quot;deviations&quot;: []
-}</pre><p>cost 2123410.23 is not within 5% of the best design that meets every constraint</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_016<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>cost 2123410.23 is not within 5% of the best design that meets every constraint</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 38,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 7,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-10&quot;,
+ &quot;string_contactor&quot;: &quot;CT-3&quot;,
+ &quot;dc_cable&quot;: &quot;C-240&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-4&quot;,
+ &quot;cooling_count&quot;: 1,
+ &quot;mv_switchgear&quot;: &quot;RMU-6&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 206.2 kA (37 other strings + PCS contribution)<br>fuse conventional fusing current 1.6 x 400 A = 640 A exceeds 1.45 x I_z = 617 A (IEC 60364-4-43 overload coordination)</p></details></td></tr><tr><th>bess3_016<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 18,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -82,7 +124,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 1,
  &quot;mv_switchgear&quot;: &quot;RMU-4&quot;,
  &quot;deviations&quot;: []
-}</pre><p>passed</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_018<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 18,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 3,
+ &quot;transformer&quot;: &quot;TX-5&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-4&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 1,
+ &quot;mv_switchgear&quot;: &quot;RMU-4&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>PCS apparent power at site 40 C at 0.9 pu grid voltage 2314 kVA is below 2990 kVA needed for cos phi 0.95 at the connection point including transformer reactive consumption 151 kvar<br>cooling capacity at site 40 C 73.0 kW is below heat 69.2 kW x (1 + margin) at end-of-life resistance<br>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 378 A (IEC 60364-4-43 overload coordination)</p></details></td></tr><tr><th>bess3_018<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 352,
  &quot;strings_parallel&quot;: 21,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -96,7 +152,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 4,
  &quot;mv_switchgear&quot;: &quot;RMU-8&quot;,
  &quot;deviations&quot;: []
-}</pre><p>passed</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_020<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 19,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 4,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-120&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 2,
+ &quot;mv_switchgear&quot;: &quot;RMU-8&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>passed</p></details></td></tr><tr><th>bess3_020<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 352,
  &quot;strings_parallel&quot;: 30,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -110,7 +180,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 1,
  &quot;mv_switchgear&quot;: &quot;RMU-1&quot;,
  &quot;deviations&quot;: []
-}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 368 A (IEC 60364-4-43 overload coordination)</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_030<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 368 A (IEC 60364-4-43 overload coordination)</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 27,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 5,
+ &quot;transformer&quot;: &quot;TX-6&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-3&quot;,
+ &quot;dc_cable&quot;: &quot;C-95&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 1,
+ &quot;mv_switchgear&quot;: &quot;RMU-1&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 368 A (IEC 60364-4-43 overload coordination)</p></details></td></tr><tr><th>bess3_030<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 30,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -124,7 +208,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 4,
  &quot;mv_switchgear&quot;: &quot;RMU-7&quot;,
  &quot;deviations&quot;: []
-}</pre><p>string current 159.6 A exceeds the cell continuous limit 157.0 A<br>PCS apparent power at site 40 C at 0.9 pu grid voltage 5978 kVA is below 6020 kVA needed for cos phi 0.95 at the connection point including transformer reactive consumption 438 kvar<br>fuse breaking capacity 200 kA is below the prospective bus fault current 231.9 kA (29 other strings + PCS contribution)</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_031<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>string current 159.6 A exceeds the cell continuous limit 157.0 A<br>PCS apparent power at site 40 C at 0.9 pu grid voltage 5978 kVA is below 6020 kVA needed for cos phi 0.95 at the connection point including transformer reactive consumption 438 kvar<br>fuse breaking capacity 200 kA is below the prospective bus fault current 231.9 kA (29 other strings + PCS contribution)</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 26,
+ &quot;pcs&quot;: &quot;PCS-3&quot;,
+ &quot;pcs_count&quot;: 3,
+ &quot;transformer&quot;: &quot;TX-7&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-6&quot;,
+ &quot;dc_cable&quot;: &quot;C-120&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-2&quot;,
+ &quot;cooling_count&quot;: 5,
+ &quot;mv_switchgear&quot;: &quot;RMU-7&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>string current 185.5 A exceeds the cell continuous limit 157.0 A<br>PCS apparent power at site 40 C at 0.9 pu grid voltage 5978 kVA is below 6031 kVA needed for cos phi 0.95 at the connection point including transformer reactive consumption 439 kvar<br>cooling capacity at site 40 C 182.5 kW is below heat 207.9 kW x (1 + margin) at end-of-life resistance<br>fuse rating 250 A is below 257.6 A required (I_string 185.5 A / ambient factor / continuous-load factor 0.8)<br>fuse breaking capacity 200 kA is below the prospective bus fault current 203.6 kA (25 other strings + PCS contribution)</p></details></td></tr><tr><th>bess3_031<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 384,
  &quot;strings_parallel&quot;: 15,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -138,7 +236,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 2,
  &quot;mv_switchgear&quot;: &quot;RMU-3&quot;,
  &quot;deviations&quot;: []
-}</pre><p>passed</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_033<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 16,
+ &quot;pcs&quot;: &quot;PCS-3&quot;,
+ &quot;pcs_count&quot;: 2,
+ &quot;transformer&quot;: &quot;TX-5&quot;,
+ &quot;string_fuse&quot;: &quot;FU-14&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-70&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-2&quot;,
+ &quot;cooling_count&quot;: 7,
+ &quot;mv_switchgear&quot;: &quot;RMU-3&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>fuse conventional fusing current 1.6 x 315 A = 504 A exceeds 1.45 x I_z = 480 A (IEC 60364-4-43 overload coordination)</p></details></td></tr><tr><th>bess3_033<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 36,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
@@ -152,7 +264,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 3,
  &quot;mv_switchgear&quot;: &quot;RMU-2&quot;,
  &quot;deviations&quot;: []
-}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 219.6 kA (35 other strings + PCS contribution)</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_034<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 219.6 kA (35 other strings + PCS contribution)</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 36,
+ &quot;pcs&quot;: &quot;PCS-3&quot;,
+ &quot;pcs_count&quot;: 3,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-3&quot;,
+ &quot;dc_cable&quot;: &quot;C-150&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 3,
+ &quot;mv_switchgear&quot;: &quot;RMU-1&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>fuse breaking capacity 200 kA is below the prospective bus fault current 221.2 kA (35 other strings + PCS contribution)</p></details></td></tr><tr><th>bess3_034<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 19,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -166,7 +292,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 6,
  &quot;mv_switchgear&quot;: &quot;RMU-1&quot;,
  &quot;deviations&quot;: []
-}</pre><p>cooling capacity at site 35 C 120.0 kW is below heat 116.4 kW x (1 + margin) at end-of-life resistance<br>transformer 2500 kVA x ambient factor = 2500 kVA is below 2659 kVA through it (cos phi 0.95 at the connection point)</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_035<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+}</pre><p>cooling capacity at site 35 C 120.0 kW is below heat 116.4 kW x (1 + margin) at end-of-life resistance<br>transformer 2500 kVA x ambient factor = 2500 kVA is below 2659 kVA through it (cos phi 0.95 at the connection point)</p></details></td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 20,
+ &quot;pcs&quot;: &quot;PCS-3&quot;,
+ &quot;pcs_count&quot;: 2,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-3&quot;,
+ &quot;dc_cable&quot;: &quot;C-150&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 2,
+ &quot;mv_switchgear&quot;: &quot;RMU-1&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>passed</p></details></td></tr><tr><th>bess3_035<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 17,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -180,7 +320,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 2,
  &quot;mv_switchgear&quot;: &quot;RMU-8&quot;,
  &quot;deviations&quot;: []
-}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 106.7 kA (16 other strings + PCS contribution)</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_039<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 106.7 kA (16 other strings + PCS contribution)</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 17,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 4,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-4&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-2&quot;,
+ &quot;cooling_count&quot;: 4,
+ &quot;mv_switchgear&quot;: &quot;RMU-8&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>fuse breaking capacity 100 kA is below the prospective bus fault current 102.8 kA (16 other strings + PCS contribution)<br>fuse conventional fusing current 1.6 x 315 A = 504 A exceeds 1.45 x I_z = 460 A (IEC 60364-4-43 overload coordination)</p></details></td></tr><tr><th>bess3_039<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 16,
  &quot;pcs&quot;: &quot;PCS-2&quot;,
@@ -194,7 +348,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 1,
  &quot;mv_switchgear&quot;: &quot;RMU-6&quot;,
  &quot;deviations&quot;: []
-}</pre><p>passed</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_040<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 16,
+ &quot;pcs&quot;: &quot;PCS-2&quot;,
+ &quot;pcs_count&quot;: 2,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-120&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-4&quot;,
+ &quot;cooling_count&quot;: 1,
+ &quot;mv_switchgear&quot;: &quot;RMU-6&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 374 A (IEC 60364-4-43 overload coordination)</p></details></td></tr><tr><th>bess3_040<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 25,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -208,7 +376,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 3,
  &quot;mv_switchgear&quot;: &quot;RMU-6&quot;,
  &quot;deviations&quot;: []
-}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 374 A (IEC 60364-4-43 overload coordination)</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_046<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 374 A (IEC 60364-4-43 overload coordination)</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 25,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 5,
+ &quot;transformer&quot;: &quot;TX-5&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 2,
+ &quot;mv_switchgear&quot;: &quot;RMU-6&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 390 A (IEC 60364-4-43 overload coordination)</p></details></td></tr><tr><th>bess3_046<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 34,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -229,7 +411,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    &quot;reason&quot;: &quot;The string cable cannot carry overload current. The BMS and PCS limit the string current to at most about 96 A, and the cable is rated I_z of about 162 A after ambient and grouping derating. The cable is protected against short circuit by the aBat fuse per clause 434. The cable is a single point-to-point circuit from rack to PCS input with no branches or socket-outlets. Overcurrents below the fuse&#x27;s breaking range are interrupted by the string contactor and BMS.&quot;
   }
  ]
-}</pre><p>cooling capacity at site 35 C 160.0 kW is below heat 159.9 kW x (1 + margin) at end-of-life resistance<br>heating 16.2 kW is below 16.4 kW needed to hold the cells at 15.0 C (charge rate at rated charging power) at site minimum -10 C<br>string fuse class aBat is not gBat (IEC 60269-7 full-range battery fuse)</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_047<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>cooling capacity at site 35 C 160.0 kW is below heat 159.9 kW x (1 + margin) at end-of-life resistance<br>heating 16.2 kW is below 16.4 kW needed to hold the cells at 15.0 C (charge rate at rated charging power) at site minimum -10 C<br>string fuse class aBat is not gBat (IEC 60269-7 full-range battery fuse)</p></details></td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 35,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 6,
+ &quot;transformer&quot;: &quot;TX-5&quot;,
+ &quot;string_fuse&quot;: &quot;FU-10&quot;,
+ &quot;string_contactor&quot;: &quot;CT-3&quot;,
+ &quot;dc_cable&quot;: &quot;C-240&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 3,
+ &quot;mv_switchgear&quot;: &quot;RMU-4&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>passed</p></details></td></tr><tr><th>bess3_047<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 17,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -243,7 +439,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 3,
  &quot;mv_switchgear&quot;: &quot;RMU-2&quot;,
  &quot;deviations&quot;: []
-}</pre><p>passed</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_048<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 384,
+ &quot;strings_parallel&quot;: 18,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 3,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-95&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-2&quot;,
+ &quot;cooling_count&quot;: 2,
+ &quot;mv_switchgear&quot;: &quot;RMU-2&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 388 A (IEC 60364-4-43 overload coordination)</p></details></td></tr><tr><th>bess3_048<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 352,
  &quot;strings_parallel&quot;: 30,
  &quot;pcs&quot;: &quot;PCS-1&quot;,
@@ -257,7 +467,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 8,
  &quot;mv_switchgear&quot;: &quot;RMU-8&quot;,
  &quot;deviations&quot;: []
-}</pre><p>passed</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess3_058<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+}</pre><p>passed</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 27,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 5,
+ &quot;transformer&quot;: &quot;TX-3&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-4&quot;,
+ &quot;dc_cable&quot;: &quot;C-120&quot;,
+ &quot;dc_cables_parallel&quot;: 1,
+ &quot;cooling_unit&quot;: &quot;CU-3&quot;,
+ &quot;cooling_count&quot;: 3,
+ &quot;mv_switchgear&quot;: &quot;RMU-8&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>cost 1413345.61 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>bess3_058<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
  &quot;cells_series&quot;: 400,
  &quot;strings_parallel&quot;: 24,
  &quot;pcs&quot;: &quot;PCS-2&quot;,
@@ -271,7 +495,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;cooling_count&quot;: 2,
  &quot;mv_switchgear&quot;: &quot;RMU-5&quot;,
  &quot;deviations&quot;: []
-}</pre><p>cost 1276180.04 is not within 5% of the best design that meets every constraint</p></details></td><td class="na">–</td><td class="na">–</td></tr><tr><th>bess_001<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+}</pre><p>cost 1276180.04 is not within 5% of the best design that meets every constraint</p></details></td><td class="na">–</td><td><details class="fail"><summary>A1</summary><pre>{
+ &quot;cells_series&quot;: 400,
+ &quot;strings_parallel&quot;: 24,
+ &quot;pcs&quot;: &quot;PCS-1&quot;,
+ &quot;pcs_count&quot;: 4,
+ &quot;transformer&quot;: &quot;TX-4&quot;,
+ &quot;string_fuse&quot;: &quot;FU-13&quot;,
+ &quot;string_contactor&quot;: &quot;CT-2&quot;,
+ &quot;dc_cable&quot;: &quot;C-50&quot;,
+ &quot;dc_cables_parallel&quot;: 2,
+ &quot;cooling_unit&quot;: &quot;CU-1&quot;,
+ &quot;cooling_count&quot;: 6,
+ &quot;mv_switchgear&quot;: &quot;RMU-4&quot;,
+ &quot;deviations&quot;: []
+}</pre><p>PCS apparent power at site 45 C at 0.9 pu grid voltage 3136 kVA is below 3142 kVA needed for cos phi 0.95 at the connection point including transformer reactive consumption 210 kvar<br>fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 390 A (IEC 60364-4-43 overload coordination)</p></details></td></tr><tr><th>bess_001<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;cells_series&quot;: 368,
  &quot;strings_parallel&quot;: 32,
  &quot;pcs&quot;: &quot;PCS-3&quot;,
