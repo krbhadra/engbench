@@ -8926,13 +8926,21 @@
    "pcs": "PCS-2",
    "pcs_count": 2,
    "transformer": "TX-3",
-   "string_fuse": "FU-13",
+   "string_fuse": "FU-4",
    "string_contactor": "CT-2",
    "dc_cable": "C-50",
-   "dc_cables_parallel": 2,
+   "dc_cables_parallel": 1,
    "cooling_unit": "CU-3",
    "cooling_count": 2,
-   "mv_switchgear": "RMU-6"
+   "mv_switchgear": "RMU-6",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -8942,13 +8950,21 @@
      "pcs": "PCS-2",
      "pcs_count": 2,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -8959,13 +8975,21 @@
      "pcs": "PCS-2",
      "pcs_count": 2,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -8979,10 +9003,18 @@
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -8996,29 +9028,20 @@
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
-     "cooling_unit": "CU-3",
-     "cooling_count": 2,
-     "mv_switchgear": "RMU-6"
-    },
-    "expect": "string"
-   },
-   {
-    "output": {
-     "cells_series": 384,
-     "strings_parallel": 14,
-     "pcs": "PCS-2",
-     "pcs_count": 2,
-     "transformer": "TX-3",
-     "string_fuse": "FU-13",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
-    "expect": "fuse"
+    "expect": "string"
    },
    {
     "output": {
@@ -9027,13 +9050,21 @@
      "pcs": "PCS-4",
      "pcs_count": 8,
      "transformer": "TX-3",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-13",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 11,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -9044,13 +9075,21 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -9061,13 +9100,21 @@
      "pcs": "PCS-2",
      "pcs_count": 2,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "heating"
    },
@@ -9078,12 +9125,20 @@
      "pcs": "PCS-2",
      "pcs_count": 2,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ],
      "mv_switchgear": "RMU-1"
     },
     "expect": "switchgear"
@@ -9095,15 +9150,66 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 14,
+     "pcs": "PCS-2",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-4",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2,
+     "mv_switchgear": "RMU-6",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 14,
+     "pcs": "PCS-2",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-4",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2,
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -9114,13 +9220,21 @@
    "pcs": "PCS-3",
    "pcs_count": 2,
    "transformer": "TX-3",
-   "string_fuse": "FU-13",
+   "string_fuse": "FU-6",
    "string_contactor": "CT-2",
-   "dc_cable": "C-50",
-   "dc_cables_parallel": 2,
+   "dc_cable": "C-70",
+   "dc_cables_parallel": 1,
    "cooling_unit": "CU-1",
    "cooling_count": 5,
-   "mv_switchgear": "RMU-7"
+   "mv_switchgear": "RMU-7",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -9130,13 +9244,21 @@
      "pcs": "PCS-3",
      "pcs_count": 2,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-6",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -9147,13 +9269,21 @@
      "pcs": "PCS-3",
      "pcs_count": 2,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-6",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -9164,13 +9294,21 @@
      "pcs": "PCS-3",
      "pcs_count": 2,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-6",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -9181,13 +9319,21 @@
      "pcs": "PCS-3",
      "pcs_count": 1,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-6",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "19"
    },
@@ -9200,11 +9346,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -9217,11 +9371,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -9232,47 +9394,46 @@
      "pcs": "PCS-3",
      "pcs_count": 2,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-6",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
-     "cooling_count": 5,
-     "mv_switchgear": "RMU-7"
-    },
-    "expect": "fuse"
-   },
-   {
-    "output": {
-     "cells_series": 368,
-     "strings_parallel": 19,
-     "pcs": "PCS-3",
-     "pcs_count": 2,
-     "transformer": "TX-3",
-     "string_fuse": "FU-13",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
-     "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cooling"
    },
    {
     "output": {
      "cells_series": 400,
-     "strings_parallel": 33,
+     "strings_parallel": 38,
      "pcs": "PCS-4",
      "pcs_count": 8,
      "transformer": "TX-3",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -9283,13 +9444,21 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-6",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -9300,13 +9469,21 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-6",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "PCS"
    },
@@ -9317,15 +9494,66 @@
      "pcs": "PCS-3",
      "pcs_count": 2,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-6",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 1,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "heating"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 19,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-6",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 5,
+     "mv_switchgear": "RMU-7",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 19,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-3",
+     "string_fuse": "FU-6",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 5,
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -9338,11 +9566,19 @@
    "transformer": "TX-3",
    "string_fuse": "FU-10",
    "string_contactor": "CT-2",
-   "dc_cable": "C-95",
-   "dc_cables_parallel": 2,
+   "dc_cable": "C-150",
+   "dc_cables_parallel": 1,
    "cooling_unit": "CU-1",
    "cooling_count": 4,
-   "mv_switchgear": "RMU-6"
+   "mv_switchgear": "RMU-6",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -9354,11 +9590,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -9371,11 +9615,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -9388,11 +9640,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -9405,11 +9665,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "36"
    },
@@ -9422,11 +9690,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -9439,11 +9715,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -9460,7 +9744,15 @@
      "dc_cables_parallel": 2,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "fuse"
    },
@@ -9473,11 +9765,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cooling"
    },
@@ -9486,15 +9786,23 @@
      "cells_series": 400,
      "strings_parallel": 36,
      "pcs": "PCS-2",
-     "pcs_count": 7,
+     "pcs_count": 8,
      "transformer": "TX-3",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -9507,11 +9815,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -9524,11 +9840,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "heating"
    },
@@ -9541,165 +9865,238 @@
      "transformer": "TX-3",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ],
      "mv_switchgear": "RMU-4"
     },
     "expect": "switchgear"
-   }
-  ]
- },
- "bess3_016": {
-  "golden": {
-   "cells_series": 400,
-   "strings_parallel": 18,
-   "pcs": "PCS-1",
-   "pcs_count": 4,
-   "transformer": "TX-4",
-   "string_fuse": "FU-13",
-   "string_contactor": "CT-2",
-   "dc_cable": "C-50",
-   "dc_cables_parallel": 3,
-   "cooling_unit": "CU-1",
-   "cooling_count": 5,
-   "mv_switchgear": "RMU-4"
-  },
-  "broken": [
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 15,
-     "pcs": "PCS-1",
-     "pcs_count": 4,
-     "transformer": "TX-4",
-     "string_fuse": "FU-13",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
-    },
-    "expect": "usable"
-   },
-   {
-    "output": {
-     "cells_series": 288,
-     "strings_parallel": 18,
-     "pcs": "PCS-1",
-     "pcs_count": 4,
-     "transformer": "TX-4",
-     "string_fuse": "FU-13",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
-    },
-    "expect": "usable"
-   },
-   {
-    "output": {
-     "cells_series": 368,
-     "strings_parallel": 18,
-     "pcs": "PCS-1",
-     "pcs_count": 4,
-     "transformer": "TX-4",
-     "string_fuse": "FU-13",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
-    },
-    "expect": "usable"
    },
    {
     "output": {
      "cells_series": 400,
-     "strings_parallel": 18,
+     "strings_parallel": 36,
      "pcs": "PCS-1",
-     "pcs_count": 4,
-     "transformer": "TX-4",
-     "string_fuse": "FU-9",
+     "pcs_count": 6,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
-    },
-    "expect": "string"
-   },
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 18,
-     "pcs": "PCS-1",
-     "pcs_count": 4,
-     "transformer": "TX-4",
-     "string_fuse": "FU-1",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
-    },
-    "expect": "string"
-   },
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 18,
-     "pcs": "PCS-1",
-     "pcs_count": 4,
-     "transformer": "TX-4",
-     "string_fuse": "FU-13",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
+     "dc_cable": "C-150",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
-     "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
+     "cooling_count": 4,
+     "mv_switchgear": "RMU-6",
+     "deviations": []
     },
     "expect": "fuse"
    },
    {
     "output": {
      "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-1",
+     "pcs_count": 6,
+     "transformer": "TX-3",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-150",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 4,
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
+   }
+  ]
+ },
+ "bess3_016": {
+  "golden": {
+   "cells_series": 336,
+   "strings_parallel": 21,
+   "pcs": "PCS-1",
+   "pcs_count": 4,
+   "transformer": "TX-4",
+   "string_fuse": "FU-5",
+   "string_contactor": "CT-2",
+   "dc_cable": "C-70",
+   "dc_cables_parallel": 1,
+   "cooling_unit": "CU-1",
+   "cooling_count": 5,
+   "mv_switchgear": "RMU-4",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
+  },
+  "broken": [
+   {
+    "output": {
+     "cells_series": 336,
      "strings_parallel": 18,
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 5,
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 288,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-5",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 5,
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 336,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-9",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 5,
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 336,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-1",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 5,
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 336,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-5",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cooling"
    },
    {
     "output": {
      "cells_series": 400,
-     "strings_parallel": 35,
+     "strings_parallel": 39,
      "pcs": "PCS-4",
      "pcs_count": 8,
      "transformer": "TX-4",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-11",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -9710,13 +10107,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -9727,13 +10132,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -9744,15 +10157,66 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 1,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 336,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-5",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 5,
+     "mv_switchgear": "RMU-4",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 336,
+     "strings_parallel": 21,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-5",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 5,
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -9763,13 +10227,21 @@
    "pcs": "PCS-1",
    "pcs_count": 4,
    "transformer": "TX-3",
-   "string_fuse": "FU-13",
+   "string_fuse": "FU-5",
    "string_contactor": "CT-2",
    "dc_cable": "C-50",
-   "dc_cables_parallel": 2,
+   "dc_cables_parallel": 1,
    "cooling_unit": "CU-1",
    "cooling_count": 6,
-   "mv_switchgear": "RMU-7"
+   "mv_switchgear": "RMU-7",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -9779,13 +10251,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -9796,13 +10276,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -9813,13 +10301,21 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "20"
    },
@@ -9833,10 +10329,18 @@
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -9850,10 +10354,18 @@
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -9864,47 +10376,46 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 1,
-     "cooling_unit": "CU-1",
-     "cooling_count": 6,
-     "mv_switchgear": "RMU-7"
-    },
-    "expect": "fuse"
-   },
-   {
-    "output": {
-     "cells_series": 368,
-     "strings_parallel": 20,
-     "pcs": "PCS-1",
-     "pcs_count": 4,
-     "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cooling"
    },
    {
     "output": {
      "cells_series": 400,
-     "strings_parallel": 35,
+     "strings_parallel": 37,
      "pcs": "PCS-4",
      "pcs_count": 8,
      "transformer": "TX-3",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-11",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -9915,13 +10426,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -9932,13 +10451,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -9949,15 +10476,66 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-3",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "heating"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 20,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-5",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 6,
+     "mv_switchgear": "RMU-7",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 368,
+     "strings_parallel": 20,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-3",
+     "string_fuse": "FU-5",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 6,
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -10103,13 +10681,21 @@
      "pcs": "PCS-4",
      "pcs_count": 8,
      "transformer": "TX-3",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-11",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
      "dc_cables_parallel": 2,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -10120,13 +10706,21 @@
      "pcs": "PCS-1",
      "pcs_count": 5,
      "transformer": "TX-3",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-11",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
      "dc_cables_parallel": 2,
      "cooling_unit": "CU-3",
      "cooling_count": 1,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -10183,228 +10777,6 @@
    }
   ]
  },
- "bess3_022": {
-  "golden": {
-   "cells_series": 400,
-   "strings_parallel": 10,
-   "pcs": "PCS-3",
-   "pcs_count": 1,
-   "transformer": "TX-2",
-   "string_fuse": "FU-10",
-   "string_contactor": "CT-2",
-   "dc_cable": "C-70",
-   "dc_cables_parallel": 3,
-   "cooling_unit": "CU-1",
-   "cooling_count": 6,
-   "mv_switchgear": "RMU-5"
-  },
-  "broken": [
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 7,
-     "pcs": "PCS-3",
-     "pcs_count": 1,
-     "transformer": "TX-2",
-     "string_fuse": "FU-10",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 6,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "usable"
-   },
-   {
-    "output": {
-     "cells_series": 352,
-     "strings_parallel": 10,
-     "pcs": "PCS-3",
-     "pcs_count": 1,
-     "transformer": "TX-2",
-     "string_fuse": "FU-10",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 6,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "usable"
-   },
-   {
-    "output": {
-     "cells_series": 448,
-     "strings_parallel": 10,
-     "pcs": "PCS-3",
-     "pcs_count": 1,
-     "transformer": "TX-2",
-     "string_fuse": "FU-10",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 6,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "string"
-   },
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 10,
-     "pcs": "PCS-3",
-     "pcs_count": 1,
-     "transformer": "TX-2",
-     "string_fuse": "FU-9",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 6,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "string"
-   },
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 10,
-     "pcs": "PCS-3",
-     "pcs_count": 1,
-     "transformer": "TX-2",
-     "string_fuse": "FU-1",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 6,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "string"
-   },
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 10,
-     "pcs": "PCS-3",
-     "pcs_count": 1,
-     "transformer": "TX-2",
-     "string_fuse": "FU-10",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
-     "cooling_unit": "CU-1",
-     "cooling_count": 6,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "fuse"
-   },
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 10,
-     "pcs": "PCS-3",
-     "pcs_count": 1,
-     "transformer": "TX-2",
-     "string_fuse": "FU-10",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 4,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "cooling"
-   },
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 35,
-     "pcs": "PCS-4",
-     "pcs_count": 8,
-     "transformer": "TX-2",
-     "string_fuse": "FU-10",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 10,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "cost"
-   },
-   {
-    "output": {
-     "cells_series": 384,
-     "strings_parallel": 10,
-     "pcs": "PCS-3",
-     "pcs_count": 1,
-     "transformer": "TX-2",
-     "string_fuse": "FU-10",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-4",
-     "cooling_count": 1,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "usable"
-   },
-   {
-    "output": {
-     "cells_series": 384,
-     "strings_parallel": 10,
-     "pcs": "PCS-1",
-     "pcs_count": 2,
-     "transformer": "TX-2",
-     "string_fuse": "FU-10",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 6,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "usable"
-   },
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 10,
-     "pcs": "PCS-1",
-     "pcs_count": 2,
-     "transformer": "TX-2",
-     "string_fuse": "FU-10",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 6,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "PCS"
-   },
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 10,
-     "pcs": "PCS-1",
-     "pcs_count": 2,
-     "transformer": "TX-2",
-     "string_fuse": "FU-10",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-1",
-     "cooling_count": 4,
-     "mv_switchgear": "RMU-5"
-    },
-    "expect": "PCS"
-   }
-  ]
- },
  "bess3_030": {
   "golden": {
    "cells_series": 384,
@@ -10414,11 +10786,19 @@
    "transformer": "TX-7",
    "string_fuse": "FU-14",
    "string_contactor": "CT-2",
-   "dc_cable": "C-70",
-   "dc_cables_parallel": 2,
+   "dc_cable": "C-50",
+   "dc_cables_parallel": 1,
    "cooling_unit": "CU-3",
    "cooling_count": 3,
-   "mv_switchgear": "RMU-7"
+   "mv_switchgear": "RMU-7",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -10430,11 +10810,19 @@
      "transformer": "TX-7",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -10447,11 +10835,19 @@
      "transformer": "TX-7",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -10464,11 +10860,19 @@
      "transformer": "TX-7",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -10481,11 +10885,19 @@
      "transformer": "TX-7",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "PCS"
    },
@@ -10498,11 +10910,19 @@
      "transformer": "TX-7",
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -10515,11 +10935,19 @@
      "transformer": "TX-7",
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -10532,45 +10960,44 @@
      "transformer": "TX-7",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
-     "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
-    },
-    "expect": "fuse"
-   },
-   {
-    "output": {
-     "cells_series": 384,
-     "strings_parallel": 32,
-     "pcs": "PCS-3",
-     "pcs_count": 4,
-     "transformer": "TX-7",
-     "string_fuse": "FU-14",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
-     "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cooling"
    },
    {
     "output": {
      "cells_series": 400,
-     "strings_parallel": 31,
+     "strings_parallel": 33,
      "pcs": "PCS-3",
      "pcs_count": 8,
      "transformer": "TX-7",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
-     "cooling_unit": "CU-3",
-     "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5,
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -10583,11 +11010,19 @@
      "transformer": "TX-7",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "PCS"
    },
@@ -10600,30 +11035,89 @@
      "transformer": "TX-7",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "PCS"
    },
    {
     "output": {
-     "cells_series": 400,
-     "strings_parallel": 25,
+     "cells_series": 384,
+     "strings_parallel": 26,
      "pcs": "PCS-3",
      "pcs_count": 3,
      "transformer": "TX-6",
      "string_fuse": "FU-13",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 9,
-     "mv_switchgear": "RMU-7"
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 32,
+     "pcs": "PCS-3",
+     "pcs_count": 4,
+     "transformer": "TX-7",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3,
+     "mv_switchgear": "RMU-7",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 32,
+     "pcs": "PCS-3",
+     "pcs_count": 4,
+     "transformer": "TX-7",
+     "string_fuse": "FU-14",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 3,
+     "mv_switchgear": "RMU-7",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -10636,11 +11130,19 @@
    "transformer": "TX-5",
    "string_fuse": "FU-4",
    "string_contactor": "CT-2",
-   "dc_cable": "C-50",
-   "dc_cables_parallel": 3,
+   "dc_cable": "C-70",
+   "dc_cables_parallel": 2,
    "cooling_unit": "CU-2",
    "cooling_count": 7,
-   "mv_switchgear": "RMU-3"
+   "mv_switchgear": "RMU-3",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -10652,11 +11154,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-4",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-2",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -10669,11 +11179,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-4",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-2",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -10686,11 +11204,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-4",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-2",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -10703,11 +11229,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-2",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -10720,11 +11254,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-2",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -10741,7 +11283,15 @@
      "dc_cables_parallel": 2,
      "cooling_unit": "CU-2",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "fuse"
    },
@@ -10754,11 +11304,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-4",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-2",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cooling"
    },
@@ -10771,11 +11329,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -10788,11 +11354,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-4",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-4",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -10805,11 +11379,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-4",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-2",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -10822,13 +11404,64 @@
      "transformer": "TX-5",
      "string_fuse": "FU-4",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-2",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "PCS"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 15,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-4",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 7,
+     "mv_switchgear": "RMU-3",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 15,
+     "pcs": "PCS-3",
+     "pcs_count": 2,
+     "transformer": "TX-5",
+     "string_fuse": "FU-4",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 2,
+     "cooling_unit": "CU-2",
+     "cooling_count": 7,
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -10839,13 +11472,21 @@
    "pcs": "PCS-3",
    "pcs_count": 3,
    "transformer": "TX-3",
-   "string_fuse": "FU-14",
+   "string_fuse": "FU-13",
    "string_contactor": "CT-2",
-   "dc_cable": "C-50",
-   "dc_cables_parallel": 3,
+   "dc_cable": "C-70",
+   "dc_cables_parallel": 1,
    "cooling_unit": "CU-3",
    "cooling_count": 2,
-   "mv_switchgear": "RMU-1"
+   "mv_switchgear": "RMU-1",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -10855,13 +11496,21 @@
      "pcs": "PCS-3",
      "pcs_count": 3,
      "transformer": "TX-3",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-13",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -10872,13 +11521,21 @@
      "pcs": "PCS-3",
      "pcs_count": 3,
      "transformer": "TX-3",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-13",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -10889,13 +11546,21 @@
      "pcs": "PCS-3",
      "pcs_count": 3,
      "transformer": "TX-3",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-13",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -10906,13 +11571,21 @@
      "pcs": "PCS-3",
      "pcs_count": 1,
      "transformer": "TX-3",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-13",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "36"
    },
@@ -10925,11 +11598,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -10942,11 +11623,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -10957,47 +11646,46 @@
      "pcs": "PCS-3",
      "pcs_count": 3,
      "transformer": "TX-3",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-13",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
+     "dc_cable": "C-70",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
-     "cooling_count": 2,
-     "mv_switchgear": "RMU-1"
-    },
-    "expect": "fuse"
-   },
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 36,
-     "pcs": "PCS-3",
-     "pcs_count": 3,
-     "transformer": "TX-3",
-     "string_fuse": "FU-14",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
-     "cooling_unit": "CU-3",
      "cooling_count": 1,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "heating"
    },
    {
     "output": {
      "cells_series": 400,
-     "strings_parallel": 38,
+     "strings_parallel": 40,
      "pcs": "PCS-4",
      "pcs_count": 8,
      "transformer": "TX-3",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -11010,11 +11698,19 @@
      "transformer": "TX-3",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -11025,13 +11721,21 @@
      "pcs": "PCS-3",
      "pcs_count": 3,
      "transformer": "TX-3",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-13",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11042,15 +11746,66 @@
      "pcs": "PCS-3",
      "pcs_count": 3,
      "transformer": "TX-3",
-     "string_fuse": "FU-14",
+     "string_fuse": "FU-13",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 1,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "heating"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2,
+     "mv_switchgear": "RMU-1",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 36,
+     "pcs": "PCS-3",
+     "pcs_count": 3,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-3",
+     "cooling_count": 2,
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -11247,13 +12002,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
      "dc_cables_parallel": 3,
      "cooling_unit": "CU-1",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-1"
+     "mv_switchgear": "RMU-1",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11283,13 +12046,21 @@
    "pcs": "PCS-1",
    "pcs_count": 4,
    "transformer": "TX-4",
-   "string_fuse": "FU-13",
+   "string_fuse": "FU-4",
    "string_contactor": "CT-2",
    "dc_cable": "C-50",
-   "dc_cables_parallel": 2,
+   "dc_cables_parallel": 1,
    "cooling_unit": "CU-1",
    "cooling_count": 6,
-   "mv_switchgear": "RMU-8"
+   "mv_switchgear": "RMU-8",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -11299,13 +12070,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11316,13 +12095,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11333,13 +12120,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11350,13 +12145,21 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "PCS"
    },
@@ -11370,10 +12173,18 @@
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -11387,10 +12198,18 @@
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -11401,13 +12220,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 1,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "fuse"
    },
@@ -11418,30 +12245,46 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cooling"
    },
    {
     "output": {
      "cells_series": 400,
-     "strings_parallel": 38,
+     "strings_parallel": 40,
      "pcs": "PCS-4",
      "pcs_count": 8,
      "transformer": "TX-4",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
-     "cooling_count": 9,
-     "mv_switchgear": "RMU-8"
+     "cooling_count": 10,
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -11452,13 +12295,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -11469,13 +12320,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-4",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11486,15 +12345,66 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "heating"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 17,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-4",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 6,
+     "mv_switchgear": "RMU-8",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 17,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-4",
+     "string_fuse": "FU-4",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 6,
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -11676,13 +12586,21 @@
    "pcs": "PCS-1",
    "pcs_count": 5,
    "transformer": "TX-5",
-   "string_fuse": "FU-13",
+   "string_fuse": "FU-10",
    "string_contactor": "CT-2",
    "dc_cable": "C-70",
-   "dc_cables_parallel": 2,
+   "dc_cables_parallel": 1,
    "cooling_unit": "CU-2",
    "cooling_count": 3,
-   "mv_switchgear": "RMU-6"
+   "mv_switchgear": "RMU-6",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -11692,13 +12610,21 @@
      "pcs": "PCS-1",
      "pcs_count": 5,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-10",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11709,13 +12635,21 @@
      "pcs": "PCS-1",
      "pcs_count": 5,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-10",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11726,13 +12660,21 @@
      "pcs": "PCS-1",
      "pcs_count": 5,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-10",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -11743,13 +12685,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-10",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "29"
    },
@@ -11763,10 +12713,18 @@
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -11780,44 +12738,43 @@
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
    {
     "output": {
-     "cells_series": 336,
-     "strings_parallel": 29,
-     "pcs": "PCS-1",
-     "pcs_count": 5,
-     "transformer": "TX-5",
-     "string_fuse": "FU-13",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 1,
-     "cooling_unit": "CU-2",
-     "cooling_count": 3,
-     "mv_switchgear": "RMU-6"
-    },
-    "expect": "fuse"
-   },
-   {
-    "output": {
      "cells_series": 400,
-     "strings_parallel": 39,
+     "strings_parallel": 40,
      "pcs": "PCS-3",
      "pcs_count": 8,
      "transformer": "TX-5",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 3,
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -11828,13 +12785,21 @@
      "pcs": "PCS-1",
      "pcs_count": 5,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-10",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -11845,13 +12810,21 @@
      "pcs": "PCS-3",
      "pcs_count": 2,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-6"
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11862,15 +12835,66 @@
      "pcs": "PCS-1",
      "pcs_count": 5,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-10",
      "string_contactor": "CT-2",
      "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ],
      "mv_switchgear": "RMU-2"
     },
     "expect": "switchgear"
+   },
+   {
+    "output": {
+     "cells_series": 336,
+     "strings_parallel": 29,
+     "pcs": "PCS-1",
+     "pcs_count": 5,
+     "transformer": "TX-5",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3,
+     "mv_switchgear": "RMU-6",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 336,
+     "strings_parallel": 29,
+     "pcs": "PCS-1",
+     "pcs_count": 5,
+     "transformer": "TX-5",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-70",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 3,
+     "mv_switchgear": "RMU-6",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -11883,11 +12907,19 @@
    "transformer": "TX-5",
    "string_fuse": "FU-10",
    "string_contactor": "CT-2",
-   "dc_cable": "C-95",
-   "dc_cables_parallel": 2,
+   "dc_cable": "C-50",
+   "dc_cables_parallel": 1,
    "cooling_unit": "CU-2",
    "cooling_count": 5,
-   "mv_switchgear": "RMU-4"
+   "mv_switchgear": "RMU-4",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -11899,11 +12931,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11916,11 +12956,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11933,11 +12981,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -11950,11 +13006,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "35"
    },
@@ -11967,11 +13031,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -11984,11 +13056,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -12002,44 +13082,43 @@
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
-     "cooling_unit": "CU-2",
-     "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
-    },
-    "expect": "fuse"
-   },
-   {
-    "output": {
-     "cells_series": 384,
-     "strings_parallel": 35,
-     "pcs": "PCS-1",
-     "pcs_count": 6,
-     "transformer": "TX-5",
-     "string_fuse": "FU-10",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cooling"
    },
    {
     "output": {
      "cells_series": 400,
-     "strings_parallel": 35,
+     "strings_parallel": 39,
      "pcs": "PCS-3",
      "pcs_count": 8,
      "transformer": "TX-5",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
-     "cooling_count": 9,
-     "mv_switchgear": "RMU-4"
+     "cooling_count": 8,
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -12052,11 +13131,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12069,11 +13156,19 @@
      "transformer": "TX-5",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12086,13 +13181,64 @@
      "transformer": "TX-5",
      "string_fuse": "FU-10",
      "string_contactor": "CT-2",
-     "dc_cable": "C-95",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 8,
-     "mv_switchgear": "RMU-4"
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 35,
+     "pcs": "PCS-1",
+     "pcs_count": 6,
+     "transformer": "TX-5",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5,
+     "mv_switchgear": "RMU-4",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 35,
+     "pcs": "PCS-1",
+     "pcs_count": 6,
+     "transformer": "TX-5",
+     "string_fuse": "FU-10",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-2",
+     "cooling_count": 5,
+     "mv_switchgear": "RMU-4",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -12103,13 +13249,21 @@
    "pcs": "PCS-1",
    "pcs_count": 3,
    "transformer": "TX-2",
-   "string_fuse": "FU-13",
+   "string_fuse": "FU-5",
    "string_contactor": "CT-2",
-   "dc_cable": "C-120",
+   "dc_cable": "C-50",
    "dc_cables_parallel": 1,
    "cooling_unit": "CU-1",
    "cooling_count": 3,
-   "mv_switchgear": "RMU-2"
+   "mv_switchgear": "RMU-2",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -12119,13 +13273,21 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-2",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-120",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12136,13 +13298,21 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-2",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-120",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12153,13 +13323,21 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-2",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-120",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12170,13 +13348,21 @@
      "pcs": "PCS-1",
      "pcs_count": 2,
      "transformer": "TX-2",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-120",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "17"
    },
@@ -12189,11 +13375,19 @@
      "transformer": "TX-2",
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
-     "dc_cable": "C-120",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -12206,11 +13400,19 @@
      "transformer": "TX-2",
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
-     "dc_cable": "C-120",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -12221,47 +13423,46 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-2",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 1,
-     "cooling_unit": "CU-1",
-     "cooling_count": 3,
-     "mv_switchgear": "RMU-2"
-    },
-    "expect": "fuse"
-   },
-   {
-    "output": {
-     "cells_series": 400,
-     "strings_parallel": 17,
-     "pcs": "PCS-1",
-     "pcs_count": 3,
-     "transformer": "TX-2",
-     "string_fuse": "FU-13",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-120",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 1,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "heating"
    },
    {
     "output": {
      "cells_series": 400,
-     "strings_parallel": 36,
+     "strings_parallel": 40,
      "pcs": "PCS-4",
      "pcs_count": 8,
      "transformer": "TX-2",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 2,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -12272,13 +13473,21 @@
      "pcs": "PCS-3",
      "pcs_count": 2,
      "transformer": "TX-2",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-120",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -12289,13 +13498,21 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-2",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-120",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12306,15 +13523,66 @@
      "pcs": "PCS-1",
      "pcs_count": 3,
      "transformer": "TX-2",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-120",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 1,
-     "mv_switchgear": "RMU-2"
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "heating"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 17,
+     "pcs": "PCS-1",
+     "pcs_count": 3,
+     "transformer": "TX-2",
+     "string_fuse": "FU-5",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3,
+     "mv_switchgear": "RMU-2",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 17,
+     "pcs": "PCS-1",
+     "pcs_count": 3,
+     "transformer": "TX-2",
+     "string_fuse": "FU-5",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 3,
+     "mv_switchgear": "RMU-2",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -12328,10 +13596,18 @@
    "string_fuse": "FU-13",
    "string_contactor": "CT-2",
    "dc_cable": "C-50",
-   "dc_cables_parallel": 2,
+   "dc_cables_parallel": 1,
    "cooling_unit": "CU-1",
    "cooling_count": 7,
-   "mv_switchgear": "RMU-8"
+   "mv_switchgear": "RMU-8",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -12344,10 +13620,18 @@
      "string_fuse": "FU-13",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12361,10 +13645,18 @@
      "string_fuse": "FU-13",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12378,10 +13670,18 @@
      "string_fuse": "FU-13",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12395,10 +13695,18 @@
      "string_fuse": "FU-13",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "27"
    },
@@ -12412,10 +13720,18 @@
      "string_fuse": "FU-9",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -12429,10 +13745,18 @@
      "string_fuse": "FU-1",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -12445,45 +13769,44 @@
      "transformer": "TX-3",
      "string_fuse": "FU-13",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
-     "cooling_count": 7,
-     "mv_switchgear": "RMU-8"
-    },
-    "expect": "fuse"
-   },
-   {
-    "output": {
-     "cells_series": 384,
-     "strings_parallel": 27,
-     "pcs": "PCS-1",
-     "pcs_count": 5,
-     "transformer": "TX-3",
-     "string_fuse": "FU-13",
-     "string_contactor": "CT-2",
-     "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
-     "cooling_unit": "CU-1",
      "cooling_count": 2,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "heating"
    },
    {
     "output": {
      "cells_series": 400,
-     "strings_parallel": 39,
+     "strings_parallel": 40,
      "pcs": "PCS-4",
      "pcs_count": 8,
      "transformer": "TX-3",
      "string_fuse": "FU-14",
      "string_contactor": "CT-2",
-     "dc_cable": "C-150",
+     "dc_cable": "C-50",
      "dc_cables_parallel": 1,
      "cooling_unit": "CU-3",
      "cooling_count": 3,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -12497,10 +13820,18 @@
      "string_fuse": "FU-13",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -12514,10 +13845,18 @@
      "string_fuse": "FU-13",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-1",
      "cooling_count": 7,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12531,12 +13870,63 @@
      "string_fuse": "FU-13",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
-     "dc_cables_parallel": 2,
+     "dc_cables_parallel": 1,
      "cooling_unit": "CU-2",
      "cooling_count": 1,
-     "mv_switchgear": "RMU-8"
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "heating"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 27,
+     "pcs": "PCS-1",
+     "pcs_count": 5,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 7,
+     "mv_switchgear": "RMU-8",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 384,
+     "strings_parallel": 27,
+     "pcs": "PCS-1",
+     "pcs_count": 5,
+     "transformer": "TX-3",
+     "string_fuse": "FU-13",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 1,
+     "cooling_unit": "CU-1",
+     "cooling_count": 7,
+     "mv_switchgear": "RMU-8",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  },
@@ -12547,13 +13937,21 @@
    "pcs": "PCS-1",
    "pcs_count": 4,
    "transformer": "TX-5",
-   "string_fuse": "FU-13",
+   "string_fuse": "FU-5",
    "string_contactor": "CT-2",
    "dc_cable": "C-50",
    "dc_cables_parallel": 3,
    "cooling_unit": "CU-1",
    "cooling_count": 6,
-   "mv_switchgear": "RMU-3"
+   "mv_switchgear": "RMU-3",
+   "deviations": [
+    {
+     "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+     "clause": "433.3.1",
+     "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+     "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+    }
+   ]
   },
   "broken": [
    {
@@ -12563,13 +13961,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
      "dc_cables_parallel": 3,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12580,13 +13986,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
      "dc_cables_parallel": 3,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12597,13 +14011,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
      "dc_cables_parallel": 3,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "usable"
    },
@@ -12620,7 +14042,15 @@
      "dc_cables_parallel": 3,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -12637,7 +14067,15 @@
      "dc_cables_parallel": 3,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "string"
    },
@@ -12648,13 +14086,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
-     "dc_cable": "C-70",
-     "dc_cables_parallel": 1,
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 2,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "fuse"
    },
@@ -12665,13 +14111,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
      "dc_cables_parallel": 3,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "PCS"
    },
@@ -12682,13 +14136,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-5",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
      "dc_cables_parallel": 3,
      "cooling_unit": "CU-1",
      "cooling_count": 4,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cooling"
    },
@@ -12716,13 +14178,21 @@
      "pcs": "PCS-1",
      "pcs_count": 5,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-7",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
      "dc_cables_parallel": 3,
      "cooling_unit": "CU-1",
      "cooling_count": 5,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "cost"
    },
@@ -12733,13 +14203,21 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
      "dc_cables_parallel": 3,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "PCS"
    },
@@ -12750,15 +14228,66 @@
      "pcs": "PCS-1",
      "pcs_count": 4,
      "transformer": "TX-4",
-     "string_fuse": "FU-13",
+     "string_fuse": "FU-5",
      "string_contactor": "CT-2",
      "dc_cable": "C-50",
      "dc_cables_parallel": 3,
      "cooling_unit": "CU-1",
      "cooling_count": 6,
-     "mv_switchgear": "RMU-3"
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "433.3.1",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
     },
     "expect": "PCS"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 24,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-5",
+     "string_fuse": "FU-5",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-1",
+     "cooling_count": 6,
+     "mv_switchgear": "RMU-3",
+     "deviations": []
+    },
+    "expect": "fuse"
+   },
+   {
+    "output": {
+     "cells_series": 400,
+     "strings_parallel": 24,
+     "pcs": "PCS-1",
+     "pcs_count": 4,
+     "transformer": "TX-5",
+     "string_fuse": "FU-5",
+     "string_contactor": "CT-2",
+     "dc_cable": "C-50",
+     "dc_cables_parallel": 3,
+     "cooling_unit": "CU-1",
+     "cooling_count": 6,
+     "mv_switchgear": "RMU-3",
+     "deviations": [
+      {
+       "standard": "IEC 60364-4-43 (DIN VDE 0100-430)",
+       "clause": "434.5.2",
+       "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+       "reason": "the battery management system limits string current to the cell continuous rating, which the corrected cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection"
+      }
+     ]
+    },
+    "expect": "fuse"
    }
   ]
  }

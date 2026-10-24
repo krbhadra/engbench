@@ -142,10 +142,21 @@ def make_task(seed: int, level: int = 2) -> dict | None:
     if len(broken) < 3:
         return None
     if level == 3:
+        strict = _optimize({**task, "deviations_allowed": False})[0]  # applying every rule must stay a passing choice
+        if strict is None or strict[0] > best[0] * (1 + TOLERANCE):
+            return None
         hidden = _hidden_broken(task)
         if len(hidden) < MIN_HIDDEN_BINDING:  # the hidden requirements must change the answer, or the level is fake
             return None
         broken += hidden
+        if golden.get("deviations"):  # the exemption is accepted only when recorded, and only under the right clause
+            for note, devs in (("overload coordination omitted without a recorded deviation", []),
+                               ("deviation cites a clause that does not permit omitting overload protection",
+                                [{**OVERLOAD_DEVIATION, "clause": "434.5.2"}])):
+                b = {**golden, "deviations": devs}
+                r = bess.grade(task, b)
+                if not r["passed"]:
+                    broken.append({"output": b, "note": note, "expect": r["violations"][0].split(" ")[0]})
     task["_golden"], task["_broken"] = golden, broken
     task["_stats"] = {"feasible": n_feasible, "near_opt": near_opt, "grid": grid}
     return task
@@ -167,6 +178,7 @@ def _optimize(task):
     fuse_k = {f["id"]: bess._interp(bess._table(f["k_amb"]), s["t_max_c"]) for f in task["fuses"]}
     s_nap = bess.grid_side(task, 0.0, txs[0])[0]
     op_cache = {}
+    dev_ok, i_limit = task.get("deviations_allowed"), c["c_cont"] * c["q_ah"]
 
     feasible, best, grid = [], None, 0
     for pcs in task["pcs_catalog"]:
@@ -229,7 +241,8 @@ def _optimize(task):
                             for n_cab in range(1, CABLE_PAR_MAX + 1):
                                 k_g = bess._interp(bess._table(task["k_group"]), s["strings_per_tray"] * n_cab)
                                 i_z = n_cab * cb["i_z_base"] * k_t * k_g
-                                if fu["i_n"] > i_z or 1.6 * fu["i_n"] > 1.45 * i_z:
+                                coordinated = fu["i_n"] <= i_z and 1.6 * fu["i_n"] <= 1.45 * i_z
+                                if not coordinated and not (dev_ok and i_z >= i_limit):  # level 3: recorded exemption
                                     continue
                                 r_cable = cb["r_ohm_per_km"] * s["dc_route_m"] / 1000.0 * 2 / n_cab
                                 if i_s * r_cable / v_load > p["v_drop_max"]:
@@ -239,7 +252,7 @@ def _optimize(task):
                                     continue
                                 price = np_ * (fu["price"] + ct[0]) + np_ * n_cab * 2 * s["dc_route_m"] * cb["price_per_m"]
                                 if sub is None or price < sub[0]:
-                                    sub = (price, fu["id"], ct[1], cb["id"], n_cab)
+                                    sub = (price, fu["id"], ct[1], cb["id"], n_cab, not coordinated)
                     if sub is None:
                         continue
                     cost = ns * np_ * c["price"] + n_pcs * pcs["price"] + tx["price"] + sub[0] + cool[0] + sw[1]
@@ -248,6 +261,8 @@ def _optimize(task):
                               "dc_cables_parallel": sub[4], "cooling_unit": cool[1], "cooling_count": cool[2]}
                     if sw[0]:
                         design["mv_switchgear"] = sw[0]
+                    if sub[5]:
+                        design["deviations"] = [OVERLOAD_DEVIATION]
                     feasible.append((cost, design))
                     if best is None or cost < best[0]:
                         best = (cost, design)
@@ -419,7 +434,7 @@ HIDDEN = {  # feature -> the mistake a team makes when it does not anticipate th
 
 def _add_level3(task, rng, seed):
     p, c, s = task["params"], task["cell"], task["site"]
-    task.update({"id": f"bess3_{seed:03d}", "mode": "hidden", "level": 3, "max_grades": 1})
+    task.update({"id": f"bess3_{seed:03d}", "mode": "hidden", "level": 3, "max_grades": 1, "deviations_allowed": True})
     p.pop("soh_eol"); p.pop("milestone"); c.pop("k_r_eol")
     task["duty"] = {"cycles_per_day": rng.choice([1.0, 1.5, 2.0])}
     fade, grow = rng.uniform(0.85, 1.15), rng.uniform(0.9, 1.1)
@@ -541,11 +556,21 @@ def describe3(t: dict) -> str:
         + "\n\nObjective: minimize total price (cells + PCS + transformer + fuses + contactors + cables + cooling and heating "
         "units + switchgear). The design must satisfy every requirement that applies to this plant, including those of the "
         "standards and grid connection rules that govern it, whether or not they are listed here, and its price must be "
-        f"within {t['objective']['tolerance']*100:.0f}% of the cheapest design that does. Return " + OUTPUT_SHAPE3
+        f"within {t['objective']['tolerance']*100:.0f}% of the cheapest design that does. Where the design deliberately does "
+        "not apply a requirement of a standard, record it under deviations with the standard and clause that permit it, "
+        "the requirement not applied and the reason; a deviation is accepted only where that clause permits it and its "
+        "conditions hold for this design. Return " + OUTPUT_SHAPE3
     )
 
 
-OUTPUT_SHAPE3 = OUTPUT_SHAPE[:-1] + ', "mv_switchgear": "<id>"}'
+OUTPUT_SHAPE3 = (OUTPUT_SHAPE[:-1] + ', "mv_switchgear": "<id>", "deviations": [{"standard": "<standard>", '
+                 '"clause": "<clause>", "requirement": "<requirement not applied>", "reason": "<why it is permitted>"}]}')
+OVERLOAD_DEVIATION = {
+    "standard": "IEC 60364-4-43 (DIN VDE 0100-430)", "clause": "433.3.1",
+    "requirement": "overload coordination of the string cable (I_n <= I_z and 1.6 I_n <= 1.45 I_z)",
+    "reason": "the battery management system limits string current to the cell continuous rating, which the corrected "
+              "cable ampacity covers, so the cable cannot be overloaded; the fuse provides short-circuit protection",
+}
 SOURCES3 = [x for x in SOURCES if not x.startswith(("NASA", "PNNL"))] + [
     "VDE-AR-N 4110 reactive capability Q = 0.33 P_b,inst over 0.9-1.1 Uc as stated in M.O.E. (Windenergietage 2018) and Kommenergie TAR-MS notes (2026)",
     "German TSOs, PQ-Bedingungen v1.06 (2026-10-07), sec. 3.1.6: FCR power 1.25 x P and limited-energy reserve, regelleistung.net",

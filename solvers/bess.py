@@ -68,6 +68,9 @@ Level 3 (bess3), switched on by the task's own data; level-2 tasks carry none of
     from the cell's charge-rate table; heating x count >= UA_rack N_p (T_needed - T_site_min).
   FCR (task["fcr"], PQ-Bedingungen v1.06 sec. 3.1.6, symmetric): power at the connection point
     >= 1.25 P_FCR and usable energy >= (1/2 + 1/4 + 1/6) h x P_FCR, each with the project margin.
+  Deviations (task["deviations_allowed"]): string-cable overload coordination may be omitted when the design
+    records a deviation citing IEC 60364-4-43 / DIN VDE 0100-430 clause 433.3 and the corrected ampacity covers
+    the cell continuous limit the BMS enforces (the cable cannot be overloaded); otherwise the violation stands.
   MV switchgear (task["mv_switchgear"]): U_r >= highest system voltage; I_k = S_k / (sqrt3 U_n)
     + PCS AC fault contribution <= rated short-time current; kappa sqrt2 I_k <= making current,
     kappa = 1.02 + 0.98 exp(-3 R/X); rated current >= connection-point current.
@@ -75,6 +78,7 @@ Level 3 (bess3), switched on by the task's own data; level-2 tasks carry none of
 from __future__ import annotations
 
 import math
+import re
 
 from objective import check_objective
 
@@ -222,6 +226,29 @@ def mv_fault(task, pcs, n_pcs, s_nap):
     return i_k, kappa * math.sqrt(2) * i_k, s_nap / (SQ3 * u)
 
 
+OVERLOAD_STANDARD = re.compile(r"60364-?4-?43|0100-?430")  # IEC/HD/EN 60364-4-43 = DIN VDE 0100-430
+OVERLOAD_EXEMPTION_CLAUSE = "433.3"  # omission of devices for protection against overload
+
+
+def overload_deviation(task, output, m):
+    """A recorded deviation from string-cable overload coordination (level 3). None when none is recorded,
+    "" when it is accepted, otherwise why not: the clause must permit omitting overload protection and the
+    cable must carry the most current the string can carry, the cell continuous limit the BMS enforces."""
+    if not task.get("deviations_allowed"):
+        return None
+    cited = [x for x in output.get("deviations") or [] if isinstance(x, dict)
+             and OVERLOAD_STANDARD.search(str(x.get("standard", "")).replace(" ", ""))]
+    if not cited:
+        return None
+    if not any(str(x.get("clause", "")).strip().lstrip("§ ").startswith(OVERLOAD_EXEMPTION_CLAUSE) for x in cited):
+        return "the cited clause does not permit omitting overload protection"
+    i_limit = task["cell"]["c_cont"] * task["cell"]["q_ah"]
+    if m["i_z_a"] < i_limit - 1e-9:
+        return (f"the corrected cable ampacity {m['i_z_a']:.1f} A is below the {i_limit:.0f} A the string can carry "
+                f"(cell continuous limit), so the cable can be overloaded")
+    return ""
+
+
 def evaluate(task: dict, d: dict) -> dict:
     p, c, s = task["params"], task["cell"], task["site"]
     ns, np_ = d["cells_series"], d["strings_parallel"]
@@ -359,12 +386,19 @@ def grade(task: dict, output: dict) -> dict:
     # cable
     if cb["u_dc"] < m["v_string_max"] - T:
         v.append(f"cable DC voltage rating {cb['u_dc']:.0f} V is below the string maximum {m['v_string_max']:.1f} V")
+    overload = []
     if fu["i_n"] > m["i_z_a"] + T:
-        v.append(f"fuse rating {fu['i_n']:.0f} A exceeds the corrected cable ampacity I_z {m['i_z_a']:.1f} A "
-                 f"({d['dc_cables_parallel']} x {cb['i_z_base']} A x k_T x k_G for {m['circuits']} circuits)")
+        overload.append(f"fuse rating {fu['i_n']:.0f} A exceeds the corrected cable ampacity I_z {m['i_z_a']:.1f} A "
+                        f"({d['dc_cables_parallel']} x {cb['i_z_base']} A x k_T x k_G for {m['circuits']} circuits)")
     elif 1.6 * fu["i_n"] > 1.45 * m["i_z_a"] + T:
-        v.append(f"fuse conventional fusing current 1.6 x {fu['i_n']:.0f} A = {1.6 * fu['i_n']:.0f} A exceeds "
-                 f"1.45 x I_z = {1.45 * m['i_z_a']:.0f} A (IEC 60364-4-43 overload coordination)")
+        overload.append(f"fuse conventional fusing current 1.6 x {fu['i_n']:.0f} A = {1.6 * fu['i_n']:.0f} A exceeds "
+                        f"1.45 x I_z = {1.45 * m['i_z_a']:.0f} A (IEC 60364-4-43 overload coordination)")
+    if overload:
+        why = overload_deviation(task, output, m)
+        if why is None:
+            v += overload
+        elif why:
+            v += [o + f"; recorded deviation not accepted: {why}" for o in overload]
     if m["v_drop_frac"] > p["v_drop_max"] + T:
         v.append(f"DC cable voltage drop {m['v_drop_frac'] * 100:.2f}% exceeds {p['v_drop_max'] * 100:.1f}%")
     # transformer
