@@ -1,14 +1,15 @@
 """Grid-connected LFP battery energy storage system: knowledge-required systems chain.
 
-The task NAMES the methods and standards and gives the data; it does not restate the
-rules. This module is the reference implementation of those named rules. Every check
-reports the computed value and the limit so the agentic track gets actionable feedback.
+Level 2 (bess) NAMES the methods and standards and gives the data; level 3 (bess3) names
+nothing and adds hidden requirements. This module is the reference implementation of the
+rules for both. Every check reports the computed value and the limit.
 
 Design returned by the model (all ids from the task catalogs, counts are integers):
   cells_series, strings_parallel (one string per rack), pcs, pcs_count, transformer,
   string_fuse, string_contactor, dc_cable, dc_cables_parallel, cooling_unit, cooling_count
+  (+ mv_switchgear at level 3)
 
-Named rules, as implemented (sources in docs/sources/bess.md and bess-vde.md):
+Rules, as implemented (sources in docs/sources/bess.md and bess-vde.md):
 
   Energy (PNNL ESGC 2022 definitions, 80 % SOH end of life)
     E_poi = N_s N_p V_nom Q (SOC_max - SOC_min) SOH_eol eta_dc eta_pcs eta_tx   [Wh]
@@ -49,8 +50,24 @@ Named rules, as implemented (sources in docs/sources/bess.md and bess-vde.md):
   Interface
     strings <= PCS DC inputs x count ; every count >= 1 ; ids exist
   Objective
-    total price = cells + PCS + transformer + fuses + contactors + cables + cooling,
-    within task["objective"]["tolerance"] of the brute-force optimum
+    total price = cells + PCS + transformer + fuses + contactors + cables + cooling
+    (+ switchgear), within task["objective"]["tolerance"] of the brute-force optimum
+
+Level 3 (bess3), switched on by the task's own data; level-2 tasks carry none of it:
+
+  Life (task["duty"]): SOH and resistance growth at end of service life are read from the cell's
+    ageing tables at cycles = cycles_per_day x 365 x service_years, replacing the given 80 % / k_eol.
+  Auxiliaries (task["aux"]): fed from the MV bus behind the connection point, so the plant must
+    deliver P_net + P_aux, P_aux = rack_w N_p + site_kw + Q_heat / EER (fixed point with the string
+    current); energy at the connection point is net: E_poi - P_aux x duration. The transformer
+    carries the gross active power plus the connection-point reactive power.
+  Voltage band (task["grid"]["u_min_pu"]): a current-limited PCS delivers S_rated x U/U_n, so
+    S_pcs_site x u_min_pu >= S_pcs_needed.
+  Winter (task["winter"]): the cell temperature needed to charge at the string current is read
+    from the cell's charge-rate table; heating x count >= UA_rack N_p (T_needed - T_site_min).
+  MV switchgear (task["mv_switchgear"]): U_r >= highest system voltage; I_k = S_k / (sqrt3 U_n)
+    + PCS AC fault contribution <= rated short-time current; kappa sqrt2 I_k <= making current,
+    kappa = 1.02 + 0.98 exp(-3 R/X); rated current >= connection-point current.
 """
 from __future__ import annotations
 
@@ -63,6 +80,15 @@ FIELDS = ("cells_series", "strings_parallel", "pcs", "pcs_count", "transformer",
 INTS = ("cells_series", "strings_parallel", "pcs_count", "dc_cables_parallel", "cooling_count")
 CATALOG = {"pcs": "pcs_catalog", "transformer": "transformers", "string_fuse": "fuses",
            "string_contactor": "contactors", "dc_cable": "cables", "cooling_unit": "cooling_units"}
+SQ3 = math.sqrt(3)
+
+
+def fields(task):
+    return FIELDS + (("mv_switchgear",) if "mv_switchgear" in task else ())
+
+
+def catalogs(task):
+    return {**CATALOG, **({"mv_switchgear": "mv_switchgear"} if "mv_switchgear" in task else {})}
 
 
 def _interp(points, x):
@@ -75,6 +101,17 @@ def _interp(points, x):
     return pts[-1][1]
 
 
+def _inverse(points, y):
+    """Smallest x where a non-decreasing table reaches y; inf if it never does."""
+    pts = sorted(points)
+    if y <= pts[0][1]:
+        return pts[0][0]
+    for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
+        if y <= y1:
+            return x0 + (x1 - x0) * (y - y0) / (y1 - y0) if y1 > y0 else x0
+    return float("inf")
+
+
 def _table(d):
     """{'35': 0.94, ...} -> [(35.0, 0.94), ...]"""
     return [(float(k), float(v)) for k, v in d.items()]
@@ -84,6 +121,80 @@ def _find(items, id_):
     return next(x for x in items if x["id"] == id_)
 
 
+def life(task):
+    """(SOH, resistance factor) at end of life: given at level 2, from the ageing tables at level 3."""
+    p, c = task["params"], task["cell"]
+    if "duty" not in task:
+        return p["soh_eol"], c["k_r_eol"]
+    cycles = task["duty"]["cycles_per_day"] * 365 * p["service_years"]
+    return _interp(_table(c["retention"]), cycles), _interp(_table(c["r_growth"]), cycles)
+
+
+def string_point(ns, np_, p_dc, v_ocv, r_string):
+    """String voltage under load and string current at the SOC floor (fixed point on the IR drop)."""
+    v_load, i_s = ns * v_ocv, p_dc / (np_ * ns * v_ocv)
+    for _ in range(50):
+        v_new = ns * v_ocv - i_s * r_string
+        if v_new <= 0:
+            return 0.0, float("inf")
+        i_new = p_dc / (np_ * v_new)
+        if abs(i_new - i_s) < 1e-6:
+            return v_new, i_new
+        v_load, i_s = v_new, 0.5 * (i_s + i_new)
+    return v_load, i_s
+
+
+def aux_power(task, np_, q_heat):
+    a = task.get("aux")
+    return a["rack_w"] * np_ + a["site_kw"] * 1e3 + q_heat / a["eer"] if a else 0.0
+
+
+def operating_point(task, ns, np_, pcs):
+    """(gross AC power, aux power, v_load, i_string, q_heat): aux and string current solved together."""
+    p, c = task["params"], task["cell"]
+    _, k_r = life(task)
+    p_net = p["p_req_mw"] * 1e6 * (1 + p["margin_p"])
+    r_string = ns * c["r_bol_ohm"] * k_r
+    p_aux = 0.0
+    for _ in range(30):
+        p_ac = p_net + p_aux
+        v_load, i_s = string_point(ns, np_, p_ac / pcs["eta"], c["v_ocv_soc_min"], r_string)
+        q_heat = np_ * ns * i_s ** 2 * c["r_bol_ohm"] * k_r
+        new = aux_power(task, np_, q_heat) if math.isfinite(q_heat) else 0.0
+        if abs(new - p_aux) < 1e-3:
+            break
+        p_aux = new
+    return p_ac, p_aux, v_load, i_s, q_heat
+
+
+def grid_side(task, p_ac, tx):
+    """(S at the connection point, Q there, transformer flow, Q_tx, PCS apparent power needed)."""
+    p = task["params"]
+    p_net = p["p_req_mw"] * 1e6 * (1 + p["margin_p"])
+    q_nap = p_net * math.tan(math.acos(p["cos_phi_min"]))
+    s_nap = math.hypot(p_net, q_nap)
+    s_tx_flow = math.hypot(p_ac, q_nap)  # aux on the MV bus behind the connection point
+    q_tx = tx["u_k"] * s_tx_flow ** 2 / (tx["s_kva"] * 1e3)
+    return s_nap, q_nap, s_tx_flow, q_tx, math.hypot(p_ac, q_nap + q_tx)
+
+
+def heating_needed(task, np_, i_s):
+    """(cell temperature needed to charge at the string current, heating power needed)."""
+    w = task.get("winter")
+    if not w:
+        return None, 0.0
+    t_need = _inverse(_table(task["cell"]["charge_c_by_temp"]), i_s / task["cell"]["q_ah"])
+    return t_need, w["ua_rack_w_per_k"] * np_ * max(0.0, t_need - task["site"]["t_min_c"])
+
+
+def mv_fault(task, pcs, n_pcs, s_nap):
+    """(I_k at the connection point, peak current, connection-point current), amperes."""
+    g, u = task["grid"], task["site"]["grid_kv"] * 1e3
+    i_k = g["s_k_mva"] * 1e6 / (SQ3 * u) + pcs["i_sc_ac_pu"] * pcs["s_kva_25"] * 1e3 * n_pcs / (SQ3 * u)
+    kappa = 1.02 + 0.98 * math.exp(-3 * g["r_x"])
+    return i_k, kappa * math.sqrt(2) * i_k, s_nap / (SQ3 * u)
+
+
 def evaluate(task: dict, d: dict) -> dict:
     p, c, s = task["params"], task["cell"], task["site"]
     ns, np_ = d["cells_series"], d["strings_parallel"]
@@ -91,33 +202,20 @@ def evaluate(task: dict, d: dict) -> dict:
     fu, ct = _find(task["fuses"], d["string_fuse"]), _find(task["contactors"], d["string_contactor"])
     cb, cu = _find(task["cables"], d["dc_cable"]), _find(task["cooling_units"], d["cooling_unit"])
     n_pcs, n_cab, n_cool = d["pcs_count"], d["dc_cables_parallel"], d["cooling_count"]
+    soh, _ = life(task)
 
-    # energy at the point of connection, end of life
-    e_poi = (ns * np_ * c["v_nom"] * c["q_ah"] * (c["soc_max"] - c["soc_min"]) * p["soh_eol"]
-             * p["eta_dc"] * pcs["eta"] * tx["eta"])
+    p_ac, p_aux, v_min_load, i_string, q_heat = operating_point(task, ns, np_, pcs)
+    # energy at the point of connection, end of life, net of auxiliaries
+    e_poi = (ns * np_ * c["v_nom"] * c["q_ah"] * (c["soc_max"] - c["soc_min"]) * soh
+             * p["eta_dc"] * pcs["eta"] * tx["eta"]) - p_aux * p["duration_h"]
     e_req = p["e_req_mwh"] * 1e6 * (1 + p["margin_e"])
-
-    # power, string current with IR drop at EOL (fixed point)
-    p_ac = p["p_req_mw"] * 1e6 * (1 + p["margin_p"])
-    p_dc = p_ac / pcs["eta"]
-    r_string_eol = ns * c["r_bol_ohm"] * c["k_r_eol"]
-    v_min_load = ns * c["v_ocv_soc_min"]
-    i_string = p_dc / (np_ * v_min_load)
-    for _ in range(50):
-        v_new = ns * c["v_ocv_soc_min"] - i_string * r_string_eol
-        if v_new <= 0:
-            v_min_load, i_string = 0.0, float("inf")
-            break
-        i_new = p_dc / (np_ * v_new)
-        if abs(i_new - i_string) < 1e-6:
-            v_min_load, i_string = v_new, i_new
-            break
-        v_min_load, i_string = v_new, 0.5 * (i_string + i_new)
     v_max = ns * c["v_max"]
 
-    s_pcs_site = _interp([(25.0, pcs["s_kva_25"]), (40.0, pcs["s_kva_40"]), (50.0, pcs["s_kva_50"])], s["t_max_c"]) * 1e3 * n_pcs
-    q_heat = np_ * ns * i_string ** 2 * c["r_bol_ohm"] * c["k_r_eol"]
+    u_min = task.get("grid", {}).get("u_min_pu", 1.0)
+    s_pcs_site = _interp([(25.0, pcs["s_kva_25"]), (40.0, pcs["s_kva_40"]), (50.0, pcs["s_kva_50"])],
+                         s["t_max_c"]) * 1e3 * n_pcs * u_min
     cooling = _interp([(35.0, cu["kw_35"]), (45.0, cu["kw_45"])], s["t_max_c"]) * 1e3 * n_cool
+    t_need, heat_need = heating_needed(task, np_, i_string)
 
     # fault current, IEC 61660-1 battery branch
     r_b = ns * c["r_bol_ohm"]
@@ -135,28 +233,36 @@ def evaluate(task: dict, d: dict) -> dict:
     v_drop_frac = i_string * r_cable / v_min_load if v_min_load > 0 else float("inf")  # r_cable: both poles, / n_cab
 
     # grid side
-    q_nap = p_ac * math.tan(math.acos(p["cos_phi_min"]))
-    s_nap = math.hypot(p_ac, q_nap)
-    q_tx = tx["u_k"] * s_nap ** 2 / (tx["s_kva"] * 1e3)
-    s_pcs_needed = math.hypot(p_ac, q_nap + q_tx)
+    s_nap, q_nap, s_tx_flow, q_tx, s_pcs_needed = grid_side(task, p_ac, tx)
     k_amb_tx = _interp(_table(task["k_tx_ambient"]), s["t_annual_mean_c"])
     s_tx_site = tx["s_kva"] * 1e3 * k_amb_tx
 
     cost = (ns * np_ * c["price"] + n_pcs * pcs["price"] + tx["price"] + np_ * (fu["price"] + ct["price"])
             + np_ * n_cab * 2 * s["dc_route_m"] * cb["price_per_m"] + n_cool * cu["price"])
-    return {
-        "e_poi_mwh": e_poi / 1e6, "e_req_mwh": e_req / 1e6, "p_ac_mw": p_ac / 1e6, "i_string_a": i_string,
+    m = {
+        "e_poi_mwh": e_poi / 1e6, "e_req_mwh": e_req / 1e6, "p_ac_mw": p_ac / 1e6, "p_aux_kw": p_aux / 1e3,
+        "soh_eol": soh, "i_string_a": i_string,
         "v_string_min_load": v_min_load, "v_string_max": v_max, "s_pcs_site_kva": s_pcs_site / 1e3,
         "s_pcs_needed_kva": s_pcs_needed / 1e3, "i_dc_total_a": np_ * i_string, "q_heat_kw": q_heat / 1e3,
-        "cooling_kw": cooling / 1e3, "i_k_string_ka": i_k_string / 1e3, "i_fault_bus_ka": i_fault_bus / 1e3,
+        "cooling_kw": cooling / 1e3, "heating_kw": cu.get("heating_kw", 0.0) * n_cool, "heat_need_kw": heat_need / 1e3,
+        "i_k_string_ka": i_k_string / 1e3, "i_fault_bus_ka": i_fault_bus / 1e3,
         "i_fuse_req_a": i_fuse_req, "i_z_a": i_z, "circuits": circuits, "v_drop_frac": v_drop_frac,
-        "s_nap_kva": s_nap / 1e3, "q_tx_kvar": q_tx / 1e3, "s_tx_site_kva": s_tx_site / 1e3, "cost": cost,
+        "s_nap_kva": s_nap / 1e3, "s_tx_flow_kva": s_tx_flow / 1e3, "q_tx_kvar": q_tx / 1e3,
+        "s_tx_site_kva": s_tx_site / 1e3,
     }
+    if t_need is not None:
+        m["t_cell_needed_c"] = t_need
+    if "mv_switchgear" in task:
+        i_k, i_p, i_nap = mv_fault(task, pcs, n_pcs, s_nap)
+        m.update({"i_k_mv_ka": i_k / 1e3, "i_p_mv_ka": i_p / 1e3, "i_nap_a": i_nap})
+        cost += _find(task["mv_switchgear"], d["mv_switchgear"])["price"]
+    m["cost"] = cost
+    return m
 
 
 def grade(task: dict, output: dict) -> dict:
-    d = {k: output.get(k) for k in FIELDS}
-    missing = [k for k in FIELDS if d[k] in (None, "")]
+    d = {k: output.get(k) for k in fields(task)}
+    missing = [k for k in d if d[k] in (None, "")]
     if missing:
         return {"passed": False, "violations": [f"missing fields: {missing}"]}
     for k in INTS:
@@ -166,7 +272,7 @@ def grade(task: dict, output: dict) -> dict:
             return {"passed": False, "violations": [f"{k} must be an integer"]}
         if d[k] < 1:
             return {"passed": False, "violations": [f"{k} must be >= 1"]}
-    for k, cat in CATALOG.items():
+    for k, cat in catalogs(task).items():
         if not any(x["id"] == d[k] for x in task[cat]):
             return {"passed": False, "violations": [f"unknown {k} id '{d[k]}'"]}
 
@@ -178,7 +284,8 @@ def grade(task: dict, output: dict) -> dict:
     T = 1e-9
     if m["e_poi_mwh"] < m["e_req_mwh"] * (1 - T):
         v.append(f"usable energy at the connection point at end of life {m['e_poi_mwh']:.3f} MWh is below "
-                 f"{m['e_req_mwh']:.3f} MWh required (E_req x (1 + margin))")
+                 f"{m['e_req_mwh']:.3f} MWh required (E_req x (1 + margin))"
+                 + (f"; state of health {m['soh_eol']:.3f}, auxiliaries {m['p_aux_kw']:.1f} kW" if "duty" in task else ""))
     if m["i_string_a"] > c["c_cont"] * c["q_ah"] + T:
         v.append(f"string current {m['i_string_a']:.1f} A exceeds the cell continuous limit {c['c_cont'] * c['q_ah']:.1f} A")
     if m["v_string_min_load"] < pcs["v_dc_min"] - T:
@@ -191,12 +298,16 @@ def grade(task: dict, output: dict) -> dict:
     if d["strings_parallel"] > pcs["dc_inputs"] * d["pcs_count"]:
         v.append(f"{d['strings_parallel']} strings exceed {pcs['dc_inputs'] * d['pcs_count']} PCS DC inputs")
     if m["s_pcs_site_kva"] < m["s_pcs_needed_kva"] * (1 - T):
-        v.append(f"PCS apparent power at site {s['t_max_c']:.0f} C {m['s_pcs_site_kva']:.0f} kVA is below "
+        band = f" at {task['grid']['u_min_pu']:g} pu grid voltage" if "grid" in task else ""
+        v.append(f"PCS apparent power at site {s['t_max_c']:.0f} C{band} {m['s_pcs_site_kva']:.0f} kVA is below "
                  f"{m['s_pcs_needed_kva']:.0f} kVA needed for cos phi {p['cos_phi_min']} at the connection point "
                  f"including transformer reactive consumption {m['q_tx_kvar']:.0f} kvar")
     if m["cooling_kw"] < m["q_heat_kw"] * (1 + p["margin_p"]) * (1 - T):
         v.append(f"cooling capacity at site {s['t_max_c']:.0f} C {m['cooling_kw']:.1f} kW is below heat "
                  f"{m['q_heat_kw']:.1f} kW x (1 + margin) at end-of-life resistance")
+    if m["heating_kw"] < m["heat_need_kw"] * (1 - T):
+        v.append(f"heating {m['heating_kw']:.1f} kW is below {m['heat_need_kw']:.1f} kW needed to hold the cells at "
+                 f"{m['t_cell_needed_c']:.1f} C (charge rate at the string current) at site minimum {s['t_min_c']:g} C")
     # fuse
     if fu["class"] != "gBat":
         v.append(f"string fuse class {fu['class']} is not gBat (IEC 60269-7 full-range battery fuse)")
@@ -230,8 +341,20 @@ def grade(task: dict, output: dict) -> dict:
     if m["v_drop_frac"] > p["v_drop_max"] + T:
         v.append(f"DC cable voltage drop {m['v_drop_frac'] * 100:.2f}% exceeds {p['v_drop_max'] * 100:.1f}%")
     # transformer
-    if m["s_tx_site_kva"] < m["s_nap_kva"] * (1 - T):
+    if m["s_tx_site_kva"] < m["s_tx_flow_kva"] * (1 - T):
         v.append(f"transformer {tx['s_kva']:.0f} kVA x ambient factor = {m['s_tx_site_kva']:.0f} kVA is below "
-                 f"{m['s_nap_kva']:.0f} kVA at the connection point (P / cos phi {p['cos_phi_min']})")
+                 f"{m['s_tx_flow_kva']:.0f} kVA through it (cos phi {p['cos_phi_min']} at the connection point)")
+    # MV switchgear
+    if "mv_switchgear" in task:
+        sw, g = _find(task["mv_switchgear"], d["mv_switchgear"]), task["grid"]
+        if sw["u_r_kv"] < g["u_max_kv"] - T:
+            v.append(f"switchgear rated voltage {sw['u_r_kv']:g} kV is below the highest system voltage {g['u_max_kv']:g} kV")
+        if sw["i_k_ka"] < m["i_k_mv_ka"] - T:
+            v.append(f"switchgear short-time current {sw['i_k_ka']:g} kA is below the fault current {m['i_k_mv_ka']:.2f} kA "
+                     f"(network short-circuit power plus PCS contribution)")
+        if sw["i_ma_ka"] < m["i_p_mv_ka"] - T:
+            v.append(f"switchgear making current {sw['i_ma_ka']:g} kA is below the peak fault current {m['i_p_mv_ka']:.2f} kA")
+        if sw["i_r_a"] < m["i_nap_a"] - T:
+            v.append(f"switchgear rated current {sw['i_r_a']:g} A is below the connection current {m['i_nap_a']:.0f} A")
     check_objective(task, m, v)
     return {"passed": not v, "violations": v, "metrics": {k: round(x, 4) for k, x in m.items()}}
