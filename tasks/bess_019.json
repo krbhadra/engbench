@@ -523,7 +523,7 @@
   },
   "objective": {
     "minimize": "cost",
-    "optimum": 1170622.76,
+    "optimum": 1124711.76,
     "tolerance": 0.05
   },
   "title": "Grid-connected LFP battery storage system",

@@ -145,60 +145,63 @@ def make_task(seed: int) -> dict | None:
 
 
 def _optimize(task):
-    """Cheapest design over the decomposed space. Returns (best (cost, design), feasible [(cost, design)], grid size)."""
+    """Cheapest design over the decomposed space. Returns (best (cost, design), feasible [(cost, design)], grid size).
+
+    Calls the grader's own physics (operating point, grid side, heating, MV fault) so the two cannot drift;
+    level-3 features switch on from the task data exactly as in the grader."""
     p, c, s = task["params"], task["cell"], task["site"]
+    soh, _ = bess.life(task)
     k_t = bess._interp(bess._table(task["k_temp"]), s["t_cable_c"])
     k_amb_tx = bess._interp(bess._table(task["k_tx_ambient"]), s["t_annual_mean_c"])
-    p_ac = p["p_req_mw"] * 1e6 * (1 + p["margin_p"])
-    q_nap = p_ac * math.tan(math.acos(p["cos_phi_min"]))
-    s_nap = math.hypot(p_ac, q_nap)
-    # transformer: independent of the DC design, but its u_k sets the PCS requirement; keep every feasible one
-    txs = sorted(((t["price"], t) for t in task["transformers"] if t["s_kva"] * 1e3 * k_amb_tx >= s_nap), key=lambda x: x[0])
-    if not txs:
-        return None, [], 0
-    tx = txs[0][1]  # cheapest feasible transformer also has the smallest S, hence the largest Q_tx: worst for the PCS
-    q_tx = tx["u_k"] * s_nap ** 2 / (tx["s_kva"] * 1e3)
-    s_pcs_needed = math.hypot(p_ac, q_nap + q_tx)
+    u_min = task.get("grid", {}).get("u_min_pu", 1.0)
+    e_req = p["e_req_mwh"] * 1e6 * (1 + p["margin_e"])
+    txs = sorted(task["transformers"], key=lambda t: t["price"])
     cool_at_site = {cu["id"]: bess._interp([(35.0, cu["kw_35"]), (45.0, cu["kw_45"])], s["t_max_c"]) * 1e3 for cu in task["cooling_units"]}
     fuse_k = {f["id"]: bess._interp(bess._table(f["k_amb"]), s["t_max_c"]) for f in task["fuses"]}
+    s_nap = bess.grid_side(task, 0.0, txs[0])[0]
+    op_cache = {}
 
     feasible, best, grid = [], None, 0
     for pcs in task["pcs_catalog"]:
-        s_site = bess._interp([(25.0, pcs["s_kva_25"]), (40.0, pcs["s_kva_40"]), (50.0, pcs["s_kva_50"])], s["t_max_c"]) * 1e3
-        p_dc = p_ac / pcs["eta"]
+        s_site = bess._interp([(25.0, pcs["s_kva_25"]), (40.0, pcs["s_kva_40"]), (50.0, pcs["s_kva_50"])], s["t_max_c"]) * 1e3 * u_min
         for n_pcs in range(1, PCS_COUNT_MAX + 1):
+            sw = (None, 0.0)
+            if "mv_switchgear" in task:
+                i_k, i_p, i_nap = bess.mv_fault(task, pcs, n_pcs, s_nap)
+                sw = min(((x["id"], x["price"]) for x in task["mv_switchgear"]
+                          if x["u_r_kv"] >= task["grid"]["u_max_kv"] and x["i_k_ka"] * 1e3 >= i_k
+                          and x["i_ma_ka"] * 1e3 >= i_p and x["i_r_a"] >= i_nap), key=lambda t: t[1], default=None)
             for ns in NS_RANGE:
                 v_max = ns * c["v_max"]
                 if v_max > pcs["v_dc_max"]:
                     continue
                 for np_ in range(1, NP_MAX + 1):
                     grid += 1
-                    if s_site * n_pcs < s_pcs_needed or np_ > pcs["dc_inputs"] * n_pcs:
+                    if sw is None or np_ > pcs["dc_inputs"] * n_pcs:
                         continue
-                    e_poi = ns * np_ * c["v_nom"] * c["q_ah"] * (c["soc_max"] - c["soc_min"]) * p["soh_eol"] * p["eta_dc"] * pcs["eta"] * tx["eta"]
-                    if e_poi < p["e_req_mwh"] * 1e6 * (1 + p["margin_e"]):
+                    key = (pcs["id"], ns, np_)
+                    if key not in op_cache:
+                        op_cache[key] = bess.operating_point(task, ns, np_, pcs)
+                    p_ac, p_aux, v_load, i_s, q_heat = op_cache[key]
+                    if i_s > c["c_cont"] * c["q_ah"] or v_load < pcs["v_dc_min"] or np_ * i_s > pcs["i_dc_max"] * n_pcs:
                         continue
-                    base = {"cells_series": ns, "strings_parallel": np_, "pcs": pcs["id"], "pcs_count": n_pcs, "transformer": tx["id"]}
-                    # string current with IR drop (same fixed point as the grader)
-                    r_eol = ns * c["r_bol_ohm"] * c["k_r_eol"]
-                    v_load, i_s = ns * c["v_ocv_soc_min"], p_dc / (np_ * ns * c["v_ocv_soc_min"])
-                    ok = True
-                    for _ in range(50):
-                        v_new = ns * c["v_ocv_soc_min"] - i_s * r_eol
-                        if v_new <= 0:
-                            ok = False
-                            break
-                        i_new = p_dc / (np_ * v_new)
-                        if abs(i_new - i_s) < 1e-6:
-                            v_load, i_s = v_new, i_new
-                            break
-                        v_load, i_s = v_new, 0.5 * (i_s + i_new)
-                    if not ok or i_s > c["c_cont"] * c["q_ah"] or v_load < pcs["v_dc_min"] or np_ * i_s > pcs["i_dc_max"] * n_pcs:
+                    e_cells = ns * np_ * c["v_nom"] * c["q_ah"] * (c["soc_max"] - c["soc_min"]) * soh * p["eta_dc"] * pcs["eta"]
+                    tx = next((t for t in txs  # cheapest transformer that carries the flow, lets the PCS cover Q, and meets energy
+                               if t["s_kva"] * 1e3 * k_amb_tx >= bess.grid_side(task, p_ac, t)[2]
+                               and s_site * n_pcs >= bess.grid_side(task, p_ac, t)[4]
+                               and e_cells * t["eta"] - p_aux * p["duration_h"] >= e_req), None)
+                    if tx is None:
                         continue
-                    # cooling: cheapest count per unit
-                    q_heat = np_ * ns * i_s ** 2 * c["r_bol_ohm"] * c["k_r_eol"] * (1 + p["margin_p"])
-                    cool = min(((cu["price"] * n, cu["id"], n) for cu in task["cooling_units"]
-                                for n in range(1, COOL_COUNT_MAX + 1) if cool_at_site[cu["id"]] * n >= q_heat), default=None)
+                    # cooling (and heating, when the site has a winter): cheapest unit x count
+                    _, heat_need = bess.heating_needed(task, np_, i_s)
+                    cool = None
+                    for cu in task["cooling_units"]:
+                        n_c = math.ceil(q_heat * (1 + p["margin_p"]) / cool_at_site[cu["id"]] - 1e-9)
+                        if heat_need > 0:
+                            n_c = max(n_c, math.ceil(heat_need / (cu["heating_kw"] * 1e3) - 1e-9))
+                        n_c = max(1, n_c)
+                        if n_c <= COOL_COUNT_MAX and (cool is None or cu["price"] * n_c < cool[0]):
+                            cool = (cu["price"] * n_c, cu["id"], n_c)
                     if cool is None:
                         continue
                     # fuse + contactor + cable: joint search
@@ -232,9 +235,12 @@ def _optimize(task):
                                     sub = (price, fu["id"], ct[1], cb["id"], n_cab)
                     if sub is None:
                         continue
-                    cost = ns * np_ * c["price"] + n_pcs * pcs["price"] + tx["price"] + sub[0] + cool[0]
-                    design = {**base, "string_fuse": sub[1], "string_contactor": sub[2], "dc_cable": sub[3],
+                    cost = ns * np_ * c["price"] + n_pcs * pcs["price"] + tx["price"] + sub[0] + cool[0] + sw[1]
+                    design = {"cells_series": ns, "strings_parallel": np_, "pcs": pcs["id"], "pcs_count": n_pcs,
+                              "transformer": tx["id"], "string_fuse": sub[1], "string_contactor": sub[2], "dc_cable": sub[3],
                               "dc_cables_parallel": sub[4], "cooling_unit": cool[1], "cooling_count": cool[2]}
+                    if sw[0]:
+                        design["mv_switchgear"] = sw[0]
                     feasible.append((cost, design))
                     if best is None or cost < best[0]:
                         best = (cost, design)
