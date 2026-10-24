@@ -1,45 +1,65 @@
-# bess3: storage system, level 3 (DRAFT for answer-key review)
+# bess3: storage system, level 3
 
 Level 2 (`bess`) with the scaffolding removed. Same plant, same chain from
-cells to the 20 kV connection, but:
+cells to the medium-voltage connection, but:
 
-- **Nothing is named.** No standard, method or rule appears in the prompt.
-  The brief reads like a project brief: requirements, site, duty, and
-  datasheets. Datasheets keep the tables a real datasheet carries (ambient and
-  grouping factors, fuse ambient factors), without saying what to do with
-  them. Knowing that VDE-AR-N 4110, IEC 60269-7, IEC 61660-1, DIN VDE 0298-4,
-  IEC 60364-4-43 and IEC 60076-11 apply is part of the test.
+- **Nothing is named.** The prompt reads like a project brief: requirements,
+  site, duty, the network operator's connection letter, and datasheets.
+  Datasheets keep the tables a real datasheet carries (ambient and grouping
+  factors, fuse derating and load factor, ageing and low-temperature charge
+  tables) without saying what to do with them. The connection letter says the
+  operator's medium-voltage connection rules apply, without saying what they
+  require. Knowing that VDE-AR-N 4110, IEC 60269-7, IEC 61660-1,
+  DIN VDE 0298-4, IEC 60364-4-43, IEC 60076-11, IEC 60909 and IEC 62271 apply,
+  and what they demand, is part of the test.
 - **The first design is final** (`max_grades: 1`). Python stays available.
 - **Hidden requirements.** The grader checks everything level 2 checks, plus
-  the items below, which the prompt never mentions. A senior team anticipates
-  them.
-- **Private seeds** for the official score. The generator is public.
+  the items below, which the prompt never mentions.
+- **A seed is kept only if at least three hidden requirements bind**: for each
+  one, the optimum of the same task without it must fail the real grader.
+  Those designs ship as broken solutions, so the self-check proves every kept
+  task tests the hidden knowledge.
+- **Private seeds** (`--private`, 1001 and up) go to `tasks_private/` and
+  their results to `results_private/`, both outside git. The official level-3
+  score comes from them; the public seeds let anyone reproduce the method.
 
-## Hidden requirements (for the author's review)
+One grader serves both levels: `solvers/bess.py` switches each level-3 check
+on from the task's own data, and level-2 tasks carry none of it (verified:
+identical metrics and verdicts on all 188 level-2 designs).
 
-Each item lists what the senior team must know, what data the task provides,
-and the deterministic check. Status: **?** = awaiting the author's decision.
+## Hidden requirements (author review: accepted 2026-10-24)
 
-| # | Hidden requirement | Data in the task | Check | Status |
-|---|---|---|---|---|
-| H1 | **Size for capacity at end of service life.** The energy requirement holds for the whole service life; the brief does not state an end-of-life state of health. | Duty (equivalent full cycles per day), service life, cell datasheet table of capacity retention and resistance growth against equivalent full cycles. | State of health = retention at (cycles/day × 365 × years), interpolated; energy, voltage window and heat use it. Replaces level 2's given 80%. | ? |
-| H2 | **Requirements at the connection point are net of auxiliaries.** Cooling compressors, fans, battery management, fire system and lighting draw from the plant. | Cooling unit datasheet: electrical input at rated thermal output (or EER). Per-container auxiliary load. | P_net = PCS output − auxiliaries ≥ P_req (1 + m); E_net = E_poi − P_aux × duration ≥ E_req (1 + m). | ? |
-| H3 | **Reactive power over the voltage band.** The grid code requires the reactive capability across the connection-point voltage range, and a current-limited inverter delivers less apparent power at low voltage. | PCS datasheet: rated AC current and apparent power; connection letter: voltage band. | S_pcs(site T) × U_min/U_n ≥ S_needed. Exact band per VDE-AR-N 4110 to confirm. | ? |
-| H4 | **MV switchgear rated for the grid's fault level.** | Connection letter: network short-circuit power S_k″ at the connection point. Ring-main-unit catalog: rated current, short-time withstand current, making current, price. | I_k″ = S_k″ / (√3 U_n) plus the PCS contribution ≤ short-time withstand; κ √2 I_k″ ≤ making; rated current ≥ connection current. New output field `mv_switchgear`. | ? |
-| H5 | **Winter: cells must be warm enough to charge.** LFP cannot charge at rated rate when cold. | Cell datasheet: allowed charge C-rate against temperature. Site minimum ambient. Enclosure heat-loss coefficient. Cooling unit datasheet: heating capacity. | Heating capacity × count ≥ UA × (T_cell_min_for_rated_charge − T_site_min). | ? |
-| H6 | **Frequency containment reserve prequalification** (only when the brief names FCR as the use case). | Brief: FCR power to prequalify. | Inverter power ≥ 1.25 × FCR power; energy for full activation for the required period in both directions inside the SOC window. Exact German PQ rules to confirm. | ? |
+| # | Hidden requirement | Data in the task | Check |
+|---|---|---|---|
+| H1 | Size for capacity at end of service life; no state of health is given. | Duty in equivalent full cycles per day, service life, cell ageing tables (capacity retention and resistance growth by cycles). | State of health and resistance factor at cycles/day × 365 × years, interpolated; used for energy, voltage window, current and heat. |
+| H2 | Connection-point requirements are net of auxiliaries. | EER of the cooling units, rack electronics W per rack, site systems kW; auxiliaries fed from the MV busbar behind the connection point. | Plant delivers P_net + P_aux with P_aux = rack × N_p + site + heat / EER, solved with the string current; E_net = E − P_aux × duration. The transformer carries the gross active power. |
+| H3 | Reactive power at the bottom of the voltage band. | PCS rated at nominal AC voltage, output current-limited. | VDE-AR-N 4110 asks for Q = ±0.33 P_b,inst (cos φ 0.95) across 0.9–1.1 U_c without voltage-based reduction, so S_pcs(site T) × 0.9 ≥ S needed. |
+| H4 | MV switchgear rated for the network fault level. | Connection letter S_k″ and R/X; PCS AC fault contribution; switchgear catalog. | U_r ≥ highest system voltage (12 / 24 / 36 kV); I_k = S_k″ / (√3 U_n) + PCS contribution ≤ short-time current; κ √2 I_k ≤ making current, κ = 1.02 + 0.98 e^(−3 R/X); rated current ≥ connection current. |
+| H5 | Cells warm enough to charge in winter. | Charge rate by cell temperature, site minimum, enclosure heat loss per rack, unit heating capacity. | Cell temperature needed for the string current as a charge rate, from the table; heating × count ≥ UA × N_p × (T_needed − T_site_min). |
+| H6 | FCR prequalification, when the brief names FCR. | — | **Not built yet**: see open items. |
 
-## Questions for the author
+Sources for H3 (the standard is paywalled; these are public carriers, found
+2026-10-24):
+- M.O.E., VDE-AR-N 4110 and 4120 overview, Windenergietage 2018:
+  <https://windenergietage.de/2018/wp-content/uploads/sites/3/2018/11/27WT07_F07_0945_4110_und_4120MOE_JM.pdf>
+- Kommenergie, TAR Mittelspannung application notes, 2026, sec. 8.13.2:
+  <https://www.kommenergie.de/_Resources/Persistent/b/5/0/3/b5030e5eb1dbd8b614881e5f709abfcdfcd77072/20260915-anwendungshinweise-kommenergie-tar-mittelspannung.pdf>
+- The "Variante 1/2/3" PQ diagrams belong to VDE-AR-N 4120 (high voltage),
+  not 4110: IEA PVPS Task 14 (2024),
+  <https://iea-pvps.org/wp-content/uploads/2024/04/Reactive_power_management_with_DERs.pdf>
 
-1. H1: is sizing to capacity at the end of the service life, from the
-   datasheet retention table, how your projects do it, rather than a fixed
-   80%?
-2. H2: are connection-point requirements net of auxiliaries in your
-   contracts, or are auxiliaries fed separately?
-3. H3: what voltage band does VDE-AR-N 4110 require the reactive capability
-   over, and is a current-limited reduction at low voltage the right model?
-4. H4: anything else on the MV side a senior team would check (protection
-   relay settings, transformer inrush)?
-5. H5: realistic, or do your containers handle it in a way this misses?
-6. H6: include FCR? If so, the current power and duration rules.
-7. What else would your team check on a real project that is missing here?
+## Open items
+
+1. **H6, FCR.** The TSO prequalification conditions say P_max ≥ 1.25 × FCR
+   power and full activation for at least 15 minutes (BNetzA BK6-17-234
+   rejected 30 minutes). The energy sizing and SOC window changed between
+   PQ-Bedingungen v1.05 (2024-07-05: 0.25 h reserve at each SOC limit) and
+   v1.06 (2026-10-07: 1/3 h), and no effective date for v1.06 was found. The
+   author picks the version before H6 is built.
+   v1.06: <https://www.regelleistung.net/cdn/files/64507326-b71c-41b0-cdb6-08df1e03d14c/pq-bedingungen-2026_10_07.pdf>
+2. **H3 corners.** The exact voltages where full Q ends at the edges of the
+   0.9–1.1 U_c band (VDE-AR-N 4110, Bild 5) are unverified; the check uses
+   full Q at 0.9 U_c.
+3. **Storage while charging.** Operators differ on whether the reactive
+   requirement applies when charging (Kulmbach and Kommenergie: yes; TEN: no).
+   The check uses rated power with full Q, which covers both.

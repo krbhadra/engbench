@@ -78,8 +78,8 @@ def _pert(rng, x, lo=0.9, hi=1.1, nd=0):
     return round(x * rng.uniform(lo, hi), nd) if nd else int(round(x * rng.uniform(lo, hi)))
 
 
-def make_task(seed: int) -> dict | None:
-    rng = random.Random(seed)
+def make_task(seed: int, level: int = 2) -> dict | None:
+    rng = random.Random(seed if level == 2 else f"bess3-{seed}")  # level 3 draws its own plants
     duration_h = rng.choice([1, 2, 2, 4])
     p_req = rng.choice([1.0, 1.5, 2.0, 2.5, 3.0, 4.0])
     params = {
@@ -118,6 +118,8 @@ def make_task(seed: int) -> dict | None:
     task = {"id": f"bess_{seed:03d}", "domain": "bess", "mode": "named", "params": params, "cell": cell, "site": site,
             "pcs_catalog": pcs_cat, "transformers": tx_cat, "fuses": fuses, "contactors": contactors, "cables": cables,
             "cooling_units": cooling, "k_temp": K_TEMP, "k_group": K_GROUP, "k_tx_ambient": K_TX_AMBIENT}
+    if level == 3:
+        _add_level3(task, rng, seed)
 
     best, feasible, grid = _optimize(task)
     if best is None:
@@ -139,6 +141,11 @@ def make_task(seed: int) -> dict | None:
         b["expect"] = bess.grade(task, b["output"])["violations"][0].split(" ")[0]
     if len(broken) < 3:
         return None
+    if level == 3:
+        hidden = _hidden_broken(task)
+        if len(hidden) < MIN_HIDDEN_BINDING:  # the hidden requirements must change the answer, or the level is fake
+            return None
+        broken += hidden
     task["_golden"], task["_broken"] = golden, broken
     task["_stats"] = {"feasible": n_feasible, "near_opt": near_opt, "grid": grid}
     return task
@@ -296,7 +303,7 @@ def _broken_candidates(task, g, feasible):
     # cooling at beginning-of-life resistance
     cu = bess._find(task["cooling_units"], g["cooling_unit"])
     cap = bess._interp([(35.0, cu["kw_35"]), (45.0, cu["kw_45"])], s["t_max_c"]) * 1e3
-    n_bol = math.ceil(m["q_heat_kw"] * 1e3 / c["k_r_eol"] * (1 + p["margin_p"]) / cap)
+    n_bol = math.ceil(m["q_heat_kw"] * 1e3 / bess.life(task)[1] * (1 + p["margin_p"]) / cap)
     add("cooling sized at beginning-of-life resistance", cooling_count=max(1, n_bol))
     # feasible but most expensive
     worst = max(feasible, key=lambda t: t[0])[1]
@@ -385,30 +392,189 @@ SOURCES = [
 ]
 
 
+# ---------- level 3 (bess3): nothing named, hidden requirements, first design final ----------
+
+MIN_HIDDEN_BINDING = 3  # of the five hidden requirements, at least this many must change the answer
+U_MIN_PU = 0.9  # VDE-AR-N 4110: reactive capability over 0.9-1.1 Uc without voltage-based reduction (secondary carriers)
+U_MAX_KV = {10: 12, 20: 24, 30: 36}  # highest voltage for equipment by nominal system voltage
+S_K_MVA = {10: [150, 250, 350], 20: [250, 350, 500, 750], 30: [500, 750, 1000]}
+RETENTION = {0: 1.0, 2000: 0.95, 4000: 0.91, 6000: 0.87, 8000: 0.83, 10000: 0.79, 12000: 0.75}  # 25 C, incl. calendar
+R_GROWTH = {0: 1.0, 4000: 1.25, 8000: 1.55, 12000: 1.9}
+CHARGE_BY_TEMP = {-10: 0.0, 0: 0.1, 5: 0.2, 10: 0.35, 15: 0.6, 25: 1.0}  # fraction of the 25 C continuous rate
+HEATING_KW = {"CU-1": 2.5, "CU-2": 4.0, "CU-3": 8.0, "CU-4": 12.0}
+RMU = [  # id, U_r kV, I_k kA (1 s), I_ma kA peak, I_r A, price
+    ("RMU-1", 12, 16, 40, 630, 21_000), ("RMU-2", 12, 20, 50, 630, 25_000), ("RMU-3", 24, 16, 40, 630, 26_000),
+    ("RMU-4", 24, 20, 40, 630, 28_000), ("RMU-5", 24, 20, 50, 630, 31_000), ("RMU-6", 24, 25, 63, 630, 38_000),
+    ("RMU-7", 36, 20, 50, 630, 41_000), ("RMU-8", 36, 25, 63, 630, 49_000),
+]
+HIDDEN = {  # feature -> the mistake a team makes when it does not anticipate the requirement
+    "duty": "assumed 80 % state of health instead of the ageing tables",
+    "aux": "connection-point requirements met gross, auxiliaries ignored",
+    "grid_band": "reactive power checked at nominal grid voltage only",
+    "winter": "no heating for charging in winter",
+    "mv_switchgear": "switchgear by rated voltage and current only",
+}
+
+
+def _add_level3(task, rng, seed):
+    p, c, s = task["params"], task["cell"], task["site"]
+    task.update({"id": f"bess3_{seed:03d}", "mode": "hidden", "level": 3, "max_grades": 1})
+    p.pop("soh_eol"); p.pop("milestone"); c.pop("k_r_eol")
+    task["duty"] = {"cycles_per_day": rng.choice([1.0, 1.5, 2.0])}
+    fade, grow = rng.uniform(0.85, 1.15), rng.uniform(0.9, 1.1)
+    c["retention"] = {str(k): round(1 - (1 - v) * fade, 3) for k, v in RETENTION.items()}
+    c["r_growth"] = {str(k): round(1 + (v - 1) * grow, 3) for k, v in R_GROWTH.items()}
+    c["charge_c_by_temp"] = {str(k): round(v * c["c_cont"], 3) for k, v in CHARGE_BY_TEMP.items()}
+    task["aux"] = {"rack_w": rng.choice([150, 200, 250, 300]), "site_kw": float(rng.choice([5, 8, 12, 15])),
+                   "eer": rng.choice([2.5, 3.0, 3.5])}
+    s["t_min_c"] = float(rng.choice([-20, -15, -10, -5]))
+    task["winter"] = {"ua_rack_w_per_k": _r(rng, 10, 30, 1)}
+    for cu in task["cooling_units"]:
+        cu["heating_kw"] = round(HEATING_KW[cu["id"]] * rng.uniform(0.9, 1.1), 1)
+    for x in task["pcs_catalog"]:
+        x["i_sc_ac_pu"] = _r(rng, 1.1, 1.5, 2)
+    kv = s["grid_kv"]
+    task["grid"] = {"u_min_pu": U_MIN_PU, "u_max_kv": U_MAX_KV[kv], "s_k_mva": float(rng.choice(S_K_MVA[kv])),
+                    "r_x": rng.choice([0.1, 0.15, 0.2, 0.3])}
+    task["mv_switchgear"] = [{"id": i, "u_r_kv": u, "i_k_ka": ik, "i_ma_ka": ima, "i_r_a": ir,
+                              "price": _pert(rng, pr, 0.85, 1.15)} for i, u, ik, ima, ir, pr in RMU]
+
+
+def _naive(task, feature):
+    """The same task with one hidden requirement taken away: what a team that misses it would design for."""
+    t = json.loads(json.dumps(task))
+    if feature == "duty":
+        del t["duty"]
+        t["params"]["soh_eol"], t["cell"]["k_r_eol"] = 0.80, bess.life(task)[1]
+    elif feature == "grid_band":
+        t["grid"]["u_min_pu"] = 1.0
+    else:
+        del t[feature]
+    return t
+
+
+def _hidden_broken(task):
+    """For each hidden requirement, the optimum of the task without it; kept when the real grader fails it."""
+    out = []
+    s_nap = bess.grid_side(task, 0.0, task["transformers"][0])[0]
+    for feature, note in HIDDEN.items():
+        best = _optimize(_naive(task, feature))[0]
+        if best is None:
+            continue
+        design = dict(best[1])
+        if feature == "mv_switchgear":
+            i_nap = bess.mv_fault(task, bess._find(task["pcs_catalog"], design["pcs"]), design["pcs_count"], s_nap)[2]
+            design["mv_switchgear"] = min((x for x in task["mv_switchgear"]
+                                           if x["u_r_kv"] >= task["grid"]["u_max_kv"] and x["i_r_a"] >= i_nap),
+                                          key=lambda x: x["price"])["id"]
+        r = bess.grade(task, design)
+        if not r["passed"]:
+            out.append({"output": design, "note": note, "expect": r["violations"][0].split(" ")[0]})
+    return out
+
+
+def describe3(t: dict) -> str:
+    p, c, s, g, a, w = t["params"], t["cell"], t["site"], t["grid"], t["aux"], t["winter"]
+    k = lambda d, unit="": ", ".join(f"{x}{unit}: {y}" for x, y in d.items())  # noqa: E731
+    return (
+        f"Project brief: grid-connected lithium iron phosphate battery energy storage plant at a site in Germany.\n\n"
+        f"Requirements at the connection point: usable energy {p['e_req_mwh']:g} MWh and rated power {p['p_req_mw']:g} MW, "
+        f"charging and discharging, {p['duration_h']} h duration, guaranteed for the full {p['service_years']}-year service "
+        f"life. Expected duty: {t['duty']['cycles_per_day']:g} equivalent full cycles per day. Project margin policy at this "
+        f"design stage: {p['margin_e']*100:.0f}% on energy and {p['margin_p']*100:.0f}% on power, on top of the requirements.\n\n"
+        f"Grid connection, from the network operator's connection letter: {s['grid_kv']} kV; network short-circuit power at "
+        f"the connection point {g['s_k_mva']:g} MVA, R/X {g['r_x']:g}. The operator's technical connection rules for medium "
+        f"voltage apply in full.\n\n"
+        f"Plant architecture: one string per rack; every string connects to its own DC input on a PCS unit (no combiner "
+        f"boxes; a PCS unit's inputs share one DC bus, and the PCS units are paralleled on the AC side into one step-up "
+        f"transformer, then the medium-voltage switchgear at the connection point). Cells in series in modules of "
+        f"{p['module_cells']} (the series count is a multiple of {p['module_cells']}). Each string has one fuse and one "
+        f"contactor and runs to the PCS over one DC cable pair (optionally several pairs in parallel) of {s['dc_route_m']} m "
+        f"route length, with {s['strings_per_tray']} strings sharing each cable tray. DC circuit time constant L/R "
+        f"{s['circuit_tau_ms']} ms. DC cable voltage drop limit {p['v_drop_max']*100:g}% (project specification). Auxiliaries "
+        f"(cooling and heating units, rack electronics, site systems) are supplied from the plant's medium-voltage busbar "
+        f"behind the connection point through an auxiliary transformer.\n\n"
+        f"Site: maximum ambient {s['t_max_c']:g} C, minimum ambient {s['t_min_c']:g} C, annual mean {s['t_annual_mean_c']:g} C, "
+        f"altitude {s['altitude_m']} m; cable ambient inside the enclosure {s['t_cable_c']:g} C; enclosure heat loss "
+        f"{w['ua_rack_w_per_k']:g} W/K per rack.\n\n"
+        f"Cell datasheet ({c['chemistry']}): {c['v_nom']} V nominal, {c['q_ah']:g} Ah, {c['v_min']}-{c['v_max']} V, DC "
+        f"resistance {c['r_bol_ohm']*1e3:.2f} mOhm at beginning of life, continuous {c['c_cont']:g} C charge and discharge at "
+        f"25 C, recommended SOC window {c['soc_min']*100:.0f}-{c['soc_max']*100:.0f}%, open-circuit voltage "
+        f"{c['v_ocv_soc_min']} V at {c['soc_min']*100:.0f}% SOC, maximum cell temperature {c['t_max_c']:g} C, price "
+        f"{c['price']:.2f} per cell.\n"
+        f"  Maximum continuous charge rate (C) by cell temperature: {k(c['charge_c_by_temp'], ' C')}.\n"
+        f"  Capacity retention by equivalent full cycles, 25 C, including calendar ageing at this duty: {k(c['retention'])}.\n"
+        f"  DC resistance growth factor by equivalent full cycles: {k(c['r_growth'])}.\n"
+        f"  DC-side one-way efficiency between cells and PCS terminals {p['eta_dc']}.\n\n"
+        f"PCS catalog (id: kVA at 25 / 40 / 50 C ambient at nominal AC voltage, output current limited to rated current; DC "
+        f"window V, max DC current A, DC inputs, efficiency, DC short-circuit contribution kA, AC fault-current contribution "
+        f"per unit of rated current, price):\n"
+        + _cat(t["pcs_catalog"], lambda x: f"{x['id']}: {x['s_kva_25']} / {x['s_kva_40']} / {x['s_kva_50']} kVA, {x['v_dc_min']}-{x['v_dc_max']} V, "
+                                           f"{x['i_dc_max']} A, {x['dc_inputs']} inputs, {x['eta']}, {x['i_sc_ka']} kA, {x['i_sc_ac_pu']} pu, {x['price']}")
+        + "\n\nTransformers, dry type (id: kVA, u_k, efficiency, price); loading factor by annual-mean ambient: "
+        + k(t["k_tx_ambient"], " C") + "\n"
+        + _cat(t["transformers"], lambda x: f"{x['id']}: {x['s_kva']} kVA, u_k {x['u_k']}, {x['eta']}, {x['price']}")
+        + "\n\nFuses (id: class, I_n A, rated DC voltage V, rated time constant ms, breaking capacity kA, price). "
+        f"Manufacturer notes: ambient derating {k(FUSE_K_AMB, ' C')}; continuous load should not exceed {p['k_load_fuse']} x I_n.\n"
+        + _cat(t["fuses"], lambda x: f"{x['id']}: {x['class']}, {x['i_n']} A, {x['u_dc']} V DC, {x['tau_ms']} ms, {x['breaking_ka']} kA, {x['price']:.2f}")
+        + "\n\nContactors (id: rated current A, rated DC voltage V, maximum breaking current A, price):\n"
+        + _cat(t["contactors"], lambda x: f"{x['id']}: {x['i_rated']} A, {x['u_dc']} V DC, {x['i_break_max']} A, {x['price']:.2f}")
+        + "\n\nDC cables, copper, XLPE 90 C (id: mm2, current-carrying capacity A for two loaded conductors in free air at "
+        f"30 C, resistance ohm/km at 70 C, rated DC voltage V, price per metre per conductor). Ambient correction factors: "
+        f"{k(t['k_temp'], ' C')}; grouping factors by number of circuits in a tray: {k(t['k_group'])}.\n"
+        + _cat(t["cables"], lambda x: f"{x['id']}: {x['mm2']} mm2, {x['i_z_base']} A, {x['r_ohm_per_km']} ohm/km, {x['u_dc']} V DC, {x['price_per_m']:.2f}")
+        + f"\n\nCooling and heating units (id: cooling kW at 35 / 45 C ambient, heating kW, price); energy efficiency ratio of "
+        f"all units at maximum ambient {a['eer']:g}:\n"
+        + _cat(t["cooling_units"], lambda x: f"{x['id']}: {x['kw_35']} / {x['kw_45']} kW, {x['heating_kw']} kW, {x['price']}")
+        + f"\n\nOther auxiliaries: rack electronics (battery management, fans) {a['rack_w']} W per rack; site systems (control, "
+        f"fire detection and suppression, lighting, communications) {a['site_kw']:g} kW.\n\n"
+        "Medium-voltage switchgear (id: rated voltage kV, rated short-time withstand current kA for 1 s, rated short-circuit "
+        "making current kA peak, rated current A, price):\n"
+        + _cat(t["mv_switchgear"], lambda x: f"{x['id']}: {x['u_r_kv']} kV, {x['i_k_ka']} kA, {x['i_ma_ka']} kA, {x['i_r_a']} A, {x['price']}")
+        + "\n\nObjective: minimize total price (cells + PCS + transformer + fuses + contactors + cables + cooling and heating "
+        "units + switchgear). The design must satisfy every requirement that applies to this plant, including those of the "
+        "standards and grid connection rules that govern it, whether or not they are listed here, and its price must be "
+        f"within {t['objective']['tolerance']*100:.0f}% of the cheapest design that does. Return " + OUTPUT_SHAPE3
+    )
+
+
+OUTPUT_SHAPE3 = OUTPUT_SHAPE[:-1] + ', "mv_switchgear": "<id>"}'
+SOURCES3 = [x for x in SOURCES if not x.startswith(("NASA", "PNNL"))] + [
+    "VDE-AR-N 4110 reactive capability Q = 0.33 P_b,inst over 0.9-1.1 Uc as stated in M.O.E. (Windenergietage 2018) and Kommenergie TAR-MS notes (2026)",
+    "IEC 60909 peak factor kappa = 1.02 + 0.98 exp(-3 R/X) and IEC 62271-1/-200 switchgear ratings, as reproduced in manufacturer planning guides",
+    "Cell ageing tables and low-temperature charge limits patterned on public LFP prismatic datasheets; every value perturbed per seed",
+]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seeds", nargs="+", type=int, required=True)
+    ap.add_argument("--level", type=int, choices=[2, 3], default=2)
+    ap.add_argument("--private", action="store_true", help="held-out seeds: write to tasks_private/ (not committed)")
     args = ap.parse_args()
-    sol_path = ROOT / "solvers" / "solutions.json"
-    solutions = json.loads(sol_path.read_text())
+    out_dir = ROOT / ("tasks_private" if args.private else "tasks")
+    out_dir.mkdir(exist_ok=True)
+    sol_path = out_dir / "solutions.json" if args.private else ROOT / "solvers" / "solutions.json"
+    solutions = json.loads(sol_path.read_text()) if sol_path.exists() else {}
+    describe_, shape, sources = (describe3, OUTPUT_SHAPE3, SOURCES3) if args.level == 3 else (describe, OUTPUT_SHAPE, SOURCES)
     made = 0
     for seed in args.seeds:
-        t = make_task(seed)
+        t = make_task(seed, args.level)
         if t is None:
-            print(f"seed {seed}: skipped (infeasible or trivial)")
+            print(f"seed {seed}: skipped (infeasible, trivial, or hidden requirements do not bind)")
             continue
         golden, broken, stats = t.pop("_golden"), t.pop("_broken"), t.pop("_stats")
-        t.update({"title": "Grid-connected LFP battery storage system", "description": describe(t),
-                  "output_shape": OUTPUT_SHAPE, "sources": SOURCES, "seed": seed,
+        t.update({"title": "Grid-connected LFP battery storage system", "description": describe_(t),
+                  "output_shape": shape, "sources": sources, "seed": seed,
                   "disciplines": ["electrical", "electronics", "thermal", "systems"]})
-        (ROOT / "tasks" / f"{t['id']}.json").write_text(json.dumps(t, indent=2) + "\n")
+        (out_dir / f"{t['id']}.json").write_text(json.dumps(t, indent=2) + "\n")
         solutions[t["id"]] = {"golden": golden, "broken": [{"output": b["output"], "expect": b["expect"]} for b in broken]}
         made += 1
         print(f"{t['id']}: feasible {stats['feasible']}/{stats['grid']} ({100*stats['feasible']/stats['grid']:.2f}%), "
               f"near-optimal {stats['near_opt']}, optimum {t['objective']['optimum']:,.0f}, golden {golden}, "
               f"{len(broken)} broken: {[b['note'] for b in broken]}")
     sol_path.write_text(json.dumps(solutions, indent=1) + "\n")
-    print(f"{made} tasks written")
+    print(f"{made} tasks written to {out_dir.name}/")
 
 
 if __name__ == "__main__":

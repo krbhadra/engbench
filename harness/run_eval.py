@@ -414,6 +414,7 @@ def main():
     ap.add_argument("--transport", choices=["openrouter", "claude-cli"], default="openrouter")
     ap.add_argument("--trials", type=int, default=3)
     ap.add_argument("--tasks", nargs="*", help="task ids to run (default: all)")
+    ap.add_argument("--private", action="store_true", help="run the held-out set in tasks_private/ (official scores)")
     ap.add_argument("--provider", help="pin an OpenRouter host, fallbacks disabled (open-weight models)")
     ap.add_argument("--reasoning", choices=["low", "medium", "high"])
     ap.add_argument("--temperature", type=float)
@@ -428,13 +429,15 @@ def main():
 
     opts = {"provider": args.provider, "reasoning": args.reasoning, "temperature": args.temperature,
             "feedback": args.feedback}
-    tasks = [json.loads(p.read_text()) for p in sorted(TASKS_DIR.glob("*.json"))]
+    tasks_dir = ROOT / "tasks_private" if args.private else TASKS_DIR
+    tasks = [json.loads(p.read_text()) for p in sorted(tasks_dir.glob("*.json")) if p.name != "solutions.json"]
     if args.tasks:
         tasks = [t for t in tasks if t["id"] in args.tasks]
 
     label = f"{args.model} [claude-cli]" if cli else args.model
-    RESULTS_DIR.mkdir(exist_ok=True)
-    out_path = RESULTS_DIR / f"{slug(label)}__{args.track}.json"
+    results_dir = ROOT / "results_private" if args.private else RESULTS_DIR  # held-out designs never get committed
+    results_dir.mkdir(exist_ok=True)
+    out_path = results_dir / f"{slug(label)}__{args.track}.json"
     results = json.loads(out_path.read_text()) if out_path.exists() else {
         "model": label, "transport": args.transport, "track": args.track, "settings": opts,
         "max_attempts": MAX_ATTEMPTS, "max_python": MAX_PYTHON, "records": [],
