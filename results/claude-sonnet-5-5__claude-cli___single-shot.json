@@ -1,0 +1,86 @@
+{
+ "model": "claude-sonnet-5-5 [claude-cli]",
+ "transport": "claude-cli",
+ "track": "single-shot",
+ "settings": {
+  "provider": null,
+  "reasoning": null,
+  "temperature": null,
+  "feedback": "lean"
+ },
+ "max_attempts": 5,
+ "max_python": 15,
+ "records": [
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "cells_series": 368,
+      "strings_parallel": 15,
+      "pcs": "PCS-1",
+      "pcs_count": 3,
+      "transformer": "TX-3",
+      "string_fuse": "FU-13",
+      "string_contactor": "CT-2",
+      "dc_cable": "C-95",
+      "dc_cables_parallel": 1,
+      "cooling_unit": "CU-2",
+      "cooling_count": 3,
+      "mv_switchgear": "RMU-6",
+      "deviations": []
+     },
+     "raw": "{\"cells_series\":368,\"strings_parallel\":15,\"pcs\":\"PCS-1\",\"pcs_count\":3,\"transformer\":\"TX-3\",\"string_fuse\":\"FU-13\",\"string_contactor\":\"CT-2\",\"dc_cable\":\"C-95\",\"dc_cables_parallel\":1,\"cooling_unit\":\"CU-2\",\"cooling_count\":3,\"mv_switchgear\":\"RMU-6\",\"deviations\":[]}",
+     "passed": false,
+     "violations": [
+      "heating 11.7 kW is below 14.2 kW needed to hold the cells at 19.7 C (charge rate at rated charging power) at site minimum -15 C",
+      "fuse conventional fusing current 1.6 x 250 A = 400 A exceeds 1.45 x I_z = 363 A (IEC 60364-4-43 overload coordination)"
+     ],
+     "metrics": {
+      "e_poi_mwh": 3.5371,
+      "e_req_mwh": 3.45,
+      "p_ac_mw": 2.1015,
+      "p_aux_kw": 38.9873,
+      "soh_eol": 0.8648,
+      "i_string_a": 128.8714,
+      "v_string_min_load": 1107.0509,
+      "v_string_max": 1343.2,
+      "s_pcs_site_kva": 2288.25,
+      "s_pcs_needed_kva": 2246.8118,
+      "i_dc_total_a": 1933.0705,
+      "q_heat_kw": 86.5805,
+      "cooling_kw": 99.0,
+      "heating_kw": 11.7,
+      "heat_need_kw": 14.2253,
+      "i_k_string_ka": 4.4994,
+      "i_fault_bus_ka": 68.1521,
+      "i_fuse_req_a": 189.5167,
+      "i_z_a": 250.2144,
+      "circuits": 6,
+      "v_drop_frac": 0.0032,
+      "s_nap_kva": 2171.0526,
+      "s_tx_flow_kva": 2208.1241,
+      "q_tx_kvar": 117.0195,
+      "s_tx_site_kva": 2650.0,
+      "t_cell_needed_c": 19.7381,
+      "i_k_mv_ka": 20.4202,
+      "i_p_mv_ka": 40.9625,
+      "i_nap_a": 125.3458,
+      "cost": 889765.0
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 5777,
+    "completion_tokens": 9238,
+    "cost": 0.11548399999999999
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5-5",
+   "task": "bess3_001",
+   "trial": 1,
+   "seconds": 84.6,
+   "timestamp": "2026-10-24T22:59:23+00:00"
+  }
+ ]
+}
