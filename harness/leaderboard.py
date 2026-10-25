@@ -9,7 +9,7 @@ from collections import defaultdict
 from pathlib import Path
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
-TRACKS = ("single-shot", "feedback", "agentic")
+TRACKS = ("single-shot", "agentic")
 # The ladder (VISION.md): each level's published points; score = sum of points x pass rate at that level.
 LEVEL_POINTS = {1: 15, 2: 20, 3: 15, 4: 20, 5: 15, 6: 15}
 LEVEL_OF_FAMILY = {"mech": 1, "elec": 1, "comb": 1, "pe_cooling": 1, "coolant_loop": 1, "bess": 2, "bess3": 3}
@@ -20,8 +20,8 @@ def family(task_id):
 
 
 def passed_for_score(r, track):
-    """Agentic scores the first graded design; single-shot its only answer."""
-    return bool(r["attempts"]) and r["attempts"][0]["passed"] is True if track == "agentic" else r["passed"] is True
+    """Both tracks score a pass: single-shot its only answer, agentic within its test rounds."""
+    return r["passed"] is True
 
 
 def score(records, track):
@@ -100,23 +100,22 @@ def main():
         print(f"{model:40} {cells[0]:>22} {cells[1]:>22}")
     print()
 
-    hdr = (f"{'model':40} {'single':>7} {'ag first':>9} {'gap':>6} {'ag pass':>8} {'ag pass^k':>10} "
-           f"{'attempts':>9} {'feedback':>9} {'$/task':>8}")
+    hdr = (f"{'model':40} {'single':>7} {'ag pass':>8} {'gap':>6} {'ag first':>9} {'ag pass^k':>10} "
+           f"{'rounds':>7} {'$/task':>8}")
     print(hdr)
     print("-" * len(hdr))
-    print("ag first = agentic, first graded design passes (headline); gap = ag first - single on shared tasks; "
-          "ag pass = passes within 5 grader calls; feedback = superseded loop")
+    print("ag pass = agentic, passes within 3 test rounds (headline); gap = ag pass - single on shared tasks; "
+          "ag first = first design passes")
     for model, tracks in sorted(table.items()):
-        ss, fb, ag = tracks.get("single-shot"), tracks.get("feedback"), tracks.get("agentic")
+        ss, ag = tracks.get("single-shot"), tracks.get("agentic")
         shared = {r["task"] for r in raw[model].get("agentic", [])}  # gap only over tasks both tracks ran
         ss_same = summarize([r for r in raw[model].get("single-shot", []) if r["task"] in shared])
         ag_same = summarize([r for r in raw[model].get("agentic", []) if r["task"] in {x["task"] for x in raw[model].get("single-shot", [])}])
-        gap = f"{(ag_same['first'] - ss_same['pass_rate']) * 100:+5.1f}" if ss_same and ag_same else "     -"
-        attempts = ag["attempts"] if ag else float("nan")
+        gap = f"{(ag_same['pass_rate'] - ss_same['pass_rate']) * 100:+5.1f}" if ss_same and ag_same else "     -"
+        rounds = ag["attempts"] if ag else float("nan")
         cost = (ag or ss)["cost"] if (ag or ss) else 0.0
-        print(f"{model:40} {pct(ss and ss['pass_rate']):>7} {pct(ag and ag['first']):>9} {gap:>6} {pct(ag and ag['pass_rate']):>8} "
-              f"{pct(ag and ag['pass_k']):>10} {attempts:>9.2f} {pct(fb and fb['pass_rate']):>9} {cost:>8.4f}")
-
+        print(f"{model:40} {pct(ss and ss['pass_rate']):>7} {pct(ag and ag['pass_rate']):>8} {gap:>6} {pct(ag and ag['first']):>9} "
+              f"{pct(ag and ag['pass_k']):>10} {rounds:>7.2f} {cost:>8.4f}")
 
 if __name__ == "__main__":
     main()

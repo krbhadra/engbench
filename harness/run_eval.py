@@ -35,7 +35,7 @@ import grade as grader  # noqa: E402
 TASKS_DIR = ROOT / "tasks"
 RESULTS_DIR = ROOT / "results"
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
-MAX_ATTEMPTS = 5      # grader calls per task, agentic track
+MAX_ATTEMPTS = 3      # test rounds per task, agentic track: a design and up to two revisions
 MAX_PYTHON = 15       # run_python calls per task, agentic track
 PYTHON_TIMEOUT = 60   # seconds per run_python call
 TASK_TIMEOUT = 1800   # seconds per task, safety net only; agentic runs with Python take ~20 turns
@@ -53,22 +53,23 @@ SYSTEM_SINGLE = (
     "in this exact shape, no prose, no code fences:\n{shape}"
 )
 SYSTEM_AGENTIC = (
-    "You are an engineer producing a design artifact, working at a desk with a calculator and a checker. "
+    "You are an engineer producing a design artifact, working at a desk with a calculator and a test lab. "
     "You have two tools. `run_python` runs a Python snippet (standard library only, no network, no files) "
     f"and returns its output; use it to compute and to check your own design; at most {MAX_PYTHON} calls. "
-    "`grade` checks a candidate design against the task's requirements and reports which checks failed, "
-    "without the numbers; at most {max_grades} calls. Stop as soon as grade passes. "
+    "`grade` sends a design to the test lab and returns its test and review report: what failed and in which "
+    "test, as a real project would observe it, not the cause and not the numbers; at most {max_grades} calls. "
+    "Stop as soon as grade passes. "
     "The artifact must be a JSON object in this exact shape:\n{shape}"
 )
 
 SYSTEM_AGENTIC_TEXT = (
-    "You are an engineer producing a design artifact, working at a desk with a calculator and a checker. "
+    "You are an engineer producing a design artifact, working at a desk with a calculator and a test lab. "
     "Two kinds of reply are understood, and nothing else. (1) A reply containing a ```python fenced "
     "block runs that snippet (standard library only, no network, no files) and you receive its output as the "
     f"next message; use it to compute and to check your own design; at most {MAX_PYTHON} runs. (2) A reply "
-    "consisting ONLY of a JSON object (no prose, no code fences) submits it for grading; you receive which "
-    "checks failed, without the numbers, as the next message; at most {max_grades} submissions. When the "
-    "grader reports passed: true, reply with the single word DONE. The artifact must be a JSON object in this "
+    "consisting ONLY of a JSON object (no prose, no code fences) sends it to the test lab; you receive its test "
+    "and review report (what failed and in which test, not the cause and not the numbers) as the next message; "
+    "at most {max_grades} submissions. When the report says passed: true, reply with the single word DONE. The artifact must be a JSON object in this "
     "exact shape:\n{shape}"
 )
 
@@ -113,11 +114,6 @@ def run_python(code: str) -> str:
         return "[no output]"
     return out[:4000] + ("\n[truncated]" if len(out) > 4000 else "")
 
-
-def lean(result: dict) -> dict:
-    """Feedback without numbers: which check failed, not what value to hit."""
-    return {"passed": result["passed"],
-            "violations": [re.sub(r"-?\d[\d,.]*\s*%?", "...", v) for v in result["violations"]]}
 
 
 # ---------- OpenRouter client ----------
@@ -207,7 +203,7 @@ def make_cli_chat():
             prompt = messages[1]["content"]
         else:
             last = messages[-1]
-            prompt = ("Grader result: " if last.get("name") == "grade" else "Output: ") + last["content"]
+            prompt = ("Test report: " if last.get("name") == "grade" else "Output: ") + last["content"]
 
         cmd = [_claude_exe(), "-p", "--model", model, "--system-prompt", system, *CLI_FLAGS]
         cmd += ["--resume", session["id"]] if session["id"] else []
@@ -332,7 +328,7 @@ def run_single_shot(model, task, opts, chat=chat):
 
 
 def run_agentic(model, task, opts, chat=chat):
-    max_grades = task.get("max_grades", MAX_ATTEMPTS)  # level 3+: the first graded design is final
+    max_grades = MAX_ATTEMPTS
     opts = {**opts, "max_grades": max_grades}
     messages = [
         {"role": "system", "content": SYSTEM_AGENTIC.format(shape=_shape(task), max_grades=max_grades)},
@@ -340,7 +336,8 @@ def run_agentic(model, task, opts, chat=chat):
     ]
     usage, attempts, provider, resolved = {}, [], None, None
     python_calls, t0 = 0, time.time()
-    feedback = (lambda r: r) if opts.get("feedback") == "full" else lean
+    feedback = (lambda r: r) if opts.get("feedback") == "full" else (
+        lambda r: {"passed": r["passed"], "test_report": grader.report(task, r["violations"])})
 
     while len(attempts) < max_grades and time.time() - t0 < TASK_TIMEOUT:
         resp = chat(model, messages, tools=AGENTIC_TOOLS, opts=opts)
@@ -418,7 +415,8 @@ def main():
     ap.add_argument("--provider", help="pin an OpenRouter host, fallbacks disabled (open-weight models)")
     ap.add_argument("--reasoning", choices=["low", "medium", "high"])
     ap.add_argument("--temperature", type=float)
-    ap.add_argument("--feedback", choices=["lean", "full"], default="lean", help="agentic grader feedback level")
+    ap.add_argument("--feedback", choices=["report", "full"], default="report",
+                    help="agentic feedback: test-lab report (default) or the full violations with numbers (debugging)")
     args = ap.parse_args()
 
     cli = args.transport == "claude-cli"

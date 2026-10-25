@@ -314,6 +314,61 @@ def evaluate(task: dict, d: dict) -> dict:
     return m
 
 
+# Test-lab feedback for the agentic track: each check reports what a test or review on a real project would
+# observe, never the rule, the cause or the numbers. Order matters: the first matching prefix wins.
+SYMPTOMS = [
+    ("usable energy", "End-of-life capacity test: the plant delivered less energy at the connection point than guaranteed."),
+    ("string current", "Rated-power discharge test: the battery management system derated the plant because cell current exceeded the cell rating."),
+    ("string voltage at end of life", "End-of-life discharge test at low state of charge: the PCS tripped on DC undervoltage before the rated energy was delivered."),
+    ("string voltage at full charge", "Full-charge test: the PCS tripped on DC overvoltage."),
+    ("total DC current", "Rated-power test: the PCS limited its DC input current and the plant could not reach rated power."),
+    ("PCS apparent power", "Grid compliance and prequalification tests: the PCS could not deliver the active and reactive power required at the connection point under every test condition."),
+    ("cooling capacity", "Summer heat-run at maximum ambient: cell temperatures exceeded the limit and the plant derated."),
+    ("heating", "Winter commissioning at the site minimum temperature: the battery management system blocked charging at rated power because the cells were too cold."),
+    ("string fuse class", "Protection review: the string fuses are not suited to clearing every overcurrent in a DC battery circuit."),
+    ("fuse DC voltage rating", "Short-circuit test on a string: the fuse could not extinguish the DC arc."),
+    ("fuse rated time constant", "Short-circuit test on a string: the fuse failed to interrupt and the arc persisted."),
+    ("fuse breaking capacity", "Short-circuit test at the DC bus: a string fuse failed to interrupt and ruptured."),
+    ("fuse rating", None),  # two different checks share this prefix; resolved below
+    ("fuse conventional fusing current", "Overload trial: a string cable overheated before its fuse operated."),
+    ("contactor rating", "Rated-power soak test: the string contactors overheated."),
+    ("contactor DC voltage rating", "Switching test: a string contactor could not break the DC string voltage."),
+    ("contactor maximum breaking current", "Fault test at moderate overcurrent: a string contactor opened but could not break the current before the fuse operated."),
+    ("cable DC voltage rating", "Insulation test: a DC string cable is not rated for the string voltage."),
+    ("DC cable voltage drop", "Rated-power test: the voltage drop on the DC string cables exceeded the project specification."),
+    ("transformer", "Heat-run at rated power: the step-up transformer overheated."),
+    ("switchgear rated voltage", "Type-test review: the medium-voltage switchgear is not rated for this network's voltage."),
+    ("switchgear short-time current", "Network fault study: the medium-voltage switchgear cannot withstand the fault current at the connection point."),
+    ("switchgear making current", "Network fault study: the medium-voltage switchgear cannot safely close onto a fault at the connection point."),
+    ("switchgear rated current", "Heat-run: the medium-voltage switchgear overheated at rated current."),
+    ("cost", "Commercial review: a competing design meets the same requirements for significantly less."),
+]
+DEVIATION_REJECTED = "Design review: a recorded deviation was not accepted for this design."
+
+
+def symptom(violation: str) -> str | None:
+    """The test-lab observation for one violation; None for format errors, which pass through unchanged."""
+    if re.match(r"\d+ strings exceed", violation):
+        return "Installation check: there are more battery strings than PCS DC inputs to connect them to."
+    for prefix, text in SYMPTOMS:
+        if violation.startswith(prefix):
+            if prefix == "fuse rating":
+                text = ("Overload trial: a string cable overheated before its fuse operated." if "exceeds the corrected cable"
+                        in violation else "Rated-power soak test: string fuses operated during continuous full-power operation.")
+            return text
+    return None
+
+
+def report(violations):
+    """Deduplicated test report for the agentic track."""
+    out = []
+    for v in violations:
+        s = symptom(v) or v
+        extra = [DEVIATION_REJECTED] if "recorded deviation not accepted" in v else []
+        out += [x for x in [s] + extra if x not in out]
+    return out
+
+
 def grade(task: dict, output: dict) -> dict:
     d = {k: output.get(k) for k in fields(task)}
     missing = [k for k in d if d[k] in (None, "")]

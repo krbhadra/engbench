@@ -56,11 +56,6 @@ def test_agentic_budget_cap():
     assert len(rec["attempts"]) == run_eval.MAX_ATTEMPTS
 
 
-def test_first_design_final_when_max_grades_is_one():
-    rec = run_eval.run_agentic("stub", {**TASK, "max_grades": 1}, {}, chat=stub_chat)  # stub would fix it on try 2
-    assert rec["passed"] is False and len(rec["attempts"]) == 1, rec
-
-
 def test_agentic_python_then_grade():
     def with_python(model, messages, tools=None, *, opts):
         seen = [m for m in messages if m.get("role") == "tool"]
@@ -76,9 +71,14 @@ def test_agentic_python_then_grade():
     assert rec["passed"] is True and rec["python_calls"] == 1, rec
 
 
-def test_lean_feedback_strips_numbers():
-    out = run_eval.lean({"passed": False, "violations": ["fuse rating 400 A exceeds I_z 172.1 A", "cost 12.5% over"]})
-    assert not any(ch.isdigit() for v in out["violations"] for ch in v), out
+def test_test_report_hides_cause_and_numbers():
+    bess_task = json.loads((Path(__file__).parent.parent / "tasks" / "bess_001.json").read_text())
+    out = run_eval.grader.report(bess_task, ["fuse breaking capacity 100 kA is below the prospective bus fault current 121.4 kA",
+                                             "fuse rating 400 A exceeds the corrected cable ampacity I_z 261.0 A"])
+    assert out == ["Short-circuit test at the DC bus: a string fuse failed to interrupt and ruptured.",
+                   "Overload trial: a string cable overheated before its fuse operated."], out
+    mech = run_eval.grader.report(TASK, ["comp_a overlaps comp_b by 4.5 mm"])  # component level: numbers stripped
+    assert not any(ch.isdigit() for v in mech for ch in v), mech
 
 
 def test_python_block_formats():

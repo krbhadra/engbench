@@ -434,7 +434,7 @@ HIDDEN = {  # feature -> the mistake a team makes when it does not anticipate th
 
 def _add_level3(task, rng, seed):
     p, c, s = task["params"], task["cell"], task["site"]
-    task.update({"id": f"bess3_{seed:03d}", "mode": "hidden", "level": 3, "max_grades": 1, "deviations_allowed": True})
+    task.update({"id": f"bess3_{seed:03d}", "mode": "hidden", "level": 3, "deviations_allowed": True})
     p.pop("soh_eol"); p.pop("milestone"); c.pop("k_r_eol")
     task["duty"] = {"cycles_per_day": rng.choice([1.0, 1.5, 2.0])}
     fade, grow = rng.uniform(0.85, 1.15), rng.uniform(0.9, 1.1)

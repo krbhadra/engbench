@@ -3,7 +3,7 @@
 A benchmark for LLM engineering reasoning that grades **design artifacts**
 with real solvers — not an LLM judge — and scores every model two ways:
 **single-shot** (one answer, no tools) and **agentic** (a Python tool to
-compute and self-check, plus a grader that says which check failed).
+compute and self-check, plus a test lab that reports what failed, not why).
 
 See [VISION.md](VISION.md) for why this exists, the two-track design, and
 what's in/out of scope.
@@ -21,8 +21,9 @@ what's in/out of scope.
    within a stated tolerance of the brute-force optimum, not merely feasible.
 4. On the **single-shot** track the model gets one response. On the
    **agentic** track the model gets `run_python` (standard library, no network,
-   up to 15 runs) and `grade` (up to 5 calls), and the grader reports which
-   checks failed without the numbers (`--feedback full` restores them).
+   up to 15 runs) and `grade`, a test lab with up to 3 rounds that reports
+   what failed and in which test, never the cause or the numbers
+   (`--feedback full` returns the raw violations, for debugging).
 
 ## Task schema
 
@@ -150,7 +151,7 @@ One model, one track:
 ```bash
 python harness/run_eval.py --track single-shot --model anthropic/claude-...
 python harness/run_eval.py --track agentic --model anthropic/claude-... --provider Fireworks
-python harness/run_eval.py --transport claude-cli --track agentic --model sonnet
+python harness/run_eval.py --transport claude-cli --track agentic --model claude-sonnet-5-5
 python harness/leaderboard.py
 ```
 Everything (edit the `MODELS` list in `harness/run_all.py` first, and verify
@@ -164,7 +165,7 @@ Runs are resumable: records already in the results file are skipped.
 
 Results land in `results/` as one JSON file per model per track, with the
 full attempt trajectory for every trial. The leaderboard script prints
-single-shot pass rate beside the agentic first-design rate, plus the gap.
+single-shot pass rate beside the agentic pass rate, plus the gap.
 
 ## Results page
 
@@ -179,10 +180,9 @@ is what GitHub Pages serves, so the same file is the public site.
 
 ## Metrics
 
-Agentic headline: first-design pass rate (the first graded design passes);
-passing within 5 grader calls saturates for strong models, so it sits beside
-it. Also per model, per track: pass rate over 3 trials, pass^3, grader calls
-to pass, mean tokens and cost per task. See VISION.md for the
+Headline: the score out of 100 per track (VISION.md). Agentic counts a pass
+within 3 test rounds. Also per model, per track: pass rate over 3 trials,
+first-design rate, pass^3, test rounds to pass, mean tokens and cost per task. See VISION.md for the
 reasoning behind the budget.
 
 ## Status

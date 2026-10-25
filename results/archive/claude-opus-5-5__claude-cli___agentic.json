@@ -12723,6 +12723,2096 @@
    "trial": 2,
    "seconds": 104.5,
    "timestamp": "2026-10-25T06:10:06+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-1",
+      "speed": 0.3,
+      "channel_d_mm": 4,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.542,
+      "dp_pa": 1046.8753,
+      "re": 661.2797,
+      "v_ms": 0.1797,
+      "h": 650.2251,
+      "nu": 4.36,
+      "t_out": 19.2521,
+      "t_mean": 18.626,
+      "t_cell": 23.034,
+      "q_heat_w": 47.232,
+      "pump_power_w": 0.2052,
+      "cost": 18.7386,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 13536,
+    "completion_tokens": 3331,
+    "cost": 0.1057604
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_015",
+   "trial": 3,
+   "seconds": 66.8,
+   "timestamp": "2026-10-25T06:11:13+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-2",
+      "speed": 0.39,
+      "channel_d_mm": 6,
+      "n_parallel": 2
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.6735,
+      "dp_pa": 2514.9031,
+      "re": 3023.0635,
+      "v_ms": 0.4932,
+      "h": 3026.3368,
+      "nu": 30.0629,
+      "t_out": 23.9314,
+      "t_mean": 22.9657,
+      "t_cell": 29.4801,
+      "q_heat_w": 224.64,
+      "pump_power_w": 1.0322,
+      "cost": 28.7587,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 4,
+   "usage": {
+    "prompt_tokens": 89519,
+    "completion_tokens": 19624,
+    "cost": 0.7029042000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_016",
+   "trial": 1,
+   "seconds": 137.6,
+   "timestamp": "2026-10-25T06:13:30+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-2",
+      "speed": 0.392,
+      "channel_d_mm": 6,
+      "n_parallel": 2
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.6828,
+      "dp_pa": 2539.9799,
+      "re": 3039.3918,
+      "v_ms": 0.496,
+      "h": 3039.5458,
+      "nu": 30.1946,
+      "t_out": 23.9207,
+      "t_mean": 22.9604,
+      "t_cell": 29.4565,
+      "q_heat_w": 224.64,
+      "pump_power_w": 1.0481,
+      "cost": 28.7587,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 4,
+   "usage": {
+    "prompt_tokens": 91820,
+    "completion_tokens": 20923,
+    "cost": 0.6254796
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_016",
+   "trial": 2,
+   "seconds": 143.3,
+   "timestamp": "2026-10-25T06:15:54+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-2",
+      "speed": 0.39,
+      "channel_d_mm": 6,
+      "n_parallel": 2
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.6735,
+      "dp_pa": 2514.9031,
+      "re": 3023.0635,
+      "v_ms": 0.4932,
+      "h": 3026.3368,
+      "nu": 30.0629,
+      "t_out": 23.9314,
+      "t_mean": 22.9657,
+      "t_cell": 29.4801,
+      "q_heat_w": 224.64,
+      "pump_power_w": 1.0322,
+      "cost": 28.7587,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 29312,
+    "completion_tokens": 8716,
+    "cost": 0.24159060000000002
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_016",
+   "trial": 3,
+   "seconds": 108.0,
+   "timestamp": "2026-10-25T06:17:42+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.705,
+      "channel_d_mm": 6,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.6061,
+      "dp_pa": 2695.2961,
+      "re": 1079.4481,
+      "v_ms": 0.3841,
+      "h": 338.7297,
+      "nu": 4.36,
+      "t_out": 22.8855,
+      "t_mean": 21.4427,
+      "t_cell": 43.4681,
+      "q_heat_w": 483.84,
+      "pump_power_w": 2.6631,
+      "cost": 26.9472,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 27933,
+    "completion_tokens": 7107,
+    "cost": 0.2693118
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_017",
+   "trial": 1,
+   "seconds": 104.0,
+   "timestamp": "2026-10-25T06:19:26+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.7,
+      "channel_d_mm": 6,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.5852,
+      "dp_pa": 2668.6066,
+      "re": 1071.1666,
+      "v_ms": 0.381,
+      "h": 338.7375,
+      "nu": 4.36,
+      "t_out": 22.9088,
+      "t_mean": 21.4544,
+      "t_cell": 43.491,
+      "q_heat_w": 483.84,
+      "pump_power_w": 2.6068,
+      "cost": 26.9472,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 29127,
+    "completion_tokens": 7826,
+    "cost": 0.221749
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_017",
+   "trial": 2,
+   "seconds": 107.9,
+   "timestamp": "2026-10-25T06:21:14+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.705,
+      "channel_d_mm": 6,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.6061,
+      "dp_pa": 2695.2961,
+      "re": 1079.4481,
+      "v_ms": 0.3841,
+      "h": 338.7297,
+      "nu": 4.36,
+      "t_out": 22.8855,
+      "t_mean": 21.4427,
+      "t_cell": 43.4681,
+      "q_heat_w": 483.84,
+      "pump_power_w": 2.6631,
+      "cost": 26.9472,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 30165,
+    "completion_tokens": 8161,
+    "cost": 0.23722100000000002
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_017",
+   "trial": 3,
+   "seconds": 103.6,
+   "timestamp": "2026-10-25T06:22:57+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-1",
+      "speed": 0.345,
+      "channel_d_mm": 12,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.8049,
+      "dp_pa": 863.639,
+      "re": 90.8264,
+      "v_ms": 0.0297,
+      "h": 141.071,
+      "nu": 4.36,
+      "t_out": 19.1346,
+      "t_mean": 18.5673,
+      "t_cell": 23.9871,
+      "q_heat_w": 53.568,
+      "pump_power_w": 0.3121,
+      "cost": 27.8692,
+      "freeze_c": -36.0
+     }
+    }
+   ],
+   "python_calls": 0,
+   "usage": {
+    "prompt_tokens": 3613,
+    "completion_tokens": 7272,
+    "cost": 0.174336
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_018",
+   "trial": 1,
+   "seconds": 73.6,
+   "timestamp": "2026-10-25T06:24:11+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-1",
+      "speed": 0.345,
+      "channel_d_mm": 12,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.8049,
+      "dp_pa": 863.639,
+      "re": 90.8264,
+      "v_ms": 0.0297,
+      "h": 141.071,
+      "nu": 4.36,
+      "t_out": 19.1346,
+      "t_mean": 18.5673,
+      "t_cell": 23.9871,
+      "q_heat_w": 53.568,
+      "pump_power_w": 0.3121,
+      "cost": 27.8692,
+      "freeze_c": -36.0
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 28896,
+    "completion_tokens": 8167,
+    "cost": 0.237641
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_018",
+   "trial": 2,
+   "seconds": 106.5,
+   "timestamp": "2026-10-25T06:25:58+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-1",
+      "speed": 0.403,
+      "channel_d_mm": 8,
+      "n_parallel": 4
+     },
+     "passed": false,
+     "violations": [
+      "pump_power_w 0.50 is not within 5% of the best design that meets every constraint"
+     ],
+     "metrics": {
+      "q_lpm": 0.9618,
+      "dp_pa": 1147.733,
+      "re": 162.365,
+      "v_ms": 0.0797,
+      "h": 211.5755,
+      "nu": 4.36,
+      "t_out": 18.9495,
+      "t_mean": 18.4748,
+      "t_cell": 23.8026,
+      "q_heat_w": 53.568,
+      "pump_power_w": 0.4974,
+      "cost": 23.1495,
+      "freeze_c": -36.0
+     }
+    },
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-1",
+      "speed": 0.345,
+      "channel_d_mm": 12,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.8049,
+      "dp_pa": 863.639,
+      "re": 90.8264,
+      "v_ms": 0.0297,
+      "h": 141.071,
+      "nu": 4.36,
+      "t_out": 19.1346,
+      "t_mean": 18.5673,
+      "t_cell": 23.9871,
+      "q_heat_w": 53.568,
+      "pump_power_w": 0.3121,
+      "cost": 27.8692,
+      "freeze_c": -36.0
+     }
+    }
+   ],
+   "python_calls": 5,
+   "usage": {
+    "prompt_tokens": 230425,
+    "completion_tokens": 49908,
+    "cost": 1.4199498
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_018",
+   "trial": 3,
+   "seconds": 191.2,
+   "timestamp": "2026-10-25T06:29:09+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.65,
+      "channel_d_mm": 4,
+      "n_parallel": 2
+     },
+     "passed": false,
+     "violations": [
+      "hottest cell 37.84 C exceeds 32.0 C (T_out=28.14 C, h=513 W/m2K, Re=1293, Q=0.88 L/min)"
+     ],
+     "metrics": {
+      "q_lpm": 0.8803,
+      "dp_pa": 4526.6781,
+      "re": 1292.8405,
+      "v_ms": 0.5838,
+      "h": 513.29,
+      "nu": 4.36,
+      "t_out": 28.136,
+      "t_mean": 26.568,
+      "t_cell": 37.8377,
+      "q_heat_w": 177.984,
+      "pump_power_w": 2.0322,
+      "cost": 20.239,
+      "freeze_c": -14.6
+     }
+    },
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-2",
+      "speed": 0.374,
+      "channel_d_mm": 10,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.6983,
+      "dp_pa": 2554.0088,
+      "re": 485.7758,
+      "v_ms": 0.0901,
+      "h": 205.0099,
+      "nu": 4.36,
+      "t_out": 26.6261,
+      "t_mean": 25.813,
+      "t_cell": 31.9655,
+      "q_heat_w": 177.984,
+      "pump_power_w": 0.8946,
+      "cost": 42.9226,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 5,
+   "usage": {
+    "prompt_tokens": 207307,
+    "completion_tokens": 42488,
+    "cost": 1.2316156
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_019",
+   "trial": 1,
+   "seconds": 211.6,
+   "timestamp": "2026-10-25T06:32:40+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-2",
+      "speed": 0.372,
+      "channel_d_mm": 10,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.6851,
+      "dp_pa": 2528.307,
+      "re": 482.0997,
+      "v_ms": 0.0894,
+      "h": 205.0125,
+      "nu": 4.36,
+      "t_out": 26.6388,
+      "t_mean": 25.8194,
+      "t_cell": 31.9782,
+      "q_heat_w": 177.984,
+      "pump_power_w": 0.8803,
+      "cost": 42.9226,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 13292,
+    "completion_tokens": 3575,
+    "cost": 0.10356380000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_019",
+   "trial": 2,
+   "seconds": 53.7,
+   "timestamp": "2026-10-25T06:33:34+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-2",
+      "speed": 0.371,
+      "channel_d_mm": 10,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.6785,
+      "dp_pa": 2515.502,
+      "re": 480.2637,
+      "v_ms": 0.089,
+      "h": 205.0138,
+      "nu": 4.36,
+      "t_out": 26.6453,
+      "t_mean": 25.8226,
+      "t_cell": 31.9846,
+      "q_heat_w": 177.984,
+      "pump_power_w": 0.8732,
+      "cost": 42.9226,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 28570,
+    "completion_tokens": 7791,
+    "cost": 0.2285816
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_019",
+   "trial": 3,
+   "seconds": 104.3,
+   "timestamp": "2026-10-25T06:35:19+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.567,
+      "channel_d_mm": 6,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.3788,
+      "dp_pa": 1921.5982,
+      "re": 491.9086,
+      "v_ms": 0.2032,
+      "h": 335.0909,
+      "nu": 4.36,
+      "t_out": 17.1167,
+      "t_mean": 16.0584,
+      "t_cell": 22.4823,
+      "q_heat_w": 187.392,
+      "pump_power_w": 1.3489,
+      "cost": 25.8091,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 29012,
+    "completion_tokens": 8630,
+    "cost": 0.31653139999999996
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_020",
+   "trial": 1,
+   "seconds": 110.0,
+   "timestamp": "2026-10-25T06:37:09+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.57,
+      "channel_d_mm": 6,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.3882,
+      "dp_pa": 1937.664,
+      "re": 495.1869,
+      "v_ms": 0.2046,
+      "h": 335.086,
+      "nu": 4.36,
+      "t_out": 17.1023,
+      "t_mean": 16.0512,
+      "t_cell": 22.468,
+      "q_heat_w": 187.392,
+      "pump_power_w": 1.3704,
+      "cost": 25.8091,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 29076,
+    "completion_tokens": 8588,
+    "cost": 0.24716559999999996
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_020",
+   "trial": 2,
+   "seconds": 106.3,
+   "timestamp": "2026-10-25T06:38:55+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.57,
+      "channel_d_mm": 6,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 1.3882,
+      "dp_pa": 1937.664,
+      "re": 495.1869,
+      "v_ms": 0.2046,
+      "h": 335.086,
+      "nu": 4.36,
+      "t_out": 17.1023,
+      "t_mean": 16.0512,
+      "t_cell": 22.468,
+      "q_heat_w": 187.392,
+      "pump_power_w": 1.3704,
+      "cost": 25.8091,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 28630,
+    "completion_tokens": 8318,
+    "cost": 0.23846279999999997
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_020",
+   "trial": 3,
+   "seconds": 114.0,
+   "timestamp": "2026-10-25T06:40:49+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-2",
+      "speed": 0.576,
+      "channel_d_mm": 10,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 3.6175,
+      "dp_pa": 4293.813,
+      "re": 3710.2872,
+      "v_ms": 0.7677,
+      "h": 2398.4378,
+      "nu": 51.3477,
+      "t_out": 22.94,
+      "t_mean": 22.47,
+      "t_cell": 30.9586,
+      "q_heat_w": 218.88,
+      "pump_power_w": 3.0194,
+      "cost": 25.0831,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 4,
+   "usage": {
+    "prompt_tokens": 130292,
+    "completion_tokens": 43936,
+    "cost": 1.1999664
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_021",
+   "trial": 1,
+   "seconds": 337.0,
+   "timestamp": "2026-10-25T06:46:26+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-2",
+      "speed": 0.58,
+      "channel_d_mm": 10,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 3.6441,
+      "dp_pa": 4351.0669,
+      "re": 3737.2245,
+      "v_ms": 0.7733,
+      "h": 2412.4496,
+      "nu": 51.6481,
+      "t_out": 22.9331,
+      "t_mean": 22.4666,
+      "t_cell": 30.9282,
+      "q_heat_w": 218.88,
+      "pump_power_w": 3.0828,
+      "cost": 25.0831,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 3,
+   "usage": {
+    "prompt_tokens": 52623,
+    "completion_tokens": 12214,
+    "cost": 0.3645564
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_021",
+   "trial": 2,
+   "seconds": 116.4,
+   "timestamp": "2026-10-25T06:48:22+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-2",
+      "speed": 0.575,
+      "channel_d_mm": 10,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 3.6108,
+      "dp_pa": 4279.5559,
+      "re": 3703.5545,
+      "v_ms": 0.7662,
+      "h": 2394.9325,
+      "nu": 51.2726,
+      "t_out": 22.9417,
+      "t_mean": 22.4709,
+      "t_cell": 30.9663,
+      "q_heat_w": 218.88,
+      "pump_power_w": 3.0037,
+      "cost": 25.0831,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 4,
+   "usage": {
+    "prompt_tokens": 83785,
+    "completion_tokens": 16859,
+    "cost": 0.5093022
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_021",
+   "trial": 3,
+   "seconds": 135.9,
+   "timestamp": "2026-10-25T06:50:38+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-2",
+      "speed": 0.336,
+      "channel_d_mm": 6,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.9362,
+      "dp_pa": 2236.8993,
+      "re": 3025.2482,
+      "v_ms": 0.5518,
+      "h": 3142.963,
+      "nu": 31.6391,
+      "t_out": 18.66,
+      "t_mean": 18.33,
+      "t_cell": 20.8749,
+      "q_heat_w": 43.008,
+      "pump_power_w": 0.6297,
+      "cost": 30.3228,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 29487,
+    "completion_tokens": 8951,
+    "cost": 0.3275236
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_022",
+   "trial": 1,
+   "seconds": 115.8,
+   "timestamp": "2026-10-25T06:52:34+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-2",
+      "speed": 0.336,
+      "channel_d_mm": 6,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.9362,
+      "dp_pa": 2236.8993,
+      "re": 3025.2482,
+      "v_ms": 0.5518,
+      "h": 3142.963,
+      "nu": 31.6391,
+      "t_out": 18.66,
+      "t_mean": 18.33,
+      "t_cell": 20.8749,
+      "q_heat_w": 43.008,
+      "pump_power_w": 0.6297,
+      "cost": 30.3228,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 5,
+   "usage": {
+    "prompt_tokens": 123163,
+    "completion_tokens": 21762,
+    "cost": 0.6713498
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_022",
+   "trial": 2,
+   "seconds": 141.8,
+   "timestamp": "2026-10-25T06:54:56+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-2",
+      "speed": 0.335,
+      "channel_d_mm": 6,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.9322,
+      "dp_pa": 2223.9881,
+      "re": 3012.6378,
+      "v_ms": 0.5495,
+      "h": 3132.4451,
+      "nu": 31.5331,
+      "t_out": 18.6628,
+      "t_mean": 18.3314,
+      "t_cell": 20.8815,
+      "q_heat_w": 43.008,
+      "pump_power_w": 0.6241,
+      "cost": 30.3228,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 4,
+   "usage": {
+    "prompt_tokens": 89095,
+    "completion_tokens": 18482,
+    "cost": 0.5426994
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_022",
+   "trial": 3,
+   "seconds": 140.5,
+   "timestamp": "2026-10-25T06:57:17+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-1",
+      "speed": 0.69,
+      "channel_d_mm": 4,
+      "n_parallel": 3
+     },
+     "passed": false,
+     "violations": [
+      "hottest cell 25.59 C exceeds 25.0 C (T_out=22.46 C, h=426 W/m2K, Re=555, Q=1.10 L/min)"
+     ],
+     "metrics": {
+      "q_lpm": 1.0952,
+      "dp_pa": 4325.6199,
+      "re": 555.0118,
+      "v_ms": 0.4842,
+      "h": 425.6676,
+      "nu": 4.36,
+      "t_out": 22.4576,
+      "t_mean": 22.2288,
+      "t_cell": 25.5945,
+      "q_heat_w": 29.52,
+      "pump_power_w": 2.5952,
+      "cost": 17.3347,
+      "freeze_c": -36.0
+     }
+    },
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-1",
+      "speed": 0.45,
+      "channel_d_mm": 8,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.8887,
+      "dp_pa": 1678.1072,
+      "re": 169.1897,
+      "v_ms": 0.0737,
+      "h": 212.8516,
+      "nu": 4.36,
+      "t_out": 22.5639,
+      "t_mean": 22.282,
+      "t_cell": 24.9865,
+      "q_heat_w": 29.52,
+      "pump_power_w": 0.7199,
+      "cost": 19.9365,
+      "freeze_c": -36.0
+     }
+    }
+   ],
+   "python_calls": 3,
+   "usage": {
+    "prompt_tokens": 82943,
+    "completion_tokens": 16172,
+    "cost": 0.5858972
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_023",
+   "trial": 1,
+   "seconds": 112.6,
+   "timestamp": "2026-10-25T06:59:09+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-1",
+      "speed": 0.445,
+      "channel_d_mm": 8,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.8743,
+      "dp_pa": 1648.0378,
+      "re": 166.4779,
+      "v_ms": 0.0725,
+      "h": 212.8532,
+      "nu": 4.36,
+      "t_out": 22.5732,
+      "t_mean": 22.2866,
+      "t_cell": 24.9958,
+      "q_heat_w": 29.52,
+      "pump_power_w": 0.6962,
+      "cost": 19.9365,
+      "freeze_c": -36.0
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 19863,
+    "completion_tokens": 2987,
+    "cost": 0.14391900000000002
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_023",
+   "trial": 2,
+   "seconds": 592.5,
+   "timestamp": "2026-10-25T07:09:02+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-1",
+      "speed": 0.44,
+      "channel_d_mm": 10,
+      "n_parallel": 2
+     },
+     "passed": false,
+     "violations": [
+      "hottest cell 27.14 C exceeds 25.0 C (T_out=22.58 C, h=170 W/m2K, Re=263, Q=0.86 L/min)"
+     ],
+     "metrics": {
+      "q_lpm": 0.8643,
+      "dp_pa": 1611.589,
+      "re": 263.3266,
+      "v_ms": 0.0917,
+      "h": 170.2834,
+      "nu": 4.36,
+      "t_out": 22.5799,
+      "t_mean": 22.2899,
+      "t_cell": 27.1446,
+      "q_heat_w": 29.52,
+      "pump_power_w": 0.673,
+      "cost": 18.6356,
+      "freeze_c": -36.0
+     }
+    },
+    {
+     "artifact": {
+      "coolant": "MEG-50",
+      "pump": "PMP-1",
+      "speed": 0.449,
+      "channel_d_mm": 8,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.8858,
+      "dp_pa": 1672.0785,
+      "re": 168.6466,
+      "v_ms": 0.0734,
+      "h": 212.8519,
+      "nu": 4.36,
+      "t_out": 22.5658,
+      "t_mean": 22.2829,
+      "t_cell": 24.9884,
+      "q_heat_w": 29.52,
+      "pump_power_w": 0.7151,
+      "cost": 19.9365,
+      "freeze_c": -36.0
+     }
+    }
+   ],
+   "python_calls": 5,
+   "usage": {
+    "prompt_tokens": 203650,
+    "completion_tokens": 42922,
+    "cost": 1.2196508000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_023",
+   "trial": 3,
+   "seconds": 174.0,
+   "timestamp": "2026-10-25T07:11:56+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-3",
+      "speed": 0.373,
+      "channel_d_mm": 8,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.5138,
+      "dp_pa": 4642.5804,
+      "re": 3019.1765,
+      "v_ms": 0.8335,
+      "h": 2601.8562,
+      "nu": 44.7566,
+      "t_out": 22.5746,
+      "t_mean": 20.2873,
+      "t_cell": 33.1837,
+      "q_heat_w": 739.584,
+      "pump_power_w": 1.6762,
+      "cost": 42.6081,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 30923,
+    "completion_tokens": 10847,
+    "cost": 0.3058892000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_024",
+   "trial": 1,
+   "seconds": 161.8,
+   "timestamp": "2026-10-25T07:14:38+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-3",
+      "speed": 0.374,
+      "channel_d_mm": 8,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.5219,
+      "dp_pa": 4667.0106,
+      "re": 3028.2239,
+      "v_ms": 0.8362,
+      "h": 2608.2866,
+      "nu": 44.8679,
+      "t_out": 22.56,
+      "t_mean": 20.28,
+      "t_cell": 33.1487,
+      "q_heat_w": 739.584,
+      "pump_power_w": 1.6897,
+      "cost": 42.6081,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 4,
+   "usage": {
+    "prompt_tokens": 153101,
+    "completion_tokens": 20600,
+    "cost": 0.7523142
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_024",
+   "trial": 2,
+   "seconds": 801.1,
+   "timestamp": "2026-10-25T07:27:59+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-3",
+      "speed": 0.373,
+      "channel_d_mm": 8,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.5138,
+      "dp_pa": 4642.5804,
+      "re": 3019.1765,
+      "v_ms": 0.8335,
+      "h": 2601.8562,
+      "nu": 44.7566,
+      "t_out": 22.5746,
+      "t_mean": 20.2873,
+      "t_cell": 33.1837,
+      "q_heat_w": 739.584,
+      "pump_power_w": 1.6762,
+      "cost": 42.6081,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 29423,
+    "completion_tokens": 8808,
+    "cost": 0.255145
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_024",
+   "trial": 3,
+   "seconds": 150.4,
+   "timestamp": "2026-10-25T07:30:29+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-1",
+      "speed": 0.468,
+      "channel_d_mm": 6,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.8452,
+      "dp_pa": 2092.1469,
+      "re": 3011.7315,
+      "v_ms": 0.4982,
+      "h": 3031.3738,
+      "nu": 30.1599,
+      "t_out": 22.8382,
+      "t_mean": 22.4191,
+      "t_cell": 24.4277,
+      "q_heat_w": 49.248,
+      "pump_power_w": 0.8303,
+      "cost": 17.3673,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 3,
+   "usage": {
+    "prompt_tokens": 52947,
+    "completion_tokens": 11337,
+    "cost": 0.42505
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_025",
+   "trial": 1,
+   "seconds": 112.2,
+   "timestamp": "2026-10-25T07:32:21+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-1",
+      "speed": 0.469,
+      "channel_d_mm": 6,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.8476,
+      "dp_pa": 2100.7748,
+      "re": 3020.115,
+      "v_ms": 0.4996,
+      "h": 3038.1527,
+      "nu": 30.2274,
+      "t_out": 22.8358,
+      "t_mean": 22.4179,
+      "t_cell": 24.4235,
+      "q_heat_w": 49.248,
+      "pump_power_w": 0.8356,
+      "cost": 17.3673,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 0,
+   "usage": {
+    "prompt_tokens": 3618,
+    "completion_tokens": 9973,
+    "cost": 0.20532359999999997
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_025",
+   "trial": 2,
+   "seconds": 91.8,
+   "timestamp": "2026-10-25T07:33:53+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-1",
+      "speed": 0.47,
+      "channel_d_mm": 6,
+      "n_parallel": 1
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.85,
+      "dp_pa": 2109.4199,
+      "re": 3028.5018,
+      "v_ms": 0.501,
+      "h": 3044.9305,
+      "nu": 30.295,
+      "t_out": 22.8335,
+      "t_mean": 22.4168,
+      "t_cell": 24.4193,
+      "q_heat_w": 49.248,
+      "pump_power_w": 0.841,
+      "cost": 17.3673,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 28821,
+    "completion_tokens": 8250,
+    "cost": 0.22837379999999996
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_025",
+   "trial": 3,
+   "seconds": 107.3,
+   "timestamp": "2026-10-25T07:35:41+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-1",
+      "speed": 0.81,
+      "channel_d_mm": 6,
+      "n_parallel": 3
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.3147,
+      "dp_pa": 4933.5966,
+      "re": 3012.0533,
+      "v_ms": 0.4548,
+      "h": 2938.9396,
+      "nu": 28.9537,
+      "t_out": 26.7776,
+      "t_mean": 25.8888,
+      "t_cell": 29.4439,
+      "q_heat_w": 285.696,
+      "pump_power_w": 4.2515,
+      "cost": 23.6887,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 3,
+   "usage": {
+    "prompt_tokens": 49223,
+    "completion_tokens": 10557,
+    "cost": 0.3175700000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_026",
+   "trial": 1,
+   "seconds": 181.0,
+   "timestamp": "2026-10-25T07:38:42+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-1",
+      "speed": 0.81,
+      "channel_d_mm": 6,
+      "n_parallel": 3
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.3147,
+      "dp_pa": 4933.5966,
+      "re": 3012.0533,
+      "v_ms": 0.4548,
+      "h": 2938.9396,
+      "nu": 28.9537,
+      "t_out": 26.7776,
+      "t_mean": 25.8888,
+      "t_cell": 29.4439,
+      "q_heat_w": 285.696,
+      "pump_power_w": 4.2515,
+      "cost": 23.6887,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 3,
+   "usage": {
+    "prompt_tokens": 51794,
+    "completion_tokens": 12979,
+    "cost": 0.3815704
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_026",
+   "trial": 2,
+   "seconds": 138.2,
+   "timestamp": "2026-10-25T07:41:00+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-1",
+      "speed": 0.812,
+      "channel_d_mm": 6,
+      "n_parallel": 3
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 2.3208,
+      "dp_pa": 4956.8592,
+      "re": 3019.8149,
+      "v_ms": 0.456,
+      "h": 2945.0618,
+      "nu": 29.0142,
+      "t_out": 26.7729,
+      "t_mean": 25.8864,
+      "t_cell": 29.4365,
+      "q_heat_w": 285.696,
+      "pump_power_w": 4.2831,
+      "cost": 23.6887,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 25916,
+    "completion_tokens": 4241,
+    "cost": 0.15797879999999997
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_026",
+   "trial": 3,
+   "seconds": 1064.4,
+   "timestamp": "2026-10-25T07:58:44+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-3",
+      "speed": 0.5,
+      "channel_d_mm": 10,
+      "n_parallel": 2
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 3.1937,
+      "dp_pa": 7512.5535,
+      "re": 3180.3305,
+      "v_ms": 0.3389,
+      "h": 1945.4046,
+      "nu": 32.5303,
+      "t_out": 20.9861,
+      "t_mean": 19.4931,
+      "t_cell": 30.679,
+      "q_heat_w": 663.552,
+      "pump_power_w": 4.5125,
+      "cost": 48.04,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 29247,
+    "completion_tokens": 8981,
+    "cost": 0.32586040000000005
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_027",
+   "trial": 1,
+   "seconds": 116.8,
+   "timestamp": "2026-10-25T08:00:41+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-3",
+      "speed": 0.5,
+      "channel_d_mm": 10,
+      "n_parallel": 2
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 3.1937,
+      "dp_pa": 7512.5535,
+      "re": 3180.3305,
+      "v_ms": 0.3389,
+      "h": 1945.4046,
+      "nu": 32.5303,
+      "t_out": 20.9861,
+      "t_mean": 19.4931,
+      "t_cell": 30.679,
+      "q_heat_w": 663.552,
+      "pump_power_w": 4.5125,
+      "cost": 48.04,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 3,
+   "usage": {
+    "prompt_tokens": 55468,
+    "completion_tokens": 13506,
+    "cost": 0.3888828
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_027",
+   "trial": 2,
+   "seconds": 125.0,
+   "timestamp": "2026-10-25T08:02:46+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-3",
+      "speed": 0.502,
+      "channel_d_mm": 10,
+      "n_parallel": 2
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 3.2077,
+      "dp_pa": 7572.1679,
+      "re": 3193.7687,
+      "v_ms": 0.3403,
+      "h": 1952.0764,
+      "nu": 32.6425,
+      "t_out": 20.9731,
+      "t_mean": 19.4865,
+      "t_cell": 30.6513,
+      "q_heat_w": 663.552,
+      "pump_power_w": 4.5669,
+      "cost": 48.04,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 5,
+   "usage": {
+    "prompt_tokens": 148416,
+    "completion_tokens": 35009,
+    "cost": 0.9959872000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_027",
+   "trial": 3,
+   "seconds": 165.0,
+   "timestamp": "2026-10-25T08:05:31+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.352,
+      "channel_d_mm": 12,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.4527,
+      "dp_pa": 1248.4662,
+      "re": 87.6275,
+      "v_ms": 0.0167,
+      "h": 168.5761,
+      "nu": 4.36,
+      "t_out": 20.2169,
+      "t_mean": 19.1085,
+      "t_cell": 27.4733,
+      "q_heat_w": 64.512,
+      "pump_power_w": 0.3707,
+      "cost": 20.9595,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 29440,
+    "completion_tokens": 8347,
+    "cost": 0.24586599999999997
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_028",
+   "trial": 1,
+   "seconds": 148.5,
+   "timestamp": "2026-10-25T08:08:00+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.35,
+      "channel_d_mm": 12,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.4482,
+      "dp_pa": 1235.1072,
+      "re": 86.7924,
+      "v_ms": 0.0165,
+      "h": 168.5798,
+      "nu": 4.36,
+      "t_out": 20.2389,
+      "t_mean": 19.1195,
+      "t_cell": 27.4952,
+      "q_heat_w": 64.512,
+      "pump_power_w": 0.3644,
+      "cost": 20.9595,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 3,
+   "usage": {
+    "prompt_tokens": 49933,
+    "completion_tokens": 10707,
+    "cost": 0.32472119999999993
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_028",
+   "trial": 2,
+   "seconds": 116.7,
+   "timestamp": "2026-10-25T08:09:56+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.353,
+      "channel_d_mm": 12,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.4549,
+      "dp_pa": 1255.1698,
+      "re": 88.0462,
+      "v_ms": 0.0168,
+      "h": 168.5742,
+      "nu": 4.36,
+      "t_out": 20.206,
+      "t_mean": 19.103,
+      "t_cell": 27.4625,
+      "q_heat_w": 64.512,
+      "pump_power_w": 0.3739,
+      "cost": 20.9595,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 3,
+   "usage": {
+    "prompt_tokens": 56883,
+    "completion_tokens": 15703,
+    "cost": 0.4419432
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_028",
+   "trial": 3,
+   "seconds": 111.6,
+   "timestamp": "2026-10-25T08:11:48+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-3",
+      "speed": 0.466,
+      "channel_d_mm": 6,
+      "n_parallel": 3
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 3.5345,
+      "dp_pa": 6904.4791,
+      "re": 3972.6654,
+      "v_ms": 0.6945,
+      "h": 3853.7304,
+      "nu": 38.5904,
+      "t_out": 20.3186,
+      "t_mean": 20.1593,
+      "t_cell": 21.4946,
+      "q_heat_w": 78.336,
+      "pump_power_w": 3.5722,
+      "cost": 48.4252,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 4,
+   "usage": {
+    "prompt_tokens": 89958,
+    "completion_tokens": 18698,
+    "cost": 0.6888634
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_029",
+   "trial": 1,
+   "seconds": 135.2,
+   "timestamp": "2026-10-25T08:14:03+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-3",
+      "speed": 0.47,
+      "channel_d_mm": 6,
+      "n_parallel": 3
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 3.5679,
+      "dp_pa": 7022.0656,
+      "re": 4010.1028,
+      "v_ms": 0.7011,
+      "h": 3882.8023,
+      "nu": 38.8817,
+      "t_out": 20.3156,
+      "t_mean": 20.1578,
+      "t_cell": 21.4893,
+      "q_heat_w": 78.336,
+      "pump_power_w": 3.665,
+      "cost": 48.4252,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 28758,
+    "completion_tokens": 8219,
+    "cost": 0.2384116
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_029",
+   "trial": 2,
+   "seconds": 168.2,
+   "timestamp": "2026-10-25T08:16:51+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "WATER",
+      "pump": "PMP-3",
+      "speed": 0.465,
+      "channel_d_mm": 6,
+      "n_parallel": 3
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 3.5262,
+      "dp_pa": 6875.2356,
+      "re": 3963.3108,
+      "v_ms": 0.6928,
+      "h": 3846.4577,
+      "nu": 38.5176,
+      "t_out": 20.3194,
+      "t_mean": 20.1597,
+      "t_cell": 21.496,
+      "q_heat_w": 78.336,
+      "pump_power_w": 3.5492,
+      "cost": 48.4252,
+      "freeze_c": 0.0
+     }
+    }
+   ],
+   "python_calls": 5,
+   "usage": {
+    "prompt_tokens": 125004,
+    "completion_tokens": 22881,
+    "cost": 0.7011804
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_029",
+   "trial": 3,
+   "seconds": 148.1,
+   "timestamp": "2026-10-25T08:19:20+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.418,
+      "channel_d_mm": 4,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.5576,
+      "dp_pa": 1792.4158,
+      "re": 351.9886,
+      "v_ms": 0.1849,
+      "h": 508.6271,
+      "nu": 4.36,
+      "t_out": 25.9363,
+      "t_mean": 21.9682,
+      "t_cell": 41.9063,
+      "q_heat_w": 284.8,
+      "pump_power_w": 0.6427,
+      "cost": 24.1944,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 4,
+   "usage": {
+    "prompt_tokens": 86048,
+    "completion_tokens": 17872,
+    "cost": 0.6537618
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_030",
+   "trial": 1,
+   "seconds": 149.1,
+   "timestamp": "2026-10-25T08:21:49+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.42,
+      "channel_d_mm": 4,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.5617,
+      "dp_pa": 1808.8932,
+      "re": 354.26,
+      "v_ms": 0.1862,
+      "h": 508.5979,
+      "nu": 4.36,
+      "t_out": 25.8786,
+      "t_mean": 21.9393,
+      "t_cell": 41.8494,
+      "q_heat_w": 284.8,
+      "pump_power_w": 0.652,
+      "cost": 24.1944,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 31708,
+    "completion_tokens": 11709,
+    "cost": 0.3144488
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_030",
+   "trial": 2,
+   "seconds": 127.4,
+   "timestamp": "2026-10-25T08:23:56+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "coolant": "MEG-30",
+      "pump": "PMP-1",
+      "speed": 0.42,
+      "channel_d_mm": 4,
+      "n_parallel": 4
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "q_lpm": 0.5617,
+      "dp_pa": 1808.8932,
+      "re": 354.26,
+      "v_ms": 0.1862,
+      "h": 508.5979,
+      "nu": 4.36,
+      "t_out": 25.8786,
+      "t_mean": 21.9393,
+      "t_cell": 41.8494,
+      "q_heat_w": 284.8,
+      "pump_power_w": 0.652,
+      "cost": 24.1944,
+      "freeze_c": -14.6
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 13140,
+    "completion_tokens": 3425,
+    "cost": 0.0992776
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "coolant_loop_030",
+   "trial": 3,
+   "seconds": 79.2,
+   "timestamp": "2026-10-25T08:25:15+00:00"
   }
  ]
 }

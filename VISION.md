@@ -79,16 +79,23 @@ Prose that a solver cannot check is not scored.
 | Track | What the model gets | What it measures |
 |---|---|---|
 | **Single-shot** | The task. One response. | Whether the model carries the engineering knowledge and can apply it cold. |
-| **Agentic** | The task plus two tools: `run_python` (standard library, no network, no files, up to 15 calls) to compute and self-check, and `grade(artifact)` (up to 5 calls) which reports *which* checks failed, without the numbers. | Whether it can engineer at a desk: build its own checks, use a verifier, converge on a trustworthy design. |
+| **Agentic** | The task plus two tools: `run_python` (standard library, no network, no files, up to 15 calls) to compute and self-check, and `grade(artifact)`, a test lab (up to 3 rounds) that reports what failed and in which test, never the cause or the numbers. | Whether it can learn from its own mistakes: trace a failed test back to the design decision that caused it, fix that, and not break anything else. |
 
-On the agentic track the **first graded design** is what scores; passing
-within five grader calls is reported beside it, because with the checker's
-pointer strong models pass almost everything (three of four Claude models
-reached 100% on the level-2 storage tasks, October 2026). The grader is a
-deterministic solver on both tracks, so the no-judge rule holds.
+On the agentic track a design **passes if it clears the tests within three
+rounds**; the first-design rate and the rounds needed are shown beside it.
+The report reads like a commissioning log ("short-circuit test at the DC bus:
+a string fuse failed to interrupt and ruptured"), not like a compiler error
+("fuse breaking capacity below bus fault current"). The first version of this
+track pointed at the failing check, and strong models passed almost
+everything by patching the named number (three of four Claude models reached
+100% on the level-2 storage tasks, October 2026); a symptom makes the model
+find the root cause. The grader is a deterministic solver on both tracks, and
+the symptom wording is a fixed table in the solver, so the no-judge rule
+holds. Component-level families (level 1) have no test-lab wording yet; they
+get the failed checks with the numbers removed.
 
-An earlier loop (grader only, full numeric feedback, no compute tool) is kept
-in the results as the `feedback` track, marked superseded.
+Runs from the earlier loops (grader with full numbers; grader naming the
+check, five calls) are in `results/archive/` and are not scored.
 
 ## Scope and order
 
@@ -125,11 +132,11 @@ engineering practice directly, not because the benchmark is about storage.
 
 ## Budget and metrics
 
-- 5 grader calls and 15 Python runs per task on the agentic track; a
+- 3 test rounds and 15 Python runs per task on the agentic track; a
   30-minute wall clock as a safety net only; 3 trials per task per model per
   track.
 - Headline: the score out of 100, per track. Also reported per model, per
-  level, per family: pass rate, first-design rate, pass^3, grader calls to
+  level, per family: pass rate, first-design rate, pass^3, test rounds to
   pass, tokens and cost. Token budgets are never a cutoff.
 - Model calls go through an API with the serving provider pinned and logged,
   or through the `claude` CLI on a subscription, labeled separately. Providers

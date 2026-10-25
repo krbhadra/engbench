@@ -12,7 +12,10 @@ cells to the medium-voltage connection, but:
   require. Knowing that VDE-AR-N 4110, IEC 60269-7, IEC 61660-1,
   DIN VDE 0298-4, IEC 60364-4-43, IEC 60076-11, IEC 60909 and IEC 62271 apply,
   and what they demand, is part of the test.
-- **The first design is final** (`max_grades: 1`). Python stays available.
+- **Agentic: three test rounds**, like every level. The test-lab report names
+  the failed test (winter commissioning, grid compliance, short-circuit test
+  at the MV switchgear), not the hidden requirement behind it. Python stays
+  available.
 - **Hidden requirements.** The grader checks everything level 2 checks, plus
   the items below, which the prompt never mentions.
 - **A seed is kept only if at least three hidden requirements bind**: for each

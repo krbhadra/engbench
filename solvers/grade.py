@@ -7,6 +7,7 @@ and inserted into the netlist before simulation.
 from __future__ import annotations
 
 import importlib
+import re
 
 import electrical
 import mechanical
@@ -38,6 +39,15 @@ def _directly_connected(netlist, n1, n2):
         if len(t) >= 3 and {t[1].lower(), t[2].lower()} == want:
             return True
     return False
+
+
+def report(task: dict, violations: list) -> list:
+    """Agentic feedback: the domain's test-lab symptoms where it has them, else the violations without numbers."""
+    mod = importlib.import_module(task["domain"]) if task["domain"] not in ("mechanical", "electrical", "combined") else None
+    if mod is not None and hasattr(mod, "report"):
+        return mod.report(violations)
+    # ponytail: component-level families keep compiler-style messages with the numbers stripped
+    return list(dict.fromkeys(re.sub(r"-?\d[\d,.]*\s*%?", "...", v) for v in violations))
 
 
 def grade(task: dict, output: dict) -> dict:

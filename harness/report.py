@@ -18,10 +18,10 @@ from leaderboard import score
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs" / "index.html"
 
-TRACKS = ("single-shot", "feedback", "agentic")
-MARK = {"single-shot": "S", "feedback": "F", "agentic": "A"}
-TRACK_NOTE = {"single-shot": "one answer, no tools", "feedback": "superseded: grade tool with full numbers, no compute",
-              "agentic": "first graded design passes; run_python + grade (which check failed, no numbers)"}
+TRACKS = ("single-shot", "agentic")
+MARK = {"single-shot": "S", "agentic": "A"}
+TRACK_NOTE = {"single-shot": "one answer, no tools",
+              "agentic": "passes within 3 test rounds; run_python + a test-lab report of what failed, not why"}
 DISCIPLINES = {"mech": "mechanical", "elec": "electrical", "comb": "mechanical + electrical",
                "pe_cooling": "electronics + thermal + fluids", "coolant_loop": "thermal + fluids"}
 
@@ -70,18 +70,19 @@ def build(runs, tasks):
     fams = sorted({family(r["task"]) for d in runs for r in d["records"]})
 
     # ---- leaderboard
-    lb = ['<table><thead><tr><th>model</th><th>score<small>single-shot</small></th><th>score<small>agentic</small></th><th>single-shot</th><th>agentic<small>first design</small></th><th>gap<small>first design − single-shot, same tasks</small></th>'
-          '<th>agentic<small>pass in 5 grader calls</small></th><th>grader calls<small>to pass</small></th>'
-          '<th>feedback<small>superseded</small></th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody>']
+    lb = ['<table><thead><tr><th>model</th><th>score<small>single-shot</small></th><th>score<small>agentic</small></th>'
+          '<th>single-shot<small>pass</small></th><th>agentic<small>pass in 3 test rounds</small></th>'
+          '<th>gap<small>agentic − single-shot, same tasks</small></th><th>agentic<small>first design</small></th>'
+          '<th>test rounds<small>to pass</small></th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody>']
     for m in models:
-        ss, fb, ag = by.get((m, "single-shot"), []), by.get((m, "feedback"), []), by.get((m, "agentic"), [])
-        rs, rf, ra, r1 = rate(ss), rate(fb), rate(ag), first_rate(ag)
+        ss, ag = by.get((m, "single-shot"), []), by.get((m, "agentic"), [])
+        rs, ra, r1 = rate(ss), rate(ag), first_rate(ag)
         both = {r["task"] for r in ss} & {r["task"] for r in ag}  # gap only over tasks both tracks ran
-        g_ss, g_ag = rate([r for r in ss if r["task"] in both]), first_rate([r for r in ag if r["task"] in both])
+        g_ss, g_ag = rate([r for r in ss if r["task"] in both]), rate([r for r in ag if r["task"] in both])
         gap = f"{(g_ag[0]-g_ss[0])*100:+.0f}" if g_ss[0] is not None and g_ag[0] is not None else "–"
         passed = [len(r["attempts"]) for r in ag if r["passed"]]
         calls = f"{sum(passed) / len(passed):.2f}" if passed else "–"
-        allr = [r for r in ss + fb + ag if r["passed"] is not None]
+        allr = [r for r in ss + ag if r["passed"] is not None]
         tok = sum(r["usage"].get("completion_tokens", 0) for r in allr) / max(1, len(allr))
         cost = sum(r["usage"].get("cost", 0) for r in allr) / max(1, len(allr))
         def sc(recs, tr):
@@ -89,7 +90,7 @@ def build(runs, tasks):
                 return '<td class="na">–</td>'
             v, rates = score(recs, tr)
             return f'<td><b>{v:.1f}</b><small>levels run: {", ".join(map(str, sorted(rates)))}</small></td>'
-        lb.append(f"<tr><th>{esc(m)}</th>{sc(ss, 'single-shot')}{sc(ag, 'agentic')}{cell(rs)}{cell(r1)}<td>{gap}</td>{cell(ra)}<td>{calls}</td>{cell(rf)}<td>{len({r['task'] for r in allr})}</td>"
+        lb.append(f"<tr><th>{esc(m)}</th>{sc(ss, 'single-shot')}{sc(ag, 'agentic')}{cell(rs)}{cell(ra)}<td>{gap}</td>{cell(r1)}<td>{calls}</td><td>{len({r['task'] for r in allr})}</td>"
                   f"<td>{tok:,.0f}</td><td>{cost:.3f}</td></tr>")
     lb.append("</tbody></table>")
 
@@ -153,14 +154,14 @@ details[open]{{display:block;max-width:520px;white-space:normal}} details pre{{f
 a{{color:var(--accent)}} footer{{margin-top:48px;color:var(--muted);font-size:13px}}
 </style></head><body><main>
 <h1>EngBench</h1>
-<p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, plus a grader that says which check failed without the numbers, five grader calls: the engineer at a desk with a calculator and a checker. The agentic headline is the <b>first-design</b> rate, whether the first design it submits passes; passing within five grader calls is shown beside it but saturates for strong models. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
+<p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, and a test lab: each submitted design comes back with a test and review report of what failed (a fuse ruptured in the short-circuit test, the plant could not charge in winter), never the cause or the numbers, and the design passes if it clears the tests within three rounds. It measures whether the model can find the root cause of its own mistakes and fix them without breaking something else. The first-design rate is shown beside it. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
 <p class="lede">{n_tasks} tasks · {n_runs} task runs · {len(models)} models · updated {stamp}</p>
-<h2>Leaderboard</h2><p class="lede">Score out of 100: six levels, each worth published points (15, 20, 15, 20, 15, 15), earned at that level's pass rate; agentic counts the first graded design. Levels a model has not run earn nothing, so compare scores only across the same levels run.</p><div class="wrap">{"".join(lb)}</div>
+<h2>Leaderboard</h2><p class="lede">Score out of 100: six levels, each worth published points (15, 20, 15, 20, 15, 15), earned at that level's pass rate; agentic counts a pass within three test rounds. Levels a model has not run earn nothing, so compare scores only across the same levels run.</p><div class="wrap">{"".join(lb)}</div>
 <h2>By family</h2>
 <p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
 <div class="wrap">{"".join(fam_tables)}</div>
 <h2>Every task, every model</h2>
-<p class="lede">S = single-shot, F = feedback (superseded), A = agentic; the digit is the number of grader attempts. Click a mark to see the model's design and the grader's violations.</p>
+<p class="lede">S = single-shot, A = agentic; the digit is the number of test rounds. Click a mark to see the model's design and the grader's violations.</p>
 <div class="wrap">{"".join(mt)}</div>
 <footer>Generated by <code>harness/report.py</code> from the committed <code>results/</code> folder. Source, tasks and graders: <a href="https://github.com/krbhadra/engbench">github.com/krbhadra/engbench</a>.</footer>
 </main></body></html>
