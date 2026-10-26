@@ -19,11 +19,11 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
 </style></head><body><main>
 <h1>EngBench</h1>
 <p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, and a test lab: each submitted design comes back with a test and review report of what failed (a fuse ruptured in the short-circuit test, the plant could not charge in winter), never the cause or the numbers, and the design passes if it clears the tests within three rounds. It measures whether the model can find the root cause of its own mistakes and fix them without breaking something else. The first-design rate is shown beside it. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
-<p class="lede">126 tasks · 1527 task runs · 6 models · updated 2026-10-26 13:31 UTC</p>
-<h2>Leaderboard</h2><p class="lede">Score out of 100: six levels, each worth published points (15, 20, 15, 20, 15, 15), earned at that level's pass rate; agentic counts a pass within three test rounds. Levels a model has not run earn nothing, so compare scores only across the same levels run.</p><div class="wrap"><table><thead><tr><th>model</th><th>score<small>single-shot</small></th><th>score<small>agentic</small></th><th>single-shot<small>pass</small></th><th>agentic<small>pass in 3 test rounds</small></th><th>gap<small>agentic − single-shot, same tasks</small></th><th>agentic<small>first design</small></th><th>test rounds<small>to pass</small></th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td><b>13.9</b><small>levels run: 1</small></td><td class="na">–</td><td class="good"><b>93%</b><small>42</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td>42</td><td>2,530</td><td>0.153</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td><b>10.3</b><small>levels run: 1, 2</small></td><td class="na">–</td><td class="mid"><b>55%</b><small>56</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td>56</td><td>21,677</td><td>0.112</td></tr><tr><th>claude-opus-5 [claude-cli]</th><td><b>24.2</b><small>levels run: 1, 2</small></td><td class="na">–</td><td class="mid"><b>86%</b><small>66</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td>66</td><td>7,250</td><td>0.201</td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td><b>30.2</b><small>levels run: 1, 2, 3</small></td><td><b>45.2</b><small>levels run: 1, 2, 3</small></td><td class="mid"><b>78%</b><small>378</small></td><td class="good"><b>96%</b><small>378</small></td><td>+18</td><td class="mid"><b>80%</b><small>378</small></td><td>1.20</td><td>126</td><td>11,911</td><td>0.330</td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td><b>12.1</b><small>levels run: 1, 2</small></td><td class="na">–</td><td class="mid"><b>66%</b><small>62</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td>62</td><td>17,046</td><td>0.178</td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td><b>18.9</b><small>levels run: 1, 2, 3</small></td><td><b>44.0</b><small>levels run: 1, 2, 3</small></td><td class="mid"><b>57%</b><small>378</small></td><td class="mid"><b>88%</b><small>167</small></td><td>+58</td><td class="bad"><b>36%</b><small>167</small></td><td>1.71</td><td>126</td><td>27,841</td><td>0.367</td></tr></tbody></table></div>
+<p class="lede">126 tasks · 1734 task runs · 6 models · updated 2026-10-26 19:13 UTC</p>
+<h2>Leaderboard</h2><p class="lede">Score out of 100: six levels, each worth published points (15, 20, 15, 20, 15, 15), earned at that level's pass rate; agentic counts a pass within three test rounds. Levels a model has not run earn nothing, so compare scores only across the same levels run.</p><div class="wrap"><table><thead><tr><th>model</th><th>score<small>single-shot</small></th><th>score<small>agentic</small></th><th>single-shot<small>pass</small></th><th>agentic<small>pass in 3 test rounds</small></th><th>gap<small>agentic − single-shot, same tasks</small></th><th>agentic<small>first design</small></th><th>test rounds<small>to pass</small></th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td><b>13.9</b><small>levels run: 1</small></td><td class="na">–</td><td class="good"><b>93%</b><small>42</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td>42</td><td>2,530</td><td>0.153</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td><b>10.3</b><small>levels run: 1, 2</small></td><td class="na">–</td><td class="mid"><b>55%</b><small>56</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td>56</td><td>21,677</td><td>0.112</td></tr><tr><th>claude-opus-5 [claude-cli]</th><td><b>24.2</b><small>levels run: 1, 2</small></td><td class="na">–</td><td class="mid"><b>86%</b><small>66</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td>66</td><td>7,250</td><td>0.201</td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td><b>30.2</b><small>levels run: 1, 2, 3</small></td><td><b>45.2</b><small>levels run: 1, 2, 3</small></td><td class="mid"><b>78%</b><small>378</small></td><td class="good"><b>96%</b><small>378</small></td><td>+18</td><td class="mid"><b>80%</b><small>378</small></td><td>1.20</td><td>126</td><td>11,911</td><td>0.330</td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td><b>12.1</b><small>levels run: 1, 2</small></td><td class="na">–</td><td class="mid"><b>66%</b><small>62</small></td><td class="na">–</td><td>–</td><td class="na">–</td><td>–</td><td>62</td><td>17,046</td><td>0.178</td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td><b>18.9</b><small>levels run: 1, 2, 3</small></td><td><b>44.9</b><small>levels run: 1, 2, 3</small></td><td class="mid"><b>57%</b><small>378</small></td><td class="good"><b>94%</b><small>374</small></td><td>+36</td><td class="mid"><b>67%</b><small>374</small></td><td>1.34</td><td>126</td><td>29,286</td><td>0.383</td></tr></tbody></table></div>
 <h2>By family</h2>
 <p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
-<div class="wrap"><h3>single-shot<small>one answer, no tools</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>bess3<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="mid"><b>75%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>0%</b><small>3</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>92%</b><small>12</small></td><td class="bad"><b>25%</b><small>12</small></td></tr><tr><th>claude-opus-5 [claude-cli]</th><td class="mid"><b>50%</b><small>12</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="mid"><b>83%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="mid"><b>59%</b><small>63</small></td><td class="bad"><b>31%</b><small>51</small></td><td class="mid"><b>78%</b><small>18</small></td><td class="mid"><b>81%</b><small>96</small></td><td class="good"><b>100%</b><small>36</small></td><td class="good"><b>100%</b><small>36</small></td><td class="good"><b>100%</b><small>78</small></td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>22%</b><small>9</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="mid"><b>83%</b><small>12</small></td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="bad"><b>29%</b><small>63</small></td><td class="bad"><b>16%</b><small>51</small></td><td class="mid"><b>83%</b><small>18</small></td><td class="bad"><b>35%</b><small>96</small></td><td class="good"><b>100%</b><small>36</small></td><td class="good"><b>100%</b><small>36</small></td><td class="mid"><b>88%</b><small>78</small></td></tr></tbody></table><h3>agentic<small>passes within 3 test rounds; run_python + a test-lab report of what failed, not why</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>bess3<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-opus-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="mid"><b>51%</b><small>63</small></td><td class="bad"><b>33%</b><small>51</small></td><td class="mid"><b>78%</b><small>18</small></td><td class="good"><b>93%</b><small>96</small></td><td class="good"><b>100%</b><small>36</small></td><td class="good"><b>100%</b><small>36</small></td><td class="good"><b>99%</b><small>78</small></td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="bad"><b>30%</b><small>61</small></td><td class="bad"><b>14%</b><small>50</small></td><td class="mid"><b>78%</b><small>18</small></td><td class="mid"><b>55%</b><small>38</small></td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr></tbody></table></div>
+<div class="wrap"><h3>single-shot<small>one answer, no tools</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>bess3<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="good"><b>100%</b><small>6</small></td><td class="mid"><b>75%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="na">–</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>0%</b><small>3</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>92%</b><small>12</small></td><td class="bad"><b>25%</b><small>12</small></td></tr><tr><th>claude-opus-5 [claude-cli]</th><td class="mid"><b>50%</b><small>12</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="mid"><b>83%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="mid"><b>59%</b><small>63</small></td><td class="bad"><b>31%</b><small>51</small></td><td class="mid"><b>78%</b><small>18</small></td><td class="mid"><b>81%</b><small>96</small></td><td class="good"><b>100%</b><small>36</small></td><td class="good"><b>100%</b><small>36</small></td><td class="good"><b>100%</b><small>78</small></td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td class="bad"><b>0%</b><small>11</small></td><td class="na">–</td><td class="mid"><b>83%</b><small>6</small></td><td class="bad"><b>22%</b><small>9</small></td><td class="good"><b>100%</b><small>12</small></td><td class="good"><b>100%</b><small>12</small></td><td class="mid"><b>83%</b><small>12</small></td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="bad"><b>29%</b><small>63</small></td><td class="bad"><b>16%</b><small>51</small></td><td class="mid"><b>83%</b><small>18</small></td><td class="bad"><b>35%</b><small>96</small></td><td class="good"><b>100%</b><small>36</small></td><td class="good"><b>100%</b><small>36</small></td><td class="mid"><b>88%</b><small>78</small></td></tr></tbody></table><h3>agentic<small>passes within 3 test rounds; run_python + a test-lab report of what failed, not why</small></h3><table><thead><tr><th>model</th><th>bess<small></small></th><th>bess3<small></small></th><th>comb<small>mechanical + electrical</small></th><th>coolant_loop<small>thermal + fluids</small></th><th>elec<small>electrical</small></th><th>mech<small>mechanical</small></th><th>pe_cooling<small>electronics + thermal + fluids</small></th></tr></thead><tbody><tr><th>claude-fable-5-1 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-haiku-4-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-opus-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-opus-5-5 [claude-cli]</th><td class="mid"><b>51%</b><small>63</small></td><td class="bad"><b>33%</b><small>51</small></td><td class="mid"><b>78%</b><small>18</small></td><td class="good"><b>93%</b><small>96</small></td><td class="good"><b>100%</b><small>36</small></td><td class="good"><b>100%</b><small>36</small></td><td class="good"><b>99%</b><small>78</small></td></tr><tr><th>claude-sonnet-5 [claude-cli]</th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td><td class="na">–</td></tr><tr><th>claude-sonnet-5-5 [claude-cli]</th><td class="bad"><b>30%</b><small>61</small></td><td class="bad"><b>14%</b><small>50</small></td><td class="mid"><b>78%</b><small>18</small></td><td class="mid"><b>67%</b><small>95</small></td><td class="good"><b>100%</b><small>36</small></td><td class="good"><b>94%</b><small>36</small></td><td class="good"><b>97%</b><small>78</small></td></tr></tbody></table></div>
 <h2>Every task, every model</h2>
 <p class="lede">S = single-shot, A = agentic; the digit is the number of test rounds. Click a mark to see the model's design and the grader's violations.</p>
 <div class="wrap"><table class="matrix"><thead><tr><th>task</th><th>claude-fable-5-1 [claude-cli]</th><th>claude-haiku-4-5 [claude-cli]</th><th>claude-opus-5 [claude-cli]</th><th>claude-opus-5-5 [claude-cli]</th><th>claude-sonnet-5 [claude-cli]</th><th>claude-sonnet-5-5 [claude-cli]</th></tr></thead><tbody><tr><th>bess3_001<small>Grid-connected LFP battery storage system</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
@@ -10617,6 +10617,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.57,
  &quot;channel_d_mm&quot;: 8,
  &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.575,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 1
 }</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_014<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;MEG-30&quot;,
  &quot;pump&quot;: &quot;PMP-3&quot;,
@@ -10671,7 +10677,25 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.86,
  &quot;channel_d_mm&quot;: 4,
  &quot;n_parallel&quot;: 2
-}</pre><p>channel Re 2491 is in the transition band 2000-3000 (laminar or turbulent only)</p></details></td></tr><tr><th>coolant_loop_015<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+}</pre><p>channel Re 2491 is in the transition band 2000-3000 (laminar or turbulent only)</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.64,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.645,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.64,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_015<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;WATER&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.3,
@@ -10720,6 +10744,18 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;channel_d_mm&quot;: 6,
  &quot;n_parallel&quot;: 4
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.3,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.3,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;coolant&quot;: &quot;WATER&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.3,
@@ -10779,7 +10815,25 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.73,
  &quot;channel_d_mm&quot;: 4,
  &quot;n_parallel&quot;: 2
-}</pre><p>pump_power_w 3.00 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_017<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+}</pre><p>pump_power_w 3.00 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.39,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 2
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.39,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 2
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.39,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 2
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_017<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;MEG-30&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.706,
@@ -10831,6 +10885,24 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;coolant&quot;: &quot;MEG-30&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.71,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.71,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.71,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.7,
  &quot;channel_d_mm&quot;: 6,
  &quot;n_parallel&quot;: 4
 }</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_018<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
@@ -10887,6 +10959,18 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.348,
  &quot;channel_d_mm&quot;: 12,
  &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.347,
+ &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="fail"><summary>A1</summary><pre>null</pre><p>output was not a JSON object</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.346,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
 }</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_019<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;MEG-30&quot;,
  &quot;pump&quot;: &quot;PMP-2&quot;,
@@ -10941,7 +11025,25 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.585,
  &quot;channel_d_mm&quot;: 12,
  &quot;n_parallel&quot;: 4
-}</pre><p>hottest cell 32.00 C exceeds 32.0 C (T_out=26.66 C, h=171 W/m2K, Re=396, Q=1.66 L/min)</p></details></td></tr><tr><th>coolant_loop_020<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+}</pre><p>hottest cell 32.00 C exceeds 32.0 C (T_out=26.66 C, h=171 W/m2K, Re=396, Q=1.66 L/min)</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.37,
+ &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.37,
+ &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.37,
+ &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_020<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;MEG-30&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.57,
@@ -10990,6 +11092,24 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;channel_d_mm&quot;: 6,
  &quot;n_parallel&quot;: 4
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.57,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.57,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.568,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;coolant&quot;: &quot;MEG-30&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.57,
@@ -11049,7 +11169,25 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.59,
  &quot;channel_d_mm&quot;: 10,
  &quot;n_parallel&quot;: 1
-}</pre><p>pump_power_w 3.24 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_022<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+}</pre><p>pump_power_w 3.24 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.575,
+ &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.58,
+ &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.58,
+ &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_022<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;WATER&quot;,
  &quot;pump&quot;: &quot;PMP-2&quot;,
  &quot;speed&quot;: 0.337,
@@ -11103,7 +11241,25 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.45,
  &quot;channel_d_mm&quot;: 6,
  &quot;n_parallel&quot;: 1
-}</pre><p>pump_power_w 0.70 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_023<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+}</pre><p>pump_power_w 0.70 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.337,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A3</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.335,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-2&quot;,
+ &quot;speed&quot;: 0.337,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_023<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;MEG-50&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.446,
@@ -11155,6 +11311,24 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;coolant&quot;: &quot;MEG-50&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.445,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.448,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.45,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A3</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.45,
  &quot;channel_d_mm&quot;: 8,
  &quot;n_parallel&quot;: 4
 }</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_024<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11211,7 +11385,25 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.97,
  &quot;channel_d_mm&quot;: 8,
  &quot;n_parallel&quot;: 1
-}</pre><p>pump_power_w 7.58 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_025<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+}</pre><p>pump_power_w 7.58 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.374,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.375,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.374,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_025<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;WATER&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.474,
@@ -11260,6 +11452,24 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;channel_d_mm&quot;: 6,
  &quot;n_parallel&quot;: 1
 }</pre><p>pump_power_w 1.58 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.47,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.47,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.47,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 1
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;coolant&quot;: &quot;WATER&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.47,
@@ -11319,7 +11529,25 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.93,
  &quot;channel_d_mm&quot;: 6,
  &quot;n_parallel&quot;: 2
-}</pre><p>pump_power_w 6.43 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_027<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+}</pre><p>pump_power_w 6.43 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.82,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 3
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.82,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 3
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.81,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 3
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_027<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;WATER&quot;,
  &quot;pump&quot;: &quot;PMP-3&quot;,
  &quot;speed&quot;: 0.502,
@@ -11373,7 +11601,25 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.54,
  &quot;channel_d_mm&quot;: 10,
  &quot;n_parallel&quot;: 1
-}</pre><p>pump_power_w 5.68 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_028<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+}</pre><p>pump_power_w 5.68 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.5,
+ &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 2
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.505,
+ &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 2
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.505,
+ &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 2
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_028<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;MEG-30&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.353,
@@ -11425,6 +11671,24 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;coolant&quot;: &quot;MEG-30&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.355,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.35,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.35,
+ &quot;channel_d_mm&quot;: 12,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.35,
  &quot;channel_d_mm&quot;: 12,
  &quot;n_parallel&quot;: 4
 }</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_029<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11481,7 +11745,25 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.7,
  &quot;channel_d_mm&quot;: 6,
  &quot;n_parallel&quot;: 4
-}</pre><p>pump_power_w 5.04 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_030<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+}</pre><p>pump_power_w 5.04 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.47,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 3
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.47,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 3
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;WATER&quot;,
+ &quot;pump&quot;: &quot;PMP-3&quot;,
+ &quot;speed&quot;: 0.47,
+ &quot;channel_d_mm&quot;: 6,
+ &quot;n_parallel&quot;: 3
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_030<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;MEG-30&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.42,
@@ -11535,7 +11817,25 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.44,
  &quot;channel_d_mm&quot;: 4,
  &quot;n_parallel&quot;: 4
-}</pre><p>pump_power_w 0.75 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>coolant_loop_031<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+}</pre><p>pump_power_w 0.75 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.42,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.42,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.42,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_031<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;MEG-30&quot;,
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.3,
@@ -11588,6 +11888,18 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;pump&quot;: &quot;PMP-1&quot;,
  &quot;speed&quot;: 0.3,
  &quot;channel_d_mm&quot;: 10,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="fail"><summary>A1</summary><pre>null</pre><p>output was not a JSON object</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.3,
+ &quot;channel_d_mm&quot;: 8,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-30&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.3,
+ &quot;channel_d_mm&quot;: 8,
  &quot;n_parallel&quot;: 4
 }</pre><p>passed</p></details></td></tr><tr><th>coolant_loop_032<small>Battery module coolant loop</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;coolant&quot;: &quot;MEG-50&quot;,
@@ -11643,6 +11955,24 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;speed&quot;: 0.3,
  &quot;channel_d_mm&quot;: 4,
  &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.3,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.3,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;coolant&quot;: &quot;MEG-50&quot;,
+ &quot;pump&quot;: &quot;PMP-1&quot;,
+ &quot;speed&quot;: 0.3,
+ &quot;channel_d_mm&quot;: 4,
+ &quot;n_parallel&quot;: 4
 }</pre><p>passed</p></details></td></tr><tr><th>elec_001<small>Voltage divider within drop limit</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* Resistor divider: 12V -&gt; 6V at vout\nV1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11668,6 +11998,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 10k\nR2 vout 0 10k&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_002<small>Divider under load</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 435\nR2 vout 0 330\nRload vout 0 330\n.op\n.end&quot;
@@ -11695,6 +12031,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 430\nR2 vout 0 330\nRload vout 0 330\n.op\n.end&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 510\nR2 vout 0 470\nRload vout 0 330&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 510\nR2 vout 0 470\nRload vout 0 330&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 510\nR2 vout 0 470\nRload vout 0 330&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1 vin vout 650\nR2 vout 0 1000\nRload vout 0 330&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_003<small>LED current limiting</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* LED current limiting from 9V supply\nV1 vin 0 DC 9\nRsense vin sense 1\nRlimit sense led_a 390\nVled led_a 0 DC 2\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11721,6 +12063,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlim sense led_a 399\nVled led_a 0 DC 2\n.op\n.end&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlim sense led_a 399\nVled led_a 0 DC 2\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlim sense led_a 399\nVled led_a 0 DC 2&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlim sense led_a 399\nVled led_a 0 DC 2&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 9\nRsense vin sense 1\nRlim sense led_a 399\nVled led_a 0 DC 2&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_004<small>Quiescent current budget</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* 24V to 5.0V reference, quiescent current ~0.1mA\nV1 vin 0 DC 24\nRsense vin top 10\n* Divider: 190k / 50k -&gt; vout = 24 * 50k / 240k = 5.00V, I = 24/240k = 0.1mA (Rsense drop = 1mV)\nR1 top vout 190k\nR2 vout 0 50k\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11746,6 +12094,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 95k\nR2 vout 0 25k&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 38k\nR2 vout 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 38k\nR2 vout 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 38k\nR2 vout 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRsense vin top 10\nR1 top vout 38k\nR2 vout 0 10k&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_005<small>Two loaded rails</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_005: two loaded rails from 12V via resistor dividers\nV1 vin 0 DC 12\n* 5.0V rail: Rb = R2 || Rl5 = 100||100 = 50 ohm; Vr5 = 12*50/(70+50) = 5.00V\nR1 vin r5 70\nR2 r5 0 100\nRl5 r5 0 100\n* 3.3V rail: Rb = R4 || Rl33 = 50 ohm; Vr33 = 12*50/(131.8+50) = 3.30V\nR3 vin r33 131.8\nR4 r33 0 100\nRl33 r33 0 100\n.op\n.end&quot;
@@ -11773,6 +12127,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR15 vin r5 28\nR25 r5 0 25\nRl5 r5 0 100\nR133 vin r33 52.7\nR233 r33 0 25\nRl33 r33 0 100\n.op\n.end&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1a vin r5 84\nR2a r5 0 150\nRl5 r5 0 100\nR1b vin r33 158\nR2b r33 0 150\nRl33 r33 0 100\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1a vin r5 28\nR2a r5 0 25\nRl5 r5 0 100\nR1b vin r33 52.73\nR2b r33 0 25\nRl33 r33 0 100&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1a vin r5 70\nR2a r5 0 100\nRl5 r5 0 100\nR1b vin r33 132\nR2b r33 0 100\nRl33 r33 0 100\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nR1a vin r5 28\nR2a r5 0 25\nRl5 r5 0 100\nR1b vin r33 52.73\nR2b r33 0 25\nRl33 r33 0 100\n.end&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_006<small>Remote load behind a long wire</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* Remote load behind long wire: V1 -&gt; Rwire -&gt; R1 -&gt; vout, R2||Rload to ground\n* Rp = R2||Rload = 50||50 = 25 ohm; Vout = 12*25/(5+30+25) = 5.00 V\nV1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 30\nR2 vout 0 50\nRload vout 0 50\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11799,6 +12159,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nRtop remote vout 30\nRbot vout 0 50\nRload vout 0 50\n.op\n.end&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 30\nR2 vout 0 50\nRload vout 0 50\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 41.667\nR2 vout 0 100\nRload vout 0 50\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 41.667\nR2 vout 0 100\nRload vout 0 50\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 12\nRwire vin remote 5\nR1 remote vout 23\nR2 vout 0 33.333\nRload vout 0 50&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_007<small>Wheatstone bridge balance</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* Wheatstone bridge, balanced: R2/R1 = R4/R3, V(a)=V(b)=5V\nV1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11825,6 +12191,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR3 vin b 2.2k\nR2 a 0 1k\nR4 b 0 2.2k&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR3 vin b 2.2k\nR2 a 0 1k\nR4 b 0 2.2k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR2 a 0 1k\nR3 vin b 2.2k\nR4 b 0 2.2k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nR1 vin a 1k\nR3 vin b 2.2k\nR2 a 0 1k\nR4 b 0 2.2k&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_008<small>3-bit R-2R ladder</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* 3-bit R-2R ladder DAC, code 101 -&gt; vout = 5V*5/8 = 3.125V\nVb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\n* termination 2R\nRterm n0 0 20k\n* LSB leg\nRb0 b0 n0 20k\nR01 n0 n1 10k\n* bit1 leg\nRb1 b1 n1 20k\nR12 n1 vout 10k\n* MSB leg\nRb2 b2 vout 20k\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11851,6 +12223,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;netlist&quot;: &quot;Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nR2b0 b0 n0 20k\nRterm n0 0 20k\nR01 n0 n1 10k\nR2b1 b1 n1 20k\nR12 n1 vout 10k\nR2b2 b2 vout 20k&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nR2 b2 vout 20k\nRs2 vout n1 10k\nR1 b1 n1 20k\nRs1 n1 n0 10k\nR0 b0 n0 20k\nRt n0 0 20k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nR2 b2 vout 20k\nR1 vout n1 10k\nR3 b1 n1 20k\nR4 n1 n0 10k\nR5 b0 n0 20k\nR6 n0 0 20k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nR0 b0 n0 20k\nRt n0 0 20k\nRa n0 n1 10k\nR1 b1 n1 20k\nRb n1 vout 10k\nR2 b2 vout 20k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;Vb2 b2 0 DC 5\nVb1 b1 0 DC 0\nVb0 b0 0 DC 5\nR2 b2 vout 20k\nR3 vout n1 10k\nR4 b1 n1 20k\nR5 n1 n0 10k\nR6 b0 n0 20k\nR7 n0 0 20k&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_009<small>Dropper for a constant-current load</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_009: series dropper for constant-current load\n* Iload = 40mA -&gt; drop across Rsense = 0.04V, top = 14.96V\n* Rdrop = (14.96 - 9.0)/0.040 = 149 ohm -&gt; vout = 9.00V, supply current = 40mA\nV1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 149\nIload vout 0 DC 40m\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11877,6 +12255,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;netlist&quot;: &quot;V1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 149\nIload vout 0 DC 40m\n.op\n.end&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 149\nIload vout 0 DC 40m\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 149\nIload vout 0 DC 40m&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 15\nRsense vin top 1\nRdrop top vout 149\nIload vout 0 DC 40m&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 15\nRsense vin top 1\nR1 top vout 149\nIload vout 0 DC 40m&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_010<small>Multi-load distribution with a ceiling</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_010: 24V supply, shared feeder, three loads on bus\nV1 vin 0 DC 24\nRfeed vin bus 2\n* direct wires to l1 and l2\nR1 bus l1 0.01\nR2 bus l2 0.01\n* series dropper for 21V-max load: Vbus ~21.86V -&gt; V(l3) ~20.63V\nR3 bus l3 3\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\n* Itotal ~1.07A, Vbus ~21.86V, V(l1)~V(l2)~21.86V, V(l3)~20.63V\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11903,6 +12287,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\n* l1 and l2 on direct wires\nRw1 bus l1 0.01\nRw2 bus l2 0.01\n* 3 ohm series drop pulls l3 below 21V\nRw3 bus l3 3\n.op&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\nRb1 bus l1 0.01\nRb2 bus l2 0.01\nRb3 bus l3 3&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\nRb1 bus l1 0.01\nRb2 bus l2 0.01\nRb3 bus l3 3&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\nRb1 bus l1 0.01\nRb2 bus l2 0.01\nRb3 bus l3 3&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 24\nRfeed vin bus 2\nRl1 l1 0 100\nRl2 l2 0 50\nRl3 l3 0 50\nRb1 bus l1 0.01\nRb2 bus l2 0.01\nRb3 bus l3 3.4&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_011<small>Precision reference</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_011: 2.500V precision reference from 10V supply\n* Rsense(100) + R1(9.9k) in series = 10k; R2(5k)||Rload(10k) = 3.333k\n* Vref = 10V * 3.333k / (10k + 3.333k) = 2.500V exactly; Isupply = 0.75mA (&lt;=1.5mA)\nV1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 9.9k\nR2 vref 0 5k\nRload vref 0 10k\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11929,6 +12319,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 7400\nR2 vref 0 3333.333\nRload vref 0 10k&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 7.4k\nR2 vref 0 3333.333\nRload vref 0 10k\n* Total current 1mA, top = 9.9V, Rsense drop 0.1V\n* R2||Rload = 2.5k, so vref = 2.5V * (2.5k/(2.5k+7.4k)) divider from 9.9V = 2.5V\n.op\n.end&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 7400\nR2 vref 0 3333.333\nRload vref 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 7400\nR2 vref 0 3333.33\nRload vref 0 10k&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 10\nRsense vin top 100\nR1 top vref 7400\nR2 vref 0 3333.333\nRload vref 0 10k&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>elec_012<small>Remote dual-rail power budget</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;* elec_012: remote dual-rail power budget\n* Loads: 12V/60R = 0.2A, 5V/50R = 0.1A, aux 0.05A -&gt; Itotal = 0.35A (&lt;= 0.4A)\n* Drop across Rsense+Rwire = 0.35A * 3.5R = 1.225V -&gt; V(remote) = 46.775V\n* Rd12 = (46.775-12)/0.2 = 173.875 ohm ; Rd5 = (46.775-5)/0.1 = 417.75 ohm\nV1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRd12 remote v12 173.875\nRd5 remote v5 417.75\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\n.op\n.end&quot;
 }</pre><p>passed</p></details></td><td><details class="pass"><summary>S1</summary><pre>{
@@ -11954,6 +12350,12 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\nRd12 remote v12 173.875\nRd5 remote v5 417.75&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\nRd12 remote v12 173.875\nRd5 remote v5 417.75&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\nRd12 remote v12 173.875\nRd5 remote v5 417.75&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;netlist&quot;: &quot;V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\nRd12 remote v12 174\nRd5 remote v5 418&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;netlist&quot;: &quot;V1 vin 0 DC 48\nRsense vin top 0.5\nRwire top remote 3\nRl12 v12 0 60\nRl5 v5 0 50\nIaux remote 0 DC 50m\nRd12 remote v12 173.875\nRd5 remote v5 417.75&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>mech_001<small>Basic enclosure fit</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;placements&quot;: [
@@ -12306,6 +12708,87 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_b&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_c&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_b&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_c&quot;,
+   &quot;position&quot;: [
+    110,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_b&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_c&quot;,
+   &quot;position&quot;: [
+    110,
+    0,
+    0
+   ]
+  }
+ ]
 }</pre><p>passed</p></details></td></tr><tr><th>mech_002<small>Enclosure fit with thermal clearance</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;placements&quot;: [
   {
@@ -12631,6 +13114,87 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ]
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_x&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_y&quot;,
+   &quot;position&quot;: [
+    160,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_z&quot;,
+   &quot;position&quot;: [
+    90,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_x&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_y&quot;,
+   &quot;position&quot;: [
+    160,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_z&quot;,
+   &quot;position&quot;: [
+    90,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;comp_x&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_y&quot;,
+   &quot;position&quot;: [
+    160,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;comp_z&quot;,
+   &quot;position&quot;: [
+    90,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;comp_x&quot;,
@@ -13174,6 +13738,135 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ]
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;b&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;c&quot;,
+   &quot;position&quot;: [
+    40,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;d&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;e&quot;,
+   &quot;position&quot;: [
+    40,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;b&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;c&quot;,
+   &quot;position&quot;: [
+    40,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;d&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;e&quot;,
+   &quot;position&quot;: [
+    40,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;a&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;b&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;c&quot;,
+   &quot;position&quot;: [
+    40,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;d&quot;,
+   &quot;position&quot;: [
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;e&quot;,
+   &quot;position&quot;: [
+    40,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;a&quot;,
@@ -13775,6 +14468,135 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;s1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s2&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s3&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t1&quot;,
+   &quot;position&quot;: [
+    65,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t2&quot;,
+   &quot;position&quot;: [
+    65,
+    50,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;s1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s2&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s3&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t1&quot;,
+   &quot;position&quot;: [
+    65,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t2&quot;,
+   &quot;position&quot;: [
+    65,
+    50,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;s1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s2&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;s3&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t1&quot;,
+   &quot;position&quot;: [
+    70,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;t2&quot;,
+   &quot;position&quot;: [
+    70,
+    40,
+    0
+   ]
+  }
+ ]
 }</pre><p>passed</p></details></td></tr><tr><th>mech_005<small>Keep-out zones</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;placements&quot;: [
   {
@@ -14230,6 +15052,111 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    0,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    100,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    0,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    90,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    90,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    0,
+    65,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    90,
+    65,
+    0
+   ]
+  }
+ ]
 }</pre><p>passed</p></details></td></tr><tr><th>mech_006<small>Fixed connectors and cable budgets</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;placements&quot;: [
   {
@@ -14680,6 +15607,111 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    &quot;id&quot;: &quot;battery&quot;,
    &quot;position&quot;: [
     80,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;usb_conn&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pwr_conn&quot;,
+   &quot;position&quot;: [
+    180,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    25,
+    70,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    77,
+    0,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;usb_conn&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pwr_conn&quot;,
+   &quot;position&quot;: [
+    180,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    20,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    82,
+    40,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;usb_conn&quot;,
+   &quot;position&quot;: [
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pwr_conn&quot;,
+   &quot;position&quot;: [
+    180,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    22,
+    70,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    78,
     0,
     0
    ]
@@ -15244,6 +16276,135 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;hot1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot2&quot;,
+   &quot;position&quot;: [
+    61,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot3&quot;,
+   &quot;position&quot;: [
+    122,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    175,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;cap&quot;,
+   &quot;position&quot;: [
+    0,
+    62,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;hot1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot2&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot3&quot;,
+   &quot;position&quot;: [
+    120,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    180,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;cap&quot;,
+   &quot;position&quot;: [
+    0,
+    60,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;hot1&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot2&quot;,
+   &quot;position&quot;: [
+    60,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot3&quot;,
+   &quot;position&quot;: [
+    120,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    180,
+    80,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;cap&quot;,
+   &quot;position&quot;: [
+    0,
+    60,
+    0
+   ]
+  }
+ ]
 }</pre><p>passed</p></details></td></tr><tr><th>mech_008<small>Board stack-up</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;placements&quot;: [
   {
@@ -15699,6 +16860,111 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;heatsink&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    70,
+    70,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    50,
+    10,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;heatsink&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    70,
+    70,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    50,
+    10,
+    10
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;heatsink&quot;,
+   &quot;position&quot;: [
+    10,
+    10,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    70,
+    70,
+    10
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    50,
+    10,
+    10
+   ]
+  }
+ ]
 }</pre><p>passed</p></details></td></tr><tr><th>mech_009<small>Exact volumetric fill</small></th><td><details class="pass"><summary>S1</summary><pre>{
  &quot;placements&quot;: [
   {
@@ -16120,6 +17386,111 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
   }
  ]
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;D&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;D&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;A&quot;,
+   &quot;position&quot;: [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;B&quot;,
+   &quot;position&quot;: [
+    50,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;C&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;D&quot;,
+   &quot;position&quot;: [
+    50,
+    30,
+    30
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;placements&quot;: [
   {
    &quot;id&quot;: &quot;A&quot;,
@@ -16604,6 +17975,76 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    &quot;id&quot;: &quot;speaker&quot;,
    &quot;position&quot;: [
     100,
+    65,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;display&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    32
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    19
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    10,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;speaker&quot;,
+   &quot;position&quot;: [
+    100,
+    65,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="fail"><summary>A1</summary><pre>null</pre><p>output was not a JSON object</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;display&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    32
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;pcb&quot;,
+   &quot;position&quot;: [
+    30,
+    0,
+    19
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    15,
+    60,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;speaker&quot;,
+   &quot;position&quot;: [
+    90,
     65,
     0
    ]
@@ -17268,6 +18709,108 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    &quot;position&quot;: [
     165,
     0,
+    5
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="fail"><summary>A1</summary><pre>null</pre><p>output was not a JSON object</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    37,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    69,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    101,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m5&quot;,
+   &quot;position&quot;: [
+    133,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m6&quot;,
+   &quot;position&quot;: [
+    165,
+    5,
+    5
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;m1&quot;,
+   &quot;position&quot;: [
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m2&quot;,
+   &quot;position&quot;: [
+    37,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m3&quot;,
+   &quot;position&quot;: [
+    69,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m4&quot;,
+   &quot;position&quot;: [
+    101,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m5&quot;,
+   &quot;position&quot;: [
+    133,
+    5,
+    5
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;m6&quot;,
+   &quot;position&quot;: [
+    165,
+    5,
     5
    ]
   }
@@ -18143,6 +19686,207 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
    ]
   }
  ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_jack&quot;,
+   &quot;position&quot;: [
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;usb&quot;,
+   &quot;position&quot;: [
+    0,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    25,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    30,
+    100,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    100,
+    0,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot_reg&quot;,
+   &quot;position&quot;: [
+    150,
+    100,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    185,
+    100,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    90,
+    100,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_jack&quot;,
+   &quot;position&quot;: [
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;usb&quot;,
+   &quot;position&quot;: [
+    0,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    15,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    25,
+    100,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    100,
+    10,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot_reg&quot;,
+   &quot;position&quot;: [
+    150,
+    110,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    180,
+    110,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    90,
+    120,
+    0
+   ]
+  }
+ ]
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;placements&quot;: [
+  {
+   &quot;id&quot;: &quot;dc_jack&quot;,
+   &quot;position&quot;: [
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;usb&quot;,
+   &quot;position&quot;: [
+    0,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;psu&quot;,
+   &quot;position&quot;: [
+    20,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;mcu&quot;,
+   &quot;position&quot;: [
+    30,
+    110,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;sensor&quot;,
+   &quot;position&quot;: [
+    100,
+    120,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;battery&quot;,
+   &quot;position&quot;: [
+    92,
+    20,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;hot_reg&quot;,
+   &quot;position&quot;: [
+    200,
+    130,
+    0
+   ]
+  },
+  {
+   &quot;id&quot;: &quot;fan&quot;,
+   &quot;position&quot;: [
+    157,
+    120,
+    0
+   ]
+  }
+ ]
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_001<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 100000,
  &quot;inductor&quot;: &quot;IND-5&quot;,
@@ -18203,6 +19947,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-5&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: &quot;FAN-C&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 70000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 60000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_002<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 250000,
  &quot;inductor&quot;: &quot;IND-1&quot;,
@@ -18260,6 +20019,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;fan&quot;: null
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 220000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 210000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 230000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 230000,
  &quot;inductor&quot;: &quot;IND-1&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: null
@@ -18323,6 +20097,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-1&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 190000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_005<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 50000,
  &quot;inductor&quot;: &quot;IND-6&quot;,
@@ -18379,6 +20168,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;heatsink&quot;: &quot;HS-3&quot;,
  &quot;fan&quot;: &quot;FAN-A&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-6&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-6&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-6&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;fsw_hz&quot;: 50000,
  &quot;inductor&quot;: &quot;IND-6&quot;,
  &quot;heatsink&quot;: &quot;HS-3&quot;,
@@ -18443,7 +20247,22 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-3&quot;,
  &quot;heatsink&quot;: &quot;HS-2&quot;,
  &quot;fan&quot;: &quot;FAN-B&quot;
-}</pre><p>cost 12.65 is not within 5% of the best design that meets every constraint</p></details></td></tr><tr><th>pe_cooling_007<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
+}</pre><p>cost 12.65 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_007<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 100000,
  &quot;inductor&quot;: &quot;IND-3&quot;,
  &quot;heatsink&quot;: &quot;HS-2&quot;,
@@ -18500,6 +20319,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;fan&quot;: &quot;FAN-A&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 99000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 100000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 99500,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 100000,
  &quot;inductor&quot;: &quot;IND-3&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: &quot;FAN-A&quot;
@@ -18563,6 +20397,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-1&quot;,
  &quot;heatsink&quot;: &quot;HS-2&quot;,
  &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 135000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 135000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 135000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_010<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 100000,
  &quot;inductor&quot;: &quot;IND-3&quot;,
@@ -18619,6 +20468,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: &quot;FAN-A&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 80000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 80000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 90000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;fsw_hz&quot;: 80000,
  &quot;inductor&quot;: &quot;IND-3&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
@@ -18683,6 +20547,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-4&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 90000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 90000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 90000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_013<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 200000,
  &quot;inductor&quot;: &quot;IND-5&quot;,
@@ -18743,6 +20622,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-5&quot;,
  &quot;heatsink&quot;: &quot;HS-3&quot;,
  &quot;fan&quot;: &quot;FAN-C&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 60000,
+ &quot;inductor&quot;: &quot;IND-6&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 70000,
+ &quot;inductor&quot;: &quot;IND-6&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 60000,
+ &quot;inductor&quot;: &quot;IND-6&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_014<small>Buck converter cooling chain</small></th><td class="na">–</td><td><details class="fail"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 250000,
  &quot;inductor&quot;: &quot;IND-5&quot;,
@@ -18799,6 +20693,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;heatsink&quot;: &quot;HS-2&quot;,
  &quot;fan&quot;: &quot;FAN-B&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: &quot;FAN-B&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;fsw_hz&quot;: 50000,
  &quot;inductor&quot;: &quot;IND-5&quot;,
  &quot;heatsink&quot;: &quot;HS-2&quot;,
@@ -18863,6 +20772,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-1&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 180000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_016<small>Buck converter cooling chain</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 87000,
  &quot;inductor&quot;: &quot;IND-4&quot;,
@@ -18905,6 +20829,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;fan&quot;: &quot;FAN-A&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 90000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 100000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 100000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 100000,
  &quot;inductor&quot;: &quot;IND-4&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: &quot;FAN-A&quot;
@@ -18953,6 +20892,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-3&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 80000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 80000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 80000,
+ &quot;inductor&quot;: &quot;IND-4&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_018<small>Buck converter cooling chain</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 235000,
  &quot;inductor&quot;: &quot;IND-1&quot;,
@@ -18998,6 +20952,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-1&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 250000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 260000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 260000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_019<small>Buck converter cooling chain</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 110000,
  &quot;inductor&quot;: &quot;IND-3&quot;,
@@ -19039,6 +21008,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;heatsink&quot;: &quot;HS-3&quot;,
  &quot;fan&quot;: null
 }</pre><p>cost 10.36 is not within 5% of the best design that meets every constraint</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 110000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A2</summary><pre>{
+ &quot;fsw_hz&quot;: 110000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 110000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;fsw_hz&quot;: 110000,
  &quot;inductor&quot;: &quot;IND-3&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
@@ -19088,7 +21072,22 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-2&quot;,
  &quot;heatsink&quot;: &quot;HS-3&quot;,
  &quot;fan&quot;: null
-}</pre><p>peak inductor current 28.9 A exceeds saturation 28.7 A</p></details></td></tr><tr><th>pe_cooling_021<small>Buck converter cooling chain</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
+}</pre><p>peak inductor current 28.9 A exceeds saturation 28.7 A</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 110000,
+ &quot;inductor&quot;: &quot;IND-2&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 120000,
+ &quot;inductor&quot;: &quot;IND-2&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 100000,
+ &quot;inductor&quot;: &quot;IND-2&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_021<small>Buck converter cooling chain</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 135000,
  &quot;inductor&quot;: &quot;IND-2&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
@@ -19130,6 +21129,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;fan&quot;: &quot;FAN-A&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 140000,
+ &quot;inductor&quot;: &quot;IND-2&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 140000,
+ &quot;inductor&quot;: &quot;IND-2&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 142500,
+ &quot;inductor&quot;: &quot;IND-2&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 135000,
  &quot;inductor&quot;: &quot;IND-2&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: &quot;FAN-A&quot;
@@ -19178,6 +21192,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-1&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 125000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 150000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_023<small>Buck converter cooling chain</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 185000,
  &quot;inductor&quot;: &quot;IND-1&quot;,
@@ -19219,6 +21248,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: null
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 190000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 190000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 190000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;fsw_hz&quot;: 190000,
  &quot;inductor&quot;: &quot;IND-1&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
@@ -19268,6 +21312,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-1&quot;,
  &quot;heatsink&quot;: &quot;HS-2&quot;,
  &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 180000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 180000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 182000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_026<small>Buck converter cooling chain</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 75000,
  &quot;inductor&quot;: &quot;IND-5&quot;,
@@ -19310,6 +21369,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;fan&quot;: &quot;FAN-A&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 75000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 75000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 75000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-3&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 72000,
  &quot;inductor&quot;: &quot;IND-5&quot;,
  &quot;heatsink&quot;: &quot;HS-3&quot;,
  &quot;fan&quot;: &quot;FAN-A&quot;
@@ -19358,6 +21432,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-2&quot;,
  &quot;heatsink&quot;: &quot;HS-2&quot;,
  &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 90000,
+ &quot;inductor&quot;: &quot;IND-2&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 90000,
+ &quot;inductor&quot;: &quot;IND-2&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 100000,
+ &quot;inductor&quot;: &quot;IND-2&quot;,
+ &quot;heatsink&quot;: &quot;HS-2&quot;,
+ &quot;fan&quot;: null
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_030<small>Buck converter cooling chain</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 65000,
  &quot;inductor&quot;: &quot;IND-5&quot;,
@@ -19399,6 +21488,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: &quot;FAN-A&quot;
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
+ &quot;fsw_hz&quot;: 65000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 65000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 65000,
+ &quot;inductor&quot;: &quot;IND-5&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: &quot;FAN-A&quot;
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
  &quot;fsw_hz&quot;: 65000,
  &quot;inductor&quot;: &quot;IND-5&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
@@ -19448,6 +21552,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;inductor&quot;: &quot;IND-3&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 50000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 60000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 55000,
+ &quot;inductor&quot;: &quot;IND-3&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
 }</pre><p>passed</p></details></td></tr><tr><th>pe_cooling_032<small>Buck converter cooling chain</small></th><td class="na">–</td><td class="na">–</td><td class="na">–</td><td><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 160000,
  &quot;inductor&quot;: &quot;IND-1&quot;,
@@ -19490,6 +21609,21 @@ a{color:var(--accent)} footer{margin-top:48px;color:var(--muted);font-size:13px}
  &quot;fan&quot;: null
 }</pre><p>passed</p></details><details class="pass"><summary>S1</summary><pre>{
  &quot;fsw_hz&quot;: 160000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
+ &quot;inductor&quot;: &quot;IND-1&quot;,
+ &quot;heatsink&quot;: &quot;HS-1&quot;,
+ &quot;fan&quot;: null
+}</pre><p>passed</p></details><details class="pass"><summary>A1</summary><pre>{
+ &quot;fsw_hz&quot;: 200000,
  &quot;inductor&quot;: &quot;IND-1&quot;,
  &quot;heatsink&quot;: &quot;HS-1&quot;,
  &quot;fan&quot;: null
