@@ -13,7 +13,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-from leaderboard import score
+from leaderboard import held_out, score
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs" / "index.html"
@@ -34,6 +34,7 @@ def load():
     runs = []
     for p in sorted((ROOT / "results").glob("*.json")):
         d = json.loads(p.read_text())
+        d["held_out"] = held_out(p)
         runs.append(d)
     tasks = {p.stem: json.loads(p.read_text()) for p in (ROOT / "tasks").glob("*.json")}
     return runs, tasks
@@ -67,6 +68,7 @@ def esc(x):
 def build(runs, tasks):
     models = sorted({d["model"] for d in runs})
     by = {(d["model"], d["track"]): d["records"] for d in runs}
+    private = {(d["model"], d["track"]): d["held_out"] for d in runs}
     fams = sorted({family(r["task"]) for d in runs for r in d["records"]})
 
     # ---- leaderboard
@@ -88,7 +90,7 @@ def build(runs, tasks):
         def sc(recs, tr):
             if not recs:
                 return '<td class="na">–</td>'
-            v, rates = score(recs, tr)
+            v, rates = score(recs, tr, private.get((m, tr), []))
             return f'<td><b>{v:.1f}</b><small>levels run: {", ".join(map(str, sorted(rates)))}</small></td>'
         lb.append(f"<tr><th>{esc(m)}</th>{sc(ss, 'single-shot')}{sc(ag, 'agentic')}{cell(rs)}{cell(ra)}<td>{gap}</td>{cell(r1)}<td>{calls}</td><td>{len({r['task'] for r in allr})}</td>"
                   f"<td>{tok:,.0f}</td><td>{cost:.3f}</td></tr>")
@@ -156,7 +158,7 @@ a{{color:var(--accent)}} footer{{margin-top:48px;color:var(--muted);font-size:13
 <h1>EngBench</h1>
 <p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, and a test lab: each submitted design comes back with a test and review report of what failed (a fuse ruptured in the short-circuit test, the plant could not charge in winter), never the cause or the numbers, and the design passes if it clears the tests within three rounds. It measures whether the model can find the root cause of its own mistakes and fix them without breaking something else. The first-design rate is shown beside it. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
 <p class="lede">{n_tasks} tasks · {n_runs} task runs · {len(models)} models · updated {stamp}</p>
-<h2>Leaderboard</h2><p class="lede">Score out of 100: six levels, each worth published points (15, 20, 15, 20, 15, 15), earned at that level's pass rate; agentic counts a pass within three test rounds. Levels a model has not run earn nothing, so compare scores only across the same levels run.</p><div class="wrap">{"".join(lb)}</div>
+<h2>Leaderboard</h2><p class="lede">Score out of 100: six levels, each worth published points (15, 20, 15, 20, 15, 15), earned at that level's pass rate; agentic counts a pass within three test rounds. Level 3 is scored on held-out seeds that are not published (so they cannot leak into training); the public level-3 tasks below are the same generator, for reproduction. Levels a model has not run earn nothing, so compare scores only across the same levels run.</p><div class="wrap">{"".join(lb)}</div>
 <h2>By family</h2>
 <p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
 <div class="wrap">{"".join(fam_tables)}</div>

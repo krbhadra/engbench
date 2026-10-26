@@ -9,6 +9,7 @@ from collections import defaultdict
 from pathlib import Path
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
+PRIVATE_DIR = RESULTS_DIR.parent / "results_private"  # held-out seeds; only pass/fail leaves this folder
 TRACKS = ("single-shot", "agentic")
 # The ladder (VISION.md): each level's published points; score = sum of points x pass rate at that level.
 LEVEL_POINTS = {1: 15, 2: 20, 3: 15, 4: 20, 5: 15, 6: 15}
@@ -24,12 +25,18 @@ def passed_for_score(r, track):
     return r["passed"] is True
 
 
-def score(records, track):
-    """(score out of 100, {level: pass rate}). Levels with no runs earn 0 points."""
-    recs = [r for r in records if r["passed"] is not None]
+def held_out(results_file):
+    """Records on the private held-out seeds for the same model and track, if that run exists."""
+    p = PRIVATE_DIR / Path(results_file).name
+    return json.loads(p.read_text())["records"] if p.exists() else []
+
+
+def score(records, track, private=()):
+    """(score out of 100, {level: pass rate}). A level with held-out runs is scored on those only;
+    the public tasks stay for reproduction. Levels with no runs earn 0 points."""
     rates = {}
     for lvl in LEVEL_POINTS:
-        at = [r for r in recs if LEVEL_OF_FAMILY.get(family(r["task"])) == lvl]
+        at = [r for r in private if r["passed"] is not None and LEVEL_OF_FAMILY.get(family(r["task"])) == lvl] or              [r for r in records if r["passed"] is not None and LEVEL_OF_FAMILY.get(family(r["task"])) == lvl]
         if at:
             rates[lvl] = sum(passed_for_score(r, track) for r in at) / len(at)
     return sum(LEVEL_POINTS[l] * v for l, v in rates.items()), rates
@@ -62,11 +69,12 @@ def pct(x):
 
 
 def main():
-    table, raw = defaultdict(dict), defaultdict(dict)
+    table, raw, private = defaultdict(dict), defaultdict(dict), defaultdict(dict)
     for p in sorted(RESULTS_DIR.glob("*.json")):
         d = json.loads(p.read_text())
         table[d["model"]][d["track"]] = summarize(d["records"])
         raw[d["model"]][d["track"]] = d["records"]
+        private[d["model"]][d["track"]] = held_out(p)
 
     if not table:
         print("no results yet")
@@ -88,12 +96,12 @@ def main():
             print(f"{model:40} " + " ".join(f"{c:>13}" for c in cells))
         print()
 
-    print(f"{'score out of 100 (levels run)':40} {'single-shot':>22} {'agentic':>22}")
+    print(f"{'score out of 100 (levels run, held-out L3)':40} {'single-shot':>22} {'agentic':>22}")
     for model, tracks in sorted(raw.items()):
         cells = []
         for tr in ("single-shot", "agentic"):
             if tr in tracks:
-                sc, rates = score(tracks[tr], tr)
+                sc, rates = score(tracks[tr], tr, private[model][tr])
                 cells.append(f"{sc:5.1f} (L{','.join(map(str, sorted(rates)))})")
             else:
                 cells.append("-")
