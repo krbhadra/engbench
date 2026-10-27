@@ -5,7 +5,8 @@ requirements it derives. Every check reports the computed value and the limit. S
 
 Design returned by the model:
   requirements: [{id, parent, value, unit, basis}], afe, afe_per_module, chains_per_rack,
-  current_sensor, mcu, string_contactor, precharge_resistor, balancing ("internal" or an external stage id)
+  current_sensor, mcu, string_contactor, precharge_resistor, balancing ("internal" or an external stage id),
+  hold_up ("none" or a module id), imd_location ("plant" or "rack"), imd
 
 Rules, as implemented (H = hidden: the brief never states it):
 
@@ -32,6 +33,13 @@ Rules, as implemented (H = hidden: the brief never states it):
     x Ah / 30 days / balancing hours per day <= balancing current.
   Requirements: each record must exist, trace to an allowed parent, and its value must follow from the
     data: a maximum may be up to 20 % stricter and 2 % looser, a minimum up to 25 % stricter and 2 % looser.
+  H8 Ride-through (cross-functional: grid code, auxiliary power, BMS hardware): the rack's 24 V comes from the
+    auxiliary supply, which follows the connection-point voltage through the operator's fault sequence,
+    including a reclose onto the fault. Hold-up energy >= (MCU + contactor coil hold + current sensor
+    [+ rack insulation monitor]) W x R-RIDE.
+  H9 Insulation monitoring (power electronics, installation, BMS, safety): transformerless PCS on one unearthed
+    LV winding make the whole DC side one IT system, so one plant-level monitor, rated for the earth
+    capacitance of all racks, PCS and cables (R-IMD). Rack-level monitors interfere.
   Objective: BMS and protection price for the plant within tolerance of the brute-force optimum.
 """
 from __future__ import annotations
@@ -42,16 +50,18 @@ from functools import lru_cache
 from objective import check_objective
 
 FIELDS = ("requirements", "afe", "afe_per_module", "chains_per_rack", "current_sensor", "mcu",
-          "string_contactor", "precharge_resistor", "balancing")
+          "string_contactor", "precharge_resistor", "balancing", "hold_up", "imd_location", "imd")
 INTS = ("afe_per_module", "chains_per_rack")
 CATALOG = {"afe": "afes", "current_sensor": "current_sensors", "mcu": "mcus",
-           "string_contactor": "contactors", "precharge_resistor": "precharge_resistors"}
+           "string_contactor": "contactors", "precharge_resistor": "precharge_resistors", "imd": "imds"}
 REQUIREMENTS = {  # id -> (quantity, unit, "max" or "min")
     "R-SOC": ("SOC error", "%", "max"),
     "R-TRIP": ("over-voltage disconnect time", "ms", "max"),
     "R-PRE": ("precharge time", "s", "max"),
     "R-BAL": ("balancing current", "mA", "min"),
     "R-BRK": ("contactor DC breaking current", "A", "min"),
+    "R-RIDE": ("rack control supply bridging time", "s", "min"),
+    "R-IMD": ("insulation monitor system capacitance rating", "uF", "min"),
 }
 STRICTER = {"max": 0.20, "min": 0.25}
 LOOSER = 0.02
@@ -165,15 +175,48 @@ def coordination(task, contactor, mcu, hand_over=None):
     return bad
 
 
+def ride_time(task, reclose=True):
+    """R-RIDE: how long the rack's 24 V must be bridged through the operator's fault sequence. The auxiliary
+    supply follows the connection-point voltage; the power supply works above u_min and holds up for its
+    hold-up time after that. Buffers do not recharge within a reclose dead time."""
+    f, psu = task["grid_fault"], task["aux_supply"]
+    low = f["t_fault_s"] + max(0.0, psu["u_min_pu"] - f["u_ret_pu"]) / (0.9 - f["u_ret_pu"]) * f["t_recover_s"]
+    if not reclose:
+        return max(0.0, low - psu["hold_up_s"])
+    second = f["t_fault_s"] + f["t_dead_s"]  # reclose onto the fault: the same dip again
+    if second < low:  # the supply never came back between the dips
+        return max(0.0, second + low - psu["hold_up_s"])
+    return 2 * max(0.0, low - psu["hold_up_s"])
+
+
+def system_capacitance_uf(task):
+    """Earth capacitance of the one galvanically connected DC system (transformerless PCS on a shared,
+    unearthed LV winding): every rack, every PCS and every DC cable."""
+    pl, e = task["plant"], task["earthing"]
+    cables = pl["strings_parallel"] * 2 * pl["dc_route_m"] * e["cable_nf_per_m"] / 1e3
+    return pl["strings_parallel"] * e["rack_uf"] + pl["pcs_count"] * e["pcs_uf"] + cables
+
+
+def rack_power_w(task, d, with_coil=True):
+    """24 V load per rack that the hold-up must carry."""
+    w = _find(task["mcus"], d["mcu"])["w"]
+    if with_coil:
+        w += _find(task["contactors"], d["string_contactor"])["hold_w"] + _find(task["current_sensors"], d["current_sensor"])["w"]
+    if d["imd_location"] == "rack":
+        w += _find(task["imds"], d["imd"])["w"]
+    return w
+
+
 def derived(task):
     """The solver's own derivation of every graded requirement."""
     return {"R-SOC": soc_error_allowed(task), "R-TRIP": task["cell"]["ov_disconnect_ms"],
-            "R-PRE": precharge_time_allowed(task), "R-BAL": balancing_needed_ma(task), "R-BRK": breaking_needed(task)}
+            "R-PRE": precharge_time_allowed(task), "R-BAL": balancing_needed_ma(task), "R-BRK": breaking_needed(task),
+            "R-RIDE": ride_time(task), "R-IMD": system_capacitance_uf(task)}
 
 
 def parents(task):
     return {"R-SOC": {"SN-1", "SN-2"} if "fcr_mw" in task["plant"] else {"SN-1"}, "R-TRIP": {"SN-4"},
-            "R-PRE": {"SN-3"}, "R-BAL": {"SN-1"}, "R-BRK": {"SN-4"}}
+            "R-PRE": {"SN-3"}, "R-BAL": {"SN-1", "SN-4"}, "R-BRK": {"SN-4"}, "R-RIDE": {"SN-6"}, "R-IMD": {"SN-4"}}
 
 
 def check_requirements(task, records):
@@ -207,9 +250,12 @@ def cost(task, d):
     pl = task["plant"]
     afe = _find(task["afes"], d["afe"])
     bal = 0.0 if d["balancing"] == "internal" else _find(task["balancing_stages"], d["balancing"])["price"]
-    per_rack = (pl["modules_per_string"] * (d["afe_per_module"] * afe["price"] + bal)
-                + sum(_find(task[CATALOG[k]], d[k])["price"] for k in ("current_sensor", "mcu", "string_contactor", "precharge_resistor")))
-    return pl["strings_parallel"] * per_rack
+    hold = 0.0 if d["hold_up"] == "none" else _find(task["hold_ups"], d["hold_up"])["price"]
+    imd = _find(task["imds"], d["imd"])["price"]
+    per_rack = (pl["modules_per_string"] * (d["afe_per_module"] * afe["price"] + bal) + hold
+                + sum(_find(task[CATALOG[k]], d[k])["price"] for k in ("current_sensor", "mcu", "string_contactor", "precharge_resistor"))
+                + (imd if d["imd_location"] == "rack" else 0.0))
+    return pl["strings_parallel"] * per_rack + (imd if d["imd_location"] == "plant" else 0.0)
 
 
 def evaluate(task, d):
@@ -226,7 +272,9 @@ def evaluate(task, d):
         "i_bal_ma": i_bal, "i_bal_needed_ma": balancing_needed_ma(task),
         "t_pre_s": pr["ohm"] * c_dc * math.log(1 / fw["precharge_delta"]), "t_pre_allowed_s": precharge_time_allowed(task),
         "i_pre_peak_a": v / pr["ohm"], "e_pre_j": 0.5 * c_dc * v ** 2, "e_short_j": v ** 2 / pr["ohm"] * fw["precharge_check_s"],
-        "cost": cost(task, d),
+        "rack_w": rack_power_w(task, d), "t_ride_s": ride_time(task),
+        "hold_j": 0.0 if d["hold_up"] == "none" else _find(task["hold_ups"], d["hold_up"])["j"],
+        "c_system_uf": system_capacitance_uf(task), "cost": cost(task, d),
     }
 
 
@@ -247,6 +295,9 @@ SYMPTOMS = [
     ("precharge energy", "Repeated start-up test: the precharge resistor overheated and failed."),
     ("precharge into a short", "Fault-injection test, precharge into a shorted DC link: the precharge resistor burned open."),
     ("balancing", "Long-term operation test (one simulated year): cell voltages drifted apart and usable capacity shrank; balancing could not keep up."),
+    ("rack control supply", "Grid-fault ride-through test with automatic reclosing: strings dropped off the DC bus and the plant disconnected."),
+    ("insulation monitors", "Commissioning with several strings connected: insulation alarms appeared at random and strings dropped offline."),
+    ("insulation monitor rating", "Insulation fault injection on the DC bus: the fault was not detected."),
     ("cost", "Commercial review: a competing design meets the same requirements for significantly less."),
 ]
 
@@ -294,6 +345,10 @@ def grade(task: dict, output: dict) -> dict:
             return {"passed": False, "violations": [f"unknown {k} id '{d[k]}'"]}
     if d["balancing"] != "internal" and not any(x["id"] == d["balancing"] for x in task["balancing_stages"]):
         return {"passed": False, "violations": [f"unknown balancing '{d['balancing']}' (internal or a stage id)"]}
+    if d["hold_up"] != "none" and not any(x["id"] == d["hold_up"] for x in task["hold_ups"]):
+        return {"passed": False, "violations": [f"unknown hold_up '{d['hold_up']}' (none or a module id)"]}
+    if d["imd_location"] not in ("rack", "plant"):
+        return {"passed": False, "violations": ["imd_location must be 'rack' or 'plant'"]}
 
     pl, c, fw = task["plant"], task["cell"], task["firmware"]
     afe, sensor, mcu = _find(task["afes"], d["afe"]), _find(task["current_sensors"], d["current_sensor"]), _find(task["mcus"], d["mcu"])
@@ -346,5 +401,16 @@ def grade(task: dict, output: dict) -> dict:
     if m["i_bal_ma"] < m["i_bal_needed_ma"] - T:
         v.append(f"balancing {m['i_bal_ma']:g} mA is below {m['i_bal_needed_ma']:.1f} mA needed for the self-discharge spread "
                  f"at {task['operations']['cell_temp_c']:g} C")
+    # grid-fault ride-through of the rack's 24 V (contactor coil, sensor, MCU)
+    if m["hold_j"] < m["rack_w"] * m["t_ride_s"] - T:
+        v.append(f"rack control supply: hold-up {m['hold_j']:g} J is below {m['rack_w']:.1f} W x {m['t_ride_s']:.2f} s "
+                 f"= {m['rack_w'] * m['t_ride_s']:.0f} J through the fault sequence with reclosing")
+    # insulation monitoring of the IT DC system
+    if d["imd_location"] == "rack" and pl["strings_parallel"] > 1:
+        v.append(f"insulation monitors: {pl['strings_parallel']} rack-level monitors on one galvanically connected IT "
+                 f"system interfere; only one may be active")
+    if _find(task["imds"], d["imd"])["max_uf"] < m["c_system_uf"] - T:
+        v.append(f"insulation monitor rating {_find(task['imds'], d['imd'])['max_uf']:g} uF is below the system "
+                 f"capacitance {m['c_system_uf']:.0f} uF (racks, PCS and cables)")
     check_objective(task, m, v)
     return {"passed": not v, "violations": v, "metrics": {k: round(x, 4) for k, x in m.items()}}

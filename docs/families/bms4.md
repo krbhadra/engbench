@@ -76,7 +76,9 @@ The `basis` text is not graded.
 | R-TRIP | max protection reaction time, ms | cell datasheet | allowed exceedance time at the over-voltage limit |
 | R-PRE | max precharge time, s | SN-3 | PCS start-up time and availability |
 | R-BAL | min balancing current, mA | SN-1 | self-discharge spread at the hottest operating temperature, rest time per day |
-| R-BRK | min DC breaking current of the string switch, A | protection | the current up to which the fuse does not clear within the BMS reaction time |
+| R-BRK | min DC breaking current of the string switch, A | SN-4 | the lowest current from which the fuse alone clears within the cell's short-time limit |
+| R-RIDE | min bridging time of the rack's 24 V, s | SN-6 | the operator's fault sequence with a reclose onto the fault, against the power supply's minimum input voltage and hold-up |
+| R-IMD | min system capacitance rating of the insulation monitor, uF | SN-4 | earth capacitance of every rack, PCS and DC conductor on the one IT system |
 
 ## Hidden requirements (author review: accepted 2026-10-27)
 
@@ -88,6 +90,8 @@ The `basis` text is not graded.
 | H4 | The gap between fuse and contactor. Semiconductor fuses (aR, IEC 60269-4) do not clear low overcurrents quickly; the BMS must open the contactor there. | Fuse time-current table, BMS reaction time, contactor DC breaking current. | The highest current at which the fuse's pre-arcing time exceeds the reaction time from H3 must be ≤ the contactor's breaking current at the maximum string voltage (= R-BRK). |
 | H5 | Precharge resistor survives the energy and repeated attempts. | PCS DC-link capacitance, max string voltage, resistor pulse energy, attempts before lockout. | 3RC ≤ R-PRE; attempts × ½ C V² ≤ pulse energy; making current at contactor close ≤ rating. |
 | H6 | Balancing sized for end-of-life spread at the hottest temperature. | Self-discharge vs temperature (doubles about every 10 K) and lot spread; rest time per day. | I_bal ≥ spread × Ah / (24 h × rest fraction); internal balancing current if enough, else the external stage. |
+| H8 | Ride-through, cross-functional (grid code, auxiliary power, BMS hardware). The auxiliary supply follows the connection-point voltage, so the rack's 24 V (MCU, contactor coil, current sensor) must be bridged through the operator's fault sequence, including the reclose onto the fault. | Connection letter: dip depth, duration, recovery, reclose dead time; power-supply minimum input voltage and hold-up; board, coil and sensor power; hold-up modules. | Hold-up J >= rack 24 V power x R-RIDE. A precise sensor or a large contactor costs hold-up energy. |
+| H9 | Insulation monitoring, cross-functional (power electronics, installation, BMS, safety). Transformerless PCS on one unearthed LV winding make the whole DC side one IT system: one active monitor, rated for its whole earth capacitance. | Topology, Y-capacitance per rack and PCS, cable capacitance and route length; monitor catalog. | Monitor at plant level (rack-level monitors interfere); rating >= R-IMD. |
 | H7 | MCU resources close. | Chains (from H3), CAN to PCS and EMS, ADC channels for current and the two HV measurements around the contactor. | Ports and channels ≥ need. |
 
 Objective: lowest BMS and protection cost per plant, optimum by brute force;
@@ -122,6 +126,28 @@ requirements bind.
   1500 V; no IEC 60947-4-1 utilization category on top.
 - **FCR recalibration interval** is drawn from 3, 5, 7, 10 or 14 days; energy
   plants recalibrate daily.
+
+## Cross-functional revision (2026-10-27)
+
+The first version (H1-H7) let Opus 5.5 pass 16 of 17 tasks within three test
+rounds: each failed test pointed at one part. The author asked for harder,
+cross-functional tasks. H8 and H9 couple departments so a symptom has causes in
+several of them ("the plant disconnected in the ride-through test": hold-up
+energy, the reclose, coil and sensor power), and parts now trade against each
+other through the 24 V budget. A third coupling (rack heat from balancing and
+BMS electronics feeding back into self-discharge and auxiliary energy) was
+checked and dropped: about 2 W per rack and 0.03 % of plant energy, too small
+to be honest difficulty. A kept task now needs four distinct hidden
+requirements binding (was three). R-BAL may trace to SN-1 or SN-4 (author,
+2026-10-27).
+
+Sources for H8: VDE FNN, TCR medium voltage (VDE-AR-N 4110) overview, 2017,
+dynamic grid support for type 2 units (ride through repeated faults and
+automatic reclosing; active current back within 1 s):
+<https://www.vde.com/resource/blob/1708464/47dedcd3571bc7fdbc29fd3704dce88a/tcr-medium-voltage-en-data.pdf>.
+The type 2 limit curve itself (VDE-AR-N 4110 Bild 14) is paywalled, so the
+task gives the fault sequence in the connection letter, shaped on the public
+RfG ranges for power park modules (Regulation (EU) 2016/631, Art. 14(3)).
 
 ## Coupling to the plant
 

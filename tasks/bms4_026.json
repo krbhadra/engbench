@@ -1,0 +1,749 @@
+{
+  "id": "bms4_026",
+  "domain": "bms",
+  "mode": "hidden",
+  "level": 4,
+  "plant": {
+    "cells_series": 400,
+    "strings_parallel": 11,
+    "module_cells": 16,
+    "modules_per_string": 25,
+    "ntc_per_module": 8,
+    "can_needed": 3,
+    "adc_needed": 12,
+    "i_string_a": 124.6,
+    "v_string_max": 1460.0,
+    "q_eol_ah": 246.1,
+    "soc_window_pct": 85.0,
+    "e_poi_mwh": 2.753,
+    "e_aux_mwh": 0.0323,
+    "e_req_mwh": 1.1092,
+    "duration_h": 1,
+    "pcs": "PCS-3",
+    "pcs_count": 1,
+    "pcs_kva": 2713,
+    "dc_link_mf": 12.1,
+    "fuse": "FU-4",
+    "fuse_i_n": 315,
+    "dc_route_m": 40,
+    "fuse_curve_s": {
+      "1.6": 3020.0,
+      "2": 280.0,
+      "3": 35.9,
+      "4": 6.01,
+      "5": 1.6,
+      "7": 0.295,
+      "10": 0.0499,
+      "15": 0.00963,
+      "20": 0.00337
+    },
+    "fcr_mw": 1.1
+  },
+  "cell": {
+    "chemistry": "LFP prismatic",
+    "v_nom": 3.2,
+    "v_max": 3.65,
+    "q_ah": 280.0,
+    "c_cont": 0.5,
+    "soc_min": 0.05,
+    "soc_max": 0.9,
+    "ocv": {
+      "0": 2.952,
+      "5": 3.169,
+      "10": 3.208,
+      "20": 3.249,
+      "30": 3.275,
+      "40": 3.284,
+      "50": 3.29,
+      "60": 3.295,
+      "70": 3.314,
+      "80": 3.332,
+      "85": 3.331,
+      "90": 3.334,
+      "95": 3.347,
+      "100": 3.401
+    },
+    "ov_disconnect_ms": 200,
+    "v_ov_limit": 3.75,
+    "pulse_limit_s": {
+      "2": 57.0,
+      "3": 11.9,
+      "5": 1.85,
+      "10": 0.228,
+      "20": 0.0191,
+      "50": 0.0022
+    },
+    "self_discharge_spread_pct_month": {
+      "25": 0.55,
+      "35": 1.1,
+      "45": 2.2
+    }
+  },
+  "operations": {
+    "recal_soc_pct": 90,
+    "recal_interval_h": 336,
+    "cell_temp_c": 30.0,
+    "balancing_h_per_day": 2.0
+  },
+  "firmware": {
+    "filter_samples": 5,
+    "oc_trip_a": 154,
+    "precharge_delta": 0.05,
+    "precharge_check_s": 0.5,
+    "precharge_relay_peak_a": 50,
+    "startup_overhead_s": 1.0
+  },
+  "needs": {
+    "dc_ready_s": 5.0
+  },
+  "grid_fault": {
+    "u_ret_pu": 0.15,
+    "t_fault_s": 0.2,
+    "t_recover_s": 2.0,
+    "t_dead_s": 0.5
+  },
+  "aux_supply": {
+    "u_min_pu": 0.4,
+    "hold_up_s": 0.02
+  },
+  "earthing": {
+    "rack_uf": 0.93,
+    "pcs_uf": 45.0,
+    "cable_nf_per_m": 0.34
+  },
+  "afes": [
+    {
+      "id": "AFE-1",
+      "channels": 12,
+      "err_25_mv": 2.16,
+      "err_full_mv": 5.64,
+      "t_conv_ms": 1.4,
+      "t_read_ms": 0.6,
+      "max_chain": 32,
+      "temp_inputs": 6,
+      "bal_internal_ma": 60,
+      "price": 7.77
+    },
+    {
+      "id": "AFE-2",
+      "channels": 14,
+      "err_25_mv": 1.22,
+      "err_full_mv": 4.23,
+      "t_conv_ms": 1.97,
+      "t_read_ms": 0.86,
+      "max_chain": 24,
+      "temp_inputs": 8,
+      "bal_internal_ma": 100,
+      "price": 9.35
+    },
+    {
+      "id": "AFE-3",
+      "channels": 16,
+      "err_25_mv": 1.65,
+      "err_full_mv": 3.52,
+      "t_conv_ms": 2.61,
+      "t_read_ms": 0.93,
+      "max_chain": 20,
+      "temp_inputs": 8,
+      "bal_internal_ma": 150,
+      "price": 13.41
+    },
+    {
+      "id": "AFE-4",
+      "channels": 18,
+      "err_25_mv": 0.77,
+      "err_full_mv": 2.11,
+      "t_conv_ms": 2.81,
+      "t_read_ms": 1.26,
+      "max_chain": 16,
+      "temp_inputs": 9,
+      "bal_internal_ma": 200,
+      "price": 16.07
+    },
+    {
+      "id": "AFE-5",
+      "channels": 16,
+      "err_25_mv": 1.05,
+      "err_full_mv": 1.62,
+      "t_conv_ms": 1.6,
+      "t_read_ms": 0.54,
+      "max_chain": 40,
+      "temp_inputs": 10,
+      "bal_internal_ma": 300,
+      "price": 21.69
+    }
+  ],
+  "current_sensors": [
+    {
+      "id": "CS-1",
+      "type": "shunt + isolated amplifier",
+      "range_a": 1500,
+      "offset_a": 0.0398,
+      "gain_pct": 0.3,
+      "w": 1.2,
+      "price": 80.35
+    },
+    {
+      "id": "CS-2",
+      "type": "shunt + isolated amplifier",
+      "range_a": 3000,
+      "offset_a": 0.0725,
+      "gain_pct": 0.3,
+      "w": 1.2,
+      "price": 99.67
+    },
+    {
+      "id": "CS-3",
+      "type": "shunt + isolated amplifier",
+      "range_a": 6000,
+      "offset_a": 0.1784,
+      "gain_pct": 0.3,
+      "w": 1.2,
+      "price": 131.44
+    },
+    {
+      "id": "CS-4",
+      "type": "open-loop Hall",
+      "range_a": 1500,
+      "offset_a": 0.5156,
+      "gain_pct": 1.0,
+      "w": 0.6,
+      "price": 24.59
+    },
+    {
+      "id": "CS-5",
+      "type": "open-loop Hall",
+      "range_a": 3000,
+      "offset_a": 1.245,
+      "gain_pct": 1.0,
+      "w": 0.6,
+      "price": 35.96
+    },
+    {
+      "id": "CS-6",
+      "type": "open-loop Hall",
+      "range_a": 6000,
+      "offset_a": 2.1682,
+      "gain_pct": 1.0,
+      "w": 0.6,
+      "price": 48.74
+    },
+    {
+      "id": "CS-7",
+      "type": "closed-loop Hall",
+      "range_a": 1500,
+      "offset_a": 0.1201,
+      "gain_pct": 0.3,
+      "w": 2.5,
+      "price": 112.09
+    },
+    {
+      "id": "CS-8",
+      "type": "closed-loop Hall",
+      "range_a": 3000,
+      "offset_a": 0.2133,
+      "gain_pct": 0.3,
+      "w": 4.5,
+      "price": 183.06
+    },
+    {
+      "id": "CS-9",
+      "type": "dual-channel Hall, 500 A fine channel",
+      "range_a": 3000,
+      "offset_a": 0.1599,
+      "gain_pct": 0.5,
+      "w": 0.8,
+      "price": 56.3
+    },
+    {
+      "id": "CS-10",
+      "type": "dual-channel Hall, 500 A fine channel",
+      "range_a": 6000,
+      "offset_a": 0.1564,
+      "gain_pct": 0.5,
+      "w": 0.8,
+      "price": 83.15
+    },
+    {
+      "id": "CS-11",
+      "type": "fluxgate",
+      "range_a": 1500,
+      "offset_a": 0.0116,
+      "gain_pct": 0.05,
+      "w": 3.0,
+      "price": 275.51
+    },
+    {
+      "id": "CS-12",
+      "type": "fluxgate",
+      "range_a": 3000,
+      "offset_a": 0.0272,
+      "gain_pct": 0.05,
+      "w": 5.0,
+      "price": 476.42
+    }
+  ],
+  "contactors": [
+    {
+      "id": "K-1",
+      "i_rated_a": 250,
+      "u_dc": 1500,
+      "i_break_a": 1500,
+      "t_open_ms": 25,
+      "hold_w": 4,
+      "price": 142.97
+    },
+    {
+      "id": "K-2",
+      "i_rated_a": 400,
+      "u_dc": 1500,
+      "i_break_a": 3000,
+      "t_open_ms": 30,
+      "hold_w": 6,
+      "price": 199.56
+    },
+    {
+      "id": "K-3",
+      "i_rated_a": 500,
+      "u_dc": 1500,
+      "i_break_a": 4000,
+      "t_open_ms": 35,
+      "hold_w": 8,
+      "price": 254.17
+    },
+    {
+      "id": "K-4",
+      "i_rated_a": 630,
+      "u_dc": 1500,
+      "i_break_a": 5000,
+      "t_open_ms": 40,
+      "hold_w": 10,
+      "price": 432.56
+    },
+    {
+      "id": "K-5",
+      "i_rated_a": 400,
+      "u_dc": 1500,
+      "i_break_a": 6000,
+      "t_open_ms": 20,
+      "hold_w": 7,
+      "price": 536.8
+    },
+    {
+      "id": "K-6",
+      "i_rated_a": 800,
+      "u_dc": 1500,
+      "i_break_a": 8000,
+      "t_open_ms": 50,
+      "hold_w": 14,
+      "price": 513.01
+    }
+  ],
+  "mcus": [
+    {
+      "id": "MCU-1",
+      "chain_ports": 1,
+      "can_ports": 2,
+      "adc_channels": 8,
+      "cycle_ms": 10,
+      "w": 2.5,
+      "price": 6.63
+    },
+    {
+      "id": "MCU-2",
+      "chain_ports": 2,
+      "can_ports": 2,
+      "adc_channels": 16,
+      "cycle_ms": 10,
+      "w": 3.0,
+      "price": 8.23
+    },
+    {
+      "id": "MCU-3",
+      "chain_ports": 2,
+      "can_ports": 3,
+      "adc_channels": 24,
+      "cycle_ms": 5,
+      "w": 4.0,
+      "price": 12.15
+    },
+    {
+      "id": "MCU-4",
+      "chain_ports": 4,
+      "can_ports": 3,
+      "adc_channels": 32,
+      "cycle_ms": 5,
+      "w": 5.0,
+      "price": 23.58
+    }
+  ],
+  "hold_ups": [
+    {
+      "id": "HB-1",
+      "j": 20,
+      "price": 17.05
+    },
+    {
+      "id": "HB-2",
+      "j": 50,
+      "price": 22.72
+    },
+    {
+      "id": "HB-3",
+      "j": 100,
+      "price": 42.55
+    },
+    {
+      "id": "HB-4",
+      "j": 250,
+      "price": 65.75
+    }
+  ],
+  "imds": [
+    {
+      "id": "IMD-1",
+      "max_uf": 50,
+      "w": 2.0,
+      "price": 284.86
+    },
+    {
+      "id": "IMD-2",
+      "max_uf": 150,
+      "w": 2.0,
+      "price": 426.95
+    },
+    {
+      "id": "IMD-3",
+      "max_uf": 500,
+      "w": 3.0,
+      "price": 612.37
+    },
+    {
+      "id": "IMD-4",
+      "max_uf": 1000,
+      "w": 3.0,
+      "price": 890.1
+    },
+    {
+      "id": "IMD-5",
+      "max_uf": 3000,
+      "w": 4.0,
+      "price": 1661.38
+    }
+  ],
+  "precharge_resistors": [
+    {
+      "id": "PR-1",
+      "ohm": 10,
+      "pulse_j": 3000,
+      "price": 9.78
+    },
+    {
+      "id": "PR-2",
+      "ohm": 10,
+      "pulse_j": 8000,
+      "price": 17.37
+    },
+    {
+      "id": "PR-3",
+      "ohm": 10,
+      "pulse_j": 20000,
+      "price": 31.82
+    },
+    {
+      "id": "PR-4",
+      "ohm": 10,
+      "pulse_j": 50000,
+      "price": 68.92
+    },
+    {
+      "id": "PR-5",
+      "ohm": 10,
+      "pulse_j": 100000,
+      "price": 96.67
+    },
+    {
+      "id": "PR-6",
+      "ohm": 15,
+      "pulse_j": 3000,
+      "price": 9.46
+    },
+    {
+      "id": "PR-7",
+      "ohm": 15,
+      "pulse_j": 8000,
+      "price": 18.05
+    },
+    {
+      "id": "PR-8",
+      "ohm": 15,
+      "pulse_j": 20000,
+      "price": 28.41
+    },
+    {
+      "id": "PR-9",
+      "ohm": 15,
+      "pulse_j": 50000,
+      "price": 55.65
+    },
+    {
+      "id": "PR-10",
+      "ohm": 15,
+      "pulse_j": 100000,
+      "price": 99.2
+    },
+    {
+      "id": "PR-11",
+      "ohm": 22,
+      "pulse_j": 3000,
+      "price": 8.68
+    },
+    {
+      "id": "PR-12",
+      "ohm": 22,
+      "pulse_j": 8000,
+      "price": 15.6
+    },
+    {
+      "id": "PR-13",
+      "ohm": 22,
+      "pulse_j": 20000,
+      "price": 29.06
+    },
+    {
+      "id": "PR-14",
+      "ohm": 22,
+      "pulse_j": 50000,
+      "price": 66.15
+    },
+    {
+      "id": "PR-15",
+      "ohm": 22,
+      "pulse_j": 100000,
+      "price": 110.88
+    },
+    {
+      "id": "PR-16",
+      "ohm": 33,
+      "pulse_j": 3000,
+      "price": 8.58
+    },
+    {
+      "id": "PR-17",
+      "ohm": 33,
+      "pulse_j": 8000,
+      "price": 17.3
+    },
+    {
+      "id": "PR-18",
+      "ohm": 33,
+      "pulse_j": 20000,
+      "price": 28.32
+    },
+    {
+      "id": "PR-19",
+      "ohm": 33,
+      "pulse_j": 50000,
+      "price": 63.93
+    },
+    {
+      "id": "PR-20",
+      "ohm": 33,
+      "pulse_j": 100000,
+      "price": 109.52
+    },
+    {
+      "id": "PR-21",
+      "ohm": 47,
+      "pulse_j": 3000,
+      "price": 7.75
+    },
+    {
+      "id": "PR-22",
+      "ohm": 47,
+      "pulse_j": 8000,
+      "price": 16.34
+    },
+    {
+      "id": "PR-23",
+      "ohm": 47,
+      "pulse_j": 20000,
+      "price": 29.98
+    },
+    {
+      "id": "PR-24",
+      "ohm": 47,
+      "pulse_j": 50000,
+      "price": 65.81
+    },
+    {
+      "id": "PR-25",
+      "ohm": 47,
+      "pulse_j": 100000,
+      "price": 125.35
+    },
+    {
+      "id": "PR-26",
+      "ohm": 68,
+      "pulse_j": 3000,
+      "price": 9.82
+    },
+    {
+      "id": "PR-27",
+      "ohm": 68,
+      "pulse_j": 8000,
+      "price": 15.7
+    },
+    {
+      "id": "PR-28",
+      "ohm": 68,
+      "pulse_j": 20000,
+      "price": 28.52
+    },
+    {
+      "id": "PR-29",
+      "ohm": 68,
+      "pulse_j": 50000,
+      "price": 63.21
+    },
+    {
+      "id": "PR-30",
+      "ohm": 68,
+      "pulse_j": 100000,
+      "price": 110.16
+    },
+    {
+      "id": "PR-31",
+      "ohm": 100,
+      "pulse_j": 3000,
+      "price": 8.79
+    },
+    {
+      "id": "PR-32",
+      "ohm": 100,
+      "pulse_j": 8000,
+      "price": 18.12
+    },
+    {
+      "id": "PR-33",
+      "ohm": 100,
+      "pulse_j": 20000,
+      "price": 32.91
+    },
+    {
+      "id": "PR-34",
+      "ohm": 100,
+      "pulse_j": 50000,
+      "price": 56.51
+    },
+    {
+      "id": "PR-35",
+      "ohm": 100,
+      "pulse_j": 100000,
+      "price": 106.98
+    },
+    {
+      "id": "PR-36",
+      "ohm": 150,
+      "pulse_j": 3000,
+      "price": 8.41
+    },
+    {
+      "id": "PR-37",
+      "ohm": 150,
+      "pulse_j": 8000,
+      "price": 17.52
+    },
+    {
+      "id": "PR-38",
+      "ohm": 150,
+      "pulse_j": 20000,
+      "price": 33.67
+    },
+    {
+      "id": "PR-39",
+      "ohm": 150,
+      "pulse_j": 50000,
+      "price": 59.49
+    },
+    {
+      "id": "PR-40",
+      "ohm": 150,
+      "pulse_j": 100000,
+      "price": 126.16
+    },
+    {
+      "id": "PR-41",
+      "ohm": 220,
+      "pulse_j": 3000,
+      "price": 8.61
+    },
+    {
+      "id": "PR-42",
+      "ohm": 220,
+      "pulse_j": 8000,
+      "price": 17.04
+    },
+    {
+      "id": "PR-43",
+      "ohm": 220,
+      "pulse_j": 20000,
+      "price": 30.81
+    },
+    {
+      "id": "PR-44",
+      "ohm": 220,
+      "pulse_j": 50000,
+      "price": 58.22
+    },
+    {
+      "id": "PR-45",
+      "ohm": 220,
+      "pulse_j": 100000,
+      "price": 122.46
+    }
+  ],
+  "balancing_stages": [
+    {
+      "id": "BAL-1",
+      "i_ma": 200,
+      "price": 18.08
+    },
+    {
+      "id": "BAL-2",
+      "i_ma": 500,
+      "price": 27.27
+    },
+    {
+      "id": "BAL-3",
+      "i_ma": 1000,
+      "price": 52.05
+    }
+  ],
+  "objective": {
+    "minimize": "cost",
+    "optimum": 7564.08,
+    "tolerance": 0.05
+  },
+  "title": "Battery management and DC protection for a storage plant",
+  "description": "Work package: battery management system (BMS) and DC string protection for a grid-connected lithium iron phosphate storage plant in Germany. The system team has closed the plant design and hands it over; the plant itself cannot change. Your team designs the rack BMS (one per string, identical for every rack) and writes down the requirements it derives.\n\nStakeholder needs:\n  SN-1: usable energy 1.109 MWh at the connection point (requirement including the project margin) at end of service life, 1 h duration, within the cell manufacturer's recommended SOC window.\n  SN-2: prequalification for frequency containment reserve (FCR) in Germany with 1.1 MW, symmetric.\n  SN-3: DC bus of a PCS ready within 5 s of a start command.\n  SN-4: cells operated within the cell manufacturer's safety limits at all times, including faults.\n  SN-5: lowest BMS and protection cost for the plant.\n  SN-6: compliance with the network operator's connection letter and technical connection rules.\n\nHandover from the system team (end of life where it matters):\n  11 strings (one per rack) of 400 cells in series: 25 modules of 16 cells, 8 temperature sensors per module.\n  String current at rated power 124.6 A; string voltage at full charge 1460.0 V.\n  Cell capacity at end of life 246.1 Ah. SOC window 5-90%.\n  Usable energy at the connection point at end of life over the full window, net of auxiliaries: 2.753 MWh; auxiliary energy during a full 1 h discharge: 0.0323 MWh.\n  PCS: 1 x PCS-3 (2713 kVA), strings on one PCS share its DC bus; DC-link capacitance 12.1 mF per PCS.\n  String fuse FU-4: gBat, 315 A. Pre-arcing time by multiple of rated current: 1.6 x: 3020.0, 2 x: 280.0, 3 x: 35.9, 4 x: 6.01, 5 x: 1.6, 7 x: 0.295, 10 x: 0.0499, 15 x: 0.00963, 20 x: 0.00337 s.\n  DC cable route rack to PCS 40 m per string (two conductors).\n  The PCS units are transformerless; their AC outputs share one low-voltage winding of the step-up transformer, whose star point is not earthed. Earth capacitance (Y-capacitors and stray): 0.93 uF per rack, 45 uF per PCS, 0.34 nF per metre per DC conductor.\n  Auxiliary supply: from the plant's medium-voltage busbar through an auxiliary transformer; each rack's 24 V control supply (MCU, contactor coil, current sensor and anything else in the rack) comes from a power supply that works down to 40% of nominal input voltage and holds up 20 ms after that.\n  Rack controller interfaces: 3 CAN buses (PCS, energy management, fire system), 12 analogue channels (current, voltages on both sides of the contactor, insulation monitoring, spares).\n\nCell datasheet (LFP prismatic, 280 Ah, 3.2 V nominal, charge to 3.65 V, continuous 0.5 C):\n  Open-circuit voltage by SOC %: 0: 2.952, 5: 3.169, 10: 3.208, 20: 3.249, 30: 3.275, 40: 3.284, 50: 3.29, 60: 3.295, 70: 3.314, 80: 3.332, 85: 3.331, 90: 3.334, 95: 3.347, 100: 3.401 V.\n  Safety limit: above 3.75 V the cell must be disconnected within 200 ms.\n  Short-time current limit by multiple of 1 C: 2 C: 57.0, 3 C: 11.9, 5 C: 1.85, 10 C: 0.228, 20 C: 0.0191, 50 C: 0.0022 s.\n  Cell-to-cell spread in self-discharge, % of capacity per month, by cell temperature: 25 C: 0.55, 35 C: 1.1, 45 C: 2.2.\n\nNetwork operator's connection letter (extract): the network uses automatic reclosing with a dead time of 0.5 s. Fault sequence for the plant's compliance tests: the voltage at the connection point falls to 15% for 200 ms, then recovers linearly to 90% over 2 s.\n\nOperations:\n  The plant runs FCR; the operator schedules a charge to the top of the window every 14 days for SOC recalibration.\n  Recalibration: the plant rests 30 min at 90% SOC and the BMS resets SOC from the open-circuit voltage.\n  Between recalibrations the BMS counts charge. Current sensors are auto-zeroed while the contactor is open.\n  The HVAC holds the cells at 30 C. Balancing can run 2 h per day.\n\nFirmware team (fixed):\n  Cell over-voltage is confirmed after 5 consecutive scans of the whole daisy chain, then the MCU opens the string contactor in its next control cycle.\n  Overcurrent trip at 154 A from the current sensor (no daisy chain in this path); above the contactor's breaking capability the BMS keeps it closed and leaves interruption to the fuse.\n  Precharge: the main contactor closes when the DC bus is within 5% of the string voltage. The BMS checks the bus voltage 0.5 s after starting precharge and aborts if it has not risen. The precharge relay is rated 50 A peak. The start sequence before precharge takes 1 s.\n\nCell monitoring chips (id: cell channels, voltage error mV at 25 C / over -40 to 105 C, conversion ms (all cells at once), readout ms per chip on the daisy chain, max chips per chain, temperature inputs, internal balancing mA, price; a chip monitors cells of one module only):\n  AFE-1: 12, 2.16 / 5.64 mV, 1.4 ms, 0.6 ms, 32, 6, 60 mA, 7.77\n  AFE-2: 14, 1.22 / 4.23 mV, 1.97 ms, 0.86 ms, 24, 8, 100 mA, 9.35\n  AFE-3: 16, 1.65 / 3.52 mV, 2.61 ms, 0.93 ms, 20, 8, 150 mA, 13.41\n  AFE-4: 18, 0.77 / 2.11 mV, 2.81 ms, 1.26 ms, 16, 9, 200 mA, 16.07\n  AFE-5: 16, 1.05 / 1.62 mV, 1.6 ms, 0.54 ms, 40, 10, 300 mA, 21.69\n\nCurrent sensors (id: type, highest current measured A, residual offset A after auto-zero over temperature (fine channel for dual-channel sensors), gain error %, power W at 24 V, price):\n  CS-1: shunt + isolated amplifier, 1500 A, 0.0398 A, 0.3%, 1.2 W, 80.35\n  CS-2: shunt + isolated amplifier, 3000 A, 0.0725 A, 0.3%, 1.2 W, 99.67\n  CS-3: shunt + isolated amplifier, 6000 A, 0.1784 A, 0.3%, 1.2 W, 131.44\n  CS-4: open-loop Hall, 1500 A, 0.5156 A, 1.0%, 0.6 W, 24.59\n  CS-5: open-loop Hall, 3000 A, 1.245 A, 1.0%, 0.6 W, 35.96\n  CS-6: open-loop Hall, 6000 A, 2.1682 A, 1.0%, 0.6 W, 48.74\n  CS-7: closed-loop Hall, 1500 A, 0.1201 A, 0.3%, 2.5 W, 112.09\n  CS-8: closed-loop Hall, 3000 A, 0.2133 A, 0.3%, 4.5 W, 183.06\n  CS-9: dual-channel Hall, 500 A fine channel, 3000 A, 0.1599 A, 0.5%, 0.8 W, 56.30\n  CS-10: dual-channel Hall, 500 A fine channel, 6000 A, 0.1564 A, 0.5%, 0.8 W, 83.15\n  CS-11: fluxgate, 1500 A, 0.0116 A, 0.05%, 3.0 W, 275.51\n  CS-12: fluxgate, 3000 A, 0.0272 A, 0.05%, 5.0 W, 476.42\n\nString contactors (id: rated current A, rated DC voltage V, breaking current A at 1500 V DC, opening time ms, coil holding power W at 24 V, price):\n  K-1: 250 A, 1500 V, 1500 A, 25 ms, 4 W, 142.97\n  K-2: 400 A, 1500 V, 3000 A, 30 ms, 6 W, 199.56\n  K-3: 500 A, 1500 V, 4000 A, 35 ms, 8 W, 254.17\n  K-4: 630 A, 1500 V, 5000 A, 40 ms, 10 W, 432.56\n  K-5: 400 A, 1500 V, 6000 A, 20 ms, 7 W, 536.80\n  K-6: 800 A, 1500 V, 8000 A, 50 ms, 14 W, 513.01\n\nRack MCUs (id: daisy-chain ports, CAN ports, ADC channels, control cycle ms, board power W at 24 V, price):\n  MCU-1: 1, 2, 8, 10 ms, 2.5 W, 6.63\n  MCU-2: 2, 2, 16, 10 ms, 3.0 W, 8.23\n  MCU-3: 2, 3, 24, 5 ms, 4.0 W, 12.15\n  MCU-4: 4, 3, 32, 5 ms, 5.0 W, 23.58\n\nPrecharge resistors (id: ohm, single-pulse energy J, price):\n  PR-1: 10 ohm, 3000 J, 9.78\n  PR-2: 10 ohm, 8000 J, 17.37\n  PR-3: 10 ohm, 20000 J, 31.82\n  PR-4: 10 ohm, 50000 J, 68.92\n  PR-5: 10 ohm, 100000 J, 96.67\n  PR-6: 15 ohm, 3000 J, 9.46\n  PR-7: 15 ohm, 8000 J, 18.05\n  PR-8: 15 ohm, 20000 J, 28.41\n  PR-9: 15 ohm, 50000 J, 55.65\n  PR-10: 15 ohm, 100000 J, 99.20\n  PR-11: 22 ohm, 3000 J, 8.68\n  PR-12: 22 ohm, 8000 J, 15.60\n  PR-13: 22 ohm, 20000 J, 29.06\n  PR-14: 22 ohm, 50000 J, 66.15\n  PR-15: 22 ohm, 100000 J, 110.88\n  PR-16: 33 ohm, 3000 J, 8.58\n  PR-17: 33 ohm, 8000 J, 17.30\n  PR-18: 33 ohm, 20000 J, 28.32\n  PR-19: 33 ohm, 50000 J, 63.93\n  PR-20: 33 ohm, 100000 J, 109.52\n  PR-21: 47 ohm, 3000 J, 7.75\n  PR-22: 47 ohm, 8000 J, 16.34\n  PR-23: 47 ohm, 20000 J, 29.98\n  PR-24: 47 ohm, 50000 J, 65.81\n  PR-25: 47 ohm, 100000 J, 125.35\n  PR-26: 68 ohm, 3000 J, 9.82\n  PR-27: 68 ohm, 8000 J, 15.70\n  PR-28: 68 ohm, 20000 J, 28.52\n  PR-29: 68 ohm, 50000 J, 63.21\n  PR-30: 68 ohm, 100000 J, 110.16\n  PR-31: 100 ohm, 3000 J, 8.79\n  PR-32: 100 ohm, 8000 J, 18.12\n  PR-33: 100 ohm, 20000 J, 32.91\n  PR-34: 100 ohm, 50000 J, 56.51\n  PR-35: 100 ohm, 100000 J, 106.98\n  PR-36: 150 ohm, 3000 J, 8.41\n  PR-37: 150 ohm, 8000 J, 17.52\n  PR-38: 150 ohm, 20000 J, 33.67\n  PR-39: 150 ohm, 50000 J, 59.49\n  PR-40: 150 ohm, 100000 J, 126.16\n  PR-41: 220 ohm, 3000 J, 8.61\n  PR-42: 220 ohm, 8000 J, 17.04\n  PR-43: 220 ohm, 20000 J, 30.81\n  PR-44: 220 ohm, 50000 J, 58.22\n  PR-45: 220 ohm, 100000 J, 122.46\n\nExternal balancing stages, one per module (id: balancing current mA, price per module); or use the chip's internal balancing:\n  BAL-1: 200 mA, 18.08\n  BAL-2: 500 mA, 27.27\n  BAL-3: 1000 mA, 52.05\n\n24 V hold-up modules, one per rack, or none (id: usable energy J, price):\n  HB-1: 20 J, 17.05\n  HB-2: 50 J, 22.72\n  HB-3: 100 J, 42.55\n  HB-4: 250 J, 65.75\n\nInsulation monitoring devices, fitted in every rack or once for the plant (id: maximum system leakage capacitance uF, power W at 24 V, price):\n  IMD-1: 50 uF, 2.0 W, 284.86\n  IMD-2: 150 uF, 2.0 W, 426.95\n  IMD-3: 500 uF, 3.0 W, 612.37\n  IMD-4: 1000 uF, 3.0 W, 890.10\n  IMD-5: 3000 uF, 4.0 W, 1661.38\n\nDerived requirements to write down, each traced to the stakeholder need it comes from, with a value that follows from the data: R-SOC (maximum SOC error, %), R-TRIP (maximum over-voltage disconnect time, ms), R-PRE (maximum precharge time, s), R-BAL (minimum balancing current, mA), R-BRK (minimum DC breaking current of the string contactor, A), R-RIDE (minimum time the rack's 24 V must be bridged by its hold-up, s), R-IMD (minimum system leakage capacitance rating of the insulation monitoring, uF).\n\nObjective: minimize the BMS and protection price for the plant (monitoring chips, balancing stages, current sensor, MCU, contactor, precharge resistor and hold-up for every rack, and the insulation monitoring). The design must meet every stakeholder need, and every requirement that follows from them and from the data, whether or not it is listed here; its price must be within 5% of the cheapest design that does. Return {\"requirements\": [{\"id\": \"R-SOC\", \"parent\": \"SN-<n>\", \"value\": <number>, \"unit\": \"%\", \"basis\": \"<one line>\"}, ...], \"afe\": \"<id>\", \"afe_per_module\": <int>, \"chains_per_rack\": <int>, \"current_sensor\": \"<id>\", \"mcu\": \"<id>\", \"string_contactor\": \"<id>\", \"precharge_resistor\": \"<id>\", \"balancing\": \"internal\" or \"<id>\", \"hold_up\": \"none\" or \"<id>\", \"imd_location\": \"rack\" or \"plant\", \"imd\": \"<id>\"}",
+  "output_shape": "{\"requirements\": [{\"id\": \"R-SOC\", \"parent\": \"SN-<n>\", \"value\": <number>, \"unit\": \"%\", \"basis\": \"<one line>\"}, ...], \"afe\": \"<id>\", \"afe_per_module\": <int>, \"chains_per_rack\": <int>, \"current_sensor\": \"<id>\", \"mcu\": \"<id>\", \"string_contactor\": \"<id>\", \"precharge_resistor\": \"<id>\", \"balancing\": \"internal\" or \"<id>\", \"hold_up\": \"none\" or \"<id>\", \"imd_location\": \"rack\" or \"plant\", \"imd\": \"<id>\"}",
+  "sources": [
+    "German TSOs, PQ-Bedingungen v1.06 (2026-10-07), sec. 3.1.6: FCR limited-energy reserve, regelleistung.net",
+    "IEC 60269-7 gBat battery fuse time-current behaviour as described in SIBA, Mersen and ETI battery-fuse catalogs",
+    "LFP open-circuit voltage plateau and top-of-charge recalibration as described in public BMS application notes (TI, ADI)",
+    "Precharge circuit design (time constant, resistor pulse energy, fault abort) as described in Sensata/GIGAVAC and TE application notes",
+    "Cell monitoring chip, current sensor, contactor and MCU catalogs patterned on public datasheets; every value synthetic and perturbed per seed",
+    "VDE-AR-N 4110 dynamic grid support for type 2 units and storage (ride through faults, including repeated faults and automatic reclosing) as summarised in VDE FNN, TCR medium voltage overview (2017)",
+    "Fault-sequence shape patterned on Commission Regulation (EU) 2016/631 (RfG), Art. 14(3), Table 3.2 ranges for power park modules",
+    "Insulation monitoring of unearthed (IT) DC systems, one active device per galvanically connected system, as described in IEC 61557-8 manufacturer application notes (Bender)"
+  ],
+  "seed": 26,
+  "disciplines": [
+    "electronics",
+    "embedded",
+    "electrical",
+    "battery",
+    "systems"
+  ]
+}
