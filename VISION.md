@@ -67,8 +67,9 @@ Moving up the ladder means:
   objective and a brute-force optimum. A feasible design far from it fails.
 - **Messier inputs.** Datasheets with conflicting values, missing data the
   model must flag or bound, site data in the units the source used.
-- **Less help from the grader.** At level 3 and above the first submitted
-  design is the one that counts.
+- **Less help from the grader.** The agentic test lab reports symptoms, not
+  causes; the higher the level, the further a symptom sits from the decision
+  that caused it.
 
 Deliverables stay machine-checkable at every level: structured requirement
 records, architecture graphs with rated interfaces, sizing, bills of material.
