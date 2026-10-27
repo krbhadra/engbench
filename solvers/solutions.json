@@ -14762,7 +14762,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 11.1863,
+     "value": 10.5465,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -14811,7 +14811,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 11.1863,
+       "value": 10.5465,
        "unit": "mA",
        "basis": "balancing current"
       }
@@ -14854,7 +14854,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 11.1863,
+       "value": 10.5465,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -14954,7 +14954,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 11.1863,
+       "value": 10.5465,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15004,7 +15004,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 11.1863,
+       "value": 10.5465,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15054,7 +15054,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 11.1863,
+       "value": 10.5465,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15104,7 +15104,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 11.1863,
+       "value": 10.5465,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15154,7 +15154,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 11.1863,
+       "value": 10.5465,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15204,7 +15204,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 11.1863,
+       "value": 10.5465,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15256,7 +15256,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 85.565,
+     "value": 80.6715,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -15305,7 +15305,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 85.565,
+       "value": 80.6715,
        "unit": "mA",
        "basis": "balancing current"
       }
@@ -15348,7 +15348,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 85.565,
+       "value": 80.6715,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15398,7 +15398,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 85.565,
+       "value": 80.6715,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15498,7 +15498,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 85.565,
+       "value": 80.6715,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15548,7 +15548,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 85.565,
+       "value": 80.6715,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15598,7 +15598,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 85.565,
+       "value": 80.6715,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15648,7 +15648,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 85.565,
+       "value": 80.6715,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15698,7 +15698,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 85.565,
+       "value": 80.6715,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15750,7 +15750,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 31.1383,
+     "value": 29.3575,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -15799,7 +15799,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 31.1383,
+       "value": 29.3575,
        "unit": "mA",
        "basis": "balancing current"
       }
@@ -15842,7 +15842,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 31.1383,
+       "value": 29.3575,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15892,7 +15892,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 31.1383,
+       "value": 29.3575,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15992,7 +15992,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 31.1383,
+       "value": 29.3575,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16042,7 +16042,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 31.1383,
+       "value": 29.3575,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16092,7 +16092,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 31.1383,
+       "value": 29.3575,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16142,7 +16142,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 31.1383,
+       "value": 29.3575,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16192,7 +16192,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 31.1383,
+       "value": 29.3575,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16242,7 +16242,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 31.1383,
+       "value": 29.3575,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18320,7 +18320,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 35.7,
+     "value": 33.6583,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -18369,7 +18369,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 35.7,
+       "value": 33.6583,
        "unit": "mA",
        "basis": "balancing current"
       }
@@ -18412,7 +18412,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 35.7,
+       "value": 33.6583,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18462,7 +18462,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 35.7,
+       "value": 33.6583,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18562,7 +18562,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 35.7,
+       "value": 33.6583,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18612,7 +18612,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 35.7,
+       "value": 33.6583,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18662,7 +18662,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 35.7,
+       "value": 33.6583,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18712,7 +18712,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 35.7,
+       "value": 33.6583,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18762,7 +18762,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 35.7,
+       "value": 33.6583,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19358,7 +19358,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 84.7,
+     "value": 79.8559,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -19407,7 +19407,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 84.7,
+       "value": 79.8559,
        "unit": "mA",
        "basis": "balancing current"
       }
@@ -19450,7 +19450,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 84.7,
+       "value": 79.8559,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19500,7 +19500,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 84.7,
+       "value": 79.8559,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19600,7 +19600,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 84.7,
+       "value": 79.8559,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19650,7 +19650,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 84.7,
+       "value": 79.8559,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19700,7 +19700,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 84.7,
+       "value": 79.8559,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19750,7 +19750,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 84.7,
+       "value": 79.8559,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19800,7 +19800,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 84.7,
+       "value": 79.8559,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19850,7 +19850,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 84.7,
+       "value": 79.8559,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19900,7 +19900,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 84.7,
+       "value": 79.8559,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19952,7 +19952,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 43.5,
+     "value": 41.0122,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -20001,7 +20001,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 43.5,
+       "value": 41.0122,
        "unit": "mA",
        "basis": "balancing current"
       }
@@ -20044,7 +20044,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 43.5,
+       "value": 41.0122,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20144,7 +20144,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 43.5,
+       "value": 41.0122,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20194,7 +20194,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 43.5,
+       "value": 41.0122,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20244,7 +20244,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 43.5,
+       "value": 41.0122,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20294,7 +20294,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 43.5,
+       "value": 41.0122,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20344,7 +20344,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 43.5,
+       "value": 41.0122,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20394,7 +20394,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 43.5,
+       "value": 41.0122,
        "unit": "mA",
        "basis": "balancing current"
       },

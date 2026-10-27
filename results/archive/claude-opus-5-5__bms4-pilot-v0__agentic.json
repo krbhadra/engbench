@@ -1,0 +1,2866 @@
+{
+ "model": "claude-opus-5-5 [claude-cli]",
+ "track": "agentic",
+ "note": "level-4 pilot on the first bms4 grader (linear self-discharge interpolation); superseded",
+ "records": [
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 18.1,
+        "unit": "%",
+        "basis": "Window 5-90% net 6.0563 MWh plus 0.0567 MWh aux; an SOC error e removes e at each end, OCV-weighted; 3.450 MWh still delivered for e <= 18.1%"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 200 ms: 3 chain scans + MCU cycle + contactor opening <= 200 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4,
+        "unit": "s",
+        "basis": "5 s to DC bus ready minus 1 s start sequence; one string charges 11.2 mF to within 2% (3.91 RC)"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 22.9,
+        "unit": "mA",
+        "basis": "Self-discharge spread 1.82%/month at 35 C x 306 Ah = 5.57 Ah/month, corrected in 8 h/day balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2733,
+        "unit": "A",
+        "basis": "Below about 2733 A (8.9 C), the 400 A gBat fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break these currents"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-29",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 85.15,
+      "chips_per_chain": 13,
+      "soc_error_pct": 2.1211,
+      "soc_anchor_pct": 1.6045,
+      "soc_offset_pct": 1.3206,
+      "soc_gain_pct": 0.425,
+      "soc_error_allowed_pct": 18.12,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 23.205,
+      "t_pre_s": 2.9794,
+      "t_pre_allowed_s": 4.0,
+      "i_pre_peak_a": 21.4706,
+      "e_pre_j": 11936.96,
+      "e_short_j": 47020.5882,
+      "cost": 12282.27
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 23719,
+    "completion_tokens": 12777,
+    "cost": 0.397992
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_001",
+   "trial": 1,
+   "seconds": 85.7,
+   "timestamp": "2026-10-27T07:26:14+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 1.41,
+        "unit": "%",
+        "basis": "6.900 MWh + 0.1147 MWh aux from 7.2709 MWh gross over 10-90% allows the window to shrink by 2 x 1.41% SOC"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "Cell safety limit: above 3.75 V disconnect within 100 ms, including detection, confirmation, MCU cycle and contactor opening"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s DC bus ready minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 10,
+        "unit": "mA",
+        "basis": "Self-discharge spread ~0.83 %/month at 30 C x 275.3 Ah, corrected daily within 8 h of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 840,
+        "unit": "A",
+        "basis": "Below ~840 A (2.7 C) the 250 A gBat fuse is slower than the cell short-time limit, so the contactor must break these currents"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 3,
+      "current_sensor": "CS-1",
+      "mcu": "MCU-4",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-42",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 10 mA does not follow from the data (derived 11.19 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 67.86,
+      "chips_per_chain": 8,
+      "soc_error_pct": 0.8719,
+      "soc_anchor_pct": 0.7692,
+      "soc_offset_pct": 0.333,
+      "soc_gain_pct": 0.24,
+      "soc_error_allowed_pct": 1.4095,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 11.1863,
+      "t_pre_s": 1.8934,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 6.3709,
+      "e_pre_j": 2160.9308,
+      "e_short_j": 4464.7331,
+      "cost": 18957.59
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 1.41,
+        "unit": "%",
+        "basis": "6.900 MWh + 0.1147 MWh aux from 7.2709 MWh gross over 10-90% allows the window to shrink by 2 x 1.41% SOC"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "Cell safety limit: above 3.75 V disconnect within 100 ms, including detection, confirmation, MCU cycle and contactor opening"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s DC bus ready minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 11.0,
+        "unit": "mA",
+        "basis": "Self-discharge spread ~0.855 %/month at 30 C x 314 Ah (worst case, beginning of life) = ~88 mAh/day, corrected within 8 h of balancing per day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 840,
+        "unit": "A",
+        "basis": "Below ~840 A (2.7 C) the 250 A gBat fuse is slower than the cell short-time limit, so the contactor must break these currents"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 3,
+      "current_sensor": "CS-1",
+      "mcu": "MCU-4",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-42",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 67.86,
+      "chips_per_chain": 8,
+      "soc_error_pct": 0.8719,
+      "soc_anchor_pct": 0.7692,
+      "soc_offset_pct": 0.333,
+      "soc_gain_pct": 0.24,
+      "soc_error_allowed_pct": 1.4095,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 11.1863,
+      "t_pre_s": 1.8934,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 6.3709,
+      "e_pre_j": 2160.9308,
+      "e_short_j": 4464.7331,
+      "cost": 18957.59
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 58446,
+    "completion_tokens": 25255,
+    "cost": 0.7796162
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_008",
+   "trial": 1,
+   "seconds": 115.5,
+   "timestamp": "2026-10-27T07:28:09+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 5.92,
+        "unit": "%",
+        "basis": "(80-2e)/80*(3.8924+0.1085) - 0.1085 >= 3.3 MWh gives e <= 5.92% at each window end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "Cell datasheet: above 3.75 V disconnect within 150 ms (scan confirm + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 9,
+        "unit": "s",
+        "basis": "10 s to DC bus ready minus 1 s start sequence; time to within 2% = RC ln50 with 12.6 mF"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 81,
+        "unit": "mA",
+        "basis": "Self-discharge spread 1.54 %/month at 30 C x 314 Ah / 30 d, corrected in 2 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1414,
+        "unit": "A",
+        "basis": "Contactor must break up to where gBat 315 A pre-arcing curve becomes faster than cell short-time limit (crossover ~1414 A)"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-1",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-29",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 81 mA does not follow from the data (derived 85.57 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 91.96,
+      "chips_per_chain": 13,
+      "soc_error_pct": 3.0721,
+      "soc_anchor_pct": 1.5833,
+      "soc_offset_pct": 2.6217,
+      "soc_gain_pct": 0.24,
+      "soc_error_allowed_pct": 5.9227,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 85.565,
+      "t_pre_s": 3.3518,
+      "t_pre_allowed_s": 9.0,
+      "i_pre_peak_a": 21.4706,
+      "e_pre_j": 13429.08,
+      "e_short_j": 47020.5882,
+      "cost": 10641.6
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 5.92,
+        "unit": "%",
+        "basis": "(80-2e)/80*(3.8924+0.1085) - 0.1085 >= 3.3 MWh gives e <= 5.92% at each window end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "Cell datasheet: above 3.75 V disconnect within 150 ms (scan confirm + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 9,
+        "unit": "s",
+        "basis": "10 s to DC bus ready minus 1 s start sequence; time to within 2% = RC ln50 with 12.6 mF"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 66.2,
+        "unit": "mA",
+        "basis": "Self-discharge spread 1.54 %/month at 30 C x 257.6 Ah EOL / 30 d, corrected in 2 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1414,
+        "unit": "A",
+        "basis": "Contactor must break up to where gBat 315 A pre-arcing curve becomes faster than cell short-time limit (crossover ~1414 A)"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-1",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-29",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 66.2 mA does not follow from the data (derived 85.57 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 91.96,
+      "chips_per_chain": 13,
+      "soc_error_pct": 3.0721,
+      "soc_anchor_pct": 1.5833,
+      "soc_offset_pct": 2.6217,
+      "soc_gain_pct": 0.24,
+      "soc_error_allowed_pct": 5.9227,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 85.565,
+      "t_pre_s": 3.3518,
+      "t_pre_allowed_s": 9.0,
+      "i_pre_peak_a": 21.4706,
+      "e_pre_j": 13429.08,
+      "e_short_j": 47020.5882,
+      "cost": 10641.6
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 5.92,
+        "unit": "%",
+        "basis": "(80-2e)/80*(3.8924+0.1085) - 0.1085 >= 3.3 MWh gives e <= 5.92% at each window end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "Cell datasheet: above 3.75 V disconnect within 150 ms (scan confirm + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 9,
+        "unit": "s",
+        "basis": "10 s to DC bus ready minus 1 s start sequence; time to within 2% = RC ln50 with 12.6 mF"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 85.6,
+        "unit": "mA",
+        "basis": "Self-discharge spread 1.635 %/month at 30 C (linear 25-35 C) x 314 Ah / 30 d, corrected in 2 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1414,
+        "unit": "A",
+        "basis": "Contactor must break up to where gBat 315 A pre-arcing curve becomes faster than cell short-time limit (crossover ~1414 A)"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-1",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-29",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 91.96,
+      "chips_per_chain": 13,
+      "soc_error_pct": 3.0721,
+      "soc_anchor_pct": 1.5833,
+      "soc_offset_pct": 2.6217,
+      "soc_gain_pct": 0.24,
+      "soc_error_allowed_pct": 5.9227,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 85.565,
+      "t_pre_s": 3.3518,
+      "t_pre_allowed_s": 9.0,
+      "i_pre_peak_a": 21.4706,
+      "e_pre_j": 13429.08,
+      "e_short_j": 47020.5882,
+      "cost": 10641.6
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 120234,
+    "completion_tokens": 40202,
+    "cost": 1.2567638
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_010",
+   "trial": 1,
+   "seconds": 139.3,
+   "timestamp": "2026-10-27T07:30:29+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 5.2,
+        "unit": "%",
+        "basis": "(2.5154+0.0599)*(85-2e)/85-0.0599 >= 2.200 MWh gives e <= 5.2% SOC at each end of the 5-90% window"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "cell safety limit: above 3.75 V disconnect within 150 ms (5 scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7,
+        "unit": "s",
+        "basis": "8 s to DC bus ready minus 1 s start sequence; 3*R*C (to within 5%) with C = 6.9 mF"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 27.2,
+        "unit": "mA",
+        "basis": "self-discharge spread 1.68 %/month at 30 C * 290.5 Ah / 30 d / 6 h per day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1405,
+        "unit": "A",
+        "basis": "fuse FU-4 pre-arcing time is below the cell short-time limit (1C = 314 A) only above 1405 A; the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-1",
+      "mcu": "MCU-2",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-43",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 27.2 mA does not follow from the data (derived 31.14 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 109.9,
+      "chips_per_chain": 12,
+      "soc_error_pct": 2.2127,
+      "soc_anchor_pct": 1.9111,
+      "soc_offset_pct": 1.0856,
+      "soc_gain_pct": 0.255,
+      "soc_error_allowed_pct": 5.205,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 31.1383,
+      "t_pre_s": 4.5475,
+      "t_pre_allowed_s": 7.0,
+      "i_pre_peak_a": 6.3709,
+      "e_pre_j": 6777.4648,
+      "e_short_j": 8929.4662,
+      "cost": 5638.23
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 5.2,
+        "unit": "%",
+        "basis": "(2.5154+0.0599)*(85-2e)/85-0.0599 >= 2.200 MWh gives e <= 5.2% SOC at each end of the 5-90% window"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "cell safety limit: above 3.75 V disconnect within 150 ms (5 scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7,
+        "unit": "s",
+        "basis": "8 s to DC bus ready minus 1 s start sequence; 3*R*C (to within 5%) with C = 6.9 mF"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 29.4,
+        "unit": "mA",
+        "basis": "self-discharge spread 1.19*2^0.5 = 1.68 %/month at 30 C * 314 Ah (worst case, beginning of life) / 30 d / 6 h per day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1405,
+        "unit": "A",
+        "basis": "fuse FU-4 pre-arcing time is below the cell short-time limit (1C = 314 A) only above 1405 A; the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-1",
+      "mcu": "MCU-2",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-43",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 29.4 mA does not follow from the data (derived 31.14 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 109.9,
+      "chips_per_chain": 12,
+      "soc_error_pct": 2.2127,
+      "soc_anchor_pct": 1.9111,
+      "soc_offset_pct": 1.0856,
+      "soc_gain_pct": 0.255,
+      "soc_error_allowed_pct": 5.205,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 31.1383,
+      "t_pre_s": 4.5475,
+      "t_pre_allowed_s": 7.0,
+      "i_pre_peak_a": 6.3709,
+      "e_pre_j": 6777.4648,
+      "e_short_j": 8929.4662,
+      "cost": 5638.23
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 5.2,
+        "unit": "%",
+        "basis": "(2.5154+0.0599)*(85-2e)/85-0.0599 >= 2.200 MWh gives e <= 5.2% SOC at each end of the 5-90% window"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "cell safety limit: above 3.75 V disconnect within 150 ms (5 scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7,
+        "unit": "s",
+        "basis": "8 s to DC bus ready minus 1 s start sequence; 3*R*C (to within 5%) with C = 6.9 mF"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-4",
+        "value": 28.8,
+        "unit": "mA",
+        "basis": "self-discharge spread 1.785 %/month at 30 C * 290.5 Ah / 30 d / 6 h per day, so no cell drifts out of the safe window"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1405,
+        "unit": "A",
+        "basis": "fuse FU-4 pre-arcing time is below the cell short-time limit (1C = 314 A) only above 1405 A; the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-1",
+      "mcu": "MCU-2",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-43",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL parent 'SN-4' is not the stakeholder need it derives from (SN-1)",
+      "requirement R-BAL value 28.8 mA does not follow from the data (derived 31.14 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 109.9,
+      "chips_per_chain": 12,
+      "soc_error_pct": 2.2127,
+      "soc_anchor_pct": 1.9111,
+      "soc_offset_pct": 1.0856,
+      "soc_gain_pct": 0.255,
+      "soc_error_allowed_pct": 5.205,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 31.1383,
+      "t_pre_s": 4.5475,
+      "t_pre_allowed_s": 7.0,
+      "i_pre_peak_a": 6.3709,
+      "e_pre_j": 6777.4648,
+      "e_short_j": 8929.4662,
+      "cost": 5638.23
+     }
+    }
+   ],
+   "python_calls": 3,
+   "usage": {
+    "prompt_tokens": 264395,
+    "completion_tokens": 61235,
+    "cost": 1.9773332
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_012",
+   "trial": 1,
+   "seconds": 168.7,
+   "timestamp": "2026-10-27T07:33:17+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 2.74,
+        "unit": "%",
+        "basis": "(4.6+0.0517)/(4.9018+0.0517) of the 90% window gives 84.52% usable; (90-84.52)/2 = 2.74% allowed at each end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 100 ms above 3.75 V: 3 chain scans + MCU cycle + contactor opening <= 100 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s to DC bus ready minus 0.5 s start sequence; precharge 4.2 mF to within 2% of string voltage"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 24.6,
+        "unit": "mA",
+        "basis": "Self-discharge spread 1.58%/month at 35 C x 280 Ah = 0.147 Ah/day, removed in 6 h/day of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1680,
+        "unit": "A",
+        "basis": "Below about 1680 A the gBat 315 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break up to that current"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 4,
+      "current_sensor": "CS-12",
+      "mcu": "MCU-4",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-42",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "cost 19832.04 is not within 5% of the best design that meets every constraint"
+     ],
+     "metrics": {
+      "t_react_ms": 68.51,
+      "chips_per_chain": 7,
+      "soc_error_pct": 1.5195,
+      "soc_anchor_pct": 0.1991,
+      "soc_offset_pct": 1.5058,
+      "soc_gain_pct": 0.045,
+      "soc_error_allowed_pct": 2.7417,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 24.5778,
+      "t_pre_s": 3.6147,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 6.6364,
+      "e_pre_j": 4476.36,
+      "e_short_j": 4844.5455,
+      "cost": 19832.04
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 2.74,
+        "unit": "%",
+        "basis": "(4.6+0.0517)/(4.9018+0.0517) of the 90% window gives 84.52% usable; (90-84.52)/2 = 2.74% allowed at each end of the window"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 100 ms above 3.75 V: 3 chain scans + MCU cycle + contactor opening <= 100 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s to DC bus ready minus 0.5 s start sequence; precharge 4.2 mF to within 2% of string voltage"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 24.6,
+        "unit": "mA",
+        "basis": "Self-discharge spread 1.58%/month at 35 C x 280 Ah = 0.147 Ah/day, removed in 6 h/day of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1680,
+        "unit": "A",
+        "basis": "Below about 1680 A the gBat 315 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break up to that current"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-12",
+      "mcu": "MCU-3",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-42",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 79.61,
+      "chips_per_chain": 13,
+      "soc_error_pct": 1.5367,
+      "soc_anchor_pct": 0.3036,
+      "soc_offset_pct": 1.5058,
+      "soc_gain_pct": 0.045,
+      "soc_error_allowed_pct": 2.7417,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 24.5778,
+      "t_pre_s": 3.6147,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 6.6364,
+      "e_pre_j": 4476.36,
+      "e_short_j": 4844.5455,
+      "cost": 17866.44
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 115694,
+    "completion_tokens": 38402,
+    "cost": 1.2133584000000002
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_013",
+   "trial": 1,
+   "seconds": 152.6,
+   "timestamp": "2026-10-27T07:35:50+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 5.56,
+        "unit": "%",
+        "basis": "Usable window may shrink from 85% to 79.44% SOC (4.6981/5.0272 of gross incl. 0.0981 MWh aux) and still deliver 4.6 MWh at EoL"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 100 ms (4 scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 9.5,
+        "unit": "s",
+        "basis": "10 s ready time minus 0.5 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 122,
+        "unit": "mA",
+        "basis": "Self-discharge spread 2.94%/month at 35 C x 248.3 Ah = 7.3 Ah/month, compensated in 2 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2528,
+        "unit": "A",
+        "basis": "Below ~2528 A (8.4 C) the 400 A gBat fuse pre-arc time exceeds the cell short-time limit, so the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-5",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-2",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-42",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-SOC value 5.56 % does not follow from the data (derived 2.782 %, maximum)",
+      "requirement R-BAL value 122 mA does not follow from the data (derived 147 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 74.68,
+      "chips_per_chain": 13,
+      "soc_error_pct": 2.6044,
+      "soc_anchor_pct": 0.7364,
+      "soc_offset_pct": 2.4851,
+      "soc_gain_pct": 0.255,
+      "soc_error_allowed_pct": 2.7822,
+      "i_bal_ma": 300,
+      "i_bal_needed_ma": 147.0,
+      "t_pre_s": 3.959,
+      "t_pre_allowed_s": 9.5,
+      "i_pre_peak_a": 6.6364,
+      "e_pre_j": 4902.68,
+      "e_short_j": 4844.5455,
+      "cost": 18903.8
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 2.78,
+        "unit": "%",
+        "basis": "Window may shrink from 85% to 79.44% SOC (4.6981/5.0272 of gross incl. 0.0981 MWh aux) for 4.6 MWh at EoL; SOC error eats both ends, so 5.56%/2"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 100 ms (4 scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 9.5,
+        "unit": "s",
+        "basis": "10 s ready time minus 0.5 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 147,
+        "unit": "mA",
+        "basis": "Self-discharge spread 2.94%/month at 35 C x 300 Ah (beginning of life, worst case) = 8.82 Ah/month, compensated in 2 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2528,
+        "unit": "A",
+        "basis": "Below ~2528 A (8.4 C) the 400 A gBat fuse pre-arc time exceeds the cell short-time limit, so the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-5",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-2",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-42",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "cost 18903.80 is not within 5% of the best design that meets every constraint"
+     ],
+     "metrics": {
+      "t_react_ms": 74.68,
+      "chips_per_chain": 13,
+      "soc_error_pct": 2.6044,
+      "soc_anchor_pct": 0.7364,
+      "soc_offset_pct": 2.4851,
+      "soc_gain_pct": 0.255,
+      "soc_error_allowed_pct": 2.7822,
+      "i_bal_ma": 300,
+      "i_bal_needed_ma": 147.0,
+      "t_pre_s": 3.959,
+      "t_pre_allowed_s": 9.5,
+      "i_pre_peak_a": 6.6364,
+      "e_pre_j": 4902.68,
+      "e_short_j": 4844.5455,
+      "cost": 18903.8
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 2.78,
+        "unit": "%",
+        "basis": "Window may shrink from 85% to 79.44% SOC (4.6981/5.0272 of gross incl. 0.0981 MWh aux) for 4.6 MWh at EoL; SOC error eats both ends, so 5.56%/2"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 100 ms (4 scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 9.5,
+        "unit": "s",
+        "basis": "10 s ready time minus 0.5 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 147,
+        "unit": "mA",
+        "basis": "Self-discharge spread 2.94%/month at 35 C x 300 Ah (beginning of life, worst case) = 8.82 Ah/month, compensated in 2 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2528,
+        "unit": "A",
+        "basis": "Below ~2528 A (8.4 C) the 400 A gBat fuse pre-arc time exceeds the cell short-time limit, so the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-2",
+      "mcu": "MCU-3",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-42",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "SOC error 2.99% after 72 h (anchor 1.64, offset 2.49, gain 0.26) exceeds 2.78% the energy margin allows (FCR reserve)"
+     ],
+     "metrics": {
+      "t_react_ms": 98.4,
+      "chips_per_chain": 13,
+      "soc_error_pct": 2.9863,
+      "soc_anchor_pct": 1.6364,
+      "soc_offset_pct": 2.4851,
+      "soc_gain_pct": 0.255,
+      "soc_error_allowed_pct": 2.7822,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 147.0,
+      "t_pre_s": 3.959,
+      "t_pre_allowed_s": 9.5,
+      "i_pre_peak_a": 6.6364,
+      "e_pre_j": 4902.68,
+      "e_short_j": 4844.5455,
+      "cost": 13259.0
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 95125,
+    "completion_tokens": 29695,
+    "cost": 0.9596239999999999
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_014",
+   "trial": 1,
+   "seconds": 126.1,
+   "timestamp": "2026-10-27T07:37:56+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 18.4,
+        "unit": "%",
+        "basis": "5.7004 MWh gross over 90% window; (90-2e)/90*5.7004-0.0684 >= 3.300 MWh gives e <= 18.4%"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "cell safety limit: above 3.75 V disconnect within 100 ms (4 scans + control cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s bus-ready minus 0.5 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 10.4,
+        "unit": "mA",
+        "basis": "self-discharge spread 0.9%/month at 35 C of 280 Ah, corrected in 8 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2854,
+        "unit": "A",
+        "basis": "below ~2854 A the 400 A gBat fuse pre-arcs slower than the cell short-time limit, so the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-2",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-27",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "precharge into a shorted DC link 39798 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
+     ],
+     "metrics": {
+      "t_react_ms": 99.36,
+      "chips_per_chain": 12,
+      "soc_error_pct": 10.4458,
+      "soc_anchor_pct": 0.3233,
+      "soc_offset_pct": 10.4373,
+      "soc_gain_pct": 0.27,
+      "soc_error_allowed_pct": 18.4092,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 10.5,
+      "t_pre_s": 2.3144,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 19.7529,
+      "e_pre_j": 7848.2101,
+      "e_short_j": 39798.2259,
+      "cost": 13984.92
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 18.4,
+        "unit": "%",
+        "basis": "5.7004 MWh gross over 90% window; (90-2e)/90*5.7004-0.0684 >= 3.300 MWh gives e <= 18.4%"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "cell safety limit: above 3.75 V disconnect within 100 ms (4 scans + control cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s bus-ready minus 0.5 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 10.4,
+        "unit": "mA",
+        "basis": "self-discharge spread 0.9%/month at 35 C of 280 Ah, corrected in 8 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2854,
+        "unit": "A",
+        "basis": "below ~2854 A the 400 A gBat fuse pre-arcs slower than the cell short-time limit, so the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-2",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-29",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 99.36,
+      "chips_per_chain": 12,
+      "soc_error_pct": 10.4458,
+      "soc_anchor_pct": 0.3233,
+      "soc_offset_pct": 10.4373,
+      "soc_gain_pct": 0.27,
+      "soc_error_allowed_pct": 18.4092,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 10.5,
+      "t_pre_s": 2.3144,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 19.7529,
+      "e_pre_j": 7848.2101,
+      "e_short_j": 39798.2259,
+      "cost": 15234.28
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 107375,
+    "completion_tokens": 31630,
+    "cost": 1.0288306
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_015",
+   "trial": 1,
+   "seconds": 116.4,
+   "timestamp": "2026-10-27T07:39:53+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 3.06,
+        "unit": "%",
+        "basis": "Window may shrink from 80% to 80*(3.3+0.067)/(3.5789+0.067)=73.88%, i.e. 3.06% SOC error allowed at each end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 150 ms (datasheet safety limit)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7.5,
+        "unit": "s",
+        "basis": "DC bus ready in 8 s minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 17.7,
+        "unit": "mA",
+        "basis": "Self-discharge spread 1.04%/month at 25 C of 306 Ah = 0.106 Ah/day, recovered in 6 h of balancing per day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1450,
+        "unit": "A",
+        "basis": "Below about 1450 A the 315 A gBat fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break up to that current"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-1",
+      "mcu": "MCU-2",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-22",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "precharge into a shorted DC link 62696 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
+     ],
+     "metrics": {
+      "t_react_ms": 92.76,
+      "chips_per_chain": 12,
+      "soc_error_pct": 1.3583,
+      "soc_anchor_pct": 1.2769,
+      "soc_offset_pct": 0.3961,
+      "soc_gain_pct": 0.24,
+      "soc_error_allowed_pct": 3.0599,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 17.68,
+      "t_pre_s": 0.6336,
+      "t_pre_allowed_s": 7.5,
+      "i_pre_peak_a": 29.8213,
+      "e_pre_j": 4420.0858,
+      "e_short_j": 62696.2519,
+      "cost": 8056.95
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 3.06,
+        "unit": "%",
+        "basis": "Window may shrink from 80% to 80*(3.3+0.067)/(3.5789+0.067)=73.88%, i.e. 3.06% SOC error allowed at each end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 150 ms (datasheet safety limit)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7.5,
+        "unit": "s",
+        "basis": "DC bus ready in 8 s minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 17.7,
+        "unit": "mA",
+        "basis": "Self-discharge spread 1.04%/month at 25 C of 306 Ah = 0.106 Ah/day, recovered in 6 h of balancing per day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1450,
+        "unit": "A",
+        "basis": "Below about 1450 A the 315 A gBat fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break up to that current"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-1",
+      "mcu": "MCU-2",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-43",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 92.76,
+      "chips_per_chain": 12,
+      "soc_error_pct": 1.3583,
+      "soc_anchor_pct": 1.2769,
+      "soc_offset_pct": 0.3961,
+      "soc_gain_pct": 0.24,
+      "soc_error_allowed_pct": 3.0599,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 17.68,
+      "t_pre_s": 2.9658,
+      "t_pre_allowed_s": 7.5,
+      "i_pre_peak_a": 6.3709,
+      "e_pre_j": 4420.0858,
+      "e_short_j": 13394.1993,
+      "cost": 8241.6
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 97927,
+    "completion_tokens": 27622,
+    "cost": 0.9185606
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_016",
+   "trial": 1,
+   "seconds": 101.5,
+   "timestamp": "2026-10-27T07:41:34+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 3.34,
+        "unit": "%",
+        "basis": "Net EOL energy (3.0977 MWh gross x (80-2e)/80 - 0.089 MWh aux) must stay >= 2.750 MWh; SOC error e shrinks the 10-90% window at both ends"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 150 ms (datasheet safety limit), covering scans, MCU cycle and contactor opening"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 9.5,
+        "unit": "s",
+        "basis": "DC bus ready within 10 s of start command minus 0.5 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 34,
+        "unit": "mA",
+        "basis": "Self-discharge spread at 30 C ~1.44 %/month of 280 Ah, recovered within 4 h/day of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2976,
+        "unit": "A",
+        "basis": "Below ~2976 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break up to that current"
+       }
+      ],
+      "afe": "AFE-5",
+      "afe_per_module": 1,
+      "chains_per_rack": 1,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 34 mA does not follow from the data (derived 35.7 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 90.12,
+      "chips_per_chain": 24,
+      "soc_error_pct": 1.7327,
+      "soc_anchor_pct": 0.7182,
+      "soc_offset_pct": 1.5252,
+      "soc_gain_pct": 0.4,
+      "soc_error_allowed_pct": 3.3405,
+      "i_bal_ma": 300,
+      "i_bal_needed_ma": 35.7,
+      "t_pre_s": 2.8753,
+      "t_pre_allowed_s": 9.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 4812.9823,
+      "e_short_j": 13096.5504,
+      "cost": 11986.8
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 3.34,
+        "unit": "%",
+        "basis": "Net EOL energy (3.0977 MWh gross x (80-2e)/80 - 0.089 MWh aux) must stay >= 2.750 MWh; SOC error e shrinks the 10-90% window at both ends"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 150 ms (datasheet safety limit), covering scans, MCU cycle and contactor opening"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 9.5,
+        "unit": "s",
+        "basis": "DC bus ready within 10 s of start command minus 0.5 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 27.0,
+        "unit": "mA",
+        "basis": "Self-discharge spread at 30 C 1.02*2^0.5 = 1.44 %/month of 224.7 Ah EOL capacity, recovered within 4 h/day over 30 days"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2976,
+        "unit": "A",
+        "basis": "Below ~2976 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break up to that current"
+       }
+      ],
+      "afe": "AFE-5",
+      "afe_per_module": 1,
+      "chains_per_rack": 1,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 27 mA does not follow from the data (derived 35.7 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 90.12,
+      "chips_per_chain": 24,
+      "soc_error_pct": 1.7327,
+      "soc_anchor_pct": 0.7182,
+      "soc_offset_pct": 1.5252,
+      "soc_gain_pct": 0.4,
+      "soc_error_allowed_pct": 3.3405,
+      "i_bal_ma": 300,
+      "i_bal_needed_ma": 35.7,
+      "t_pre_s": 2.8753,
+      "t_pre_allowed_s": 9.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 4812.9823,
+      "e_short_j": 13096.5504,
+      "cost": 11986.8
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 3.34,
+        "unit": "%",
+        "basis": "Net EOL energy (3.0977 MWh gross x (80-2e)/80 - 0.089 MWh aux) must stay >= 2.750 MWh; SOC error e shrinks the 10-90% window at both ends"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 150 ms (datasheet safety limit), covering scans, MCU cycle and contactor opening"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 9.5,
+        "unit": "s",
+        "basis": "DC bus ready within 10 s of start command minus 0.5 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 28.65,
+        "unit": "mA",
+        "basis": "Self-discharge spread at 30 C (linear between 25 and 35 C) 1.53 %/month of 224.7 Ah EOL capacity, recovered within 4 h/day over 30 days"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2976,
+        "unit": "A",
+        "basis": "Below ~2976 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break up to that current"
+       }
+      ],
+      "afe": "AFE-5",
+      "afe_per_module": 1,
+      "chains_per_rack": 1,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 28.65 mA does not follow from the data (derived 35.7 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 90.12,
+      "chips_per_chain": 24,
+      "soc_error_pct": 1.7327,
+      "soc_anchor_pct": 0.7182,
+      "soc_offset_pct": 1.5252,
+      "soc_gain_pct": 0.4,
+      "soc_error_allowed_pct": 3.3405,
+      "i_bal_ma": 300,
+      "i_bal_needed_ma": 35.7,
+      "t_pre_s": 2.8753,
+      "t_pre_allowed_s": 9.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 4812.9823,
+      "e_short_j": 13096.5504,
+      "cost": 11986.8
+     }
+    }
+   ],
+   "python_calls": 3,
+   "usage": {
+    "prompt_tokens": 264866,
+    "completion_tokens": 54924,
+    "cost": 1.8288682
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_017",
+   "trial": 1,
+   "seconds": 154.0,
+   "timestamp": "2026-10-27T07:44:08+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 14.3,
+        "unit": "%",
+        "basis": "2.300 MWh net plus 0.0724 MWh aux out of 3.6937 MWh gross over the 10-90% window leaves a 51.38% SOC span; (80-51.38)/2 = 14.3% error per end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "Cell datasheet: above 3.75 V the cell must be disconnected within 150 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.0,
+        "unit": "s",
+        "basis": "5 s bus-ready time minus 1 s start sequence; one string alone charges the 4.8 mF bus to within 2%"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-4",
+        "value": 19.1,
+        "unit": "mA",
+        "basis": "1.66%/month self-discharge spread at 35 C x 280 Ah / 30.44 d, recovered in 8 h/day of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2750,
+        "unit": "A",
+        "basis": "Below about 2750 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit (1C = 280 A), so the contactor must break currents up to this level"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-2",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL parent 'SN-4' is not the stakeholder need it derives from (SN-1)"
+     ],
+     "metrics": {
+      "t_react_ms": 85.06,
+      "chips_per_chain": 12,
+      "soc_error_pct": 5.1935,
+      "soc_anchor_pct": 2.1278,
+      "soc_offset_pct": 4.7316,
+      "soc_gain_pct": 0.24,
+      "soc_error_allowed_pct": 14.3087,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 19.3667,
+      "t_pre_s": 2.8167,
+      "t_pre_allowed_s": 4.0,
+      "i_pre_peak_a": 8.9547,
+      "e_pre_j": 4330.047,
+      "e_short_j": 18041.8624,
+      "cost": 12445.0
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 14.3,
+        "unit": "%",
+        "basis": "2.300 MWh net plus 0.0724 MWh aux out of 3.6937 MWh gross over the 10-90% window leaves a 51.38% SOC span; (80-51.38)/2 = 14.3% error per end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "Cell datasheet: above 3.75 V the cell must be disconnected within 150 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.0,
+        "unit": "s",
+        "basis": "5 s bus-ready time minus 1 s start sequence; one string alone charges the 4.8 mF bus to within 2%"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 19.1,
+        "unit": "mA",
+        "basis": "Keeps cells aligned so the usable window holds: 1.66%/month self-discharge spread at 35 C x 280 Ah / 30.44 d, recovered in 8 h/day of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2750,
+        "unit": "A",
+        "basis": "Below about 2750 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit (1C = 280 A), so the contactor must break currents up to this level"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-2",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "cost 12445.00 is not within 5% of the best design that meets every constraint"
+     ],
+     "metrics": {
+      "t_react_ms": 85.06,
+      "chips_per_chain": 12,
+      "soc_error_pct": 5.1935,
+      "soc_anchor_pct": 2.1278,
+      "soc_offset_pct": 4.7316,
+      "soc_gain_pct": 0.24,
+      "soc_error_allowed_pct": 14.3087,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 19.3667,
+      "t_pre_s": 2.8167,
+      "t_pre_allowed_s": 4.0,
+      "i_pre_peak_a": 8.9547,
+      "e_pre_j": 4330.047,
+      "e_short_j": 18041.8624,
+      "cost": 12445.0
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 14.3,
+        "unit": "%",
+        "basis": "2.300 MWh net plus 0.0724 MWh aux out of 3.6937 MWh gross over the 10-90% window leaves a 51.38% SOC span; (80-51.38)/2 = 14.3% error per end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 150,
+        "unit": "ms",
+        "basis": "Cell datasheet: above 3.75 V the cell must be disconnected within 150 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.0,
+        "unit": "s",
+        "basis": "5 s bus-ready time minus 1 s start sequence; one string alone charges the 4.8 mF bus to within 2%"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 19.1,
+        "unit": "mA",
+        "basis": "Keeps cells aligned so the usable window holds: 1.66%/month self-discharge spread at 35 C x 280 Ah / 30.44 d, recovered in 8 h/day of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2750,
+        "unit": "A",
+        "basis": "Below about 2750 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit (1C = 280 A), so the contactor must break currents up to this level"
+       }
+      ],
+      "afe": "AFE-1",
+      "afe_per_module": 2,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 89.11,
+      "chips_per_chain": 23,
+      "soc_error_pct": 8.0188,
+      "soc_anchor_pct": 3.3278,
+      "soc_offset_pct": 7.2847,
+      "soc_gain_pct": 0.4,
+      "soc_error_allowed_pct": 14.3087,
+      "i_bal_ma": 60,
+      "i_bal_needed_ma": 19.3667,
+      "t_pre_s": 2.8167,
+      "t_pre_allowed_s": 4.0,
+      "i_pre_peak_a": 8.9547,
+      "e_pre_j": 4330.047,
+      "e_short_j": 18041.8624,
+      "cost": 11833.96
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 120776,
+    "completion_tokens": 46172,
+    "cost": 1.3804218000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_020",
+   "trial": 1,
+   "seconds": 193.8,
+   "timestamp": "2026-10-27T07:47:22+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 3.46,
+        "unit": "%",
+        "basis": "Usable window (80-2e)% of gross 2.4713 MWh minus 0.0572 MWh aux must reach 2.200 MWh, so e <= 3.46%"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 200 ms: 3 chain scans + MCU cycle + contactor opening <= 200 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4,
+        "unit": "s",
+        "basis": "DC bus ready in 5 s minus 1 s start sequence; precharge to 2% (3.91 RC) of 3.7 mF must finish within 4 s"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 80,
+        "unit": "mA",
+        "basis": "Self-discharge spread 1.71 %/month at 30 C x 280 Ah = 4.79 Ah/month, recovered in 2 h/day balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1810,
+        "unit": "A",
+        "basis": "Fuse pre-arcing time is faster than the cell short-time limit only above about 1810 A, so the contactor must break up to that current"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-12",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 80 mA does not follow from the data (derived 84.7 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 87.85,
+      "chips_per_chain": 12,
+      "soc_error_pct": 1.8473,
+      "soc_anchor_pct": 1.3375,
+      "soc_offset_pct": 1.2735,
+      "soc_gain_pct": 0.04,
+      "soc_error_allowed_pct": 3.4654,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 84.7,
+      "t_pre_s": 2.1712,
+      "t_pre_allowed_s": 4.0,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 3634.2927,
+      "e_short_j": 13096.5504,
+      "cost": 13132.68
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 3.46,
+        "unit": "%",
+        "basis": "Usable window (80-2e)% of gross 2.4713 MWh minus 0.0572 MWh aux must reach 2.200 MWh, so e <= 3.46%"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 200 ms: 3 chain scans + MCU cycle + contactor opening <= 200 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4,
+        "unit": "s",
+        "basis": "DC bus ready in 5 s minus 1 s start sequence; precharge to 2% (3.91 RC) of 3.7 mF must finish within 4 s"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 64,
+        "unit": "mA",
+        "basis": "Self-discharge spread 1.71 %/month at 30 C x 225.2 Ah EOL = 3.85 Ah/month, recovered in 2 h/day of balancing (30 days)"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1810,
+        "unit": "A",
+        "basis": "Fuse pre-arcing time is faster than the cell short-time limit only above about 1810 A, so the contactor must break up to that current"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-12",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 64 mA does not follow from the data (derived 84.7 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 87.85,
+      "chips_per_chain": 12,
+      "soc_error_pct": 1.8473,
+      "soc_anchor_pct": 1.3375,
+      "soc_offset_pct": 1.2735,
+      "soc_gain_pct": 0.04,
+      "soc_error_allowed_pct": 3.4654,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 84.7,
+      "t_pre_s": 2.1712,
+      "t_pre_allowed_s": 4.0,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 3634.2927,
+      "e_short_j": 13096.5504,
+      "cost": 13132.68
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 3.46,
+        "unit": "%",
+        "basis": "Usable window (80-2e)% of gross 2.4713 MWh minus 0.0572 MWh aux must reach 2.200 MWh, so e <= 3.46%"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell above 3.75 V must be disconnected within 200 ms: 3 chain scans + MCU cycle + contactor opening <= 200 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4,
+        "unit": "s",
+        "basis": "DC bus ready in 5 s minus 1 s start sequence; precharge to 2% (3.91 RC) of 3.7 mF must finish within 4 s"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-4",
+        "value": 80,
+        "unit": "mA",
+        "basis": "Self-discharge spread 1.71 %/month at 30 C x 280 Ah = 4.79 Ah/month must be removed in 2 h/day of balancing to keep cells from drifting toward their limits"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1810,
+        "unit": "A",
+        "basis": "Fuse pre-arcing time is faster than the cell short-time limit only above about 1810 A, so the contactor must break up to that current"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-12",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL parent 'SN-4' is not the stakeholder need it derives from (SN-1)",
+      "requirement R-BAL value 80 mA does not follow from the data (derived 84.7 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 87.85,
+      "chips_per_chain": 12,
+      "soc_error_pct": 1.8473,
+      "soc_anchor_pct": 1.3375,
+      "soc_offset_pct": 1.2735,
+      "soc_gain_pct": 0.04,
+      "soc_error_allowed_pct": 3.4654,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 84.7,
+      "t_pre_s": 2.1712,
+      "t_pre_allowed_s": 4.0,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 3634.2927,
+      "e_short_j": 13096.5504,
+      "cost": 13132.68
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 124241,
+    "completion_tokens": 39027,
+    "cost": 1.2542984000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_021",
+   "trial": 1,
+   "seconds": 137.5,
+   "timestamp": "2026-10-27T07:49:40+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 2.05,
+        "unit": "%",
+        "basis": "Needed gross 4.4658 vs 4.6918 MWh (aux 0.0658 fixed): window may shrink from 85% to 80.9%, error margin at both ends"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "Cell safety limit: above 3.75 V, disconnect within 100 ms (scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7,
+        "unit": "s",
+        "basis": "8 s to DC bus ready minus 1 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-4",
+        "value": 41,
+        "unit": "mA",
+        "basis": "Self-discharge spread 0.82%/month at 30 C x 300 Ah, balanced in 2 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2618,
+        "unit": "A",
+        "basis": "Below about 2618 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break it"
+       }
+      ],
+      "afe": "AFE-5",
+      "afe_per_module": 1,
+      "chains_per_rack": 1,
+      "current_sensor": "CS-12",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-43",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL parent 'SN-4' is not the stakeholder need it derives from (SN-1)",
+      "requirement R-BAL value 41 mA does not follow from the data (derived 43.5 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 79.84,
+      "chips_per_chain": 23,
+      "soc_error_pct": 1.4123,
+      "soc_anchor_pct": 0.1394,
+      "soc_offset_pct": 1.4047,
+      "soc_gain_pct": 0.0425,
+      "soc_error_allowed_pct": 2.0472,
+      "i_bal_ma": 300,
+      "i_bal_needed_ma": 43.5,
+      "t_pre_s": 3.493,
+      "t_pre_allowed_s": 7.0,
+      "i_pre_peak_a": 6.1055,
+      "e_pre_j": 4781.0935,
+      "e_short_j": 12301.2698,
+      "cost": 25020.24
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 2.05,
+        "unit": "%",
+        "basis": "Needed gross 4.4658 vs 4.6918 MWh (aux 0.0658 fixed): window may shrink from 85% to 80.9%, error margin at both ends"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "Cell safety limit: above 3.75 V, disconnect within 100 ms (scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7,
+        "unit": "s",
+        "basis": "8 s to DC bus ready minus 1 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 41,
+        "unit": "mA",
+        "basis": "Self-discharge spread 0.82%/month at 30 C x 300 Ah must be balanced in 2 h/day to keep usable energy"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2618,
+        "unit": "A",
+        "basis": "Below about 2618 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break it"
+       }
+      ],
+      "afe": "AFE-5",
+      "afe_per_module": 1,
+      "chains_per_rack": 1,
+      "current_sensor": "CS-12",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-43",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 41 mA does not follow from the data (derived 43.5 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 79.84,
+      "chips_per_chain": 23,
+      "soc_error_pct": 1.4123,
+      "soc_anchor_pct": 0.1394,
+      "soc_offset_pct": 1.4047,
+      "soc_gain_pct": 0.0425,
+      "soc_error_allowed_pct": 2.0472,
+      "i_bal_ma": 300,
+      "i_bal_needed_ma": 43.5,
+      "t_pre_s": 3.493,
+      "t_pre_allowed_s": 7.0,
+      "i_pre_peak_a": 6.1055,
+      "e_pre_j": 4781.0935,
+      "e_short_j": 12301.2698,
+      "cost": 25020.24
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 2.05,
+        "unit": "%",
+        "basis": "Needed gross 4.4658 vs 4.6918 MWh (aux 0.0658 fixed): window may shrink from 85% to 80.9%, error margin at both ends"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "Cell safety limit: above 3.75 V, disconnect within 100 ms (scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7,
+        "unit": "s",
+        "basis": "8 s to DC bus ready minus 1 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 34,
+        "unit": "mA",
+        "basis": "Self-discharge spread ~0.82-0.87%/month at 30 C x 240.9 Ah EOL over 30 days, recovered in 2 h/day of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2618,
+        "unit": "A",
+        "basis": "Below about 2618 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break it"
+       }
+      ],
+      "afe": "AFE-5",
+      "afe_per_module": 1,
+      "chains_per_rack": 1,
+      "current_sensor": "CS-12",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-43",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 34 mA does not follow from the data (derived 43.5 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 79.84,
+      "chips_per_chain": 23,
+      "soc_error_pct": 1.4123,
+      "soc_anchor_pct": 0.1394,
+      "soc_offset_pct": 1.4047,
+      "soc_gain_pct": 0.0425,
+      "soc_error_allowed_pct": 2.0472,
+      "i_bal_ma": 300,
+      "i_bal_needed_ma": 43.5,
+      "t_pre_s": 3.493,
+      "t_pre_allowed_s": 7.0,
+      "i_pre_peak_a": 6.1055,
+      "e_pre_j": 4781.0935,
+      "e_short_j": 12301.2698,
+      "cost": 25020.24
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 117902,
+    "completion_tokens": 40101,
+    "cost": 1.2484195999999999
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_025",
+   "trial": 1,
+   "seconds": 138.4,
+   "timestamp": "2026-10-27T07:51:58+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 5.6,
+        "unit": "%",
+        "basis": "2.2347 MWh gross needed of 2.5777 MWh over 10-95% window (86.7%); OCV-energy-weighted window shrink gives max +/-5.6% SOC error at each end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "cell above 3.75 V must be disconnected within 100 ms: worst-case scans + MCU cycle + contactor opening <= 100 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7,
+        "unit": "s",
+        "basis": "8 s to DC bus ready minus 1 s start sequence; precharge to within 2% (3.91 RC) of 2.3 mF bus by a single string"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 20.3,
+        "unit": "mA",
+        "basis": "1.74%/month self-discharge spread at 35 C x 280 Ah = 0.162 Ah/day corrected in 8 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2758,
+        "unit": "A",
+        "basis": "below ~2758 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-1",
+      "afe_per_module": 2,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 83.24,
+      "chips_per_chain": 25,
+      "soc_error_pct": 1.5331,
+      "soc_anchor_pct": 0.5205,
+      "soc_offset_pct": 1.378,
+      "soc_gain_pct": 0.425,
+      "soc_error_allowed_pct": 5.6552,
+      "i_bal_ma": 60,
+      "i_bal_needed_ma": 20.3,
+      "t_pre_s": 1.3496,
+      "t_pre_allowed_s": 7.0,
+      "i_pre_peak_a": 9.7333,
+      "e_pre_j": 2451.34,
+      "e_short_j": 14210.6667,
+      "cost": 5912.9
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 26263,
+    "completion_tokens": 16323,
+    "cost": 0.489303
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_028",
+   "trial": 1,
+   "seconds": 92.0,
+   "timestamp": "2026-10-27T07:53:30+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 7.23,
+        "unit": "%",
+        "basis": "Gross window energy 2.8717 MWh x (85-2e)/85 - 0.083 MWh aux >= 2.300 MWh gives e <= 7.23 % SOC at each end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V: scans + confirmation + MCU cycle + contactor opening <= 200 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7.5,
+        "unit": "s",
+        "basis": "DC bus ready within 8 s minus 0.5 s start sequence; single string charges 12.3 mF to within 2 %"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 20.6,
+        "unit": "mA",
+        "basis": "Self-discharge spread 0.49 %/month at 25 C x 251.9 Ah = 41 mAh/day, recovered in 2 h/day of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2370,
+        "unit": "A",
+        "basis": "Below about 2370 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-12",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-29",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 20.6 mA does not follow from the data (derived 25.64 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 91.0,
+      "chips_per_chain": 13,
+      "soc_error_pct": 1.5152,
+      "soc_anchor_pct": 0.8917,
+      "soc_offset_pct": 1.2243,
+      "soc_gain_pct": 0.0425,
+      "soc_error_allowed_pct": 7.2326,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 25.6433,
+      "t_pre_s": 3.272,
+      "t_pre_allowed_s": 7.5,
+      "i_pre_peak_a": 21.4706,
+      "e_pre_j": 13109.34,
+      "e_short_j": 47020.5882,
+      "cost": 11736.45
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 7.23,
+        "unit": "%",
+        "basis": "Gross window energy 2.8717 MWh x (85-2e)/85 - 0.083 MWh aux >= 2.300 MWh gives e <= 7.23 % SOC at each end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V: scans + confirmation + MCU cycle + contactor opening <= 200 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7.5,
+        "unit": "s",
+        "basis": "DC bus ready within 8 s minus 0.5 s start sequence; single string charges 12.3 mF to within 2 %"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 25.6,
+        "unit": "mA",
+        "basis": "Datasheet self-discharge spread 0.49 %/month at 25 C of rated 314 Ah = 51.3 mAh/day, recovered in 2 h/day of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2370,
+        "unit": "A",
+        "basis": "Below about 2370 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-12",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-29",
+      "balancing": "internal"
+     },
+     "passed": false,
+     "violations": [
+      "cost 11736.45 is not within 5% of the best design that meets every constraint"
+     ],
+     "metrics": {
+      "t_react_ms": 91.0,
+      "chips_per_chain": 13,
+      "soc_error_pct": 1.5152,
+      "soc_anchor_pct": 0.8917,
+      "soc_offset_pct": 1.2243,
+      "soc_gain_pct": 0.0425,
+      "soc_error_allowed_pct": 7.2326,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 25.6433,
+      "t_pre_s": 3.272,
+      "t_pre_allowed_s": 7.5,
+      "i_pre_peak_a": 21.4706,
+      "e_pre_j": 13109.34,
+      "e_short_j": 47020.5882,
+      "cost": 11736.45
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 7.23,
+        "unit": "%",
+        "basis": "Gross window energy 2.8717 MWh x (85-2e)/85 - 0.083 MWh aux >= 2.300 MWh gives e <= 7.23 % SOC at each end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V: scans + confirmation + MCU cycle + contactor opening <= 200 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7.5,
+        "unit": "s",
+        "basis": "DC bus ready within 8 s minus 0.5 s start sequence; single string charges 12.3 mF to within 2 %"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 25.6,
+        "unit": "mA",
+        "basis": "Datasheet self-discharge spread 0.49 %/month at 25 C of rated 314 Ah = 51.3 mAh/day, recovered in 2 h/day of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2370,
+        "unit": "A",
+        "basis": "Below about 2370 A the gBat 400 A fuse pre-arcing time exceeds the cell short-time limit, so the contactor must break up to there"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-2",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-29",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 87.16,
+      "chips_per_chain": 13,
+      "soc_error_pct": 4.4107,
+      "soc_anchor_pct": 1.4875,
+      "soc_offset_pct": 4.1445,
+      "soc_gain_pct": 0.255,
+      "soc_error_allowed_pct": 7.2326,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 25.6433,
+      "t_pre_s": 3.272,
+      "t_pre_allowed_s": 7.5,
+      "i_pre_peak_a": 21.4706,
+      "e_pre_j": 13109.34,
+      "e_short_j": 47020.5882,
+      "cost": 7749.17
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 127478,
+    "completion_tokens": 46075,
+    "cost": 1.4076448000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_030",
+   "trial": 1,
+   "seconds": 171.0,
+   "timestamp": "2026-10-27T07:56:21+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 2.42,
+        "unit": "%",
+        "basis": "Usable (3.450+0.053)/(3.6749+0.053) of the 10-90% window, OCV-weighted, with the SOC error applied at both ends"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell safety limit: disconnect within 200 ms above 3.75 V"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 7.5,
+        "unit": "s",
+        "basis": "8 s bus-ready minus the 0.5 s start sequence"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 9.45,
+        "unit": "mA",
+        "basis": "0.81%/month self-discharge spread at 25 C x 280 Ah / 30 d, recovered in 8 h/day of balancing"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 3580,
+        "unit": "A",
+        "basis": "Crossover of the gBat 400 A fuse curve with the cell short-time limit; below it the contactor must interrupt"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-10",
+      "mcu": "MCU-2",
+      "string_contactor": "K-3",
+      "precharge_resistor": "PR-42",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 86.82,
+      "chips_per_chain": 11,
+      "soc_error_pct": 1.8869,
+      "soc_anchor_pct": 1.3357,
+      "soc_offset_pct": 1.2714,
+      "soc_gain_pct": 0.4,
+      "soc_error_allowed_pct": 2.4132,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 9.45,
+      "t_pre_s": 4.7335,
+      "t_pre_allowed_s": 7.5,
+      "i_pre_peak_a": 5.84,
+      "e_pre_j": 4539.4554,
+      "e_short_j": 7503.232,
+      "cost": 11447.63
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 24503,
+    "completion_tokens": 13568,
+    "cost": 0.42013079999999997
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_032",
+   "trial": 1,
+   "seconds": 145.0,
+   "timestamp": "2026-10-27T07:58:46+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 4.2,
+        "unit": "%",
+        "basis": "Usable 2.447 MWh net of 0.0513 MWh aux over the 85% window; SOC error e cuts both ends: (2.4983*(85-2e)/85 - 0.0513) >= 2.200 MWh gives e <= 4.20%"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 100,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 100 ms above 3.75 V: worst-case scans plus MCU cycle plus contactor opening <= 100 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "PCS DC bus ready within 5 s less the 0.5 s start sequence; 2.5 mF to within 5% gives 3 tau <= 4.5 s"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 14.7,
+        "unit": "mA",
+        "basis": "Self-discharge spread 0.84%/month at 25 C of 314 Ah is 87.9 mAh/day, recovered in 6 h of balancing per day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 1839,
+        "unit": "A",
+        "basis": "Above about 1839 A (7 C at EOL 262.7 Ah) the 315 A gBat fuse clears before the cell short-time limit; below that the contactor must break"
+       }
+      ],
+      "afe": "AFE-3",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-42",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 77.92,
+      "chips_per_chain": 11,
+      "soc_error_pct": 1.4069,
+      "soc_anchor_pct": 0.3473,
+      "soc_offset_pct": 1.2955,
+      "soc_gain_pct": 0.425,
+      "soc_error_allowed_pct": 4.2019,
+      "i_bal_ma": 150,
+      "i_bal_needed_ma": 14.6533,
+      "t_pre_s": 1.6477,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 5.5745,
+      "e_pre_j": 1880.0712,
+      "e_short_j": 6836.6225,
+      "cost": 6087.29
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 22626,
+    "completion_tokens": 10176,
+    "cost": 0.3372514
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_035",
+   "trial": 1,
+   "seconds": 73.2,
+   "timestamp": "2026-10-27T07:59:59+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 3.02,
+        "unit": "%",
+        "basis": "Gross 5.0557 MWh (4.9818+0.0739 aux) must keep >=4.6739 MWh, so the 80% window may shrink by 6.04 points, i.e. 3.02% SOC error at each end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell safety limit: above 3.75 V disconnect within 200 ms (3 chain scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 9,
+        "unit": "s",
+        "basis": "DC bus ready within 10 s minus the 1 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 10.4,
+        "unit": "mA",
+        "basis": "Self-discharge spread 0.61%/month at 25 C x 306 Ah = 1.87 Ah/month, balanced in 30 days x 6 h"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2504,
+        "unit": "A",
+        "basis": "Below about 2504 A the 400 A gBat fuse pre-arcs slower than the cell short-time limit, so the contactor must break up to that current"
+       }
+      ],
+      "afe": "AFE-1",
+      "afe_per_module": 2,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-2",
+      "mcu": "MCU-2",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-43",
+      "balancing": "internal"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 86.38,
+      "chips_per_chain": 25,
+      "soc_error_pct": 2.6334,
+      "soc_anchor_pct": 2.5091,
+      "soc_offset_pct": 0.7626,
+      "soc_gain_pct": 0.24,
+      "soc_error_allowed_pct": 3.0207,
+      "i_bal_ma": 60,
+      "i_bal_needed_ma": 10.37,
+      "t_pre_s": 4.045,
+      "t_pre_allowed_s": 9.0,
+      "i_pre_peak_a": 6.6364,
+      "e_pre_j": 5009.26,
+      "e_short_j": 9689.0909,
+      "cost": 14449.29
+     }
+    }
+   ],
+   "python_calls": 3,
+   "usage": {
+    "prompt_tokens": 95561,
+    "completion_tokens": 23477,
+    "cost": 0.821436
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-opus-5-5",
+   "task": "bms4_038",
+   "trial": 1,
+   "seconds": 106.2,
+   "timestamp": "2026-10-27T08:01:46+00:00"
+  }
+ ]
+}

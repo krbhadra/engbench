@@ -28,7 +28,7 @@ Rules, as implemented (H = hidden: the brief never states it):
     at every current from the BMS trip to R-BRK. Contactor rated current >= string current, DC voltage >= string max.
   H5 Precharge: R C ln(1/delta) <= time allowed; V_max / R <= precharge relay peak; 1/2 C V_max^2 and
     V_max^2 / R x the abort check time (precharge into a shorted DC link) both <= the resistor pulse energy.
-  H6 Balancing: cell-to-cell self-discharge spread at the operating cell temperature (datasheet table)
+  H6 Balancing: cell-to-cell self-discharge spread at the operating cell temperature (datasheet table, read geometrically)
     x Ah / 30 days / balancing hours per day <= balancing current.
   Requirements: each record must exist, trace to an allowed parent, and its value must follow from the
     data: a maximum may be up to 20 % stricter and 2 % looser, a minimum up to 25 % stricter and 2 % looser.
@@ -119,8 +119,10 @@ def precharge_time_allowed(task):
 
 
 def balancing_needed_ma(task):
+    """Self-discharge doubles about every 10 K, so the table is read geometrically between its points (linear
+    interpolation of an exponential overstates it; found in the Opus 5.5 pilot, 2026-10-27)."""
     c, o = task["cell"], task["operations"]
-    spread = _interp(_table(c["self_discharge_spread_pct_month"]), o["cell_temp_c"])
+    spread = math.exp(_interp([(t, math.log(x)) for t, x in _table(c["self_discharge_spread_pct_month"])], o["cell_temp_c"]))
     return spread / 100 * c["q_ah"] / 30 / o["balancing_h_per_day"] * 1e3
 
 
@@ -227,7 +229,7 @@ def evaluate(task, d):
 
 # Test-lab feedback: what a test or review would observe, never the cause or the numbers. First prefix wins.
 SYMPTOMS = [
-    ("requirement ", None),  # names the record, as a reviewer would; resolved below
+    ("requirement ", None),  # names the record and what is wrong with it, as a reviewer would; resolved below
     ("monitoring channels", "Module inspection: some cell voltages or temperature sensors are not connected to any monitoring channel."),
     ("daisy chain", "Bench test: the monitoring daisy chain lost communication with the far end of the rack."),
     ("over-voltage reaction", "Overcharge fault-injection test: the string was disconnected too late; a cell stayed above its safety limit longer than the cell manufacturer allows."),
@@ -251,7 +253,9 @@ def symptom(violation, task=None):
         if violation.startswith(prefix):
             if prefix == "requirement ":
                 rid = violation.split()[1]
-                return f"Requirements review: {rid} is missing, traced to the wrong stakeholder need, or does not follow from the data."
+                what = ("is missing" if "missing" in violation else "is traced to the wrong stakeholder need" if "parent" in violation
+                        else "has a value that does not follow from the data")
+                return f"Requirements review: {rid} {what}."
             if prefix == "SOC error":
                 return ("FCR prequalification test after a week of operation: the plant ran out of reserve before the end of "
                         "the test call." if "FCR" in violation else
