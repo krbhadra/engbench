@@ -14290,5 +14290,8353 @@
     "expect": "fuse"
    }
   ]
+ },
+ "bms4_001": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 18.12,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 200,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 4.0,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 23.205,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 2738.4565,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-3",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-5",
+   "mcu": "MCU-2",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-29",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.12,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 23.205,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 18.12,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 23.205,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2738.4565,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.12,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 11.6025,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2738.4565,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.12,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 23.205,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2738.4565,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-41",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.12,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 23.205,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2738.4565,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.12,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 23.205,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2738.4565,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.12,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 23.205,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2738.4565,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-18",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.12,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 23.205,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2738.4565,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-1",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "MCU"
+   }
+  ]
+ },
+ "bms4_008": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 1.4095,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 100,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 4.5,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 11.1863,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 840.7761,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-4",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-1",
+   "mcu": "MCU-2",
+   "string_contactor": "K-1",
+   "precharge_resistor": "PR-42",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 1.4095,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 11.1863,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 1.4095,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 11.1863,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 840.7761,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 1.4095,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 7.4575,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 840.7761,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 1.4095,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 11.1863,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 840.7761,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-41",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 1.4095,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 11.1863,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 840.7761,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-4",
+     "string_contactor": "K-5",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 1.4095,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 11.1863,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 840.7761,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 1.4095,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 11.1863,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 840.7761,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 1.4095,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 11.1863,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 840.7761,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-41",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 1.4095,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 11.1863,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 840.7761,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "MCU"
+   }
+  ]
+ },
+ "bms4_010": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 5.9227,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 150,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 9.0,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 85.565,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 1421.7093,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-3",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-1",
+   "mcu": "MCU-3",
+   "string_contactor": "K-1",
+   "precharge_resistor": "PR-29",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.9227,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 85.565,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 5.9227,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 85.565,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1421.7093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 6.0878,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 85.565,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1421.7093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.9227,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 57.0433,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1421.7093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.9227,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 85.565,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1421.7093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-26",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.9227,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 85.565,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1421.7093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-29",
+     "balancing": "BAL-1"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.9227,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 85.565,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1421.7093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.9227,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 85.565,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1421.7093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-33",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.9227,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 85.565,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1421.7093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "balancing"
+   }
+  ]
+ },
+ "bms4_012": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 5.205,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 150,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 7.0,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 31.1383,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 1417.1093,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-1",
+   "afe_per_module": 2,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-1",
+   "mcu": "MCU-2",
+   "string_contactor": "K-1",
+   "precharge_resistor": "PR-43",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.205,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 31.1383,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 5.205,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 31.1383,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1417.1093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.329,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 31.1383,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1417.1093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.205,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 20.7589,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1417.1093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.205,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 31.1383,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1417.1093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-36",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.205,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 31.1383,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1417.1093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.205,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 31.1383,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1417.1093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.205,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 31.1383,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1417.1093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.205,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 31.1383,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1417.1093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.205,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 31.1383,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1417.1093,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-27",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   }
+  ]
+ },
+ "bms4_013": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 2.7417,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 100,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 4.5,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 24.5778,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 1687.1143,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-3",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-12",
+   "mcu": "MCU-3",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-42",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7417,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 24.5778,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 2.7417,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 24.5778,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1687.1143,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7417,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 12.2889,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1687.1143,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7417,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 24.5778,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1687.1143,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-11",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7417,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 24.5778,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1687.1143,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7417,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 24.5778,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1687.1143,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7417,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 24.5778,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1687.1143,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7417,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 24.5778,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1687.1143,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-11",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7417,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 24.5778,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1687.1143,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-17",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   }
+  ]
+ },
+ "bms4_014": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 2.7822,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 100,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 9.5,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 147.0,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 2545.8699,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-4",
+   "afe_per_module": 1,
+   "chains_per_rack": 3,
+   "current_sensor": "CS-2",
+   "mcu": "MCU-4",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-42",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 147.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 3,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-4",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 147.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2545.8699,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 3,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-4",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 73.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2545.8699,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 3,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-4",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 147.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2545.8699,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-6",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 147.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2545.8699,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-2",
+     "afe_per_module": 2,
+     "chains_per_rack": 3,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-4",
+     "string_contactor": "K-5",
+     "precharge_resistor": "PR-42",
+     "balancing": "BAL-1"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 147.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2545.8699,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 147.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2545.8699,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 147.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2545.8699,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 147.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2545.8699,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "over-voltage"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 147.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2545.8699,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 147.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2545.8699,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 3,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-4",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-22",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 147.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2545.8699,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 3,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-1",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "MCU"
+   }
+  ]
+ },
+ "bms4_015": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 18.4092,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 100,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 4.5,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 10.5,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 2864.4548,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-3",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-2",
+   "mcu": "MCU-2",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-29",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.4092,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 18.4092,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2864.4548,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.4092,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 5.25,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2864.4548,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.4092,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2864.4548,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-31",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.4092,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2864.4548,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.4092,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2864.4548,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.4092,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2864.4548,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.4092,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2864.4548,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.4092,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2864.4548,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-27",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   }
+  ]
+ },
+ "bms4_016": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 3.0599,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 150,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 7.5,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 17.68,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 1451.6365,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-3",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-9",
+   "mcu": "MCU-2",
+   "string_contactor": "K-1",
+   "precharge_resistor": "PR-43",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0599,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 17.68,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 3.0599,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 17.68,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1451.6365,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0599,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 17.68,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1451.6365,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-31",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0599,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 17.68,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1451.6365,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0599,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 17.68,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1451.6365,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0599,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 17.68,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1451.6365,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-22",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0599,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 17.68,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1451.6365,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "MCU"
+   }
+  ]
+ },
+ "bms4_017": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 3.3405,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 150,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 9.5,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 35.7,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 2986.7018,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-3",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-9",
+   "mcu": "MCU-3",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-38",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.3405,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 35.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 3.3405,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 35.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2986.7018,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.4394,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 35.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2986.7018,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.3405,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 23.8,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2986.7018,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.3405,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 35.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2986.7018,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-16",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.3405,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 35.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2986.7018,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-2",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.3405,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 35.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2986.7018,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.3405,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 35.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2986.7018,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.3405,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 35.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2986.7018,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-27",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   }
+  ]
+ },
+ "bms4_020": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 14.3087,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 150,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 4.0,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 19.3667,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 2753.5076,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-1",
+   "afe_per_module": 2,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-9",
+   "mcu": "MCU-2",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-38",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 14.3087,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 19.3667,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 14.3087,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 19.3667,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2753.5076,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 14.3087,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.6833,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2753.5076,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 14.3087,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 19.3667,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2753.5076,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-36",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 14.3087,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 19.3667,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2753.5076,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 14.3087,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 19.3667,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2753.5076,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 14.3087,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 19.3667,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2753.5076,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 14.3087,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 19.3667,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2753.5076,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 14.3087,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 19.3667,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2753.5076,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-27",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 14.3087,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 19.3667,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2753.5076,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-1",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "MCU"
+   }
+  ]
+ },
+ "bms4_021": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 3.4654,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 200,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 4.0,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 84.7,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 1817.1087,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-3",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-12",
+   "mcu": "MCU-2",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-38",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.4654,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 84.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 3.4654,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 84.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1817.1087,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.5475,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 84.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1817.1087,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.4654,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 56.4667,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1817.1087,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.4654,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 84.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1817.1087,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-6",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.4654,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 84.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1817.1087,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.4654,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 84.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1817.1087,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.4654,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 84.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1817.1087,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.4654,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 84.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1817.1087,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.4654,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 84.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1817.1087,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-27",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.4654,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 84.7,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1817.1087,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-1",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "MCU"
+   }
+  ]
+ },
+ "bms4_025": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 2.0472,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 100,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 7.0,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 43.5,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 2621.0678,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-1",
+   "afe_per_module": 2,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-12",
+   "mcu": "MCU-2",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-43",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.0472,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 43.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 2.0472,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 43.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2621.0678,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.0472,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 29.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2621.0678,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.0472,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 43.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2621.0678,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-1",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.0472,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 43.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2621.0678,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.0472,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 43.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2621.0678,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.0472,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 43.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2621.0678,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.0472,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 43.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2621.0678,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.0472,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 43.5,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2621.0678,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-22",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   }
+  ]
+ },
+ "bms4_028": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 5.6552,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 100,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 7.0,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 20.3,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 2780.8349,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-1",
+   "afe_per_module": 2,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-9",
+   "mcu": "MCU-3",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-38",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 20.3,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 20.3,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2780.8349,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.15,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2780.8349,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 20.3,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2780.8349,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-26",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 20.3,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2780.8349,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 20.3,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2780.8349,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 20.3,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2780.8349,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 20.3,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2780.8349,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-26",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   }
+  ]
+ },
+ "bms4_030": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 7.2326,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 200,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 7.5,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 25.6433,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 2366.1786,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-3",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-10",
+   "mcu": "MCU-2",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-29",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 7.2326,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 25.6433,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-10",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 7.2326,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 25.6433,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2366.1786,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-10",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 7.4478,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 25.6433,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2366.1786,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-10",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 7.2326,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 25.6433,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2366.1786,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-41",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 7.2326,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 25.6433,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2366.1786,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-10",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 7.2326,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 25.6433,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2366.1786,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 7.2326,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 25.6433,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2366.1786,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 7.2326,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 25.6433,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2366.1786,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-10",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 7.2326,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 25.6433,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2366.1786,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-10",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   }
+  ]
+ },
+ "bms4_032": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 2.4132,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 200,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 7.5,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 9.45,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 3594.9033,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-3",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-10",
+   "mcu": "MCU-2",
+   "string_contactor": "K-3",
+   "precharge_resistor": "PR-42",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.4132,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.45,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-10",
+     "mcu": "MCU-2",
+     "string_contactor": "K-3",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 2.4132,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.45,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 3594.9033,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-10",
+     "mcu": "MCU-2",
+     "string_contactor": "K-3",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.4132,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.45,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 3594.9033,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-21",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.4132,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.45,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 3594.9033,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-10",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.4132,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.45,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 3594.9033,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-6",
+     "mcu": "MCU-2",
+     "string_contactor": "K-3",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.4132,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.45,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 3594.9033,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.4132,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.45,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 3594.9033,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-10",
+     "mcu": "MCU-2",
+     "string_contactor": "K-3",
+     "precharge_resistor": "PR-37",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.4132,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.45,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 3594.9033,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-10",
+     "mcu": "MCU-1",
+     "string_contactor": "K-3",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "MCU"
+   }
+  ]
+ },
+ "bms4_035": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 4.2019,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 100,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 4.5,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 14.6533,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 1509.1278,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-3",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-9",
+   "mcu": "MCU-2",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-42",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 4.2019,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 14.6533,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 4.2019,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 14.6533,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1509.1278,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 4.2899,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 14.6533,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1509.1278,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 4.2019,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 14.6533,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1509.1278,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-26",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 4.2019,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 14.6533,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1509.1278,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 4.2019,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 14.6533,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1509.1278,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 4.2019,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 14.6533,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1509.1278,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 4.2019,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 14.6533,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1509.1278,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-26",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   }
+  ]
+ },
+ "bms4_038": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 3.0207,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 200,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 9.0,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 10.37,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 2517.9497,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-1",
+   "afe_per_module": 2,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-9",
+   "mcu": "MCU-2",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-43",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0207,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.37,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 3.0207,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.37,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2517.9497,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0207,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.37,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2517.9497,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-26",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0207,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.37,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2517.9497,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0207,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.37,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2517.9497,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0207,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.37,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2517.9497,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 3.0207,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 10.37,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2517.9497,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-17",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   }
+  ]
  }
 }

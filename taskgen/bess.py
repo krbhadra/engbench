@@ -79,7 +79,12 @@ def _pert(rng, x, lo=0.9, hi=1.1, nd=0):
 
 
 def make_task(seed: int, level: int = 2) -> dict | None:
-    rng = random.Random(seed if level == 2 else f"bess3-{seed}")  # level 3 draws its own plants
+    task = draft(random.Random(seed if level == 2 else f"bess3-{seed}"), seed, level)  # level 3 draws its own plants
+    return _finish(task, seed, level)
+
+
+def draft(rng, seed: int, level: int) -> dict:
+    """The plant's requirements, site, cell and catalogs before optimization (level 4 reuses the level-3 draft)."""
     duration_h = rng.choice([1, 2, 2, 4])
     p_req = rng.choice([1.0, 1.5, 2.0, 2.5, 3.0, 4.0])
     params = {
@@ -120,7 +125,10 @@ def make_task(seed: int, level: int = 2) -> dict | None:
             "cooling_units": cooling, "k_temp": K_TEMP, "k_group": K_GROUP, "k_tx_ambient": K_TX_AMBIENT}
     if level == 3:
         _add_level3(task, rng, seed)
+    return task
 
+
+def _finish(task, seed, level):
     best, feasible, grid = _optimize(task)
     if best is None:
         return None

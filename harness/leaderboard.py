@@ -13,7 +13,7 @@ PRIVATE_DIR = RESULTS_DIR.parent / "results_private"  # held-out seeds; only pas
 TRACKS = ("single-shot", "agentic")
 # The ladder (VISION.md): each level's published points; score = sum of points x pass rate at that level.
 LEVEL_POINTS = {1: 15, 2: 20, 3: 15, 4: 20, 5: 15, 6: 15}
-LEVEL_OF_FAMILY = {"mech": 1, "elec": 1, "comb": 1, "pe_cooling": 1, "coolant_loop": 1, "bess": 2, "bess3": 3}
+LEVEL_OF_FAMILY = {"mech": 1, "elec": 1, "comb": 1, "pe_cooling": 1, "coolant_loop": 1, "bess": 2, "bess3": 3, "bms4": 4}
 
 
 def family(task_id):

@@ -23,7 +23,9 @@ MARK = {"single-shot": "S", "agentic": "A"}
 TRACK_NOTE = {"single-shot": "one answer, no tools",
               "agentic": "passes within 3 test rounds; run_python + a test-lab report of what failed, not why"}
 DISCIPLINES = {"mech": "mechanical", "elec": "electrical", "comb": "mechanical + electrical",
-               "pe_cooling": "electronics + thermal + fluids", "coolant_loop": "thermal + fluids"}
+               "pe_cooling": "electronics + thermal + fluids", "coolant_loop": "thermal + fluids",
+               "bess": "storage system, standards named", "bess3": "storage system, hidden requirements",
+               "bms4": "BMS + protection subsystem"}
 
 
 def family(task_id):

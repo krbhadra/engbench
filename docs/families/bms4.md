@@ -1,4 +1,4 @@
-# bms4: battery management and protection, level 4 (draft for author review)
+# bms4: battery management and protection, level 4
 
 The system team hands over a plant that closes at level 3: cells, string and
 rack layout, PCS, string fuse, cables, duty and grid service. The task is the
@@ -64,9 +64,11 @@ track, private held-out seeds for the official score.
 ## Graded requirements (the derivation the model must write down)
 
 Each record needs the right ID, the right parent stakeholder need, and a value
-within 5 % of the solver's derivation on the strict side (a requirement looser
-than the derivation fails; a stricter one is allowed but costs money through
-the design). Missing records fail. The `basis` text is not graded.
+that follows from the data: a maximum may be up to 20 % stricter than the
+solver's derivation and 2 % looser (rounding); a minimum up to 25 % stricter
+and 2 % looser. A stricter requirement is a defensible engineering choice that
+costs money through the design; a looser one is wrong. Missing records fail.
+The `basis` text is not graded.
 
 | ID | Quantity | Parent | Derived from |
 |---|---|---|---|
@@ -76,7 +78,7 @@ the design). Missing records fail. The `basis` text is not graded.
 | R-BAL | min balancing current, mA | SN-1 | self-discharge spread at the hottest operating temperature, rest time per day |
 | R-BRK | min DC breaking current of the string switch, A | protection | the current up to which the fuse does not clear within the BMS reaction time |
 
-## Hidden requirements (proposed; for author review)
+## Hidden requirements (author review: accepted 2026-10-27)
 
 | # | Hidden requirement | Data in the task | Check |
 |---|---|---|---|
@@ -91,6 +93,35 @@ the design). Missing records fail. The `basis` text is not graded.
 Objective: lowest BMS and protection cost per plant, optimum by brute force;
 the strict design within 5 %. A seed is kept only if at least three hidden
 requirements bind.
+
+## As implemented (decisions taken while building, 2026-10-27)
+
+- **Plant handover.** The level-3 optimum of a fresh draft plus one rack: the
+  system team's allowance for measurement error. Without it the optimum has
+  almost no energy slack and no BMS could close. R-SOC follows from that slack:
+  (E_poi + E_aux)(W − 2e)/W − E_aux ≥ E_req.
+- **SOC error** is the root sum of squares of anchor, offset and gain (the
+  least strict defensible combination). The anchor uses the steeper table
+  segment at the recalibration SOC, and recalibration is at the top of the
+  window after a 30-minute rest, as the brief states.
+- **Current sensors** include dual-channel Hall parts (a fine channel for
+  coulomb counting, a coarse one for faults), because H4 needs the BMS to
+  measure up to R-BRK while H1 needs a small offset.
+- **H4, least strict reading.** R-BRK is the lowest current from which the fuse
+  alone clears within the cell's short-time limit at every higher current. The
+  BMS hands over to the fuse there, so the contactor must break R-BRK, the
+  sensor must reach it, and MCU cycle plus contactor opening must be within the
+  cell limit at every current from the overcurrent trip up to R-BRK.
+- **H5.** The firmware checks the bus voltage a fixed time after precharge
+  starts, so a shorted DC link puts V²/R × that time into the resistor. That,
+  and ½ C V² for a normal precharge, must fit the resistor's pulse rating; the
+  relay peak sets a minimum resistance and the time allowed a maximum.
+- **Filter samples, overcurrent trip level and precharge thresholds** are fixed
+  by the firmware team in the brief, not chosen by the model.
+- **Contactor breaking** uses the manufacturer's DC breaking current at
+  1500 V; no IEC 60947-4-1 utilization category on top.
+- **FCR recalibration interval** is drawn from 3, 5, 7, 10 or 14 days; energy
+  plants recalibrate daily.
 
 ## Coupling to the plant
 
@@ -107,13 +138,7 @@ call."
    path, IEC 62619 BMS requirements) is left out of v1, because a SIL target
    from a risk graph needs parameters the task would have to give, and the
    architecture rules are hard to grade fairly. It is proposed for v2.
-2. **SOC error model.** Is offset × time + gain × throughput + anchor error
-   the defensible minimum, or does your practice add temperature or hysteresis
-   terms for LFP?
-3. **Recalibration in FCR.** What interval is realistic in German FCR duty
-   (a forced full charge every N days)? The generator would draw from a range
-   you set.
-4. **Trip chain.** Is the filter sample count a model choice (fewer samples
-   mean faster trips and more nuisance trips), or fixed by the task?
-5. **Contactor breaking.** Use the manufacturer's DC breaking current at
-   voltage, or require an IEC 60947-4-1 DC utilization category on top?
+2. **SOC error model.** v1 uses anchor + offset + gain; LFP hysteresis and
+   temperature terms are not modelled. Defaults above were taken without the
+   author's answer to the SOC, recalibration, filter and contactor questions;
+   revisit when reviewing the first tasks.
