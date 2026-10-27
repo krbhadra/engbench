@@ -128,18 +128,20 @@ def balancing_needed_ma(task):
 
 def breaking_needed(task):
     """R-BRK: the lowest current from which the string fuse alone clears within the cell's short-time limit
-    at every higher current. Below it the contactor must break."""
+    at every higher current (to the top of the fuse table). Below it the contactor must break."""
     pl, c = task["plant"], task["cell"]
     fuse, i_n = pl["fuse_curve_s"], pl["fuse_i_n"]
     lo, hi = task["firmware"]["oc_trip_a"], max(float(k) for k in fuse) * i_n
+    ok = lambda i: _loglog(fuse, i / i_n) <= _loglog(c["pulse_limit_s"], i / c["q_ah"])  # noqa: E731
     grid = [lo * (hi / lo) ** (k / 400) for k in range(401)]
-    ok = [_loglog(fuse, i / i_n) <= _loglog(c["pulse_limit_s"], i / c["q_ah"]) for i in grid]
-    need = hi
-    for i, good in zip(reversed(grid), reversed(ok)):
-        if not good:
-            break
-        need = i
-    return need
+    bad = [i for i in grid if not ok(i)]
+    if not bad:
+        return lo
+    a, b = max(bad), next((i for i in grid if i > max(bad)), hi)  # last failing grid point, first passing above it
+    for _ in range(60):  # bisect the crossing
+        m = (a + b) / 2
+        a, b = (m, b) if not ok(m) else (a, m)
+    return b
 
 
 def coordination(task, contactor, mcu, hand_over=None):
@@ -156,9 +158,10 @@ def coordination(task, contactor, mcu, hand_over=None):
         limit = _loglog(c["pulse_limit_s"], i / c["q_ah"])
         if t_bms > limit * (1 + 1e-9):
             bad.append((i, t_bms, limit))
-    if contactor["i_break_a"] < hand_over * (1 - 1e-9):
-        i = contactor["i_break_a"] * 1.0001
-        bad.append((i, _loglog(fuse, i / i_n), _loglog(c["pulse_limit_s"], i / c["q_ah"])))
+    if contactor["i_break_a"] < hand_over * (1 - 1e-9):  # the fuse alone must cover every current above the contactor
+        grid = [contactor["i_break_a"] * (hand_over / contactor["i_break_a"]) ** (k / 200) for k in range(201)]
+        bad += [(i, _loglog(fuse, i / i_n), lim) for i in grid
+                if _loglog(fuse, i / i_n) > (lim := _loglog(c["pulse_limit_s"], i / c["q_ah"])) * (1 + 1e-9)]
     return bad
 
 

@@ -14325,7 +14325,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 2738.4565,
+     "value": 2732.5337,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -14417,7 +14417,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2738.4565,
+       "value": 2732.5337,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -14467,7 +14467,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2738.4565,
+       "value": 2732.5337,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -14517,7 +14517,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2738.4565,
+       "value": 2732.5337,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -14567,7 +14567,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2738.4565,
+       "value": 2732.5337,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -14617,7 +14617,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2738.4565,
+       "value": 2732.5337,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -14667,7 +14667,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2738.4565,
+       "value": 2732.5337,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -14717,7 +14717,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2738.4565,
+       "value": 2732.5337,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -14769,7 +14769,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 840.7761,
+     "value": 840.2037,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -14861,7 +14861,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 840.7761,
+       "value": 840.2037,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -14911,7 +14911,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 840.7761,
+       "value": 840.2037,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -14961,7 +14961,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 840.7761,
+       "value": 840.2037,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15011,7 +15011,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 840.7761,
+       "value": 840.2037,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15061,7 +15061,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 840.7761,
+       "value": 840.2037,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15111,7 +15111,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 840.7761,
+       "value": 840.2037,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15161,7 +15161,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 840.7761,
+       "value": 840.2037,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15211,7 +15211,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 840.7761,
+       "value": 840.2037,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15263,7 +15263,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 1421.7093,
+     "value": 1413.9102,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -15355,7 +15355,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1421.7093,
+       "value": 1413.9102,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15405,7 +15405,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1421.7093,
+       "value": 1413.9102,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15455,7 +15455,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1421.7093,
+       "value": 1413.9102,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15505,7 +15505,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1421.7093,
+       "value": 1413.9102,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15555,7 +15555,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1421.7093,
+       "value": 1413.9102,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15605,7 +15605,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1421.7093,
+       "value": 1413.9102,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15655,7 +15655,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1421.7093,
+       "value": 1413.9102,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15705,7 +15705,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1421.7093,
+       "value": 1413.9102,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15757,7 +15757,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 1417.1093,
+     "value": 1404.8131,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -15849,7 +15849,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1417.1093,
+       "value": 1404.8131,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15899,7 +15899,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1417.1093,
+       "value": 1404.8131,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15949,7 +15949,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1417.1093,
+       "value": 1404.8131,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -15999,7 +15999,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1417.1093,
+       "value": 1404.8131,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16049,7 +16049,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1417.1093,
+       "value": 1404.8131,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16099,7 +16099,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1417.1093,
+       "value": 1404.8131,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16149,7 +16149,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1417.1093,
+       "value": 1404.8131,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16199,7 +16199,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1417.1093,
+       "value": 1404.8131,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16249,7 +16249,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1417.1093,
+       "value": 1404.8131,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16301,7 +16301,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 1687.1143,
+     "value": 1680.5263,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -16393,7 +16393,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1687.1143,
+       "value": 1680.5263,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16443,7 +16443,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1687.1143,
+       "value": 1680.5263,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16493,7 +16493,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1687.1143,
+       "value": 1680.5263,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16543,7 +16543,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1687.1143,
+       "value": 1680.5263,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16593,7 +16593,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1687.1143,
+       "value": 1680.5263,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16643,7 +16643,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1687.1143,
+       "value": 1680.5263,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16693,7 +16693,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1687.1143,
+       "value": 1680.5263,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16743,7 +16743,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1687.1143,
+       "value": 1680.5263,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16795,7 +16795,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 2545.8699,
+     "value": 2527.6652,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -16887,7 +16887,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2545.8699,
+       "value": 2527.6652,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16937,7 +16937,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2545.8699,
+       "value": 2527.6652,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -16987,7 +16987,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2545.8699,
+       "value": 2527.6652,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17037,7 +17037,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2545.8699,
+       "value": 2527.6652,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17087,7 +17087,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2545.8699,
+       "value": 2527.6652,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17137,7 +17137,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2545.8699,
+       "value": 2527.6652,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17187,7 +17187,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2545.8699,
+       "value": 2527.6652,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17237,7 +17237,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2545.8699,
+       "value": 2527.6652,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17287,7 +17287,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2545.8699,
+       "value": 2527.6652,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17337,7 +17337,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2545.8699,
+       "value": 2527.6652,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17387,7 +17387,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2545.8699,
+       "value": 2527.6652,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17439,7 +17439,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 2864.4548,
+     "value": 2853.3442,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -17531,7 +17531,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2864.4548,
+       "value": 2853.3442,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17581,7 +17581,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2864.4548,
+       "value": 2853.3442,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17631,7 +17631,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2864.4548,
+       "value": 2853.3442,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17681,7 +17681,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2864.4548,
+       "value": 2853.3442,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17731,7 +17731,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2864.4548,
+       "value": 2853.3442,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17781,7 +17781,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2864.4548,
+       "value": 2853.3442,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17831,7 +17831,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2864.4548,
+       "value": 2853.3442,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17881,7 +17881,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2864.4548,
+       "value": 2853.3442,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -17933,7 +17933,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 1451.6365,
+     "value": 1446.1915,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -18025,7 +18025,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1451.6365,
+       "value": 1446.1915,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18075,7 +18075,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1451.6365,
+       "value": 1446.1915,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18125,7 +18125,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1451.6365,
+       "value": 1446.1915,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18175,7 +18175,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1451.6365,
+       "value": 1446.1915,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18225,7 +18225,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1451.6365,
+       "value": 1446.1915,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18275,7 +18275,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1451.6365,
+       "value": 1446.1915,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18327,7 +18327,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 2986.7018,
+     "value": 2975.5863,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -18419,7 +18419,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2986.7018,
+       "value": 2975.5863,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18469,7 +18469,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2986.7018,
+       "value": 2975.5863,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18519,7 +18519,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2986.7018,
+       "value": 2975.5863,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18569,7 +18569,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2986.7018,
+       "value": 2975.5863,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18619,7 +18619,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2986.7018,
+       "value": 2975.5863,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18669,7 +18669,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2986.7018,
+       "value": 2975.5863,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18719,7 +18719,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2986.7018,
+       "value": 2975.5863,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18769,7 +18769,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2986.7018,
+       "value": 2975.5863,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18821,7 +18821,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 2753.5076,
+     "value": 2750.2475,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -18913,7 +18913,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2753.5076,
+       "value": 2750.2475,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -18963,7 +18963,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2753.5076,
+       "value": 2750.2475,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19013,7 +19013,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2753.5076,
+       "value": 2750.2475,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19063,7 +19063,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2753.5076,
+       "value": 2750.2475,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19113,7 +19113,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2753.5076,
+       "value": 2750.2475,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19163,7 +19163,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2753.5076,
+       "value": 2750.2475,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19213,7 +19213,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2753.5076,
+       "value": 2750.2475,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19263,7 +19263,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2753.5076,
+       "value": 2750.2475,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19313,7 +19313,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2753.5076,
+       "value": 2750.2475,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19365,7 +19365,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 1817.1087,
+     "value": 1809.1628,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -19457,7 +19457,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1817.1087,
+       "value": 1809.1628,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19507,7 +19507,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1817.1087,
+       "value": 1809.1628,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19557,7 +19557,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1817.1087,
+       "value": 1809.1628,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19607,7 +19607,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1817.1087,
+       "value": 1809.1628,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19657,7 +19657,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1817.1087,
+       "value": 1809.1628,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19707,7 +19707,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1817.1087,
+       "value": 1809.1628,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19757,7 +19757,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1817.1087,
+       "value": 1809.1628,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19807,7 +19807,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1817.1087,
+       "value": 1809.1628,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19857,7 +19857,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1817.1087,
+       "value": 1809.1628,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19907,7 +19907,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 1817.1087,
+       "value": 1809.1628,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -19959,7 +19959,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 2621.0678,
+     "value": 2617.4924,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -20051,7 +20051,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2621.0678,
+       "value": 2617.4924,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20101,7 +20101,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2621.0678,
+       "value": 2617.4924,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20151,7 +20151,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2621.0678,
+       "value": 2617.4924,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20201,7 +20201,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2621.0678,
+       "value": 2617.4924,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20251,7 +20251,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2621.0678,
+       "value": 2617.4924,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20301,7 +20301,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2621.0678,
+       "value": 2617.4924,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20351,7 +20351,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2621.0678,
+       "value": 2617.4924,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20401,7 +20401,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2621.0678,
+       "value": 2617.4924,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20453,7 +20453,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 2780.8349,
+     "value": 2757.5877,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -20545,7 +20545,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2780.8349,
+       "value": 2757.5877,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20595,7 +20595,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2780.8349,
+       "value": 2757.5877,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20645,7 +20645,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2780.8349,
+       "value": 2757.5877,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20695,7 +20695,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2780.8349,
+       "value": 2757.5877,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20745,7 +20745,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2780.8349,
+       "value": 2757.5877,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20795,7 +20795,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2780.8349,
+       "value": 2757.5877,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20845,7 +20845,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2780.8349,
+       "value": 2757.5877,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -20897,7 +20897,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 2366.1786,
+     "value": 2361.9591,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -20989,7 +20989,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2366.1786,
+       "value": 2361.9591,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21039,7 +21039,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2366.1786,
+       "value": 2361.9591,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21089,7 +21089,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2366.1786,
+       "value": 2361.9591,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21139,7 +21139,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2366.1786,
+       "value": 2361.9591,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21189,7 +21189,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2366.1786,
+       "value": 2361.9591,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21239,7 +21239,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2366.1786,
+       "value": 2361.9591,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21289,7 +21289,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2366.1786,
+       "value": 2361.9591,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21339,7 +21339,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2366.1786,
+       "value": 2361.9591,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21391,7 +21391,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 3594.9033,
+     "value": 3568.5055,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -21483,7 +21483,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 3594.9033,
+       "value": 3568.5055,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21533,7 +21533,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 3594.9033,
+       "value": 3568.5055,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21583,7 +21583,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 3594.9033,
+       "value": 3568.5055,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21633,7 +21633,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 3594.9033,
+       "value": 3568.5055,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21683,7 +21683,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 3594.9033,
+       "value": 3568.5055,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21733,7 +21733,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 3594.9033,
+       "value": 3568.5055,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21783,7 +21783,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 3594.9033,
+       "value": 3568.5055,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -21798,450 +21798,6 @@
      "balancing": "internal"
     },
     "expect": "MCU"
-   }
-  ]
- },
- "bms4_035": {
-  "golden": {
-   "requirements": [
-    {
-     "id": "R-SOC",
-     "parent": "SN-1",
-     "value": 4.2019,
-     "unit": "%",
-     "basis": "SOC error"
-    },
-    {
-     "id": "R-TRIP",
-     "parent": "SN-4",
-     "value": 100,
-     "unit": "ms",
-     "basis": "over-voltage disconnect time"
-    },
-    {
-     "id": "R-PRE",
-     "parent": "SN-3",
-     "value": 4.5,
-     "unit": "s",
-     "basis": "precharge time"
-    },
-    {
-     "id": "R-BAL",
-     "parent": "SN-1",
-     "value": 14.6533,
-     "unit": "mA",
-     "basis": "balancing current"
-    },
-    {
-     "id": "R-BRK",
-     "parent": "SN-4",
-     "value": 1509.1278,
-     "unit": "A",
-     "basis": "contactor DC breaking current"
-    }
-   ],
-   "afe": "AFE-3",
-   "afe_per_module": 1,
-   "chains_per_rack": 2,
-   "current_sensor": "CS-9",
-   "mcu": "MCU-2",
-   "string_contactor": "K-2",
-   "precharge_resistor": "PR-42",
-   "balancing": "internal"
-  },
-  "broken": [
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 4.2019,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 14.6533,
-       "unit": "mA",
-       "basis": "balancing current"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-2",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-42",
-     "balancing": "internal"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-3",
-       "value": 4.2019,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 14.6533,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 1509.1278,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-2",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-42",
-     "balancing": "internal"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 4.2899,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 14.6533,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 1509.1278,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-2",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-42",
-     "balancing": "internal"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 4.2019,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 14.6533,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 1509.1278,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      }
-     ],
-     "afe": "AFE-1",
-     "afe_per_module": 2,
-     "chains_per_rack": 1,
-     "current_sensor": "CS-4",
-     "mcu": "MCU-1",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-26",
-     "balancing": "internal"
-    },
-    "expect": "daisy"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 4.2019,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 14.6533,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 1509.1278,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      }
-     ],
-     "afe": "AFE-5",
-     "afe_per_module": 1,
-     "chains_per_rack": 1,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-4",
-     "string_contactor": "K-6",
-     "precharge_resistor": "PR-42",
-     "balancing": "internal"
-    },
-    "expect": "cost"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 4.2019,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 14.6533,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 1509.1278,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-5",
-     "mcu": "MCU-2",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-42",
-     "balancing": "internal"
-    },
-    "expect": "SOC"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 4.2019,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 14.6533,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 1509.1278,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-2",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-42",
-     "balancing": "internal"
-    },
-    "expect": "overcurrent"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 4.2019,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 14.6533,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 1509.1278,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-2",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-26",
-     "balancing": "internal"
-    },
-    "expect": "precharge"
    }
   ]
  },
@@ -22279,7 +21835,7 @@
     {
      "id": "R-BRK",
      "parent": "SN-4",
-     "value": 2517.9497,
+     "value": 2504.0201,
      "unit": "A",
      "basis": "contactor DC breaking current"
     }
@@ -22371,7 +21927,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2517.9497,
+       "value": 2504.0201,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -22421,7 +21977,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2517.9497,
+       "value": 2504.0201,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -22471,7 +22027,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2517.9497,
+       "value": 2504.0201,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -22521,7 +22077,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2517.9497,
+       "value": 2504.0201,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -22571,7 +22127,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2517.9497,
+       "value": 2504.0201,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -22621,7 +22177,7 @@
       {
        "id": "R-BRK",
        "parent": "SN-4",
-       "value": 2517.9497,
+       "value": 2504.0201,
        "unit": "A",
        "basis": "contactor DC breaking current"
       }
@@ -22633,6 +22189,500 @@
      "mcu": "MCU-2",
      "string_contactor": "K-2",
      "precharge_resistor": "PR-17",
+     "balancing": "internal"
+    },
+    "expect": "precharge"
+   }
+  ]
+ },
+ "bms4_039": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 2.2008,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 150,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 7.5,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 134.0,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 2630.7134,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    }
+   ],
+   "afe": "AFE-3",
+   "afe_per_module": 1,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-9",
+   "mcu": "MCU-3",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-38",
+   "balancing": "internal"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.2008,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 134.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 2.2008,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 134.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2630.7134,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.2477,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 134.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2630.7134,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.2008,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 67.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2630.7134,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.2008,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 134.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2630.7134,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-21",
+     "balancing": "internal"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.2008,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 134.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2630.7134,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-2",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-4",
+     "string_contactor": "K-5",
+     "precharge_resistor": "PR-38",
+     "balancing": "BAL-1"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.2008,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 134.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2630.7134,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.2008,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 134.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2630.7134,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.2008,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 134.0,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2630.7134,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-32",
      "balancing": "internal"
     },
     "expect": "precharge"
