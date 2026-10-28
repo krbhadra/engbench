@@ -14338,7 +14338,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 85.9056,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -15337,7 +15340,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 149.1688,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -16269,7 +16275,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 84.108,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -17402,7 +17411,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 36.39,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -18334,7 +18346,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 153.8588,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -19333,7 +19348,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 267.2824,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -20332,7 +20350,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 102.152,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -21465,7 +21486,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 28.2764,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -22330,7 +22354,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 64.164,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -23396,7 +23423,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 196.7,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -24663,7 +24693,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 172.8212,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -25930,7 +25963,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 51.048,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -26795,7 +26831,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 83.412,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -27794,7 +27833,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 72.4292,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -28927,7 +28969,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 55.5568,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -30194,7 +30239,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 119.5325,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"
@@ -31327,7 +31375,10 @@
     },
     {
      "id": "R-IMD",
-     "parent": "SN-4",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 55.5292,
      "unit": "uF",
      "basis": "insulation monitor system capacitance rating"

@@ -219,6 +219,10 @@ def parents(task):
             "R-PRE": {"SN-3"}, "R-BAL": {"SN-1", "SN-4"}, "R-BRK": {"SN-4"}, "R-RIDE": {"SN-6"}, "R-IMD": {"SN-4", "SN-6"}}
 
 
+# needs a record must name together: insulation monitoring serves safety and the connection and installation rules (author)
+ALL_PARENTS = {"R-IMD"}
+
+
 def check_requirements(task, records):
     v = []
     if not isinstance(records, list):
@@ -232,9 +236,13 @@ def check_requirements(task, records):
             continue
         p = r.get("parent", "")
         named = {str(x).strip().upper() for x in (p if isinstance(p, list) else [p])}  # one need or several
+        join = " and " if rid in ALL_PARENTS else " or "
         if not named or not named <= allowed[rid]:
             v.append(f"requirement {rid} parent '{p}' is not the stakeholder need it derives from "
-                     f"({' and/or '.join(sorted(allowed[rid]))})")
+                     f"({join.join(sorted(allowed[rid]))})")
+        elif rid in ALL_PARENTS and named != allowed[rid]:
+            v.append(f"requirement {rid} parent '{p}' does not name every stakeholder need it derives from "
+                     f"({join.join(sorted(allowed[rid]))})")
         try:
             x = float(r.get("value"))
         except (TypeError, ValueError):
@@ -309,7 +317,8 @@ def symptom(violation, task=None):
         if violation.startswith(prefix):
             if prefix == "requirement ":
                 rid = violation.split()[1]
-                what = ("is missing" if "missing" in violation else "is traced to the wrong stakeholder need" if "parent" in violation
+                what = ("is missing" if "missing" in violation else "does not name every stakeholder need it serves" if "every stakeholder" in violation
+                        else "is traced to the wrong stakeholder need" if "parent" in violation
                         else "has a value that does not follow from the data")
                 return f"Requirements review: {rid} {what}."
             if prefix == "SOC error":

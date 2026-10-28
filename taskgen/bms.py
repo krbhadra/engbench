@@ -200,7 +200,7 @@ def make_task(seed: int) -> dict | None:
 
 def golden_requirements(task):
     want = bms.derived(task)
-    return [{"id": rid, "parent": sorted(bms.parents(task)[rid])[0], "value": round(want[rid], 4),
+    return [{"id": rid, "parent": sorted(bms.parents(task)[rid]) if rid in bms.ALL_PARENTS else sorted(bms.parents(task)[rid])[0], "value": round(want[rid], 4),
              "unit": bms.REQUIREMENTS[rid][1], "basis": bms.REQUIREMENTS[rid][0]} for rid in bms.REQUIREMENTS]
 
 
@@ -348,7 +348,8 @@ def describe(t):
         "  SN-4: safety of cells, equipment and people at all times, including faults, installation and maintenance; "
         "cells within the cell manufacturer's safety limits.\n"
         "  SN-5: lowest BMS and protection cost for the plant.\n"
-        "  SN-6: compliance with the network operator's connection letter and technical connection rules.\n\n"
+        "  SN-6: compliance with the network operator's connection letter and technical connection rules, and with the VDE "
+        "installation standards that apply to the plant.\n\n"
         "Handover from the system team (end of life where it matters):\n"
         f"  {pl['strings_parallel']} strings (one per rack) of {pl['cells_series']} cells in series: {pl['modules_per_string']} "
         f"modules of {pl['module_cells']} cells, {pl['ntc_per_module']} temperature sensors per module.\n"
