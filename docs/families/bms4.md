@@ -25,7 +25,8 @@ track, private held-out seeds for the official score.
   start-up time, string fuse with its time-current table, string current at
   rated power, usable-energy margin left in the design).
 - **Stakeholder needs with IDs** (SN-1 usable energy and duration, SN-2 FCR
-  power if any, SN-3 availability or start-up time, SN-4 cost).
+  power if any, SN-3 start-up time, SN-4 safety of cells, equipment and
+  people, SN-5 cost, SN-6 the network operator's connection rules).
 - **Cell datasheet:** OCV-SOC table, voltage and temperature limits with
   allowed exceedance time, self-discharge at temperature with lot spread,
   operating temperature range.
@@ -63,7 +64,9 @@ track, private held-out seeds for the official score.
 
 ## Graded requirements (the derivation the model must write down)
 
-Each record needs the right ID, the right parent stakeholder need, and a value
+Each record needs the right ID, the right parent stakeholder need (one, or a
+list when a requirement serves several; every need named must be a valid
+parent), and a value
 that follows from the data: a maximum may be up to 20 % stricter than the
 solver's derivation and 2 % looser (rounding); a minimum up to 25 % stricter
 and 2 % looser. A stricter requirement is a defensible engineering choice that
@@ -78,7 +81,7 @@ The `basis` text is not graded.
 | R-BAL | min balancing current, mA | SN-1 | self-discharge spread at the hottest operating temperature, rest time per day |
 | R-BRK | min DC breaking current of the string switch, A | SN-4 | the lowest current from which the fuse alone clears within the cell's short-time limit |
 | R-RIDE | min bridging time of the rack's 24 V, s | SN-6 | the operator's fault sequence with a reclose onto the fault, against the power supply's minimum input voltage and hold-up |
-| R-IMD | min system capacitance rating of the insulation monitor, uF | SN-4 | earth capacitance of every rack, PCS and DC conductor on the one IT system |
+| R-IMD | min system capacitance rating of the insulation monitor, uF | SN-4 and/or SN-6 | earth capacitance of every rack, PCS and DC conductor on the one IT system |
 
 ## Hidden requirements (author review: accepted 2026-10-27)
 
@@ -140,6 +143,14 @@ checked and dropped: about 2 W per rack and 0.03 % of plant energy, too small
 to be honest difficulty. A kept task now needs four distinct hidden
 requirements binding (was three). R-BAL may trace to SN-1 or SN-4 (author,
 2026-10-27).
+
+Insulation monitoring serves several needs at once: cell and equipment
+safety, the safety of people during installation and operation, and the
+connection rules and VDE installation standards. The author ruled
+(2026-10-28) that all of them are correct parents. SN-4 now names people and
+installation explicitly, R-IMD accepts SN-4, SN-6 or both, and every record
+may name several parents. Re-graded under that rule, the Opus 5.5 pilot
+stays at 12/17 within three rounds; first designs go from 5/17 to 7/17.
 
 Sources for H8: VDE FNN, TCR medium voltage (VDE-AR-N 4110) overview, 2017,
 dynamic grid support for type 2 units (ride through repeated faults and

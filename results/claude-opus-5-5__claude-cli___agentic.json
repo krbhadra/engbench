@@ -12296,97 +12296,6 @@
       "imd_location": "plant",
       "imd": "IMD-2"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-IMD parent 'SN-6' is not the stakeholder need it derives from (SN-4)"
-     ],
-     "metrics": {
-      "t_react_ms": 111.85,
-      "chips_per_chain": 13,
-      "soc_error_pct": 11.2348,
-      "soc_anchor_pct": 2.0562,
-      "soc_offset_pct": 11.0378,
-      "soc_gain_pct": 0.4,
-      "soc_error_allowed_pct": 18.1415,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 46.24,
-      "t_pre_s": 5.2066,
-      "t_pre_allowed_s": 9.5,
-      "i_pre_peak_a": 6.6364,
-      "e_pre_j": 8419.82,
-      "e_short_j": 9689.0909,
-      "rack_w": 10.8,
-      "t_ride_s": 2.46,
-      "hold_j": 50,
-      "c_system_uf": 84.108,
-      "cost": 10786.04
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 18.1,
-        "unit": "%",
-        "basis": "Window 10+e..90-e, OCV-weighted, must still give 2.200 MWh plus 0.0317 MWh aux out of 4.0839 MWh gross at end of life: e <= 18.16%"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V: 6 chain scans + MCU cycle + contactor opening <= 200 ms"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 9.5,
-        "unit": "s",
-        "basis": "Bus ready 10 s after start minus 0.5 s start sequence; one string charges 7.9 mF to within 5%"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 46.2,
-        "unit": "mA",
-        "basis": "Self-discharge spread 2.72%/month at 35 C x 306 Ah / 30 d / 6 h balancing per day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 2788,
-        "unit": "A",
-        "basis": "Fuse pre-arcing slower than the cell short-time limit (1C = 283.1 A) up to about 2788 A, so the contactor must break up to there"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.46,
-        "unit": "s",
-        "basis": "Each dip is below 70% for 0.15+1.1 s, less 20 ms PSU hold-up = 1.23 s; two dips with reclose and no recharge assumed"
-       },
-       {
-        "id": "R-IMD",
-        "parent": "SN-4",
-        "value": 84.1,
-        "unit": "uF",
-        "basis": "One galvanically connected IT system through the unearthed LV winding: 15x1.58 + 2x30 + 15x160 m x 0.17 nF = 84.1 uF"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-10",
-      "mcu": "MCU-3",
-      "string_contactor": "K-2",
-      "precharge_resistor": "PR-43",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-2"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -12495,7 +12404,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-IMD parent 'SN-6' is not the stakeholder need it derives from (SN-4)"
+      "cost 8066.72 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 82.95,
@@ -12785,7 +12694,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-IMD parent 'SN-6' is not the stakeholder need it derives from (SN-4)"
+      "cost 24944.12 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 72.14,
@@ -13056,97 +12965,6 @@
        {
         "id": "R-IMD",
         "parent": "SN-6",
-        "value": 267.3,
-        "unit": "uF",
-        "basis": "one IT system (transformerless PCS, unearthed shared winding): 34x1.23 + 5x45 + 34x40mx2x0.17nF uF"
-       }
-      ],
-      "afe": "AFE-4",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-3"
-     },
-     "passed": false,
-     "violations": [
-      "requirement R-IMD parent 'SN-6' is not the stakeholder need it derives from (SN-4)"
-     ],
-     "metrics": {
-      "t_react_ms": 84.27,
-      "chips_per_chain": 12,
-      "soc_error_pct": 9.7889,
-      "soc_anchor_pct": 0.2036,
-      "soc_offset_pct": 9.7764,
-      "soc_gain_pct": 0.45,
-      "soc_error_allowed_pct": 21.3208,
-      "i_bal_ma": 200,
-      "i_bal_needed_ma": 70.1267,
-      "t_pre_s": 3.9094,
-      "t_pre_allowed_s": 4.5,
-      "i_pre_peak_a": 9.344,
-      "e_pre_j": 8545.4991,
-      "e_short_j": 6548.2752,
-      "rack_w": 8.8,
-      "t_ride_s": 4.86,
-      "hold_j": 50,
-      "c_system_uf": 267.2824,
-      "cost": 21319.81
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 21.3,
-        "unit": "%",
-        "basis": "4.6+0.0929 aux MWh needed of 8.9184 MWh gross over 90% window -> window >=47.36%, SOC error <=(90-47.36)/2 at each end"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "cell datasheet: above 3.75 V disconnect within 200 ms, covering scans x3(+1), control cycle and contactor opening"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 4.5,
-        "unit": "s",
-        "basis": "5 s to DC bus ready minus 0.5 s start sequence; bus within 5% needs 3RC with 8.7 mF per PCS charged by one string"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-4",
-        "value": 70.1,
-        "unit": "mA",
-        "basis": "self-discharge spread 2.68%/month at 35 C x 314 Ah / 30 d / 4 h balancing per day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 853,
-        "unit": "A",
-        "basis": "below ~853 A the 250 A gBat fuse pre-arcing time exceeds the cell short-time limit, so contactor must break up to there"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 4.86,
-        "unit": "s",
-        "basis": "each dip keeps aux below 70% for 0.2+2.25 s minus 20 ms PSU hold-up = 2.43 s, two dips (reclose) without assured recharge"
-       },
-       {
-        "id": "R-IMD",
-        "parent": "SN-4",
         "value": 267.3,
         "unit": "uF",
         "basis": "one IT system (transformerless PCS, unearthed shared winding): 34x1.23 + 5x45 + 34x40mx2x0.17nF uF"
@@ -13469,8 +13287,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-RIDE value 1.1675 s does not follow from the data (derived 2.335 s, minimum)",
-      "requirement R-IMD parent 'SN-6' is not the stakeholder need it derives from (SN-4)"
+      "requirement R-RIDE value 1.1675 s does not follow from the data (derived 2.335 s, minimum)"
      ],
      "metrics": {
       "t_react_ms": 109.1,
@@ -14551,7 +14368,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-IMD parent 'SN-6' is not the stakeholder need it derives from (SN-4)"
+      "cost 12458.16 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 104.92,
@@ -15250,8 +15067,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 34 mA does not follow from the data (derived 36.3 mA, minimum)",
-      "requirement R-IMD parent 'SN-6' is not the stakeholder need it derives from (SN-4)"
+      "requirement R-BAL value 34 mA does not follow from the data (derived 36.3 mA, minimum)"
      ],
      "metrics": {
       "t_react_ms": 108.5,

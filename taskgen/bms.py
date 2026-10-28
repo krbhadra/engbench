@@ -345,7 +345,8 @@ def describe(t):
         f"margin) at end of service life, {pl['duration_h']} h duration, within the cell manufacturer's recommended SOC window.\n"
         + (f"  SN-2: prequalification for frequency containment reserve (FCR) in Germany with {pl['fcr_mw']:g} MW, symmetric.\n" if fcr else "")
         + f"  SN-3: DC bus of a PCS ready within {n['dc_ready_s']:g} s of a start command.\n"
-        "  SN-4: cells operated within the cell manufacturer's safety limits at all times, including faults.\n"
+        "  SN-4: safety of cells, equipment and people at all times, including faults, installation and maintenance; "
+        "cells within the cell manufacturer's safety limits.\n"
         "  SN-5: lowest BMS and protection cost for the plant.\n"
         "  SN-6: compliance with the network operator's connection letter and technical connection rules.\n\n"
         "Handover from the system team (end of life where it matters):\n"
@@ -433,7 +434,7 @@ def describe(t):
     )
 
 
-OUTPUT_SHAPE = ('{"requirements": [{"id": "R-SOC", "parent": "SN-<n>", "value": <number>, "unit": "%", "basis": "<one line>"}, ...], '
+OUTPUT_SHAPE = ('{"requirements": [{"id": "R-SOC", "parent": "SN-<n>" or ["SN-<n>", ...], "value": <number>, "unit": "%", "basis": "<one line>"}, ...], '
                 '"afe": "<id>", "afe_per_module": <int>, "chains_per_rack": <int>, "current_sensor": "<id>", "mcu": "<id>", '
                 '"string_contactor": "<id>", "precharge_resistor": "<id>", "balancing": "internal" or "<id>", '
                 '"hold_up": "none" or "<id>", "imd_location": "rack" or "plant", "imd": "<id>"}')

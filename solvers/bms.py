@@ -216,7 +216,7 @@ def derived(task):
 
 def parents(task):
     return {"R-SOC": {"SN-1", "SN-2"} if "fcr_mw" in task["plant"] else {"SN-1"}, "R-TRIP": {"SN-4"},
-            "R-PRE": {"SN-3"}, "R-BAL": {"SN-1", "SN-4"}, "R-BRK": {"SN-4"}, "R-RIDE": {"SN-6"}, "R-IMD": {"SN-4"}}
+            "R-PRE": {"SN-3"}, "R-BAL": {"SN-1", "SN-4"}, "R-BRK": {"SN-4"}, "R-RIDE": {"SN-6"}, "R-IMD": {"SN-4", "SN-6"}}
 
 
 def check_requirements(task, records):
@@ -230,9 +230,11 @@ def check_requirements(task, records):
         if r is None:
             v.append(f"requirement {rid} ({quantity}) is missing")
             continue
-        if str(r.get("parent", "")).strip().upper() not in allowed[rid]:
-            v.append(f"requirement {rid} parent '{r.get('parent')}' is not the stakeholder need it derives from "
-                     f"({' or '.join(sorted(allowed[rid]))})")
+        p = r.get("parent", "")
+        named = {str(x).strip().upper() for x in (p if isinstance(p, list) else [p])}  # one need or several
+        if not named or not named <= allowed[rid]:
+            v.append(f"requirement {rid} parent '{p}' is not the stakeholder need it derives from "
+                     f"({' and/or '.join(sorted(allowed[rid]))})")
         try:
             x = float(r.get("value"))
         except (TypeError, ValueError):
