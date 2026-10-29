@@ -13430,7 +13430,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 21.5 mA does not follow from the data (derived 23.2 mA, minimum)",
       "requirement R-BRK parent '['SN-4', 'SN-6']' is not the stakeholder need it derives from (SN-4)",
       "precharge into a shorted DC link 96891 J before the 1.5 s check exceeds the resistor pulse rating 20000 J"
      ],
@@ -13443,7 +13442,7 @@
       "soc_gain_pct": 0.425,
       "soc_error_allowed_pct": 18.12,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 23.205,
+      "i_bal_needed_ma": 21.4305,
       "t_pre_s": 1.4459,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 44.2424,
@@ -13528,104 +13527,6 @@
       "imd_location": "plant",
       "imd": "IMD-2"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 21.4 mA does not follow from the data (derived 23.2 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 83.23,
-      "chips_per_chain": 13,
-      "soc_error_pct": 2.1336,
-      "soc_anchor_pct": 1.5818,
-      "soc_offset_pct": 1.3673,
-      "soc_gain_pct": 0.425,
-      "soc_error_allowed_pct": 18.12,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 23.205,
-      "t_pre_s": 2.9794,
-      "t_pre_allowed_s": 7.0,
-      "i_pre_peak_a": 21.4706,
-      "e_pre_j": 11936.96,
-      "e_short_j": 47020.5882,
-      "rack_w": 9.8,
-      "t_ride_s": 2.78,
-      "hold_j": 50,
-      "c_system_uf": 85.9056,
-      "cost": 15508.24
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": [
-         "SN-1"
-        ],
-        "value": 18.1,
-        "unit": "%",
-        "basis": "Window 85% minus 3.4500 MWh+0.0567 MWh aux share of 6.0563 MWh gives about 48.8% needed, so 36.2% spare split over two ends is 18.1% each"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 7,
-        "unit": "s",
-        "basis": "8 s PCS DC bus ready minus 1 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-4",
-        "value": 23.2,
-        "unit": "mA",
-        "basis": "1.82%/month of 306 Ah cell capacity at 35 C spread, 30 day month, per day over 8 h balancing time"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 2750,
-        "unit": "A",
-        "basis": "Current above which FU-5 pre-arcing is faster than cell short-time limit (1C=306 A) so fuse takes over; contactor must break up to it"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": [
-         "SN-6"
-        ],
-        "value": 2.78,
-        "unit": "s",
-        "basis": "Double fault sequence keeps voltage below 60% until 2.8 s, less 20 ms PSU hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 85.9,
-        "unit": "uF",
-        "basis": "Total leakage capacitance of the galvanically connected plant: 21x1.2 + 3x20 + cables 0.7 uF"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-2",
-      "string_contactor": "K-2",
-      "precharge_resistor": "PR-29",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-2"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -13637,7 +13538,7 @@
       "soc_gain_pct": 0.425,
       "soc_error_allowed_pct": 18.12,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 23.205,
+      "i_bal_needed_ma": 21.4305,
       "t_pre_s": 2.9794,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 21.4706,
@@ -13737,7 +13638,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 21.4 mA does not follow from the data (derived 23.2 mA, minimum)",
       "precharge into a shorted DC link 96891 J before the 1.5 s check exceeds the resistor pulse rating 20000 J"
      ],
      "metrics": {
@@ -13749,7 +13649,7 @@
       "soc_gain_pct": 0.85,
       "soc_error_allowed_pct": 18.12,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 23.205,
+      "i_bal_needed_ma": 21.4305,
       "t_pre_s": 1.4459,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 44.2424,
@@ -13841,7 +13741,7 @@
       "soc_gain_pct": 0.85,
       "soc_error_allowed_pct": 18.12,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 23.205,
+      "i_bal_needed_ma": 21.4305,
       "t_pre_s": 2.9794,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 21.4706,
@@ -13951,7 +13851,6 @@
      "passed": false,
      "violations": [
       "requirement R-SOC parent '['SN-1', 'SN-4']' is not the stakeholder need it derives from (SN-1)",
-      "requirement R-BAL value 21.1 mA does not follow from the data (derived 23.2 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 96891 J before the 1.5 s check exceeds the resistor pulse rating 20000 J"
      ],
@@ -13964,7 +13863,7 @@
       "soc_gain_pct": 0.425,
       "soc_error_allowed_pct": 18.12,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 23.205,
+      "i_bal_needed_ma": 21.4305,
       "t_pre_s": 1.4459,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 44.2424,
@@ -14045,100 +13944,6 @@
       "imd_location": "plant",
       "imd": "IMD-2"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 22.3 mA does not follow from the data (derived 23.2 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 83.23,
-      "chips_per_chain": 13,
-      "soc_error_pct": 2.1336,
-      "soc_anchor_pct": 1.5818,
-      "soc_offset_pct": 1.3673,
-      "soc_gain_pct": 0.425,
-      "soc_error_allowed_pct": 18.12,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 23.205,
-      "t_pre_s": 6.5722,
-      "t_pre_allowed_s": 7.0,
-      "i_pre_peak_a": 9.7333,
-      "e_pre_j": 11936.96,
-      "e_short_j": 21316.0,
-      "rack_w": 9.8,
-      "t_ride_s": 2.78,
-      "hold_j": 50,
-      "c_system_uf": 85.9056,
-      "cost": 15531.97
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 18.3,
-        "unit": "%",
-        "basis": "Window 5-90% holds 6.0563 MWh net; 3.450 MWh needs 57% of it, so the 43% reserve split over both ends gives 18.3% SOC error (OCV-energy weighted)"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V: 3 scans + MCU cycle + contactor opening time must fit"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 7,
-        "unit": "s",
-        "basis": "8 s bus-ready limit minus 1 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 23.2,
-        "unit": "mA",
-        "basis": "1.82%/month spread at 35 C of 306 Ah = 5.57 Ah/month, corrected within 30 d x 8 h/day = 240 h of balancing"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 2740,
-        "unit": "A",
-        "basis": "Fuse FU-5 pre-arcing time is shorter than the cell short-time limit (1C=306 A) only above about 2740 A, so the contactor must break up to there"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.78,
-        "unit": "s",
-        "basis": "Supply below 60% from t=0 to 2.80 s through the reclose sequence, minus 20 ms PSU hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 85.9,
-        "unit": "uF",
-        "basis": "Plant is one galvanically coupled IT network: 21x1.2 + 3x20 + 21x80 m x2 x0.21 nF/m = 85.9 uF, one IMD for the plant"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-2",
-      "string_contactor": "K-2",
-      "precharge_resistor": "PR-39",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-2"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -14150,7 +13955,7 @@
       "soc_gain_pct": 0.425,
       "soc_error_allowed_pct": 18.12,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 23.205,
+      "i_bal_needed_ma": 21.4305,
       "t_pre_s": 6.5722,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 9.7333,
@@ -14260,112 +14065,6 @@
       "imd_location": "plant",
       "imd": "IMD-2"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 75.4 mA does not follow from the data (derived 90.01 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 121.85,
-      "chips_per_chain": 12,
-      "soc_error_pct": 1.3612,
-      "soc_anchor_pct": 0.1798,
-      "soc_offset_pct": 1.272,
-      "soc_gain_pct": 0.45,
-      "soc_error_allowed_pct": 2.9786,
-      "i_bal_ma": 200,
-      "i_bal_needed_ma": 90.0133,
-      "t_pre_s": 1.5817,
-      "t_pre_allowed_s": 9.5,
-      "i_pre_peak_a": 6.1055,
-      "e_pre_j": 2165.0235,
-      "e_short_j": 8200.8465,
-      "rack_w": 8.8,
-      "t_ride_s": 2.0388,
-      "hold_j": 20,
-      "c_system_uf": 149.1688,
-      "cost": 11745.05
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": [
-         "SN-1"
-        ],
-        "value": 2.97,
-        "unit": "%",
-        "basis": "Window must shrink from 90 to 84.04 points to deliver 4.600 MWh plus 0.071 MWh aux; the 5.96-point loss is split over both window ends"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": [
-         "SN-4"
-        ],
-        "value": 150,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 150 ms above 3.75 V (5 chain scans + MCU cycle + contactor opening)"
-       },
-       {
-        "id": "R-PRE",
-        "parent": [
-         "SN-3"
-        ],
-        "value": 9.5,
-        "unit": "s",
-        "basis": "10 s DC-bus-ready limit minus 0.5 s start sequence"
-       },
-       {
-        "id": "R-BAL",
-        "parent": [
-         "SN-1"
-        ],
-        "value": 90,
-        "unit": "mA",
-        "basis": "1.72 %/month spread at 35 C on 314 Ah (5.40 Ah/month, 30 days) corrected within 2 h/day of balancing"
-       },
-       {
-        "id": "R-BRK",
-        "parent": [
-         "SN-4"
-        ],
-        "value": 940,
-        "unit": "A",
-        "basis": "Current where the FU-13 pre-arcing time falls below the cell short-time limit (1C = 314 A); above it the fuse protects, below it the contactor must interrupt"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": [
-         "SN-6"
-        ],
-        "value": 2.04,
-        "unit": "s",
-        "basis": "Voltage stays below 50% for 2.059 s through the double fault sequence, minus 20 ms of supply hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 149.2,
-        "unit": "uF",
-        "basis": "One IMD for the galvanically connected plant: 19x1.52 + 4x30 + 19x80 m x 0.19 nF/m = 149.17 uF"
-       }
-      ],
-      "afe": "AFE-4",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-43",
-      "balancing": "internal",
-      "hold_up": "HB-1",
-      "imd_location": "plant",
-      "imd": "IMD-2"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -14377,7 +14076,7 @@
       "soc_gain_pct": 0.45,
       "soc_error_allowed_pct": 2.9786,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 90.0133,
+      "i_bal_needed_ma": 75.4507,
       "t_pre_s": 1.5817,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.1055,
@@ -14480,7 +14179,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 75.5 mA does not follow from the data (derived 90.01 mA, minimum)",
       "requirement R-BRK value 2500 A does not follow from the data (derived 939.8 A, minimum)",
       "requirement R-RIDE parent '['SN-3', 'SN-6']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 8201 J before the 1 s check exceeds the resistor pulse rating 3000 J"
@@ -14494,7 +14192,7 @@
       "soc_gain_pct": 0.45,
       "soc_error_allowed_pct": 2.9786,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 90.0133,
+      "i_bal_needed_ma": 75.4507,
       "t_pre_s": 1.5817,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.1055,
@@ -14588,7 +14286,7 @@
       "soc_gain_pct": 0.45,
       "soc_error_allowed_pct": 2.9786,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 90.0133,
+      "i_bal_needed_ma": 75.4507,
       "t_pre_s": 1.5817,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.1055,
@@ -14680,7 +14378,7 @@
       "soc_gain_pct": 0.45,
       "soc_error_allowed_pct": 2.9786,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 90.0133,
+      "i_bal_needed_ma": 75.4507,
       "t_pre_s": 1.5817,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.1055,
@@ -14783,7 +14481,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 75.4 mA does not follow from the data (derived 90.01 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 8201 J before the 1 s check exceeds the resistor pulse rating 3000 J"
      ],
@@ -14796,7 +14493,7 @@
       "soc_gain_pct": 0.27,
       "soc_error_allowed_pct": 2.9786,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 90.0133,
+      "i_bal_needed_ma": 75.4507,
       "t_pre_s": 1.5817,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.1055,
@@ -14890,7 +14587,7 @@
       "soc_gain_pct": 0.27,
       "soc_error_allowed_pct": 2.9786,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 90.0133,
+      "i_bal_needed_ma": 75.4507,
       "t_pre_s": 1.5817,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.1055,
@@ -14982,7 +14679,7 @@
       "soc_gain_pct": 0.45,
       "soc_error_allowed_pct": 2.9786,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 90.0133,
+      "i_bal_needed_ma": 75.4507,
       "t_pre_s": 1.5817,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.1055,
@@ -15088,7 +14785,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 42.8 mA does not follow from the data (derived 46.24 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)",
       "requirement R-RIDE value 1.23 s does not follow from the data (derived 2.46 s, minimum)",
       "precharge into a shorted DC link 64594 J before the 1 s check exceeds the resistor pulse rating 20000 J"
@@ -15102,7 +14798,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 18.1415,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 46.24,
+      "i_bal_needed_ma": 42.7796,
       "t_pre_s": 0.781,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 44.2424,
@@ -15188,7 +14884,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 85.6 mA does not follow from the data (derived 46.24 mA, minimum)",
+      "requirement R-BAL value 85.6 mA does not follow from the data (derived 42.78 mA, minimum)",
       "requirement R-RIDE value 1.23 s does not follow from the data (derived 2.46 s, minimum)"
      ],
      "metrics": {
@@ -15200,7 +14896,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 18.1415,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 46.24,
+      "i_bal_needed_ma": 42.7796,
       "t_pre_s": 5.2066,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.6364,
@@ -15295,7 +14991,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 18.1415,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 46.24,
+      "i_bal_needed_ma": 42.7796,
       "t_pre_s": 5.2066,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.6364,
@@ -15398,7 +15094,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 42.8 mA does not follow from the data (derived 46.24 mA, minimum)",
       "requirement R-BRK value 3880 A does not follow from the data (derived 2534 A, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)",
       "requirement R-RIDE value 1.23 s does not follow from the data (derived 2.46 s, minimum)"
@@ -15412,7 +15107,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 18.1415,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 46.24,
+      "i_bal_needed_ma": 42.7796,
       "t_pre_s": 5.2066,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.6364,
@@ -15507,7 +15202,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 18.1415,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 46.24,
+      "i_bal_needed_ma": 42.7796,
       "t_pre_s": 5.2066,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.6364,
@@ -15601,7 +15296,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 18.1415,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 46.24,
+      "i_bal_needed_ma": 42.7796,
       "t_pre_s": 5.2066,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.6364,
@@ -15707,7 +15402,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 42.8 mA does not follow from the data (derived 46.24 mA, minimum)",
       "requirement R-RIDE parent '['SN-2', 'SN-6']' is not the stakeholder need it derives from (SN-6)",
       "requirement R-RIDE value 1.23 s does not follow from the data (derived 2.46 s, minimum)",
       "rack control supply: hold-up 20 J is below 10.8 W x 2.46 s = 27 J through the fault sequence with reclosing"
@@ -15721,7 +15415,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 18.1415,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 46.24,
+      "i_bal_needed_ma": 42.7796,
       "t_pre_s": 5.2066,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.6364,
@@ -15815,7 +15509,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 18.1415,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 46.24,
+      "i_bal_needed_ma": 42.7796,
       "t_pre_s": 5.2066,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.6364,
@@ -15907,7 +15601,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 18.1415,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 46.24,
+      "i_bal_needed_ma": 42.7796,
       "t_pre_s": 5.2066,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 6.6364,
@@ -16013,7 +15707,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 27.4 mA does not follow from the data (derived 28.86 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)"
      ],
      "metrics": {
@@ -16025,7 +15718,7 @@
       "soc_gain_pct": 0.85,
       "soc_error_allowed_pct": 18.925,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 28.8641,
+      "i_bal_needed_ma": 25.8398,
       "t_pre_s": 3.405,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 21.4706,
@@ -16109,103 +15802,6 @@
       "imd_location": "plant",
       "imd": "IMD-1"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 25.9 mA does not follow from the data (derived 28.86 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 88.15,
-      "chips_per_chain": 9,
-      "soc_error_pct": 4.922,
-      "soc_anchor_pct": 1.74,
-      "soc_offset_pct": 4.5251,
-      "soc_gain_pct": 0.85,
-      "soc_error_allowed_pct": 18.925,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 28.8641,
-      "t_pre_s": 3.405,
-      "t_pre_allowed_s": 9.5,
-      "i_pre_peak_a": 21.4706,
-      "e_pre_j": 13642.24,
-      "e_short_j": 15673.5294,
-      "rack_w": 9.6,
-      "t_ride_s": 2.38,
-      "hold_j": 50,
-      "c_system_uf": 36.39,
-      "cost": 6426.62
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 19.0,
-        "unit": "%",
-        "basis": "Window can shrink by 2e at both ends: 3.1389*(85-2e)/85 >= 1.725 MWh, so e <= 19.1%"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 100,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 100 ms above 3.75 V; covers 5 scans, control cycle and contactor opening"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 9.5,
-        "unit": "s",
-        "basis": "10 s DC bus ready minus 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": [
-         "SN-1",
-         "SN-4"
-        ],
-        "value": 28.9,
-        "unit": "mA",
-        "basis": "Self-discharge spread doubles per 10 C: 1.655 %/month at 30 C of 314 Ah rated cell = 173 mAh/day, removed in 6 h balancing per day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 1469,
-        "unit": "A",
-        "basis": "Fuse FU-4 pre-arcing is slower than the cell short-time limit below about 1469 A, so the contactor must break up to that current"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.38,
-        "unit": "s",
-        "basis": "Connection letter fault sequence keeps voltage below 50% for 2.4 s; the supply itself holds 20 ms, so hold-up must bridge 2.38 s"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 36.4,
-        "unit": "uF",
-        "basis": "One galvanic network: 11x1.45 uF racks + 20 uF PCS + 0.25 nF/m x 160 m x 11 strings = 36.4 uF"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 3,
-      "current_sensor": "CS-4",
-      "mcu": "MCU-4",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-28",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-1"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -16217,7 +15813,7 @@
       "soc_gain_pct": 0.85,
       "soc_error_allowed_pct": 18.925,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 28.8641,
+      "i_bal_needed_ma": 25.8398,
       "t_pre_s": 3.405,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 21.4706,
@@ -16323,7 +15919,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 26 mA does not follow from the data (derived 28.86 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)"
      ],
      "metrics": {
@@ -16335,7 +15930,7 @@
       "soc_gain_pct": 0.85,
       "soc_error_allowed_pct": 18.925,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 28.8641,
+      "i_bal_needed_ma": 25.8398,
       "t_pre_s": 3.405,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 21.4706,
@@ -16419,103 +16014,6 @@
       "imd_location": "plant",
       "imd": "IMD-1"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 27.4 mA does not follow from the data (derived 28.86 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 77.95,
-      "chips_per_chain": 7,
-      "soc_error_pct": 4.922,
-      "soc_anchor_pct": 1.74,
-      "soc_offset_pct": 4.5251,
-      "soc_gain_pct": 0.85,
-      "soc_error_allowed_pct": 18.925,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 28.8641,
-      "t_pre_s": 3.405,
-      "t_pre_allowed_s": 9.5,
-      "i_pre_peak_a": 21.4706,
-      "e_pre_j": 13642.24,
-      "e_short_j": 15673.5294,
-      "rack_w": 9.6,
-      "t_ride_s": 2.38,
-      "hold_j": 50,
-      "c_system_uf": 36.39,
-      "cost": 6426.62
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 19.1,
-        "unit": "%",
-        "basis": "(3.1389-1.725) MWh margin / (3.1389/85 MWh per SOC%) = 38.3% of SOC, shared over both window ends"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 100,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 100 ms above 3.75 V"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 9.5,
-        "unit": "s",
-        "basis": "10 s bus-ready limit minus 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": [
-         "SN-1",
-         "SN-4"
-        ],
-        "value": 29.7,
-        "unit": "mA",
-        "basis": "Self-discharge spread at 30 C (about 1.7%/month of 314 Ah = 5.34 Ah) removed within 6 h/day balancing over 30 days"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 1470,
-        "unit": "A",
-        "basis": "Fuse FU-4 is faster than the cell short-time limit only above about 1470 A, so the contactor must break up to that current"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.38,
-        "unit": "s",
-        "basis": "Fault-ride-through per connection letter: aux voltage below 50% for 2.4 s over the two dips, minus 20 ms supply hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 36.4,
-        "unit": "uF",
-        "basis": "One shared unearthed galvanically connected system: 11x1.45 + 20 + 11x2x80 m x 0.25 nF/m"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 4,
-      "current_sensor": "CS-4",
-      "mcu": "MCU-4",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-28",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-1"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -16527,7 +16025,7 @@
       "soc_gain_pct": 0.85,
       "soc_error_allowed_pct": 18.925,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 28.8641,
+      "i_bal_needed_ma": 25.8398,
       "t_pre_s": 3.405,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 21.4706,
@@ -16630,7 +16128,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 27 mA does not follow from the data (derived 28.86 mA, minimum)",
       "requirement R-RIDE parent '['SN-4', 'SN-6']' is not the stakeholder need it derives from (SN-6)"
      ],
      "metrics": {
@@ -16642,7 +16139,7 @@
       "soc_gain_pct": 0.85,
       "soc_error_allowed_pct": 18.925,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 28.8641,
+      "i_bal_needed_ma": 25.8398,
       "t_pre_s": 3.405,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 21.4706,
@@ -16723,100 +16220,6 @@
       "imd_location": "plant",
       "imd": "IMD-1"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 25.8 mA does not follow from the data (derived 28.86 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 77.95,
-      "chips_per_chain": 7,
-      "soc_error_pct": 4.922,
-      "soc_anchor_pct": 1.74,
-      "soc_offset_pct": 4.5251,
-      "soc_gain_pct": 0.85,
-      "soc_error_allowed_pct": 18.925,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 28.8641,
-      "t_pre_s": 3.405,
-      "t_pre_allowed_s": 9.5,
-      "i_pre_peak_a": 21.4706,
-      "e_pre_j": 13642.24,
-      "e_short_j": 15673.5294,
-      "rack_w": 9.6,
-      "t_ride_s": 2.38,
-      "hold_j": 50,
-      "c_system_uf": 36.39,
-      "cost": 6426.62
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 19.1,
-        "unit": "%",
-        "basis": "Margin of 3.1389 MWh window energy over the 1.725 MWh requirement is 38.3% SOC (0.0369 MWh per % SOC); the error can cost energy at both ends of the window, so the limit is half of that."
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 100,
-        "unit": "ms",
-        "basis": "Cell over-voltage above 3.75 V must be disconnected within 100 ms (5 scans + MCU cycle + contactor opening)."
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 9.5,
-        "unit": "s",
-        "basis": "10 s DC bus ready limit minus the 0.5 s start sequence before precharge."
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 30,
-        "unit": "mA",
-        "basis": "Self-discharge spread at 30 C is 1.655-1.755 %/month (exponential vs linear interpolation) of 281.1 Ah, about 4.65-4.93 Ah/month; per day over 6 h of balancing this is 25.8-27.4 mA, rounded up with about 10% margin."
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 1475,
-        "unit": "A",
-        "basis": "Above about 1.475 kA the gBat 315 A fuse pre-arcing time is shorter than the cell short-time current limit, so the contactor only has to break currents up to that crossover."
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.38,
-        "unit": "s",
-        "basis": "The connection letter requires riding through the fault and reclose sequence; voltage stays below 50% of nominal until 2.4 s, minus the 20 ms power supply hold-up."
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 36.4,
-        "unit": "uF",
-        "basis": "Total leakage capacitance of the one galvanically connected IT system: 11 x 1.45 uF + 20 uF + 11 x 160 m x 0.25 nF = 36.4 uF; only one IMD is allowed in such a system."
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 4,
-      "current_sensor": "CS-4",
-      "mcu": "MCU-4",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-28",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-1"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -16828,7 +16231,7 @@
       "soc_gain_pct": 0.85,
       "soc_error_allowed_pct": 18.925,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 28.8641,
+      "i_bal_needed_ma": 25.8398,
       "t_pre_s": 3.405,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 21.4706,
@@ -16945,7 +16348,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 1.4095,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 10.5465,
+      "i_bal_needed_ma": 9.2467,
       "t_pre_s": 1.8934,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -17040,7 +16443,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 1.4095,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 10.5465,
+      "i_bal_needed_ma": 9.2467,
       "t_pre_s": 1.8934,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -17146,7 +16549,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 9.9 mA does not follow from the data (derived 10.55 mA, minimum)",
       "requirement R-RIDE parent '['SN-4', 'SN-6']' is not the stakeholder need it derives from (SN-6)",
       "SOC error 1.51% after 24 h (anchor 1.45, offset 0.35, gain 0.24) exceeds 1.41% the energy margin allows",
       "precharge into a shorted DC link 20899 J before the 0.5 s check exceeds the resistor pulse rating 3000 J"
@@ -17160,7 +16562,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 1.4095,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 10.5465,
+      "i_bal_needed_ma": 9.2467,
       "t_pre_s": 0.4045,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 29.8213,
@@ -17246,7 +16648,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 9.25 mA does not follow from the data (derived 10.55 mA, minimum)",
       "SOC error 1.46% after 24 h (anchor 1.45, offset 0.10, gain 0.04) exceeds 1.41% the energy margin allows"
      ],
      "metrics": {
@@ -17258,7 +16659,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 1.4095,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 10.5465,
+      "i_bal_needed_ma": 9.2467,
       "t_pre_s": 1.8934,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -17355,7 +16756,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 1.4095,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 10.5465,
+      "i_bal_needed_ma": 9.2467,
       "t_pre_s": 1.8934,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -17455,7 +16856,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 9.8 mA does not follow from the data (derived 10.55 mA, minimum)",
       "precharge into a shorted DC link 20899 J before the 0.5 s check exceeds the resistor pulse rating 3000 J"
      ],
      "metrics": {
@@ -17467,7 +16867,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 1.4095,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 10.5465,
+      "i_bal_needed_ma": 9.2467,
       "t_pre_s": 0.4045,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 29.8213,
@@ -17550,7 +16950,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 9.3 mA does not follow from the data (derived 10.55 mA, minimum)"
+      "cost 32371.89 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 72.14,
@@ -17561,7 +16961,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 1.4095,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 10.5465,
+      "i_bal_needed_ma": 9.2467,
       "t_pre_s": 1.8934,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -17655,7 +17055,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 1.4095,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 10.5465,
+      "i_bal_needed_ma": 9.2467,
       "t_pre_s": 1.8934,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -17681,931 +17081,6 @@
    "trial": 3,
    "seconds": 788.3,
    "timestamp": "2026-10-28T18:56:27+00:00"
-  },
-  {
-   "passed": true,
-   "attempts": [
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 21.3,
-        "unit": "%",
-        "basis": "Window 90% must shrink to about 47.4% to give 4.6 MWh plus 0.0929 MWh auxiliary at 1 h, so the error margin is (90-47.4)/2 per end"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V (3 scans + MCU cycle + contactor opening)"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 4.5,
-        "unit": "s",
-        "basis": "5 s DC bus readiness minus 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 55.6,
-        "unit": "mA",
-        "basis": "2.68%/month self-discharge spread at 35 C x 249 Ah = 6.67 Ah, removed in 30 d x 4 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 852,
-        "unit": "A",
-        "basis": "Highest current at which the FU-13 fuse is slower than the cell short-time limit (314 A = 1 C); above this the fuse protects the cell"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.43,
-        "unit": "s",
-        "basis": "Grid voltage is below 70% for 0.2 s + 2.25 s = 2.45 s in each fault of the sequence, minus the 20 ms supply hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 267.3,
-        "unit": "uF",
-        "basis": "One IT system via the shared unearthed transformer winding: 34x1.23 + 5x45 + 34x2x40 m x 0.17 nF/m"
-       }
-      ],
-      "afe": "AFE-1",
-      "afe_per_module": 2,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-3"
-     },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 55.6 mA does not follow from the data (derived 70.13 mA, minimum)",
-      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)",
-      "balancing 60 mA is below 70.1 mA needed for the self-discharge spread at 35 C"
-     ],
-     "metrics": {
-      "t_react_ms": 79.11,
-      "chips_per_chain": 24,
-      "soc_error_pct": 9.7994,
-      "soc_anchor_pct": 0.4973,
-      "soc_offset_pct": 9.7764,
-      "soc_gain_pct": 0.45,
-      "soc_error_allowed_pct": 21.3208,
-      "i_bal_ma": 60,
-      "i_bal_needed_ma": 70.1267,
-      "t_pre_s": 3.9094,
-      "t_pre_allowed_s": 4.5,
-      "i_pre_peak_a": 9.344,
-      "e_pre_j": 8545.4991,
-      "e_short_j": 6548.2752,
-      "rack_w": 8.8,
-      "t_ride_s": 4.86,
-      "hold_j": 50,
-      "c_system_uf": 267.2824,
-      "cost": 19630.69
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 21.3,
-        "unit": "%",
-        "basis": "Window 90% must shrink to about 47.4% to give 4.6 MWh plus 0.0929 MWh auxiliary at 1 h, so the error margin is (90-47.4)/2 per end"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V (3 scans + MCU cycle + contactor opening)"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 4.5,
-        "unit": "s",
-        "basis": "5 s DC bus readiness minus 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 111.2,
-        "unit": "mA",
-        "basis": "Self-discharge spread at 35 C is 2.68%/month of 249 Ah, and cells can deviate to either side of the mean, so the extremes diverge by twice that; removed in 30 d x 4 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 852,
-        "unit": "A",
-        "basis": "Highest current at which the FU-13 fuse is slower than the cell short-time limit (314 A = 1 C); above this the fuse protects the cell"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 5.63,
-        "unit": "s",
-        "basis": "Fault, unsuccessful reclose at 3.2 s: input is above 70% for only 0.75 s between the two dips, so bridge from the first drop below 70% to the second recovery above it (5.65 s) minus the 20 ms supply hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 267.3,
-        "unit": "uF",
-        "basis": "One IT system via the shared unearthed transformer winding: 34x1.23 + 5x45 + 34x2x40 m x 0.17 nF/m"
-       }
-      ],
-      "afe": "AFE-4",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-3"
-     },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 111.2 mA does not follow from the data (derived 70.13 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 84.27,
-      "chips_per_chain": 12,
-      "soc_error_pct": 9.7889,
-      "soc_anchor_pct": 0.2036,
-      "soc_offset_pct": 9.7764,
-      "soc_gain_pct": 0.45,
-      "soc_error_allowed_pct": 21.3208,
-      "i_bal_ma": 200,
-      "i_bal_needed_ma": 70.1267,
-      "t_pre_s": 3.9094,
-      "t_pre_allowed_s": 4.5,
-      "i_pre_peak_a": 9.344,
-      "e_pre_j": 8545.4991,
-      "e_short_j": 6548.2752,
-      "rack_w": 8.8,
-      "t_ride_s": 4.86,
-      "hold_j": 50,
-      "c_system_uf": 267.2824,
-      "cost": 21319.81
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 21.3,
-        "unit": "%",
-        "basis": "Window 90% must shrink to about 47.4% to give 4.6 MWh plus 0.0929 MWh auxiliary at 1 h, so the error margin is (90-47.4)/2 per end"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V (3 scans + MCU cycle + contactor opening)"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 4.5,
-        "unit": "s",
-        "basis": "5 s DC bus readiness minus 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 70.1,
-        "unit": "mA",
-        "basis": "2.68%/month self-discharge spread at 35 C of the 314 Ah cell (largest capacity, so worst case), removed in 30 d x 4 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 852,
-        "unit": "A",
-        "basis": "Highest current at which the FU-13 fuse is slower than the cell short-time limit (314 A = 1 C); above this the fuse protects the cell"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 5.63,
-        "unit": "s",
-        "basis": "Fault, unsuccessful reclose at 3.2 s: input is above 70% for only 0.75 s between the two dips, so bridge from the first drop below 70% to the second recovery above it (5.65 s) minus the 20 ms supply hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 267.3,
-        "unit": "uF",
-        "basis": "One IT system via the shared unearthed transformer winding: 34x1.23 + 5x45 + 34x2x40 m x 0.17 nF/m"
-       }
-      ],
-      "afe": "AFE-4",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-3"
-     },
-     "passed": true,
-     "violations": [],
-     "metrics": {
-      "t_react_ms": 84.27,
-      "chips_per_chain": 12,
-      "soc_error_pct": 9.7889,
-      "soc_anchor_pct": 0.2036,
-      "soc_offset_pct": 9.7764,
-      "soc_gain_pct": 0.45,
-      "soc_error_allowed_pct": 21.3208,
-      "i_bal_ma": 200,
-      "i_bal_needed_ma": 70.1267,
-      "t_pre_s": 3.9094,
-      "t_pre_allowed_s": 4.5,
-      "i_pre_peak_a": 9.344,
-      "e_pre_j": 8545.4991,
-      "e_short_j": 6548.2752,
-      "rack_w": 8.8,
-      "t_ride_s": 4.86,
-      "hold_j": 50,
-      "c_system_uf": 267.2824,
-      "cost": 21319.81
-     }
-    }
-   ],
-   "python_calls": 2,
-   "usage": {
-    "prompt_tokens": 1812115,
-    "completion_tokens": 667273,
-    "cost": 9.193965299999999
-   },
-   "provider": "claude-cli (subscription)",
-   "resolved_model": "claude-sonnet-5-5",
-   "task": "bms4_009",
-   "trial": 1,
-   "seconds": 765.1,
-   "timestamp": "2026-10-28T19:09:12+00:00"
-  },
-  {
-   "passed": true,
-   "attempts": [
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 21.5,
-        "unit": "%",
-        "basis": "4.6 of 8.8255 MWh net usable needed; window shrinks by SOC error at both ends, energy-weighted over OCV curve"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 4.5,
-        "unit": "s",
-        "basis": "5 s DC bus ready minus 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 55.6,
-        "unit": "mA",
-        "basis": "2.68 %/month spread at 35 C over 30 d x 249 Ah, corrected within 4 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 850,
-        "unit": "A",
-        "basis": "Above 850 A the FU-13 fuse pre-arcing time is within the cell short-time limit (314 A = 1C); below it the contactor must interrupt"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": [
-         "SN-6",
-         "SN-4"
-        ],
-        "value": 2.43,
-        "unit": "s",
-        "basis": "Voltage below 70% for 0.2 s + 2.25 s = 2.45 s in the fault sequence, minus 20 ms PSU hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 267.3,
-        "unit": "uF",
-        "basis": "34x1.23 + 5x45 uF + cables 34x80 m x 0.17 nF/m, one galvanically connected IT system"
-       }
-      ],
-      "afe": "AFE-1",
-      "afe_per_module": 2,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-3"
-     },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 55.6 mA does not follow from the data (derived 70.13 mA, minimum)",
-      "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)",
-      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)",
-      "balancing 60 mA is below 70.1 mA needed for the self-discharge spread at 35 C"
-     ],
-     "metrics": {
-      "t_react_ms": 79.11,
-      "chips_per_chain": 24,
-      "soc_error_pct": 9.7994,
-      "soc_anchor_pct": 0.4973,
-      "soc_offset_pct": 9.7764,
-      "soc_gain_pct": 0.45,
-      "soc_error_allowed_pct": 21.3208,
-      "i_bal_ma": 60,
-      "i_bal_needed_ma": 70.1267,
-      "t_pre_s": 3.9094,
-      "t_pre_allowed_s": 4.5,
-      "i_pre_peak_a": 9.344,
-      "e_pre_j": 8545.4991,
-      "e_short_j": 6548.2752,
-      "rack_w": 8.8,
-      "t_ride_s": 4.86,
-      "hold_j": 50,
-      "c_system_uf": 267.2824,
-      "cost": 19630.69
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 21.5,
-        "unit": "%",
-        "basis": "4.6 of 8.8255 MWh net usable needed; window shrinks by SOC error at both ends, energy-weighted over OCV curve"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 4.5,
-        "unit": "s",
-        "basis": "5 s DC bus ready minus 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 70.1,
-        "unit": "mA",
-        "basis": "2.68 %/month spread at 35 C over 30 d on 314 Ah (worst case, beginning of life), corrected within 4 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 850,
-        "unit": "A",
-        "basis": "Above 850 A the FU-13 fuse pre-arcing time is within the cell short-time limit (314 A = 1C); below it the contactor must interrupt"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.43,
-        "unit": "s",
-        "basis": "Voltage below 70% for 0.2 s + 2.25 s = 2.45 s in the connection letter fault sequence, minus 20 ms PSU hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 267.3,
-        "unit": "uF",
-        "basis": "34x1.23 + 5x45 uF + cables 34x80 m x 0.17 nF/m, one galvanically connected IT system"
-       }
-      ],
-      "afe": "AFE-4",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-3"
-     },
-     "passed": false,
-     "violations": [
-      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 84.27,
-      "chips_per_chain": 12,
-      "soc_error_pct": 9.7889,
-      "soc_anchor_pct": 0.2036,
-      "soc_offset_pct": 9.7764,
-      "soc_gain_pct": 0.45,
-      "soc_error_allowed_pct": 21.3208,
-      "i_bal_ma": 200,
-      "i_bal_needed_ma": 70.1267,
-      "t_pre_s": 3.9094,
-      "t_pre_allowed_s": 4.5,
-      "i_pre_peak_a": 9.344,
-      "e_pre_j": 8545.4991,
-      "e_short_j": 6548.2752,
-      "rack_w": 8.8,
-      "t_ride_s": 4.86,
-      "hold_j": 50,
-      "c_system_uf": 267.2824,
-      "cost": 21319.81
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 21.5,
-        "unit": "%",
-        "basis": "4.6 of 8.8255 MWh net usable needed; window shrinks by SOC error at both ends, energy-weighted over OCV curve"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 4.5,
-        "unit": "s",
-        "basis": "5 s DC bus ready minus 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 70.1,
-        "unit": "mA",
-        "basis": "2.68 %/month spread at 35 C over 30 d on 314 Ah (worst case, beginning of life), corrected within 4 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 850,
-        "unit": "A",
-        "basis": "Above 850 A the FU-13 fuse pre-arcing time is within the cell short-time limit (314 A = 1C); below it the contactor must interrupt"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 4.86,
-        "unit": "s",
-        "basis": "Two dips each below 70% for 2.45 s minus 20 ms PSU hold-up = 2 x 2.43 s; only 0.75 s between them, so no recharge assumed"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 267.3,
-        "unit": "uF",
-        "basis": "34x1.23 + 5x45 uF + cables 34x80 m x 0.17 nF/m, one galvanically connected IT system"
-       }
-      ],
-      "afe": "AFE-4",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-3"
-     },
-     "passed": true,
-     "violations": [],
-     "metrics": {
-      "t_react_ms": 84.27,
-      "chips_per_chain": 12,
-      "soc_error_pct": 9.7889,
-      "soc_anchor_pct": 0.2036,
-      "soc_offset_pct": 9.7764,
-      "soc_gain_pct": 0.45,
-      "soc_error_allowed_pct": 21.3208,
-      "i_bal_ma": 200,
-      "i_bal_needed_ma": 70.1267,
-      "t_pre_s": 3.9094,
-      "t_pre_allowed_s": 4.5,
-      "i_pre_peak_a": 9.344,
-      "e_pre_j": 8545.4991,
-      "e_short_j": 6548.2752,
-      "rack_w": 8.8,
-      "t_ride_s": 4.86,
-      "hold_j": 50,
-      "c_system_uf": 267.2824,
-      "cost": 21319.81
-     }
-    }
-   ],
-   "python_calls": 1,
-   "usage": {
-    "prompt_tokens": 220281,
-    "completion_tokens": 101686,
-    "cost": 1.3436715000000001
-   },
-   "provider": "claude-cli (subscription)",
-   "resolved_model": "claude-sonnet-5-5",
-   "task": "bms4_009",
-   "trial": 2,
-   "seconds": 245.4,
-   "timestamp": "2026-10-28T19:13:17+00:00"
-  },
-  {
-   "passed": false,
-   "attempts": [
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": [
-         "SN-1",
-         "SN-2"
-        ],
-        "value": 21.0,
-        "unit": "%",
-        "basis": "Energy margin 8.8255-4.6-0.0929 MWh over 0.0981 MWh per SOC%, shared by the two window ends"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V; 3 scans plus MCU cycle plus contactor opening must fit"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 4.5,
-        "unit": "s",
-        "basis": "5 s bus-ready limit minus 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": [
-         "SN-1",
-         "SN-4"
-        ],
-        "value": 55.6,
-        "unit": "mA",
-        "basis": "Self-discharge spread 2.68%/month at 35C on 249 Ah, 0.2224 Ah/day, removed in 4 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 850,
-        "unit": "A",
-        "basis": "Crossover of FU-13 pre-arcing curve and cell short-time limit; above it the fuse protects the cells alone"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": [
-         "SN-6",
-         "SN-2"
-        ],
-        "value": 2.43,
-        "unit": "s",
-        "basis": "Voltage below 70% for 2.45 s per dip in the reclose sequence, minus 20 ms supply hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 267.3,
-        "unit": "uF",
-        "basis": "One galvanically connected IT network: 34x1.23 + 5x45 + 34x80 m x 0.17 nF/m"
-       }
-      ],
-      "afe": "AFE-1",
-      "afe_per_module": 2,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-3"
-     },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 55.6 mA does not follow from the data (derived 70.13 mA, minimum)",
-      "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
-      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)",
-      "balancing 60 mA is below 70.1 mA needed for the self-discharge spread at 35 C"
-     ],
-     "metrics": {
-      "t_react_ms": 79.11,
-      "chips_per_chain": 24,
-      "soc_error_pct": 9.7994,
-      "soc_anchor_pct": 0.4973,
-      "soc_offset_pct": 9.7764,
-      "soc_gain_pct": 0.45,
-      "soc_error_allowed_pct": 21.3208,
-      "i_bal_ma": 60,
-      "i_bal_needed_ma": 70.1267,
-      "t_pre_s": 3.9094,
-      "t_pre_allowed_s": 4.5,
-      "i_pre_peak_a": 9.344,
-      "e_pre_j": 8545.4991,
-      "e_short_j": 6548.2752,
-      "rack_w": 8.8,
-      "t_ride_s": 4.86,
-      "hold_j": 50,
-      "c_system_uf": 267.2824,
-      "cost": 19630.69
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": [
-         "SN-1",
-         "SN-2"
-        ],
-        "value": 21.0,
-        "unit": "%",
-        "basis": "Energy margin 8.8255-4.6-0.0929 MWh over 0.0981 MWh per SOC%, shared by the two window ends"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V; 3 scans plus MCU cycle plus contactor opening must fit"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 4.5,
-        "unit": "s",
-        "basis": "5 s bus-ready limit minus 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": [
-         "SN-1",
-         "SN-4"
-        ],
-        "value": 70.1,
-        "unit": "mA",
-        "basis": "Self-discharge spread 2.68%/month at 35C on 314 Ah (worst case, beginning of life), removed in 4 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 850,
-        "unit": "A",
-        "basis": "Crossover of FU-13 pre-arcing curve and cell short-time limit; above it the fuse protects the cells alone"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.43,
-        "unit": "s",
-        "basis": "Connection letter fault sequence: voltage below 70% for 2.45 s per dip, minus 20 ms supply hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 267.3,
-        "unit": "uF",
-        "basis": "One galvanically connected IT network: 34x1.23 + 5x45 + 34x80 m x 0.17 nF/m"
-       }
-      ],
-      "afe": "AFE-4",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-3"
-     },
-     "passed": false,
-     "violations": [
-      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 84.27,
-      "chips_per_chain": 12,
-      "soc_error_pct": 9.7889,
-      "soc_anchor_pct": 0.2036,
-      "soc_offset_pct": 9.7764,
-      "soc_gain_pct": 0.45,
-      "soc_error_allowed_pct": 21.3208,
-      "i_bal_ma": 200,
-      "i_bal_needed_ma": 70.1267,
-      "t_pre_s": 3.9094,
-      "t_pre_allowed_s": 4.5,
-      "i_pre_peak_a": 9.344,
-      "e_pre_j": 8545.4991,
-      "e_short_j": 6548.2752,
-      "rack_w": 8.8,
-      "t_ride_s": 4.86,
-      "hold_j": 50,
-      "c_system_uf": 267.2824,
-      "cost": 21319.81
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": [
-         "SN-1",
-         "SN-2"
-        ],
-        "value": 21.0,
-        "unit": "%",
-        "basis": "Energy margin 8.8255-4.6-0.0929 MWh over 0.0981 MWh per SOC%, shared by the two window ends"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 200 ms above 3.75 V; 3 scans plus MCU cycle plus contactor opening must fit"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 4.5,
-        "unit": "s",
-        "basis": "5 s bus-ready limit minus 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": [
-         "SN-1",
-         "SN-4"
-        ],
-        "value": 70.1,
-        "unit": "mA",
-        "basis": "Self-discharge spread 2.68%/month at 35C on 314 Ah (worst case, beginning of life), removed in 4 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 850,
-        "unit": "A",
-        "basis": "Crossover of FU-13 pre-arcing curve and cell short-time limit; above it the fuse protects the cells alone"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.45,
-        "unit": "s",
-        "basis": "Connection letter fault sequence: voltage stays below 70% of nominal for 2.45 s per dip (10% to 70% on a 3 s ramp after 200 ms)"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 267.3,
-        "unit": "uF",
-        "basis": "One galvanically connected IT network: 34x1.23 + 5x45 + 34x80 m x 0.17 nF/m"
-       }
-      ],
-      "afe": "AFE-4",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-3"
-     },
-     "passed": false,
-     "violations": [
-      "requirement R-RIDE value 2.45 s does not follow from the data (derived 4.86 s, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 84.27,
-      "chips_per_chain": 12,
-      "soc_error_pct": 9.7889,
-      "soc_anchor_pct": 0.2036,
-      "soc_offset_pct": 9.7764,
-      "soc_gain_pct": 0.45,
-      "soc_error_allowed_pct": 21.3208,
-      "i_bal_ma": 200,
-      "i_bal_needed_ma": 70.1267,
-      "t_pre_s": 3.9094,
-      "t_pre_allowed_s": 4.5,
-      "i_pre_peak_a": 9.344,
-      "e_pre_j": 8545.4991,
-      "e_short_j": 6548.2752,
-      "rack_w": 8.8,
-      "t_ride_s": 4.86,
-      "hold_j": 50,
-      "c_system_uf": 267.2824,
-      "cost": 21319.81
-     }
-    }
-   ],
-   "python_calls": 1,
-   "usage": {
-    "prompt_tokens": 209508,
-    "completion_tokens": 95138,
-    "cost": 1.2571500999999998
-   },
-   "provider": "claude-cli (subscription)",
-   "resolved_model": "claude-sonnet-5-5",
-   "task": "bms4_009",
-   "trial": 3,
-   "seconds": 260.4,
-   "timestamp": "2026-10-28T19:17:38+00:00"
   },
   {
    "passed": true,
@@ -18683,7 +17158,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 66.2 mA does not follow from the data (derived 80.67 mA, minimum)",
       "requirement R-RIDE parent '['SN-2', 'SN-6']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 68030 J before the 1.5 s check exceeds the resistor pulse rating 20000 J"
      ],
@@ -18696,7 +17170,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 5.9227,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 80.6715,
+      "i_bal_needed_ma": 66.1814,
       "t_pre_s": 2.3167,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 31.0638,
@@ -18777,100 +17251,6 @@
       "imd_location": "plant",
       "imd": "IMD-2"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 70.2 mA does not follow from the data (derived 80.67 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 91.16,
-      "chips_per_chain": 13,
-      "soc_error_pct": 2.9356,
-      "soc_anchor_pct": 1.3375,
-      "soc_offset_pct": 2.6022,
-      "soc_gain_pct": 0.24,
-      "soc_error_allowed_pct": 5.9227,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 80.6715,
-      "t_pre_s": 4.9291,
-      "t_pre_allowed_s": 7.0,
-      "i_pre_peak_a": 14.6,
-      "e_pre_j": 13429.08,
-      "e_short_j": 31974.0,
-      "rack_w": 9.2,
-      "t_ride_s": 2.38,
-      "hold_j": 50,
-      "c_system_uf": 102.152,
-      "cost": 11022.61
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 5.92,
-        "unit": "%",
-        "basis": "Gross margin 4.0009-3.4085=0.5924 MWh at 0.05 MWh per SOC %, which is 11.85 SOC points lost at both window ends, so 5.92% each"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 150,
-        "unit": "ms",
-        "basis": "Cell over-voltage >3.75 V must be disconnected within 150 ms, covering 4 scans, the MCU cycle and contactor opening"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 7,
-        "unit": "s",
-        "basis": "8 s DC-bus ready limit minus the 1 s start sequence"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 83,
-        "unit": "mA",
-        "basis": "Self-discharge spread at 30 C (1.54 to 1.64%/month, interpolated between 25 C and 35 C) of the 314 Ah cell capacity, about 5 Ah/month, divided by 60 h of balancing per month"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 1410,
-        "unit": "A",
-        "basis": "Below about 1410 A the gBat 315 A fuse is slower than the cell short-time current limit, so the contactor must break up to there; above it the fuse clears in time"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.38,
-        "unit": "s",
-        "basis": "Connection letter fault sequence keeps voltage below 60% for 2.4 s (0 to 2.4 s) minus the 20 ms supply hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 102.2,
-        "unit": "uF",
-        "basis": "Unearthed galvanically connected system: 16x0.75 + 2x45 + 16x25 m x2 x0.19 nF/m = 102.2 uF"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-1",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-34",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-2"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -18882,7 +17262,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 5.9227,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 80.6715,
+      "i_bal_needed_ma": 66.1814,
       "t_pre_s": 4.9291,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 14.6,
@@ -18988,7 +17368,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 70 mA does not follow from the data (derived 80.67 mA, minimum)",
       "requirement R-RIDE parent '['SN-4', 'SN-6']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 68030 J before the 1.5 s check exceeds the resistor pulse rating 20000 J"
      ],
@@ -19001,7 +17380,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 5.9227,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 80.6715,
+      "i_bal_needed_ma": 66.1814,
       "t_pre_s": 2.3167,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 31.0638,
@@ -19085,103 +17464,6 @@
       "imd_location": "plant",
       "imd": "IMD-2"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 66 mA does not follow from the data (derived 80.67 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 91.16,
-      "chips_per_chain": 13,
-      "soc_error_pct": 2.9356,
-      "soc_anchor_pct": 1.3375,
-      "soc_offset_pct": 2.6022,
-      "soc_gain_pct": 0.24,
-      "soc_error_allowed_pct": 5.9227,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 80.6715,
-      "t_pre_s": 4.9291,
-      "t_pre_allowed_s": 7.0,
-      "i_pre_peak_a": 14.6,
-      "e_pre_j": 13429.08,
-      "e_short_j": 31974.0,
-      "rack_w": 9.2,
-      "t_ride_s": 2.38,
-      "hold_j": 50,
-      "c_system_uf": 102.152,
-      "cost": 11022.61
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 5.92,
-        "unit": "%",
-        "basis": "Window may shrink 11.85 points (3.3 MWh net plus fixed 0.1085 MWh aux against 4.0009 MWh gross over 80%), so 5.92% per end"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 150,
-        "unit": "ms",
-        "basis": "Cell over 3.75 V must be disconnected within 150 ms"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 7,
-        "unit": "s",
-        "basis": "8 s DC bus ready limit minus 1 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": [
-         "SN-1",
-         "SN-4"
-        ],
-        "value": 83,
-        "unit": "mA",
-        "basis": "Self-discharge spread at 30 C is about 1.6%/month, i.e. about 0.17 Ah/day on the 314 Ah cell (largest absolute spread), removed in 2 h/day of balancing"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 1415,
-        "unit": "A",
-        "basis": "Fuse FU-4 clears faster than the cell short-time limit only from about 1415 A, so the contactor must break everything below that"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.38,
-        "unit": "s",
-        "basis": "Voltage stays below 60% from t=0 to 2.4 s in the double-fault sequence, minus 20 ms supply hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 102.2,
-        "unit": "uF",
-        "basis": "One IMD for the galvanically connected IT system: 16x0.75 + 2x45 uF plus 1.6 km of DC cable at 0.19 nF/m, about 102.2 uF"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-1",
-      "mcu": "MCU-3",
-      "string_contactor": "K-1",
-      "precharge_resistor": "PR-34",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-2"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -19193,7 +17475,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 5.9227,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 80.6715,
+      "i_bal_needed_ma": 66.1814,
       "t_pre_s": 4.9291,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 14.6,
@@ -19296,7 +17578,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 66 mA does not follow from the data (derived 80.67 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 68030 J before the 1.5 s check exceeds the resistor pulse rating 20000 J"
      ],
@@ -19309,7 +17590,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 5.9227,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 80.6715,
+      "i_bal_needed_ma": 66.1814,
       "t_pre_s": 2.3167,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 31.0638,
@@ -19392,7 +17673,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 68 mA does not follow from the data (derived 80.67 mA, minimum)"
+      "cost 12367.41 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 96.16,
@@ -19403,7 +17684,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 5.9227,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 80.6715,
+      "i_bal_needed_ma": 66.1814,
       "t_pre_s": 4.9291,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 14.6,
@@ -19497,7 +17778,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 5.9227,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 80.6715,
+      "i_bal_needed_ma": 66.1814,
       "t_pre_s": 4.9291,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 14.6,
@@ -19612,7 +17893,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 5.205,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 29.3575,
+      "i_bal_needed_ma": 27.1604,
       "t_pre_s": 3.1006,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 9.344,
@@ -19706,7 +17987,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 5.205,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 29.3575,
+      "i_bal_needed_ma": 27.1604,
       "t_pre_s": 3.1006,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 9.344,
@@ -19800,7 +18081,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 5.205,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 29.3575,
+      "i_bal_needed_ma": 27.1604,
       "t_pre_s": 3.1006,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 9.344,
@@ -19921,7 +18202,7 @@
       "soc_gain_pct": 0.425,
       "soc_error_allowed_pct": 5.205,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 29.3575,
+      "i_bal_needed_ma": 27.1604,
       "t_pre_s": 0.9715,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 29.8213,
@@ -20018,7 +18299,7 @@
       "soc_gain_pct": 0.425,
       "soc_error_allowed_pct": 5.205,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 29.3575,
+      "i_bal_needed_ma": 27.1604,
       "t_pre_s": 3.1006,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 9.344,
@@ -20115,7 +18396,7 @@
       "soc_gain_pct": 0.425,
       "soc_error_allowed_pct": 5.205,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 29.3575,
+      "i_bal_needed_ma": 27.1604,
       "t_pre_s": 3.1006,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 9.344,
@@ -20231,7 +18512,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 5.205,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 29.3575,
+      "i_bal_needed_ma": 27.1604,
       "t_pre_s": 0.9715,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 29.8213,
@@ -20325,7 +18606,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 5.205,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 29.3575,
+      "i_bal_needed_ma": 27.1604,
       "t_pre_s": 3.1006,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 9.344,
@@ -20419,7 +18700,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 5.205,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 29.3575,
+      "i_bal_needed_ma": 27.1604,
       "t_pre_s": 3.1006,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 9.344,
@@ -20522,7 +18803,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 22.4 mA does not follow from the data (derived 24.58 mA, minimum)",
       "requirement R-RIDE parent '['SN-2', 'SN-6']' is not the stakeholder need it derives from (SN-6)",
       "requirement R-RIDE value 1.897 s does not follow from the data (derived 3.793 s, minimum)",
       "rack control supply: hold-up 50 J is below 15.0 W x 3.79 s = 57 J through the fault sequence with reclosing"
@@ -20536,7 +18816,7 @@
       "soc_gain_pct": 0.045,
       "soc_error_allowed_pct": 2.7417,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 24.5778,
+      "i_bal_needed_ma": 22.4272,
       "t_pre_s": 2.4646,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 9.7333,
@@ -20630,7 +18910,7 @@
       "soc_gain_pct": 0.045,
       "soc_error_allowed_pct": 2.7417,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 24.5778,
+      "i_bal_needed_ma": 22.4272,
       "t_pre_s": 2.4646,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 9.7333,
@@ -20722,7 +19002,7 @@
       "soc_gain_pct": 0.045,
       "soc_error_allowed_pct": 2.7417,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 24.5778,
+      "i_bal_needed_ma": 22.4272,
       "t_pre_s": 2.4646,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 9.7333,
@@ -20825,7 +19105,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 22.4 mA does not follow from the data (derived 24.58 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)",
       "requirement R-RIDE value 1.9 s does not follow from the data (derived 3.793 s, minimum)",
       "rack control supply: hold-up 50 J is below 15.0 W x 3.79 s = 57 J through the fault sequence with reclosing"
@@ -20839,7 +19118,7 @@
       "soc_gain_pct": 0.045,
       "soc_error_allowed_pct": 2.7417,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 24.5778,
+      "i_bal_needed_ma": 22.4272,
       "t_pre_s": 2.4646,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 9.7333,
@@ -20933,7 +19212,7 @@
       "soc_gain_pct": 0.045,
       "soc_error_allowed_pct": 2.7417,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 24.5778,
+      "i_bal_needed_ma": 22.4272,
       "t_pre_s": 2.4646,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 9.7333,
@@ -21027,7 +19306,7 @@
       "soc_gain_pct": 0.045,
       "soc_error_allowed_pct": 2.7417,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 24.5778,
+      "i_bal_needed_ma": 22.4272,
       "t_pre_s": 2.4646,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 9.7333,
@@ -21136,7 +19415,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 22.4 mA does not follow from the data (derived 24.58 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
       "requirement R-RIDE value 1.897 s does not follow from the data (derived 3.793 s, minimum)"
      ],
@@ -21149,7 +19427,7 @@
       "soc_gain_pct": 0.045,
       "soc_error_allowed_pct": 2.7417,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 24.5778,
+      "i_bal_needed_ma": 22.4272,
       "t_pre_s": 2.4646,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 9.7333,
@@ -21249,7 +19527,7 @@
       "soc_gain_pct": 0.045,
       "soc_error_allowed_pct": 2.7417,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 24.5778,
+      "i_bal_needed_ma": 22.4272,
       "t_pre_s": 2.4646,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 9.7333,
@@ -21349,7 +19627,7 @@
       "soc_gain_pct": 0.045,
       "soc_error_allowed_pct": 2.7417,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 24.5778,
+      "i_bal_needed_ma": 22.4272,
       "t_pre_s": 2.4646,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 9.7333,
@@ -21455,7 +19733,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 122 mA does not follow from the data (derived 147 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-1']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 22677 J before the 0.5 s check exceeds the resistor pulse rating 8000 J"
      ],
@@ -21468,7 +19745,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.7822,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 147.0,
+      "i_bal_needed_ma": 121.667,
       "t_pre_s": 0.8458,
       "t_pre_allowed_s": 4.5,
       "i_pre_peak_a": 31.0638,
@@ -21565,7 +19842,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.7822,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 147.0,
+      "i_bal_needed_ma": 121.667,
       "t_pre_s": 2.6993,
       "t_pre_allowed_s": 4.5,
       "i_pre_peak_a": 9.7333,
@@ -21662,7 +19939,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.7822,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 147.0,
+      "i_bal_needed_ma": 121.667,
       "t_pre_s": 2.6993,
       "t_pre_allowed_s": 4.5,
       "i_pre_peak_a": 9.7333,
@@ -21765,7 +20042,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 122 mA does not follow from the data (derived 147 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
       "MCU MCU-3 has 2 chain ports, 3 CAN, 24 ADC for 3 chains, 2 CAN, 6 ADC",
       "precharge into a shorted DC link 22677 J before the 0.5 s check exceeds the resistor pulse rating 8000 J"
@@ -21779,7 +20055,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.7822,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 147.0,
+      "i_bal_needed_ma": 121.667,
       "t_pre_s": 0.8458,
       "t_pre_allowed_s": 4.5,
       "i_pre_peak_a": 31.0638,
@@ -21862,7 +20138,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 120 mA does not follow from the data (derived 147 mA, minimum)"
+      "cost 22797.12 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 86.92,
@@ -21873,7 +20149,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.7822,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 147.0,
+      "i_bal_needed_ma": 121.667,
       "t_pre_s": 2.6993,
       "t_pre_allowed_s": 4.5,
       "i_pre_peak_a": 9.7333,
@@ -21967,7 +20243,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.7822,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 147.0,
+      "i_bal_needed_ma": 121.667,
       "t_pre_s": 2.6993,
       "t_pre_allowed_s": 4.5,
       "i_pre_peak_a": 9.7333,
@@ -22070,7 +20346,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 122 mA does not follow from the data (derived 147 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 22677 J before the 0.5 s check exceeds the resistor pulse rating 8000 J"
      ],
@@ -22083,7 +20358,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.7822,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 147.0,
+      "i_bal_needed_ma": 121.667,
       "t_pre_s": 0.8458,
       "t_pre_allowed_s": 4.5,
       "i_pre_peak_a": 31.0638,
@@ -22177,7 +20452,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.7822,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 147.0,
+      "i_bal_needed_ma": 121.667,
       "t_pre_s": 3.959,
       "t_pre_allowed_s": 4.5,
       "i_pre_peak_a": 6.6364,
@@ -22271,7 +20546,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.7822,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 147.0,
+      "i_bal_needed_ma": 121.667,
       "t_pre_s": 3.959,
       "t_pre_allowed_s": 4.5,
       "i_pre_peak_a": 6.6364,
@@ -22381,7 +20656,6 @@
      "passed": false,
      "violations": [
       "requirement R-SOC parent '['SN-1', 'SN-4']' is not the stakeholder need it derives from (SN-1 or SN-2)",
-      "requirement R-BAL value 9.4 mA does not follow from the data (derived 10.5 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 57580 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
      ],
@@ -22394,7 +20668,7 @@
       "soc_gain_pct": 0.27,
       "soc_error_allowed_pct": 18.4092,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 10.5,
+      "i_bal_needed_ma": 9.4162,
       "t_pre_s": 1.5996,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 28.5787,
@@ -22489,7 +20763,7 @@
       "soc_gain_pct": 0.27,
       "soc_error_allowed_pct": 18.4092,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 10.5,
+      "i_bal_needed_ma": 9.4162,
       "t_pre_s": 5.1052,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 8.9547,
@@ -22589,7 +20863,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 9.4 mA does not follow from the data (derived 10.5 mA, minimum)",
       "precharge into a shorted DC link 57580 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
      ],
      "metrics": {
@@ -22601,7 +20874,7 @@
       "soc_gain_pct": 0.27,
       "soc_error_allowed_pct": 18.4092,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 10.5,
+      "i_bal_needed_ma": 9.4162,
       "t_pre_s": 1.5996,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 28.5787,
@@ -22682,100 +20955,6 @@
       "imd_location": "plant",
       "imd": "IMD-3"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 10 mA does not follow from the data (derived 10.5 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 70.72,
-      "chips_per_chain": 6,
-      "soc_error_pct": 10.8194,
-      "soc_anchor_pct": 0.2983,
-      "soc_offset_pct": 10.8119,
-      "soc_gain_pct": 0.27,
-      "soc_error_allowed_pct": 18.4092,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 10.5,
-      "t_pre_s": 5.1052,
-      "t_pre_allowed_s": 7.5,
-      "i_pre_peak_a": 8.9547,
-      "e_pre_j": 7848.2101,
-      "e_short_j": 18041.8624,
-      "rack_w": 12.2,
-      "t_ride_s": 2.0911,
-      "hold_j": 50,
-      "c_system_uf": 172.8212,
-      "cost": 16550.2
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 18.6,
-        "unit": "%",
-        "basis": "Window margin (90 - 3.3/5.632*90 = 37.3 %) is lost at both ends of the window, so the SOC error must stay below 18.6 %"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 100,
-        "unit": "ms",
-        "basis": "Cell must be disconnected within 100 ms above 3.75 V; covers 4 scans, one control cycle and the contactor opening time"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 7.5,
-        "unit": "s",
-        "basis": "8 s PCS DC bus ready limit minus the 0.5 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 10.5,
-        "unit": "mA",
-        "basis": "Self-discharge spread of 0.9 %/month at 35 C of the 280 Ah cell capacity = 2.52 Ah/month, removed within 30 days at 8 h/day of balancing"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 2850,
-        "unit": "A",
-        "basis": "Above about 2.85 kA the FU-5 pre-arcing time is shorter than the cell short-time limit, so the contactor must break everything below that"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.09,
-        "unit": "s",
-        "basis": "Voltage stays below 50% from t=0 to 2.111 s in the double-fault sequence; subtract the 20 ms supply hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 172.8,
-        "unit": "uF",
-        "basis": "Galvanically coupled unearthed system: 23*1.63 + 3*45 + 23*80 m*0.18 nF/m = 172.8 uF, one IMD for the plant"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 4,
-      "current_sensor": "CS-2",
-      "mcu": "MCU-4",
-      "string_contactor": "K-2",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-3"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -22787,7 +20966,7 @@
       "soc_gain_pct": 0.27,
       "soc_error_allowed_pct": 18.4092,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 10.5,
+      "i_bal_needed_ma": 9.4162,
       "t_pre_s": 5.1052,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 8.9547,
@@ -22893,7 +21072,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 9.4 mA does not follow from the data (derived 10.5 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 57580 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
      ],
@@ -22906,7 +21084,7 @@
       "soc_gain_pct": 0.27,
       "soc_error_allowed_pct": 18.4092,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 10.5,
+      "i_bal_needed_ma": 9.4162,
       "t_pre_s": 1.5996,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 28.5787,
@@ -23001,7 +21179,7 @@
       "soc_gain_pct": 0.27,
       "soc_error_allowed_pct": 18.4092,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 10.5,
+      "i_bal_needed_ma": 9.4162,
       "t_pre_s": 5.1052,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 8.9547,
@@ -23104,7 +21282,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 15.4 mA does not follow from the data (derived 17.68 mA, minimum)",
       "requirement R-BRK value 2988 A does not follow from the data (derived 1446 A, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-3']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 62696 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
@@ -23118,7 +21295,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.0599,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 17.68,
+      "i_bal_needed_ma": 15.4036,
       "t_pre_s": 0.6336,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 29.8213,
@@ -23212,7 +21389,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.0599,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 17.68,
+      "i_bal_needed_ma": 15.4036,
       "t_pre_s": 2.9658,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -23304,7 +21481,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 3.0599,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 17.68,
+      "i_bal_needed_ma": 15.4036,
       "t_pre_s": 2.9658,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -23407,7 +21584,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 15.4 mA does not follow from the data (derived 17.68 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 19645 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
      ],
@@ -23420,7 +21596,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.0599,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 17.68,
+      "i_bal_needed_ma": 15.4036,
       "t_pre_s": 2.0221,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 9.344,
@@ -23514,7 +21690,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.0599,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 17.68,
+      "i_bal_needed_ma": 15.4036,
       "t_pre_s": 2.9658,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -23606,7 +21782,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 3.0599,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 17.68,
+      "i_bal_needed_ma": 15.4036,
       "t_pre_s": 2.9658,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -23706,7 +21882,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 15.4 mA does not follow from the data (derived 17.68 mA, minimum)",
       "precharge into a shorted DC link 62696 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
      ],
      "metrics": {
@@ -23718,7 +21893,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.0599,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 17.68,
+      "i_bal_needed_ma": 15.4036,
       "t_pre_s": 0.6336,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 29.8213,
@@ -23812,7 +21987,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.0599,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 17.68,
+      "i_bal_needed_ma": 15.4036,
       "t_pre_s": 2.9658,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -23904,7 +22079,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 3.0599,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 17.68,
+      "i_bal_needed_ma": 15.4036,
       "t_pre_s": 2.9658,
       "t_pre_allowed_s": 7.5,
       "i_pre_peak_a": 6.3709,
@@ -24007,7 +22182,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 27 mA does not follow from the data (derived 33.66 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 59530 J before the 1 s check exceeds the resistor pulse rating 8000 J"
      ],
@@ -24020,7 +22194,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.3405,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 33.6583,
+      "i_bal_needed_ma": 27.0108,
       "t_pre_s": 0.6326,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 42.4727,
@@ -24103,7 +22277,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 28.7 mA does not follow from the data (derived 33.66 mA, minimum)"
+      "cost 12458.16 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 104.92,
@@ -24114,7 +22288,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.3405,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 33.6583,
+      "i_bal_needed_ma": 27.0108,
       "t_pre_s": 2.8753,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 9.344,
@@ -24208,7 +22382,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.3405,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 33.6583,
+      "i_bal_needed_ma": 27.0108,
       "t_pre_s": 2.8753,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 9.344,
@@ -24311,7 +22485,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 27 mA does not follow from the data (derived 33.66 mA, minimum)",
       "requirement R-RIDE parent '['SN-4', 'SN-6']' is not the stakeholder need it derives from (SN-6)"
      ],
      "metrics": {
@@ -24323,7 +22496,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.3405,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 33.6583,
+      "i_bal_needed_ma": 27.0108,
       "t_pre_s": 2.8753,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 9.344,
@@ -24406,7 +22579,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 28 mA does not follow from the data (derived 33.66 mA, minimum)"
+      "cost 12458.16 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 104.92,
@@ -24417,7 +22590,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.3405,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 33.6583,
+      "i_bal_needed_ma": 27.0108,
       "t_pre_s": 2.8753,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 9.344,
@@ -24511,7 +22684,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.3405,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 33.6583,
+      "i_bal_needed_ma": 27.0108,
       "t_pre_s": 2.8753,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 9.344,
@@ -24614,7 +22787,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 28.7 mA does not follow from the data (derived 33.66 mA, minimum)",
       "requirement R-RIDE parent '['SN-4', 'SN-6']' is not the stakeholder need it derives from (SN-6)",
       "current sensor range 1500 A is below 2976 A, the current up to which the BMS must decide whether the contactor can open",
       "precharge into a shorted DC link 59530 J before the 1 s check exceeds the resistor pulse rating 8000 J"
@@ -24628,7 +22800,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.3405,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 33.6583,
+      "i_bal_needed_ma": 27.0108,
       "t_pre_s": 0.6326,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 42.4727,
@@ -24711,7 +22883,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 27 mA does not follow from the data (derived 33.66 mA, minimum)"
+      "cost 12458.16 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 104.92,
@@ -24722,7 +22894,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.3405,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 33.6583,
+      "i_bal_needed_ma": 27.0108,
       "t_pre_s": 2.8753,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 9.344,
@@ -24805,7 +22977,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 26.6 mA does not follow from the data (derived 33.66 mA, minimum)"
+      "cost 12458.16 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 104.92,
@@ -24816,7 +22988,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 3.3405,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 33.6583,
+      "i_bal_needed_ma": 27.0108,
       "t_pre_s": 2.8753,
       "t_pre_allowed_s": 9.5,
       "i_pre_peak_a": 9.344,
@@ -24917,7 +23089,6 @@
      "passed": false,
      "violations": [
       "requirement R-SOC value 14.6 % does not follow from the data (derived 14.31 %, maximum)",
-      "requirement R-BAL value 15.3 mA does not follow from the data (derived 19.37 mA, minimum)",
       "precharge into a shorted DC link 57580 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
      ],
      "metrics": {
@@ -24929,7 +23100,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 14.3087,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 19.3667,
+      "i_bal_needed_ma": 15.2789,
       "t_pre_s": 0.8826,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 28.5787,
@@ -25021,7 +23192,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 14.3087,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 19.3667,
+      "i_bal_needed_ma": 15.2789,
       "t_pre_s": 2.8167,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 8.9547,
@@ -25125,7 +23296,6 @@
      "passed": false,
      "violations": [
       "requirement R-SOC value 14.6 % does not follow from the data (derived 14.31 %, maximum)",
-      "requirement R-BAL value 15.3 mA does not follow from the data (derived 19.37 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 57580 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
      ],
@@ -25138,7 +23308,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 14.3087,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 19.3667,
+      "i_bal_needed_ma": 15.2789,
       "t_pre_s": 0.8826,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 28.5787,
@@ -25219,100 +23389,6 @@
       "imd_location": "plant",
       "imd": "IMD-2"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 15.28 mA does not follow from the data (derived 19.37 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 85.84,
-      "chips_per_chain": 12,
-      "soc_error_pct": 5.0353,
-      "soc_anchor_pct": 1.9167,
-      "soc_offset_pct": 4.6501,
-      "soc_gain_pct": 0.24,
-      "soc_error_allowed_pct": 14.3087,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 19.3667,
-      "t_pre_s": 2.8167,
-      "t_pre_allowed_s": 7.0,
-      "i_pre_peak_a": 8.9547,
-      "e_pre_j": 4330.047,
-      "e_short_j": 18041.8624,
-      "rack_w": 10.2,
-      "t_ride_s": 2.2094,
-      "hold_j": 50,
-      "c_system_uf": 72.4292,
-      "cost": 13163.99
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 14.3,
-        "unit": "%",
-        "basis": "Gross full-window energy 3.6213+0.0724=3.6937 MWh; 2.300+0.0724 needs 51.4% of 80%, so the spare 28.6% is 14.3% at each end"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 150,
-        "unit": "ms",
-        "basis": "Cell over-voltage safety limit: disconnect within 150 ms above 3.75 V"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 7,
-        "unit": "s",
-        "basis": "8 s DC bus ready minus 1 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 19.37,
-        "unit": "mA",
-        "basis": "Worst case at 280 Ah: 1.66%/month spread at 35 C = 4.648 Ah/month, corrected in 8 h/day x 30 days"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 2750,
-        "unit": "A",
-        "basis": "Highest current where the FU-10 pre-arcing time exceeds the cell short-time limit (log-log interpolation, 280 A = 1 C); above it the fuse protects"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.21,
-        "unit": "s",
-        "basis": "Two fault sequences keep the voltage below 70% until 2.229 s (second 200 ms dip ends at 0.7 s, then 1.529 s recovery to 70%); minus 20 ms supply hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 72.5,
-        "unit": "uF",
-        "basis": "One unearthed IT system: 19x1.67 + 4x10 + cables 19x2x80 m x 0.23 nF = 72.4 uF, so a single plant IMD"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-2",
-      "mcu": "MCU-2",
-      "string_contactor": "K-2",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-2"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -25324,7 +23400,7 @@
       "soc_gain_pct": 0.24,
       "soc_error_allowed_pct": 14.3087,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 19.3667,
+      "i_bal_needed_ma": 15.2789,
       "t_pre_s": 2.8167,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 8.9547,
@@ -25427,7 +23503,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 15.3 mA does not follow from the data (derived 19.37 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 57580 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
      ],
@@ -25440,7 +23515,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 14.3087,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 19.3667,
+      "i_bal_needed_ma": 15.2789,
       "t_pre_s": 0.8826,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 28.5787,
@@ -25532,7 +23607,7 @@
       "soc_gain_pct": 0.4,
       "soc_error_allowed_pct": 14.3087,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 19.3667,
+      "i_bal_needed_ma": 15.2789,
       "t_pre_s": 4.1311,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 6.1055,
@@ -25639,7 +23714,6 @@
      "passed": false,
      "violations": [
       "requirement R-SOC value 3.54 % does not follow from the data (derived 3.465 %, maximum)",
-      "requirement R-BAL value 64.2 mA does not follow from the data (derived 79.86 mA, minimum)",
       "requirement R-RIDE parent '['SN-2', 'SN-6']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 41798 J before the 1 s check exceeds the resistor pulse rating 8000 J"
      ],
@@ -25652,7 +23726,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 3.4654,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 79.8559,
+      "i_bal_needed_ma": 64.227,
       "t_pre_s": 0.6803,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 29.8213,
@@ -25738,8 +23812,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-SOC value 2.66 % does not follow from the data (derived 3.465 %, maximum)",
-      "requirement R-BAL value 68.1 mA does not follow from the data (derived 79.86 mA, minimum)"
+      "requirement R-SOC value 2.66 % does not follow from the data (derived 3.465 %, maximum)"
      ],
      "metrics": {
       "t_react_ms": 89.11,
@@ -25750,7 +23823,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 3.4654,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 79.8559,
+      "i_bal_needed_ma": 64.227,
       "t_pre_s": 3.1844,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 6.3709,
@@ -25847,7 +23920,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 3.4654,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 79.8559,
+      "i_bal_needed_ma": 64.227,
       "t_pre_s": 3.1844,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 6.3709,
@@ -25948,7 +24021,6 @@
      "passed": false,
      "violations": [
       "requirement R-SOC value 3.547 % does not follow from the data (derived 3.465 %, maximum)",
-      "requirement R-BAL value 64.3 mA does not follow from the data (derived 79.86 mA, minimum)",
       "precharge into a shorted DC link 41798 J before the 1 s check exceeds the resistor pulse rating 8000 J"
      ],
      "metrics": {
@@ -25960,7 +24032,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 3.4654,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 79.8559,
+      "i_bal_needed_ma": 64.227,
       "t_pre_s": 0.6803,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 29.8213,
@@ -26041,100 +24113,6 @@
       "imd_location": "plant",
       "imd": "IMD-2"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 68.1 mA does not follow from the data (derived 79.86 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 81.55,
-      "chips_per_chain": 12,
-      "soc_error_pct": 2.4879,
-      "soc_anchor_pct": 2.0062,
-      "soc_offset_pct": 1.4707,
-      "soc_gain_pct": 0.04,
-      "soc_error_allowed_pct": 3.4654,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 79.8559,
-      "t_pre_s": 3.1844,
-      "t_pre_allowed_s": 7.0,
-      "i_pre_peak_a": 6.3709,
-      "e_pre_j": 3634.2927,
-      "e_short_j": 8929.4662,
-      "rack_w": 14.0,
-      "t_ride_s": 1.9271,
-      "hold_j": 50,
-      "c_system_uf": 55.5568,
-      "cost": 12115.74
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 3.465,
-        "unit": "%",
-        "basis": "Gross 2.4141+0.0572 MWh, window shrinks by 2e, aux 0.0572 MWh over 2 h stays: 2.4713*(1-2e/80)-0.0572>=2.2 gives e<=3.465%"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell limit: disconnect within 200 ms above 3.75 V"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 7,
-        "unit": "s",
-        "basis": "8 s bus-ready limit minus 1 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 79.9,
-        "unit": "mA",
-        "basis": "Self-discharge spread at 30 C (doubling per 10 C, 1.711 %/month) on the 280 Ah cell, which is 0.160 Ah/day, balanced in 2 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 1805,
-        "unit": "A",
-        "basis": "Highest current at which the 315 A gBat fuse pre-arcing is slower than the cell short-time limit (1C = 280 A), so the contactor must interrupt it"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 1.927,
-        "unit": "s",
-        "basis": "Supply voltage is below 70% from t=0 to 1.947 s over the double fault sequence, minus 20 ms PSU hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 55.6,
-        "unit": "uF",
-        "basis": "One galvanically connected IT system: 12x1.27 + 2x20 + 12x2x60 m x 0.22 nF/m = 55.56 uF"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-12",
-      "mcu": "MCU-2",
-      "string_contactor": "K-2",
-      "precharge_resistor": "PR-43",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-2"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -26146,7 +24124,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 3.4654,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 79.8559,
+      "i_bal_needed_ma": 64.227,
       "t_pre_s": 3.1844,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 6.3709,
@@ -26254,7 +24232,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 65 mA does not follow from the data (derived 79.86 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)"
      ],
      "metrics": {
@@ -26266,7 +24243,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 3.4654,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 79.8559,
+      "i_bal_needed_ma": 64.227,
       "t_pre_s": 3.1844,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 6.3709,
@@ -26354,7 +24331,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 64.2 mA does not follow from the data (derived 79.86 mA, minimum)"
+      "cost 13665.18 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 89.11,
@@ -26365,7 +24342,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 3.4654,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 79.8559,
+      "i_bal_needed_ma": 64.227,
       "t_pre_s": 3.1844,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 6.3709,
@@ -26453,7 +24430,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 68.1 mA does not follow from the data (derived 79.86 mA, minimum)"
+      "cost 13665.18 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 89.11,
@@ -26464,7 +24441,7 @@
       "soc_gain_pct": 0.04,
       "soc_error_allowed_pct": 3.4654,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 79.8559,
+      "i_bal_needed_ma": 64.227,
       "t_pre_s": 3.1844,
       "t_pre_allowed_s": 7.0,
       "i_pre_peak_a": 6.3709,
@@ -26567,7 +24544,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 35 mA does not follow from the data (derived 41.01 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
       "requirement R-RIDE value 1.063 s does not follow from the data (derived 2.127 s, minimum)",
       "precharge into a shorted DC link 12301 J before the 1.5 s check exceeds the resistor pulse rating 8000 J",
@@ -26582,7 +24558,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.0472,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 41.0122,
+      "i_bal_needed_ma": 32.9328,
       "t_pre_s": 3.493,
       "t_pre_allowed_s": 9.0,
       "i_pre_peak_a": 6.1055,
@@ -26663,100 +24639,6 @@
       "imd_location": "plant",
       "imd": "IMD-2"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 33 mA does not follow from the data (derived 41.01 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 79.72,
-      "chips_per_chain": 12,
-      "soc_error_pct": 1.2281,
-      "soc_anchor_pct": 0.3529,
-      "soc_offset_pct": 1.1756,
-      "soc_gain_pct": 0.0425,
-      "soc_error_allowed_pct": 2.0472,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 41.0122,
-      "t_pre_s": 2.3816,
-      "t_pre_allowed_s": 9.0,
-      "i_pre_peak_a": 8.9547,
-      "e_pre_j": 4781.0935,
-      "e_short_j": 18041.8624,
-      "rack_w": 14.0,
-      "t_ride_s": 2.1267,
-      "hold_j": 50,
-      "c_system_uf": 119.5325,
-      "cost": 22470.27
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 2.07,
-        "unit": "%",
-        "basis": "(4.626-4.400)/4.626 margin; window shrinks at both ends: 42.5*(1-4.4/4.626)"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 100,
-        "unit": "ms",
-        "basis": "cell over-voltage 3.75 V must be disconnected within 100 ms"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 9,
-        "unit": "s",
-        "basis": "10 s bus-ready limit minus 1 s start sequence"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 44,
-        "unit": "mA",
-        "basis": "0.87%/month spread at 30C of 300 Ah (worst case over life) = 87 mAh/day over 2 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 2620,
-        "unit": "A",
-        "basis": "current above which the 400 A gBat fuse clears faster than the cell short-time limit (about 2617 A)"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.213,
-        "unit": "s",
-        "basis": "input stays below or barely above 50% across both dips (gap 67 ms): 2.233 s from first dip to end of second, minus 20 ms PSU hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 119.6,
-        "unit": "uF",
-        "basis": "21*1.87+4*20+21*2*25*0.25nF uF, one galvanically connected unearthed system"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-12",
-      "mcu": "MCU-2",
-      "string_contactor": "K-2",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-2"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -26768,7 +24650,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.0472,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 41.0122,
+      "i_bal_needed_ma": 32.9328,
       "t_pre_s": 2.3816,
       "t_pre_allowed_s": 9.0,
       "i_pre_peak_a": 8.9547,
@@ -26871,7 +24753,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 35 mA does not follow from the data (derived 41.01 mA, minimum)",
       "requirement R-RIDE parent '['SN-2', 'SN-6']' is not the stakeholder need it derives from (SN-6)",
       "requirement R-RIDE value 1.063 s does not follow from the data (derived 2.127 s, minimum)",
       "precharge into a shorted DC link 12301 J before the 1.5 s check exceeds the resistor pulse rating 8000 J",
@@ -26886,7 +24767,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.0472,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 41.0122,
+      "i_bal_needed_ma": 32.9328,
       "t_pre_s": 3.493,
       "t_pre_allowed_s": 9.0,
       "i_pre_peak_a": 6.1055,
@@ -26969,7 +24850,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 33 mA does not follow from the data (derived 41.01 mA, minimum)"
+      "cost 25906.92 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 79.09,
@@ -26980,7 +24861,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.0472,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 41.0122,
+      "i_bal_needed_ma": 32.9328,
       "t_pre_s": 3.493,
       "t_pre_allowed_s": 9.0,
       "i_pre_peak_a": 6.1055,
@@ -27074,7 +24955,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.0472,
       "i_bal_ma": 300,
-      "i_bal_needed_ma": 41.0122,
+      "i_bal_needed_ma": 32.9328,
       "t_pre_s": 3.493,
       "t_pre_allowed_s": 9.0,
       "i_pre_peak_a": 6.1055,
@@ -27102,7 +24983,7 @@
    "timestamp": "2026-10-28T21:43:26+00:00"
   },
   {
-   "passed": false,
+   "passed": true,
    "attempts": [
     {
      "artifact": {
@@ -27171,7 +25052,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 35 mA does not follow from the data (derived 41.01 mA, minimum)",
       "requirement R-RIDE value 1.063 s does not follow from the data (derived 2.127 s, minimum)",
       "requirement R-IMD parent 'SN-6' does not name every stakeholder need it derives from (SN-4 and SN-6)",
       "precharge into a shorted DC link 12301 J before the 1.5 s check exceeds the resistor pulse rating 8000 J"
@@ -27185,7 +25065,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.0472,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 41.0122,
+      "i_bal_needed_ma": 32.9328,
       "t_pre_s": 3.493,
       "t_pre_allowed_s": 9.0,
       "i_pre_peak_a": 6.1055,
@@ -27266,10 +25146,8 @@
       "imd_location": "plant",
       "imd": "IMD-2"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 33 mA does not follow from the data (derived 41.01 mA, minimum)"
-     ],
+     "passed": true,
+     "violations": [],
      "metrics": {
       "t_react_ms": 86.3,
       "chips_per_chain": 12,
@@ -27279,101 +25157,7 @@
       "soc_gain_pct": 0.0425,
       "soc_error_allowed_pct": 2.0472,
       "i_bal_ma": 200,
-      "i_bal_needed_ma": 41.0122,
-      "t_pre_s": 2.3816,
-      "t_pre_allowed_s": 9.0,
-      "i_pre_peak_a": 8.9547,
-      "e_pre_j": 4781.0935,
-      "e_short_j": 18041.8624,
-      "rack_w": 15.0,
-      "t_ride_s": 2.1267,
-      "hold_j": 50,
-      "c_system_uf": 119.5325,
-      "cost": 23240.34
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": "SN-1",
-        "value": 2.07,
-        "unit": "%",
-        "basis": "(1-4.4/4.626)*85%/2 = 2.076% per window end; 5-day offset drift, OCV recalibration error and gain error must fit within it"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 100,
-        "unit": "ms",
-        "basis": "Cell safety limit: disconnect within 100 ms above 3.75 V"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 9,
-        "unit": "s",
-        "basis": "10 s PCS DC bus ready minus 1 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": "SN-1",
-        "value": 32.7,
-        "unit": "mA",
-        "basis": "Self-discharge spread doubles per 10 C, so 0.82%/month at 30 C: about 0.027%/day of 240.9 Ah = 0.065 Ah/day, balanced in 2 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 2620,
-        "unit": "A",
-        "basis": "Fuse FU-5 pre-arcing is faster than the cell short-time limit only above about 2610 A, so the contactor must break up to there"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 2.17,
-        "unit": "s",
-        "basis": "Input below 50% for 1.083 s per dip with only a 67 ms gap at 52.5% between the two faults, so hold-up bridges both dips (about 2.13 to 2.21 s net of 20 ms supply hold-up)"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 119.5,
-        "unit": "uF",
-        "basis": "One galvanically connected IT system: 21*1.87 + 4*20 + 21*2*25 m*0.25 nF = 119.5 uF"
-       }
-      ],
-      "afe": "AFE-4",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-12",
-      "mcu": "MCU-3",
-      "string_contactor": "K-2",
-      "precharge_resistor": "PR-38",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-2"
-     },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 32.7 mA does not follow from the data (derived 41.01 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 86.3,
-      "chips_per_chain": 12,
-      "soc_error_pct": 1.1966,
-      "soc_anchor_pct": 0.2192,
-      "soc_offset_pct": 1.1756,
-      "soc_gain_pct": 0.0425,
-      "soc_error_allowed_pct": 2.0472,
-      "i_bal_ma": 200,
-      "i_bal_needed_ma": 41.0122,
+      "i_bal_needed_ma": 32.9328,
       "t_pre_s": 2.3816,
       "t_pre_allowed_s": 9.0,
       "i_pre_peak_a": 8.9547,
@@ -27482,7 +25266,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 34 mA does not follow from the data (derived 36.3 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)"
      ],
      "metrics": {
@@ -27494,7 +25277,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 25.0822,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 36.2981,
+      "i_bal_needed_ma": 31.9035,
       "t_pre_s": 2.4649,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 21.4706,
@@ -27583,7 +25366,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 32 mA does not follow from the data (derived 36.3 mA, minimum)"
+      "cost 8041.15 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 108.5,
@@ -27594,7 +25377,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 25.0822,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 36.2981,
+      "i_bal_needed_ma": 31.9035,
       "t_pre_s": 2.4649,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 21.4706,
@@ -27694,7 +25477,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 25.0822,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 36.2981,
+      "i_bal_needed_ma": 31.9035,
       "t_pre_s": 2.4649,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 21.4706,
@@ -27803,7 +25586,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 34 mA does not follow from the data (derived 36.3 mA, minimum)",
       "requirement R-RIDE parent '['SN-2', 'SN-6']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 32297 J before the 0.5 s check exceeds the resistor pulse rating 20000 J"
      ],
@@ -27816,7 +25598,7 @@
       "soc_gain_pct": 0.425,
       "soc_error_allowed_pct": 25.0822,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 36.2981,
+      "i_bal_needed_ma": 31.9035,
       "t_pre_s": 1.1962,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 44.2424,
@@ -27903,106 +25685,6 @@
       "imd_location": "plant",
       "imd": "IMD-2"
      },
-     "passed": false,
-     "violations": [
-      "requirement R-BAL value 31.7 mA does not follow from the data (derived 36.3 mA, minimum)"
-     ],
-     "metrics": {
-      "t_react_ms": 108.5,
-      "chips_per_chain": 13,
-      "soc_error_pct": 21.8772,
-      "soc_anchor_pct": 1.3538,
-      "soc_offset_pct": 21.8311,
-      "soc_gain_pct": 0.425,
-      "soc_error_allowed_pct": 25.0822,
-      "i_bal_ma": 150,
-      "i_bal_needed_ma": 36.2981,
-      "t_pre_s": 2.4649,
-      "t_pre_allowed_s": 4.0,
-      "i_pre_peak_a": 21.4706,
-      "e_pre_j": 12896.18,
-      "e_short_j": 15673.5294,
-      "rack_w": 10.8,
-      "t_ride_s": 1.5467,
-      "hold_j": 50,
-      "c_system_uf": 55.5292,
-      "cost": 7626.45
-     }
-    },
-    {
-     "artifact": {
-      "requirements": [
-       {
-        "id": "R-SOC",
-        "parent": [
-         "SN-1",
-         "SN-2"
-        ],
-        "value": 25.4,
-        "unit": "%",
-        "basis": "Window 85% gives 2.753 MWh; 1.109 MWh needs 34.2% of window; spare 50.8% split over both ends = 25.4% per end"
-       },
-       {
-        "id": "R-TRIP",
-        "parent": "SN-4",
-        "value": 200,
-        "unit": "ms",
-        "basis": "Cell above 3.75 V must be disconnected within 200 ms, covering 5 scans, MCU cycle and contactor opening"
-       },
-       {
-        "id": "R-PRE",
-        "parent": "SN-3",
-        "value": 4,
-        "unit": "s",
-        "basis": "5 s DC bus ready budget minus 1 s start sequence before precharge"
-       },
-       {
-        "id": "R-BAL",
-        "parent": [
-         "SN-1",
-         "SN-4"
-        ],
-        "value": 36.3,
-        "unit": "mA",
-        "basis": "Self-discharge spread 0.778 %/month at 30 C (exponential interpolation) of 280 Ah nameplate capacity, per day, balanced in 2 h/day"
-       },
-       {
-        "id": "R-BRK",
-        "parent": "SN-4",
-        "value": 1745,
-        "unit": "A",
-        "basis": "Fuse FU-4 pre-arcing time exceeds the cell short-time limit (280 A per C, log interpolation) up to about 1745 A, so the contactor must break up to there"
-       },
-       {
-        "id": "R-RIDE",
-        "parent": "SN-6",
-        "value": 1.547,
-        "unit": "s",
-        "basis": "Connection letter fault sequence: supply below 40% from t=0 to 1.567 s over the two faults; minus 20 ms PSU hold-up"
-       },
-       {
-        "id": "R-IMD",
-        "parent": [
-         "SN-4",
-         "SN-6"
-        ],
-        "value": 55.5,
-        "unit": "uF",
-        "basis": "11x0.93 + 45 + 0.34 nF/m x 80 m x 11 = 55.5 uF on the shared unearthed DC and AC system"
-       }
-      ],
-      "afe": "AFE-3",
-      "afe_per_module": 1,
-      "chains_per_rack": 2,
-      "current_sensor": "CS-9",
-      "mcu": "MCU-3",
-      "string_contactor": "K-2",
-      "precharge_resistor": "PR-28",
-      "balancing": "internal",
-      "hold_up": "HB-2",
-      "imd_location": "plant",
-      "imd": "IMD-2"
-     },
      "passed": true,
      "violations": [],
      "metrics": {
@@ -28014,7 +25696,7 @@
       "soc_gain_pct": 0.425,
       "soc_error_allowed_pct": 25.0822,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 36.2981,
+      "i_bal_needed_ma": 31.9035,
       "t_pre_s": 2.4649,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 21.4706,
@@ -28123,7 +25805,6 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 34 mA does not follow from the data (derived 36.3 mA, minimum)",
       "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)",
       "precharge into a shorted DC link 32297 J before the 0.5 s check exceeds the resistor pulse rating 20000 J"
      ],
@@ -28136,7 +25817,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 25.0822,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 36.2981,
+      "i_bal_needed_ma": 31.9035,
       "t_pre_s": 1.1962,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 44.2424,
@@ -28225,7 +25906,7 @@
      },
      "passed": false,
      "violations": [
-      "requirement R-BAL value 32 mA does not follow from the data (derived 36.3 mA, minimum)"
+      "cost 8041.15 is not within 5% of the best design that meets every constraint"
      ],
      "metrics": {
       "t_react_ms": 108.5,
@@ -28236,7 +25917,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 25.0822,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 36.2981,
+      "i_bal_needed_ma": 31.9035,
       "t_pre_s": 2.4649,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 21.4706,
@@ -28336,7 +26017,7 @@
       "soc_gain_pct": 0.255,
       "soc_error_allowed_pct": 25.0822,
       "i_bal_ma": 150,
-      "i_bal_needed_ma": 36.2981,
+      "i_bal_needed_ma": 31.9035,
       "t_pre_s": 2.4649,
       "t_pre_allowed_s": 4.0,
       "i_pre_peak_a": 21.4706,

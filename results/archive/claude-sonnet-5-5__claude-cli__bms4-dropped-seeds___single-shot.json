@@ -1,0 +1,365 @@
+{
+ "model": "claude-sonnet-5-5 [claude-cli]",
+ "transport": "claude-cli",
+ "track": "single-shot",
+ "settings": {
+  "provider": null,
+  "reasoning": null,
+  "temperature": null,
+  "feedback": "lean"
+ },
+ "max_attempts": 5,
+ "max_python": 15,
+ "records": [
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 21.3,
+        "unit": "%",
+        "basis": "Gross energy at the connection point is 8.8255+0.0929=8.9184 MWh over the 90% window. The 1 h auxiliary energy is fixed, so (4.600+0.0929)/8.9184 needs 47.4% SOC of window. The remaining 42.6% is split over both window ends, 21.3% each."
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell safety limit: disconnect within 200 ms above 3.75 V, covering 3 daisy-chain scans, one control cycle and the contactor opening time."
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s DC-bus-ready limit minus the 0.5 s start sequence before precharge."
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 56,
+        "unit": "mA",
+        "basis": "Self-discharge spread at 35 C is 2.68% x 249 Ah = 6.67 Ah per month, to be removed in 4 h/day x 30 d = 120 h, giving 55.6 mA."
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 853,
+        "unit": "A",
+        "basis": "The fuse is too slow for the cell short-time limit (1 C = 314 A) below about 853 A (log-log crossover between 2C and 3C). The contactor must break up to there, and the fuse covers everything above."
+       },
+       {
+        "id": "R-RIDE",
+        "parent": [
+         "SN-6",
+         "SN-2"
+        ],
+        "value": 2.43,
+        "unit": "s",
+        "basis": "After a fault the voltage is below 70% for 0.2 s plus 2.25 s of recovery (10% to 70% at 80%/3 s) = 2.45 s. Subtracting the supply's own 20 ms hold-up leaves 2.43 s."
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "All DC sides share one IT system through the unearthed LV winding. Capacitance is 34x1.23 + 5x45 + 34x2x40x0.17 nF = 267.3 uF, so one plant IMD is needed."
+       }
+      ],
+      "afe": "AFE-1",
+      "afe_per_module": 2,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-2",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "raw": "{\"requirements\":[{\"id\":\"R-SOC\",\"parent\":\"SN-1\",\"value\":21.3,\"unit\":\"%\",\"basis\":\"Gross energy at the connection point is 8.8255+0.0929=8.9184 MWh over the 90% window. The 1 h auxiliary energy is fixed, so (4.600+0.0929)/8.9184 needs 47.4% SOC of window. The remaining 42.6% is split over both window ends, 21.3% each.\"},{\"id\":\"R-TRIP\",\"parent\":\"SN-4\",\"value\":200,\"unit\":\"ms\",\"basis\":\"Cell safety limit: disconnect within 200 ms above 3.75 V, covering 3 daisy-chain scans, one control cycle and the contactor opening time.\"},{\"id\":\"R-PRE\",\"parent\":\"SN-3\",\"value\":4.5,\"unit\":\"s\",\"basis\":\"5 s DC-bus-ready limit minus the 0.5 s start sequence before precharge.\"},{\"id\":\"R-BAL\",\"parent\":\"SN-1\",\"value\":56,\"unit\":\"mA\",\"basis\":\"Self-discharge spread at 35 C is 2.68% x 249 Ah = 6.67 Ah per month, to be removed in 4 h/day x 30 d = 120 h, giving 55.6 mA.\"},{\"id\":\"R-BRK\",\"parent\":\"SN-4\",\"value\":853,\"unit\":\"A\",\"basis\":\"The fuse is too slow for the cell short-time limit (1 C = 314 A) below about 853 A (log-log crossover between 2C and 3C). The contactor must break up to there, and the fuse covers everything above.\"},{\"id\":\"R-RIDE\",\"parent\":[\"SN-6\",\"SN-2\"],\"value\":2.43,\"unit\":\"s\",\"basis\":\"After a fault the voltage is below 70% for 0.2 s plus 2.25 s of recovery (10% to 70% at 80%/3 s) = 2.45 s. Subtracting the supply's own 20 ms hold-up leaves 2.43 s.\"},{\"id\":\"R-IMD\",\"parent\":[\"SN-4\",\"SN-6\"],\"value\":267.3,\"unit\":\"uF\",\"basis\":\"All DC sides share one IT system through the unearthed LV winding. Capacitance is 34x1.23 + 5x45 + 34x2x40x0.17 nF = 267.3 uF, so one plant IMD is needed.\"}],\"afe\":\"AFE-1\",\"afe_per_module\":2,\"chains_per_rack\":2,\"current_sensor\":\"CS-9\",\"mcu\":\"MCU-3\",\"string_contactor\":\"K-1\",\"precharge_resistor\":\"PR-38\",\"balancing\":\"internal\",\"hold_up\":\"HB-2\",\"imd_location\":\"plant\",\"imd\":\"IMD-3\"}",
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 56 mA does not follow from the data (derived 70.13 mA, minimum)",
+      "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
+      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)",
+      "balancing 60 mA is below 70.1 mA needed for the self-discharge spread at 35 C"
+     ],
+     "metrics": {
+      "t_react_ms": 79.11,
+      "chips_per_chain": 24,
+      "soc_error_pct": 9.7994,
+      "soc_anchor_pct": 0.4973,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 60,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 8.8,
+      "t_ride_s": 4.86,
+      "hold_j": 50,
+      "c_system_uf": 267.2824,
+      "cost": 19630.69
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 7047,
+    "completion_tokens": 23427,
+    "cost": 0.262454
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5-5",
+   "task": "bms4_009",
+   "trial": 1,
+   "seconds": 181.3,
+   "timestamp": "2026-10-29T01:50:56+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": [
+         "SN-1",
+         "SN-2"
+        ],
+        "value": 21.3,
+        "unit": "%",
+        "basis": "Need 4.6+0.0929 MWh gross of 8.8255+0.0929 MWh over the 90% window, so 47.4% window is needed; the spare 42.6% split over 2 ends is 21.3% (chosen design: 7-day offset drift 9.8% + OCV reset 2.7% + gain 0.5%, about 13%)"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V; design: 3 scans x 16.4 ms + 5 ms cycle + 30 ms opening = 84 ms"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s DC-bus-ready minus 0.5 s start sequence; one string precharging 8.7 mF alone to 95% with 150 ohm takes 3.9 s"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 55.6,
+        "unit": "mA",
+        "basis": "2.68%/month x 249 Ah / 30 d = 222 mAh/day, balanced in 4 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 2530,
+        "unit": "A",
+        "basis": "Current where the 250 A gBat fuse pre-arcing time equals BMS reaction (5 ms cycle + 30 ms opening = 35 ms); the contactor must break up to there and the fuse clears above it"
+       },
+       {
+        "id": "R-RIDE",
+        "parent": [
+         "SN-6",
+         "SN-2"
+        ],
+        "value": 4.86,
+        "unit": "s",
+        "basis": "Voltage is below 70% for 2.45 s in each of 2 dips, only 0.75 s apart, so no recharge is assumed; each dip is bridged for 2.45 s minus the 20 ms supply hold-up; rack load 10.8 W gives about 52.5 J"
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "One IT network (transformerless PCS, unearthed shared winding): 34x1.23 + 5x45 + 34x2x40 m x0.17 nF = 267.3 uF; a single IMD is allowed per IT system"
+       }
+      ],
+      "afe": "AFE-1",
+      "afe_per_module": 2,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-2",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-3",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "raw": "{\"requirements\":[{\"id\":\"R-SOC\",\"parent\":[\"SN-1\",\"SN-2\"],\"value\":21.3,\"unit\":\"%\",\"basis\":\"Need 4.6+0.0929 MWh gross of 8.8255+0.0929 MWh over the 90% window, so 47.4% window is needed; the spare 42.6% split over 2 ends is 21.3% (chosen design: 7-day offset drift 9.8% + OCV reset 2.7% + gain 0.5%, about 13%)\"},{\"id\":\"R-TRIP\",\"parent\":\"SN-4\",\"value\":200,\"unit\":\"ms\",\"basis\":\"Cell must be disconnected within 200 ms above 3.75 V; design: 3 scans x 16.4 ms + 5 ms cycle + 30 ms opening = 84 ms\"},{\"id\":\"R-PRE\",\"parent\":\"SN-3\",\"value\":4.5,\"unit\":\"s\",\"basis\":\"5 s DC-bus-ready minus 0.5 s start sequence; one string precharging 8.7 mF alone to 95% with 150 ohm takes 3.9 s\"},{\"id\":\"R-BAL\",\"parent\":\"SN-1\",\"value\":55.6,\"unit\":\"mA\",\"basis\":\"2.68%/month x 249 Ah / 30 d = 222 mAh/day, balanced in 4 h/day\"},{\"id\":\"R-BRK\",\"parent\":\"SN-4\",\"value\":2530,\"unit\":\"A\",\"basis\":\"Current where the 250 A gBat fuse pre-arcing time equals BMS reaction (5 ms cycle + 30 ms opening = 35 ms); the contactor must break up to there and the fuse clears above it\"},{\"id\":\"R-RIDE\",\"parent\":[\"SN-6\",\"SN-2\"],\"value\":4.86,\"unit\":\"s\",\"basis\":\"Voltage is below 70% for 2.45 s in each of 2 dips, only 0.75 s apart, so no recharge is assumed; each dip is bridged for 2.45 s minus the 20 ms supply hold-up; rack load 10.8 W gives about 52.5 J\"},{\"id\":\"R-IMD\",\"parent\":[\"SN-4\",\"SN-6\"],\"value\":267.3,\"unit\":\"uF\",\"basis\":\"One IT network (transformerless PCS, unearthed shared winding): 34x1.23 + 5x45 + 34x2x40 m x0.17 nF = 267.3 uF; a single IMD is allowed per IT system\"}],\"afe\":\"AFE-1\",\"afe_per_module\":2,\"chains_per_rack\":2,\"current_sensor\":\"CS-9\",\"mcu\":\"MCU-3\",\"string_contactor\":\"K-2\",\"precharge_resistor\":\"PR-38\",\"balancing\":\"internal\",\"hold_up\":\"HB-3\",\"imd_location\":\"plant\",\"imd\":\"IMD-3\"}",
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 55.6 mA does not follow from the data (derived 70.13 mA, minimum)",
+      "requirement R-BRK value 2530 A does not follow from the data (derived 852.7 A, minimum)",
+      "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
+      "balancing 60 mA is below 70.1 mA needed for the self-discharge spread at 35 C"
+     ],
+     "metrics": {
+      "t_react_ms": 84.11,
+      "chips_per_chain": 24,
+      "soc_error_pct": 9.7994,
+      "soc_anchor_pct": 0.4973,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 60,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 10.8,
+      "t_ride_s": 4.86,
+      "hold_j": 100,
+      "c_system_uf": 267.2824,
+      "cost": 22773.65
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 7046,
+    "completion_tokens": 23653,
+    "cost": 0.2397266
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5-5",
+   "task": "bms4_009",
+   "trial": 2,
+   "seconds": 187.4,
+   "timestamp": "2026-10-29T01:54:03+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 21.0,
+        "unit": "%",
+        "basis": "(4.6+0.0929)/(8.8255+0.0929) leaves a 47.4% window of the 90% available; each end of the 5-95% window can lose (90-47.4)/2 = 21%"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell datasheet: above 3.75 V disconnect within 200 ms, covering 3 scans, the MCU cycle and the contactor opening time"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s DC-bus-ready target minus the 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 55.6,
+        "unit": "mA",
+        "basis": "Self-discharge spread 2.68%/month at 35 C of 249 Ah EOL capacity is 0.222 Ah/day, balanced in 4 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 860,
+        "unit": "A",
+        "basis": "The 250 A gBat fuse alone exceeds the cell short-time limit (1C = 314 A) below about 860 A, so the contactor must break up to that current"
+       },
+       {
+        "id": "R-RIDE",
+        "parent": "SN-6",
+        "value": 2.43,
+        "unit": "s",
+        "basis": "Voltage is below the supply's 70% limit for 0.2 s plus 2.25 s of recovery (2.45 s) per dip, minus the 20 ms internal hold-up"
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "The PCS share one unearthed winding, so there is one galvanically coupled network and one plant IMD: 34x1.23 + 5x45 + 34x2x40 m x 0.17 nF/m = 267.3 uF"
+       }
+      ],
+      "afe": "AFE-1",
+      "afe_per_module": 2,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-2",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "raw": "{\"requirements\":[{\"id\":\"R-SOC\",\"parent\":\"SN-1\",\"value\":21.0,\"unit\":\"%\",\"basis\":\"(4.6+0.0929)/(8.8255+0.0929) leaves a 47.4% window of the 90% available; each end of the 5-95% window can lose (90-47.4)/2 = 21%\"},{\"id\":\"R-TRIP\",\"parent\":\"SN-4\",\"value\":200,\"unit\":\"ms\",\"basis\":\"Cell datasheet: above 3.75 V disconnect within 200 ms, covering 3 scans, the MCU cycle and the contactor opening time\"},{\"id\":\"R-PRE\",\"parent\":\"SN-3\",\"value\":4.5,\"unit\":\"s\",\"basis\":\"5 s DC-bus-ready target minus the 0.5 s start sequence before precharge\"},{\"id\":\"R-BAL\",\"parent\":\"SN-1\",\"value\":55.6,\"unit\":\"mA\",\"basis\":\"Self-discharge spread 2.68%/month at 35 C of 249 Ah EOL capacity is 0.222 Ah/day, balanced in 4 h/day\"},{\"id\":\"R-BRK\",\"parent\":\"SN-4\",\"value\":860,\"unit\":\"A\",\"basis\":\"The 250 A gBat fuse alone exceeds the cell short-time limit (1C = 314 A) below about 860 A, so the contactor must break up to that current\"},{\"id\":\"R-RIDE\",\"parent\":\"SN-6\",\"value\":2.43,\"unit\":\"s\",\"basis\":\"Voltage is below the supply's 70% limit for 0.2 s plus 2.25 s of recovery (2.45 s) per dip, minus the 20 ms internal hold-up\"},{\"id\":\"R-IMD\",\"parent\":[\"SN-4\",\"SN-6\"],\"value\":267.3,\"unit\":\"uF\",\"basis\":\"The PCS share one unearthed winding, so there is one galvanically coupled network and one plant IMD: 34x1.23 + 5x45 + 34x2x40 m x 0.17 nF/m = 267.3 uF\"}],\"afe\":\"AFE-1\",\"afe_per_module\":2,\"chains_per_rack\":2,\"current_sensor\":\"CS-9\",\"mcu\":\"MCU-3\",\"string_contactor\":\"K-1\",\"precharge_resistor\":\"PR-38\",\"balancing\":\"internal\",\"hold_up\":\"HB-2\",\"imd_location\":\"plant\",\"imd\":\"IMD-3\"}",
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 55.6 mA does not follow from the data (derived 70.13 mA, minimum)",
+      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)",
+      "balancing 60 mA is below 70.1 mA needed for the self-discharge spread at 35 C"
+     ],
+     "metrics": {
+      "t_react_ms": 79.11,
+      "chips_per_chain": 24,
+      "soc_error_pct": 9.7994,
+      "soc_anchor_pct": 0.4973,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 60,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 8.8,
+      "t_ride_s": 4.86,
+      "hold_j": 50,
+      "c_system_uf": 267.2824,
+      "cost": 19630.69
+     }
+    }
+   ],
+   "usage": {
+    "prompt_tokens": 7043,
+    "completion_tokens": 19108,
+    "cost": 0.19426459999999998
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5-5",
+   "task": "bms4_009",
+   "trial": 3,
+   "seconds": 148.3,
+   "timestamp": "2026-10-29T01:56:32+00:00"
+  }
+ ]
+}

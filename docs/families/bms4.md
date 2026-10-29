@@ -130,6 +130,13 @@ requirements bind.
   1500 V; no IEC 60947-4-1 utilization category on top.
 - **FCR recalibration interval** is drawn from 3, 5, 7, 10 or 14 days; energy
   plants recalibrate daily.
+- **R-BAL capacity basis (2026-10-29).** The self-discharge spread is a share
+  of capacity; both the datasheet's nominal capacity (Opus 5.5) and the
+  end-of-life capacity in the handover (Sonnet 5.5, every design) are
+  defensible. The derivation and H6 use end of life (least strict); a stricter
+  R-BAL is accepted up to 25 % above the nominal-capacity reading. bms4_009
+  lost its fourth binding hidden requirement under this reading and was
+  replaced; its results are archived.
 
 ## Cross-functional revision (2026-10-27)
 

@@ -311,7 +311,7 @@ def broken_candidates(task, g, feasible):
     no_aux = pl["soc_window_pct"] / 2 * (1 - pl["e_req_mwh"] / pl["e_poi_mwh"])
     add("R-SOC without the auxiliary energy", requirements=[{**r, "value": round(no_aux, 4)} if r["id"] == "R-SOC" else r for r in reqs])
     c = task["cell"]
-    bal25 = c["self_discharge_spread_pct_month"]["25"] / 100 * c["q_ah"] / 30 / task["operations"]["balancing_h_per_day"] * 1e3
+    bal25 = c["self_discharge_spread_pct_month"]["25"] / 100 * pl["q_eol_ah"] / 30 / task["operations"]["balancing_h_per_day"] * 1e3
     add("R-BAL at 25 C", requirements=[{**r, "value": round(bal25, 4)} if r["id"] == "R-BAL" else r for r in reqs])
     cheap = lambda cat: min(task[cat], key=lambda x: x["price"])["id"]  # noqa: E731
     add("requirement R-RIDE for a single dip", requirements=[{**r, "value": round(bms.ride_time(task, reclose=False), 4)}

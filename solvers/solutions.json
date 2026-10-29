@@ -14318,7 +14318,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 23.205,
+     "value": 21.4305,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -14387,7 +14387,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -14400,7 +14400,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -14447,74 +14450,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 2732.5337,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 2.78,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 85.9056,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-5",
-     "mcu": "MCU-2",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-29",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-2",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 18.12,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 7.0,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 11.6025,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -14534,7 +14470,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -14581,7 +14520,77 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 10.7153,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2732.5337,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.78,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 85.9056,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-29",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.12,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -14601,7 +14610,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -14648,7 +14660,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -14668,7 +14680,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 25.2,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -14715,7 +14730,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -14735,7 +14750,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -14782,7 +14800,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -14802,7 +14820,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -14849,7 +14870,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -14869,7 +14890,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -14916,7 +14940,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -14936,7 +14960,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -14983,7 +15010,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15003,7 +15030,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15050,7 +15080,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15070,7 +15100,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15117,7 +15150,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15137,7 +15170,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15184,7 +15220,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15204,7 +15240,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15251,7 +15290,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.205,
+       "value": 21.4305,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15271,7 +15310,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 85.9056,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15320,7 +15362,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 90.0133,
+     "value": 75.4507,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -15389,7 +15431,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15402,7 +15444,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 149.1688,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15449,74 +15494,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 939.7654,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 2.0388,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 149.1688,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-43",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-2",
-     "hold_up": "HB-1"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 2.9786,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 150,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 9.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 45.0067,
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15536,7 +15514,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 149.1688,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15583,7 +15564,77 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
+       "value": 37.7253,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 939.7654,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.0388,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 149.1688,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-1"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.9786,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15603,7 +15654,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 149.1688,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15650,7 +15704,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15670,7 +15724,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.88,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15717,7 +15774,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15737,7 +15794,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 149.1688,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15784,7 +15844,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15804,7 +15864,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 149.1688,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15851,7 +15914,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15871,7 +15934,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 149.1688,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15918,7 +15984,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -15938,7 +16004,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 149.1688,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -15985,7 +16054,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16005,7 +16074,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 149.1688,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16052,7 +16124,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16072,7 +16144,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 149.1688,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16119,7 +16194,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16139,7 +16214,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 149.1688,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16186,7 +16264,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 90.0133,
+       "value": 75.4507,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16206,7 +16284,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 149.1688,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16255,7 +16336,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 46.24,
+     "value": 42.7796,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -16324,7 +16405,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16337,7 +16418,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16384,74 +16468,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 2533.876,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 2.46,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 84.108,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-43",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-2",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 18.1415,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 9.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 23.12,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16471,7 +16488,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16518,7 +16538,77 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 21.3898,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2533.876,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.46,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 84.108,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.1415,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16538,7 +16628,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16585,7 +16678,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16605,7 +16698,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 23.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16652,7 +16748,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16672,7 +16768,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16719,7 +16818,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16739,7 +16838,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16786,7 +16888,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16806,7 +16908,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16853,7 +16958,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16873,7 +16978,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16920,7 +17028,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -16940,7 +17048,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -16987,7 +17098,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17007,7 +17118,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17054,7 +17168,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17074,7 +17188,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17121,7 +17238,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17141,7 +17258,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17188,7 +17308,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17208,7 +17328,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17255,7 +17378,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17275,7 +17398,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17322,7 +17448,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 46.24,
+       "value": 42.7796,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17342,7 +17468,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 84.108,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17391,7 +17520,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 28.8641,
+     "value": 25.8398,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -17460,7 +17589,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17473,7 +17602,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 36.39,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17520,74 +17652,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 1468.9642,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 2.38,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 36.39,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 3,
-     "current_sensor": "CS-4",
-     "mcu": "MCU-4",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-28",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-1",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 18.925,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 9.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 20.41,
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17607,7 +17672,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 36.39,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17654,7 +17722,77 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
+       "value": 18.2715,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1468.9642,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.38,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 36.39,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 3,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-4",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-28",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-1",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.925,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17674,7 +17812,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 36.39,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17721,7 +17862,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17741,7 +17882,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 15.95,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17788,7 +17932,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17808,7 +17952,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 36.39,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17855,7 +18002,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17875,7 +18022,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 36.39,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17922,7 +18072,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -17942,7 +18092,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 36.39,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -17989,7 +18142,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18009,7 +18162,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 36.39,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18056,7 +18212,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18076,7 +18232,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 36.39,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18123,7 +18282,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18143,7 +18302,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 36.39,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18190,7 +18352,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18210,7 +18372,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 36.39,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18257,7 +18422,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 28.8641,
+       "value": 25.8398,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18277,7 +18442,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 36.39,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18326,7 +18494,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 10.5465,
+     "value": 9.2467,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -18395,7 +18563,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18408,7 +18576,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18455,74 +18626,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 840.2037,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 2.3133,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 153.8588,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-1",
-     "mcu": "MCU-2",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-42",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-1"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 1.4095,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 7.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 7.4575,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18542,7 +18646,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18589,7 +18696,77 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 6.5384,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 840.2037,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.3133,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 153.8588,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-4",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-1",
+     "mcu": "MCU-2",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-42",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-3",
+     "hold_up": "HB-1"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 1.4095,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18609,7 +18786,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18656,7 +18836,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18676,7 +18856,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 52.78,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18723,7 +18906,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18743,7 +18926,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18790,7 +18976,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18810,7 +18996,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18857,7 +19046,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18877,7 +19066,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18924,7 +19116,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -18944,7 +19136,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -18991,7 +19186,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19011,7 +19206,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -19058,7 +19256,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19078,7 +19276,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -19125,7 +19326,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19145,7 +19346,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -19192,7 +19396,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19212,7 +19416,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -19259,7 +19466,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5465,
+       "value": 9.2467,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -19279,7 +19486,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 153.8588,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -19296,1008 +19506,6 @@
      "imd_location": "plant",
      "imd": "IMD-1",
      "hold_up": "HB-1"
-    },
-    "expect": "insulation"
-   }
-  ]
- },
- "bms4_009": {
-  "golden": {
-   "requirements": [
-    {
-     "id": "R-SOC",
-     "parent": "SN-1",
-     "value": 21.3208,
-     "unit": "%",
-     "basis": "SOC error"
-    },
-    {
-     "id": "R-TRIP",
-     "parent": "SN-4",
-     "value": 200,
-     "unit": "ms",
-     "basis": "over-voltage disconnect time"
-    },
-    {
-     "id": "R-PRE",
-     "parent": "SN-3",
-     "value": 4.5,
-     "unit": "s",
-     "basis": "precharge time"
-    },
-    {
-     "id": "R-BAL",
-     "parent": "SN-1",
-     "value": 70.1267,
-     "unit": "mA",
-     "basis": "balancing current"
-    },
-    {
-     "id": "R-BRK",
-     "parent": "SN-4",
-     "value": 852.668,
-     "unit": "A",
-     "basis": "contactor DC breaking current"
-    },
-    {
-     "id": "R-RIDE",
-     "parent": "SN-6",
-     "value": 4.86,
-     "unit": "s",
-     "basis": "rack control supply bridging time"
-    },
-    {
-     "id": "R-IMD",
-     "parent": [
-      "SN-4",
-      "SN-6"
-     ],
-     "value": 267.2824,
-     "unit": "uF",
-     "basis": "insulation monitor system capacitance rating"
-    }
-   ],
-   "afe": "AFE-4",
-   "afe_per_module": 1,
-   "chains_per_rack": 2,
-   "current_sensor": "CS-9",
-   "mcu": "MCU-3",
-   "string_contactor": "K-1",
-   "precharge_resistor": "PR-38",
-   "balancing": "internal",
-   "imd_location": "plant",
-   "imd": "IMD-3",
-   "hold_up": "HB-2"
-  },
-  "broken": [
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-3",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 35.0633,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 2.43,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 41.82,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-1",
-     "afe_per_module": 2,
-     "chains_per_rack": 1,
-     "current_sensor": "CS-4",
-     "mcu": "MCU-1",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-6",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-2"
-    },
-    "expect": "daisy"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-1",
-     "afe_per_module": 2,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-12",
-     "mcu": "MCU-4",
-     "string_contactor": "K-6",
-     "precharge_resistor": "PR-38",
-     "balancing": "BAL-1",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-4"
-    },
-    "expect": "cost"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-4",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-2"
-    },
-    "expect": "SOC"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-4",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-2"
-    },
-    "expect": "SOC"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-1",
-     "afe_per_module": 2,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-2"
-    },
-    "expect": "balancing"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "none"
-    },
-    "expect": "rack"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-1"
-    },
-    "expect": "rack"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "rack",
-     "imd": "IMD-3",
-     "hold_up": "HB-3"
-    },
-    "expect": "insulation"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 21.3208,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 70.1267,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 852.668,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 4.86,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 267.2824,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-4",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-1",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-1",
-     "hold_up": "HB-2"
     },
     "expect": "insulation"
    }
@@ -20330,7 +19538,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 80.6715,
+     "value": 66.1814,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -20399,7 +19607,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20412,7 +19620,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -20459,7 +19670,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20479,7 +19690,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -20526,7 +19740,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20546,7 +19760,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -20593,7 +19810,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 57.0433,
+       "value": 46.7973,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20613,7 +19830,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -20660,7 +19880,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20680,7 +19900,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -20727,7 +19950,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20747,7 +19970,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 12.0,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -20794,7 +20020,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20814,7 +20040,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -20861,7 +20090,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20881,7 +20110,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -20928,7 +20160,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -20948,7 +20180,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -20995,7 +20230,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21015,7 +20250,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21062,7 +20300,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21082,7 +20320,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21129,7 +20370,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21149,7 +20390,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21196,7 +20440,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21216,7 +20460,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21263,7 +20510,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21283,7 +20530,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21330,7 +20580,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21350,7 +20600,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21397,7 +20650,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 80.6715,
+       "value": 66.1814,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21417,7 +20670,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 102.152,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21466,7 +20722,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 29.3575,
+     "value": 27.1604,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -21535,7 +20791,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 29.3575,
+       "value": 27.1604,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21548,7 +20804,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.2764,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21595,7 +20854,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 29.3575,
+       "value": 27.1604,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21615,7 +20874,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.2764,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21662,7 +20924,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 29.3575,
+       "value": 27.1604,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21682,7 +20944,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.2764,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21729,7 +20994,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 20.7589,
+       "value": 19.2053,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21749,7 +21014,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.2764,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21796,7 +21064,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 29.3575,
+       "value": 27.1604,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21816,7 +21084,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.2764,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21863,7 +21134,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 29.3575,
+       "value": 27.1604,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21883,7 +21154,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 7.92,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21930,7 +21204,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 29.3575,
+       "value": 27.1604,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -21950,7 +21224,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.2764,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -21997,7 +21274,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 29.3575,
+       "value": 27.1604,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22017,7 +21294,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.2764,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22064,7 +21344,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 29.3575,
+       "value": 27.1604,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22084,7 +21364,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.2764,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22131,7 +21414,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 29.3575,
+       "value": 27.1604,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22151,7 +21434,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.2764,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22198,7 +21484,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 29.3575,
+       "value": 27.1604,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22218,7 +21504,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.2764,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22265,7 +21554,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 29.3575,
+       "value": 27.1604,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22285,7 +21574,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 28.2764,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22334,7 +21626,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 24.5778,
+     "value": 22.4272,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -22403,7 +21695,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22416,7 +21708,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22463,74 +21758,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 1680.5263,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 3.7933,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 64.164,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-12",
-     "mcu": "MCU-3",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-37",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-2",
-     "hold_up": "HB-3"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 2.7417,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 7.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 12.2889,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22550,7 +21778,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22597,7 +21828,77 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 11.2136,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1680.5263,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 3.7933,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 64.164,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-37",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-3"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7417,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22617,7 +21918,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22664,7 +21968,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22684,7 +21988,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 33.3,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22731,7 +22038,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22751,7 +22058,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22798,7 +22108,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22818,7 +22128,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22865,7 +22178,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22885,7 +22198,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22932,7 +22248,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -22952,7 +22268,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -22999,7 +22318,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23019,7 +22338,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23066,7 +22388,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23086,7 +22408,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23133,7 +22458,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23153,7 +22478,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23200,7 +22528,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23220,7 +22548,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23267,7 +22598,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23287,7 +22618,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23334,7 +22668,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 24.5778,
+       "value": 22.4272,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23354,7 +22688,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 64.164,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23403,7 +22740,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 147.0,
+     "value": 121.667,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -23472,7 +22809,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23485,7 +22822,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23532,74 +22872,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 2527.6652,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 2.4911,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 196.7,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-2",
-     "mcu": "MCU-3",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-37",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 2.7822,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 73.5,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23619,7 +22892,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23666,7 +22942,77 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 60.8335,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2527.6652,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.4911,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 196.7,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-37",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-3",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.7822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23686,7 +23032,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23733,7 +23082,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23753,7 +23102,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 16.4,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23800,7 +23152,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23820,7 +23172,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23867,7 +23222,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23887,7 +23242,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -23934,7 +23292,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -23954,7 +23312,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24001,7 +23362,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24021,7 +23382,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24068,7 +23432,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24088,7 +23452,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24135,7 +23502,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24155,7 +23522,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24202,7 +23572,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24222,7 +23592,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24269,7 +23642,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24289,7 +23662,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24336,7 +23712,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24356,7 +23732,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24403,7 +23782,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24423,7 +23802,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24470,7 +23852,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24490,7 +23872,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24537,7 +23922,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24557,7 +23942,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24604,7 +23992,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 147.0,
+       "value": 121.667,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24624,7 +24012,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 196.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24673,7 +24064,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 10.5,
+     "value": 9.4162,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -24742,7 +24133,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24755,7 +24146,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24802,74 +24196,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 2853.3442,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 2.0911,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 172.8212,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-2",
-     "mcu": "MCU-3",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-43",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-3",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 18.4092,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 7.5,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 5.25,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24889,7 +24216,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -24936,7 +24266,77 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 4.7081,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2853.3442,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.0911,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 172.8212,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-2",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-3",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 18.4092,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.5,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -24956,7 +24356,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25003,7 +24406,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25023,7 +24426,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 37.49,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25070,7 +24476,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25090,7 +24496,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25137,7 +24546,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25157,7 +24566,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25204,7 +24616,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25224,7 +24636,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25271,7 +24686,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25291,7 +24706,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25338,7 +24756,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25358,7 +24776,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25405,7 +24826,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25425,7 +24846,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25472,7 +24896,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25492,7 +24916,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25539,7 +24966,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25559,7 +24986,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25606,7 +25036,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25626,7 +25056,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25673,7 +25106,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25693,7 +25126,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25740,7 +25176,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25760,7 +25196,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25807,7 +25246,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25827,7 +25266,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25874,7 +25316,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 10.5,
+       "value": 9.4162,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -25894,7 +25336,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 172.8212,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -25943,7 +25388,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 17.68,
+     "value": 15.4036,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -26012,7 +25457,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26025,7 +25470,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 51.048,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26072,7 +25520,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26092,7 +25540,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 51.048,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26139,7 +25590,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26159,7 +25610,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 51.048,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26206,7 +25660,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26226,7 +25680,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 20.7,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26273,7 +25730,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26293,7 +25750,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 51.048,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26340,7 +25800,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26360,7 +25820,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 51.048,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26407,7 +25870,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26427,7 +25890,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 51.048,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26474,7 +25940,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26494,7 +25960,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 51.048,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26541,7 +26010,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26561,7 +26030,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 51.048,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26608,7 +26080,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26628,7 +26100,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 51.048,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26675,7 +26150,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26695,7 +26170,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 51.048,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26742,7 +26220,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 17.68,
+       "value": 15.4036,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26762,7 +26240,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 51.048,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26811,7 +26292,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 33.6583,
+     "value": 27.0108,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -26880,7 +26361,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26893,7 +26374,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -26940,7 +26424,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -26960,7 +26444,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27007,7 +26494,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27027,7 +26514,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27074,7 +26564,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 23.8,
+       "value": 19.0995,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27094,7 +26584,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27141,7 +26634,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27161,7 +26654,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27208,7 +26704,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27228,7 +26724,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 23.1,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27275,7 +26774,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27295,7 +26794,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27342,7 +26844,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27362,7 +26864,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27409,7 +26914,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27429,7 +26934,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27476,7 +26984,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27496,7 +27004,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27543,7 +27054,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27563,7 +27074,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27610,7 +27124,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27630,7 +27144,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27677,7 +27194,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27697,7 +27214,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27744,7 +27264,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 33.6583,
+       "value": 27.0108,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27764,7 +27284,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 83.412,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27813,7 +27336,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 19.3667,
+     "value": 15.2789,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -27882,7 +27405,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -27895,7 +27418,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -27942,74 +27468,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 2750.2475,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 2.2094,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 72.4292,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-2",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-2",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 14.3087,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 150,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 7.0,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 9.6833,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28029,7 +27488,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28076,7 +27538,77 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 7.6395,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2750.2475,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.2094,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 72.4292,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 14.3087,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 150,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28096,7 +27628,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28143,7 +27678,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28163,7 +27698,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 31.73,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28210,7 +27748,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28230,7 +27768,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28277,7 +27818,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28297,7 +27838,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28344,7 +27888,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28364,7 +27908,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28411,7 +27958,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28431,7 +27978,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28478,7 +28028,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28498,7 +28048,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28545,7 +28098,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28565,7 +28118,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28612,7 +28168,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28632,7 +28188,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28679,7 +28238,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28699,7 +28258,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28746,7 +28308,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28766,7 +28328,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28813,7 +28378,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28833,7 +28398,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28880,7 +28448,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 19.3667,
+       "value": 15.2789,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -28900,7 +28468,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 72.4292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -28949,7 +28520,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 79.8559,
+     "value": 64.227,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -29018,7 +28589,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29031,7 +28602,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29078,7 +28652,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29098,7 +28672,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29145,7 +28722,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29165,7 +28742,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29212,7 +28792,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 56.4667,
+       "value": 45.4153,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29232,7 +28812,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29279,7 +28862,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29299,7 +28882,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29346,7 +28932,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29366,7 +28952,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 15.24,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29413,7 +29002,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29433,7 +29022,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29480,7 +29072,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29500,7 +29092,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29547,7 +29142,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29567,7 +29162,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29614,7 +29212,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29634,7 +29232,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29681,7 +29282,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29701,7 +29302,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29748,7 +29352,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29768,7 +29372,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29815,7 +29422,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29835,7 +29442,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29882,7 +29492,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29902,7 +29512,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -29949,7 +29562,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -29969,7 +29582,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30016,7 +29632,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30036,7 +29652,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30083,7 +29702,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30103,7 +29722,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30150,7 +29772,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 79.8559,
+       "value": 64.227,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30170,7 +29792,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5568,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30219,7 +29844,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 41.0122,
+     "value": 32.9328,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -30288,7 +29913,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30301,7 +29926,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30348,74 +29976,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 2617.4924,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 2.1267,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 119.5325,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-12",
-     "mcu": "MCU-2",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-38",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-2",
-     "hold_up": "HB-2"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 2.0472,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 100,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 9.0,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 29.0,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30435,7 +29996,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30482,7 +30046,77 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 23.287,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2617.4924,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.1267,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 119.5325,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-2",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-38",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 2.0472,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 9.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30502,7 +30136,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30549,7 +30186,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30569,7 +30206,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 39.27,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30616,7 +30256,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30636,7 +30276,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30683,7 +30326,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30703,7 +30346,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30750,7 +30396,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30770,7 +30416,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30817,7 +30466,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30837,7 +30486,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30884,7 +30536,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30904,7 +30556,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -30951,7 +30606,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -30971,7 +30626,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31018,7 +30676,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31038,7 +30696,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31085,7 +30746,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31105,7 +30766,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31152,7 +30816,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31172,7 +30836,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31219,7 +30886,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31239,7 +30906,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31286,7 +30956,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 41.0122,
+       "value": 32.9328,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31306,7 +30976,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 119.5325,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31355,7 +31028,7 @@
     {
      "id": "R-BAL",
      "parent": "SN-1",
-     "value": 36.2981,
+     "value": 31.9035,
      "unit": "mA",
      "basis": "balancing current"
     },
@@ -31424,7 +31097,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31437,7 +31110,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31484,74 +31160,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
-       "unit": "mA",
-       "basis": "balancing current"
-      },
-      {
-       "id": "R-BRK",
-       "parent": "SN-4",
-       "value": 1749.4459,
-       "unit": "A",
-       "basis": "contactor DC breaking current"
-      },
-      {
-       "id": "R-RIDE",
-       "parent": "SN-6",
-       "value": 1.5467,
-       "unit": "s",
-       "basis": "rack control supply bridging time"
-      },
-      {
-       "id": "R-IMD",
-       "parent": "SN-4",
-       "value": 55.5292,
-       "unit": "uF",
-       "basis": "insulation monitor system capacitance rating"
-      }
-     ],
-     "afe": "AFE-3",
-     "afe_per_module": 1,
-     "chains_per_rack": 2,
-     "current_sensor": "CS-9",
-     "mcu": "MCU-3",
-     "string_contactor": "K-2",
-     "precharge_resistor": "PR-28",
-     "balancing": "internal",
-     "imd_location": "plant",
-     "imd": "IMD-2",
-     "hold_up": "HB-1"
-    },
-    "expect": "requirement"
-   },
-   {
-    "output": {
-     "requirements": [
-      {
-       "id": "R-SOC",
-       "parent": "SN-1",
-       "value": 25.0822,
-       "unit": "%",
-       "basis": "SOC error"
-      },
-      {
-       "id": "R-TRIP",
-       "parent": "SN-4",
-       "value": 200,
-       "unit": "ms",
-       "basis": "over-voltage disconnect time"
-      },
-      {
-       "id": "R-PRE",
-       "parent": "SN-3",
-       "value": 4.0,
-       "unit": "s",
-       "basis": "precharge time"
-      },
-      {
-       "id": "R-BAL",
-       "parent": "SN-1",
-       "value": 25.6667,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31571,7 +31180,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31618,7 +31230,77 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 22.5592,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 1749.4459,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 1.5467,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 55.5292,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-3",
+     "afe_per_module": 1,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-28",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-1"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 25.0822,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 200,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 4.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31638,7 +31320,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31685,7 +31370,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31705,7 +31390,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 10.23,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31752,7 +31440,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31772,7 +31460,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31819,7 +31510,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31839,7 +31530,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31886,7 +31580,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31906,7 +31600,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -31953,7 +31650,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -31973,7 +31670,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -32020,7 +31720,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -32040,7 +31740,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -32087,7 +31790,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -32107,7 +31810,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -32154,7 +31860,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -32174,7 +31880,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -32221,7 +31930,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -32241,7 +31950,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -32288,7 +32000,7 @@
       {
        "id": "R-BAL",
        "parent": "SN-1",
-       "value": 36.2981,
+       "value": 31.9035,
        "unit": "mA",
        "basis": "balancing current"
       },
@@ -32308,7 +32020,10 @@
       },
       {
        "id": "R-IMD",
-       "parent": "SN-4",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 55.5292,
        "unit": "uF",
        "basis": "insulation monitor system capacitance rating"
@@ -32325,6 +32040,1120 @@
      "imd_location": "plant",
      "imd": "IMD-1",
      "hold_up": "HB-1"
+    },
+    "expect": "insulation"
+   }
+  ]
+ },
+ "bms4_028": {
+  "golden": {
+   "requirements": [
+    {
+     "id": "R-SOC",
+     "parent": "SN-1",
+     "value": 5.6552,
+     "unit": "%",
+     "basis": "SOC error"
+    },
+    {
+     "id": "R-TRIP",
+     "parent": "SN-4",
+     "value": 100,
+     "unit": "ms",
+     "basis": "over-voltage disconnect time"
+    },
+    {
+     "id": "R-PRE",
+     "parent": "SN-3",
+     "value": 7.0,
+     "unit": "s",
+     "basis": "precharge time"
+    },
+    {
+     "id": "R-BAL",
+     "parent": "SN-1",
+     "value": 18.5237,
+     "unit": "mA",
+     "basis": "balancing current"
+    },
+    {
+     "id": "R-BRK",
+     "parent": "SN-4",
+     "value": 2757.5877,
+     "unit": "A",
+     "basis": "contactor DC breaking current"
+    },
+    {
+     "id": "R-RIDE",
+     "parent": "SN-6",
+     "value": 2.505,
+     "unit": "s",
+     "basis": "rack control supply bridging time"
+    },
+    {
+     "id": "R-IMD",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
+     "value": 76.66,
+     "unit": "uF",
+     "basis": "insulation monitor system capacitance rating"
+    }
+   ],
+   "afe": "AFE-1",
+   "afe_per_module": 2,
+   "chains_per_rack": 2,
+   "current_sensor": "CS-9",
+   "mcu": "MCU-3",
+   "string_contactor": "K-2",
+   "precharge_resistor": "PR-43",
+   "balancing": "internal",
+   "imd_location": "plant",
+   "imd": "IMD-2",
+   "hold_up": "HB-2"
+  },
+  "broken": [
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-3",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 9.2619,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 1.305,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 16.5,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "requirement"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-1",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-36",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "daisy"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-5",
+     "afe_per_module": 1,
+     "chains_per_rack": 1,
+     "current_sensor": "CS-12",
+     "mcu": "MCU-4",
+     "string_contactor": "K-6",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-3"
+    },
+    "expect": "cost"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-5",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "SOC"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-4",
+     "mcu": "MCU-3",
+     "string_contactor": "K-1",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "overcurrent"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-36",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "precharge"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "none"
+    },
+    "expect": "rack"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-1"
+    },
+    "expect": "rack"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-2",
+     "hold_up": "HB-1"
+    },
+    "expect": "rack"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "rack",
+     "imd": "IMD-2",
+     "hold_up": "HB-2"
+    },
+    "expect": "insulation"
+   },
+   {
+    "output": {
+     "requirements": [
+      {
+       "id": "R-SOC",
+       "parent": "SN-1",
+       "value": 5.6552,
+       "unit": "%",
+       "basis": "SOC error"
+      },
+      {
+       "id": "R-TRIP",
+       "parent": "SN-4",
+       "value": 100,
+       "unit": "ms",
+       "basis": "over-voltage disconnect time"
+      },
+      {
+       "id": "R-PRE",
+       "parent": "SN-3",
+       "value": 7.0,
+       "unit": "s",
+       "basis": "precharge time"
+      },
+      {
+       "id": "R-BAL",
+       "parent": "SN-1",
+       "value": 18.5237,
+       "unit": "mA",
+       "basis": "balancing current"
+      },
+      {
+       "id": "R-BRK",
+       "parent": "SN-4",
+       "value": 2757.5877,
+       "unit": "A",
+       "basis": "contactor DC breaking current"
+      },
+      {
+       "id": "R-RIDE",
+       "parent": "SN-6",
+       "value": 2.505,
+       "unit": "s",
+       "basis": "rack control supply bridging time"
+      },
+      {
+       "id": "R-IMD",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
+       "value": 76.66,
+       "unit": "uF",
+       "basis": "insulation monitor system capacitance rating"
+      }
+     ],
+     "afe": "AFE-1",
+     "afe_per_module": 2,
+     "chains_per_rack": 2,
+     "current_sensor": "CS-9",
+     "mcu": "MCU-3",
+     "string_contactor": "K-2",
+     "precharge_resistor": "PR-43",
+     "balancing": "internal",
+     "imd_location": "plant",
+     "imd": "IMD-1",
+     "hold_up": "HB-2"
     },
     "expect": "insulation"
    }

@@ -1,0 +1,940 @@
+{
+ "model": "claude-sonnet-5-5 [claude-cli]",
+ "transport": "claude-cli",
+ "track": "agentic",
+ "settings": {
+  "provider": null,
+  "reasoning": null,
+  "temperature": null,
+  "feedback": "report"
+ },
+ "max_attempts": 3,
+ "max_python": 15,
+ "records": [
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 21.3,
+        "unit": "%",
+        "basis": "Window 90% must shrink to about 47.4% to give 4.6 MWh plus 0.0929 MWh auxiliary at 1 h, so the error margin is (90-47.4)/2 per end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V (3 scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s DC bus readiness minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 55.6,
+        "unit": "mA",
+        "basis": "2.68%/month self-discharge spread at 35 C x 249 Ah = 6.67 Ah, removed in 30 d x 4 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 852,
+        "unit": "A",
+        "basis": "Highest current at which the FU-13 fuse is slower than the cell short-time limit (314 A = 1 C); above this the fuse protects the cell"
+       },
+       {
+        "id": "R-RIDE",
+        "parent": "SN-6",
+        "value": 2.43,
+        "unit": "s",
+        "basis": "Grid voltage is below 70% for 0.2 s + 2.25 s = 2.45 s in each fault of the sequence, minus the 20 ms supply hold-up"
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "One IT system via the shared unearthed transformer winding: 34x1.23 + 5x45 + 34x2x40 m x 0.17 nF/m"
+       }
+      ],
+      "afe": "AFE-1",
+      "afe_per_module": 2,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-2",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 55.6 mA does not follow from the data (derived 70.13 mA, minimum)",
+      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)",
+      "balancing 60 mA is below 70.1 mA needed for the self-discharge spread at 35 C"
+     ],
+     "metrics": {
+      "t_react_ms": 79.11,
+      "chips_per_chain": 24,
+      "soc_error_pct": 9.7994,
+      "soc_anchor_pct": 0.4973,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 60,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 8.8,
+      "t_ride_s": 4.86,
+      "hold_j": 50,
+      "c_system_uf": 267.2824,
+      "cost": 19630.69
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 21.3,
+        "unit": "%",
+        "basis": "Window 90% must shrink to about 47.4% to give 4.6 MWh plus 0.0929 MWh auxiliary at 1 h, so the error margin is (90-47.4)/2 per end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V (3 scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s DC bus readiness minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 111.2,
+        "unit": "mA",
+        "basis": "Self-discharge spread at 35 C is 2.68%/month of 249 Ah, and cells can deviate to either side of the mean, so the extremes diverge by twice that; removed in 30 d x 4 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 852,
+        "unit": "A",
+        "basis": "Highest current at which the FU-13 fuse is slower than the cell short-time limit (314 A = 1 C); above this the fuse protects the cell"
+       },
+       {
+        "id": "R-RIDE",
+        "parent": "SN-6",
+        "value": 5.63,
+        "unit": "s",
+        "basis": "Fault, unsuccessful reclose at 3.2 s: input is above 70% for only 0.75 s between the two dips, so bridge from the first drop below 70% to the second recovery above it (5.65 s) minus the 20 ms supply hold-up"
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "One IT system via the shared unearthed transformer winding: 34x1.23 + 5x45 + 34x2x40 m x 0.17 nF/m"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-2",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 111.2 mA does not follow from the data (derived 70.13 mA, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 84.27,
+      "chips_per_chain": 12,
+      "soc_error_pct": 9.7889,
+      "soc_anchor_pct": 0.2036,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 8.8,
+      "t_ride_s": 4.86,
+      "hold_j": 50,
+      "c_system_uf": 267.2824,
+      "cost": 21319.81
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 21.3,
+        "unit": "%",
+        "basis": "Window 90% must shrink to about 47.4% to give 4.6 MWh plus 0.0929 MWh auxiliary at 1 h, so the error margin is (90-47.4)/2 per end"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V (3 scans + MCU cycle + contactor opening)"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s DC bus readiness minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 70.1,
+        "unit": "mA",
+        "basis": "2.68%/month self-discharge spread at 35 C of the 314 Ah cell (largest capacity, so worst case), removed in 30 d x 4 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 852,
+        "unit": "A",
+        "basis": "Highest current at which the FU-13 fuse is slower than the cell short-time limit (314 A = 1 C); above this the fuse protects the cell"
+       },
+       {
+        "id": "R-RIDE",
+        "parent": "SN-6",
+        "value": 5.63,
+        "unit": "s",
+        "basis": "Fault, unsuccessful reclose at 3.2 s: input is above 70% for only 0.75 s between the two dips, so bridge from the first drop below 70% to the second recovery above it (5.65 s) minus the 20 ms supply hold-up"
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "One IT system via the shared unearthed transformer winding: 34x1.23 + 5x45 + 34x2x40 m x 0.17 nF/m"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-2",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 84.27,
+      "chips_per_chain": 12,
+      "soc_error_pct": 9.7889,
+      "soc_anchor_pct": 0.2036,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 8.8,
+      "t_ride_s": 4.86,
+      "hold_j": 50,
+      "c_system_uf": 267.2824,
+      "cost": 21319.81
+     }
+    }
+   ],
+   "python_calls": 2,
+   "usage": {
+    "prompt_tokens": 1812115,
+    "completion_tokens": 667273,
+    "cost": 9.193965299999999
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5-5",
+   "task": "bms4_009",
+   "trial": 1,
+   "seconds": 765.1,
+   "timestamp": "2026-10-28T19:09:12+00:00"
+  },
+  {
+   "passed": true,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 21.5,
+        "unit": "%",
+        "basis": "4.6 of 8.8255 MWh net usable needed; window shrinks by SOC error at both ends, energy-weighted over OCV curve"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s DC bus ready minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 55.6,
+        "unit": "mA",
+        "basis": "2.68 %/month spread at 35 C over 30 d x 249 Ah, corrected within 4 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 850,
+        "unit": "A",
+        "basis": "Above 850 A the FU-13 fuse pre-arcing time is within the cell short-time limit (314 A = 1C); below it the contactor must interrupt"
+       },
+       {
+        "id": "R-RIDE",
+        "parent": [
+         "SN-6",
+         "SN-4"
+        ],
+        "value": 2.43,
+        "unit": "s",
+        "basis": "Voltage below 70% for 0.2 s + 2.25 s = 2.45 s in the fault sequence, minus 20 ms PSU hold-up"
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "34x1.23 + 5x45 uF + cables 34x80 m x 0.17 nF/m, one galvanically connected IT system"
+       }
+      ],
+      "afe": "AFE-1",
+      "afe_per_module": 2,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-2",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 55.6 mA does not follow from the data (derived 70.13 mA, minimum)",
+      "requirement R-RIDE parent '['SN-6', 'SN-4']' is not the stakeholder need it derives from (SN-6)",
+      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)",
+      "balancing 60 mA is below 70.1 mA needed for the self-discharge spread at 35 C"
+     ],
+     "metrics": {
+      "t_react_ms": 79.11,
+      "chips_per_chain": 24,
+      "soc_error_pct": 9.7994,
+      "soc_anchor_pct": 0.4973,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 60,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 8.8,
+      "t_ride_s": 4.86,
+      "hold_j": 50,
+      "c_system_uf": 267.2824,
+      "cost": 19630.69
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 21.5,
+        "unit": "%",
+        "basis": "4.6 of 8.8255 MWh net usable needed; window shrinks by SOC error at both ends, energy-weighted over OCV curve"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s DC bus ready minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 70.1,
+        "unit": "mA",
+        "basis": "2.68 %/month spread at 35 C over 30 d on 314 Ah (worst case, beginning of life), corrected within 4 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 850,
+        "unit": "A",
+        "basis": "Above 850 A the FU-13 fuse pre-arcing time is within the cell short-time limit (314 A = 1C); below it the contactor must interrupt"
+       },
+       {
+        "id": "R-RIDE",
+        "parent": "SN-6",
+        "value": 2.43,
+        "unit": "s",
+        "basis": "Voltage below 70% for 0.2 s + 2.25 s = 2.45 s in the connection letter fault sequence, minus 20 ms PSU hold-up"
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "34x1.23 + 5x45 uF + cables 34x80 m x 0.17 nF/m, one galvanically connected IT system"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-2",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 84.27,
+      "chips_per_chain": 12,
+      "soc_error_pct": 9.7889,
+      "soc_anchor_pct": 0.2036,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 8.8,
+      "t_ride_s": 4.86,
+      "hold_j": 50,
+      "c_system_uf": 267.2824,
+      "cost": 21319.81
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": "SN-1",
+        "value": 21.5,
+        "unit": "%",
+        "basis": "4.6 of 8.8255 MWh net usable needed; window shrinks by SOC error at both ends, energy-weighted over OCV curve"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s DC bus ready minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": "SN-1",
+        "value": 70.1,
+        "unit": "mA",
+        "basis": "2.68 %/month spread at 35 C over 30 d on 314 Ah (worst case, beginning of life), corrected within 4 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 850,
+        "unit": "A",
+        "basis": "Above 850 A the FU-13 fuse pre-arcing time is within the cell short-time limit (314 A = 1C); below it the contactor must interrupt"
+       },
+       {
+        "id": "R-RIDE",
+        "parent": "SN-6",
+        "value": 4.86,
+        "unit": "s",
+        "basis": "Two dips each below 70% for 2.45 s minus 20 ms PSU hold-up = 2 x 2.43 s; only 0.75 s between them, so no recharge assumed"
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "34x1.23 + 5x45 uF + cables 34x80 m x 0.17 nF/m, one galvanically connected IT system"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-2",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "passed": true,
+     "violations": [],
+     "metrics": {
+      "t_react_ms": 84.27,
+      "chips_per_chain": 12,
+      "soc_error_pct": 9.7889,
+      "soc_anchor_pct": 0.2036,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 8.8,
+      "t_ride_s": 4.86,
+      "hold_j": 50,
+      "c_system_uf": 267.2824,
+      "cost": 21319.81
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 220281,
+    "completion_tokens": 101686,
+    "cost": 1.3436715000000001
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5-5",
+   "task": "bms4_009",
+   "trial": 2,
+   "seconds": 245.4,
+   "timestamp": "2026-10-28T19:13:17+00:00"
+  },
+  {
+   "passed": false,
+   "attempts": [
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": [
+         "SN-1",
+         "SN-2"
+        ],
+        "value": 21.0,
+        "unit": "%",
+        "basis": "Energy margin 8.8255-4.6-0.0929 MWh over 0.0981 MWh per SOC%, shared by the two window ends"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V; 3 scans plus MCU cycle plus contactor opening must fit"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s bus-ready limit minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": [
+         "SN-1",
+         "SN-4"
+        ],
+        "value": 55.6,
+        "unit": "mA",
+        "basis": "Self-discharge spread 2.68%/month at 35C on 249 Ah, 0.2224 Ah/day, removed in 4 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 850,
+        "unit": "A",
+        "basis": "Crossover of FU-13 pre-arcing curve and cell short-time limit; above it the fuse protects the cells alone"
+       },
+       {
+        "id": "R-RIDE",
+        "parent": [
+         "SN-6",
+         "SN-2"
+        ],
+        "value": 2.43,
+        "unit": "s",
+        "basis": "Voltage below 70% for 2.45 s per dip in the reclose sequence, minus 20 ms supply hold-up"
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "One galvanically connected IT network: 34x1.23 + 5x45 + 34x80 m x 0.17 nF/m"
+       }
+      ],
+      "afe": "AFE-1",
+      "afe_per_module": 2,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-2",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-BAL value 55.6 mA does not follow from the data (derived 70.13 mA, minimum)",
+      "requirement R-RIDE parent '['SN-6', 'SN-2']' is not the stakeholder need it derives from (SN-6)",
+      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)",
+      "balancing 60 mA is below 70.1 mA needed for the self-discharge spread at 35 C"
+     ],
+     "metrics": {
+      "t_react_ms": 79.11,
+      "chips_per_chain": 24,
+      "soc_error_pct": 9.7994,
+      "soc_anchor_pct": 0.4973,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 60,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 8.8,
+      "t_ride_s": 4.86,
+      "hold_j": 50,
+      "c_system_uf": 267.2824,
+      "cost": 19630.69
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": [
+         "SN-1",
+         "SN-2"
+        ],
+        "value": 21.0,
+        "unit": "%",
+        "basis": "Energy margin 8.8255-4.6-0.0929 MWh over 0.0981 MWh per SOC%, shared by the two window ends"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V; 3 scans plus MCU cycle plus contactor opening must fit"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s bus-ready limit minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": [
+         "SN-1",
+         "SN-4"
+        ],
+        "value": 70.1,
+        "unit": "mA",
+        "basis": "Self-discharge spread 2.68%/month at 35C on 314 Ah (worst case, beginning of life), removed in 4 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 850,
+        "unit": "A",
+        "basis": "Crossover of FU-13 pre-arcing curve and cell short-time limit; above it the fuse protects the cells alone"
+       },
+       {
+        "id": "R-RIDE",
+        "parent": "SN-6",
+        "value": 2.43,
+        "unit": "s",
+        "basis": "Connection letter fault sequence: voltage below 70% for 2.45 s per dip, minus 20 ms supply hold-up"
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "One galvanically connected IT network: 34x1.23 + 5x45 + 34x80 m x 0.17 nF/m"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-2",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-RIDE value 2.43 s does not follow from the data (derived 4.86 s, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 84.27,
+      "chips_per_chain": 12,
+      "soc_error_pct": 9.7889,
+      "soc_anchor_pct": 0.2036,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 8.8,
+      "t_ride_s": 4.86,
+      "hold_j": 50,
+      "c_system_uf": 267.2824,
+      "cost": 21319.81
+     }
+    },
+    {
+     "artifact": {
+      "requirements": [
+       {
+        "id": "R-SOC",
+        "parent": [
+         "SN-1",
+         "SN-2"
+        ],
+        "value": 21.0,
+        "unit": "%",
+        "basis": "Energy margin 8.8255-4.6-0.0929 MWh over 0.0981 MWh per SOC%, shared by the two window ends"
+       },
+       {
+        "id": "R-TRIP",
+        "parent": "SN-4",
+        "value": 200,
+        "unit": "ms",
+        "basis": "Cell must be disconnected within 200 ms above 3.75 V; 3 scans plus MCU cycle plus contactor opening must fit"
+       },
+       {
+        "id": "R-PRE",
+        "parent": "SN-3",
+        "value": 4.5,
+        "unit": "s",
+        "basis": "5 s bus-ready limit minus 0.5 s start sequence before precharge"
+       },
+       {
+        "id": "R-BAL",
+        "parent": [
+         "SN-1",
+         "SN-4"
+        ],
+        "value": 70.1,
+        "unit": "mA",
+        "basis": "Self-discharge spread 2.68%/month at 35C on 314 Ah (worst case, beginning of life), removed in 4 h/day"
+       },
+       {
+        "id": "R-BRK",
+        "parent": "SN-4",
+        "value": 850,
+        "unit": "A",
+        "basis": "Crossover of FU-13 pre-arcing curve and cell short-time limit; above it the fuse protects the cells alone"
+       },
+       {
+        "id": "R-RIDE",
+        "parent": "SN-6",
+        "value": 2.45,
+        "unit": "s",
+        "basis": "Connection letter fault sequence: voltage stays below 70% of nominal for 2.45 s per dip (10% to 70% on a 3 s ramp after 200 ms)"
+       },
+       {
+        "id": "R-IMD",
+        "parent": [
+         "SN-4",
+         "SN-6"
+        ],
+        "value": 267.3,
+        "unit": "uF",
+        "basis": "One galvanically connected IT network: 34x1.23 + 5x45 + 34x80 m x 0.17 nF/m"
+       }
+      ],
+      "afe": "AFE-4",
+      "afe_per_module": 1,
+      "chains_per_rack": 2,
+      "current_sensor": "CS-9",
+      "mcu": "MCU-3",
+      "string_contactor": "K-1",
+      "precharge_resistor": "PR-38",
+      "balancing": "internal",
+      "hold_up": "HB-2",
+      "imd_location": "plant",
+      "imd": "IMD-3"
+     },
+     "passed": false,
+     "violations": [
+      "requirement R-RIDE value 2.45 s does not follow from the data (derived 4.86 s, minimum)"
+     ],
+     "metrics": {
+      "t_react_ms": 84.27,
+      "chips_per_chain": 12,
+      "soc_error_pct": 9.7889,
+      "soc_anchor_pct": 0.2036,
+      "soc_offset_pct": 9.7764,
+      "soc_gain_pct": 0.45,
+      "soc_error_allowed_pct": 21.3208,
+      "i_bal_ma": 200,
+      "i_bal_needed_ma": 70.1267,
+      "t_pre_s": 3.9094,
+      "t_pre_allowed_s": 4.5,
+      "i_pre_peak_a": 9.344,
+      "e_pre_j": 8545.4991,
+      "e_short_j": 6548.2752,
+      "rack_w": 8.8,
+      "t_ride_s": 4.86,
+      "hold_j": 50,
+      "c_system_uf": 267.2824,
+      "cost": 21319.81
+     }
+    }
+   ],
+   "python_calls": 1,
+   "usage": {
+    "prompt_tokens": 209508,
+    "completion_tokens": 95138,
+    "cost": 1.2571500999999998
+   },
+   "provider": "claude-cli (subscription)",
+   "resolved_model": "claude-sonnet-5-5",
+   "task": "bms4_009",
+   "trial": 3,
+   "seconds": 260.4,
+   "timestamp": "2026-10-28T19:17:38+00:00"
+  }
+ ]
+}

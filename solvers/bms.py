@@ -128,12 +128,13 @@ def precharge_time_allowed(task):
     return task["needs"]["dc_ready_s"] - task["firmware"]["startup_overhead_s"]
 
 
-def balancing_needed_ma(task):
+def balancing_needed_ma(task, q_ah=None):
     """Self-discharge doubles about every 10 K, so the table is read geometrically between its points (linear
-    interpolation of an exponential overstates it; found in the Opus 5.5 pilot, 2026-10-27)."""
+    interpolation of an exponential overstates it; found in the Opus 5.5 pilot, 2026-10-27). The spread is a
+    share of the end-of-life capacity the handover gives: the least strict reading (Sonnet 5.5, 2026-10-29)."""
     c, o = task["cell"], task["operations"]
     spread = math.exp(_interp([(t, math.log(x)) for t, x in _table(c["self_discharge_spread_pct_month"])], o["cell_temp_c"]))
-    return spread / 100 * c["q_ah"] / 30 / o["balancing_h_per_day"] * 1e3
+    return spread / 100 * (q_ah or task["plant"]["q_eol_ah"]) / 30 / o["balancing_h_per_day"] * 1e3
 
 
 def breaking_needed(task):
@@ -214,6 +215,12 @@ def derived(task):
             "R-RIDE": ride_time(task), "R-IMD": system_capacitance_uf(task)}
 
 
+def stricter_readings(task):
+    """Defensible stricter derivations: the tolerance for a stricter requirement counts from these.
+    R-BAL on the datasheet's nominal capacity (Opus 5.5 reads it so, 2026-10-29)."""
+    return {"R-BAL": balancing_needed_ma(task, task["cell"]["q_ah"])}
+
+
 def parents(task):
     return {"R-SOC": {"SN-1", "SN-2"} if "fcr_mw" in task["plant"] else {"SN-1"}, "R-TRIP": {"SN-4"},
             "R-PRE": {"SN-3"}, "R-BAL": {"SN-1", "SN-4"}, "R-BRK": {"SN-4"}, "R-RIDE": {"SN-6"}, "R-IMD": {"SN-4", "SN-6"}}
@@ -228,7 +235,7 @@ def check_requirements(task, records):
     if not isinstance(records, list):
         return ["requirements must be a list of records"]
     by_id = {str(r.get("id", "")).strip().upper(): r for r in records if isinstance(r, dict)}
-    want, allowed = derived(task), parents(task)
+    want, allowed, strict = derived(task), parents(task), stricter_readings(task)
     for rid, (quantity, unit, kind) in REQUIREMENTS.items():
         r = by_id.get(rid)
         if r is None:
@@ -249,7 +256,8 @@ def check_requirements(task, records):
             v.append(f"requirement {rid} value is not a number")
             continue
         d = want[rid]
-        lo, hi = (d * (1 - STRICTER[kind]), d * (1 + LOOSER)) if kind == "max" else (d * (1 - LOOSER), d * (1 + STRICTER[kind]))
+        s = strict.get(rid, d)
+        lo, hi = (s * (1 - STRICTER[kind]), d * (1 + LOOSER)) if kind == "max" else (d * (1 - LOOSER), s * (1 + STRICTER[kind]))
         if not lo - 1e-9 <= x <= hi + 1e-9:
             v.append(f"requirement {rid} value {x:g} {unit} does not follow from the data (derived {d:.4g} {unit}, "
                      f"{kind}imum)")
