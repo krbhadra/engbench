@@ -14,6 +14,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from leaderboard import held_out, score
+from usage import tally
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs" / "index.html"
@@ -77,7 +78,7 @@ def build(runs, tasks):
     lb = ['<table><thead><tr><th>model</th><th>score<small>single-shot</small></th><th>score<small>agentic</small></th>'
           '<th>single-shot<small>pass</small></th><th>agentic<small>pass in 3 test rounds</small></th>'
           '<th>gap<small>agentic − single-shot, same tasks</small></th><th>agentic<small>first design</small></th>'
-          '<th>test rounds<small>to pass</small></th><th>tasks</th><th>out tokens / task</th><th>$ / task</th></tr></thead><tbody>']
+          '<th>test rounds<small>to pass</small></th><th>tasks</th></tr></thead><tbody>']
     for m in models:
         ss, ag = by.get((m, "single-shot"), []), by.get((m, "agentic"), [])
         rs, ra, r1 = rate(ss), rate(ag), first_rate(ag)
@@ -87,16 +88,28 @@ def build(runs, tasks):
         passed = [len(r["attempts"]) for r in ag if r["passed"]]
         calls = f"{sum(passed) / len(passed):.2f}" if passed else "–"
         allr = [r for r in ss + ag if r["passed"] is not None]
-        tok = sum(r["usage"].get("completion_tokens", 0) for r in allr) / max(1, len(allr))
-        cost = sum(r["usage"].get("cost", 0) for r in allr) / max(1, len(allr))
         def sc(recs, tr):
             if not recs:
                 return '<td class="na">–</td>'
             v, rates = score(recs, tr, private.get((m, tr), []))
             return f'<td><b>{v:.1f}</b><small>levels run: {", ".join(map(str, sorted(rates)))}</small></td>'
-        lb.append(f"<tr><th>{esc(m)}</th>{sc(ss, 'single-shot')}{sc(ag, 'agentic')}{cell(rs)}{cell(ra)}<td>{gap}</td>{cell(r1)}<td>{calls}</td><td>{len({r['task'] for r in allr})}</td>"
-                  f"<td>{tok:,.0f}</td><td>{cost:.3f}</td></tr>")
+        lb.append(f"<tr><th>{esc(m)}</th>{sc(ss, 'single-shot')}{sc(ag, 'agentic')}{cell(rs)}{cell(ra)}<td>{gap}</td>{cell(r1)}<td>{calls}</td><td>{len({r['task'] for r in allr})}</td></tr>")
     lb.append("</tbody></table>")
+
+    # ---- tokens and cost, public and held-out runs: what a release check costs
+    levels = sorted({lvl for d in runs for lvl in tally(d["records"] + d["held_out"]) if lvl not in ("all", "?")})
+    ct = ['<table><thead><tr><th>model</th><th>track</th><th>task runs</th><th>input tokens<small>incl. cached, M</small></th>'
+          '<th>output tokens<small>M</small></th><th>tokens / task run<small>in + out, k</small></th><th>cost<small>USD, all runs</small></th>'
+          '<th>cost / task run<small>USD</small></th>'] + [f"<th>L{l}<small>USD / task run</small></th>" for l in levels] + ["</tr></thead><tbody>"]
+    for d in sorted(runs, key=lambda d: (d["model"], d["track"])):
+        t = tally(d["records"] + d["held_out"])
+        if "all" not in t:
+            continue
+        n, i, o, c = t["all"]
+        ct.append(f"<tr><th>{esc(d['model'])}</th><td>{d['track']}</td><td>{n}</td><td>{i / 1e6:.1f}</td><td>{o / 1e6:.1f}</td>"
+                  f"<td>{(i + o) / n / 1e3:,.0f}</td><td>{c:,.0f}</td><td>{c / n:.2f}</td>"
+                  + "".join(f"<td>{t[l][3] / t[l][0]:.2f}</td>" if l in t else '<td class="na">–</td>' for l in levels) + "</tr>")
+    ct.append("</tbody></table>")
 
     # ---- per family, per track
     fam_tables = []
@@ -158,9 +171,10 @@ details[open]{{display:block;max-width:520px;white-space:normal}} details pre{{f
 a{{color:var(--accent)}} footer{{margin-top:48px;color:var(--muted);font-size:13px}}
 </style></head><body><main>
 <h1>EngBench</h1>
-<p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, and a test lab: each submitted design comes back with a test and review report of what failed (a fuse ruptured in the short-circuit test, the plant could not charge in winter), never the cause or the numbers, and the design passes if it clears the tests within three rounds. It measures whether the model can find the root cause of its own mistakes and fix them without breaking something else. The first-design rate is shown beside it. <b>Feedback</b> is the superseded early loop (grader with full numbers, no compute), kept for the record. Cell footnotes are the number of task runs behind each rate.</p>
+<p class="lede">Engineering design tasks graded by deterministic solvers, never by an LLM. <b>Single-shot</b>: one answer, no tools, the engineer answering cold. <b>Agentic</b>: a Python tool to compute and self-check, and a test lab: each submitted design comes back with a test and review report of what failed (a fuse ruptured in the short-circuit test, the plant could not charge in winter), never the cause or the numbers, and the design passes if it clears the tests within three rounds. It measures whether the model can find the root cause of its own mistakes and fix them without breaking something else. The first-design rate is shown beside it. Cell footnotes are the number of task runs behind each rate.</p>
 <p class="lede">{n_tasks} tasks · {n_runs} task runs · {len(models)} models · updated {stamp}</p>
-<h2>Leaderboard</h2><p class="lede">Score out of 100: six levels, each worth published points (15, 20, 15, 20, 15, 15), earned at that level's pass rate; agentic counts a pass within three test rounds. Level 3 is scored on held-out seeds that are not published (so they cannot leak into training); the public level-3 tasks below are the same generator, for reproduction. Levels a model has not run earn nothing, so compare scores only across the same levels run.</p><div class="wrap">{"".join(lb)}</div>
+<h2>Leaderboard</h2><p class="lede">Score out of 100: six levels, each worth published points (15, 20, 15, 20, 15, 15), earned at that level's pass rate; agentic counts a pass within three test rounds. Levels 3 and 4 are scored on held-out seeds that are not published (so they cannot leak into training); the public tasks of those levels below are the same generator, for reproduction. Levels a model has not run earn nothing, so compare scores only across the same levels run.</p><div class="wrap">{"".join(lb)}</div>
+<h2>Tokens and cost</h2><p class="lede">Every graded task run, public and held-out, as a release check runs them (3 trials). Input tokens include cached prompt reads, which cost far less than fresh input; a provider without prompt caching pays full price on all of them. Cost is what the transport reports: for claude-cli the API-equivalent price, billed to the subscription. Budget a new model from cost per task run times the task runs.</p><div class="wrap">{"".join(ct)}</div>
 <h2>By family</h2>
 <p class="lede">The first three families (mechanical fit, DC circuits, and their combination) are saturated and stay as a floor. The generated families ask for a design within 5% of the brute-force optimum, not just a feasible one.</p>
 <div class="wrap">{"".join(fam_tables)}</div>
