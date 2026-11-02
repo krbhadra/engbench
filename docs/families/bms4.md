@@ -81,7 +81,7 @@ The `basis` text is not graded.
 | R-PRE | max precharge time, s | SN-3 | PCS start-up time and availability |
 | R-BAL | min balancing current, mA | SN-1 | self-discharge spread at the hottest operating temperature, rest time per day |
 | R-BRK | min DC breaking current of the string switch, A | SN-4 | the lowest current from which the fuse alone clears within the cell's short-time limit |
-| R-RIDE | min bridging time of the rack's 24 V, s | SN-6 | the operator's fault sequence with a reclose onto the fault, against the power supply's minimum input voltage and hold-up |
+| R-RIDE | min bridging time of the rack's 24 V, s | SN-6, SN-4 and, on an FCR plant, SN-2: all of them | the operator's fault sequence with a reclose onto the fault, against the power supply's minimum input voltage and hold-up |
 | R-IMD | min system capacitance rating of the insulation monitor, uF | SN-4 and SN-6, both | earth capacitance of every rack, PCS and DC conductor on the one IT system |
 
 ## Hidden requirements (author review: accepted 2026-10-27)
@@ -161,6 +161,12 @@ installation, SN-6 names the VDE installation standards, and any record may
 name several parents. The other records keep "either is correct" where two
 parents are listed. None of Opus 5.5's 17 pilot first designs named both
 (it ran on the earlier brief), so the pilot was archived.
+
+R-RIDE likewise (author, 2026-11-03): ride-through serves the connection rules
+(SN-6), safety (SN-4) and, on an FCR plant, the reserve (SN-2); the record must
+name all of them. Agentic level-4 runs whose outcome changed under this rule
+were rerun rather than re-graded, because the model had seen test reports the
+new rule would not give; the old runs are archived.
 
 Sources for H8: VDE FNN, TCR medium voltage (VDE-AR-N 4110) overview, 2017,
 dynamic grid support for type 2 units (ride through repeated faults and

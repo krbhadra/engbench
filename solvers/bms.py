@@ -222,12 +222,15 @@ def stricter_readings(task):
 
 
 def parents(task):
-    return {"R-SOC": {"SN-1", "SN-2"} if "fcr_mw" in task["plant"] else {"SN-1"}, "R-TRIP": {"SN-4"},
-            "R-PRE": {"SN-3"}, "R-BAL": {"SN-1", "SN-4"}, "R-BRK": {"SN-4"}, "R-RIDE": {"SN-6"}, "R-IMD": {"SN-4", "SN-6"}}
+    fcr = "fcr_mw" in task["plant"]
+    return {"R-SOC": {"SN-1", "SN-2"} if fcr else {"SN-1"}, "R-TRIP": {"SN-4"},
+            "R-PRE": {"SN-3"}, "R-BAL": {"SN-1", "SN-4"}, "R-BRK": {"SN-4"},
+            "R-RIDE": {"SN-6", "SN-4", "SN-2"} if fcr else {"SN-6", "SN-4"}, "R-IMD": {"SN-4", "SN-6"}}
 
 
-# needs a record must name together: insulation monitoring serves safety and the connection and installation rules (author)
-ALL_PARENTS = {"R-IMD"}
+# needs a record must name together (author, 2026-10-28 and 2026-11-03): insulation monitoring serves safety and the
+# connection and installation rules; ride-through serves the connection rules, safety and, on an FCR plant, the reserve
+ALL_PARENTS = {"R-IMD", "R-RIDE"}
 
 
 def check_requirements(task, records):

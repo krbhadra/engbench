@@ -14331,7 +14331,10 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.78,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -14393,7 +14396,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -14463,7 +14469,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -14533,7 +14542,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -14603,7 +14615,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.23,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -14673,7 +14688,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -14743,7 +14761,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -14813,7 +14834,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -14883,7 +14907,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -14953,7 +14980,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15023,7 +15053,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15093,7 +15126,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15163,7 +15199,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15233,7 +15272,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15303,7 +15345,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.78,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15375,7 +15420,10 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.0388,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -15437,7 +15485,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15507,7 +15558,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15577,7 +15631,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15647,7 +15704,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.2888,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15717,7 +15777,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15787,7 +15850,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15857,7 +15923,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15927,7 +15996,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -15997,7 +16069,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16067,7 +16142,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16137,7 +16215,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16207,7 +16288,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16277,7 +16361,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0388,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16349,7 +16436,11 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-2",
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.46,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -16411,7 +16502,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16481,7 +16576,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16551,7 +16650,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16621,7 +16724,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.23,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16691,7 +16798,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16761,7 +16872,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16831,7 +16946,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16901,7 +17020,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -16971,7 +17094,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17041,7 +17168,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17111,7 +17242,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17181,7 +17316,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17251,7 +17390,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17321,7 +17464,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17391,7 +17538,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17461,7 +17612,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.46,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17533,7 +17688,10 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.38,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -17595,7 +17753,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17665,7 +17826,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17735,7 +17899,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17805,7 +17972,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.63,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17875,7 +18045,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -17945,7 +18118,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18015,7 +18191,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18085,7 +18264,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18155,7 +18337,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18225,7 +18410,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18295,7 +18483,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18365,7 +18556,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18435,7 +18629,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18507,7 +18704,10 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.3133,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -18569,7 +18769,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18639,7 +18842,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18709,7 +18915,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18779,7 +18988,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5633,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18849,7 +19061,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18919,7 +19134,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -18989,7 +19207,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19059,7 +19280,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19129,7 +19353,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19199,7 +19426,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19269,7 +19499,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19339,7 +19572,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19409,7 +19645,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19479,7 +19718,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.3133,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19551,7 +19793,11 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-2",
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.38,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -19613,7 +19859,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19683,7 +19933,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19753,7 +20007,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19823,7 +20081,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19893,7 +20155,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.93,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -19963,7 +20229,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20033,7 +20303,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20103,7 +20377,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20173,7 +20451,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20243,7 +20525,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20313,7 +20599,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20383,7 +20673,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20453,7 +20747,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20523,7 +20821,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20593,7 +20895,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20663,7 +20969,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.38,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20735,7 +21045,11 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-2",
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.335,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -20797,7 +21111,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.335,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20867,7 +21185,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.335,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -20937,7 +21259,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.335,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21007,7 +21333,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.335,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21077,7 +21407,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.1675,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21147,7 +21481,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.335,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21217,7 +21555,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.335,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21287,7 +21629,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.335,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21357,7 +21703,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.335,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21427,7 +21777,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.335,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21497,7 +21851,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.335,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21567,7 +21925,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.335,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21639,7 +22001,11 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-2",
+      "SN-4",
+      "SN-6"
+     ],
      "value": 3.7933,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -21701,7 +22067,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21771,7 +22141,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21841,7 +22215,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21911,7 +22289,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.8967,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -21981,7 +22363,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22051,7 +22437,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22121,7 +22511,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22191,7 +22585,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22261,7 +22659,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22331,7 +22733,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22401,7 +22807,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22471,7 +22881,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22541,7 +22955,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22611,7 +23029,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22681,7 +23103,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 3.7933,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22753,7 +23179,11 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-2",
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.4911,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -22815,7 +23245,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22885,7 +23319,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -22955,7 +23393,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23025,7 +23467,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.2911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23095,7 +23541,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23165,7 +23615,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23235,7 +23689,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23305,7 +23763,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23375,7 +23837,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23445,7 +23911,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23515,7 +23985,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23585,7 +24059,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23655,7 +24133,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23725,7 +24207,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23795,7 +24281,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23865,7 +24355,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -23935,7 +24429,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24005,7 +24503,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.4911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24077,7 +24579,11 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-2",
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.0911,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -24139,7 +24645,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24209,7 +24719,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24279,7 +24793,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24349,7 +24867,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.3411,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24419,7 +24941,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24489,7 +25015,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24559,7 +25089,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24629,7 +25163,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24699,7 +25237,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24769,7 +25311,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24839,7 +25385,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24909,7 +25459,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -24979,7 +25533,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25049,7 +25607,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25119,7 +25681,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25189,7 +25755,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25259,7 +25829,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25329,7 +25903,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.0911,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25401,7 +25979,10 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 1.73,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -25463,7 +26044,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.73,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25533,7 +26117,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.73,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25603,7 +26190,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 0.98,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25673,7 +26263,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.73,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25743,7 +26336,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.73,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25813,7 +26409,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.73,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25883,7 +26482,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.73,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -25953,7 +26555,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.73,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26023,7 +26628,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.73,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26093,7 +26701,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.73,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26163,7 +26774,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.73,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26233,7 +26847,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.73,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26305,7 +26922,10 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 1.28,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -26367,7 +26987,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26437,7 +27060,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26507,7 +27133,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26577,7 +27206,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26647,7 +27279,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 0.83,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26717,7 +27352,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26787,7 +27425,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26857,7 +27498,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26927,7 +27571,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -26997,7 +27644,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27067,7 +27717,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27137,7 +27790,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27207,7 +27863,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27277,7 +27936,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.28,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27349,7 +28011,11 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-2",
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.2094,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -27411,7 +28077,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27481,7 +28151,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27551,7 +28225,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27621,7 +28299,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.7094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27691,7 +28373,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27761,7 +28447,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27831,7 +28521,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27901,7 +28595,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -27971,7 +28669,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28041,7 +28743,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28111,7 +28817,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28181,7 +28891,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28251,7 +28965,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28321,7 +29039,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28391,7 +29113,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28461,7 +29187,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.2094,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28533,7 +29263,11 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-2",
+      "SN-4",
+      "SN-6"
+     ],
      "value": 1.9271,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -28595,7 +29329,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28665,7 +29403,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28735,7 +29477,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28805,7 +29551,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28875,7 +29625,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.2771,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -28945,7 +29699,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29015,7 +29773,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29085,7 +29847,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29155,7 +29921,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29225,7 +29995,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29295,7 +30069,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29365,7 +30143,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29435,7 +30217,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29505,7 +30291,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29575,7 +30365,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29645,7 +30439,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29715,7 +30513,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29785,7 +30587,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.9271,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29857,7 +30663,11 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-2",
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.1267,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -29919,7 +30729,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -29989,7 +30803,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30059,7 +30877,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30129,7 +30951,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.0633,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30199,7 +31025,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30269,7 +31099,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30339,7 +31173,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30409,7 +31247,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30479,7 +31321,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30549,7 +31395,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30619,7 +31469,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30689,7 +31543,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30759,7 +31617,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30829,7 +31691,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30899,7 +31765,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -30969,7 +31839,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.1267,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31041,7 +31915,11 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-2",
+      "SN-4",
+      "SN-6"
+     ],
      "value": 1.5467,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -31103,7 +31981,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31173,7 +32055,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31243,7 +32129,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31313,7 +32203,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 0.8467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31383,7 +32277,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31453,7 +32351,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31523,7 +32425,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31593,7 +32499,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31663,7 +32573,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31733,7 +32647,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31803,7 +32721,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31873,7 +32795,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -31943,7 +32869,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32013,7 +32943,11 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-2",
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.5467,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32085,7 +33019,10 @@
     },
     {
      "id": "R-RIDE",
-     "parent": "SN-6",
+     "parent": [
+      "SN-4",
+      "SN-6"
+     ],
      "value": 2.505,
      "unit": "s",
      "basis": "rack control supply bridging time"
@@ -32147,7 +33084,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32217,7 +33157,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32287,7 +33230,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32357,7 +33303,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 1.305,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32427,7 +33376,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32497,7 +33449,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32567,7 +33522,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32637,7 +33595,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32707,7 +33668,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32777,7 +33741,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32847,7 +33814,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32917,7 +33887,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -32987,7 +33960,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -33057,7 +34033,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
@@ -33127,7 +34106,10 @@
       },
       {
        "id": "R-RIDE",
-       "parent": "SN-6",
+       "parent": [
+        "SN-4",
+        "SN-6"
+       ],
        "value": 2.505,
        "unit": "s",
        "basis": "rack control supply bridging time"
