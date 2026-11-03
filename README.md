@@ -11,7 +11,7 @@ The bar is not one engineer. It is the collective intelligence of a whole engine
 - **A design passes only if it meets every requirement:** the stated ones, and the hidden ones a senior team would anticipate unprompted.
 - **One score out of 100** on a six-level ladder, from a 15-minute component calculation to a whole engineering programme.
 
-The first product on the ladder is a grid-connected battery energy storage system. We picked it because the author can validate the engineering practice directly, not because the benchmark is about storage.
+The first product on the ladder is a grid-connected battery energy storage system.
 
 > **Status: v0.1 preview.** Levels 1–4 of 6 exist, so the highest score reachable today is 70. Only Claude models have been run so far. GPT, Gemini and open-weight models are waiting for funding or contributors ([Support](#support-the-benchmark)).
 
