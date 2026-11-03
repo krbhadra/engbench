@@ -91,8 +91,10 @@ def build(runs, tasks):
         def sc(recs, tr):
             if not recs:
                 return '<td class="na">–</td>'
-            v, rates = score(recs, tr, private.get((m, tr), []))
-            return f'<td><b>{v:.1f}</b><small>levels run: {", ".join(map(str, sorted(rates)))}</small></td>'
+            held = private.get((m, tr), [])
+            v, rates = score(recs, tr, held)
+            public = " · levels 3-4 on public seeds, unofficial" if max(rates, default=0) >= 3 and not held else ""  # community runs
+            return f'<td><b>{v:.1f}</b><small>levels run: {", ".join(map(str, sorted(rates)))}{public}</small></td>'
         lb.append(f"<tr><th>{esc(m)}</th>{sc(ss, 'single-shot')}{sc(ag, 'agentic')}{cell(rs)}{cell(ra)}<td>{gap}</td>{cell(r1)}<td>{calls}</td><td>{len({r['task'] for r in allr})}</td></tr>")
     lb.append("</tbody></table>")
 
