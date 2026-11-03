@@ -21,7 +21,7 @@ Score out of 100. Levels 3 and 4 are scored on private held-out tasks the models
 - **Single-shot**: one answer, no tools.
 - **Agentic**: the model gets a Python sandbox and a test lab with three rounds. The test lab reports symptoms ("the precharge test timed out"), never causes or numbers.
 
-Full write-up: [docs/RESULTS.md](docs/RESULTS.md). Interactive dashboard, with every design and every violation: [docs/index.html](docs/index.html).
+Full write-up: [docs/RESULTS.md](docs/RESULTS.md). Interactive dashboard, with every design and every violation: **[krbhadra.github.io/engbench](https://krbhadra.github.io/engbench/)**.
 
 ## The ladder
 
