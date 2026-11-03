@@ -2,7 +2,16 @@
 
 **Can an AI do the engineering that brings a real product into the world, and can an engineer trust the answer?**
 
-EngBench is an open benchmark for engineering design: grid-connected battery storage, from component calculations up to the battery management and protection subsystem. Models hand in a design artifact (sizing, part choices, requirement records). **Deterministic solvers grade it, never another LLM.** A design passes only if it meets every requirement: the stated ones, and the hidden ones a senior engineering team would find unprompted.
+Software got its answer from SWE-bench: real repositories, hidden tests, pass or fail. Real-world engineering has nothing comparable. EngBench is built to be that benchmark, for mechanical, electrical, thermal, power electronics, controls and the systems engineering that ties them into a product.
+
+The bar is not one engineer. It is the collective intelligence of a whole engineering organisation: taking a product from stakeholder needs to a design that closes across every department. That means finding the requirements nobody wrote down, choosing the architecture with a reason, and making every discipline's numbers agree.
+
+- **Machine-checkable designs.** Models hand in sizing, part choices, requirement records and interfaces.
+- **Deterministic solvers grade them, never another LLM.** The solvers implement the published methods and standards.
+- **A design passes only if it meets every requirement:** the stated ones, and the hidden ones a senior team would anticipate unprompted.
+- **One score out of 100** on a six-level ladder, from a 15-minute component calculation to a whole engineering programme.
+
+The first product on the ladder is a grid-connected battery energy storage system. We picked it because the author can validate the engineering practice directly, not because the benchmark is about storage.
 
 > **Status: v0.1 preview.** Levels 1–4 of 6 exist, so the highest score reachable today is 70. Only Claude models have been run so far. GPT, Gemini and open-weight models are waiting for funding or contributors ([Support](#support-the-benchmark)).
 
