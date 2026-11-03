@@ -92,8 +92,7 @@ EngBench is built by one engineer in battery energy storage, in their spare time
 | ~$150 | One model, both tracks, all levels, 1 trial |
 | ~$500 | One model, the full official run (3 trials) |
 
-<!-- TODO(author): add the GitHub Sponsors / Ko-fi link once the account is approved -->
-**Donate:** link coming soon. Donated OpenRouter credit is just as welcome; open an issue.
+**[Donate on Ko-fi](https://ko-fi.com/krbhadra)**. Donated OpenRouter credit is just as welcome; open an issue.
 
 Every donation is spent on model runs. The results page states which runs donations paid for.
 
