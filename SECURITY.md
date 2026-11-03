@@ -7,4 +7,4 @@ Please report problems privately through GitHub's **[Report a vulnerability](htt
 - A way for model output to escape the agentic Python sandbox and reach the host running the harness.
 - Secrets or personal data in the repository or its history.
 
-You'll get a reply within a week. Grader disagreements on engineering grounds (a defensible reading the grader rejects) are not security issues. Please open a normal issue for those (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+Grader disagreements on engineering grounds (a defensible reading the grader rejects) are not security issues. Please open a normal issue for those (see [CONTRIBUTING.md](CONTRIBUTING.md)).
